@@ -19,4 +19,5 @@ export interface IAabb2 {
   maxY: number;
 }
 
-export type IVec2Array = number[];
+export type IPolygon = number[];
+export type IPolyline = number[];

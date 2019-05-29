@@ -1,16 +1,8 @@
-import { IVec2, IMat2x3 } from "../types";
 import { ENGINE_STATIC } from "../internal/engine";
-import { vec2Alloc } from "./vec2Functions";
+import { IMat2x3 } from "../types";
 
 class Mat2x3 implements IMat2x3 {
-  constructor(
-    public a = NaN,
-    public b = NaN,
-    public c = NaN,
-    public d = NaN,
-    public e = NaN,
-    public f = NaN
-  ) {}
+  constructor(public a = NaN, public b = NaN, public c = NaN, public d = NaN, public e = NaN, public f = NaN) {}
 }
 
 export function mat2x3Alloc(): IMat2x3 {
@@ -27,11 +19,11 @@ export function mat2x3Clone(mat: IMat2x3, out = mat2x3Alloc()) {
   return out;
 }
 
-export function mat2x3Determinant(mat: IMat2x3) {
+export function mat2x3GetDeterminant(mat: IMat2x3) {
   return mat.a * mat.d - mat.b * mat.c;
 }
 
-export function mat2x3Inverse(mat: IMat2x3, out = mat2x3Alloc()) {
+export function mat2x3Invert(mat: IMat2x3, out = mat2x3Alloc()) {
   const det = mat.a * mat.d - mat.b * mat.c;
   if (det < ENGINE_STATIC.epsilon) {
     return mat2x3Reset(NaN, NaN, NaN, NaN, NaN, NaN, out);
@@ -61,23 +53,7 @@ export function mat2x3MulMat2x3(m1: IMat2x3, m2: IMat2x3, out = mat2x3Alloc()) {
   return mat2x3Reset(a, b, c, d, e, f, out);
 }
 
-export function mat2x3MulVec2(mat: IMat2x3, vec: IVec2, out = vec2Alloc()) {
-  const x = mat.a * vec.x + mat.c * vec.y + mat.e;
-  const y = mat.b * vec.x + mat.d * vec.y + mat.f;
-  out.x = x;
-  out.y = y;
-  return out;
-}
-
-export function mat2x3Reset(
-  a: number,
-  b: number,
-  c: number,
-  d: number,
-  e: number,
-  f: number,
-  out = mat2x3Alloc()
-) {
+export function mat2x3Reset(a: number, b: number, c: number, d: number, e: number, f: number, out = mat2x3Alloc()) {
   out.a = a;
   out.b = b;
   out.c = c;

@@ -1,4 +1,4 @@
-import { IVec2 } from "../types";
+import { IVec2, IMat2x3 } from "../types";
 import { ENGINE_STATIC } from "../internal/engine";
 
 class Vec2 implements IVec2 {
@@ -33,11 +33,11 @@ export function vec2DistanceSquared(v1: IVec2, v2: IVec2) {
   return dx * dx + dy * dy;
 }
 
-export function vec2Length(vec: IVec2) {
+export function vec2GetLength(vec: IVec2) {
   return Math.sqrt(vec.x * vec.x + vec.y * vec.y);
 }
 
-export function vec2LengthSquared(vec: IVec2) {
+export function vec2GetLengthSquared(vec: IVec2) {
   return vec.x * vec.x + vec.y * vec.y;
 }
 
@@ -52,6 +52,13 @@ export function vec2Normalize(vec: IVec2, out = vec2Alloc()) {
   }
 
   return out;
+}
+
+export function vec2Perp(vec: IVec2, out = vec2Alloc()) {
+  const x = -vec.y;
+  const y = vec.x;
+  out.x = x;
+  out.y = y;
 }
 
 export function vec2Reset(x: number, y: number, out = vec2Alloc()) {
@@ -69,5 +76,13 @@ export function vec2Scale(vec: IVec2, scalar: number, out = vec2Alloc()) {
 export function vec2Subtract(v1: IVec2, v2: IVec2, out = vec2Alloc()) {
   out.x = v1.x - v2.x;
   out.y = v1.y - v2.y;
+  return out;
+}
+
+export function vec2TransformBy(vec: IVec2, mat: IMat2x3, out = vec2Alloc()) {
+  const x = mat.a * vec.x + mat.c * vec.y + mat.e;
+  const y = mat.b * vec.x + mat.d * vec.y + mat.f;
+  out.x = x;
+  out.y = y;
   return out;
 }
