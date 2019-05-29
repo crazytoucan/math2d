@@ -12,4 +12,11 @@ export interface IMat2x3 {
   ty: number;
 }
 
+export interface IAabb2 {
+  minX: number;
+  maxX: number;
+  minY: number;
+  maxY: number;
+}
+
 export type IVec2Array = number[];

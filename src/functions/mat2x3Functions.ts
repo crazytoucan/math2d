@@ -17,7 +17,7 @@ export function mat2x3Alloc(): IMat2x3 {
   return new Mat2x3();
 }
 
-export function mat2x3Copy(mat: IMat2x3, out = mat2x3Alloc()) {
+export function mat2x3Clone(mat: IMat2x3, out = mat2x3Alloc()) {
   out.m11 = mat.m11;
   out.m12 = mat.m12;
   out.m21 = mat.m21;

@@ -15,6 +15,12 @@ export function vec2Alloc(): IVec2 {
   return new Vec2();
 }
 
+export function vec2Clone(vec: IVec2, out = vec2Alloc()) {
+  out.x = vec.x;
+  out.y = vec.y;
+  return out;
+}
+
 export function vec2Distance(a: IVec2, b: IVec2) {
   const dx = a.x - b.x;
   const dy = a.y - b.y;
