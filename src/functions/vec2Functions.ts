@@ -5,9 +5,9 @@ class Vec2 implements IVec2 {
   constructor(public x = NaN, public y = NaN) {}
 }
 
-export function vec2Add(a: IVec2, b: IVec2, out = vec2Alloc()) {
-  out.x = a.x + b.x;
-  out.y = a.y + b.y;
+export function vec2Add(v1: IVec2, v2: IVec2, out = vec2Alloc()) {
+  out.x = v1.x + v2.x;
+  out.y = v1.y + v2.y;
   return out;
 }
 
@@ -21,15 +21,15 @@ export function vec2Clone(vec: IVec2, out = vec2Alloc()) {
   return out;
 }
 
-export function vec2Distance(a: IVec2, b: IVec2) {
-  const dx = a.x - b.x;
-  const dy = a.y - b.y;
+export function vec2Distance(v1: IVec2, v2: IVec2) {
+  const dx = v1.x - v2.x;
+  const dy = v1.y - v2.y;
   return Math.sqrt(dx * dx + dy * dy);
 }
 
-export function vec2DistanceSquared(a: IVec2, b: IVec2) {
-  const dx = a.x - b.x;
-  const dy = a.y - b.y;
+export function vec2DistanceSquared(v1: IVec2, v2: IVec2) {
+  const dx = v1.x - v2.x;
+  const dy = v1.y - v2.y;
   return dx * dx + dy * dy;
 }
 
@@ -66,8 +66,8 @@ export function vec2Scale(vec: IVec2, scalar: number, out = vec2Alloc()) {
   return out;
 }
 
-export function vec2Subtract(a: IVec2, b: IVec2, out = vec2Alloc()) {
-  out.x = a.x - b.x;
-  out.y = a.y - b.y;
+export function vec2Subtract(v1: IVec2, v2: IVec2, out = vec2Alloc()) {
+  out.x = v1.x - v2.x;
+  out.y = v1.y - v2.y;
   return out;
 }

@@ -4,12 +4,12 @@ export interface IVec2 {
 }
 
 export interface IMat2x3 {
-  m11: number;
-  m12: number;
-  m21: number;
-  m22: number;
-  tx: number;
-  ty: number;
+  a: number;
+  b: number;
+  c: number;
+  d: number;
+  e: number;
+  f: number;
 }
 
 export interface IAabb2 {
