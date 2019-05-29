@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "lib": [
+      "dom",
+      "es2015.core",
+      "es2015.collection",
+      "es2015.iterable",
+      "es2015.promise",
+      "es2015.symbol",
+      "es2016.array.include",
+      "es6"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "lib",
+    "plugins": [{ "name": "typescript-tslint-plugin" }],
+    "preserveConstEnums": true,
+    "pretty": true,
+    "removeComments": false,
+    "rootDir": "src",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "stripInternal": true,
+    "noFallthroughCasesInSwitch": true,
+    "target": "es5"
+  },
+  "exclude": [
+    "lib",
+    "node_modules"
+  ]
+}
