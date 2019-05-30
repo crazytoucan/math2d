@@ -1,16 +1,19 @@
+export { OUT_MAX_X, OUT_MAX_Y, OUT_MAX_Z, OUT_MIN_X, OUT_MIN_Y, OUT_MIN_Z } from "./const";
 export {
-  aabb2Alloc,
-  aabb2Clone,
-  aabb2ContainsPoint,
-  aabb2IncludePoint,
-  aabb2Intersection,
-  aabb2IntersectsAabb2,
-  aabb2IsEmpty,
-  aabb2Reset,
-  aabb2TransformBy,
-  aabb2TransformByAff,
-  aabb2Union,
-} from "./functions/aabb2Functions";
+  box2Alloc,
+  box2Clone,
+  box2ComputeOutCode,
+  box2ContainsBox,
+  box2ContainsPoint,
+  box2Encapsulate,
+  box2Intersection,
+  box2Intersects,
+  box2IsEmpty,
+  box2Reset,
+  box2TransformBy,
+  box2TransformByAff,
+  box2Union,
+} from "./functions/box2Functions";
 export {
   mat2Alloc,
   mat2Clone,
@@ -132,4 +135,4 @@ export {
   vec3Subtract,
   vec3TransformBy,
 } from "./functions/vec3Functions";
-export { IAabb2, IMat2, IMat2x3, IMat3, IPolygon2, IPolyline2, IRay2, ISegment2, IVec2, IVec3 } from "./types";
+export { IBox2, IMat2, IMat2x3, IMat3, IPolygon2, IPolyline2, IRay2, ISegment2, IVec2, IVec3 } from "./types";

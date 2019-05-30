@@ -1,5 +1,5 @@
 import { IMat2x3, IPolyline2, IVec2, IMat2 } from "../types";
-import { aabb2Alloc, aabb2IncludePoint, aabb2Reset } from "./aabb2Functions";
+import { box2Alloc, box2Encapsulate, box2Reset } from "./box2Functions";
 import { vec2Alloc, vec2Distance, vec2Reset, vec2TransformByAff, vec2Lerp, vec2DistanceSq, vec2TransformBy } from "./vec2Functions";
 import { segment2Alloc, segment2Reset } from "./segment2Functions";
 import {
@@ -40,11 +40,11 @@ export function polyline2Close(poly: IPolyline2, out = polyline2Alloc()) {
   return length;
 }
 
-export function polyline2GetBounds(poly: IPolyline2, out = aabb2Alloc()) {
-  aabb2Reset(Infinity, -Infinity, Infinity, -Infinity, out);
+export function polyline2GetBounds(poly: IPolyline2, out = box2Alloc()) {
+  box2Reset(Infinity, -Infinity, Infinity, -Infinity, out);
   for (let i = 0; i < poly.length; i += 2) {
     const v0 = vec2Reset(poly[i], poly[i + 1], TMP_VEC0);
-    aabb2IncludePoint(out, v0, out);
+    box2Encapsulate(out, v0, out);
   }
 
   return out;

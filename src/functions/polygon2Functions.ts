@@ -1,5 +1,5 @@
 import { IMat2x3, IPolygon2, IVec2, IMat2 } from "../types";
-import { aabb2Alloc } from "./aabb2Functions";
+import { box2Alloc } from "./box2Functions";
 import {
   polyline2GetBounds,
   polyline2GetLength,
@@ -33,7 +33,7 @@ export function polygon2Alloc(): IPolygon2 {
   return [];
 }
 
-export function polygon2GetBounds(poly: IPolygon2, out = aabb2Alloc()) {
+export function polygon2GetBounds(poly: IPolygon2, out = box2Alloc()) {
   return polyline2GetBounds(poly, out);
 }
 

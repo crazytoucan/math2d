@@ -51,10 +51,10 @@ export interface IMat2x3 {
   f: number;
 }
 
-export interface IAabb2 {
+export interface IBox2 {
   minX: number;
-  maxX: number;
   minY: number;
+  maxX: number;
   maxY: number;
 }
 
