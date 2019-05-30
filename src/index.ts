@@ -1,4 +1,3 @@
-export { IAabb2, IMat2x3, IPolygon, IPolyline, IVec2 } from "./types";
 export {
   aabb2Alloc,
   aabb2Clone,
@@ -25,8 +24,13 @@ export {
   polygonAlloc,
   polygonContainsPoint,
   polygonGetBounds,
+  polygonGetNearestT as polygonGetNearestD,
+  polygonGetNearestVertex,
   polygonGetNumSides,
   polygonGetPerimeter,
+  polygonGetPointAt as polygonGetPointAtD,
+  polygonGetSideIndexAt as polygonGetSideIndexAtD,
+  polygonGetSideLength,
   polygonTransformBy,
 } from "./functions/polygonFunctions";
 export {
@@ -34,9 +38,13 @@ export {
   polylineClose,
   polylineGetBounds,
   polylineGetLength,
+  polylineGetNearestT as polylineGetNearestD,
+  polylineGetNearestVertexIndex as polylineGetNearestVertex,
   polylineGetNumSegments,
-  polylineGetSegmentIndexAtDistance,
+  polylineGetPointAt as polylineGetPointAtD,
+  polylineGetSegmentIndexAt as polylineGetSegmentIndexAtD,
   polylineGetSegmentLength,
+  polylineIsClosed,
   polylineTransformBy,
 } from "./functions/polylineFunctions";
 export {
@@ -45,8 +53,10 @@ export {
   vec2Clone,
   vec2Distance,
   vec2DistanceSquared,
+  vec2Dot,
   vec2GetLength,
   vec2GetLengthSquared,
+  vec2Lerp,
   vec2Normalize,
   vec2Perp,
   vec2Reset,
@@ -54,3 +64,4 @@ export {
   vec2Subtract,
   vec2TransformBy,
 } from "./functions/vec2Functions";
+export { IAabb2, IMat2x3, IPolygon, IPolyline, IVec2 } from "./types";

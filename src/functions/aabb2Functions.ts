@@ -1,6 +1,6 @@
 import { IAabb2, IVec2, IMat2x3 } from "../types";
 import { arrayReset } from "../internal/collectionsUtils";
-import { polygonTransformBy, polygonGetBounds } from "./polygonFunctions";
+import { polyline2TransformBy, polyline2GetBounds } from "./polyline2Functions";
 
 class Aabb2 implements IAabb2 {
   constructor(public minX = NaN, public maxX = NaN, public minY = NaN, public maxY = NaN) {}
@@ -56,8 +56,8 @@ export function aabb2Reset(minX: number, maxX: number, minY: number, maxY: numbe
 
 export function aabb2TransformBy(box: IAabb2, mat: IMat2x3, out = aabb2Alloc()) {
   arrayReset(TMP_ARR8, box.minX, box.minY, box.minX, box.maxY, box.maxX, box.maxY, box.maxX, box.minY);
-  polygonTransformBy(TMP_ARR8, mat, TMP_ARR8);
-  return polygonGetBounds(TMP_ARR8, out);
+  polyline2TransformBy(TMP_ARR8, mat, TMP_ARR8);
+  return polyline2GetBounds(TMP_ARR8, out);
 }
 
 export function aabb2Union(a: IAabb2, b: IAabb2, out = aabb2Alloc()) {

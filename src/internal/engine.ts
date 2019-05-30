@@ -5,8 +5,8 @@ export interface IEngineInternal {
 }
 
 class DefaultEngine implements IEngineInternal {
-  public epsilon = 1e-6;
-  public epsilonSquared = 1e-12;
+  public epsilon = 1e-8;
+  public epsilonSquared = 1e-16;
   public allocArray(slot: number, length: number) {
     const allocated = this.allocatedSlots[slot][length];
     if (allocated !== undefined) {
@@ -33,4 +33,4 @@ class DefaultEngine implements IEngineInternal {
   private scheduledGc: number | undefined;
 }
 
-export const ENGINE_STATIC: IEngineInternal = new DefaultEngine();
+export const ENGINE: IEngineInternal = new DefaultEngine();

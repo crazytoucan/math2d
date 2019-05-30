@@ -1,4 +1,4 @@
-import { ENGINE_STATIC } from "../internal/engine";
+import { ENGINE } from "../internal/engine";
 import { IMat2x3 } from "../types";
 
 class Mat2x3 implements IMat2x3 {
@@ -25,7 +25,7 @@ export function mat2x3GetDeterminant(mat: IMat2x3) {
 
 export function mat2x3Invert(mat: IMat2x3, out = mat2x3Alloc()) {
   const det = mat.a * mat.d - mat.b * mat.c;
-  if (det < ENGINE_STATIC.epsilon) {
+  if (det < ENGINE.epsilon) {
     return mat2x3Reset(NaN, NaN, NaN, NaN, NaN, NaN, out);
   } else {
     const detInverse = 1 / det;
