@@ -1,12 +1,12 @@
 import { IAabb, IVec, IAffineMatrix } from "../types";
 import { arrayReset } from "../internal/collectionsUtils";
-import { polylineTransformBy, polylineGetBounds } from "./polylineFunctions";
+import { polylineTransformBy, polylineBounds, polylineAlloc } from "./polylineFunctions";
+
+const TMP_POLYLINE8 = polylineAlloc();
 
 class Aabb implements IAabb {
   constructor(public minX = NaN, public maxX = NaN, public minY = NaN, public maxY = NaN) {}
 }
-
-const TMP_ARR8: number[] = [];
 
 export function aabbAlloc(): IAabb {
   return new Aabb();
@@ -55,9 +55,9 @@ export function aabbReset(minX: number, maxX: number, minY: number, maxY: number
 }
 
 export function aabbTransformBy(box: IAabb, mat: IAffineMatrix, out = aabbAlloc()) {
-  arrayReset(TMP_ARR8, box.minX, box.minY, box.minX, box.maxY, box.maxX, box.maxY, box.maxX, box.minY);
-  polylineTransformBy(TMP_ARR8, mat, TMP_ARR8);
-  return polylineGetBounds(TMP_ARR8, out);
+  arrayReset(TMP_POLYLINE8, box.minX, box.minY, box.minX, box.maxY, box.maxX, box.maxY, box.maxX, box.minY);
+  polylineTransformBy(TMP_POLYLINE8, mat, TMP_POLYLINE8);
+  return polylineBounds(TMP_POLYLINE8, out);
 }
 
 export function aabbUnion(a: IAabb, b: IAabb, out = aabbAlloc()) {

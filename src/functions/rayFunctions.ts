@@ -23,6 +23,14 @@ export function rayClone(ray: IRay, out = rayAlloc()) {
   return rayReset(ray.x0, ray.y0, ray.dirX, ray.dirY, out);
 }
 
+export function rayGetDirectionVector(ray: IRay, out = vecAlloc()) {
+  return vecReset(ray.dirX, ray.dirY, out);
+}
+
+export function rayGetInitialPoint(ray: IRay, out = vecAlloc()) {
+  return vecReset(ray.x0, ray.y0, out);
+}
+
 export function rayIntersectRay2(r1: IRay, r2: IRay, out = vecAlloc()) {
   const t = rayIntersectRay2T(r1, r2);
   return rayAt(r1, t, out);

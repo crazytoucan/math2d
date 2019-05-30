@@ -1,4 +1,4 @@
-import { IVec } from "../types";
+import { IVec, ISegment } from "../types";
 import {
   vecAlloc,
   vecSubtract,
@@ -7,9 +7,10 @@ import {
   vecDistance,
   vecNormalize,
   vecPerp,
+  vecReset,
 } from "../functions/vecFunctions";
 
-export interface ISegmentNearestPointResult {
+export interface IInternalSegmentGetNearestPointResult {
   d: number;
   distance: number;
 }
@@ -17,21 +18,22 @@ export interface ISegmentNearestPointResult {
 const TMP_VEC0 = vecAlloc();
 const TMP_VEC1 = vecAlloc();
 
-export function internalGetSegmentNearestPoint(
-  vertex0: IVec,
-  vertex1: IVec,
+export function internalSegmentGetNearestPoint(
+  segment: ISegment,
   point: IVec,
-  out: ISegmentNearestPointResult,
+  out: IInternalSegmentGetNearestPointResult,
 ) {
-  const dirVec = vecSubtract(vertex1, vertex0, TMP_VEC0);
-  const pVec = vecSubtract(point, vertex0, TMP_VEC1);
+  const v0 = vecReset(segment.x0, segment.y0, TMP_VEC0);
+  const v1 = vecReset(segment.x1, segment.y1, TMP_VEC1);
+  const dirVec = vecSubtract(v1, v0, TMP_VEC0);
+  const pVec = vecSubtract(point, v0, TMP_VEC1);
   const dot = vecDot(dirVec, pVec);
   const dirVecLengthSquared = vecGetLengthSquared(dirVec);
   if (dot < 0) {
-    out.distance = vecDistance(point, vertex0);
+    out.distance = vecDistance(point, v0);
     out.d = 0;
   } else if (dot > dirVecLengthSquared) {
-    out.distance = vecDistance(point, vertex1);
+    out.distance = vecDistance(point, v1);
     out.d = Math.sqrt(dirVecLengthSquared);
   } else {
     vecNormalize(dirVec, dirVec);

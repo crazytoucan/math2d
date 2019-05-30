@@ -22,31 +22,46 @@ export {
 } from "./functions/affineMatrixFunctions";
 export {
   polygonAlloc,
+  polygonBounds,
   polygonContainsPoint,
-  polygonGetBounds,
-  polygonGetNearestT,
-  polygonGetNearestVertex,
   polygonGetNumSides,
-  polygonGetPerimeter,
-  polygonGetPointAt,
-  polygonGetSideIndexAt,
-  polygonGetSideLength,
+  polygonGetSide,
+  polygonNearest,
+  polygonNearestT,
+  polygonNearestVertex,
+  polygonPerimeter,
+  polygonPointAt,
+  polygonSideIndexAt,
+  polygonSideLength,
   polygonTransformBy,
 } from "./functions/polygonFunctions";
 export {
   polylineAlloc,
+  polylineBounds,
   polylineClose,
-  polylineGetBounds,
-  polylineGetLength,
-  polylineGetNearestT,
-  polylineGetNearestVertexIndex,
   polylineGetNumSegments,
-  polylineGetPointAt,
-  polylineGetSegmentIndexAt,
-  polylineGetSegmentLength,
+  polylineGetSegment,
   polylineIsClosed,
+  polylineLength,
+  polylineNearest,
+  polylineNearestT,
+  polylineNearestVertexIndex,
+  polylinePointAt,
+  polylineSegmentIndexAt,
+  polylineSegmentLength,
   polylineTransformBy,
 } from "./functions/polylineFunctions";
+export {
+  segmentAlloc,
+  segmentAt,
+  segmentGetEndpoint0,
+  segmentGetEndpoint1,
+  segmentInvert,
+  segmentLength,
+  segmentLengthSquared,
+  segmentNearestPoint,
+  segmentReset,
+} from "./functions/segmentFunctions";
 export {
   vecAdd,
   vecAlloc,
@@ -64,4 +79,4 @@ export {
   vecSubtract,
   vecTransformBy,
 } from "./functions/vecFunctions";
-export { IAabb, IAffineMatrix, IPolygon, IPolyline, IVec } from "./types";
+export { IAabb, IAffineMatrix, IPolygon, IPolyline, IRay, ISegment, IVec } from "./types";
