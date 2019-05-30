@@ -69,8 +69,8 @@ export {
   vec2Distance,
   vec2DistanceSquared,
   vec2Dot,
-  vec2GetLength,
-  vec2GetLengthSquared,
+  vec2Length,
+  vec2LengthSquared,
   vec2Lerp,
   vec2Normalize,
   vec2Perp,
@@ -79,4 +79,19 @@ export {
   vec2Subtract,
   vec2TransformBy,
 } from "./functions/vec2Functions";
-export { IAabb2, IMat2x3, IPolygon2, IPolyline2, IRay2, ISegment2, IVec2 } from "./types";
+export {
+  vec3Add,
+  vec3Alloc,
+  vec3Clone,
+  vec3Distance,
+  vec3DistanceSquared,
+  vec3Dot,
+  vec3GetLength,
+  vec3LengthSquared,
+  vec3Lerp,
+  vec3Normalize,
+  vec3Reset,
+  vec3Scale,
+  vec3Subtract,
+} from "./functions/vec3Functions";
+export { IAabb2, IMat2x3, IPolygon2, IPolyline2, IRay2, ISegment2, IVec2, IVec3 } from "./types";

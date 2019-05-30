@@ -1,7 +1,7 @@
 import { IVec2, IMat2x3 } from "../types";
 import { ENGINE } from "../internal/engine";
 
-class Vec implements IVec2 {
+class Vec2 implements IVec2 {
   constructor(public x = NaN, public y = NaN) {}
 }
 
@@ -10,7 +10,7 @@ export function vec2Add(v1: IVec2, v2: IVec2, out = vec2Alloc()) {
 }
 
 export function vec2Alloc(): IVec2 {
-  return new Vec();
+  return new Vec2();
 }
 
 export function vec2Clone(vec: IVec2, out = vec2Alloc()) {
@@ -33,11 +33,11 @@ export function vec2DistanceSquared(v1: IVec2, v2: IVec2) {
   return dx * dx + dy * dy;
 }
 
-export function vec2GetLength(vec: IVec2) {
+export function vec2Length(vec: IVec2) {
   return Math.sqrt(vec.x * vec.x + vec.y * vec.y);
 }
 
-export function vec2GetLengthSquared(vec: IVec2) {
+export function vec2LengthSquared(vec: IVec2) {
   return vec.x * vec.x + vec.y * vec.y;
 }
 

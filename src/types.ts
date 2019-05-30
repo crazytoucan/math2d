@@ -3,6 +3,12 @@ export interface IVec2 {
   y: number;
 }
 
+export interface IVec3 {
+  x: number;
+  y: number;
+  z: number;
+}
+
 export interface ISegment2 {
   x0: number;
   y0: number;
