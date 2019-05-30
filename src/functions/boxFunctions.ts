@@ -1,28 +1,28 @@
-import { IBox2, IVec2, IMat2x3, IMat2 } from "../types";
+import { IBox, IVec, IMat2x3, IMat2 } from "../types";
 import { arrayReset } from "../internal/collectionsUtils";
 import {
-  polyline2TransformByAff,
-  polyline2GetBounds,
-  polyline2Alloc,
-  polyline2TransformBy,
-} from "./polyline2Functions";
+  polylineTransformByAff,
+  polylineGetBounds,
+  polylineAlloc,
+  polylineTransformBy,
+} from "./polylineFunctions";
 import { OUT_MIN_X, OUT_MAX_X, OUT_MIN_Y, OUT_MAX_Y } from "../const";
 
-const TMP_POLYLINE = polyline2Alloc();
+const TMP_POLYLINE = polylineAlloc();
 
-class Aabb implements IBox2 {
+class Aabb implements IBox {
   constructor(public minX = NaN, public minY = NaN, public maxX = NaN, public maxY = NaN) {}
 }
 
-export function box2Alloc(): IBox2 {
+export function boxAlloc(): IBox {
   return new Aabb();
 }
 
-export function box2Clone(box: IBox2, out = box2Alloc()) {
-  return box2Reset(box.minX, box.minY, box.maxX, box.maxY, out);
+export function boxClone(box: IBox, out = boxAlloc()) {
+  return boxReset(box.minX, box.minY, box.maxX, box.maxY, out);
 }
 
-export function box2ComputeOutCode(box: IBox2, point: IVec2) {
+export function boxComputeOutCode(box: IBox, point: IVec) {
   let out = 0;
   if (point.x <= box.minX) {
     out |= OUT_MIN_X;
@@ -39,16 +39,16 @@ export function box2ComputeOutCode(box: IBox2, point: IVec2) {
   return out;
 }
 
-export function box2ContainsBox(a: IBox2, b: IBox2) {
+export function boxContainsBox(a: IBox, b: IBox) {
   return b.minX >= a.minX && b.minY >= a.minY && b.maxX <= a.maxX && b.maxY <= a.maxY;
 }
 
-export function box2ContainsPoint(box: IBox2, point: IVec2) {
+export function boxContainsPoint(box: IBox, point: IVec) {
   return point.x > box.minX && point.y > box.minY && point.x < box.maxX && point.y < box.maxY;
 }
 
-export function box2Encapsulate(box: IBox2, point: IVec2, out = box2Alloc()) {
-  return box2Reset(
+export function boxEncapsulate(box: IBox, point: IVec, out = boxAlloc()) {
+  return boxReset(
     Math.min(box.minX, point.x),
     Math.min(box.minY, point.y),
     Math.max(box.maxX, point.x),
@@ -57,12 +57,12 @@ export function box2Encapsulate(box: IBox2, point: IVec2, out = box2Alloc()) {
   );
 }
 
-export function box2Intersects(a: IBox2, b: IBox2) {
+export function boxIntersects(a: IBox, b: IBox) {
   return a.minX < b.maxX && a.minY < b.maxY && a.maxX > b.minX && a.maxY > b.minY;
 }
 
-export function box2Intersection(a: IBox2, b: IBox2, out = box2Alloc()) {
-  return box2Reset(
+export function boxIntersection(a: IBox, b: IBox, out = boxAlloc()) {
+  return boxReset(
     Math.max(a.minX, b.minX),
     Math.max(a.minY, b.minY),
     Math.min(a.maxX, b.maxX),
@@ -71,11 +71,11 @@ export function box2Intersection(a: IBox2, b: IBox2, out = box2Alloc()) {
   );
 }
 
-export function box2IsEmpty(box: IBox2) {
+export function boxIsEmpty(box: IBox) {
   return box.maxX <= box.minX || box.maxY <= box.minY;
 }
 
-export function box2Reset(minX: number, minY: number, maxX: number, maxY: number, out = box2Alloc()) {
+export function boxReset(minX: number, minY: number, maxX: number, maxY: number, out = boxAlloc()) {
   out.minX = minX;
   out.minY = minY;
   out.maxX = maxX;
@@ -83,20 +83,20 @@ export function box2Reset(minX: number, minY: number, maxX: number, maxY: number
   return out;
 }
 
-export function box2TransformBy(box: IBox2, mat: IMat2, out = box2Alloc()) {
+export function boxTransformBy(box: IBox, mat: IMat2, out = boxAlloc()) {
   arrayReset(TMP_POLYLINE, box.minX, box.minY, box.minX, box.maxY, box.maxX, box.maxY, box.maxX, box.minY);
-  polyline2TransformBy(TMP_POLYLINE, mat, TMP_POLYLINE);
-  return polyline2GetBounds(TMP_POLYLINE, out);
+  polylineTransformBy(TMP_POLYLINE, mat, TMP_POLYLINE);
+  return polylineGetBounds(TMP_POLYLINE, out);
 }
 
-export function box2TransformByAff(box: IBox2, mat: IMat2x3, out = box2Alloc()) {
+export function boxTransformByAff(box: IBox, mat: IMat2x3, out = boxAlloc()) {
   arrayReset(TMP_POLYLINE, box.minX, box.minY, box.minX, box.maxY, box.maxX, box.maxY, box.maxX, box.minY);
-  polyline2TransformByAff(TMP_POLYLINE, mat, TMP_POLYLINE);
-  return polyline2GetBounds(TMP_POLYLINE, out);
+  polylineTransformByAff(TMP_POLYLINE, mat, TMP_POLYLINE);
+  return polylineGetBounds(TMP_POLYLINE, out);
 }
 
-export function box2Union(a: IBox2, b: IBox2, out = box2Alloc()) {
-  return box2Reset(
+export function boxUnion(a: IBox, b: IBox, out = boxAlloc()) {
+  return boxReset(
     Math.min(a.minX, b.minX),
     Math.min(a.minY, b.minY),
     Math.max(a.maxX, b.maxX),
