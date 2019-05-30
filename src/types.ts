@@ -23,6 +23,13 @@ export interface IRay2 {
   dirY: number;
 }
 
+export interface IMat2 {
+  a: number;
+  b: number;
+  c: number;
+  d: number;
+}
+
 export interface IMat2x3 {
   a: number;
   b: number;

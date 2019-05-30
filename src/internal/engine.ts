@@ -1,12 +1,12 @@
 export interface IEngineInternal {
   epsilon: number;
-  epsilonSquared: number;
+  epsilonSq: number;
   allocArray(slot: number, length: number): number[];
 }
 
 class DefaultEngine implements IEngineInternal {
   public epsilon = 1e-8;
-  public epsilonSquared = 1e-16;
+  public epsilonSq = 1e-16;
   public allocArray(slot: number, length: number) {
     const allocated = this.allocatedSlots[slot][length];
     if (allocated !== undefined) {

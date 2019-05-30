@@ -22,10 +22,10 @@ export function vec3Dot(v1: IVec3, v2: IVec3) {
 }
 
 export function vec3Distance(v1: IVec3, v2: IVec3) {
-  return Math.sqrt(vec3DistanceSquared(v1, v2));
+  return Math.sqrt(vec3DistanceSq(v1, v2));
 }
 
-export function vec3DistanceSquared(v1: IVec3, v2: IVec3) {
+export function vec3DistanceSq(v1: IVec3, v2: IVec3) {
   const dx = v1.x - v2.x;
   const dy = v1.y - v2.y;
   const dz = v1.z - v2.z;
@@ -33,10 +33,10 @@ export function vec3DistanceSquared(v1: IVec3, v2: IVec3) {
 }
 
 export function vec3GetLength(vec: IVec3) {
-  return Math.sqrt(vec3LengthSquared(vec));
+  return Math.sqrt(vec3LengthSq(vec));
 }
 
-export function vec3LengthSquared(vec: IVec3) {
+export function vec3LengthSq(vec: IVec3) {
   return vec.x * vec.x + vec.y * vec.y + vec.z * vec.z;
 }
 
@@ -46,11 +46,11 @@ export function vec3Lerp(v1: IVec3, v2: IVec3, r: number, out = vec3Alloc()) {
 }
 
 export function vec3Normalize(vec: IVec3, out = vec3Alloc()) {
-  const lenSquared = vec3LengthSquared(vec);
-  if (lenSquared < ENGINE.epsilonSquared) {
+  const lenSq = vec3LengthSq(vec);
+  if (lenSq < ENGINE.epsilonSq) {
     return vec3Reset(NaN, NaN, NaN, out);
   } else {
-    const lenInverse = 1 / Math.sqrt(lenSquared);
+    const lenInverse = 1 / Math.sqrt(lenSq);
     return vec3Reset(lenInverse * vec.x, lenInverse * vec.y, lenInverse * vec.z, out);
   }
 }

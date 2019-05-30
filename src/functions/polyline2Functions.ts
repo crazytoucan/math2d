@@ -1,6 +1,6 @@
 import { IMat2x3, IPolyline2, IVec2 } from "../types";
 import { aabb2Alloc, aabb2IncludePoint, aabb2Reset } from "./aabb2Functions";
-import { vec2Alloc, vec2Distance, vec2Reset, vec2TransformBy, vec2Lerp, vec2DistanceSquared } from "./vec2Functions";
+import { vec2Alloc, vec2Distance, vec2Reset, vec2TransformBy, vec2Lerp, vec2DistanceSq } from "./vec2Functions";
 import { segment2Alloc, segment2Reset } from "./segment2Functions";
 import {
   IInternalSegmentGetNearestPointResult,
@@ -101,7 +101,7 @@ export function polyline2NearestVertexIndex(poly: IPolyline2, point: IVec2) {
   const len = polyline2GetNumSegments(poly);
   for (let i = 0; i < len; i++) {
     const v0 = vec2Reset(poly[2 * i], poly[2 * i + 1], TMP_VEC0);
-    const distanceSq = vec2DistanceSquared(point, v0);
+    const distanceSq = vec2DistanceSq(point, v0);
     if (distanceSq < winningDistanceSq) {
       winningDistanceSq = distanceSq;
       winningIndex = i;
@@ -162,7 +162,7 @@ export function polyline2IsClosed(poly: IPolyline2) {
   } else {
     const dx = poly[poly.length - 2] - poly[0];
     const dy = poly[poly.length - 1] - poly[1];
-    return dx * dx + dy * dy < ENGINE.epsilonSquared;
+    return dx * dx + dy * dy < ENGINE.epsilonSq;
   }
 }
 

@@ -27,7 +27,7 @@ export function vec2Distance(v1: IVec2, v2: IVec2) {
   return Math.sqrt(dx * dx + dy * dy);
 }
 
-export function vec2DistanceSquared(v1: IVec2, v2: IVec2) {
+export function vec2DistanceSq(v1: IVec2, v2: IVec2) {
   const dx = v1.x - v2.x;
   const dy = v1.y - v2.y;
   return dx * dx + dy * dy;
@@ -37,7 +37,7 @@ export function vec2Length(vec: IVec2) {
   return Math.sqrt(vec.x * vec.x + vec.y * vec.y);
 }
 
-export function vec2LengthSquared(vec: IVec2) {
+export function vec2LengthSq(vec: IVec2) {
   return vec.x * vec.x + vec.y * vec.y;
 }
 
@@ -46,11 +46,11 @@ export function vec2Lerp(v1: IVec2, v2: IVec2, r: number, out = vec2Alloc()) {
 }
 
 export function vec2Normalize(vec: IVec2, out = vec2Alloc()) {
-  const lenSquared = vec.x * vec.x + vec.y * vec.y;
-  if (lenSquared < ENGINE.epsilonSquared) {
+  const lenSq = vec.x * vec.x + vec.y * vec.y;
+  if (lenSq < ENGINE.epsilonSq) {
     return vec2Reset(NaN, NaN, out);
   } else {
-    const lenInverse = 1 / Math.sqrt(lenSquared);
+    const lenInverse = 1 / Math.sqrt(lenSq);
     return vec2Reset(lenInverse * vec.x, lenInverse * vec.y, out);
   }
 }

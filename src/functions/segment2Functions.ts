@@ -24,10 +24,10 @@ export function segment2GetEndpoint1(segment: ISegment2, out = vec2Alloc()) {
 }
 
 export function segment2Length(segment: ISegment2) {
-  return Math.sqrt(segment2LengthSquared(segment));
+  return Math.sqrt(segment2LengthSq(segment));
 }
 
-export function segment2LengthSquared(segment: ISegment2) {
+export function segment2LengthSq(segment: ISegment2) {
   const dx = segment.x1 - segment.x0;
   const dy = segment.y1 - segment.y0;
   return dx * dx + dy * dy;
