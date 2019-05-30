@@ -1,45 +1,45 @@
-import { IVec, ISegment } from "../types";
+import { IVec2, ISegment2 } from "../types";
 import {
-  vecAlloc,
-  vecSubtract,
-  vecDot,
-  vecGetLengthSquared,
-  vecDistance,
-  vecNormalize,
-  vecPerp,
-  vecReset,
-} from "../functions/vecFunctions";
+  vec2Alloc,
+  vec2Subtract,
+  vec2Dot,
+  vec2GetLengthSquared,
+  vec2Distance,
+  vec2Normalize,
+  vec2Perp,
+  vec2Reset,
+} from "../functions/vec2Functions";
 
 export interface IInternalSegmentGetNearestPointResult {
   d: number;
   distance: number;
 }
 
-const TMP_VEC0 = vecAlloc();
-const TMP_VEC1 = vecAlloc();
+const TMP_VEC0 = vec2Alloc();
+const TMP_VEC1 = vec2Alloc();
 
 export function internalSegmentGetNearestPoint(
-  segment: ISegment,
-  point: IVec,
+  segment: ISegment2,
+  point: IVec2,
   out: IInternalSegmentGetNearestPointResult,
 ) {
-  const v0 = vecReset(segment.x0, segment.y0, TMP_VEC0);
-  const v1 = vecReset(segment.x1, segment.y1, TMP_VEC1);
-  const dirVec = vecSubtract(v1, v0, TMP_VEC0);
-  const pVec = vecSubtract(point, v0, TMP_VEC1);
-  const dot = vecDot(dirVec, pVec);
-  const dirVecLengthSquared = vecGetLengthSquared(dirVec);
+  const v0 = vec2Reset(segment.x0, segment.y0, TMP_VEC0);
+  const v1 = vec2Reset(segment.x1, segment.y1, TMP_VEC1);
+  const dirVec = vec2Subtract(v1, v0, TMP_VEC0);
+  const pVec = vec2Subtract(point, v0, TMP_VEC1);
+  const dot = vec2Dot(dirVec, pVec);
+  const dirVecLengthSquared = vec2GetLengthSquared(dirVec);
   if (dot < 0) {
-    out.distance = vecDistance(point, v0);
+    out.distance = vec2Distance(point, v0);
     out.d = 0;
   } else if (dot > dirVecLengthSquared) {
-    out.distance = vecDistance(point, v1);
+    out.distance = vec2Distance(point, v1);
     out.d = Math.sqrt(dirVecLengthSquared);
   } else {
-    vecNormalize(dirVec, dirVec);
-    out.d = vecDot(dirVec, pVec);
-    vecPerp(dirVec, dirVec);
-    out.distance = Math.abs(vecDot(dirVec, pVec));
+    vec2Normalize(dirVec, dirVec);
+    out.d = vec2Dot(dirVec, pVec);
+    vec2Perp(dirVec, dirVec);
+    out.distance = Math.abs(vec2Dot(dirVec, pVec));
   }
 
   return out;

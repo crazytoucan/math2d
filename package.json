@@ -1,5 +1,5 @@
 {
-  "name": "m2d",
+  "name": "vecmath",
   "version": "0.0.0",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
