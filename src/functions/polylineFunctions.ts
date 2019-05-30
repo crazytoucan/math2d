@@ -3,7 +3,7 @@ import {
   internalSegmentGetNearestPoint,
 } from "../internal/internalSegmentFunctions";
 import { EPSILON_SQ } from "../internal/parameters";
-import { IMat2, IMat2x3, IPolyline, IVec } from "../types";
+import { IMat2x3, IPolyline, IVec } from "../types";
 import { boxAlloc, boxEncapsulate, boxReset } from "./boxFunctions";
 import { segmentAlloc, segmentReset } from "./segmentFunctions";
 import {
@@ -12,7 +12,6 @@ import {
   vecDistanceSq,
   vecLerp,
   vecReset,
-  vecTransformBy,
   vecTransformByAff,
 } from "./vecFunctions";
 
@@ -172,21 +171,6 @@ export function polylineIsClosed(poly: IPolyline) {
     const dy = poly[poly.length - 1] - poly[1];
     return dx * dx + dy * dy < EPSILON_SQ;
   }
-}
-
-export function polylineTransformBy(poly: IPolyline, mat: IMat2, out = polylineAlloc()) {
-  if (out.length !== poly.length) {
-    out.length = poly.length;
-  }
-
-  for (let i = 0; i < poly.length; i += 2) {
-    const v0 = vecReset(poly[i], poly[i + 1], TMP_VEC0);
-    vecTransformBy(v0, mat, v0);
-    out[i] = v0.x;
-    out[i + 1] = v0.y;
-  }
-
-  return out;
 }
 
 export function polylineTransformByAff(poly: IPolyline, mat: IMat2x3, out = polylineAlloc()) {

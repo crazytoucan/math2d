@@ -1,11 +1,10 @@
-import { IRay, IMat2x3, IVec, IMat2 } from "../types";
+import { IRay, IMat2x3, IVec } from "../types";
 import {
   vecAlloc,
   vecReset,
   vecSubtract,
   vecNormalize,
   vecTransformByAff,
-  vecTransformBy,
 } from "./vecFunctions";
 import { mat2x3Alloc, mat2x3Reset } from "./mat2x3Functions";
 
@@ -75,14 +74,6 @@ export function rayReset(x0: number, y0: number, dirX: number, dirY: number, out
   out.dirX = dirX;
   out.dirY = dirY;
   return out;
-}
-
-export function rayTransformBy(ray: IRay, mat: IMat2, out = rayAlloc()) {
-  vecReset(ray.x0, ray.y0, TMP_VEC0);
-  vecTransformBy(TMP_VEC0, mat, TMP_VEC0);
-  vecReset(ray.x0 + ray.dirX, ray.y0 + ray.dirY, TMP_VEC1);
-  vecTransformBy(TMP_VEC1, mat, TMP_VEC1);
-  return rayLookAt(TMP_VEC0, TMP_VEC1, out);
 }
 
 export function rayTransformByAff(ray: IRay, mat: IMat2x3, out = rayAlloc()) {

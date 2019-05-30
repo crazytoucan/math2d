@@ -1,4 +1,4 @@
-import { IMat2x3, IPolygon, IVec, IMat2 } from "../types";
+import { IMat2x3, IPolygon, IVec } from "../types";
 import { boxAlloc } from "./boxFunctions";
 import {
   polylineGetBounds,
@@ -11,7 +11,6 @@ import {
   polylineGetPointAt,
   polylineGetNearestT,
   polylineGetNearestVertexIndex,
-  polylineTransformBy,
 } from "./polylineFunctions";
 import { vecAlloc, vecReset } from "./vecFunctions";
 import { segmentAlloc, segmentReset } from "./segmentFunctions";
@@ -125,10 +124,6 @@ export function polygonGetSideIndexAt(poly: IPolygon, t: number) {
 
 export function polygonGetSideLength(poly: IPolygon, idx: number) {
   return polylineGetSegmentLength(asPolylineInternal(poly), idx);
-}
-
-export function polygonTransformBy(poly: IPolygon, mat: IMat2, out = polygonAlloc()) {
-  return polylineTransformBy(poly, mat, out);
 }
 
 export function polygonTransformByAff(poly: IPolygon, mat: IMat2x3, out = polygonAlloc()) {

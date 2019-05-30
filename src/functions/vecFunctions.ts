@@ -1,4 +1,4 @@
-import { IVec, IMat2x3, IMat2 } from "../types";
+import { IVec, IMat2x3 } from "../types";
 import { EPSILON_SQ } from "../internal/parameters";
 
 class Vec2 implements IVec {
@@ -75,10 +75,6 @@ export function vecScale(vec: IVec, scalar: number, out = vecAlloc()) {
 
 export function vecSubtract(a: IVec, b: IVec, out = vecAlloc()) {
   return vecReset(a.x - b.x, a.y - b.y, out);
-}
-
-export function vecTransformBy(vec: IVec, mat: IMat2, out = vecAlloc()) {
-  return vecReset(mat.m11 * vec.x + mat.m21 * vec.y, mat.m12 * vec.x + mat.m22 * vec.y, out);
 }
 
 export function vecTransformByAff(vec: IVec, mat: IMat2x3, out = vecAlloc()) {

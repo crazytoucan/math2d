@@ -17,13 +17,6 @@ export interface IRay {
   dirY: number;
 }
 
-export interface IMat2 {
-  m11: number;
-  m12: number;
-  m21: number;
-  m22: number;
-}
-
 export interface IMat2x3 {
   a: number;
   b: number;

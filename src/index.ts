@@ -10,19 +10,9 @@ export {
   boxIntersects,
   boxIsEmpty,
   boxReset,
-  boxTransformBy,
   boxTransformByAff,
   boxUnion,
 } from "./functions/boxFunctions";
-export {
-  mat2Alloc,
-  mat2Clone,
-  mat2Determinant,
-  mat2Invert,
-  mat2MulMat2,
-  mat2Reset,
-  mat2Scale,
-} from "./functions/mat2Functions";
 export {
   mat2x3AffDeterminant,
   mat2x3AffInvert,
@@ -46,7 +36,6 @@ export {
   polygonGetSideIndexAt,
   polygonGetSideLength,
   polygonGetSideSegment,
-  polygonTransformBy,
   polygonTransformByAff,
 } from "./functions/polygonFunctions";
 export {
@@ -63,7 +52,6 @@ export {
   polylineGetSegmentIndexAt,
   polylineGetSegmentLength,
   polylineIsClosed,
-  polylineTransformBy,
   polylineTransformByAff,
 } from "./functions/polylineFunctions";
 export {
@@ -76,7 +64,6 @@ export {
   rayLookAt,
   rayPointAt,
   rayReset,
-  rayTransformBy,
   rayTransformByAff,
 } from "./functions/rayFunctions";
 export {
@@ -106,7 +93,6 @@ export {
   vecReset,
   vecScale,
   vecSubtract,
-  vecTransformBy,
   vecTransformByAff,
 } from "./functions/vecFunctions";
-export { IBox, IMat2, IMat2x3, IPolygon, IPolyline, IRay, ISegment, IVec } from "./types";
+export { IBox, IMat2x3, IPolygon, IPolyline, IRay, ISegment, IVec } from "./types";
