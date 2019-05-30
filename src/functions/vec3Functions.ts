@@ -1,5 +1,5 @@
 import { IVec3, IMat3 } from "../types";
-import { ENGINE } from "../internal/engine";
+import { EPSILON_SQ } from "../internal/parameters";
 
 class Vec3 implements IVec3 {
   constructor(public x = NaN, public y = NaN, public z = NaN) {}
@@ -51,7 +51,7 @@ export function vec3GetManhattanLength(vec: IVec3) {
 
 export function vec3Normalize(vec: IVec3, out = vec3Alloc()) {
   const lenSq = vec3GetLengthSq(vec);
-  if (lenSq < ENGINE.epsilonSq) {
+  if (lenSq < EPSILON_SQ) {
     return vec3Reset(NaN, NaN, NaN, out);
   } else {
     const lenInverse = 1 / Math.sqrt(lenSq);

@@ -1,5 +1,5 @@
-import { ENGINE } from "../internal/engine";
 import { IMat3 } from "../types";
+import { EPSILON } from "../internal/parameters";
 
 class Mat3 implements IMat3 {
   constructor(
@@ -40,7 +40,7 @@ export function mat3Invert(mat: IMat3, out = mat3Alloc()) {
   const t13 = mat.m23 * mat.m12 - mat.m22 * mat.m13;
   const det = mat.m11 * t11 + mat.m21 * t12 + mat.m31 * t13;
 
-  if (det < ENGINE.epsilon) {
+  if (det < EPSILON) {
     return mat3Reset(NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, out);
   } else {
     const detInverse = 1 / det;

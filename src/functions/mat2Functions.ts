@@ -1,5 +1,5 @@
-import { ENGINE } from "../internal/engine";
 import { IMat2 } from "../types";
+import { EPSILON } from "../internal/parameters";
 
 class Mat2 implements IMat2 {
   constructor(public m11 = NaN, public m12 = NaN, public m21 = NaN, public m22 = NaN) {}
@@ -19,7 +19,7 @@ export function mat2Determinant(mat: IMat2) {
 
 export function mat2Invert(mat: IMat2, out = mat2Alloc()) {
   const det = mat2Determinant(mat);
-  if (det < ENGINE.epsilon) {
+  if (det < EPSILON) {
     return mat2Reset(NaN, NaN, NaN, NaN, out);
   } else {
     const detInverse = 1 / det;

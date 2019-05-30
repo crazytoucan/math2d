@@ -13,9 +13,10 @@ import {
   polyline2GetNearestVertexIndex,
   polyline2TransformBy,
 } from "./polyline2Functions";
-import { ENGINE } from "../internal/engine";
 import { vec2Alloc, vec2Reset } from "./vec2Functions";
 import { segment2Alloc, segment2Reset } from "./segment2Functions";
+import { ALLOCATOR } from "../internal/allocator";
+import { EPSILON } from "../internal/parameters";
 
 function asPolylineInternal(poly: IPolygon2) {
   if (poly.length === 0) {
@@ -23,7 +24,7 @@ function asPolylineInternal(poly: IPolygon2) {
   } else if (polyline2IsClosed(poly)) {
     return poly;
   } else {
-    const alloc = ENGINE.allocArray(0, poly.length + 2);
+    const alloc = ALLOCATOR.allocArray(0, poly.length + 2);
     polyline2Close(poly, alloc);
     return alloc;
   }
@@ -68,7 +69,7 @@ export function polygon2GetNearestT(poly: IPolygon2, point: IVec2) {
   }
 
   const perimeter = polygon2GetPerimeter(poly);
-  if (perimeter < ENGINE.epsilon) {
+  if (perimeter < EPSILON) {
     return 0;
   }
 

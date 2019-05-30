@@ -1,5 +1,5 @@
-import { ENGINE } from "../internal/engine";
 import { IMat2x3 } from "../types";
+import { EPSILON } from "../internal/parameters";
 
 class Mat2x3 implements IMat2x3 {
   constructor(public a = NaN, public b = NaN, public c = NaN, public d = NaN, public e = NaN, public f = NaN) {}
@@ -25,7 +25,7 @@ export function mat2x3AffDeterminant(mat: IMat2x3) {
 
 export function mat2x3AffInvert(mat: IMat2x3, out = mat2x3Alloc()) {
   const det = mat.a * mat.d - mat.b * mat.c;
-  if (det < ENGINE.epsilon) {
+  if (det < EPSILON) {
     return mat2x3Reset(NaN, NaN, NaN, NaN, NaN, NaN, out);
   } else {
     const detInverse = 1 / det;

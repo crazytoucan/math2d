@@ -1,12 +1,20 @@
-import { IMat2x3, IPolyline2, IVec2, IMat2 } from "../types";
-import { box2Alloc, box2Encapsulate, box2Reset } from "./box2Functions";
-import { vec2Alloc, vec2Distance, vec2Reset, vec2TransformByAff, vec2Lerp, vec2DistanceSq, vec2TransformBy } from "./vec2Functions";
-import { segment2Alloc, segment2Reset } from "./segment2Functions";
 import {
   IInternalSegmentGetNearestPointResult,
   internalSegmentGetNearestPoint,
 } from "../internal/internalSegmentFunctions";
-import { ENGINE } from "../internal/engine";
+import { EPSILON_SQ } from "../internal/parameters";
+import { IMat2, IMat2x3, IPolyline2, IVec2 } from "../types";
+import { box2Alloc, box2Encapsulate, box2Reset } from "./box2Functions";
+import { segment2Alloc, segment2Reset } from "./segment2Functions";
+import {
+  vec2Alloc,
+  vec2Distance,
+  vec2DistanceSq,
+  vec2Lerp,
+  vec2Reset,
+  vec2TransformBy,
+  vec2TransformByAff,
+} from "./vec2Functions";
 
 const TMP_VEC0 = vec2Alloc();
 const TMP_VEC1 = vec2Alloc();
@@ -162,7 +170,7 @@ export function polyline2IsClosed(poly: IPolyline2) {
   } else {
     const dx = poly[poly.length - 2] - poly[0];
     const dy = poly[poly.length - 1] - poly[1];
-    return dx * dx + dy * dy < ENGINE.epsilonSq;
+    return dx * dx + dy * dy < EPSILON_SQ;
   }
 }
 

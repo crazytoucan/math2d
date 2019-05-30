@@ -1,5 +1,5 @@
 import { IVec2, IMat2x3, IMat2 } from "../types";
-import { ENGINE } from "../internal/engine";
+import { EPSILON_SQ } from "../internal/parameters";
 
 class Vec2 implements IVec2 {
   constructor(public x = NaN, public y = NaN) {}
@@ -51,7 +51,7 @@ export function vec2GetManhattanLength(vec: IVec2) {
 
 export function vec2Normalize(vec: IVec2, out = vec2Alloc()) {
   const lenSq = vec.x * vec.x + vec.y * vec.y;
-  if (lenSq < ENGINE.epsilonSq) {
+  if (lenSq < EPSILON_SQ) {
     return vec2Reset(NaN, NaN, out);
   } else {
     const lenInverse = 1 / Math.sqrt(lenSq);

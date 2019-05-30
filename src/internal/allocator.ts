@@ -1,12 +1,8 @@
-export interface IEngineInternal {
-  epsilon: number;
-  epsilonSq: number;
+export interface IAllocator {
   allocArray(slot: number, length: number): number[];
 }
 
-class DefaultEngine implements IEngineInternal {
-  public epsilon = 1e-8;
-  public epsilonSq = 1e-16;
+class DefaultAllocator implements IAllocator {
   public allocArray(slot: number, length: number) {
     const allocated = this.allocatedSlots[slot][length];
     if (allocated !== undefined) {
@@ -33,4 +29,4 @@ class DefaultEngine implements IEngineInternal {
   private scheduledGc: number | undefined;
 }
 
-export const ENGINE: IEngineInternal = new DefaultEngine();
+export const ALLOCATOR: IAllocator = new DefaultAllocator();
