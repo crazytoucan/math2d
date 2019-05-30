@@ -1,15 +1,15 @@
 import { ENGINE } from "../internal/engine";
-import { IMat2x3 } from "../types";
+import { IAffineMatrix } from "../types";
 
-class Mat2x3 implements IMat2x3 {
+class AffineMatrix implements IAffineMatrix {
   constructor(public a = NaN, public b = NaN, public c = NaN, public d = NaN, public e = NaN, public f = NaN) {}
 }
 
-export function mat2x3Alloc(): IMat2x3 {
-  return new Mat2x3();
+export function affineMatrixAlloc(): IAffineMatrix {
+  return new AffineMatrix();
 }
 
-export function mat2x3Clone(mat: IMat2x3, out = mat2x3Alloc()) {
+export function affineMatrixClone(mat: IAffineMatrix, out = affineMatrixAlloc()) {
   out.a = mat.a;
   out.b = mat.b;
   out.c = mat.c;
@@ -19,14 +19,14 @@ export function mat2x3Clone(mat: IMat2x3, out = mat2x3Alloc()) {
   return out;
 }
 
-export function mat2x3GetDeterminant(mat: IMat2x3) {
+export function affineMatrixGetDeterminant(mat: IAffineMatrix) {
   return mat.a * mat.d - mat.b * mat.c;
 }
 
-export function mat2x3Invert(mat: IMat2x3, out = mat2x3Alloc()) {
+export function affineMatrixInvert(mat: IAffineMatrix, out = affineMatrixAlloc()) {
   const det = mat.a * mat.d - mat.b * mat.c;
   if (det < ENGINE.epsilon) {
-    return mat2x3Reset(NaN, NaN, NaN, NaN, NaN, NaN, out);
+    return affineMatrixReset(NaN, NaN, NaN, NaN, NaN, NaN, out);
   } else {
     const detInverse = 1 / det;
     const a = detInverse * mat.d;
@@ -35,25 +35,33 @@ export function mat2x3Invert(mat: IMat2x3, out = mat2x3Alloc()) {
     const d = detInverse * mat.a;
     const e = detInverse * (mat.c * mat.f - mat.d * mat.e);
     const f = detInverse * (mat.b * mat.e - mat.a * mat.f);
-    return mat2x3Reset(a, b, c, d, e, f, out);
+    return affineMatrixReset(a, b, c, d, e, f, out);
   }
 }
 
-export function mat2x3IsTranslationOnly(mat: IMat2x3) {
+export function affineMatrixIsTranslationOnly(mat: IAffineMatrix) {
   return mat.a === 1 && mat.b === 0 && mat.c === 0 && mat.d === 1;
 }
 
-export function mat2x3MulMat2x3(m1: IMat2x3, m2: IMat2x3, out = mat2x3Alloc()) {
+export function affineMatrixMulMat2x3(m1: IAffineMatrix, m2: IAffineMatrix, out = affineMatrixAlloc()) {
   const a = m1.a * m2.a + m1.c * m2.b;
   const b = m1.b * m2.a + m1.d * m2.b;
   const c = m1.a * m2.c + m1.c * m2.d;
   const d = m1.b * m2.c + m1.d * m2.d;
   const e = m1.a * m2.e + m1.c * m2.f + m1.e;
   const f = m1.b * m2.e + m1.c * m2.f + m1.f;
-  return mat2x3Reset(a, b, c, d, e, f, out);
+  return affineMatrixReset(a, b, c, d, e, f, out);
 }
 
-export function mat2x3Reset(a: number, b: number, c: number, d: number, e: number, f: number, out = mat2x3Alloc()) {
+export function affineMatrixReset(
+  a: number,
+  b: number,
+  c: number,
+  d: number,
+  e: number,
+  f: number,
+  out = affineMatrixAlloc(),
+) {
   out.a = a;
   out.b = b;
   out.c = c;
@@ -63,7 +71,7 @@ export function mat2x3Reset(a: number, b: number, c: number, d: number, e: numbe
   return out;
 }
 
-export function mat2x3Scale(mat: IMat2x3, scalar: number, out = mat2x3Alloc()) {
+export function affineMatrixScale(mat: IAffineMatrix, scalar: number, out = affineMatrixAlloc()) {
   out.a = scalar * mat.a;
   out.b = scalar * mat.b;
   out.c = scalar * mat.c;

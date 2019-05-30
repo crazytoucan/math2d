@@ -1,23 +1,23 @@
-export interface IVec2 {
+export interface IVec {
   x: number;
   y: number;
 }
 
-export interface ILineSegment2 {
+export interface ISegment {
   x0: number;
   y0: number;
   x1: number;
   y1: number;
 }
 
-export interface IRay2 {
+export interface IRay {
   x0: number;
   y0: number;
   dirX: number;
   dirY: number;
 }
 
-export interface IMat2x3 {
+export interface IAffineMatrix {
   a: number;
   b: number;
   c: number;
@@ -26,12 +26,12 @@ export interface IMat2x3 {
   f: number;
 }
 
-export interface IAabb2 {
+export interface IAabb {
   minX: number;
   maxX: number;
   minY: number;
   maxY: number;
 }
 
-export type IPolygon2 = number[];
-export type IPolyline2 = number[];
+export type IPolygon = number[];
+export type IPolyline = number[];
