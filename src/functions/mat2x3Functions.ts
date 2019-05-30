@@ -19,11 +19,11 @@ export function mat2x3Clone(mat: IMat2x3, out = mat2x3Alloc()) {
   return out;
 }
 
-export function mat2x3GetDeterminant(mat: IMat2x3) {
+export function mat2x3AffDeterminant(mat: IMat2x3) {
   return mat.a * mat.d - mat.b * mat.c;
 }
 
-export function mat2x3Invert(mat: IMat2x3, out = mat2x3Alloc()) {
+export function mat2x3AffInvert(mat: IMat2x3, out = mat2x3Alloc()) {
   const det = mat.a * mat.d - mat.b * mat.c;
   if (det < ENGINE.epsilon) {
     return mat2x3Reset(NaN, NaN, NaN, NaN, NaN, NaN, out);
@@ -39,11 +39,11 @@ export function mat2x3Invert(mat: IMat2x3, out = mat2x3Alloc()) {
   }
 }
 
-export function mat2x3IsTranslationOnly(mat: IMat2x3) {
+export function mat2x3AffIsTranslationOnly(mat: IMat2x3) {
   return mat.a === 1 && mat.b === 0 && mat.c === 0 && mat.d === 1;
 }
 
-export function mat2x3MulMat2x3(m1: IMat2x3, m2: IMat2x3, out = mat2x3Alloc()) {
+export function mat2x3AffMulMat2x3Aff(m1: IMat2x3, m2: IMat2x3, out = mat2x3Alloc()) {
   const a = m1.a * m2.a + m1.c * m2.b;
   const b = m1.b * m2.a + m1.d * m2.b;
   const c = m1.a * m2.c + m1.c * m2.d;

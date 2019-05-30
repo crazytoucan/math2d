@@ -1,16 +1,17 @@
-import { IMat2x3, IPolygon2, IVec2 } from "../types";
+import { IMat2x3, IPolygon2, IVec2, IMat2 } from "../types";
 import { aabb2Alloc } from "./aabb2Functions";
 import {
-  polyline2Bounds,
-  polyline2Length,
-  polyline2TransformBy,
+  polyline2GetBounds,
+  polyline2GetLength,
+  polyline2TransformByAff,
   polyline2IsClosed,
   polyline2Close,
-  polyline2SegmentLength,
-  polyline2SegmentIndexAt,
-  polyline2PointAt,
-  polyline2NearestT,
-  polyline2NearestVertexIndex,
+  polyline2GetSegmentLength,
+  polyline2GetSegmentIndexAt,
+  polyline2GetPointAt,
+  polyline2GetNearestT,
+  polyline2GetNearestVertexIndex,
+  polyline2TransformBy,
 } from "./polyline2Functions";
 import { ENGINE } from "../internal/engine";
 import { vec2Alloc, vec2Reset } from "./vec2Functions";
@@ -32,8 +33,8 @@ export function polygon2Alloc(): IPolygon2 {
   return [];
 }
 
-export function polygon2Bounds(poly: IPolygon2, out = aabb2Alloc()) {
-  return polyline2Bounds(poly, out);
+export function polygon2GetBounds(poly: IPolygon2, out = aabb2Alloc()) {
+  return polyline2GetBounds(poly, out);
 }
 
 export function polygon2ContainsPoint(poly: IPolygon2, point: IVec2) {
@@ -56,11 +57,51 @@ export function polygon2ContainsPoint(poly: IPolygon2, point: IVec2) {
   return inside;
 }
 
+export function polygon2GetNearestPoint(poly: IPolygon2, point: IVec2, out = vec2Alloc()) {
+  const d = polyline2GetNearestT(poly, point);
+  return polyline2GetPointAt(poly, d, out);
+}
+
+export function polygon2GetNearestT(poly: IPolygon2, point: IVec2) {
+  if (poly.length === 0) {
+    return NaN;
+  }
+
+  const perimeter = polygon2GetPerimeter(poly);
+  if (perimeter < ENGINE.epsilon) {
+    return 0;
+  }
+
+  return polyline2GetNearestT(asPolylineInternal(poly), point);
+}
+
+export function polygon2GetNearestVertexIndex(poly: IPolygon2, point: IVec2) {
+  return polyline2GetNearestVertexIndex(poly, point);
+}
+
 export function polygon2GetNumSides(poly: IPolygon2) {
   return poly.length / 2;
 }
 
-export function polygon2GetSide(poly: IPolygon2, index: number, out = segment2Alloc()) {
+export function polygon2GetPerimeter(poly: IPolygon2) {
+  return polyline2GetLength(asPolylineInternal(poly));
+}
+
+export function polygon2GetPointAt(poly: IPolygon2, t: number, out = vec2Alloc()) {
+  if (poly.length === 0) {
+    return vec2Reset(NaN, NaN, out);
+  }
+
+  const perimeter = polygon2GetPerimeter(poly);
+  if (perimeter < ENGINE.epsilon) {
+    return vec2Reset(poly[0], poly[1], out);
+  }
+
+  t = ((t % perimeter) + perimeter) % perimeter;
+  return polyline2GetPointAt(asPolylineInternal(poly), t, out);
+}
+
+export function polygon2GetSideSegment(poly: IPolygon2, index: number, out = segment2Alloc()) {
   if (poly.length === 0) {
     return segment2Reset(NaN, NaN, NaN, NaN, out);
   } else if (index === poly.length / 2) {
@@ -71,60 +112,24 @@ export function polygon2GetSide(poly: IPolygon2, index: number, out = segment2Al
   }
 }
 
-export function polygon2Nearest(poly: IPolygon2, point: IVec2, out = vec2Alloc()) {
-  const d = polyline2NearestT(poly, point);
-  return polyline2PointAt(poly, d, out);
-}
-
-export function polygon2NearestT(poly: IPolygon2, point: IVec2) {
-  if (poly.length === 0) {
-    return NaN;
-  }
-
-  const perimeter = polygon2Perimeter(poly);
-  if (perimeter < ENGINE.epsilon) {
-    return 0;
-  }
-
-  return polyline2NearestT(asPolylineInternal(poly), point);
-}
-
-export function polygon2NearestVertex(poly: IPolygon2, point: IVec2) {
-  return polyline2NearestVertexIndex(poly, point);
-}
-
-export function polygon2Perimeter(poly: IPolygon2) {
-  return polyline2Length(asPolylineInternal(poly));
-}
-
-export function polygon2PointAt(poly: IPolygon2, t: number, out = vec2Alloc()) {
-  if (poly.length === 0) {
-    return vec2Reset(NaN, NaN, out);
-  }
-
-  const perimeter = polygon2Perimeter(poly);
-  if (perimeter < ENGINE.epsilon) {
-    return vec2Reset(poly[0], poly[1], out);
-  }
-
-  t = ((t % perimeter) + perimeter) % perimeter;
-  return polyline2PointAt(asPolylineInternal(poly), t, out);
-}
-
-export function polygon2SideIndexAt(poly: IPolygon2, t: number) {
-  const perimeter = polygon2Perimeter(poly);
+export function polygon2GetSideIndexAt(poly: IPolygon2, t: number) {
+  const perimeter = polygon2GetPerimeter(poly);
   if (perimeter < ENGINE.epsilon) {
     return 0;
   }
 
   t = ((t % perimeter) + perimeter) % perimeter;
-  return polyline2SegmentIndexAt(asPolylineInternal(poly), t);
+  return polyline2GetSegmentIndexAt(asPolylineInternal(poly), t);
 }
 
-export function polygon2SideLength(poly: IPolygon2, idx: number) {
-  return polyline2SegmentLength(asPolylineInternal(poly), idx);
+export function polygon2GetSideLength(poly: IPolygon2, idx: number) {
+  return polyline2GetSegmentLength(asPolylineInternal(poly), idx);
 }
 
-export function polygon2TransformBy(poly: IPolygon2, mat: IMat2x3, out = polygon2Alloc()) {
+export function polygon2TransformBy(poly: IPolygon2, mat: IMat2, out = polygon2Alloc()) {
   return polyline2TransformBy(poly, mat, out);
+}
+
+export function polygon2TransformByAff(poly: IPolygon2, mat: IMat2x3, out = polygon2Alloc()) {
+  return polyline2TransformByAff(poly, mat, out);
 }

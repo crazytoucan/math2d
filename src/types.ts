@@ -24,10 +24,10 @@ export interface IRay2 {
 }
 
 export interface IMat2 {
-  a: number;
-  b: number;
-  c: number;
-  d: number;
+  m11: number;
+  m12: number;
+  m21: number;
+  m22: number;
 }
 
 export interface IMat2x3 {

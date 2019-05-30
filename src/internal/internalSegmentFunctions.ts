@@ -3,7 +3,7 @@ import {
   vec2Alloc,
   vec2Subtract,
   vec2Dot,
-  vec2LengthSq,
+  vec2GetLengthSq,
   vec2Distance,
   vec2Normalize,
   vec2Perp,
@@ -28,7 +28,7 @@ export function internalSegmentGetNearestPoint(
   const dirVec = vec2Subtract(v1, v0, TMP_VEC0);
   const pVec = vec2Subtract(point, v0, TMP_VEC1);
   const dot = vec2Dot(dirVec, pVec);
-  const dirVecLengthSq = vec2LengthSq(dirVec);
+  const dirVecLengthSq = vec2GetLengthSq(dirVec);
   if (dot < 0) {
     out.distance = vec2Distance(point, v0);
     out.d = 0;
