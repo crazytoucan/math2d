@@ -12,6 +12,15 @@ export {
   aabb2Union,
 } from "./functions/aabb2Functions";
 export {
+  mat2Alloc,
+  mat2Clone,
+  mat2Determinant,
+  mat2Invert,
+  mat2MulMat2,
+  mat2Reset,
+  mat2Scale,
+} from "./functions/mat2Functions";
+export {
   mat2x3AffDeterminant,
   mat2x3AffInvert,
   mat2x3AffIsTranslationOnly,
@@ -21,6 +30,15 @@ export {
   mat2x3Reset,
   mat2x3Scale,
 } from "./functions/mat2x3Functions";
+export {
+  mat3Alloc,
+  mat3Clone,
+  mat3Determinant,
+  mat3Invert,
+  mat3MulMat3,
+  mat3Reset,
+  mat3Scale,
+} from "./functions/mat3Functions";
 export {
   polygon2Alloc,
   polygon2ContainsPoint,
@@ -112,5 +130,6 @@ export {
   vec3Reset,
   vec3Scale,
   vec3Subtract,
+  vec3TransformBy,
 } from "./functions/vec3Functions";
-export { IAabb2, IMat2, IMat2x3, IPolygon2, IPolyline2, IRay2, ISegment2, IVec2, IVec3 } from "./types";
+export { IAabb2, IMat2, IMat2x3, IMat3, IPolygon2, IPolyline2, IRay2, ISegment2, IVec2, IVec3 } from "./types";

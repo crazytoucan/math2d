@@ -1,4 +1,4 @@
-import { IVec3 } from "../types";
+import { IVec3, IMat3 } from "../types";
 import { ENGINE } from "../internal/engine";
 
 class Vec3 implements IVec3 {
@@ -72,4 +72,13 @@ export function vec3Scale(vec: IVec3, scalar: number, out = vec3Alloc()) {
 
 export function vec3Subtract(a: IVec3, b: IVec3, out = vec3Alloc()) {
   return vec3Reset(a.x - b.x, a.y - b.y, a.z - b.z, out);
+}
+
+export function vec3TransformBy(vec: IVec3, mat: IMat3, out = vec3Alloc()) {
+  return vec3Reset(
+    mat.m11 * vec.x + mat.m21 * vec.y + mat.m31 * vec.z,
+    mat.m12 * vec.x + mat.m22 * vec.y + mat.m32 * vec.z,
+    mat.m13 * vec.x + mat.m23 * vec.y + mat.m33 * vec.z,
+    out,
+  );
 }
