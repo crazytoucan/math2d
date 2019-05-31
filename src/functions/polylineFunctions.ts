@@ -1,20 +1,8 @@
-import {
-  ISegmentGetNearestPointResult,
-  _segmentGetNearestPoint,
-} from "../internal/internalSegmentFunctions";
 import { EPSILON_SQ } from "../internal/parameters";
 import { IMat2x3, IPolyline, IVec } from "../types";
 import { boxAlloc, boxEncapsulate, boxReset } from "./boxFunctions";
-import { segmentAlloc, segmentReset } from "./segmentFunctions";
-import { vecAlloc, vecDistance, vecDistanceSq, vecLerp, vecReset, vecTransformByAff } from "./vecFunctions";
-
-const TMP_VEC0 = vecAlloc();
-const TMP_VEC1 = vecAlloc();
-const TMP_SEGMENT = segmentAlloc();
-const TMP_NEAREST_POINT_RESULT: ISegmentGetNearestPointResult = {
-  d: NaN,
-  distance: NaN,
-};
+import { segmentAlloc, segmentGetNearestT, segmentPointAt, segmentReset } from "./segmentFunctions";
+import { vecAlloc, vecDistanceSq, vecLerp, vecReset, vecTransformByAff } from "./vecFunctions";
 
 export function polylineAlloc(): IPolyline {
   return [];
@@ -40,10 +28,11 @@ export function polylineClose(poly: IPolyline, out = polylineAlloc()) {
   return length;
 }
 
+const TMP_polylineGetBounds_0 = vecAlloc();
 export function polylineGetBounds(poly: IPolyline, out = boxAlloc()) {
   boxReset(Infinity, -Infinity, Infinity, -Infinity, out);
   for (let i = 0; i < poly.length; i += 2) {
-    const v0 = vecReset(poly[i], poly[i + 1], TMP_VEC0);
+    const v0 = vecReset(poly[i], poly[i + 1], TMP_polylineGetBounds_0);
     boxEncapsulate(out, v0, out);
   }
 
@@ -55,32 +44,39 @@ export function polylineGetNearestPoint(poly: IPolyline, point: IVec, out = vecA
   return polylineGetPointAt(poly, d, out);
 }
 
+const TMP_polylineGetNearestT_0 = segmentAlloc();
+const TMP_polylineGetNearestT_1 = vecAlloc();
 export function polylineGetNearestT(poly: IPolyline, point: IVec) {
-  let winningDistance = Infinity;
+  let winningDistanceSq = Infinity;
   let winningD = NaN;
 
   let traversed = 0;
   const len = polylineGetNumSegments(poly);
   for (let i = 0; i < len; i++) {
-    const segment = polylineGetSegment(poly, i, TMP_SEGMENT);
-    const result = _segmentGetNearestPoint(segment, point, TMP_NEAREST_POINT_RESULT);
-    if (result.distance < winningDistance) {
-      winningDistance = result.distance;
-      winningD = traversed + result.d;
+    const segment = polylineGetSegment(poly, i, TMP_polylineGetNearestT_0);
+    const segmentT = segmentGetNearestT(segment, point);
+    const segmentLength = polylineGetSegmentLength(poly, i);
+
+    const closestPointOnSegment = segmentPointAt(segment, segmentT, TMP_polylineGetNearestT_1);
+    const distanceSq = vecDistanceSq(point, closestPointOnSegment);
+    if (distanceSq < winningDistanceSq) {
+      winningDistanceSq = distanceSq;
+      winningD = traversed + segmentT * segmentLength;
     }
 
-    traversed += polylineGetSegmentLength(poly, i);
+    traversed += segmentLength;
   }
 
   return winningD;
 }
 
+const TMP_polylineGetNearestVertexIndex_0 = vecAlloc();
 export function polylineGetNearestVertexIndex(poly: IPolyline, point: IVec) {
   let winningDistanceSq = Infinity;
   let winningIndex = NaN;
   const len = polylineGetNumSegments(poly);
   for (let i = 0; i < len; i++) {
-    const v0 = vecReset(poly[2 * i], poly[2 * i + 1], TMP_VEC0);
+    const v0 = vecReset(poly[2 * i], poly[2 * i + 1], TMP_polylineGetNearestVertexIndex_0);
     const distanceSq = vecDistanceSq(point, v0);
     if (distanceSq < winningDistanceSq) {
       winningDistanceSq = distanceSq;
@@ -95,7 +91,8 @@ export function polylineGetNumSegments(poly: IPolyline) {
   return poly.length / 2 - 1;
 }
 
-
+const TMP_polylineGetPointAt_0 = vecAlloc();
+const TMP_polylineGetPointAt_1 = vecAlloc();
 export function polylineGetPointAt(poly: IPolyline, d: number, out = vecAlloc()) {
   if (d < 0) {
     return vecReset(NaN, NaN, out);
@@ -106,8 +103,8 @@ export function polylineGetPointAt(poly: IPolyline, d: number, out = vecAlloc())
   while (idx < len) {
     const segmentLength = polylineGetSegmentLength(poly, idx);
     if (d <= segmentLength) {
-      const v0 = vecReset(poly[2 * idx], poly[2 * idx + 1], TMP_VEC0);
-      const v1 = vecReset(poly[2 * idx + 2], poly[2 * idx + 3], TMP_VEC1);
+      const v0 = vecReset(poly[2 * idx], poly[2 * idx + 1], TMP_polylineGetPointAt_0);
+      const v1 = vecReset(poly[2 * idx + 2], poly[2 * idx + 3], TMP_polylineGetPointAt_1);
       return vecLerp(v0, v1, d / segmentLength, out);
     } else {
       d -= segmentLength;
@@ -124,11 +121,10 @@ export function polylineGetSegment(poly: IPolyline, index: number, out = segment
 }
 
 export function polylineGetLength(poly: IPolyline) {
+  const numSegments = polylineGetNumSegments(poly);
   let length = 0;
-  for (let i = 0; i < poly.length - 2; i += 2) {
-    const v0 = vecReset(poly[i], poly[i + 1], TMP_VEC0);
-    const v1 = vecReset(poly[i + 2], poly[i + 3], TMP_VEC1);
-    length += vecDistance(v0, v1);
+  for (let i = 0; i < numSegments; i++) {
+    length += polylineGetSegmentLength(poly, i);
   }
 
   return length;
@@ -139,10 +135,10 @@ export function polylineGetSegmentIndexAt(poly: IPolyline, d: number) {
     return -1;
   }
 
-  const len = polylineGetNumSegments(poly);
+  const numSegments = polylineGetNumSegments(poly);
   let traversed = 0;
   let idx = 0;
-  while (idx < len && traversed < d) {
+  while (idx < numSegments && traversed < d) {
     traversed += polylineGetSegmentLength(poly, idx);
     ++idx;
   }
@@ -152,9 +148,9 @@ export function polylineGetSegmentIndexAt(poly: IPolyline, d: number) {
 
 export function polylineGetSegmentLength(poly: IPolyline, idx: number) {
   const l = 2 * idx;
-  const v0 = vecReset(poly[l], poly[l + 1], TMP_VEC0);
-  const v1 = vecReset(poly[l + 2], poly[l + 3], TMP_VEC1);
-  return vecDistance(v0, v1);
+  const dx = poly[l + 2] - poly[l];
+  const dy = poly[l + 3] - poly[l + 1];
+  return Math.sqrt(dx * dx + dy * dy);
 }
 
 export function polylineIsClosed(poly: IPolyline) {
@@ -167,13 +163,14 @@ export function polylineIsClosed(poly: IPolyline) {
   }
 }
 
+const TMP_polylineTransformByAff_0 = vecAlloc();
 export function polylineTransformByAff(poly: IPolyline, mat: IMat2x3, out = polylineAlloc()) {
   if (out.length !== poly.length) {
     out.length = poly.length;
   }
 
   for (let i = 0; i < poly.length; i += 2) {
-    const v0 = vecReset(poly[i], poly[i + 1], TMP_VEC0);
+    const v0 = vecReset(poly[i], poly[i + 1], TMP_polylineTransformByAff_0);
     vecTransformByAff(v0, mat, v0);
     out[i] = v0.x;
     out[i + 1] = v0.y;

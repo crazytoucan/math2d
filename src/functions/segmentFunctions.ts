@@ -1,15 +1,7 @@
 import { ISegment, IVec } from "../types";
 import { vecAlloc, vecReset } from "./vecFunctions";
-import {
-  ISegmentGetNearestPointResult,
-  _segmentGetNearestPoint,
-} from "../internal/internalSegmentFunctions";
+import { _clamp } from "../internal/internalFunctions";
 import { EPSILON_SQ } from "../internal/parameters";
-
-const TMP_SEGMENT_NEAREST_POINT_RESULT: ISegmentGetNearestPointResult = {
-  d: NaN,
-  distance: NaN,
-};
 
 class Segment implements ISegment {
   constructor(public x0 = NaN, public y0 = NaN, public x1 = NaN, public y1 = NaN) {}
@@ -47,13 +39,15 @@ export function segmentGetNearestPoint(segment: ISegment, point: IVec, out = vec
 }
 
 export function segmentGetNearestT(segment: ISegment, point: IVec) {
-  const lengthSq = segmentGetLengthSq(segment);
-  if (lengthSq < EPSILON_SQ) {
+  const dSegX = segment.x1 - segment.x0;
+  const dSegY = segment.y1 - segment.y0;
+  const segLengthSq = dSegX * dSegX + dSegY * dSegY;
+  if (segLengthSq < EPSILON_SQ) {
     return 0;
   }
 
-  const result = _segmentGetNearestPoint(segment, point, TMP_SEGMENT_NEAREST_POINT_RESULT);
-  return result.d / Math.sqrt(lengthSq);
+  const dot = (point.x - segment.x0) * dSegX + (point.y - segment.y0) * dSegY;
+  return _clamp(dot / segLengthSq, 0, 1);
 }
 
 export function segmentReverse(segment: ISegment, out = segmentAlloc()) {

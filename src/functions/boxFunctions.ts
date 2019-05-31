@@ -3,8 +3,6 @@ import { arrayReset } from "../internal/collectionsUtils";
 import { polylineTransformByAff, polylineGetBounds, polylineAlloc } from "./polylineFunctions";
 import { OUT_MIN_X, OUT_MAX_X, OUT_MIN_Y, OUT_MAX_Y } from "../const";
 
-const TMP_POLYLINE = polylineAlloc();
-
 class Box implements IBox {
   constructor(public minX = NaN, public minY = NaN, public maxX = NaN, public maxY = NaN) {}
 }
@@ -78,10 +76,12 @@ export function boxReset(minX: number, minY: number, maxX: number, maxY: number,
   return out;
 }
 
+const TMP_boxTransformByAff_0 = polylineAlloc();
 export function boxTransformByAff(box: IBox, mat: IMat2x3, out = boxAlloc()) {
-  arrayReset(TMP_POLYLINE, box.minX, box.minY, box.minX, box.maxY, box.maxX, box.maxY, box.maxX, box.minY);
-  polylineTransformByAff(TMP_POLYLINE, mat, TMP_POLYLINE);
-  return polylineGetBounds(TMP_POLYLINE, out);
+  const poly = TMP_boxTransformByAff_0;
+  arrayReset(poly, box.minX, box.minY, box.minX, box.maxY, box.maxX, box.maxY, box.maxX, box.minY);
+  polylineTransformByAff(poly, mat, poly);
+  return polylineGetBounds(poly, out);
 }
 
 export function boxUnion(a: IBox, b: IBox, out = boxAlloc()) {
