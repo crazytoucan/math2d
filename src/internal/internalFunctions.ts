@@ -1,9 +1,15 @@
 import { intersectionAlloc, intersectionReset } from "../functions/intersectionFunctions";
-import { polylineGetNumSegments, polylineGetSegment } from "../functions/polylineFunctions";
+import {
+  polylineGetNumSegments,
+  polylineGetSegment,
+  polylineIsClosed,
+  polylineClose,
+} from "../functions/polylineFunctions";
 import { rayAlloc, rayReset } from "../functions/rayFunctions";
 import { segmentAlloc, segmentGetLength } from "../functions/segmentFunctions";
 import { vecAlloc, vecNormalize, vecReset, vecTransformByAff } from "../functions/vecFunctions";
-import { IIntersection, ILine, IMat2x3, IPolyline, IRay, ISegment, IVec } from "../types";
+import { IIntersection, ILine, IMat2x3, IPolyline, IRay, ISegment, IVec, IPolygon } from "../types";
+import { ALLOCATOR } from "./allocator";
 
 export function _clamp(value: number, min: number, max: number) {
   return value < min ? min : value > max ? max : value;
@@ -73,6 +79,14 @@ export function _polylineIntersectAllHelper<T>(
   return allIntersections;
 }
 
+export function _polygonIntersectAllHelper<T>(
+  poly: IPolygon,
+  value: T,
+  doIntersectSegment: (segment: ISegment, value: T, out: IIntersection) => IIntersection,
+) {
+  return _polylineIntersectAllHelper(_toPolyline(poly), value, doIntersectSegment);
+}
+
 function sortByT0Increasing(a: IIntersection, b: IIntersection) {
   return a.t0 < b.t0 ? -1 : a.t0 > b.t0 ? 1 : 0;
 }
@@ -81,4 +95,16 @@ export function _invertValuesIterator(intersections: IIntersection[]) {
   intersections.forEach(_intersectionSwap);
   intersections.sort(sortByT0Increasing);
   return intersections.values();
+}
+
+export function _toPolyline(poly: IPolygon) {
+  if (poly.length === 0) {
+    return poly;
+  } else if (polylineIsClosed(poly)) {
+    return poly;
+  } else {
+    const alloc = ALLOCATOR.allocArray(0, poly.length + 2);
+    polylineClose(poly, alloc);
+    return alloc;
+  }
 }

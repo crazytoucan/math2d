@@ -19,6 +19,10 @@ export function mat2x3AffFromTranslation(tx: number, ty: number, out = mat2x3All
   return mat2x3Reset(0, 0, 0, 0, tx, ty, out);
 }
 
+export function mat2x3AffIdentity(out = mat2x3Alloc()) {
+  return mat2x3Reset(1, 0, 0, 1, 0, 0, out);
+}
+
 export function mat2x3AffInvert(mat: IMat2x3, out = mat2x3Alloc()) {
   const det = mat.a * mat.d - mat.b * mat.c;
   if (det < EPSILON) {

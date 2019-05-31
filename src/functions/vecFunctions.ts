@@ -17,10 +17,6 @@ export function vecClone(vec: IVec, out = vecAlloc()) {
   return vecReset(vec.x, vec.y, out);
 }
 
-export function vecDot(a: IVec, b: IVec) {
-  return a.x * b.x + a.y * b.y;
-}
-
 export function vecDistance(a: IVec, b: IVec) {
   const dx = a.x - b.x;
   const dy = a.y - b.y;
@@ -31,6 +27,10 @@ export function vecDistanceSq(a: IVec, b: IVec) {
   const dx = a.x - b.x;
   const dy = a.y - b.y;
   return dx * dx + dy * dy;
+}
+
+export function vecDot(a: IVec, b: IVec) {
+  return a.x * b.x + a.y * b.y;
 }
 
 export function vecGetLength(vec: IVec) {
@@ -45,12 +45,12 @@ export function vecGetManhattanLength(vec: IVec) {
   return Math.abs(vec.x) + Math.abs(vec.y);
 }
 
-export function vecManhattanDistance(a: IVec, b: IVec) {
-  return Math.abs(b.x - a.x) + Math.abs(b.y - a.y);
-}
-
 export function vecLerp(a: IVec, b: IVec, r: number, out = vecAlloc()) {
   return vecReset(a.x * (1 - r) + b.x * r, a.y * (1 - r) + b.y * r, out);
+}
+
+export function vecManhattanDistance(a: IVec, b: IVec) {
+  return Math.abs(b.x - a.x) + Math.abs(b.y - a.y);
 }
 
 export function vecNormalize(vec: IVec, out = vecAlloc()) {

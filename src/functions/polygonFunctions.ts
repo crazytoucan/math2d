@@ -1,33 +1,25 @@
-import { IMat2x3, IPolygon, IVec } from "../types";
+import { _polygonIntersectAllHelper, _toPolyline } from "../internal/internalFunctions";
+import { EPSILON } from "../internal/parameters";
+import { IIntersection, ILine, IMat2x3, IPolygon, IRay, ISegment, IVec } from "../types";
 import { boxAlloc } from "./boxFunctions";
 import {
   polylineGetBounds,
   polylineGetLength,
-  polylineTransformByAff,
-  polylineIsClosed,
-  polylineClose,
   polylineGetSegmentLength,
-  polylineSegmentIndexAt,
-  polylinePointAt,
   polylineNearestT,
   polylineNearestVertexIndex,
+  polylinePointAt,
+  polylineSegmentIndexAt,
+  polylineTransformByAff,
 } from "./polylineFunctions";
+import {
+  segmentAlloc,
+  segmentIntersectLine,
+  segmentIntersectRay,
+  segmentIntersectSegment,
+  segmentReset,
+} from "./segmentFunctions";
 import { vecAlloc, vecReset } from "./vecFunctions";
-import { segmentAlloc, segmentReset } from "./segmentFunctions";
-import { ALLOCATOR } from "../internal/allocator";
-import { EPSILON } from "../internal/parameters";
-
-function asPolylineInternal(poly: IPolygon) {
-  if (poly.length === 0) {
-    return poly;
-  } else if (polylineIsClosed(poly)) {
-    return poly;
-  } else {
-    const alloc = ALLOCATOR.allocArray(0, poly.length + 2);
-    polylineClose(poly, alloc);
-    return alloc;
-  }
-}
 
 export function polygonAlloc(): IPolygon {
   return [];
@@ -57,6 +49,18 @@ export function polygonContainsPoint(poly: IPolygon, point: IVec) {
   return inside;
 }
 
+export function polygonIntersectLineIterator(poly: IPolygon, line: ILine): IterableIterator<IIntersection> {
+  return _polygonIntersectAllHelper(poly, line, segmentIntersectLine).values();
+}
+
+export function polygonIntersectRayIterator(poly: IPolygon, ray: IRay): IterableIterator<IIntersection> {
+  return _polygonIntersectAllHelper(poly, ray, segmentIntersectRay).values();
+}
+
+export function polygonIntersectSegmentIterator(poly: IPolygon, segment: ISegment): IterableIterator<IIntersection> {
+  return _polygonIntersectAllHelper(poly, segment, segmentIntersectSegment).values();
+}
+
 export function polygonNearestPoint(poly: IPolygon, point: IVec, out = vecAlloc()) {
   const d = polygonNearestT(poly, point);
   return polygonPointAt(poly, d, out);
@@ -72,7 +76,7 @@ export function polygonNearestT(poly: IPolygon, point: IVec) {
     return 0;
   }
 
-  return polylineNearestT(asPolylineInternal(poly), point);
+  return polylineNearestT(_toPolyline(poly), point);
 }
 
 export function polygonNearestVertexIndex(poly: IPolygon, point: IVec) {
@@ -84,7 +88,7 @@ export function polygonGetNumSides(poly: IPolygon) {
 }
 
 export function polygonGetPerimeter(poly: IPolygon) {
-  return polylineGetLength(asPolylineInternal(poly));
+  return polylineGetLength(_toPolyline(poly));
 }
 
 export function polygonPointAt(poly: IPolygon, t: number, out = vecAlloc()) {
@@ -98,7 +102,7 @@ export function polygonPointAt(poly: IPolygon, t: number, out = vecAlloc()) {
   }
 
   t = ((t % perimeter) + perimeter) % perimeter;
-  return polylinePointAt(asPolylineInternal(poly), t, out);
+  return polylinePointAt(_toPolyline(poly), t, out);
 }
 
 export function polygonGetSideSegment(poly: IPolygon, index: number, out = segmentAlloc()) {
@@ -119,11 +123,11 @@ export function polygonSideIndexAt(poly: IPolygon, t: number) {
   }
 
   t = ((t % perimeter) + perimeter) % perimeter;
-  return polylineSegmentIndexAt(asPolylineInternal(poly), t);
+  return polylineSegmentIndexAt(_toPolyline(poly), t);
 }
 
 export function polygonGetSideLength(poly: IPolygon, idx: number) {
-  return polylineGetSegmentLength(asPolylineInternal(poly), idx);
+  return polylineGetSegmentLength(_toPolyline(poly), idx);
 }
 
 export function polygonTransformByAff(poly: IPolygon, mat: IMat2x3, out = polygonAlloc()) {
