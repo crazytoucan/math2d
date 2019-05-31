@@ -1,11 +1,10 @@
-import { _rayLookAt } from "../internal/internalFunctions";
-import { EPSILON, EPSILON_SQ } from "../internal/parameters";
-import { IMat2x3, IRay, ISegment, IVec } from "../types";
-import { mat2x3Alloc, mat2x3Reset } from "./mat2x3Functions";
-import { segmentGetLengthSq } from "./segmentFunctions";
-import { vecAlloc, vecDistance, vecDistanceSq, vecReset, vecTransformByAff } from "./vecFunctions";
+import { _dot, _intersectionDNE, _intersectionSwap, _rayLookAt } from "../internal/internalFunctions";
+import { EPSILON } from "../internal/parameters";
+import { ILine, IMat2x3, IRay, ISegment, IVec } from "../types";
 import { intersectionAlloc } from "./intersectionFunctions";
-import { lineGetClosestDistanceToPoint, lineProjectPointT } from "./lineFunctions";
+import { lineAlloc, lineGetClosestDistanceToPoint, lineIntersectLine, lineIntersectRay } from "./lineFunctions";
+import { segmentGetLength } from "./segmentFunctions";
+import { vecAlloc, vecDistance, vecReset, vecTransformByAff } from "./vecFunctions";
 
 class Ray implements IRay {
   constructor(public x0 = NaN, public y0 = NaN, public dirX = NaN, public dirY = NaN) {}
@@ -23,21 +22,14 @@ export function rayClone(ray: IRay, out = rayAlloc()) {
   return rayReset(ray.x0, ray.y0, ray.dirX, ray.dirY, out);
 }
 
-const TMP_rayContainsPoint_0 = vecAlloc();
 export function rayContainsPoint(ray: IRay, point: IVec) {
-  const t = Math.max(_rayProjectT(ray, point), 0);
-  if (t < 0) {
-    const initial = vecReset(ray.x0, ray.y0, TMP_rayContainsPoint_0);
-    return vecDistanceSq(initial, point) < EPSILON_SQ;
-  } else {
-    return Math.abs(lineGetClosestDistanceToPoint(ray, point)) < EPSILON;
-  }
+  return rayGetClosestDistanceToPoint(ray, point) < EPSILON;
 }
 
 const TMP_rayGetClosestDistance_0 = vecAlloc();
 export function rayGetClosestDistanceToPoint(ray: IRay, point: IVec) {
-  const t = Math.max(lineProjectPointT(ray, point), 0);
-  if (t < 0) {
+  const t = _dot(ray, point);
+  if (t <= -EPSILON) {
     const initial = vecReset(ray.x0, ray.y0, TMP_rayGetClosestDistance_0);
     return vecDistance(initial, point);
   } else {
@@ -46,50 +38,29 @@ export function rayGetClosestDistanceToPoint(ray: IRay, point: IVec) {
 }
 
 export function rayGetClosestPoint(ray: IRay, point: IVec, out = vecAlloc()) {
-  const t = rayGetClosestT(ray, point);
+  const t = Math.max(0, _dot(ray, point));
   return rayPointAt(ray, t, out);
 }
 
-export function rayGetClosestT(ray: IRay, point: IVec) {
-  return Math.max(_rayProjectT(ray, point), 0);
+export function rayIntersectLine(ray: IRay, line: ILine, out = intersectionAlloc()) {
+  return _intersectionSwap(lineIntersectRay(line, ray, out));
 }
 
-export function rayIntersectRayPoint(a: IRay, b: IRay, out = vecAlloc()) {
-  const t = rayIntersectRayT(a, b);
-  return rayPointAt(a, t, out);
+export function rayIntersectRay(a: IRay, b: IRay, out = intersectionAlloc()) {
+  lineIntersectLine(a, b, out);
+  return out.exists && out.t0 > -EPSILON && out.t1 > -EPSILON ? out : _intersectionDNE(out);
 }
 
-const TMP_rayIntersectRayT_0 = mat2x3Alloc();
-const TMP_rayIntersectRayT_1 = rayAlloc();
-export function rayIntersectRayT(a: IRay, b: IRay) {
-  const transform = mat2x3Reset(a.dirX, -a.dirY, a.dirY, a.dirX, -a.x0, -a.y0, TMP_rayIntersectRayT_0);
-  const localB = rayTransformByAff(b, transform, TMP_rayIntersectRayT_1);
-
-  if (localB.y0 === 0) {
-    if (localB.dirX > 0) {
-      return Math.max(0, localB.x0);
-    } else if (localB.dirX < 0 && localB.x0 >= 0) {
-      return 0;
-    } else {
-      return NaN;
-    }
-  } else if (Math.sign(localB.y0) === Math.sign(localB.dirY)) {
-    return NaN;
+const TMP_rayIntersectSegment_0 = lineAlloc();
+export function rayIntersectSegment(ray: IRay, segment: ISegment, out = intersectionAlloc()) {
+  const segmentRay = _rayLookAt(segment.x0, segment.y0, segment.x1, segment.y1, TMP_rayIntersectSegment_0);
+  lineIntersectLine(ray, segmentRay, out);
+  const segmentLength = segmentGetLength(segment);
+  if (out.exists && out.t0 > -EPSILON && out.t1 > -EPSILON && out.t1 < segmentLength + EPSILON) {
+    out.t1 /= segmentLength;
+    return out;
   } else {
-    const intercept = localB.x0 - (localB.dirX * localB.y0) / localB.dirY;
-    return intercept < 0 ? NaN : intercept;
-  }
-}
-
-const TMP_rayIntersectSegmentT_0 = vecAlloc();
-export function rayIntersectSegmentT(ray: IRay, segment: ISegment) {
-  const segLengthSq = segmentGetLengthSq(segment);
-  if (segLengthSq < EPSILON_SQ) {
-    const degenerateSegment = vecReset(segment.x0, segment.y0, TMP_rayIntersectSegmentT_0);
-    return rayContainsPoint(ray, degenerateSegment) ? lineGet(ray, degenerateSegment) : NaN;
-  } else {
-    // TODO
-    return 0;
+    return _intersectionDNE(out);
   }
 }
 

@@ -14,6 +14,21 @@ export {
   boxUnion,
 } from "./functions/boxFunctions";
 export {
+  lineAlloc,
+  lineClone,
+  lineContainsPoint,
+  lineGetClosestDistanceToPoint,
+  lineGetClosestSignedDistanceToPoint,
+  lineIntersectLine,
+  lineIntersectRay,
+  lineIntersectSegment,
+  lineLookAt,
+  linePointAt,
+  lineProjectPoint,
+  lineReset,
+  lineTransformByAff,
+} from "./functions/lineFunctions";
+export {
   mat2x3AffDeterminant,
   mat2x3AffFromRotation,
   mat2x3AffFromTranslation,
@@ -60,10 +75,12 @@ export {
 export {
   rayAlloc,
   rayClone,
-  rayGetDirection,
-  rayGetInitialPoint,
-  rayIntersectRayPoint,
-  rayIntersectRayT,
+  rayContainsPoint,
+  rayGetClosestDistanceToPoint,
+  rayGetClosestPoint,
+  rayIntersectLine,
+  rayIntersectRay,
+  rayIntersectSegment,
   rayLookAt,
   rayPointAt,
   rayReset,
@@ -99,4 +116,4 @@ export {
   vecSubtract,
   vecTransformByAff,
 } from "./functions/vecFunctions";
-export { IBox, IMat2x3, IPolygon, IPolyline, IRay, ISegment, IVec } from "./types";
+export { IBox, IIntersection, ILine, IMat2x3, IPolygon, IPolyline, IRay, ISegment, IVec } from "./types";
