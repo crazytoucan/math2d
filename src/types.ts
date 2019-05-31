@@ -17,6 +17,13 @@ export interface IRay {
   dirY: number;
 }
 
+export interface ILine {
+  x0: number;
+  y0: number;
+  dirX: number;
+  dirY: number;
+}
+
 export interface IMat2x3 {
   a: number;
   b: number;

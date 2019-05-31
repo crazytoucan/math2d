@@ -1,16 +1,9 @@
-import { IMat2x3, IRay, IVec, ISegment } from "../types";
-import { mat2x3Alloc, mat2x3Reset } from "./mat2x3Functions";
-import {
-  vecAlloc,
-  vecNormalize,
-  vecReset,
-  vecSubtract,
-  vecTransformByAff,
-  vecDistanceSq,
-  vecDistance,
-} from "./vecFunctions";
-import { EPSILON_SQ, EPSILON } from "../internal/parameters";
+import { _rayLookAt } from "../internal/internalFunctions";
+import { EPSILON, EPSILON_SQ } from "../internal/parameters";
+import { IMat2x3, IRay, ISegment, IVec } from "../types";
+import { mat2x3Alloc, mat2x3Reset, mat2x3AffDeterminant } from "./mat2x3Functions";
 import { segmentGetLengthSq } from "./segmentFunctions";
+import { vecAlloc, vecDistance, vecDistanceSq, vecReset, vecTransformByAff } from "./vecFunctions";
 
 class Ray implements IRay {
   constructor(public x0 = NaN, public y0 = NaN, public dirX = NaN, public dirY = NaN) {}
@@ -32,7 +25,7 @@ const TMP_rayContainsPoint_0 = vecAlloc();
 export function rayContainsPoint(ray: IRay, point: IVec) {
   const t = Math.max(_rayProjectT(ray, point), 0);
   if (t < 0) {
-    const initial = rayGetInitialPoint(ray, TMP_rayContainsPoint_0);
+    const initial = vecReset(ray.x0, ray.y0, TMP_rayContainsPoint_0);
     return vecDistanceSq(initial, point) < EPSILON_SQ;
   } else {
     return Math.abs(_rayProjectPerp(ray, point)) < EPSILON;
@@ -43,7 +36,7 @@ const TMP_rayGetClosestDistance_0 = vecAlloc();
 export function rayGetClosestDistance(ray: IRay, point: IVec) {
   const t = Math.max(_rayProjectT(ray, point), 0);
   if (t < 0) {
-    const initial = rayGetInitialPoint(ray, TMP_rayGetClosestDistance_0);
+    const initial = vecReset(ray.x0, ray.y0, TMP_rayGetClosestDistance_0);
     return vecDistance(initial, point);
   } else {
     return Math.abs(_rayProjectPerp(ray, point));
@@ -57,14 +50,6 @@ export function rayGetClosestPoint(ray: IRay, point: IVec, out = vecAlloc()) {
 
 export function rayGetClosestT(ray: IRay, point: IVec) {
   return Math.max(_rayProjectT(ray, point), 0);
-}
-
-export function rayGetDirection(ray: IRay, out = vecAlloc()) {
-  return vecReset(ray.dirX, ray.dirY, out);
-}
-
-export function rayGetInitialPoint(ray: IRay, out = vecAlloc()) {
-  return vecReset(ray.x0, ray.y0, out);
 }
 
 export function rayIntersectRayPoint(a: IRay, b: IRay, out = vecAlloc()) {
@@ -106,11 +91,8 @@ export function rayIntersectSegmentT(ray: IRay, segment: ISegment) {
   }
 }
 
-const TMP_rayLookAt_0 = vecAlloc();
 export function rayLookAt(from: IVec, to: IVec, out = rayAlloc()) {
-  const dir = vecSubtract(to, from, TMP_rayLookAt_0);
-  vecNormalize(dir, dir);
-  return rayReset(from.x, from.y, dir.x, dir.y, out);
+  return _rayLookAt(from.x, from.y, to.x, to.y, out);
 }
 
 export function rayReset(x0: number, y0: number, dirX: number, dirY: number, out = rayAlloc()) {
