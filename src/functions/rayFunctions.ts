@@ -1,3 +1,4 @@
+import { _lineAlloc, _rayAlloc, _vecAlloc } from "../internal/allocFunctions";
 import {
   _dot,
   _intersectionDNE,
@@ -9,10 +10,9 @@ import {
 import { EPSILON } from "../internal/parameters";
 import { IIntersection, ILine, IMat2x3, IPolyline, IRay, ISegment, IVec } from "../types";
 import { intersectionAlloc } from "./intersectionFunctions";
-import { lineAlloc, lineClosestDistanceToPoint, lineIntersectLine, lineIntersectRay } from "./lineFunctions";
+import { lineClosestDistanceToPoint, lineIntersectLine, lineIntersectRay } from "./lineFunctions";
 import { segmentGetLength, segmentIntersectRay } from "./segmentFunctions";
 import { vecAlloc, vecDistance, vecReset, vecTransformByAff } from "./vecFunctions";
-import { _rayAlloc } from "../internal/primitives";
 
 export function rayAlloc(): IRay {
   return _rayAlloc();
@@ -30,7 +30,7 @@ export function rayContainsPoint(ray: IRay, point: IVec) {
   return rayGetClosestDistanceToPoint(ray, point) < EPSILON;
 }
 
-const TMP_rayGetClosestDistance_0 = vecAlloc();
+const TMP_rayGetClosestDistance_0 = _vecAlloc();
 export function rayGetClosestDistanceToPoint(ray: IRay, point: IVec) {
   const t = _dot(ray, point);
   if (t <= -EPSILON) {
@@ -59,7 +59,7 @@ export function rayIntersectRay(a: IRay, b: IRay, out = intersectionAlloc()) {
   return out.exists && out.t0 > -EPSILON && out.t1 > -EPSILON ? out : _intersectionDNE(out);
 }
 
-const TMP_rayIntersectSegment_0 = lineAlloc();
+const TMP_rayIntersectSegment_0 = _lineAlloc();
 export function rayIntersectSegment(ray: IRay, segment: ISegment, out = intersectionAlloc()) {
   const segmentRay = _rayLookAt(segment.x0, segment.y0, segment.x1, segment.y1, TMP_rayIntersectSegment_0);
   lineIntersectLine(ray, segmentRay, out);
@@ -84,8 +84,8 @@ export function rayReset(x0: number, y0: number, dirX: number, dirY: number, out
   return out;
 }
 
-const TMP_rayTransformByAff_0 = vecAlloc();
-const TMP_rayTransformByAff_1 = vecAlloc();
+const TMP_rayTransformByAff_0 = _vecAlloc();
+const TMP_rayTransformByAff_1 = _vecAlloc();
 export function rayTransformByAff(ray: IRay, mat: IMat2x3, out = rayAlloc()) {
   const initial = vecReset(ray.x0, ray.y0, TMP_rayTransformByAff_0);
   vecTransformByAff(initial, mat, initial);

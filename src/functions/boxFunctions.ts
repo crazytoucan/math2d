@@ -1,8 +1,8 @@
-import { IBox, IVec, IMat2x3 } from "../types";
+import { OUT_MAX_X, OUT_MAX_Y, OUT_MIN_X, OUT_MIN_Y } from "../const";
+import { _boxAlloc, _polylineAlloc } from "../internal/allocFunctions";
 import { arrayReset } from "../internal/collectionsUtils";
-import { polylineTransformByAff, polylineGetBounds, polylineAlloc } from "./polylineFunctions";
-import { OUT_MIN_X, OUT_MAX_X, OUT_MIN_Y, OUT_MAX_Y } from "../const";
-import { _boxAlloc } from "../internal/primitives";
+import { IBox, IMat2x3, IVec } from "../types";
+import { polylineGetBounds, polylineTransformByAff } from "./polylineFunctions";
 
 export function boxAlloc() {
   return _boxAlloc();
@@ -73,7 +73,7 @@ export function boxReset(minX: number, minY: number, maxX: number, maxY: number,
   return out;
 }
 
-const TMP_boxTransformByAff_0 = polylineAlloc();
+const TMP_boxTransformByAff_0 = _polylineAlloc();
 export function boxTransformByAff(box: IBox, mat: IMat2x3, out = boxAlloc()) {
   const poly = TMP_boxTransformByAff_0;
   arrayReset(poly, box.minX, box.minY, box.minX, box.maxY, box.maxX, box.maxY, box.maxX, box.minY);

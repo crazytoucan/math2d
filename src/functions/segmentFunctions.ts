@@ -1,18 +1,18 @@
+import { _lineAlloc, _segmentAlloc } from "../internal/allocFunctions";
 import {
   _clamp,
   _intersectionDNE,
   _intersectionSwap,
-  _rayLookAt,
   _invertValuesIterator,
   _polylineIntersectAllHelper,
+  _rayLookAt,
 } from "../internal/internalFunctions";
 import { EPSILON, EPSILON_SQ } from "../internal/parameters";
-import { ILine, IRay, ISegment, IVec, IIntersection, IPolyline } from "../types";
+import { IIntersection, ILine, IPolyline, IRay, ISegment, IVec } from "../types";
 import { intersectionAlloc } from "./intersectionFunctions";
-import { lineAlloc, lineIntersectSegment } from "./lineFunctions";
+import { lineIntersectSegment } from "./lineFunctions";
 import { rayIntersectSegment } from "./rayFunctions";
 import { vecAlloc, vecReset } from "./vecFunctions";
-import { _segmentAlloc } from "../internal/primitives";
 
 export function segmentAlloc(): ISegment {
   return _segmentAlloc();
@@ -65,7 +65,7 @@ export function segmentIntersectRay(segment: ISegment, ray: IRay, out = intersec
   return _intersectionSwap(rayIntersectSegment(ray, segment, out));
 }
 
-const TMP_segmentIntersectSegment_0 = lineAlloc();
+const TMP_segmentIntersectSegment_0 = _lineAlloc();
 export function segmentIntersectSegment(a: ISegment, b: ISegment, out = intersectionAlloc()) {
   const aLine = _rayLookAt(a.x0, a.y0, a.x1, a.y1, TMP_segmentIntersectSegment_0);
   lineIntersectSegment(aLine, b, out);

@@ -20,7 +20,7 @@ import {
   segmentReset,
 } from "./segmentFunctions";
 import { vecAlloc, vecReset } from "./vecFunctions";
-import { _polygonAlloc } from "../internal/primitives";
+import { _polygonAlloc } from "../internal/allocFunctions";
 
 export function polygonAlloc(): IPolygon {
   return _polygonAlloc();

@@ -12,7 +12,7 @@ import {
   segmentReset,
 } from "./segmentFunctions";
 import { vecAlloc, vecDistanceSq, vecLerp, vecReset, vecTransformByAff } from "./vecFunctions";
-import { _polygonAlloc } from "../internal/primitives";
+import { _polygonAlloc, _vecAlloc, _segmentAlloc } from "../internal/allocFunctions";
 
 export function polylineAlloc(): IPolyline {
   return _polygonAlloc();
@@ -38,7 +38,7 @@ export function polylineClose(poly: IPolyline, out = polylineAlloc()) {
   return length;
 }
 
-const TMP_polylineGetBounds_0 = vecAlloc();
+const TMP_polylineGetBounds_0 = _vecAlloc();
 export function polylineGetBounds(poly: IPolyline, out = boxAlloc()) {
   boxReset(Infinity, -Infinity, Infinity, -Infinity, out);
   for (let i = 0; i < poly.length; i += 2) {
@@ -107,8 +107,8 @@ export function polylineNearestPoint(poly: IPolyline, point: IVec, out = vecAllo
   return polylinePointAt(poly, d, out);
 }
 
-const TMP_polylineNearestT_0 = segmentAlloc();
-const TMP_polylineNearestT_1 = vecAlloc();
+const TMP_polylineNearestT_0 = _segmentAlloc();
+const TMP_polylineNearestT_1 = _vecAlloc();
 export function polylineNearestT(poly: IPolyline, point: IVec) {
   let winningDistanceSq = Infinity;
   let winningD = NaN;
@@ -133,7 +133,7 @@ export function polylineNearestT(poly: IPolyline, point: IVec) {
   return winningD;
 }
 
-const TMP_polylineNearestVertexIndex_0 = vecAlloc();
+const TMP_polylineNearestVertexIndex_0 = _vecAlloc();
 export function polylineNearestVertexIndex(poly: IPolyline, point: IVec) {
   let winningDistanceSq = Infinity;
   let winningIndex = NaN;
@@ -150,8 +150,8 @@ export function polylineNearestVertexIndex(poly: IPolyline, point: IVec) {
   return winningIndex;
 }
 
-const TMP_polylinePointAt_0 = vecAlloc();
-const TMP_polylinePointAt_1 = vecAlloc();
+const TMP_polylinePointAt_0 = _vecAlloc();
+const TMP_polylinePointAt_1 = _vecAlloc();
 export function polylinePointAt(poly: IPolyline, d: number, out = vecAlloc()) {
   if (d < 0) {
     return vecReset(NaN, NaN, out);
@@ -190,7 +190,7 @@ export function polylineSegmentIndexAt(poly: IPolyline, d: number) {
   return idx;
 }
 
-const TMP_polylineTransformByAff_0 = vecAlloc();
+const TMP_polylineTransformByAff_0 = _vecAlloc();
 export function polylineTransformByAff(poly: IPolyline, mat: IMat2x3, out = polylineAlloc()) {
   if (out.length !== poly.length) {
     out.length = poly.length;
@@ -206,7 +206,7 @@ export function polylineTransformByAff(poly: IPolyline, mat: IMat2x3, out = poly
   return out;
 }
 
-const TMP_polylineTrim_0 = vecAlloc();
+const TMP_polylineTrim_0 = _vecAlloc();
 export function polylineTrim(poly: IPolyline, begin: number, end: number, out = polylineAlloc()) {
   if (begin > end || poly.length === 0) {
     out.length = 0;

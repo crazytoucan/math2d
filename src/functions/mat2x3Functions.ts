@@ -1,6 +1,6 @@
 import { EPSILON, EPSILON_SQ } from "../internal/parameters";
 import { IMat2x3 } from "../types";
-import { _mat2x3Alloc } from "../internal/primitives";
+import { _mat2x3Alloc } from "../internal/allocFunctions";
 
 export function mat2x3AffDeterminant(mat: IMat2x3) {
   return mat.a * mat.d - mat.b * mat.c;

@@ -1,7 +1,6 @@
 import { EPSILON_SQ } from "../internal/parameters";
-import { _vecAlloc } from '../internal/primitives';
+import { _vecAlloc } from "../internal/allocFunctions";
 import { IMat2x3, IVec } from "../types";
-
 
 export function vecAdd(a: IVec, b: IVec, out = vecAlloc()) {
   return vecReset(a.x + b.x, a.y + b.y, out);

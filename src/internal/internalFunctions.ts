@@ -1,15 +1,16 @@
-import { intersectionAlloc, intersectionReset } from "../functions/intersectionFunctions";
+import { intersectionReset } from "../functions/intersectionFunctions";
 import {
+  polylineClose,
   polylineGetNumSegments,
   polylineGetSegment,
   polylineIsClosed,
-  polylineClose,
 } from "../functions/polylineFunctions";
 import { rayAlloc, rayReset } from "../functions/rayFunctions";
-import { segmentAlloc, segmentGetLength } from "../functions/segmentFunctions";
-import { vecAlloc, vecNormalize, vecReset, vecTransformByAff } from "../functions/vecFunctions";
-import { IIntersection, ILine, IMat2x3, IPolyline, IRay, ISegment, IVec, IPolygon } from "../types";
+import { segmentGetLength } from "../functions/segmentFunctions";
+import { vecNormalize, vecReset, vecTransformByAff } from "../functions/vecFunctions";
+import { IIntersection, ILine, IMat2x3, IPolygon, IPolyline, IRay, ISegment, IVec } from "../types";
 import { ALLOCATOR } from "./allocator";
+import { _intersectionAlloc, _segmentAlloc, _vecAlloc } from "./allocFunctions";
 
 export function _clamp(value: number, min: number, max: number) {
   return value < min ? min : value > max ? max : value;
@@ -41,22 +42,22 @@ export function _intersectionSwap(out: IIntersection) {
   return out;
 }
 
-const TMP_rayLookAt_0 = vecAlloc();
+const TMP_rayLookAt_0 = _vecAlloc();
 export function _rayLookAt(x0: number, y0: number, x1: number, y1: number, out: IRay) {
   const dir = vecReset(x1 - x0, y1 - y0, TMP_rayLookAt_0);
   vecNormalize(dir, dir);
   return rayReset(x0, y0, dir.x, dir.y, out);
 }
 
-const TMP_rayTransformByOrtho_0 = vecAlloc();
+const TMP_rayTransformByOrtho_0 = _vecAlloc();
 export function _rayTransformByOrtho(ray: IRay, mat: IMat2x3, out = rayAlloc()) {
   const initial = vecReset(ray.x0, ray.y0, TMP_rayTransformByOrtho_0);
   vecTransformByAff(initial, mat, initial);
   return rayReset(initial.x, initial.y, mat.a * ray.dirX + mat.c * ray.dirY, mat.b * ray.dirX + mat.d * ray.dirY, out);
 }
 
-const TMP_polylineIntersectAllHelper_0 = segmentAlloc();
-const TMP_polylineIntersectAllHelper_1 = intersectionAlloc();
+const TMP_polylineIntersectAllHelper_0 = _segmentAlloc();
+const TMP_polylineIntersectAllHelper_1 = _intersectionAlloc();
 export function _polylineIntersectAllHelper<T>(
   poly: IPolyline,
   value: T,

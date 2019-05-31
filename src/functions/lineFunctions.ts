@@ -1,20 +1,20 @@
+import { _lineAlloc, _mat2x3Alloc, _vecAlloc } from "../internal/allocFunctions";
 import {
   _dot,
   _intersectionDNE,
   _intersectionExists,
+  _invertValuesIterator,
+  _polylineIntersectAllHelper,
   _rayLookAt,
   _rayTransformByOrtho,
-  _polylineIntersectAllHelper,
-  _invertValuesIterator,
 } from "../internal/internalFunctions";
 import { EPSILON } from "../internal/parameters";
 import { IIntersection, ILine, IMat2x3, IPolyline, IRay, ISegment, IVec } from "../types";
 import { intersectionAlloc } from "./intersectionFunctions";
-import { mat2x3Alloc, mat2x3Reset } from "./mat2x3Functions";
-import { rayAlloc, rayTransformByAff } from "./rayFunctions";
+import { mat2x3Reset } from "./mat2x3Functions";
+import { rayTransformByAff } from "./rayFunctions";
 import { segmentGetLength, segmentIntersectLine } from "./segmentFunctions";
 import { vecAlloc, vecNormalize, vecReset, vecSubtract } from "./vecFunctions";
-import { _lineAlloc } from "../internal/primitives";
 
 export function lineAlloc() {
   return _lineAlloc();
@@ -45,9 +45,9 @@ export function lineProjectPoint(line: ILine, point: IVec, out = vecAlloc()) {
   return vecReset(line.x0 + t * line.dirX, line.y0 + t * line.dirY, out);
 }
 
-const TMP_lineIntersectRayT_0 = mat2x3Alloc();
-const TMP_lineIntersectRayT_1 = rayAlloc();
-const TMP_lineIntersectRayT_2 = vecAlloc();
+const TMP_lineIntersectRayT_0 = _mat2x3Alloc();
+const TMP_lineIntersectRayT_1 = _lineAlloc();
+const TMP_lineIntersectRayT_2 = _vecAlloc();
 export function lineIntersectLine(a: ILine, b: ILine, out = intersectionAlloc()) {
   const transform = mat2x3Reset(a.dirX, -a.dirY, a.dirY, a.dirX, -a.x0, -a.y0, TMP_lineIntersectRayT_0);
   const localB = _rayTransformByOrtho(b, transform, TMP_lineIntersectRayT_1);
@@ -69,7 +69,7 @@ export function lineIntersectPolylineIterator(line: ILine, poly: IPolyline): Ite
   return _invertValuesIterator(_polylineIntersectAllHelper(poly, line, segmentIntersectLine));
 }
 
-const TMP_lineIntersectSegment_0 = rayAlloc();
+const TMP_lineIntersectSegment_0 = _lineAlloc();
 export function lineIntersectSegment(line: ILine, segment: ISegment, out = intersectionAlloc()) {
   // TODO: degenerate segment
   const segmentLine = _rayLookAt(segment.x0, segment.y0, segment.x1, segment.y1, TMP_lineIntersectSegment_0);
@@ -88,7 +88,7 @@ export function lineIntersectRay(line: ILine, ray: IRay, out = intersectionAlloc
   return !out.exists || out.t1 < 0 ? _intersectionDNE(out) : out;
 }
 
-const TMP_rayLookAt_0 = vecAlloc();
+const TMP_rayLookAt_0 = _vecAlloc();
 export function lineLookAt(from: IVec, to: IVec, out = lineAlloc()) {
   const dir = vecSubtract(to, from, TMP_rayLookAt_0);
   vecNormalize(dir, dir);
