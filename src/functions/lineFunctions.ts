@@ -1,6 +1,7 @@
-import { _rayLookAt, _rayTransformByOrtho } from "../internal/internalFunctions";
-import { EPSILON, EPSILON_SQ } from "../internal/parameters";
+import { _rayLookAt, _rayTransformByOrtho, _projectT as _project, _intersectionExists, _intersectionDNE } from "../internal/internalFunctions";
+import { EPSILON } from "../internal/parameters";
 import { ILine, IMat2x3, ISegment, IVec } from "../types";
+import { intersectionAlloc, intersectionReset } from "./intersectionFunctions";
 import { mat2x3Alloc, mat2x3Reset } from "./mat2x3Functions";
 import { rayAlloc, rayTransformByAff } from "./rayFunctions";
 import { segmentGetLengthSq } from "./segmentFunctions";
@@ -15,7 +16,7 @@ export function lineAlloc(): ILine {
 }
 
 export function linePointAt(line: ILine, t: number, out = vecAlloc()) {
-  return vecReset(line.x0 + line.dirX * t, line.y0 + line.dirY * t, out);
+  return vecReset(line.x0 + t * line.dirX, line.y0 + t * line.dirY, out);
 }
 
 export function lineClone(line: ILine, out = lineAlloc()) {
@@ -23,7 +24,7 @@ export function lineClone(line: ILine, out = lineAlloc()) {
 }
 
 export function lineContainsPoint(line: ILine, point: IVec) {
-  return lineGetClosestSignedDistanceToPoint(line, point) < EPSILON;
+  return lineGetClosestDistanceToPoint(line, point) < EPSILON;
 }
 
 export function lineGetClosestSignedDistanceToPoint(line: ILine, point: IVec) {
@@ -34,25 +35,26 @@ export function lineGetClosestDistanceToPoint(line: ILine, point: IVec) {
   return Math.abs(lineGetClosestSignedDistanceToPoint(line, point));
 }
 
-export function lineProjectPoint(line: ILine, point: IVec, out = vecAlloc()) {
-  const t = lineProjectT(line, point);
-  return linePointAt(line, t, out);
-}
-
-export function lineProjectT(ray: ILine, point: IVec) {
-  return (point.x - ray.x0) * ray.dirX + (point.y - ray.y0) * ray.dirY;
+export function lineProjectPoint(line: ILine, point: IVec, out = intersectionAlloc()) {
+  const t = _project(line, point);
+  const distance = lineGetClosestSignedDistanceToPoint(line, point);
+  return intersectionReset(true, line.x0 + t * line.dirX, line.y0 + t * line.dirY, t, distance, out);
 }
 
 const TMP_lineIntersectRayT_0 = mat2x3Alloc();
 const TMP_lineIntersectRayT_1 = rayAlloc();
-export function lineIntersectLineT(a: ILine, b: ILine) {
+export function lineIntersectLine(a: ILine, b: ILine, out = intersectionAlloc()) {
   const transform = mat2x3Reset(a.dirX, -a.dirY, a.dirY, a.dirX, -a.x0, -a.y0, TMP_lineIntersectRayT_0);
   const localB = _rayTransformByOrtho(b, transform, TMP_lineIntersectRayT_1);
+  const isParallel = Math.abs(localB.dirY) < EPSILON;
 
-  if (Math.abs(localB.dirY) < EPSILON) {
-    return Math.abs(localB.y0) < EPSILON ? 0 : NaN;
+  if (isParallel && Math.abs(localB.y0) < EPSILON) {
+    return _intersectionExists(a.x0, a.y0, 0, -localB.x0 * localB.dirX, out);
+  } else if (isParallel) {
+    return _intersectionDNE(out);
   } else {
-    return localB.x0 - (localB.dirX / localB.dirY) * localB.y0;
+    const t = localB.x0 - (localB.dirX / localB.dirY) * localB.y0;
+
   }
 }
 

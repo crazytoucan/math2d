@@ -42,3 +42,11 @@ export interface IBox {
 
 export type IPolygon = number[];
 export type IPolyline = number[];
+
+export interface IIntersection {
+  exists: boolean;
+  x: number;
+  y: number;
+  t0: number;
+  t1: number;
+}

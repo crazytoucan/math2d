@@ -1,9 +1,11 @@
 import { _rayLookAt } from "../internal/internalFunctions";
 import { EPSILON, EPSILON_SQ } from "../internal/parameters";
 import { IMat2x3, IRay, ISegment, IVec } from "../types";
-import { mat2x3Alloc, mat2x3Reset, mat2x3AffDeterminant } from "./mat2x3Functions";
+import { mat2x3Alloc, mat2x3Reset } from "./mat2x3Functions";
 import { segmentGetLengthSq } from "./segmentFunctions";
 import { vecAlloc, vecDistance, vecDistanceSq, vecReset, vecTransformByAff } from "./vecFunctions";
+import { intersectionAlloc } from "./intersectionFunctions";
+import { lineGetClosestDistanceToPoint, lineProjectPointT } from "./lineFunctions";
 
 class Ray implements IRay {
   constructor(public x0 = NaN, public y0 = NaN, public dirX = NaN, public dirY = NaN) {}
@@ -28,18 +30,18 @@ export function rayContainsPoint(ray: IRay, point: IVec) {
     const initial = vecReset(ray.x0, ray.y0, TMP_rayContainsPoint_0);
     return vecDistanceSq(initial, point) < EPSILON_SQ;
   } else {
-    return Math.abs(_rayProjectPerp(ray, point)) < EPSILON;
+    return Math.abs(lineGetClosestDistanceToPoint(ray, point)) < EPSILON;
   }
 }
 
 const TMP_rayGetClosestDistance_0 = vecAlloc();
-export function rayGetClosestDistance(ray: IRay, point: IVec) {
-  const t = Math.max(_rayProjectT(ray, point), 0);
+export function rayGetClosestDistanceToPoint(ray: IRay, point: IVec) {
+  const t = Math.max(lineProjectPointT(ray, point), 0);
   if (t < 0) {
     const initial = vecReset(ray.x0, ray.y0, TMP_rayGetClosestDistance_0);
     return vecDistance(initial, point);
   } else {
-    return Math.abs(_rayProjectPerp(ray, point));
+    return lineGetClosestDistanceToPoint(ray, point);
   }
 }
 
@@ -84,7 +86,7 @@ export function rayIntersectSegmentT(ray: IRay, segment: ISegment) {
   const segLengthSq = segmentGetLengthSq(segment);
   if (segLengthSq < EPSILON_SQ) {
     const degenerateSegment = vecReset(segment.x0, segment.y0, TMP_rayIntersectSegmentT_0);
-    return rayContainsPoint(ray, degenerateSegment) ? _rayProjectT(ray, degenerateSegment) : NaN;
+    return rayContainsPoint(ray, degenerateSegment) ? lineGet(ray, degenerateSegment) : NaN;
   } else {
     // TODO
     return 0;
@@ -111,12 +113,4 @@ export function rayTransformByAff(ray: IRay, mat: IMat2x3, out = rayAlloc()) {
   const other = vecReset(ray.x0 + ray.dirX, ray.y0 + ray.dirY, TMP_rayTransformByAff_1);
   vecTransformByAff(other, mat, other);
   return rayLookAt(initial, other, out);
-}
-
-function _rayProjectT(ray: IRay, point: IVec) {
-  return (point.x - ray.x0) * ray.dirX + (point.y - ray.y0) * ray.dirY;
-}
-
-function _rayProjectPerp(ray: IRay, point: IVec) {
-  return (point.y - ray.y0) * ray.dirX - (point.x - ray.x0) * ray.dirY;
 }
