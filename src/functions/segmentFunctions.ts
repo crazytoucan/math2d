@@ -1,12 +1,12 @@
 import { ISegment, IVec } from "../types";
 import { vecAlloc, vecReset } from "./vecFunctions";
 import {
-  IInternalSegmentGetNearestPointResult,
-  internalSegmentGetNearestPoint,
+  ISegmentGetNearestPointResult,
+  _segmentGetNearestPoint,
 } from "../internal/internalSegmentFunctions";
 import { EPSILON_SQ } from "../internal/parameters";
 
-const TMP_SEGMENT_NEAREST_POINT_RESULT: IInternalSegmentGetNearestPointResult = {
+const TMP_SEGMENT_NEAREST_POINT_RESULT: ISegmentGetNearestPointResult = {
   d: NaN,
   distance: NaN,
 };
@@ -52,7 +52,7 @@ export function segmentGetNearestT(segment: ISegment, point: IVec) {
     return 0;
   }
 
-  const result = internalSegmentGetNearestPoint(segment, point, TMP_SEGMENT_NEAREST_POINT_RESULT);
+  const result = _segmentGetNearestPoint(segment, point, TMP_SEGMENT_NEAREST_POINT_RESULT);
   return result.d / Math.sqrt(lengthSq);
 }
 

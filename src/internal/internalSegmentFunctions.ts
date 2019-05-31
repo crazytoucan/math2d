@@ -10,7 +10,7 @@ import {
   vecReset,
 } from "../functions/vecFunctions";
 
-export interface IInternalSegmentGetNearestPointResult {
+export interface ISegmentGetNearestPointResult {
   d: number;
   distance: number;
 }
@@ -18,11 +18,7 @@ export interface IInternalSegmentGetNearestPointResult {
 const TMP_VEC0 = vecAlloc();
 const TMP_VEC1 = vecAlloc();
 
-export function internalSegmentGetNearestPoint(
-  segment: ISegment,
-  point: IVec,
-  out: IInternalSegmentGetNearestPointResult,
-) {
+export function _segmentGetNearestPoint(segment: ISegment, point: IVec, out: ISegmentGetNearestPointResult) {
   const v0 = vecReset(segment.x0, segment.y0, TMP_VEC0);
   const v1 = vecReset(segment.x1, segment.y1, TMP_VEC1);
   const dirVec = vecSubtract(v1, v0, TMP_VEC0);

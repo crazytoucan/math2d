@@ -1,12 +1,15 @@
-import { IRay, IMat2x3, IVec } from "../types";
+import { IMat2x3, IRay, IVec } from "../types";
+import { mat2x3Alloc, mat2x3Reset } from "./mat2x3Functions";
 import {
   vecAlloc,
+  vecNormalize,
   vecReset,
   vecSubtract,
-  vecNormalize,
   vecTransformByAff,
+  vecDistanceSq,
+  vecDistance,
 } from "./vecFunctions";
-import { mat2x3Alloc, mat2x3Reset } from "./mat2x3Functions";
+import { EPSILON_SQ, EPSILON } from "../internal/parameters";
 
 const TMP_VEC0 = vecAlloc();
 const TMP_VEC1 = vecAlloc();
@@ -29,6 +32,35 @@ export function rayClone(ray: IRay, out = rayAlloc()) {
   return rayReset(ray.x0, ray.y0, ray.dirX, ray.dirY, out);
 }
 
+export function rayContainsPoint(ray: IRay, point: IVec) {
+  const t = Math.max(_rayProjectT(ray, point), 0);
+  if (t < 0) {
+    const initial = rayGetInitialPoint(ray, TMP_VEC0);
+    return vecDistanceSq(initial, point) < EPSILON_SQ;
+  } else {
+    return Math.abs(_rayProjectPerp(ray, point)) < EPSILON;
+  }
+}
+
+export function rayGetClosestDistance(ray: IRay, point: IVec) {
+  const t = Math.max(_rayProjectT(ray, point), 0);
+  if (t < 0) {
+    const initial = rayGetInitialPoint(ray, TMP_VEC0);
+    return vecDistance(initial, point);
+  } else {
+    return Math.abs(_rayProjectPerp(ray, point));
+  }
+}
+
+export function rayGetClosestPoint(ray: IRay, point: IVec, out = vecAlloc()) {
+  const t = rayGetClosestT(ray, point);
+  return rayPointAt(ray, t, out);
+}
+
+export function rayGetClosestT(ray: IRay, point: IVec) {
+  return Math.max(_rayProjectT(ray, point), 0);
+}
+
 export function rayGetDirection(ray: IRay, out = vecAlloc()) {
   return vecReset(ray.dirX, ray.dirY, out);
 }
@@ -37,32 +69,40 @@ export function rayGetInitialPoint(ray: IRay, out = vecAlloc()) {
   return vecReset(ray.x0, ray.y0, out);
 }
 
-export function rayIntersectRay2Point(a: IRay, b: IRay, out = vecAlloc()) {
-  const t = rayIntersectRay2T(a, b);
+export function rayIntersectRayPoint(a: IRay, b: IRay, out = vecAlloc()) {
+  const t = rayIntersectRayT(a, b);
   return rayPointAt(a, t, out);
 }
 
-export function rayIntersectRay2T(a: IRay, b: IRay) {
-  const transform = mat2x3Reset(a.dirX, -a.dirY, a.dirY, a.dirX, 0, 0, TMP_MAT0);
-  const localRay2 = rayTransformByAff(b, transform, TMP_RAY0);
+export function rayIntersectRayT(a: IRay, b: IRay) {
+  const transform = mat2x3Reset(a.dirX, -a.dirY, a.dirY, a.dirX, -a.x0, -a.y0, TMP_MAT0);
+  const localB = rayTransformByAff(b, transform, TMP_RAY0);
 
-  if (localRay2.y0 === 0) {
-    if (localRay2.dirX > 0) {
-      return Math.max(0, localRay2.x0);
-    } else if (localRay2.dirX < 0 && localRay2.x0 >= 0) {
+  if (localB.y0 === 0) {
+    if (localB.dirX > 0) {
+      return Math.max(0, localB.x0);
+    } else if (localB.dirX < 0 && localB.x0 >= 0) {
       return 0;
     } else {
       return NaN;
     }
-  } else if (localRay2.y0 * localRay2.dirY >= 0) {
+  } else if (Math.sign(localB.y0) === Math.sign(localB.dirY)) {
     return NaN;
   } else {
-    const intercept = localRay2.x0 - (localRay2.dirX * localRay2.y0) / localRay2.dirY;
+    const intercept = localB.x0 - (localB.dirX * localB.y0) / localB.dirY;
     return intercept < 0 ? NaN : intercept;
   }
 }
 
+// export function rayIntersectSegmentT(a: IRay, segment: ISegment) {
+//   const from = vecReset(segment.x0, segment.y0, TMP_VEC0);
+//   const to = vecReset(segment.x1, segment.y1, TMP_VEC1);
+//   const segmentRay = rayLookAt(from, to);
+//   const segmentRay = rayLookAt();
+// }
+
 export function rayLookAt(from: IVec, to: IVec, out = rayAlloc()) {
+
   vecSubtract(to, from, TMP_VEC0);
   vecNormalize(TMP_VEC0, TMP_VEC0);
   return rayReset(from.x, from.y, TMP_VEC0.x, TMP_VEC0.y, out);
@@ -82,4 +122,12 @@ export function rayTransformByAff(ray: IRay, mat: IMat2x3, out = rayAlloc()) {
   vecReset(ray.x0 + ray.dirX, ray.y0 + ray.dirY, TMP_VEC1);
   vecTransformByAff(TMP_VEC1, mat, TMP_VEC1);
   return rayLookAt(TMP_VEC0, TMP_VEC1, out);
+}
+
+function _rayProjectT(ray: IRay, point: IVec) {
+  return (point.x - ray.x0) * ray.dirX + (point.y - ray.y0) * ray.dirY;
+}
+
+function _rayProjectPerp(ray: IRay, point: IVec) {
+  return (point.y - ray.y0) * ray.dirX - (point.x - ray.x0) * ray.dirY;
 }
