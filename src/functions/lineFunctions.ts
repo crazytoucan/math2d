@@ -7,7 +7,7 @@ import {
 } from "../internal/internalFunctions";
 import { EPSILON } from "../internal/parameters";
 import { ILine, IMat2x3, IRay, ISegment, IVec } from "../types";
-import { intersectionAlloc, intersectionReset } from "./intersectionFunctions";
+import { intersectionAlloc } from "./intersectionFunctions";
 import { mat2x3Alloc, mat2x3Reset } from "./mat2x3Functions";
 import { rayAlloc, rayTransformByAff } from "./rayFunctions";
 import { segmentGetLength } from "./segmentFunctions";
@@ -30,21 +30,20 @@ export function lineClone(line: ILine, out = lineAlloc()) {
 }
 
 export function lineContainsPoint(line: ILine, point: IVec) {
-  return lineGetClosestDistanceToPoint(line, point) < EPSILON;
+  return lineClosestDistanceToPoint(line, point) < EPSILON;
 }
 
-export function lineGetClosestSignedDistanceToPoint(line: ILine, point: IVec) {
+export function lineClosestDistanceToPoint(line: ILine, point: IVec) {
+  return Math.abs(lineClosestSignedDistanceToPoint(line, point));
+}
+
+export function lineClosestSignedDistanceToPoint(line: ILine, point: IVec) {
   return (point.y - line.y0) * line.dirX - (point.x - line.x0) * line.dirY;
 }
 
-export function lineGetClosestDistanceToPoint(line: ILine, point: IVec) {
-  return Math.abs(lineGetClosestSignedDistanceToPoint(line, point));
-}
-
-export function lineProjectPoint(line: ILine, point: IVec, out = intersectionAlloc()) {
+export function lineProjectPoint(line: ILine, point: IVec, out = vecAlloc()) {
   const t = _dot(line, point);
-  const distance = lineGetClosestSignedDistanceToPoint(line, point);
-  return intersectionReset(true, line.x0 + t * line.dirX, line.y0 + t * line.dirY, t, distance, out);
+  return vecReset(line.x0 + t * line.dirX, line.y0 + t * line.dirY, out);
 }
 
 const TMP_lineIntersectRayT_0 = mat2x3Alloc();
@@ -99,6 +98,11 @@ export function lineReset(x0: number, y0: number, dirX: number, dirY: number, ou
   out.dirX = dirX;
   out.dirY = dirY;
   return out;
+}
+
+export function lineSide(line: ILine, point: IVec) {
+  const d = lineClosestSignedDistanceToPoint(line, point);
+  return Math.abs(d) < EPSILON ? 0 : Math.sign(d);
 }
 
 export function lineTransformByAff(line: ILine, mat: IMat2x3, out = lineAlloc()) {

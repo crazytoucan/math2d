@@ -1,7 +1,10 @@
-import { ISegment, IVec } from "../types";
+import { ISegment, IVec, IRay, ILine } from "../types";
 import { vecAlloc, vecReset } from "./vecFunctions";
-import { _clamp } from "../internal/internalFunctions";
+import { _clamp, _intersectionSwap } from "../internal/internalFunctions";
 import { EPSILON_SQ } from "../internal/parameters";
+import { intersectionAlloc } from "./intersectionFunctions";
+import { rayIntersectSegment } from "./rayFunctions";
+import { lineIntersectSegment } from "./lineFunctions";
 
 class Segment implements ISegment {
   constructor(public x0 = NaN, public y0 = NaN, public x1 = NaN, public y1 = NaN) {}
@@ -9,10 +12,6 @@ class Segment implements ISegment {
 
 export function segmentAlloc(): ISegment {
   return new Segment();
-}
-
-export function segmentPointAt(segment: ISegment, t: number, out = vecAlloc()) {
-  return vecReset(segment.x0 * (1 - t) + segment.x1 * t, segment.y0 * (1 - t) + segment.y1 * t, out);
 }
 
 export function segmentGetEndpoint0(segment: ISegment, out = vecAlloc()) {
@@ -33,12 +32,12 @@ export function segmentGetLengthSq(segment: ISegment) {
   return dx * dx + dy * dy;
 }
 
-export function segmentGetNearestPoint(segment: ISegment, point: IVec, out = vecAlloc()) {
-  const t = segmentGetNearestT(segment, point);
+export function segmentNearestPoint(segment: ISegment, point: IVec, out = vecAlloc()) {
+  const t = segmentNearestT(segment, point);
   return segmentPointAt(segment, t, out);
 }
 
-export function segmentGetNearestT(segment: ISegment, point: IVec) {
+export function segmentNearestT(segment: ISegment, point: IVec) {
   const dSegX = segment.x1 - segment.x0;
   const dSegY = segment.y1 - segment.y0;
   const segLengthSq = dSegX * dSegX + dSegY * dSegY;
@@ -50,8 +49,16 @@ export function segmentGetNearestT(segment: ISegment, point: IVec) {
   return _clamp(dot / segLengthSq, 0, 1);
 }
 
-export function segmentReverse(segment: ISegment, out = segmentAlloc()) {
-  return segmentReset(segment.x1, segment.y1, segment.x0, segment.y0, out);
+export function segmentIntersectLine(segment: ISegment, line: ILine, out = intersectionAlloc()) {
+  return _intersectionSwap(lineIntersectSegment(line, segment, out));
+}
+
+export function segmentIntersectRay(segment: ISegment, ray: IRay, out = intersectionAlloc()) {
+  return _intersectionSwap(rayIntersectSegment(ray, segment, out));
+}
+
+export function segmentPointAt(segment: ISegment, t: number, out = vecAlloc()) {
+  return vecReset(segment.x0 * (1 - t) + segment.x1 * t, segment.y0 * (1 - t) + segment.y1 * t, out);
 }
 
 export function segmentReset(x0: number, y0: number, x1: number, y1: number, out = segmentAlloc()) {
@@ -60,4 +67,8 @@ export function segmentReset(x0: number, y0: number, x1: number, y1: number, out
   out.x1 = x1;
   out.y1 = y1;
   return out;
+}
+
+export function segmentReverse(segment: ISegment, out = segmentAlloc()) {
+  return segmentReset(segment.x1, segment.y1, segment.x0, segment.y0, out);
 }

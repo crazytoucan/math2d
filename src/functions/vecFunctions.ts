@@ -41,12 +41,16 @@ export function vecGetLengthSq(vec: IVec) {
   return vec.x * vec.x + vec.y * vec.y;
 }
 
-export function vecLerp(a: IVec, b: IVec, r: number, out = vecAlloc()) {
-  return vecReset(a.x * (1 - r) + b.x * r, a.y * (1 - r) + b.y * r, out);
-}
-
 export function vecGetManhattanLength(vec: IVec) {
   return Math.abs(vec.x) + Math.abs(vec.y);
+}
+
+export function vecManhattanDistance(a: IVec, b: IVec) {
+  return Math.abs(b.x - a.x) + Math.abs(b.y - a.y);
+}
+
+export function vecLerp(a: IVec, b: IVec, r: number, out = vecAlloc()) {
+  return vecReset(a.x * (1 - r) + b.x * r, a.y * (1 - r) + b.y * r, out);
 }
 
 export function vecNormalize(vec: IVec, out = vecAlloc()) {

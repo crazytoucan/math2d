@@ -1,5 +1,5 @@
+import { EPSILON, EPSILON_SQ } from "../internal/parameters";
 import { IMat2x3 } from "../types";
-import { EPSILON } from "../internal/parameters";
 
 class Mat2x3 implements IMat2x3 {
   constructor(public a = NaN, public b = NaN, public c = NaN, public d = NaN, public e = NaN, public f = NaN) {}
@@ -37,6 +37,13 @@ export function mat2x3AffInvert(mat: IMat2x3, out = mat2x3Alloc()) {
   }
 }
 
+export function mat2x3AffIsOrthogonal(mat: IMat2x3) {
+  const d1Sq = mat.a * mat.a + mat.b * mat.b;
+  const d2Sq = mat.c * mat.c + mat.d * mat.d;
+  const dot = mat.a * mat.c + mat.b * mat.d;
+  return Math.abs(d1Sq - 1) < EPSILON_SQ && Math.abs(d2Sq - 1) < EPSILON_SQ && Math.abs(dot) < EPSILON;
+}
+
 export function mat2x3AffIsTranslationOnly(mat: IMat2x3) {
   return mat.a === 1 && mat.b === 0 && mat.c === 0 && mat.d === 1;
 }
@@ -49,6 +56,20 @@ export function mat2x3AffMulMat2x3Aff(m1: IMat2x3, m2: IMat2x3, out = mat2x3Allo
   const e = m1.a * m2.e + m1.c * m2.f + m1.e;
   const f = m1.b * m2.e + m1.c * m2.f + m1.f;
   return mat2x3Reset(a, b, c, d, e, f, out);
+}
+
+export function mat2x3AffRotate(mat: IMat2x3, theta: number, out = mat2x3Alloc()) {
+  const cos = Math.cos(theta);
+  const sin = Math.sin(theta);
+  return mat2x3Reset(
+    cos * mat.a - sin * mat.c,
+    cos * mat.b - sin * mat.d,
+    sin * mat.a + cos * mat.c,
+    sin * mat.b + cos * mat.d,
+    mat.e,
+    mat.f,
+    out,
+  );
 }
 
 export function mat2x3AffScale(mat: IMat2x3, scalar: number, out = mat2x3Alloc()) {

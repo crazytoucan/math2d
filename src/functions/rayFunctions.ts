@@ -2,7 +2,7 @@ import { _dot, _intersectionDNE, _intersectionSwap, _rayLookAt } from "../intern
 import { EPSILON } from "../internal/parameters";
 import { ILine, IMat2x3, IRay, ISegment, IVec } from "../types";
 import { intersectionAlloc } from "./intersectionFunctions";
-import { lineAlloc, lineGetClosestDistanceToPoint, lineIntersectLine, lineIntersectRay } from "./lineFunctions";
+import { lineAlloc, lineClosestDistanceToPoint, lineIntersectLine, lineIntersectRay } from "./lineFunctions";
 import { segmentGetLength } from "./segmentFunctions";
 import { vecAlloc, vecDistance, vecReset, vecTransformByAff } from "./vecFunctions";
 
@@ -33,7 +33,7 @@ export function rayGetClosestDistanceToPoint(ray: IRay, point: IVec) {
     const initial = vecReset(ray.x0, ray.y0, TMP_rayGetClosestDistance_0);
     return vecDistance(initial, point);
   } else {
-    return lineGetClosestDistanceToPoint(ray, point);
+    return lineClosestDistanceToPoint(ray, point);
   }
 }
 

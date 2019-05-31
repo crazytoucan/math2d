@@ -7,10 +7,10 @@ import {
   polylineIsClosed,
   polylineClose,
   polylineGetSegmentLength,
-  polylineGetSegmentIndexAt,
-  polylineGetPointAt,
-  polylineGetNearestT,
-  polylineGetNearestVertexIndex,
+  polylineSegmentIndexAt,
+  polylinePointAt,
+  polylineNearestT,
+  polylineNearestVertexIndex,
 } from "./polylineFunctions";
 import { vecAlloc, vecReset } from "./vecFunctions";
 import { segmentAlloc, segmentReset } from "./segmentFunctions";
@@ -57,12 +57,12 @@ export function polygonContainsPoint(poly: IPolygon, point: IVec) {
   return inside;
 }
 
-export function polygonGetNearestPoint(poly: IPolygon, point: IVec, out = vecAlloc()) {
-  const d = polylineGetNearestT(poly, point);
-  return polylineGetPointAt(poly, d, out);
+export function polygonNearestPoint(poly: IPolygon, point: IVec, out = vecAlloc()) {
+  const d = polygonNearestT(poly, point);
+  return polygonPointAt(poly, d, out);
 }
 
-export function polygonGetNearestT(poly: IPolygon, point: IVec) {
+export function polygonNearestT(poly: IPolygon, point: IVec) {
   if (poly.length === 0) {
     return NaN;
   }
@@ -72,11 +72,11 @@ export function polygonGetNearestT(poly: IPolygon, point: IVec) {
     return 0;
   }
 
-  return polylineGetNearestT(asPolylineInternal(poly), point);
+  return polylineNearestT(asPolylineInternal(poly), point);
 }
 
-export function polygonGetNearestVertexIndex(poly: IPolygon, point: IVec) {
-  return polylineGetNearestVertexIndex(poly, point);
+export function polygonNearestVertexIndex(poly: IPolygon, point: IVec) {
+  return polylineNearestVertexIndex(poly, point);
 }
 
 export function polygonGetNumSides(poly: IPolygon) {
@@ -87,7 +87,7 @@ export function polygonGetPerimeter(poly: IPolygon) {
   return polylineGetLength(asPolylineInternal(poly));
 }
 
-export function polygonGetPointAt(poly: IPolygon, t: number, out = vecAlloc()) {
+export function polygonPointAt(poly: IPolygon, t: number, out = vecAlloc()) {
   if (poly.length === 0) {
     return vecReset(NaN, NaN, out);
   }
@@ -98,7 +98,7 @@ export function polygonGetPointAt(poly: IPolygon, t: number, out = vecAlloc()) {
   }
 
   t = ((t % perimeter) + perimeter) % perimeter;
-  return polylineGetPointAt(asPolylineInternal(poly), t, out);
+  return polylinePointAt(asPolylineInternal(poly), t, out);
 }
 
 export function polygonGetSideSegment(poly: IPolygon, index: number, out = segmentAlloc()) {
@@ -112,14 +112,14 @@ export function polygonGetSideSegment(poly: IPolygon, index: number, out = segme
   }
 }
 
-export function polygonGetSideIndexAt(poly: IPolygon, t: number) {
+export function polygonSideIndexAt(poly: IPolygon, t: number) {
   const perimeter = polygonGetPerimeter(poly);
   if (perimeter < EPSILON) {
     return 0;
   }
 
   t = ((t % perimeter) + perimeter) % perimeter;
-  return polylineGetSegmentIndexAt(asPolylineInternal(poly), t);
+  return polylineSegmentIndexAt(asPolylineInternal(poly), t);
 }
 
 export function polygonGetSideLength(poly: IPolygon, idx: number) {

@@ -37,7 +37,7 @@ export function boxContainsBox(a: IBox, b: IBox) {
 }
 
 export function boxContainsPoint(box: IBox, point: IVec) {
-  return point.x > box.minX && point.y > box.minY && point.x < box.maxX && point.y < box.maxY;
+  return point.x >= box.minX && point.y >= box.minY && point.x <= box.maxX && point.y <= box.maxY;
 }
 
 export function boxEncapsulate(box: IBox, point: IVec, out = boxAlloc()) {
