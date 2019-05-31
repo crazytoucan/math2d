@@ -1,8 +1,18 @@
 import { EPSILON_SQ } from "../internal/parameters";
-import { IMat2x3, IPolyline, IVec } from "../types";
+import { IMat2x3, IPolyline, IVec, ILine, ISegment } from "../types";
 import { boxAlloc, boxEncapsulate, boxReset } from "./boxFunctions";
-import { segmentAlloc, segmentNearestT, segmentPointAt, segmentReset } from "./segmentFunctions";
+import {
+  segmentAlloc,
+  segmentNearestT,
+  segmentPointAt,
+  segmentReset,
+  segmentIntersectLine,
+  segmentGetLength,
+  segmentIntersectSegment,
+} from "./segmentFunctions";
 import { vecAlloc, vecDistanceSq, vecLerp, vecReset, vecTransformByAff } from "./vecFunctions";
+import { intersectionAlloc } from "./intersectionFunctions";
+import { _intersectionDNE } from "../internal/internalFunctions";
 
 export function polylineAlloc(): IPolyline {
   return [];
@@ -68,6 +78,44 @@ export function polylineGetSegmentLength(poly: IPolyline, idx: number) {
 export function polylineGetVertex(poly: IPolyline, index: number, out = vecAlloc()) {
   const l = 2 * index;
   return l >= 0 && l < poly.length ? vecReset(poly[l], poly[l + 1], out) : vecReset(NaN, NaN, out);
+}
+
+const TMP_polylineIntersectLineFirst_0 = segmentAlloc();
+export function polylineIntersectLineFirst(poly: IPolyline, line: ILine, out = intersectionAlloc()) {
+  const numSegments = polylineGetNumSegments(poly);
+  let traversed = 0;
+  for (let i = 0; i < numSegments; i++) {
+    const segment = polylineGetSegment(poly, i, TMP_polylineIntersectLineFirst_0);
+    const segmentLength = segmentGetLength(segment);
+    segmentIntersectLine(segment, line, out);
+    if (out.exists) {
+      out.t0 = traversed + out.t0 * segmentLength;
+      return out;
+    }
+
+    traversed += segmentLength;
+  }
+
+  return _intersectionDNE(out);
+}
+
+const TMP_polylineIntersectSegmentFirst_0 = segmentAlloc();
+export function polylineIntersectSegmentFirst(poly: IPolyline, segment: ISegment, out = intersectionAlloc()) {
+  const numSegments = polylineGetNumSegments(poly);
+  let traversed = 0;
+  for (let i = 0; i < numSegments; i++) {
+    const polySegment = polylineGetSegment(poly, i, TMP_polylineIntersectSegmentFirst_0);
+    const polySegmentLength = segmentGetLength(segment);
+    segmentIntersectSegment(polySegment, segment, out);
+    if (out.exists) {
+      out.t0 = traversed + out.t0 * polySegmentLength;
+      return out;
+    }
+
+    traversed += polySegmentLength;
+  }
+
+  return _intersectionDNE(out);
 }
 
 export function polylineIsClosed(poly: IPolyline) {

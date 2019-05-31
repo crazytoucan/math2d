@@ -52,7 +52,7 @@ export {
   polygonGetPerimeter,
   polygonGetSideLength,
   polygonGetSideSegment,
-  polygonNearestPoint as polygonGetNearestPoint,
+  polygonNearestPoint,
   polygonNearestT,
   polygonNearestVertexIndex,
   polygonPointAt,

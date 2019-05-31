@@ -1,10 +1,10 @@
 import { ISegment, IVec, IRay, ILine } from "../types";
 import { vecAlloc, vecReset } from "./vecFunctions";
-import { _clamp, _intersectionSwap } from "../internal/internalFunctions";
-import { EPSILON_SQ } from "../internal/parameters";
+import { _clamp, _intersectionSwap, _rayLookAt, _intersectionDNE } from "../internal/internalFunctions";
+import { EPSILON_SQ, EPSILON } from "../internal/parameters";
 import { intersectionAlloc } from "./intersectionFunctions";
-import { rayIntersectSegment } from "./rayFunctions";
-import { lineIntersectSegment } from "./lineFunctions";
+import { rayIntersectSegment, rayAlloc } from "./rayFunctions";
+import { lineIntersectSegment, lineAlloc } from "./lineFunctions";
 
 class Segment implements ISegment {
   constructor(public x0 = NaN, public y0 = NaN, public x1 = NaN, public y1 = NaN) {}
@@ -55,6 +55,19 @@ export function segmentIntersectLine(segment: ISegment, line: ILine, out = inter
 
 export function segmentIntersectRay(segment: ISegment, ray: IRay, out = intersectionAlloc()) {
   return _intersectionSwap(rayIntersectSegment(ray, segment, out));
+}
+
+const TMP_segmentIntersectSegment_0 = lineAlloc();
+export function segmentIntersectSegment(a: ISegment, b: ISegment, out = intersectionAlloc()) {
+  const aLine = _rayLookAt(a.x0, a.y0, a.x1, a.y1, TMP_segmentIntersectSegment_0);
+  lineIntersectSegment(aLine, b, out);
+  const segmentLength = segmentGetLength(a);
+  if (out.exists && out.t0 > -EPSILON && out.t0 < segmentLength + EPSILON) {
+    out.t0 /= segmentLength;
+    return out;
+  } else {
+    return _intersectionDNE(out);
+  }
 }
 
 export function segmentPointAt(segment: ISegment, t: number, out = vecAlloc()) {

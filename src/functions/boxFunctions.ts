@@ -51,7 +51,7 @@ export function boxEncapsulate(box: IBox, point: IVec, out = boxAlloc()) {
 }
 
 export function boxIntersectsBox(a: IBox, b: IBox) {
-  return a.minX < b.maxX && a.minY < b.maxY && a.maxX > b.minX && a.maxY > b.minY;
+  return a.minX <= b.maxX && a.minY <= b.maxY && a.maxX >= b.minX && a.maxY >= b.minY;
 }
 
 export function boxIntersection(a: IBox, b: IBox, out = boxAlloc()) {
@@ -65,7 +65,7 @@ export function boxIntersection(a: IBox, b: IBox, out = boxAlloc()) {
 }
 
 export function boxIsEmpty(box: IBox) {
-  return box.maxX <= box.minX || box.maxY <= box.minY;
+  return box.maxX < box.minX || box.maxY < box.minY;
 }
 
 export function boxReset(minX: number, minY: number, maxX: number, maxY: number, out = boxAlloc()) {
