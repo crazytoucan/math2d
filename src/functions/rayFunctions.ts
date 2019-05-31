@@ -1,9 +1,16 @@
-import { _dot, _intersectionDNE, _intersectionSwap, _rayLookAt } from "../internal/internalFunctions";
+import {
+  _dot,
+  _intersectionDNE,
+  _intersectionSwap,
+  _invertValuesIterator as _reorderValuesIterator,
+  _polylineIntersectAllHelper,
+  _rayLookAt,
+} from "../internal/internalFunctions";
 import { EPSILON } from "../internal/parameters";
-import { ILine, IMat2x3, IRay, ISegment, IVec } from "../types";
+import { IIntersection, ILine, IMat2x3, IPolyline, IRay, ISegment, IVec } from "../types";
 import { intersectionAlloc } from "./intersectionFunctions";
 import { lineAlloc, lineClosestDistanceToPoint, lineIntersectLine, lineIntersectRay } from "./lineFunctions";
-import { segmentGetLength } from "./segmentFunctions";
+import { segmentGetLength, segmentIntersectRay } from "./segmentFunctions";
 import { vecAlloc, vecDistance, vecReset, vecTransformByAff } from "./vecFunctions";
 
 class Ray implements IRay {
@@ -44,6 +51,10 @@ export function rayGetClosestPoint(ray: IRay, point: IVec, out = vecAlloc()) {
 
 export function rayIntersectLine(ray: IRay, line: ILine, out = intersectionAlloc()) {
   return _intersectionSwap(lineIntersectRay(line, ray, out));
+}
+
+export function rayIntersectPolylineIterator(ray: IRay, poly: IPolyline): IterableIterator<IIntersection> {
+  return _reorderValuesIterator(_polylineIntersectAllHelper(poly, ray, segmentIntersectRay));
 }
 
 export function rayIntersectRay(a: IRay, b: IRay, out = intersectionAlloc()) {

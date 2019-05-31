@@ -4,13 +4,15 @@ import {
   _intersectionExists,
   _rayLookAt,
   _rayTransformByOrtho,
+  _polylineIntersectAllHelper,
+  _invertValuesIterator,
 } from "../internal/internalFunctions";
 import { EPSILON } from "../internal/parameters";
-import { ILine, IMat2x3, IRay, ISegment, IVec } from "../types";
+import { IIntersection, ILine, IMat2x3, IPolyline, IRay, ISegment, IVec } from "../types";
 import { intersectionAlloc } from "./intersectionFunctions";
 import { mat2x3Alloc, mat2x3Reset } from "./mat2x3Functions";
 import { rayAlloc, rayTransformByAff } from "./rayFunctions";
-import { segmentGetLength } from "./segmentFunctions";
+import { segmentGetLength, segmentIntersectLine } from "./segmentFunctions";
 import { vecAlloc, vecNormalize, vecReset, vecSubtract } from "./vecFunctions";
 
 class Line implements ILine {
@@ -64,6 +66,10 @@ export function lineIntersectLine(a: ILine, b: ILine, out = intersectionAlloc())
     const t1 = _dot(b, intersectionPoint);
     return _intersectionExists(intersectionPoint.x, intersectionPoint.y, t0, t1, out);
   }
+}
+
+export function lineIntersectPolylineIterator(line: ILine, poly: IPolyline): IterableIterator<IIntersection> {
+  return _invertValuesIterator(_polylineIntersectAllHelper(poly, line, segmentIntersectLine));
 }
 
 const TMP_lineIntersectSegment_0 = rayAlloc();

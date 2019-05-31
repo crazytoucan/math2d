@@ -1,6 +1,9 @@
-import { rayReset, rayAlloc } from "../functions/rayFunctions";
+import { intersectionAlloc, intersectionReset } from "../functions/intersectionFunctions";
+import { polylineGetNumSegments, polylineGetSegment } from "../functions/polylineFunctions";
+import { rayAlloc, rayReset } from "../functions/rayFunctions";
+import { segmentAlloc, segmentGetLength } from "../functions/segmentFunctions";
 import { vecAlloc, vecNormalize, vecReset, vecTransformByAff } from "../functions/vecFunctions";
-import { IIntersection, ILine, IRay, IVec, IMat2x3 } from "../types";
+import { IIntersection, ILine, IMat2x3, IPolyline, IRay, ISegment, IVec } from "../types";
 
 export function _clamp(value: number, min: number, max: number) {
   return value < min ? min : value > max ? max : value;
@@ -29,6 +32,7 @@ export function _intersectionSwap(out: IIntersection) {
   const tmp = out.t0;
   out.t0 = out.t1;
   out.t1 = tmp;
+  return out;
 }
 
 const TMP_rayLookAt_0 = vecAlloc();
@@ -43,4 +47,38 @@ export function _rayTransformByOrtho(ray: IRay, mat: IMat2x3, out = rayAlloc()) 
   const initial = vecReset(ray.x0, ray.y0, TMP_rayTransformByOrtho_0);
   vecTransformByAff(initial, mat, initial);
   return rayReset(initial.x, initial.y, mat.a * ray.dirX + mat.c * ray.dirY, mat.b * ray.dirX + mat.d * ray.dirY, out);
+}
+
+const TMP_polylineIntersectAllHelper_0 = segmentAlloc();
+const TMP_polylineIntersectAllHelper_1 = intersectionAlloc();
+export function _polylineIntersectAllHelper<T>(
+  poly: IPolyline,
+  value: T,
+  doIntersectSegment: (segment: ISegment, value: T, out: IIntersection) => IIntersection,
+) {
+  const allIntersections: IIntersection[] = [];
+  const numSegments = polylineGetNumSegments(poly);
+  let traversed = 0;
+  for (let i = 0; i < numSegments; i++) {
+    const segment = polylineGetSegment(poly, i, TMP_polylineIntersectAllHelper_0);
+    const segmentLength = segmentGetLength(segment);
+    const out = doIntersectSegment(segment, value, TMP_polylineIntersectAllHelper_1);
+    if (out.exists) {
+      allIntersections.push(intersectionReset(true, out.x, out.y, traversed + out.t0 * segmentLength, out.t1));
+    }
+
+    traversed += segmentLength;
+  }
+
+  return allIntersections;
+}
+
+function sortByT0Increasing(a: IIntersection, b: IIntersection) {
+  return a.t0 < b.t0 ? -1 : a.t0 > b.t0 ? 1 : 0;
+}
+
+export function _invertValuesIterator(intersections: IIntersection[]) {
+  intersections.forEach(_intersectionSwap);
+  intersections.sort(sortByT0Increasing);
+  return intersections.values();
 }

@@ -1,10 +1,17 @@
-import { ISegment, IVec, IRay, ILine } from "../types";
-import { vecAlloc, vecReset } from "./vecFunctions";
-import { _clamp, _intersectionSwap, _rayLookAt, _intersectionDNE } from "../internal/internalFunctions";
-import { EPSILON_SQ, EPSILON } from "../internal/parameters";
+import {
+  _clamp,
+  _intersectionDNE,
+  _intersectionSwap,
+  _rayLookAt,
+  _invertValuesIterator,
+  _polylineIntersectAllHelper,
+} from "../internal/internalFunctions";
+import { EPSILON, EPSILON_SQ } from "../internal/parameters";
+import { ILine, IRay, ISegment, IVec, IIntersection, IPolyline } from "../types";
 import { intersectionAlloc } from "./intersectionFunctions";
-import { rayIntersectSegment, rayAlloc } from "./rayFunctions";
-import { lineIntersectSegment, lineAlloc } from "./lineFunctions";
+import { lineAlloc, lineIntersectSegment } from "./lineFunctions";
+import { rayIntersectSegment } from "./rayFunctions";
+import { vecAlloc, vecReset } from "./vecFunctions";
 
 class Segment implements ISegment {
   constructor(public x0 = NaN, public y0 = NaN, public x1 = NaN, public y1 = NaN) {}
@@ -30,6 +37,10 @@ export function segmentGetLengthSq(segment: ISegment) {
   const dx = segment.x1 - segment.x0;
   const dy = segment.y1 - segment.y0;
   return dx * dx + dy * dy;
+}
+
+export function segmentIntersectPolylineIterator(segment: ISegment, poly: IPolyline): IterableIterator<IIntersection> {
+  return _invertValuesIterator(_polylineIntersectAllHelper(poly, segment, segmentIntersectSegment));
 }
 
 export function segmentNearestPoint(segment: ISegment, point: IVec, out = vecAlloc()) {
