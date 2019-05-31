@@ -1,20 +1,16 @@
 import { IBox, IVec, IMat2x3 } from "../types";
 import { arrayReset } from "../internal/collectionsUtils";
-import {
-  polylineTransformByAff,
-  polylineGetBounds,
-  polylineAlloc,
-} from "./polylineFunctions";
+import { polylineTransformByAff, polylineGetBounds, polylineAlloc } from "./polylineFunctions";
 import { OUT_MIN_X, OUT_MAX_X, OUT_MIN_Y, OUT_MAX_Y } from "../const";
 
 const TMP_POLYLINE = polylineAlloc();
 
-class Aabb implements IBox {
+class Box implements IBox {
   constructor(public minX = NaN, public minY = NaN, public maxX = NaN, public maxY = NaN) {}
 }
 
 export function boxAlloc(): IBox {
-  return new Aabb();
+  return new Box();
 }
 
 export function boxClone(box: IBox, out = boxAlloc()) {
@@ -56,7 +52,7 @@ export function boxEncapsulate(box: IBox, point: IVec, out = boxAlloc()) {
   );
 }
 
-export function boxIntersects(a: IBox, b: IBox) {
+export function boxIntersectsBox(a: IBox, b: IBox) {
   return a.minX < b.maxX && a.minY < b.maxY && a.maxX > b.minX && a.maxY > b.minY;
 }
 

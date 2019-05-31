@@ -5,22 +5,18 @@ class Mat2x3 implements IMat2x3 {
   constructor(public a = NaN, public b = NaN, public c = NaN, public d = NaN, public e = NaN, public f = NaN) {}
 }
 
-export function mat2x3Alloc(): IMat2x3 {
-  return new Mat2x3();
-}
-
-export function mat2x3Clone(mat: IMat2x3, out = mat2x3Alloc()) {
-  out.a = mat.a;
-  out.b = mat.b;
-  out.c = mat.c;
-  out.d = mat.d;
-  out.e = mat.e;
-  out.f = mat.f;
-  return out;
-}
-
 export function mat2x3AffDeterminant(mat: IMat2x3) {
   return mat.a * mat.d - mat.b * mat.c;
+}
+
+export function mat2x3AffFromRotation(theta: number, out = mat2x3Alloc()) {
+  const sin = Math.sin(theta);
+  const cos = Math.cos(theta);
+  return mat2x3Reset(cos, -sin, sin, cos, 0, 0, out);
+}
+
+export function mat2x3AffFromTranslation(tx: number, ty: number, out = mat2x3Alloc()) {
+  return mat2x3Reset(0, 0, 0, 0, tx, ty, out);
 }
 
 export function mat2x3AffInvert(mat: IMat2x3, out = mat2x3Alloc()) {
@@ -29,13 +25,15 @@ export function mat2x3AffInvert(mat: IMat2x3, out = mat2x3Alloc()) {
     return mat2x3Reset(NaN, NaN, NaN, NaN, NaN, NaN, out);
   } else {
     const detInverse = 1 / det;
-    const a = detInverse * mat.d;
-    const b = -detInverse * mat.b;
-    const c = -detInverse * mat.c;
-    const d = detInverse * mat.a;
-    const e = detInverse * (mat.c * mat.f - mat.d * mat.e);
-    const f = detInverse * (mat.b * mat.e - mat.a * mat.f);
-    return mat2x3Reset(a, b, c, d, e, f, out);
+    return mat2x3Reset(
+      detInverse * mat.d,
+      -detInverse * mat.b,
+      -detInverse * mat.c,
+      detInverse * mat.a,
+      detInverse * (mat.c * mat.f - mat.d * mat.e),
+      detInverse * (mat.b * mat.e - mat.a * mat.f),
+      out,
+    );
   }
 }
 
@@ -53,6 +51,22 @@ export function mat2x3AffMulMat2x3Aff(m1: IMat2x3, m2: IMat2x3, out = mat2x3Allo
   return mat2x3Reset(a, b, c, d, e, f, out);
 }
 
+export function mat2x3AffScale(mat: IMat2x3, scalar: number, out = mat2x3Alloc()) {
+  return mat2x3Reset(scalar * mat.a, scalar * mat.b, scalar * mat.c, scalar * mat.d, mat.e, mat.f, out);
+}
+
+export function mat2x3AffTranslate(mat: IMat2x3, tx: number, ty: number, out = mat2x3Alloc()) {
+  return mat2x3Reset(mat.a, mat.b, mat.c, mat.d, mat.e + tx, mat.f + ty, out);
+}
+
+export function mat2x3Alloc(): IMat2x3 {
+  return new Mat2x3();
+}
+
+export function mat2x3Clone(mat: IMat2x3, out = mat2x3Alloc()) {
+  return mat2x3Reset(mat.a, mat.b, mat.c, mat.d, mat.e, mat.f, out);
+}
+
 export function mat2x3Reset(a: number, b: number, c: number, d: number, e: number, f: number, out = mat2x3Alloc()) {
   out.a = a;
   out.b = b;
@@ -60,15 +74,5 @@ export function mat2x3Reset(a: number, b: number, c: number, d: number, e: numbe
   out.d = d;
   out.e = e;
   out.f = f;
-  return out;
-}
-
-export function mat2x3Scale(mat: IMat2x3, scalar: number, out = mat2x3Alloc()) {
-  out.a = scalar * mat.a;
-  out.b = scalar * mat.b;
-  out.c = scalar * mat.c;
-  out.d = scalar * mat.d;
-  out.e = scalar * mat.e;
-  out.f = scalar * mat.f;
   return out;
 }

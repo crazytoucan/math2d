@@ -1,5 +1,5 @@
 {
-  "name": "vecmath",
+  "name": "@crazytoucan/geometry",
   "version": "0.0.0",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
