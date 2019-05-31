@@ -1,4 +1,4 @@
-import { IMat2x3, IRay, IVec } from "../types";
+import { IMat2x3, IRay, IVec, ISegment } from "../types";
 import { mat2x3Alloc, mat2x3Reset } from "./mat2x3Functions";
 import {
   vecAlloc,
@@ -10,6 +10,7 @@ import {
   vecDistance,
 } from "./vecFunctions";
 import { EPSILON_SQ, EPSILON } from "../internal/parameters";
+import { segmentGetLengthSq } from "./segmentFunctions";
 
 class Ray implements IRay {
   constructor(public x0 = NaN, public y0 = NaN, public dirX = NaN, public dirY = NaN) {}
@@ -93,12 +94,17 @@ export function rayIntersectRayT(a: IRay, b: IRay) {
   }
 }
 
-// export function rayIntersectSegmentT(a: IRay, segment: ISegment) {
-//   const from = vecReset(segment.x0, segment.y0, TMP_VEC0);
-//   const to = vecReset(segment.x1, segment.y1, TMP_VEC1);
-//   const segmentRay = rayLookAt(from, to);
-//   const segmentRay = rayLookAt();
-// }
+const TMP_rayIntersectSegmentT_0 = vecAlloc();
+export function rayIntersectSegmentT(ray: IRay, segment: ISegment) {
+  const segLengthSq = segmentGetLengthSq(segment);
+  if (segLengthSq < EPSILON_SQ) {
+    const degenerateSegment = vecReset(segment.x0, segment.y0, TMP_rayIntersectSegmentT_0);
+    return rayContainsPoint(ray, degenerateSegment) ? _rayProjectT(ray, degenerateSegment) : NaN;
+  } else {
+    // TODO
+    return 0;
+  }
+}
 
 const TMP_rayLookAt_0 = vecAlloc();
 export function rayLookAt(from: IVec, to: IVec, out = rayAlloc()) {
