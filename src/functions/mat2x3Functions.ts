@@ -1,9 +1,6 @@
 import { EPSILON, EPSILON_SQ } from "../internal/parameters";
 import { IMat2x3 } from "../types";
-
-class Mat2x3 implements IMat2x3 {
-  constructor(public a = NaN, public b = NaN, public c = NaN, public d = NaN, public e = NaN, public f = NaN) {}
-}
+import { _mat2x3Alloc } from "../internal/primitives";
 
 export function mat2x3AffDeterminant(mat: IMat2x3) {
   return mat.a * mat.d - mat.b * mat.c;
@@ -85,7 +82,7 @@ export function mat2x3AffTranslate(mat: IMat2x3, tx: number, ty: number, out = m
 }
 
 export function mat2x3Alloc(): IMat2x3 {
-  return new Mat2x3();
+  return _mat2x3Alloc();
 }
 
 export function mat2x3Clone(mat: IMat2x3, out = mat2x3Alloc()) {

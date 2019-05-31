@@ -12,9 +12,10 @@ import {
   segmentReset,
 } from "./segmentFunctions";
 import { vecAlloc, vecDistanceSq, vecLerp, vecReset, vecTransformByAff } from "./vecFunctions";
+import { _polygonAlloc } from "../internal/primitives";
 
 export function polylineAlloc(): IPolyline {
-  return [];
+  return _polygonAlloc();
 }
 
 export function polylineClose(poly: IPolyline, out = polylineAlloc()) {

@@ -1,11 +1,9 @@
-import { vecClone, vecAlloc, vecReset } from "../../functions/vecFunctions";
-import { IVec } from "../../types";
+import { vecAlloc, vecClone, vecReset } from "../../functions/vecFunctions";
+import { expectVecEqualsApprox } from "../helpers";
 
 describe("vecClone", () => {
   it("should copy components", () => {
-    let res = vecClone(vecReset(4, 5));
-    expect(res.x).toBe(4);
-    expect(res.y).toBe(5);
+    expectVecEqualsApprox(vecClone(vecReset(4, 5)), 4, 5);
   });
 
   it("should return a new vector if no `out`", () => {

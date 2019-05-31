@@ -1,11 +1,8 @@
 import { IIntersection } from "../types";
+import { _intersectionAlloc } from "../internal/primitives";
 
-class Intersection implements IIntersection {
-  constructor(public exists = false, public x = NaN, public y = NaN, public t0 = NaN, public t1 = NaN) {}
-}
-
-export function intersectionAlloc(): IIntersection {
-  return new Intersection();
+export function intersectionAlloc() {
+  return _intersectionAlloc();
 }
 
 export function intersectionClone(inter: IIntersection, out = intersectionAlloc()) {

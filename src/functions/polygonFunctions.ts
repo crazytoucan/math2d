@@ -20,9 +20,10 @@ import {
   segmentReset,
 } from "./segmentFunctions";
 import { vecAlloc, vecReset } from "./vecFunctions";
+import { _polygonAlloc } from "../internal/primitives";
 
 export function polygonAlloc(): IPolygon {
-  return [];
+  return _polygonAlloc();
 }
 
 export function polygonGetBounds(poly: IPolygon, out = boxAlloc()) {

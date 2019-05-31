@@ -1,16 +1,14 @@
-import { IVec, IMat2x3 } from "../types";
 import { EPSILON_SQ } from "../internal/parameters";
+import { _vecAlloc } from '../internal/primitives';
+import { IMat2x3, IVec } from "../types";
 
-class Vec2 implements IVec {
-  constructor(public x = NaN, public y = NaN) {}
-}
 
 export function vecAdd(a: IVec, b: IVec, out = vecAlloc()) {
   return vecReset(a.x + b.x, a.y + b.y, out);
 }
 
 export function vecAlloc(): IVec {
-  return new Vec2();
+  return _vecAlloc();
 }
 
 export function vecClone(vec: IVec, out = vecAlloc()) {
@@ -61,6 +59,10 @@ export function vecNormalize(vec: IVec, out = vecAlloc()) {
     const lenInverse = 1 / Math.sqrt(lenSq);
     return vecReset(lenInverse * vec.x, lenInverse * vec.y, out);
   }
+}
+
+export function vecOrigin(out = vecAlloc()) {
+  return vecReset(0, 0, out);
 }
 
 export function vecPerp(vec: IVec, out = vecAlloc()) {

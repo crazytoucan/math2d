@@ -12,13 +12,10 @@ import { intersectionAlloc } from "./intersectionFunctions";
 import { lineAlloc, lineClosestDistanceToPoint, lineIntersectLine, lineIntersectRay } from "./lineFunctions";
 import { segmentGetLength, segmentIntersectRay } from "./segmentFunctions";
 import { vecAlloc, vecDistance, vecReset, vecTransformByAff } from "./vecFunctions";
-
-class Ray implements IRay {
-  constructor(public x0 = NaN, public y0 = NaN, public dirX = NaN, public dirY = NaN) {}
-}
+import { _rayAlloc } from "../internal/primitives";
 
 export function rayAlloc(): IRay {
-  return new Ray();
+  return _rayAlloc();
 }
 
 export function rayPointAt(ray: IRay, t: number, out = vecAlloc()) {

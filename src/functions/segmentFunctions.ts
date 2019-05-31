@@ -12,13 +12,10 @@ import { intersectionAlloc } from "./intersectionFunctions";
 import { lineAlloc, lineIntersectSegment } from "./lineFunctions";
 import { rayIntersectSegment } from "./rayFunctions";
 import { vecAlloc, vecReset } from "./vecFunctions";
-
-class Segment implements ISegment {
-  constructor(public x0 = NaN, public y0 = NaN, public x1 = NaN, public y1 = NaN) {}
-}
+import { _segmentAlloc } from "../internal/primitives";
 
 export function segmentAlloc(): ISegment {
-  return new Segment();
+  return _segmentAlloc();
 }
 
 export function segmentGetEndpoint0(segment: ISegment, out = vecAlloc()) {

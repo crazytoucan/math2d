@@ -14,13 +14,10 @@ import { mat2x3Alloc, mat2x3Reset } from "./mat2x3Functions";
 import { rayAlloc, rayTransformByAff } from "./rayFunctions";
 import { segmentGetLength, segmentIntersectLine } from "./segmentFunctions";
 import { vecAlloc, vecNormalize, vecReset, vecSubtract } from "./vecFunctions";
+import { _lineAlloc } from "../internal/primitives";
 
-class Line implements ILine {
-  constructor(public x0 = NaN, public y0 = NaN, public dirX = NaN, public dirY = NaN) {}
-}
-
-export function lineAlloc(): ILine {
-  return new Line();
+export function lineAlloc() {
+  return _lineAlloc();
 }
 
 export function linePointAt(line: ILine, t: number, out = vecAlloc()) {

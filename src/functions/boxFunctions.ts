@@ -2,13 +2,10 @@ import { IBox, IVec, IMat2x3 } from "../types";
 import { arrayReset } from "../internal/collectionsUtils";
 import { polylineTransformByAff, polylineGetBounds, polylineAlloc } from "./polylineFunctions";
 import { OUT_MIN_X, OUT_MAX_X, OUT_MIN_Y, OUT_MAX_Y } from "../const";
+import { _boxAlloc } from "../internal/primitives";
 
-class Box implements IBox {
-  constructor(public minX = NaN, public minY = NaN, public maxX = NaN, public maxY = NaN) {}
-}
-
-export function boxAlloc(): IBox {
-  return new Box();
+export function boxAlloc() {
+  return _boxAlloc();
 }
 
 export function boxClone(box: IBox, out = boxAlloc()) {
