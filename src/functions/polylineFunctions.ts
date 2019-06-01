@@ -40,7 +40,7 @@ export function polylineClose(poly: IPolyline, out = polylineAlloc()) {
 
 const TMP_polylineGetBounds_0 = _vecAlloc();
 export function polylineGetBounds(poly: IPolyline, out = boxAlloc()) {
-  boxReset(Infinity, -Infinity, Infinity, -Infinity, out);
+  boxReset(Infinity, Infinity, -Infinity, -Infinity, out);
   for (let i = 0; i < poly.length; i += 2) {
     const v0 = vecReset(poly[i], poly[i + 1], TMP_polylineGetBounds_0);
     boxEncapsulate(out, v0, out);

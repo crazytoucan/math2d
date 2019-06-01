@@ -1,5 +1,5 @@
 import { vecPerp, vecReset } from "../../functions/vecFunctions";
-import { expectVecEqualsApprox, expectVecNaNs } from "../helpers";
+import { expectVecEqualsApprox } from "../helpers";
 
 describe("vecPerp", () => {
   it("⟂(4,5) => (-5,4)", () => {
@@ -15,6 +15,6 @@ describe("vecPerp", () => {
   });
 
   it("⟂(NaN,NaN) => (NaN,NaN)", () => {
-    expectVecNaNs(vecPerp(vecReset(NaN, NaN)));
+    expectVecEqualsApprox(vecPerp(vecReset(NaN, NaN)), NaN, NaN);
   });
 });
