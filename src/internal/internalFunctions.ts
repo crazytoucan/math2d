@@ -10,7 +10,7 @@ import { segmentGetLength } from "../functions/segmentFunctions";
 import { vecNormalize, vecReset, vecTransformByAff } from "../functions/vecFunctions";
 import { IIntersection, ILine, IMat2x3, IPolygon, IPolyline, IRay, ISegment, IVec } from "../types";
 import { ALLOCATOR } from "./allocator";
-import { _intersectionAlloc, _segmentAlloc, _vecAlloc } from "./allocFunctions";
+import { _intersectionAlloc, _segmentAlloc, _vecAlloc } from "./dataClasses";
 
 export function _clamp(value: number, min: number, max: number) {
   return value < min ? min : value > max ? max : value;

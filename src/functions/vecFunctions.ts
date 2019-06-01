@@ -1,4 +1,4 @@
-import { _vecAlloc } from "../internal/allocFunctions";
+import { _vecAlloc } from "../internal/dataClasses";
 import { EPSILON_SQ } from "../internal/parameters";
 import { IMat2x3, IVec } from "../types";
 

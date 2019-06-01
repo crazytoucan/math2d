@@ -1,4 +1,4 @@
-import { _lineAlloc, _rayAlloc, _vecAlloc } from "../internal/allocFunctions";
+import { _lineAlloc, _rayAlloc, _vecAlloc } from "../internal/dataClasses";
 import {
   _dot,
   _intersectionDNE,

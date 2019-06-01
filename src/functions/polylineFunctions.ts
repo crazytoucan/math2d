@@ -1,4 +1,4 @@
-import { _polygonAlloc, _segmentAlloc, _vecAlloc } from "../internal/allocFunctions";
+import { _polygonAlloc, _segmentAlloc, _vecAlloc } from "../internal/dataClasses";
 import { _polylineIntersectAllHelper } from "../internal/internalFunctions";
 import { EPSILON_SQ } from "../internal/parameters";
 import { IIntersection, ILine, IMat2x3, IPolyline, IRay, ISegment, IVec } from "../types";

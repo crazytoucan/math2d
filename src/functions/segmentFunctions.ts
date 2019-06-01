@@ -1,4 +1,4 @@
-import { _lineAlloc, _segmentAlloc } from "../internal/allocFunctions";
+import { _lineAlloc, _segmentAlloc } from "../internal/dataClasses";
 import {
   _clamp,
   _intersectionDNE,

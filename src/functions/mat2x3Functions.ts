@@ -1,4 +1,4 @@
-import { _mat2x3Alloc } from "../internal/allocFunctions";
+import { _mat2x3Alloc } from "../internal/dataClasses";
 import { EPSILON, EPSILON_SQ } from "../internal/parameters";
 import { IMat2x3 } from "../types";
 

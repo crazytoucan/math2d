@@ -1,4 +1,4 @@
-import { _intersectionAlloc } from "../internal/allocFunctions";
+import { _intersectionAlloc } from "../internal/dataClasses";
 import { IIntersection } from "../types";
 
 export function intersectionAlloc() {
