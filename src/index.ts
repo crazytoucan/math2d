@@ -38,7 +38,7 @@ export {
   mat2x3AffInvert,
   mat2x3AffIsOrthogonal,
   mat2x3AffIsTranslationOnly,
-  mat2x3AffMulMat2x3Aff,
+  mat2x3AffMulMat2x3,
   mat2x3AffRotate,
   mat2x3AffScale,
   mat2x3AffTranslate,
