@@ -31,7 +31,6 @@ export {
   lineTransformByAff,
 } from "./functions/lineFunctions";
 export {
-  mat2x3,
   mat2x3AffDeterminant,
   mat2x3AffFromRotation,
   mat2x3AffFromTranslation,
@@ -45,6 +44,7 @@ export {
   mat2x3AffTranslate,
   mat2x3Alloc,
   mat2x3Clone,
+  mat2x3Reset,
 } from "./functions/mat2x3Functions";
 export {
   polygonAlloc,

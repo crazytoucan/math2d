@@ -11,7 +11,7 @@ import {
 import { EPSILON } from "../internal/parameters";
 import { IIntersection, ILine, IMat2x3, IPolyline, IRay, ISegment, IVec } from "../types";
 import { intersectionAlloc } from "./intersectionFunctions";
-import { mat2x3 } from "./mat2x3Functions";
+import { mat2x3Reset } from "./mat2x3Functions";
 import { rayTransformByAff } from "./rayFunctions";
 import { segmentGetLength, segmentIntersectLine } from "./segmentFunctions";
 import { vecAlloc, vecNormalize, vecReset, vecSubtract } from "./vecFunctions";
@@ -49,7 +49,7 @@ const TMP_lineIntersectRayT_0 = _mat2x3Alloc();
 const TMP_lineIntersectRayT_1 = _lineAlloc();
 const TMP_lineIntersectRayT_2 = _vecAlloc();
 export function lineIntersectLine(a: ILine, b: ILine, out = intersectionAlloc()) {
-  const transform = mat2x3(a.dirX, -a.dirY, a.dirY, a.dirX, -a.x0, -a.y0, TMP_lineIntersectRayT_0);
+  const transform = mat2x3Reset(a.dirX, -a.dirY, a.dirY, a.dirX, -a.x0, -a.y0, TMP_lineIntersectRayT_0);
   const localB = _rayTransformByOrtho(b, transform, TMP_lineIntersectRayT_1);
   const isParallel = Math.abs(localB.dirY) < EPSILON;
 
