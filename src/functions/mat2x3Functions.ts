@@ -13,7 +13,7 @@ export function mat2x3AffFromRotation(theta: number, out = mat2x3Alloc()) {
 }
 
 export function mat2x3AffFromTranslation(tx: number, ty: number, out = mat2x3Alloc()) {
-  return mat2x3Reset(0, 0, 0, 0, tx, ty, out);
+  return mat2x3Reset(1, 0, 0, 1, tx, ty, out);
 }
 
 export function mat2x3AffIdentity(out = mat2x3Alloc()) {
@@ -22,7 +22,7 @@ export function mat2x3AffIdentity(out = mat2x3Alloc()) {
 
 export function mat2x3AffInvert(mat: IMat2x3, out = mat2x3Alloc()) {
   const det = mat.a * mat.d - mat.b * mat.c;
-  if (det < EPSILON) {
+  if (det > -EPSILON && det < EPSILON) {
     return mat2x3Reset(NaN, NaN, NaN, NaN, NaN, NaN, out);
   } else {
     const detInverse = 1 / det;
