@@ -1,4 +1,4 @@
-export { OUT_MAX_X, OUT_MAX_Y, OUT_MAX_Z, OUT_MIN_X, OUT_MIN_Y, OUT_MIN_Z } from "./const";
+export { OUT_MAX_X, OUT_MAX_Y, OUT_MIN_X, OUT_MIN_Y } from "./const";
 export {
   boxAlloc,
   boxClone,
@@ -54,6 +54,9 @@ export {
   polygonGetPerimeter,
   polygonGetSideLength,
   polygonGetSideSegment,
+  polygonIntersectLineIterator,
+  polygonIntersectRayIterator,
+  polygonIntersectSegmentIterator,
   polygonNearestPoint,
   polygonNearestT,
   polygonNearestVertexIndex,
