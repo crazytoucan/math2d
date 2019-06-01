@@ -49,7 +49,7 @@ export function mat2x3AffIsTranslationOnly(mat: IMat2x3) {
   return mat.a === 1 && mat.b === 0 && mat.c === 0 && mat.d === 1;
 }
 
-export function mat2x3AffMulMat2x3Aff(m1: IMat2x3, m2: IMat2x3, out = mat2x3Alloc()) {
+export function mat2x3AffMulMat2x3(m1: IMat2x3, m2: IMat2x3, out = mat2x3Alloc()) {
   const a = m1.a * m2.a + m1.c * m2.b;
   const b = m1.b * m2.a + m1.d * m2.b;
   const c = m1.a * m2.c + m1.c * m2.d;
