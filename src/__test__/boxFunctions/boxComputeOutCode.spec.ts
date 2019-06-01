@@ -1,3 +1,4 @@
+// tslint:disable:no-bitwise
 import { OUT_MAX_X, OUT_MAX_Y, OUT_MIN_X, OUT_MIN_Y } from "../../const";
 import { boxComputeOutCode, boxReset } from "../../functions/boxFunctions";
 import { vecReset } from "../../functions/vecFunctions";

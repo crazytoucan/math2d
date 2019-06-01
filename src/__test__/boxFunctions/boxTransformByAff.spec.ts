@@ -1,6 +1,6 @@
-import { boxTransformByAff, boxReset } from "../../functions/boxFunctions";
+import { boxReset, boxTransformByAff } from "../../functions/boxFunctions";
+import { mat2x3AffFromRotation, mat2x3AffIdentity, mat2x3Reset } from "../../functions/mat2x3Functions";
 import { expectBoxEqualsApprox } from "../helpers";
-import { mat2x3Reset, mat2x3AffIdentity, mat2x3AffFromRotation } from "../../functions/mat2x3Functions";
 
 describe("boxTransformByAff", () => {
   it("[4 5 6 7], [1 0 0 1 0 0] => [4 5 6 7]", () => {

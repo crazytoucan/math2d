@@ -1,3 +1,4 @@
+import { _polygonAlloc, _segmentAlloc, _vecAlloc } from "../internal/allocFunctions";
 import { _polylineIntersectAllHelper } from "../internal/internalFunctions";
 import { EPSILON_SQ } from "../internal/parameters";
 import { IIntersection, ILine, IMat2x3, IPolyline, IRay, ISegment, IVec } from "../types";
@@ -12,7 +13,6 @@ import {
   segmentReset,
 } from "./segmentFunctions";
 import { vecAlloc, vecDistanceSq, vecLerp, vecReset, vecTransformByAff } from "./vecFunctions";
-import { _polygonAlloc, _vecAlloc, _segmentAlloc } from "../internal/allocFunctions";
 
 export function polylineAlloc(): IPolyline {
   return _polygonAlloc();

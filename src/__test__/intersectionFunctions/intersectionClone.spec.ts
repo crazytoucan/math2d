@@ -10,14 +10,14 @@ describe("intersectionClone", () => {
   });
 
   it("should return a new intersection if no `out`", () => {
-    let intersection = intersectionReset(true, 4, 5, 6, 7);
-    let res = intersectionClone(intersection);
+    const intersection = intersectionReset(true, 4, 5, 6, 7);
+    const res = intersectionClone(intersection);
     expect(res).not.toBe(intersection);
   });
 
   it("should return `out` if given", () => {
-    let out = intersectionAlloc();
-    let res = intersectionClone(intersectionReset(true, 4, 5, 6, 7), out);
+    const out = intersectionAlloc();
+    const res = intersectionClone(intersectionReset(true, 4, 5, 6, 7), out);
     expect(res).toBe(out);
   });
 });

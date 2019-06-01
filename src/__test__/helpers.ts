@@ -1,4 +1,4 @@
-import { IBox, IVec, IIntersection, IMat2x3 } from "../types";
+import { IBox, IIntersection, IMat2x3, IVec } from "../types";
 
 export const TEST_PRECISION_DIGITS = 10;
 

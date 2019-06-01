@@ -7,14 +7,14 @@ describe("boxClone", () => {
   });
 
   it("should return a new box if no `out`", () => {
-    let box = boxReset(4, 5, 6, 7);
-    let res = boxClone(box);
+    const box = boxReset(4, 5, 6, 7);
+    const res = boxClone(box);
     expect(res).not.toBe(box);
   });
 
   it("should return `out` if given", () => {
-    let out = boxAlloc();
-    let res = boxClone(boxReset(4, 5, 6, 7), out);
+    const out = boxAlloc();
+    const res = boxClone(boxReset(4, 5, 6, 7), out);
     expect(res).toBe(out);
   });
 });

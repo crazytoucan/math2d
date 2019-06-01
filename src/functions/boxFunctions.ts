@@ -12,6 +12,7 @@ export function boxClone(box: IBox, out = boxAlloc()) {
   return boxReset(box.minX, box.minY, box.maxX, box.maxY, out);
 }
 
+// tslint:disable:no-bitwise
 export function boxComputeOutCode(box: IBox, point: IVec) {
   let out = 0;
   if (point.x < box.minX) {
@@ -28,6 +29,7 @@ export function boxComputeOutCode(box: IBox, point: IVec) {
 
   return out;
 }
+// tslint:enable:no-bitwise
 
 export function boxContainsBox(a: IBox, b: IBox) {
   return b.minX >= a.minX && b.minY >= a.minY && b.maxX <= a.maxX && b.maxY <= a.maxY;

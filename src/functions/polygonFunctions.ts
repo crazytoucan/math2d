@@ -1,3 +1,4 @@
+import { _polygonAlloc } from "../internal/allocFunctions";
 import { _polygonIntersectAllHelper, _toPolyline } from "../internal/internalFunctions";
 import { EPSILON } from "../internal/parameters";
 import { IIntersection, ILine, IMat2x3, IPolygon, IRay, ISegment, IVec } from "../types";
@@ -20,7 +21,6 @@ import {
   segmentReset,
 } from "./segmentFunctions";
 import { vecAlloc, vecReset } from "./vecFunctions";
-import { _polygonAlloc } from "../internal/allocFunctions";
 
 export function polygonAlloc(): IPolygon {
   return _polygonAlloc();

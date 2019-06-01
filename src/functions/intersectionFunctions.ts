@@ -1,5 +1,5 @@
-import { IIntersection } from "../types";
 import { _intersectionAlloc } from "../internal/allocFunctions";
+import { IIntersection } from "../types";
 
 export function intersectionAlloc() {
   return _intersectionAlloc();

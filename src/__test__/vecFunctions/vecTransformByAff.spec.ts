@@ -1,6 +1,6 @@
-import { expectVecEqualsApprox } from "../helpers";
-import { vecTransformByAff, vecReset } from "../../functions/vecFunctions";
 import { mat2x3AffIdentity, mat2x3Reset } from "../../functions/mat2x3Functions";
+import { vecReset, vecTransformByAff } from "../../functions/vecFunctions";
+import { expectVecEqualsApprox } from "../helpers";
 
 describe("vecTransformByAff", () => {
   it("[1 0 0 1 0 0](3, 4) => (3, 4)", () => {

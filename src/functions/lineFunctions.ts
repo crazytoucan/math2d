@@ -71,7 +71,7 @@ export function lineIntersectPolylineIterator(line: ILine, poly: IPolyline): Ite
 
 const TMP_lineIntersectSegment_0 = _lineAlloc();
 export function lineIntersectSegment(line: ILine, segment: ISegment, out = intersectionAlloc()) {
-  // TODO: degenerate segment
+  // TODO: https://github.com/crazytoucan/geometry/issues/1
   const segmentLine = _rayLookAt(segment.x0, segment.y0, segment.x1, segment.y1, TMP_lineIntersectSegment_0);
   const segmentLength = segmentGetLength(segment);
   lineIntersectLine(line, segmentLine, out);
