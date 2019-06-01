@@ -34,6 +34,6 @@ describe("mat2x3AffIsTranslationOnly", () => {
   });
 
   it("[1 0 0 1 NaN NaN] => true", () => {
-    expect(mat2x3AffIsTranslationOnly(mat2x3Reset(1, 0, 0, 1, NaN, NaN))).toBe(false);
+    expect(mat2x3AffIsTranslationOnly(mat2x3Reset(1, 0, 0, 1, NaN, NaN))).toBe(true);
   });
 });
