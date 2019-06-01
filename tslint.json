@@ -1,7 +1,6 @@
 {
   "extends": [
     "tslint:latest",
-    "tslint-clean-code",
     "tslint-microsoft-contrib",
     "tslint-config-prettier"
   ],
