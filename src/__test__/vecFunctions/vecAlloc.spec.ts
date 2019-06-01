@@ -1,8 +1,8 @@
-import { vecAlloc } from "../../functions/vecFunctions";
+import { vecAlloc, vecReset } from "../../functions/vecFunctions";
 import { expectVecEqualsApprox } from "../helpers";
 
 describe("vecAlloc", () => {
   it("returns (NaN, NaN)", () => {
-    expectVecEqualsApprox(vecAlloc(), NaN, NaN);
+    expectVecEqualsApprox(vecAlloc(), vecReset(NaN, NaN));
   });
 });

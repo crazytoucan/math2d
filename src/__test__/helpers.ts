@@ -19,23 +19,17 @@ export function expectBoxEqualsApprox(box: IBox, minX: number, minY: number, max
   expectEqualsApprox(box.maxY, maxY);
 }
 
-export function expectVecEqualsApprox(vec: IVec, x: number, y: number) {
-  expectEqualsApprox(vec.x, x);
-  expectEqualsApprox(vec.y, y);
+export function expectVecEqualsApprox(actual: IVec, expected: IVec) {
+  expectEqualsApprox(actual.x, expected.x);
+  expectEqualsApprox(actual.y, expected.y);
 }
 
-export function expectIntersectionExistsApprox(
-  intersection: IIntersection,
-  x: number,
-  y: number,
-  t0: number,
-  t1: number,
-) {
-  expect(intersection.exists).toBe(true);
-  expectEqualsApprox(intersection.x, x);
-  expectEqualsApprox(intersection.y, y);
-  expectEqualsApprox(intersection.t0, t0);
-  expectEqualsApprox(intersection.t1, t1);
+export function expectIntersectionEqualsApprox(actual: IIntersection, expected: IIntersection) {
+  expect(actual.exists).toBe(expected.exists);
+  expectEqualsApprox(actual.x, expected.x);
+  expectEqualsApprox(actual.y, expected.y);
+  expectEqualsApprox(actual.t0, expected.t0);
+  expectEqualsApprox(actual.t1, expected.t1);
 }
 
 export function expectIntersectionDNE(intersection: IIntersection) {
@@ -46,19 +40,11 @@ export function expectIntersectionDNE(intersection: IIntersection) {
   expect(intersection.t1).toBeNaN();
 }
 
-export function expectMat2x3EqualsApprox(
-  mat: IMat2x3,
-  a: number,
-  b: number,
-  c: number,
-  d: number,
-  e: number,
-  f: number,
-) {
-  expectEqualsApprox(mat.a, a);
-  expectEqualsApprox(mat.b, b);
-  expectEqualsApprox(mat.c, c);
-  expectEqualsApprox(mat.d, d);
-  expectEqualsApprox(mat.e, e);
-  expectEqualsApprox(mat.f, f);
+export function expectMat2x3EqualsApprox(actual: IMat2x3, expected: IMat2x3) {
+  expectEqualsApprox(actual.a, expected.a);
+  expectEqualsApprox(actual.b, expected.b);
+  expectEqualsApprox(actual.c, expected.c);
+  expectEqualsApprox(actual.d, expected.d);
+  expectEqualsApprox(actual.e, expected.e);
+  expectEqualsApprox(actual.f, expected.f);
 }

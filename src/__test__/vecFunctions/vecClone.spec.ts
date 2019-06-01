@@ -3,7 +3,7 @@ import { expectVecEqualsApprox } from "../helpers";
 
 describe("vecClone", () => {
   it("should copy components", () => {
-    expectVecEqualsApprox(vecClone(vecReset(4, 5)), 4, 5);
+    expectVecEqualsApprox(vecClone(vecReset(4, 5)), vecReset(4, 5));
   });
 
   it("should return a new vector if no `out`", () => {

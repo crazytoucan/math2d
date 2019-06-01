@@ -1,5 +1,4 @@
 import { boxIsEmpty, boxReset } from "../../functions/boxFunctions";
-import { expectBoxEqualsApprox } from "../helpers";
 
 describe("boxIsEmpty", () => {
   it("[-1 -1 +1 +1] => false", () => {

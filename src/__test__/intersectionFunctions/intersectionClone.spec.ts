@@ -1,9 +1,12 @@
 import { intersectionAlloc, intersectionClone, intersectionReset } from "../../functions/intersectionFunctions";
-import { expectIntersectionExistsApprox } from "../helpers";
+import { expectIntersectionEqualsApprox } from "../helpers";
 
 describe("intersectionClone", () => {
   it("should copy components", () => {
-    expectIntersectionExistsApprox(intersectionClone(intersectionReset(true, 4, 5, 6, 7)), 4, 5, 6, 7);
+    expectIntersectionEqualsApprox(
+      intersectionClone(intersectionReset(true, 4, 5, 6, 7)),
+      intersectionReset(true, 4, 5, 6, 7),
+    );
   });
 
   it("should return a new intersection if no `out`", () => {
