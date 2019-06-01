@@ -5,6 +5,7 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "lint": "tslint --project tsconfig.json",
     "test": "jest"
   },
   "devDependencies": {
