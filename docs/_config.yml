@@ -1,0 +1,4 @@
+remote_theme: pmarsceill/just-the-docs
+title: vectormath
+plugins:
+  - jekyll-remote-theme
