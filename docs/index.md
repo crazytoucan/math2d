@@ -2,4 +2,4 @@
 layout: home
 ---
 
-Hello world
+Hello `vectormath`

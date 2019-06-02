@@ -1,5 +1,6 @@
 ---
 ---
+
 @import "custom/custom";
 
 .navigation-list {
@@ -18,6 +19,16 @@
   font-family: monospace;
 }
 
+html {
+  font-size: 12px !important;
+}
+
+@media (min-width: 31.25rem) {
+  html {
+    font-size: 13px !important;
+  }
+}
+
 @media (min-width: 31.25rem) {
   .vectormath-api-list-item {
     font-size: 14px !important;
@@ -33,6 +44,19 @@
 @media (min-width: 46.25rem) and (min-width: 31.25rem) {
   .vectormath-api-list-item {
     font-size: 12px !important;
+  }
+}
+
+h4 {
+  font-size: 12px !important;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+@media (min-width: 31.25rem) {
+  h4 {
+    font-size: 14px !important;
   }
 }
 
@@ -88,7 +112,7 @@
 
 .api-reference-details summary::before {
   content: " ";
-  background-image: url({{ "/assets/svg/plus.svg" | absolute_url }});
+  background-image: url({{"/assets/svg/plus.svg"|absolute_url}});
   background-size: cover;
   position: absolute;
   left: -16px;
@@ -99,11 +123,42 @@
 
 .api-reference-details[open] summary::before {
   content: " ";
-  background-image: url({{ "/assets/svg/minus.svg" | absolute_url }});
+  background-image: url({{"/assets/svg/minus.svg"|absolute_url}});
   background-size: cover;
   position: absolute;
   left: -16px;
   top: 6px;
   width: 10px;
   height: 10px;
+}
+
+.vectormath-reference-header {
+  margin: 1rem -3rem;
+  padding: 0.5rem 3rem;
+  background: $grey-lt-100;
+  font-family: monospace;
+  font-size: 14px !important;
+}
+
+@media (min-width: 31.25rem) {
+  .vector-reference-header {
+    font-size: 16px !important;
+  }
+}
+
+.page-content dd {
+  font-weight: 400;
+}
+
+.vectormath-signature {
+  font-size: 12px;
+  font-family: 'Source Code Pro', monospace;
+  color: $grey-dk-000;
+
+  .function-name {
+  }
+
+  .param-name {
+    font-weight: 600;
+  }
 }

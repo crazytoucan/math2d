@@ -1,0 +1,8729 @@
+{
+	"id": 0,
+	"name": "vectormath",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 30,
+			"name": "IBox",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true
+			},
+			"children": [
+				{
+					"id": 33,
+					"name": "maxX",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 39,
+							"character": 6
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 34,
+					"name": "maxY",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 40,
+							"character": 6
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 31,
+					"name": "minX",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 37,
+							"character": 6
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 32,
+					"name": "minY",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 38,
+							"character": 6
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						33,
+						34,
+						31,
+						32
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "types.ts",
+					"line": 36,
+					"character": 21
+				}
+			]
+		},
+		{
+			"id": 35,
+			"name": "IIntersection",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true
+			},
+			"children": [
+				{
+					"id": 36,
+					"name": "exists",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 47,
+							"character": 8
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				},
+				{
+					"id": 39,
+					"name": "t0",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 50,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 40,
+					"name": "t1",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 51,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 37,
+					"name": "x",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 48,
+							"character": 3
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 38,
+					"name": "y",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 49,
+							"character": 3
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						36,
+						39,
+						40,
+						37,
+						38
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "types.ts",
+					"line": 46,
+					"character": 30
+				}
+			]
+		},
+		{
+			"id": 18,
+			"name": "ILine",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true
+			},
+			"children": [
+				{
+					"id": 21,
+					"name": "dirX",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 23,
+							"character": 6
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 22,
+					"name": "dirY",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 24,
+							"character": 6
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 19,
+					"name": "x0",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 21,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 20,
+					"name": "y0",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 22,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						21,
+						22,
+						19,
+						20
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "types.ts",
+					"line": 20,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 23,
+			"name": "IMat2x3",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true
+			},
+			"children": [
+				{
+					"id": 24,
+					"name": "a",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 28,
+							"character": 3
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 25,
+					"name": "b",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 29,
+							"character": 3
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 26,
+					"name": "c",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 30,
+							"character": 3
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 27,
+					"name": "d",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 31,
+							"character": 3
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 28,
+					"name": "e",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 32,
+							"character": 3
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 29,
+					"name": "f",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 33,
+							"character": 3
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						24,
+						25,
+						26,
+						27,
+						28,
+						29
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "types.ts",
+					"line": 27,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 13,
+			"name": "IRay",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true
+			},
+			"children": [
+				{
+					"id": 16,
+					"name": "dirX",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 16,
+							"character": 6
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 17,
+					"name": "dirY",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 17,
+							"character": 6
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 14,
+					"name": "x0",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 14,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 15,
+					"name": "y0",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 15,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						16,
+						17,
+						14,
+						15
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "types.ts",
+					"line": 13,
+					"character": 21
+				}
+			]
+		},
+		{
+			"id": 8,
+			"name": "ISegment",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true
+			},
+			"children": [
+				{
+					"id": 9,
+					"name": "x0",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 7,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 11,
+					"name": "x1",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 9,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 10,
+					"name": "y0",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 8,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 12,
+					"name": "y1",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 10,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						9,
+						11,
+						10,
+						12
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "types.ts",
+					"line": 6,
+					"character": 25
+				}
+			]
+		},
+		{
+			"id": 5,
+			"name": "IVec",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {
+				"isExported": true
+			},
+			"children": [
+				{
+					"id": 6,
+					"name": "x",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 2,
+							"character": 3
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 7,
+					"name": "y",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 3,
+							"character": 3
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						6,
+						7
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "types.ts",
+					"line": 1,
+					"character": 21
+				}
+			]
+		},
+		{
+			"id": 41,
+			"name": "IPolygon",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {
+				"isExported": true
+			},
+			"sources": [
+				{
+					"fileName": "types.ts",
+					"line": 43,
+					"character": 20
+				}
+			],
+			"type": {
+				"type": "array",
+				"elementType": {
+					"type": "intrinsic",
+					"name": "number"
+				}
+			}
+		},
+		{
+			"id": 42,
+			"name": "IPolyline",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {
+				"isExported": true
+			},
+			"sources": [
+				{
+					"fileName": "types.ts",
+					"line": 44,
+					"character": 21
+				}
+			],
+			"type": {
+				"type": "array",
+				"elementType": {
+					"type": "intrinsic",
+					"name": "number"
+				}
+			}
+		},
+		{
+			"id": 2,
+			"name": "OUT_MAX_X",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "const.ts",
+					"line": 3,
+					"character": 22
+				}
+			],
+			"type": {
+				"type": "intrinsic",
+				"name": "number"
+			},
+			"defaultValue": " 1 << 1"
+		},
+		{
+			"id": 4,
+			"name": "OUT_MAX_Y",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "const.ts",
+					"line": 5,
+					"character": 22
+				}
+			],
+			"type": {
+				"type": "intrinsic",
+				"name": "number"
+			},
+			"defaultValue": " 1 << 3"
+		},
+		{
+			"id": 1,
+			"name": "OUT_MIN_X",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "const.ts",
+					"line": 2,
+					"character": 22
+				}
+			],
+			"type": {
+				"type": "intrinsic",
+				"name": "number"
+			},
+			"defaultValue": " 1 << 0"
+		},
+		{
+			"id": 3,
+			"name": "OUT_MIN_Y",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isExported": true,
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "const.ts",
+					"line": 4,
+					"character": 22
+				}
+			],
+			"type": {
+				"type": "intrinsic",
+				"name": "number"
+			},
+			"defaultValue": " 1 << 2"
+		},
+		{
+			"id": 457,
+			"name": "boxAlloc",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 458,
+					"name": "boxAlloc",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Creates a new Box object in memory, with all values initialized to NaN.\nThis is useful to hold the result of vectormath function calls in performance\ncritical workflows."
+					},
+					"type": {
+						"type": "reference",
+						"name": "IBox",
+						"id": 30
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/boxFunctions.ts",
+					"line": 12,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 459,
+			"name": "boxClone",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 460,
+					"name": "boxClone",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "`boxClone` copies values from an existing IBox into a new box or memory location.",
+						"tags": [
+							{
+								"tag": "summary",
+								"text": "copy the values from the given box into a new box"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 461,
+							"name": "box",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "source to copy values from"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						},
+						{
+							"id": 462,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "destination box to copy values to\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							},
+							"defaultValue": " boxAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IBox",
+						"id": 30
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/boxFunctions.ts",
+					"line": 23,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 463,
+			"name": "boxComputeOutCode",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 464,
+					"name": "boxComputeOutCode",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Determines wehre the specified point lies in respect to the given box. The returned\nvalue is an OR of the possible values OUT_MIN_X, OUT_MAX_X, OUT_MIN_Y, and OUT_MAX_Y\nindicating, for each side, whether the point lies beyond that edge."
+					},
+					"parameters": [
+						{
+							"id": 465,
+							"name": "box",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						},
+						{
+							"id": 466,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/boxFunctions.ts",
+					"line": 36,
+					"character": 33
+				}
+			]
+		},
+		{
+			"id": 467,
+			"name": "boxContainsBox",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 468,
+					"name": "boxContainsBox",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Determines whether the second box is completely enclosed in the first. Each box is treated\nas a closed area, so e.g. the two boxes may share an edge and this method would still return `true`."
+					},
+					"parameters": [
+						{
+							"id": 469,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						},
+						{
+							"id": 470,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/boxFunctions.ts",
+					"line": 60,
+					"character": 30
+				}
+			]
+		},
+		{
+			"id": 471,
+			"name": "boxContainsPoint",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 472,
+					"name": "boxContainsPoint",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Determines whether the box contains a given point. The box is treated as a closed area,\nso points on the boundary of the box will still return `true`."
+					},
+					"parameters": [
+						{
+							"id": 473,
+							"name": "box",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						},
+						{
+							"id": 474,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/boxFunctions.ts",
+					"line": 70,
+					"character": 32
+				}
+			]
+		},
+		{
+			"id": 475,
+			"name": "boxEncapsulate",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 476,
+					"name": "boxEncapsulate",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Grows the box to include a given point. If the point is already inside the box, this function\ndoes nothing."
+					},
+					"parameters": [
+						{
+							"id": 477,
+							"name": "box",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						},
+						{
+							"id": 478,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 479,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							},
+							"defaultValue": " boxAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IBox",
+						"id": 30
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/boxFunctions.ts",
+					"line": 81,
+					"character": 30
+				}
+			]
+		},
+		{
+			"id": 480,
+			"name": "boxIntersection",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 481,
+					"name": "boxIntersection",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the area intersection of the two box regions, as a box. If the two boxes do not intersect,\nthe returned value will be an empty box, i.e. with `maxX < minX` or `maxY < minY`."
+					},
+					"parameters": [
+						{
+							"id": 482,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						},
+						{
+							"id": 483,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						},
+						{
+							"id": 484,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							},
+							"defaultValue": " boxAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IBox",
+						"id": 30
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/boxFunctions.ts",
+					"line": 98,
+					"character": 31
+				}
+			]
+		},
+		{
+			"id": 485,
+			"name": "boxIntersectsBox",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 486,
+					"name": "boxIntersectsBox",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Determines whether the two boxes intersect, as areas. Both boxes are treated as closed\nregions, so e.g. this function will return `true` if the boxes share only a single edge."
+					},
+					"parameters": [
+						{
+							"id": 487,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						},
+						{
+							"id": 488,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/boxFunctions.ts",
+					"line": 114,
+					"character": 32
+				}
+			]
+		},
+		{
+			"id": 489,
+			"name": "boxIsEmpty",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 490,
+					"name": "boxIsEmpty",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Determines whether this box represents an empty area. A box is considered empty if\nits `maxX < minX` or its `maxY < minY`."
+					},
+					"parameters": [
+						{
+							"id": 491,
+							"name": "box",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/boxFunctions.ts",
+					"line": 123,
+					"character": 26
+				}
+			]
+		},
+		{
+			"id": 492,
+			"name": "boxReset",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 493,
+					"name": "boxReset",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Constuct a new box given `minX`, `minY`, `maxX`, and `maxY` bounding values."
+					},
+					"parameters": [
+						{
+							"id": 494,
+							"name": "minX",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 495,
+							"name": "minY",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 496,
+							"name": "maxX",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 497,
+							"name": "maxY",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 498,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							},
+							"defaultValue": " boxAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IBox",
+						"id": 30
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/boxFunctions.ts",
+					"line": 136,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 499,
+			"name": "boxTransformByAff",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 500,
+					"name": "boxTransformByAff",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 501,
+							"name": "box",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						},
+						{
+							"id": 502,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						},
+						{
+							"id": 503,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							},
+							"defaultValue": " boxAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IBox",
+						"id": 30
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/boxFunctions.ts",
+					"line": 150,
+					"character": 33
+				}
+			]
+		},
+		{
+			"id": 504,
+			"name": "boxUnion",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 505,
+					"name": "boxUnion",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Compute the smallest bounding box that contains both given boxes.",
+						"text": "For example, if one box contains the other, this method returns the larger box.\nIf the two boxes don't intersect, this method returns a bounding region that covers both boxes.\n"
+					},
+					"parameters": [
+						{
+							"id": 506,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						},
+						{
+							"id": 507,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							}
+						},
+						{
+							"id": 508,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							},
+							"defaultValue": " boxAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IBox",
+						"id": 30
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/boxFunctions.ts",
+					"line": 167,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 43,
+			"name": "intersectionAlloc",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 44,
+					"name": "intersectionAlloc",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Creates a new Intersection object in memory, with all values initialized to `false` and `NaN`.\nThis is useful to hold the result of vectormath function calls in performance\ncritical workflows."
+					},
+					"type": {
+						"type": "reference",
+						"name": "IIntersection",
+						"id": 35
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/intersectionFunctions.ts",
+					"line": 9,
+					"character": 33
+				}
+			]
+		},
+		{
+			"id": 45,
+			"name": "intersectionClone",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 46,
+					"name": "intersectionClone",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Copies the values from the given intersection into a new intersection object."
+					},
+					"parameters": [
+						{
+							"id": 47,
+							"name": "intersection",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							}
+						},
+						{
+							"id": 48,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							},
+							"defaultValue": " intersectionAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IIntersection",
+						"id": 35
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/intersectionFunctions.ts",
+					"line": 18,
+					"character": 33
+				}
+			]
+		},
+		{
+			"id": 49,
+			"name": "intersectionReset",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 50,
+					"name": "intersectionReset",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Constuct a new intersection given `exists`, `x`, `y`, `t0`, and `t1` values."
+					},
+					"parameters": [
+						{
+							"id": 51,
+							"name": "exists",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 52,
+							"name": "x",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 53,
+							"name": "y",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 54,
+							"name": "t0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 55,
+							"name": "t1",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 56,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							},
+							"defaultValue": " intersectionAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IIntersection",
+						"id": 35
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/intersectionFunctions.ts",
+					"line": 31,
+					"character": 33
+				}
+			]
+		},
+		{
+			"id": 251,
+			"name": "lineAlloc",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 252,
+					"name": "lineAlloc",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"name": "ILine",
+						"id": 18
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 19,
+					"character": 25
+				}
+			]
+		},
+		{
+			"id": 258,
+			"name": "lineClone",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 259,
+					"name": "lineClone",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 260,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 261,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							},
+							"defaultValue": " lineAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ILine",
+						"id": 18
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 27,
+					"character": 25
+				}
+			]
+		},
+		{
+			"id": 266,
+			"name": "lineClosestDistanceToPoint",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 267,
+					"name": "lineClosestDistanceToPoint",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 268,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 269,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 35,
+					"character": 42
+				}
+			]
+		},
+		{
+			"id": 270,
+			"name": "lineClosestSignedDistanceToPoint",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 271,
+					"name": "lineClosestSignedDistanceToPoint",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 272,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 273,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 39,
+					"character": 48
+				}
+			]
+		},
+		{
+			"id": 262,
+			"name": "lineContainsPoint",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 263,
+					"name": "lineContainsPoint",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 264,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 265,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 31,
+					"character": 33
+				}
+			]
+		},
+		{
+			"id": 279,
+			"name": "lineIntersectLine",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 280,
+					"name": "lineIntersectLine",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 281,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 282,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 283,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							},
+							"defaultValue": " intersectionAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IIntersection",
+						"id": 35
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 51,
+					"character": 33
+				}
+			]
+		},
+		{
+			"id": 284,
+			"name": "lineIntersectPolylineIterator",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 285,
+					"name": "lineIntersectPolylineIterator",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 286,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 287,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IterableIterator",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							}
+						]
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 68,
+					"character": 45
+				}
+			]
+		},
+		{
+			"id": 293,
+			"name": "lineIntersectRay",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 294,
+					"name": "lineIntersectRay",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 295,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 296,
+							"name": "ray",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						},
+						{
+							"id": 297,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							},
+							"defaultValue": " intersectionAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IIntersection",
+						"id": 35
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 86,
+					"character": 32
+				}
+			]
+		},
+		{
+			"id": 288,
+			"name": "lineIntersectSegment",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 289,
+					"name": "lineIntersectSegment",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 290,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 291,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 292,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							},
+							"defaultValue": " intersectionAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IIntersection",
+						"id": 35
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 73,
+					"character": 36
+				}
+			]
+		},
+		{
+			"id": 298,
+			"name": "lineLookAt",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 299,
+					"name": "lineLookAt",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 300,
+							"name": "from",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 301,
+							"name": "to",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 302,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							},
+							"defaultValue": " lineAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ILine",
+						"id": 18
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 92,
+					"character": 26
+				}
+			]
+		},
+		{
+			"id": 253,
+			"name": "linePointAt",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 254,
+					"name": "linePointAt",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 255,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 256,
+							"name": "t",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 257,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 23,
+					"character": 27
+				}
+			]
+		},
+		{
+			"id": 274,
+			"name": "lineProjectPoint",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 275,
+					"name": "lineProjectPoint",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 276,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 277,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 278,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 43,
+					"character": 32
+				}
+			]
+		},
+		{
+			"id": 303,
+			"name": "lineReset",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 304,
+					"name": "lineReset",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 305,
+							"name": "x0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 306,
+							"name": "y0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 307,
+							"name": "dirX",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 308,
+							"name": "dirY",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 309,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							},
+							"defaultValue": " lineAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ILine",
+						"id": 18
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 98,
+					"character": 25
+				}
+			]
+		},
+		{
+			"id": 310,
+			"name": "lineSide",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 311,
+					"name": "lineSide",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 312,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 313,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 106,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 314,
+			"name": "lineTransformByAff",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 315,
+					"name": "lineTransformByAff",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 316,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 317,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						},
+						{
+							"id": 318,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							},
+							"defaultValue": " lineAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IRay",
+						"id": 13
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/lineFunctions.ts",
+					"line": 111,
+					"character": 34
+				}
+			]
+		},
+		{
+			"id": 57,
+			"name": "mat2x3AffDeterminant",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 58,
+					"name": "mat2x3AffDeterminant",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 59,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 5,
+					"character": 36
+				}
+			]
+		},
+		{
+			"id": 60,
+			"name": "mat2x3AffFromRotation",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 61,
+					"name": "mat2x3AffFromRotation",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 62,
+							"name": "theta",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 63,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							},
+							"defaultValue": " mat2x3Alloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IMat2x3",
+						"id": 23
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 9,
+					"character": 37
+				}
+			]
+		},
+		{
+			"id": 64,
+			"name": "mat2x3AffFromTranslation",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 65,
+					"name": "mat2x3AffFromTranslation",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 66,
+							"name": "tx",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 67,
+							"name": "ty",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 68,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							},
+							"defaultValue": " mat2x3Alloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IMat2x3",
+						"id": 23
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 15,
+					"character": 40
+				}
+			]
+		},
+		{
+			"id": 69,
+			"name": "mat2x3AffIdentity",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 70,
+					"name": "mat2x3AffIdentity",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 71,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							},
+							"defaultValue": " mat2x3Alloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IMat2x3",
+						"id": 23
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 19,
+					"character": 33
+				}
+			]
+		},
+		{
+			"id": 72,
+			"name": "mat2x3AffInvert",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 73,
+					"name": "mat2x3AffInvert",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 74,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						},
+						{
+							"id": 75,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							},
+							"defaultValue": " mat2x3Alloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IMat2x3",
+						"id": 23
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 23,
+					"character": 31
+				}
+			]
+		},
+		{
+			"id": 76,
+			"name": "mat2x3AffIsOrthogonal",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 77,
+					"name": "mat2x3AffIsOrthogonal",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 78,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 41,
+					"character": 37
+				}
+			]
+		},
+		{
+			"id": 79,
+			"name": "mat2x3AffIsTranslationOnly",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 80,
+					"name": "mat2x3AffIsTranslationOnly",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 81,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 48,
+					"character": 42
+				}
+			]
+		},
+		{
+			"id": 82,
+			"name": "mat2x3AffMulMat2x3",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 83,
+					"name": "mat2x3AffMulMat2x3",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 84,
+							"name": "m1",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						},
+						{
+							"id": 85,
+							"name": "m2",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						},
+						{
+							"id": 86,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							},
+							"defaultValue": " mat2x3Alloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IMat2x3",
+						"id": 23
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 52,
+					"character": 34
+				}
+			]
+		},
+		{
+			"id": 87,
+			"name": "mat2x3AffRotate",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 88,
+					"name": "mat2x3AffRotate",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 89,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						},
+						{
+							"id": 90,
+							"name": "theta",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 91,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							},
+							"defaultValue": " mat2x3Alloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IMat2x3",
+						"id": 23
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 62,
+					"character": 31
+				}
+			]
+		},
+		{
+			"id": 92,
+			"name": "mat2x3AffScale",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 93,
+					"name": "mat2x3AffScale",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 94,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						},
+						{
+							"id": 95,
+							"name": "scalar",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 96,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							},
+							"defaultValue": " mat2x3Alloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IMat2x3",
+						"id": 23
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 76,
+					"character": 30
+				}
+			]
+		},
+		{
+			"id": 97,
+			"name": "mat2x3AffTranslate",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 98,
+					"name": "mat2x3AffTranslate",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 99,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						},
+						{
+							"id": 100,
+							"name": "tx",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 101,
+							"name": "ty",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 102,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							},
+							"defaultValue": " mat2x3Alloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IMat2x3",
+						"id": 23
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 80,
+					"character": 34
+				}
+			]
+		},
+		{
+			"id": 103,
+			"name": "mat2x3Alloc",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 104,
+					"name": "mat2x3Alloc",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"name": "IMat2x3",
+						"id": 23
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 84,
+					"character": 27
+				}
+			]
+		},
+		{
+			"id": 105,
+			"name": "mat2x3Clone",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 106,
+					"name": "mat2x3Clone",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 107,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						},
+						{
+							"id": 108,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							},
+							"defaultValue": " mat2x3Alloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IMat2x3",
+						"id": 23
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 88,
+					"character": 27
+				}
+			]
+		},
+		{
+			"id": 109,
+			"name": "mat2x3Reset",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 110,
+					"name": "mat2x3Reset",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 111,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 112,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 113,
+							"name": "c",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 114,
+							"name": "d",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 115,
+							"name": "e",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 116,
+							"name": "f",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 117,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							},
+							"defaultValue": " mat2x3Alloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IMat2x3",
+						"id": 23
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/mat2x3Functions.ts",
+					"line": 92,
+					"character": 27
+				}
+			]
+		},
+		{
+			"id": 509,
+			"name": "polygonAlloc",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 510,
+					"name": "polygonAlloc",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"name": "IPolygon",
+						"id": 41
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 25,
+					"character": 28
+				}
+			]
+		},
+		{
+			"id": 515,
+			"name": "polygonContainsPoint",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 516,
+					"name": "polygonContainsPoint",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 517,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						},
+						{
+							"id": 518,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 33,
+					"character": 36
+				}
+			]
+		},
+		{
+			"id": 511,
+			"name": "polygonGetBounds",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 512,
+					"name": "polygonGetBounds",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 513,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						},
+						{
+							"id": 514,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							},
+							"defaultValue": " boxAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IBox",
+						"id": 30
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 29,
+					"character": 32
+				}
+			]
+		},
+		{
+			"id": 544,
+			"name": "polygonGetNumSides",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 545,
+					"name": "polygonGetNumSides",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 546,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 87,
+					"character": 34
+				}
+			]
+		},
+		{
+			"id": 547,
+			"name": "polygonGetPerimeter",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 548,
+					"name": "polygonGetPerimeter",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 549,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 91,
+					"character": 35
+				}
+			]
+		},
+		{
+			"id": 564,
+			"name": "polygonGetSideLength",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 565,
+					"name": "polygonGetSideLength",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 566,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						},
+						{
+							"id": 567,
+							"name": "idx",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 130,
+					"character": 36
+				}
+			]
+		},
+		{
+			"id": 555,
+			"name": "polygonGetSideSegment",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 556,
+					"name": "polygonGetSideSegment",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 557,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						},
+						{
+							"id": 558,
+							"name": "index",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 559,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							},
+							"defaultValue": " segmentAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ISegment",
+						"id": 8
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 109,
+					"character": 37
+				}
+			]
+		},
+		{
+			"id": 519,
+			"name": "polygonIntersectLineIterator",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 520,
+					"name": "polygonIntersectLineIterator",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 521,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						},
+						{
+							"id": 522,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IterableIterator",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							}
+						]
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 53,
+					"character": 44
+				}
+			]
+		},
+		{
+			"id": 523,
+			"name": "polygonIntersectRayIterator",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 524,
+					"name": "polygonIntersectRayIterator",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 525,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						},
+						{
+							"id": 526,
+							"name": "ray",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IterableIterator",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							}
+						]
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 57,
+					"character": 43
+				}
+			]
+		},
+		{
+			"id": 527,
+			"name": "polygonIntersectSegmentIterator",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 528,
+					"name": "polygonIntersectSegmentIterator",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 529,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						},
+						{
+							"id": 530,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IterableIterator",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							}
+						]
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 61,
+					"character": 47
+				}
+			]
+		},
+		{
+			"id": 531,
+			"name": "polygonNearestPoint",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 532,
+					"name": "polygonNearestPoint",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 533,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						},
+						{
+							"id": 534,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 535,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 65,
+					"character": 35
+				}
+			]
+		},
+		{
+			"id": 536,
+			"name": "polygonNearestT",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 537,
+					"name": "polygonNearestT",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 538,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						},
+						{
+							"id": 539,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 70,
+					"character": 31
+				}
+			]
+		},
+		{
+			"id": 540,
+			"name": "polygonNearestVertexIndex",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 541,
+					"name": "polygonNearestVertexIndex",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 542,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						},
+						{
+							"id": 543,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 83,
+					"character": 41
+				}
+			]
+		},
+		{
+			"id": 550,
+			"name": "polygonPointAt",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 551,
+					"name": "polygonPointAt",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 552,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						},
+						{
+							"id": 553,
+							"name": "t",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 554,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 95,
+					"character": 30
+				}
+			]
+		},
+		{
+			"id": 560,
+			"name": "polygonSideIndexAt",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 561,
+					"name": "polygonSideIndexAt",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 562,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						},
+						{
+							"id": 563,
+							"name": "t",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 120,
+					"character": 34
+				}
+			]
+		},
+		{
+			"id": 568,
+			"name": "polygonTransformByAff",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 569,
+					"name": "polygonTransformByAff",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 570,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolygon",
+								"id": 41
+							}
+						},
+						{
+							"id": 571,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						},
+						{
+							"id": 572,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							},
+							"defaultValue": " polygonAlloc()"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "intrinsic",
+							"name": "number"
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polygonFunctions.ts",
+					"line": 134,
+					"character": 37
+				}
+			]
+		},
+		{
+			"id": 379,
+			"name": "polylineAlloc",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 380,
+					"name": "polylineAlloc",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"name": "IPolyline",
+						"id": 42
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 17,
+					"character": 29
+				}
+			]
+		},
+		{
+			"id": 381,
+			"name": "polylineClose",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 382,
+					"name": "polylineClose",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 383,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 384,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							},
+							"defaultValue": " polylineAlloc()"
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "number"
+							},
+							{
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							}
+						]
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 21,
+					"character": 29
+				}
+			]
+		},
+		{
+			"id": 385,
+			"name": "polylineGetBounds",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 386,
+					"name": "polylineGetBounds",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 387,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 388,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IBox",
+								"id": 30
+							},
+							"defaultValue": " boxAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IBox",
+						"id": 30
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 42,
+					"character": 33
+				}
+			]
+		},
+		{
+			"id": 389,
+			"name": "polylineGetLength",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 390,
+					"name": "polylineGetLength",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 391,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 52,
+					"character": 33
+				}
+			]
+		},
+		{
+			"id": 392,
+			"name": "polylineGetNumSegments",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 393,
+					"name": "polylineGetNumSegments",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 394,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 62,
+					"character": 38
+				}
+			]
+		},
+		{
+			"id": 395,
+			"name": "polylineGetSegment",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 396,
+					"name": "polylineGetSegment",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 397,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 398,
+							"name": "index",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 399,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							},
+							"defaultValue": " segmentAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ISegment",
+						"id": 8
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 66,
+					"character": 34
+				}
+			]
+		},
+		{
+			"id": 400,
+			"name": "polylineGetSegmentLength",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 401,
+					"name": "polylineGetSegmentLength",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 402,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 403,
+							"name": "idx",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 71,
+					"character": 40
+				}
+			]
+		},
+		{
+			"id": 404,
+			"name": "polylineGetVertex",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 405,
+					"name": "polylineGetVertex",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 406,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 407,
+							"name": "index",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 408,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 78,
+					"character": 33
+				}
+			]
+		},
+		{
+			"id": 409,
+			"name": "polylineIntersectLineIterator",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 410,
+					"name": "polylineIntersectLineIterator",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 411,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 412,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IterableIterator",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							}
+						]
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 83,
+					"character": 45
+				}
+			]
+		},
+		{
+			"id": 413,
+			"name": "polylineIntersectRayIterator",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 414,
+					"name": "polylineIntersectRayIterator",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 415,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 416,
+							"name": "ray",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IterableIterator",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							}
+						]
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 87,
+					"character": 44
+				}
+			]
+		},
+		{
+			"id": 417,
+			"name": "polylineIntersectSegmentIterator",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 418,
+					"name": "polylineIntersectSegmentIterator",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 419,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 420,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IterableIterator",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							}
+						]
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 91,
+					"character": 48
+				}
+			]
+		},
+		{
+			"id": 421,
+			"name": "polylineIsClosed",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 422,
+					"name": "polylineIsClosed",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 423,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 95,
+					"character": 32
+				}
+			]
+		},
+		{
+			"id": 424,
+			"name": "polylineNearestPoint",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 425,
+					"name": "polylineNearestPoint",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 426,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 427,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 428,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 105,
+					"character": 36
+				}
+			]
+		},
+		{
+			"id": 429,
+			"name": "polylineNearestT",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 430,
+					"name": "polylineNearestT",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 431,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 432,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 112,
+					"character": 32
+				}
+			]
+		},
+		{
+			"id": 433,
+			"name": "polylineNearestVertexIndex",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 434,
+					"name": "polylineNearestVertexIndex",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 435,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 436,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 137,
+					"character": 42
+				}
+			]
+		},
+		{
+			"id": 437,
+			"name": "polylinePointAt",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 438,
+					"name": "polylinePointAt",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 439,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 440,
+							"name": "d",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 441,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 155,
+					"character": 31
+				}
+			]
+		},
+		{
+			"id": 442,
+			"name": "polylineSegmentIndexAt",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 443,
+					"name": "polylineSegmentIndexAt",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 444,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 445,
+							"name": "d",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 177,
+					"character": 38
+				}
+			]
+		},
+		{
+			"id": 446,
+			"name": "polylineTransformByAff",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 447,
+					"name": "polylineTransformByAff",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 448,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 449,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						},
+						{
+							"id": 450,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							},
+							"defaultValue": " polylineAlloc()"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "intrinsic",
+							"name": "number"
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 194,
+					"character": 38
+				}
+			]
+		},
+		{
+			"id": 451,
+			"name": "polylineTrim",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 452,
+					"name": "polylineTrim",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 453,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						},
+						{
+							"id": 454,
+							"name": "begin",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 455,
+							"name": "end",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 456,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							},
+							"defaultValue": " polylineAlloc()"
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							},
+							{
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							}
+						]
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/polylineFunctions.ts",
+					"line": 210,
+					"character": 28
+				}
+			]
+		},
+		{
+			"id": 319,
+			"name": "rayAlloc",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 320,
+					"name": "rayAlloc",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"name": "IRay",
+						"id": 13
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/rayFunctions.ts",
+					"line": 17,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 326,
+			"name": "rayClone",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 327,
+					"name": "rayClone",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 328,
+							"name": "ray",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						},
+						{
+							"id": 329,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							},
+							"defaultValue": " rayAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IRay",
+						"id": 13
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/rayFunctions.ts",
+					"line": 25,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 330,
+			"name": "rayContainsPoint",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 331,
+					"name": "rayContainsPoint",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 332,
+							"name": "ray",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						},
+						{
+							"id": 333,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/rayFunctions.ts",
+					"line": 29,
+					"character": 32
+				}
+			]
+		},
+		{
+			"id": 334,
+			"name": "rayGetClosestDistanceToPoint",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 335,
+					"name": "rayGetClosestDistanceToPoint",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 336,
+							"name": "ray",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						},
+						{
+							"id": 337,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/rayFunctions.ts",
+					"line": 34,
+					"character": 44
+				}
+			]
+		},
+		{
+			"id": 338,
+			"name": "rayGetClosestPoint",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 339,
+					"name": "rayGetClosestPoint",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 340,
+							"name": "ray",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						},
+						{
+							"id": 341,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 342,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/rayFunctions.ts",
+					"line": 44,
+					"character": 34
+				}
+			]
+		},
+		{
+			"id": 343,
+			"name": "rayIntersectLine",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 344,
+					"name": "rayIntersectLine",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 345,
+							"name": "ray",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						},
+						{
+							"id": 346,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 347,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							},
+							"defaultValue": " intersectionAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IIntersection",
+						"id": 35
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/rayFunctions.ts",
+					"line": 49,
+					"character": 32
+				}
+			]
+		},
+		{
+			"id": 348,
+			"name": "rayIntersectPolylineIterator",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 349,
+					"name": "rayIntersectPolylineIterator",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 350,
+							"name": "ray",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						},
+						{
+							"id": 351,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IterableIterator",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							}
+						]
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/rayFunctions.ts",
+					"line": 53,
+					"character": 44
+				}
+			]
+		},
+		{
+			"id": 352,
+			"name": "rayIntersectRay",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 353,
+					"name": "rayIntersectRay",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 354,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						},
+						{
+							"id": 355,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						},
+						{
+							"id": 356,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							},
+							"defaultValue": " intersectionAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IIntersection",
+						"id": 35
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/rayFunctions.ts",
+					"line": 57,
+					"character": 31
+				}
+			]
+		},
+		{
+			"id": 357,
+			"name": "rayIntersectSegment",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 358,
+					"name": "rayIntersectSegment",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 359,
+							"name": "ray",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						},
+						{
+							"id": 360,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 361,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							},
+							"defaultValue": " intersectionAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IIntersection",
+						"id": 35
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/rayFunctions.ts",
+					"line": 63,
+					"character": 35
+				}
+			]
+		},
+		{
+			"id": 362,
+			"name": "rayLookAt",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 363,
+					"name": "rayLookAt",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 364,
+							"name": "from",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 365,
+							"name": "to",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 366,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							},
+							"defaultValue": " rayAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IRay",
+						"id": 13
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/rayFunctions.ts",
+					"line": 75,
+					"character": 25
+				}
+			]
+		},
+		{
+			"id": 321,
+			"name": "rayPointAt",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 322,
+					"name": "rayPointAt",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 323,
+							"name": "ray",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						},
+						{
+							"id": 324,
+							"name": "t",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 325,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/rayFunctions.ts",
+					"line": 21,
+					"character": 26
+				}
+			]
+		},
+		{
+			"id": 367,
+			"name": "rayReset",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 368,
+					"name": "rayReset",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 369,
+							"name": "x0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 370,
+							"name": "y0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 371,
+							"name": "dirX",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 372,
+							"name": "dirY",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 373,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							},
+							"defaultValue": " rayAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IRay",
+						"id": 13
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/rayFunctions.ts",
+					"line": 79,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 374,
+			"name": "rayTransformByAff",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 375,
+					"name": "rayTransformByAff",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 376,
+							"name": "ray",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						},
+						{
+							"id": 377,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						},
+						{
+							"id": 378,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							},
+							"defaultValue": " rayAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IRay",
+						"id": 13
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/rayFunctions.ts",
+					"line": 89,
+					"character": 33
+				}
+			]
+		},
+		{
+			"id": 191,
+			"name": "segmentAlloc",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 192,
+					"name": "segmentAlloc",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"name": "ISegment",
+						"id": 8
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 17,
+					"character": 28
+				}
+			]
+		},
+		{
+			"id": 193,
+			"name": "segmentGetEndpoint0",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 194,
+					"name": "segmentGetEndpoint0",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 195,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 196,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 21,
+					"character": 35
+				}
+			]
+		},
+		{
+			"id": 197,
+			"name": "segmentGetEndpoint1",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 198,
+					"name": "segmentGetEndpoint1",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 199,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 200,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 25,
+					"character": 35
+				}
+			]
+		},
+		{
+			"id": 201,
+			"name": "segmentGetLength",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 202,
+					"name": "segmentGetLength",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 203,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 29,
+					"character": 32
+				}
+			]
+		},
+		{
+			"id": 204,
+			"name": "segmentGetLengthSq",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 205,
+					"name": "segmentGetLengthSq",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 206,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 33,
+					"character": 34
+				}
+			]
+		},
+		{
+			"id": 220,
+			"name": "segmentIntersectLine",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 221,
+					"name": "segmentIntersectLine",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 222,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 223,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 224,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							},
+							"defaultValue": " intersectionAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IIntersection",
+						"id": 35
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 60,
+					"character": 36
+				}
+			]
+		},
+		{
+			"id": 207,
+			"name": "segmentIntersectPolylineIterator",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 208,
+					"name": "segmentIntersectPolylineIterator",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 209,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 210,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 42
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IterableIterator",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							}
+						]
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 39,
+					"character": 48
+				}
+			]
+		},
+		{
+			"id": 225,
+			"name": "segmentIntersectRay",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 226,
+					"name": "segmentIntersectRay",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 227,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 228,
+							"name": "ray",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IRay",
+								"id": 13
+							}
+						},
+						{
+							"id": 229,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							},
+							"defaultValue": " intersectionAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IIntersection",
+						"id": 35
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 64,
+					"character": 35
+				}
+			]
+		},
+		{
+			"id": 230,
+			"name": "segmentIntersectSegment",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 231,
+					"name": "segmentIntersectSegment",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 232,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 233,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 234,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IIntersection",
+								"id": 35
+							},
+							"defaultValue": " intersectionAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IIntersection",
+						"id": 35
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 69,
+					"character": 39
+				}
+			]
+		},
+		{
+			"id": 211,
+			"name": "segmentNearestPoint",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 212,
+					"name": "segmentNearestPoint",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 213,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 214,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 215,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 43,
+					"character": 35
+				}
+			]
+		},
+		{
+			"id": 216,
+			"name": "segmentNearestT",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 217,
+					"name": "segmentNearestT",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 218,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 219,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 48,
+					"character": 31
+				}
+			]
+		},
+		{
+			"id": 235,
+			"name": "segmentPointAt",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 236,
+					"name": "segmentPointAt",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 237,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 238,
+							"name": "t",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 239,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 81,
+					"character": 30
+				}
+			]
+		},
+		{
+			"id": 240,
+			"name": "segmentReset",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 241,
+					"name": "segmentReset",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 242,
+							"name": "x0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 243,
+							"name": "y0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 244,
+							"name": "x1",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 245,
+							"name": "y1",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 246,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							},
+							"defaultValue": " segmentAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ISegment",
+						"id": 8
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 85,
+					"character": 28
+				}
+			]
+		},
+		{
+			"id": 247,
+			"name": "segmentReverse",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 248,
+					"name": "segmentReverse",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 249,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 250,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							},
+							"defaultValue": " segmentAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ISegment",
+						"id": 8
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/segmentFunctions.ts",
+					"line": 93,
+					"character": 30
+				}
+			]
+		},
+		{
+			"id": 118,
+			"name": "vecAdd",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 119,
+					"name": "vecAdd",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the result of adding the two given vectors."
+					},
+					"parameters": [
+						{
+							"id": 120,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 121,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 122,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 11,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 123,
+			"name": "vecAlloc",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 124,
+					"name": "vecAlloc",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Creates a new Vec object in memory, with all values initialized to NaN.\nThis is useful to hold the result of vectormath function calls in performance\ncritical workflows."
+					},
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 20,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 125,
+			"name": "vecClone",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 126,
+					"name": "vecClone",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Copies the values from the given vector into a new vector."
+					},
+					"parameters": [
+						{
+							"id": 127,
+							"name": "vec",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 128,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 29,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 129,
+			"name": "vecDistance",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 130,
+					"name": "vecDistance",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the straight-line (Euclidean) distance between the two vectors, interpreted as points in the plane."
+					},
+					"parameters": [
+						{
+							"id": 131,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 132,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 38,
+					"character": 27
+				}
+			]
+		},
+		{
+			"id": 133,
+			"name": "vecDistanceSq",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 134,
+					"name": "vecDistanceSq",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the squared straight-line (i.e. Euclidean) distance between the two vectors, interpreted as points in the plane."
+					},
+					"parameters": [
+						{
+							"id": 135,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 136,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 49,
+					"character": 29
+				}
+			]
+		},
+		{
+			"id": 137,
+			"name": "vecDot",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 138,
+					"name": "vecDot",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the dot product of the two vectors, i.e. `a.x * b.x + a.y * b.y`."
+					},
+					"parameters": [
+						{
+							"id": 139,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 140,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 60,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 141,
+			"name": "vecGetLength",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 142,
+					"name": "vecGetLength",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the straight-line length (i.e. Euclidean norm) of the given vector."
+					},
+					"parameters": [
+						{
+							"id": 143,
+							"name": "vec",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 68,
+					"character": 28
+				}
+			]
+		},
+		{
+			"id": 144,
+			"name": "vecGetLengthSq",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 145,
+					"name": "vecGetLengthSq",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the squared straight-line length (i.e. square of the Euclidean norm) of the given vector."
+					},
+					"parameters": [
+						{
+							"id": 146,
+							"name": "vec",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 76,
+					"character": 30
+				}
+			]
+		},
+		{
+			"id": 147,
+			"name": "vecGetManhattanLength",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 148,
+					"name": "vecGetManhattanLength",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the Manhattan length of the given vector, i.e. `|x| + |y|`."
+					},
+					"parameters": [
+						{
+							"id": 149,
+							"name": "vec",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 84,
+					"character": 37
+				}
+			]
+		},
+		{
+			"id": 150,
+			"name": "vecLerp",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 151,
+					"name": "vecLerp",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Performs a linear interpolation between the two vectors. The `r` parameter is allowed to be outside `[0, 1]`."
+					},
+					"parameters": [
+						{
+							"id": 152,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 153,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 154,
+							"name": "r",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 155,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 95,
+					"character": 23
+				}
+			]
+		},
+		{
+			"id": 156,
+			"name": "vecManhattanDistance",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 157,
+					"name": "vecManhattanDistance",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the Manhattan distance between the two vectors, interpreted as points in the plane.\nEquivalent to `|b.x - a.x| + |b.y - a.y|`."
+					},
+					"parameters": [
+						{
+							"id": 158,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 159,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 105,
+					"character": 36
+				}
+			]
+		},
+		{
+			"id": 160,
+			"name": "vecNormalize",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 161,
+					"name": "vecNormalize",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Normalizes the vector to be length 1. If the given vector is the zero-vector, this method\nreturns `(NaN, NaN)`."
+					},
+					"parameters": [
+						{
+							"id": 162,
+							"name": "vec",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 163,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 115,
+					"character": 28
+				}
+			]
+		},
+		{
+			"id": 164,
+			"name": "vecOrigin",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 165,
+					"name": "vecOrigin",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Returns the 2d origin vector, `(0, 0)`."
+					},
+					"parameters": [
+						{
+							"id": 166,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 129,
+					"character": 25
+				}
+			]
+		},
+		{
+			"id": 167,
+			"name": "vecPerp",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 168,
+					"name": "vecPerp",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the perp of the given vector, as defined by `vecPerp(a, b) = (-b, a)`.\nThis is equivalent to a counter-clockwise rotation in the standard plane."
+					},
+					"parameters": [
+						{
+							"id": 169,
+							"name": "vec",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 170,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 139,
+					"character": 23
+				}
+			]
+		},
+		{
+			"id": 171,
+			"name": "vecReset",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 172,
+					"name": "vecReset",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Constuct a new vector given an `x` and `y` value."
+					},
+					"parameters": [
+						{
+							"id": 173,
+							"name": "x",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 174,
+							"name": "y",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 175,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 149,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 176,
+			"name": "vecScale",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 177,
+					"name": "vecScale",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Scales both coordinates of this vector by the given scalar."
+					},
+					"parameters": [
+						{
+							"id": 178,
+							"name": "vec",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 179,
+							"name": "scalar",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 180,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 161,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 181,
+			"name": "vecSubtract",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 182,
+					"name": "vecSubtract",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Subrtacts vector `b` from vector `a`."
+					},
+					"parameters": [
+						{
+							"id": 183,
+							"name": "a",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 184,
+							"name": "b",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 185,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 171,
+					"character": 27
+				}
+			]
+		},
+		{
+			"id": 186,
+			"name": "vecTransformByAff",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 187,
+					"name": "vecTransformByAff",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Multiplies the vector by the given affine matrix."
+					},
+					"parameters": [
+						{
+							"id": 188,
+							"name": "vec",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 189,
+							"name": "mat",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {},
+							"type": {
+								"type": "reference",
+								"name": "IMat2x3",
+								"id": 23
+							}
+						},
+						{
+							"id": 190,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							},
+							"defaultValue": " vecAlloc()"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IVec",
+						"id": 5
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/vecFunctions.ts",
+					"line": 181,
+					"character": 33
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Interfaces",
+			"kind": 256,
+			"children": [
+				30,
+				35,
+				18,
+				23,
+				13,
+				8,
+				5
+			]
+		},
+		{
+			"title": "Type aliases",
+			"kind": 4194304,
+			"children": [
+				41,
+				42
+			]
+		},
+		{
+			"title": "Variables",
+			"kind": 32,
+			"children": [
+				2,
+				4,
+				1,
+				3
+			]
+		},
+		{
+			"title": "Functions",
+			"kind": 64,
+			"children": [
+				457,
+				459,
+				463,
+				467,
+				471,
+				475,
+				480,
+				485,
+				489,
+				492,
+				499,
+				504,
+				43,
+				45,
+				49,
+				251,
+				258,
+				266,
+				270,
+				262,
+				279,
+				284,
+				293,
+				288,
+				298,
+				253,
+				274,
+				303,
+				310,
+				314,
+				57,
+				60,
+				64,
+				69,
+				72,
+				76,
+				79,
+				82,
+				87,
+				92,
+				97,
+				103,
+				105,
+				109,
+				509,
+				515,
+				511,
+				544,
+				547,
+				564,
+				555,
+				519,
+				523,
+				527,
+				531,
+				536,
+				540,
+				550,
+				560,
+				568,
+				379,
+				381,
+				385,
+				389,
+				392,
+				395,
+				400,
+				404,
+				409,
+				413,
+				417,
+				421,
+				424,
+				429,
+				433,
+				437,
+				442,
+				446,
+				451,
+				319,
+				326,
+				330,
+				334,
+				338,
+				343,
+				348,
+				352,
+				357,
+				362,
+				321,
+				367,
+				374,
+				191,
+				193,
+				197,
+				201,
+				204,
+				220,
+				207,
+				225,
+				230,
+				211,
+				216,
+				235,
+				240,
+				247,
+				118,
+				123,
+				125,
+				129,
+				133,
+				137,
+				141,
+				144,
+				147,
+				150,
+				156,
+				160,
+				164,
+				167,
+				171,
+				176,
+				181,
+				186
+			]
+		}
+	]
+}
