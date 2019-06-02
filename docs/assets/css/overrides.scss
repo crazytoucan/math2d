@@ -1,0 +1,14 @@
+---
+---
+
+.navigation-list {
+  line-height: 1.4rem;
+}
+
+.navigation-list-link {
+  padding: 0;
+}
+
+.navigation-list-child-list .navigation-list-item::before {
+  margin-top: 0;
+}

@@ -1,0 +1,9 @@
+name,category_tag
+Box Functions,box
+Line Functions,line
+Mat2x3 Functions,mat2x3
+Polygon Functions,polygon
+Polyline Functions,polyline
+Ray Functions,ray
+Segment Functions,segment
+Vec Functions,vec
