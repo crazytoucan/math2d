@@ -21,7 +21,7 @@ class DefaultAllocator implements IAllocator {
       this.scheduledGc = setTimeout(() => {
         this.scheduledGc = undefined;
         this.allocatedSlots = [[], []];
-      }, 5_000);
+      }, 5_000) as any;
     }
   }
 
