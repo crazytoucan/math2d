@@ -5,13 +5,20 @@
       {% if node.vectormath_is_api_reference %}
         <li class="navigation-list-item{% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %} active{% endif %}">
           <a href="{{ node.url | absolute_url }}" class="navigation-list-link{% if page.url == node.url %} active{% endif %}">{{ node.title }}</a>
-          <ul class="navigation-list-child-list ">
-          {% for child in site.data.api_list %}
-          <li class="navigation-list-item">
-            <a class="navigation-list-link" href="#{{ child.name }}">{{ child.name }}</a>
-          </li>
+          {% for category in site.data.api_categories %}
+            <details open class="api-reference-details">
+              <summary>{{ category.name }}</summary>
+              <ul class="navigation-list-child-list vectormath-api-list-child-list">
+                {% for child in site.data.api_list %}
+                  {% if child.category_tag == category.category_tag %}
+                    <li class="navigation-list-item vectormath-api-list-item">
+                      <a class="navigation-list-link" href="/api/#{{ child.anchor }}">{{ child.name }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </details>
           {% endfor %}
-          </ul>
         </li>
       </li>
     {% endif %}

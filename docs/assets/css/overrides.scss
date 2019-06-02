@@ -12,3 +12,89 @@
 .navigation-list-child-list .navigation-list-item::before {
   margin-top: 0;
 }
+
+.vectormath-api-list-item {
+  font-family: monospace;
+}
+
+@media (min-width: 31.25rem) {
+  .vectormath-api-list-item {
+    font-size: 14px !important;
+  }
+}
+
+@media (min-width: 46.25rem) {
+  .vectormath-api-list-item {
+    font-size: 10px !important;
+  }
+}
+
+@media (min-width: 46.25rem) and (min-width: 31.25rem) {
+  .vectormath-api-list-item {
+    font-size: 12px !important;
+  }
+}
+
+.vectormath-api-list-child-list {
+  display: block !important;
+  position: relative;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+
+  border-left: 1px dashed #aaa;
+  margin-left: -12px;
+  padding-left: 12px;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    border-bottom: 1px dashed #aaa;
+    width: 10px;
+    content: " ";
+  }
+}
+
+.vectormath-api-list-item .navigation-list-link {
+  color: #848484;
+}
+
+.vectormath-api-list-item::before {
+  display: none;
+}
+
+.api-reference-details summary {
+  position: relative;
+  font-weight: 600;
+  color: black;
+  list-style: none;
+  outline: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.api-reference-details summary::before {
+  content: " ";
+  background-image: url("/assets/svg/plus.svg");
+  background-size: cover;
+  position: absolute;
+  left: -16px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+}
+
+.api-reference-details[open] summary::before {
+  content: " ";
+  background-image: url("/assets/svg/minus.svg");
+  background-size: cover;
+  position: absolute;
+  left: -16px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+}
