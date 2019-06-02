@@ -14,7 +14,7 @@ $body-heading-line-height: 1.15;
 
 $white: #fff;
 
-$grey-dk-000: #969696;
+$grey-dk-000: #727272;
 $grey-dk-100: #626262;
 $grey-dk-200: #4d3d3d;
 $grey-dk-250: #363636 !default;
@@ -25,20 +25,7 @@ $grey-lt-100: #eeeeee;
 $grey-lt-200: #ededed;
 $grey-lt-300: #e8e8e8;
 
-$purple-000: #871E3B;
-$purple-100: #7B0828;
-$purple-200: #833A56;
-$purple-300: #833A56;
-
-$blue-000: #2c84fa;
-$blue-100: #2869e6;
-$blue-200: #264caf;
-$blue-300: #183385;
-
-$green-000: #41d693;
-$green-100: #11b584;
-$green-200: #009c7b;
-$green-300: #026e57;
+$theme-fg: #35C578;
 
 $body-background-color: #fff !default;
 $sidebar-color: $grey-lt-000;
@@ -47,8 +34,8 @@ $code-background-color: $grey-lt-000 !default;
 $body-text-color: $grey-dk-100 !default;
 $body-heading-color: $grey-dk-300 !default;
 $nav-child-link-color: $grey-dk-100 !default;
-$link-color: $purple-000;
-$btn-primary-color: $purple-100;
+$link-color: $theme-fg;
+$btn-primary-color: $theme-fg;
 $base-button-color: #f7f7f7 !default;
 
 //

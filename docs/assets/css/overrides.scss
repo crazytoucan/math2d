@@ -1,5 +1,6 @@
 ---
 ---
+@import "custom/custom";
 
 .navigation-list {
   line-height: 1.4rem;
@@ -36,7 +37,6 @@
 }
 
 .vectormath-api-list-child-list {
-  display: block !important;
   position: relative;
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
@@ -57,12 +57,20 @@
   }
 }
 
-.vectormath-api-list-item .navigation-list-link {
-  color: #848484;
+.navigation-list-child-list .navigation-list-link {
+  color: $grey-dk-000;
 }
 
 .vectormath-api-list-item::before {
   display: none;
+}
+
+.api-reference-details {
+  display: none;
+}
+
+.navigation-list-item.active .api-reference-details {
+  display: block;
 }
 
 .api-reference-details summary {
@@ -71,6 +79,7 @@
   color: black;
   list-style: none;
   outline: none;
+  cursor: default;
 
   &::-webkit-details-marker {
     display: none;
@@ -79,7 +88,7 @@
 
 .api-reference-details summary::before {
   content: " ";
-  background-image: url("/assets/svg/plus.svg");
+  background-image: url({{ "/assets/svg/plus.svg" | absolute_url }});
   background-size: cover;
   position: absolute;
   left: -16px;
@@ -90,7 +99,7 @@
 
 .api-reference-details[open] summary::before {
   content: " ";
-  background-image: url("/assets/svg/minus.svg");
+  background-image: url({{ "/assets/svg/minus.svg" | absolute_url }});
   background-size: cover;
   position: absolute;
   left: -16px;
