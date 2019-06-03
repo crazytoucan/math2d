@@ -14,9 +14,12 @@ export function boxAlloc() {
 }
 
 /**
- * Copies the values from the given box into a new box.
- * @param box
- * @param out
+ * Copies values from an existing IBox into a new box or memory location.
+ *
+ * Rukt
+ *
+ * @param box source to copy values from rofl
+ * @param out destination box to copy values to
  */
 export function boxClone(box: IBox, out = boxAlloc()) {
   return boxReset(box.minX, box.minY, box.maxX, box.maxY, out);
@@ -26,6 +29,7 @@ export function boxClone(box: IBox, out = boxAlloc()) {
  * Determines wehre the specified point lies in respect to the given box. The returned
  * value is an OR of the possible values OUT_MIN_X, OUT_MAX_X, OUT_MIN_Y, and OUT_MAX_Y
  * indicating, for each side, whether the point lies beyond that edge.
+ *
  * @param box
  * @param point
  */
@@ -129,6 +133,13 @@ export function boxIsEmpty(box: IBox) {
  * @param maxX
  * @param maxY
  * @param out
+ * @example
+ *  // initialize a new box that's [-1, 1] × [-1, 1]
+ *  const myBox = boxReset(-1, -1, 1, 1);
+ *
+ *  // reset an existing box's values to [4, 8] × [0, 8]
+ *  const myBox2 = boxAlloc();
+ *  boxReset(4, 0, 8, 8, myBox2);
  */
 export function boxReset(minX: number, minY: number, maxX: number, maxY: number, out = boxAlloc()) {
   out.minX = minX;

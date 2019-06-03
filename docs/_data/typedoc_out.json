@@ -978,7 +978,8 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Copies values from an existing IBox into a new box or memory location."
+						"shortText": "Copies values from an existing IBox into a new box or memory location.",
+						"text": "Rukt\n"
 					},
 					"parameters": [
 						{
@@ -988,7 +989,7 @@
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "source to copy values from"
+								"text": "source to copy values from rofl"
 							},
 							"type": {
 								"type": "reference",
@@ -1023,7 +1024,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 22,
+					"line": 24,
 					"character": 24
 				}
 			]
@@ -1085,7 +1086,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 35,
+					"line": 37,
 					"character": 33
 				}
 			]
@@ -1147,7 +1148,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 59,
+					"line": 61,
 					"character": 30
 				}
 			]
@@ -1209,7 +1210,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 69,
+					"line": 71,
 					"character": 32
 				}
 			]
@@ -1286,7 +1287,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 80,
+					"line": 82,
 					"character": 30
 				}
 			]
@@ -1363,7 +1364,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 97,
+					"line": 99,
 					"character": 31
 				}
 			]
@@ -1425,7 +1426,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 113,
+					"line": 115,
 					"character": 32
 				}
 			]
@@ -1474,7 +1475,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 122,
+					"line": 124,
 					"character": 26
 				}
 			]
@@ -1495,7 +1496,13 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Constuct a new box given `minX`, `minY`, `maxX`, and `maxY` bounding values."
+						"shortText": "Constuct a new box given `minX`, `minY`, `maxX`, and `maxY` bounding values.",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n // initialize a new box that's [-1, 1] × [-1, 1]\n const myBox = boxReset(-1, -1, 1, 1);\n\n // reset an existing box's values to [4, 8] × [0, 8]\n const myBox2 = boxAlloc();\n boxReset(4, 0, 8, 8, myBox2);\n"
+							}
+						]
 					},
 					"parameters": [
 						{
@@ -1552,9 +1559,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {
-								"text": "\n"
-							},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IBox",
@@ -1573,7 +1578,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 135,
+					"line": 144,
 					"character": 24
 				}
 			]
@@ -1642,7 +1647,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 149,
+					"line": 158,
 					"character": 33
 				}
 			]
@@ -1720,7 +1725,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 166,
+					"line": 175,
 					"character": 24
 				}
 			]

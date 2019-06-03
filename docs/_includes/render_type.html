@@ -1,4 +1,7 @@
-{%- if include.type.type == "intrinsic" -%}
+{%- if include.type.name == "IterableIterator" -%}
+  {% assign nested_type = include.type.typeArguments[0] %}
+  <span class="vectormath-type -primitive">IterableIterator&lt;{% include render_type.html type=nested_type %}&gt;</span>
+{%- elsif include.type.type == "intrinsic" -%}
   <span class="vectormath-type -primitive">{{- include.type.name -}}</span>
 {%- else -%}
   <span class="vectormath-type -reference"><a href="{{ include.type.name | downcase | prepend: "/api/#" | absolute_url }}">{{ include.type.name }}</a></span>

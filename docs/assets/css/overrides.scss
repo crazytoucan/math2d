@@ -174,7 +174,7 @@ dl.vectormath-parameter-list {
   }
 
   dd {
-    margin-left: 1em;
+    margin: 0 0 0 1em;
   }
 }
 
@@ -193,10 +193,31 @@ table.vectormath-signature {
   box-shadow: none;
 
   td {
+    white-space: nowrap;
     min-width: initial;
     padding: initial;
     background: none;
     border: none;
     font-size: inherit !important;
   }
+}
+
+.vectormath-reference-content {
+  margin: 1rem 0 2rem 0;
+}
+
+pre.highlight,
+figure.highlight,
+code {
+  background: $grey-lt-000;
+}
+
+
+figure.highlight code {
+  padding: 0;
+  border: 0;
+}
+
+.vectormath-example figure {
+  padding: 10px;
 }
