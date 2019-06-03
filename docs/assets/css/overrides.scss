@@ -131,6 +131,7 @@ h4 {
 .vectormath-reference-header {
   margin: 0 -1rem;
   padding: 0.5rem 1rem;
+  border-radius: 4px;
   background: $grey-lt-100;
   font-family: monospace;
   font-size: 14px !important;
@@ -217,7 +218,6 @@ code {
   background: $grey-lt-000;
 }
 
-
 figure.highlight code {
   padding: 0;
   border: 0;
@@ -231,4 +231,29 @@ figure.highlight code {
   pre {
     margin: 0;
   }
+}
+
+.main-content {
+  padding: 1rem;
+}
+
+@media (min-width: 46.25rem) {
+  .main-content {
+    position: relative;
+    max-width: 960px;
+    padding: 2rem 2rem 2rem 3rem;
+    margin-left: 232px;
+  }
+}
+
+@media (min-width: 70rem) {
+  .main-content {
+    padding-left: 4rem;
+    margin-left: calc((100% - 1032px) / 2 + 232px);
+  }
+}
+
+.vectormath-constant-value code,
+.vectormath-constant-value figure {
+  background: none;
 }

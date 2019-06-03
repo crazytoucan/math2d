@@ -858,10 +858,10 @@
 				}
 			],
 			"type": {
-				"type": "intrinsic",
-				"name": "number"
+				"type": "unknown",
+				"name": "2"
 			},
-			"defaultValue": " 1 << 1"
+			"defaultValue": "2"
 		},
 		{
 			"id": 4,
@@ -880,10 +880,10 @@
 				}
 			],
 			"type": {
-				"type": "intrinsic",
-				"name": "number"
+				"type": "unknown",
+				"name": "8"
 			},
-			"defaultValue": " 1 << 3"
+			"defaultValue": "8"
 		},
 		{
 			"id": 1,
@@ -902,10 +902,10 @@
 				}
 			],
 			"type": {
-				"type": "intrinsic",
-				"name": "number"
+				"type": "unknown",
+				"name": "1"
 			},
-			"defaultValue": " 1 << 0"
+			"defaultValue": "1"
 		},
 		{
 			"id": 3,
@@ -924,10 +924,10 @@
 				}
 			],
 			"type": {
-				"type": "intrinsic",
-				"name": "number"
+				"type": "unknown",
+				"name": "4"
 			},
-			"defaultValue": " 1 << 2"
+			"defaultValue": "4"
 		},
 		{
 			"id": 457,

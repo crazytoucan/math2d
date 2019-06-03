@@ -4,70 +4,15 @@
     <a href="{{ child.name | prepend: "/api/#" | absolute_url }}">§</a>
   </h3>
   <div class="vectormath-reference-content">
-    {% assign sig = child.signatures[0] %}
-    <code>{{ child.name }}</code> –
-    <span markdown="1">{{ sig.comment.shortText }}</span>
-    <h4>Signature</h4>
-    <p>
-      <table class="vectormath-signature">
-        <tbody>
-          {%- for param in sig.parameters -%}
-            <tr>
-              {% if forloop.first %}
-                <td>
-                  <span class="keyword">function</span>
-                  <span class="function-name">{{ sig.name }}</span>
-                  {{- "(" -}}
-                </td>
-              {% else %}
-                <td>&nbsp;</td>
-              {% endif %}
-              <td>
-                <span class="param-name">{{- param.name -}}</span>
-                {%- if param.defaultValue -%}
-                  ?:
-                {%- else -%}
-                  :
-                {% endif %}
-                {% include render_type.html type=param.type %}
-                {%- if forloop.last -%}
-                  {{- "):" }}
-                  {% include render_type.html type=sig.type %};
-                {% else %}
-                  {{- "," -}}
-                {% endif %}
-              </td>
-            </tr>
-          {%- endfor -%}
-        </tbody>
-      </table>
-    </p>
-    <h4>Parameters</h4>
-    <dl class="vectormath-parameter-list">
-      {% for param in sig.parameters %}
-        <dt>
-          {{ param.name}}
-        </dt>
-        <dd>
-          {% if param.defaultValue %}
-            <span class="optional">(optional)</span>
-          {% endif %}
-          {{ param.comment.text }}
-        </dd>
-      {% endfor %}
-    </dl>
-    {% if sig.comment.text %}
-      <h4>Description</h4>
-      {{ sig.comment.text }}
-    {% endif %}
-
-    {% for sig_example in sig.comment.tags | where: "tag", "example" %}
-      <h4>Example</h4>
-      <div class="vectormath-example">
-        {% highlight ts %}
-          {{- sig_example.text -}}
-        {% endhighlight %}
-      </div>
-    {% endfor %}
+    {% case child.kindString %}
+      {% when "Interface" %}
+        {% include api_reference_interface.html value=child %}
+      {% when "Function" %}
+        {% include api_reference_function.html value=child %}
+      {% when "Type alias" %}
+        {% include api_reference_type_alias.html value=child %}
+      {% when "Variable" %}
+        {% include api_reference_constant.html value=child %}
+    {% endcase %}
   </div>
 {% endfor %}
