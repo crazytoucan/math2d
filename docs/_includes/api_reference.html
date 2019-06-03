@@ -1,5 +1,8 @@
 {% for child in site.data.typedoc_out.children %}
-  <h3 id="{{ child.name | downcase }}" class="vectormath-reference-header">{{ child.name }}</h3>
+  <h3 id="{{ child.name }}" class="vectormath-reference-header">
+    {{ child.name }}
+    <a href="{{ child.name | prepend: "/api/#" | absolute_url }}">§</a>
+  </h3>
   <div class="vectormath-reference-content">
     {% assign sig = child.signatures[0] %}
     <code>{{ child.name }}</code> –

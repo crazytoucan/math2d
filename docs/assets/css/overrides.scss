@@ -15,10 +15,6 @@
   margin-top: 0;
 }
 
-.vectormath-api-list-item {
-  font-family: monospace;
-}
-
 html {
   font-size: 12px !important;
 }
@@ -133,11 +129,20 @@ h4 {
 }
 
 .vectormath-reference-header {
-  margin: 1rem -3rem;
-  padding: 0.5rem 3rem;
+  margin: 0 -1rem;
+  padding: 0.5rem 1rem;
   background: $grey-lt-100;
   font-family: monospace;
   font-size: 14px !important;
+  white-space: nowrap;
+
+  a {
+    display: none;
+  }
+
+  &:hover a {
+    display: inline;
+  }
 }
 
 @media (min-width: 31.25rem) {
@@ -203,7 +208,7 @@ table.vectormath-signature {
 }
 
 .vectormath-reference-content {
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 3rem 0;
 }
 
 pre.highlight,
@@ -219,5 +224,11 @@ figure.highlight code {
 }
 
 .vectormath-example figure {
+  border-radius: 4px;
+  border: 1px solid #eee;
   padding: 10px;
+
+  pre {
+    margin: 0;
+  }
 }

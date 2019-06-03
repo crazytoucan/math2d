@@ -12,7 +12,7 @@
                 {% for child in site.data.api_list %}
                   {% if child.category_tag == category.category_tag %}
                     <li class="navigation-list-item vectormath-api-list-item">
-                      <a class="navigation-list-link" href="{{ "/api/#" | append: child.anchor | absolute_url }}">{{ child.name }}</a>
+                      <a class="navigation-list-link" href="{{ "/api/#" | append: child.name | absolute_url }}">{{ child.name }}</a>
                     </li>
                   {% endif %}
                 {% endfor %}
