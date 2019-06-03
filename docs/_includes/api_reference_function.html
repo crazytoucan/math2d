@@ -1,46 +1,46 @@
 {% assign sig = include.value.signatures[0] %}
 <code>{{ include.value.name }}</code> –
 <span markdown="1">{{ sig.comment.shortText }}</span>
+
 <h4>Signature</h4>
-<p>
-  <table class="vectormath-signature">
-    <tbody>
-      {%- for param in sig.parameters -%}
-        <tr>
-          {% if forloop.first %}
-            <td>
-              <span class="keyword">function</span>
-              <span class="function-name">{{ sig.name }}</span>
-              {{- "(" -}}
-            </td>
-          {% else %}
-            <td>&nbsp;</td>
-          {% endif %}
+<table class="vectormath-signature">
+  <tbody>
+    {%- for param in sig.parameters -%}
+      <tr>
+        {% if forloop.first %}
           <td>
-            <span class="param-name">{{- param.name -}}</span>
-            {%- if param.defaultValue -%}
-              ?:
-            {%- else -%}
-              :
-            {% endif %}
-            {% include render_type.html type=param.type %}
-            {%- if forloop.last -%}
-              {{- "):" }}
-              {% include render_type.html type=sig.type %};
-            {% else %}
-              {{- "," -}}
-            {% endif %}
+            <span class="keyword">function</span>
+            <span class="function-name">{{ sig.name }}</span>
+            {{- "(" -}}
           </td>
-        </tr>
-      {%- endfor -%}
-    </tbody>
-  </table>
-</p>
+        {% else %}
+          <td>&nbsp;</td>
+        {% endif %}
+        <td>
+          <span class="param-name">{{- param.name -}}</span>
+          {%- if param.defaultValue -%}
+            ?:
+          {%- else -%}
+            :
+          {% endif %}
+          {% include render_type.html type=param.type %}
+          {%- if forloop.last -%}
+            {{- "):" }}
+            {% include render_type.html type=sig.type %};
+          {% else %}
+            {{- "," -}}
+          {% endif %}
+        </td>
+      </tr>
+    {%- endfor -%}
+  </tbody>
+</table>
+
 <h4>Parameters</h4>
 <dl class="vectormath-parameter-list">
   {% for param in sig.parameters %}
     <dt>
-      {{ param.name}}
+      {{ param.name }}
     </dt>
     <dd>
       {% if param.defaultValue %}

@@ -1,1 +1,14 @@
-TYPE ALIAS OMG {{ include.value.name }}
+<code>{{ include.value.name }}</code>
+–
+<span markdown="1">{{ include.value.comment.shortText }}</span>
+
+<h4>Declaration</h4>
+<pre class="vectormath-interface-declaration">
+{%- assign type_alias = include.value.type -%}
+type {{ include.value.name }} = {% include render_type.html type=type_alias %};
+</pre>
+
+{% if include.value.comment.text %}
+  <h4>Description</h4>
+  <div markdown="1">{{ include.value.comment.text }}</div>
+{% endif %}

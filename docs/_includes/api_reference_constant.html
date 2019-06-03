@@ -1,9 +1,10 @@
 <code>{{ include.value.name }}</code> –
+<span markdown="1">{{ sig.comment.shortText }}</span>
 
 <h4>Value</h4>
 
 <div class="vectormath-constant-value">
   {% highlight ts %}
-  {{ include.value.defaultValue }}
+  {{- include.value.defaultValue -}}
   {% endhighlight %}
 </div>

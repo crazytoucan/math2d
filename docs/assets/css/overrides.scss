@@ -87,6 +87,7 @@ h4 {
 
 .api-reference-details {
   display: none;
+  padding-left: 16px;
 }
 
 .navigation-list-item.active .api-reference-details {
@@ -95,7 +96,7 @@ h4 {
 
 .api-reference-details summary {
   position: relative;
-  font-weight: 600;
+  font-weight: 500;
   color: black;
   list-style: none;
   outline: none;
@@ -108,24 +109,17 @@ h4 {
 
 .api-reference-details summary::before {
   content: " ";
-  background-image: url({{"/assets/svg/plus.svg"|absolute_url}});
+  background-image: url({{ "/assets/svg/plus.svg" | absolute_url }});
   background-size: cover;
   position: absolute;
   left: -16px;
-  top: 6px;
+  top: 4px;
   width: 10px;
   height: 10px;
 }
 
 .api-reference-details[open] summary::before {
-  content: " ";
-  background-image: url({{"/assets/svg/minus.svg"|absolute_url}});
-  background-size: cover;
-  position: absolute;
-  left: -16px;
-  top: 6px;
-  width: 10px;
-  height: 10px;
+  background-image: url({{ "/assets/svg/minus.svg" | absolute_url }});
 }
 
 .vectormath-reference-header {
@@ -172,7 +166,6 @@ dl.vectormath-parameter-list {
     font-family: monospace;
     text-align: left;
     margin: 0;
-    font-weight: 600;
   }
 
   dt::after {
@@ -180,13 +173,13 @@ dl.vectormath-parameter-list {
   }
 
   dd {
-    margin: 0 0 0 1em;
+    margin: 0 0 1em 2em;
   }
 }
 
 .vectormath-type {
   &.-primitive {
-    color: $grey-dk-250;
+    color: #aaa;
   }
 }
 
@@ -218,14 +211,18 @@ code {
   background: $grey-lt-000;
 }
 
+.vectormath-example figure,
+pre.highlight {
+  border: 1px solid #eee;
+  border-radius: 4px
+}
+
 figure.highlight code {
   padding: 0;
   border: 0;
 }
 
 .vectormath-example figure {
-  border-radius: 4px;
-  border: 1px solid #eee;
   padding: 10px;
 
   pre {
@@ -253,7 +250,13 @@ figure.highlight code {
   }
 }
 
-.vectormath-constant-value code,
-.vectormath-constant-value figure {
-  background: none;
+.vectormath-constant-value{
+  code,
+  figure {
+    background: none;
+  }
+}
+
+.vectormath-interface-declaration {
+  font-size: 12px !important;
 }
