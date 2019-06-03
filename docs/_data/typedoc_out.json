@@ -978,13 +978,7 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "`boxClone` copies values from an existing IBox into a new box or memory location.",
-						"tags": [
-							{
-								"tag": "summary",
-								"text": "copy the values from the given box into a new box"
-							}
-						]
+						"shortText": "Copies values from an existing IBox into a new box or memory location."
 					},
 					"parameters": [
 						{
@@ -1029,7 +1023,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 23,
+					"line": 22,
 					"character": 24
 				}
 			]
@@ -1091,7 +1085,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 36,
+					"line": 35,
 					"character": 33
 				}
 			]
@@ -1153,7 +1147,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 60,
+					"line": 59,
 					"character": 30
 				}
 			]
@@ -1215,7 +1209,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 70,
+					"line": 69,
 					"character": 32
 				}
 			]
@@ -1292,7 +1286,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 81,
+					"line": 80,
 					"character": 30
 				}
 			]
@@ -1369,7 +1363,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 98,
+					"line": 97,
 					"character": 31
 				}
 			]
@@ -1431,7 +1425,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 114,
+					"line": 113,
 					"character": 32
 				}
 			]
@@ -1480,7 +1474,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 123,
+					"line": 122,
 					"character": 26
 				}
 			]
@@ -1579,7 +1573,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 136,
+					"line": 135,
 					"character": 24
 				}
 			]
@@ -1648,7 +1642,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 150,
+					"line": 149,
 					"character": 33
 				}
 			]
@@ -1726,7 +1720,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 167,
+					"line": 166,
 					"character": 24
 				}
 			]

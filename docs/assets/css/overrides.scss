@@ -151,14 +151,52 @@ h4 {
 }
 
 .vectormath-signature {
-  font-size: 12px;
-  font-family: 'Source Code Pro', monospace;
-  color: $grey-dk-000;
+  font-family: monospace;
+  font-size: 12px !important;
+}
 
-  .function-name {
+dl.vectormath-parameter-list {
+  font-size: 12px !important;
+  display: block;
+  .optional {
+    font-style: italic;
   }
 
-  .param-name {
+  dt {
+    font-family: monospace;
+    text-align: left;
+    margin: 0;
     font-weight: 600;
+  }
+
+  dt::after {
+    content: "";
+  }
+
+  dd {
+    margin-left: 1em;
+  }
+}
+
+.vectormath-type {
+  &.-primitive {
+    color: $grey-dk-250;
+  }
+}
+
+table.vectormath-signature {
+  display: table !important;
+  width: initial;
+  max-width: initial;
+  margin-bottom: initial;
+  overflow-x: initial;
+  box-shadow: none;
+
+  td {
+    min-width: initial;
+    padding: initial;
+    background: none;
+    border: none;
+    font-size: inherit !important;
   }
 }

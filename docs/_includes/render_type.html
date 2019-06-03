@@ -1,0 +1,5 @@
+{%- if include.type.type == "intrinsic" -%}
+  <span class="vectormath-type -primitive">{{- include.type.name -}}</span>
+{%- else -%}
+  <span class="vectormath-type -reference"><a href="{{ include.type.name | downcase | prepend: "/api/#" | absolute_url }}">{{ include.type.name }}</a></span>
+{%- endif -%}
