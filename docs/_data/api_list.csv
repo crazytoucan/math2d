@@ -1,4 +1,13 @@
 name,anchor,category_tag
+IBox,IBox,data_types
+IIntersection,IIntersection,data_types
+ILine,ILine,data_types
+IMat2x3,IMat2x3,data_types
+IPolygon,IPolygon,data_types
+IPolyline,IPolyline,data_types
+IRay,IRay,data_types
+ISegment,ISegment,data_types
+IVec,IVec,data_types
 boxAlloc,boxalloc,box
 boxClone,boxclone,box
 boxComputeOutCode,boxcomputeoutcode,box
