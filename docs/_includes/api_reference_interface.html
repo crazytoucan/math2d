@@ -1,11 +1,12 @@
-<code>{{ include.value.name }}</code>
+{% assign value = include.value %}
+<code>{{ value.name }}</code>
 –
-<span markdown="1">{{ include.value.comment.shortText }}</span>
+<span markdown="1">{{ value.comment.shortText }}</span>
 
 <h4>Declaration</h4>
 <pre class="vectormath-interface-declaration">
-interface {{ include.value.name }} {<br>
-  {%- for property in include.value.children -%}
+interface {{ value.name }} {<br>
+  {%- for property in value.children -%}
     {%- assign property_type = property.type -%}
     {{ "  " }}{{ property.name }}: {% include render_type.html type=property_type %};<br>
   {%- endfor -%}
@@ -14,14 +15,16 @@ interface {{ include.value.name }} {<br>
 
 <h4>Fields</h4>
 <dl class="vectormath-parameter-list">
-  {% for property in include.value.children %}
+  {% for property in value.children %}
     {%- assign property_type = property.type -%}
     <dt>{{ property.name }}: {% include render_type.html type=property_type %}</dt>
     <dd><span markdown="1">{{ property.comment.shortText }}</span></dd>
   {% endfor %}
 </dl>
 
-{% if include.value.comment.text %}
+{% if value.comment.text %}
   <h4>Description</h4>
-  <div markdown="1">{{ include.value.comment.text | tsdoc }}</div>
+  <div markdown="1">{{ value.comment.text | tsdoc }}</div>
 {% endif %}
+
+{% include vm_see_also.html value=value %}

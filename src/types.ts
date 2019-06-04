@@ -4,8 +4,9 @@
  * The vector type in the Vectormath package is used interchangeably to represent both points in the plane
  * and vectors as in linear algebra.
  *
- * Vectormath chooses to lay out the (x, y) values in an object structure rather than an array
- * for ease of use. This does not sacrifice performance.
+ * Vectormath chooses to lay out the (x, y) values in a JavaScript object rather than an array
+ * for ease of use. After carefully benchmarking that difference, it's been confirmed that this
+ * does not sacrifice performance or memory compactness.
  *
  * @see {@link vecAlloc}
  * @see {@link vecReset}
@@ -22,13 +23,16 @@ export interface IVec {
  * Data type to represent a 2D line segment.
  *
  * A segment object holds two (x, y) endpoints, representing the line segment connecting those points
- * in the plane. Unlike the similar [[IRay]] and [[ILine]] types, a segment has finite length.
+ * in the plane. Unlike the similar {@link IRay} and {@link ILine} types, a segment has finite length.
  *
- * For a series of connected line segments, see the [[IPolyline]] data type.
+ * For a series of connected line segments, see the {@link IPolyline} data type.
  *
  * Where relevant, a segment is parameterized according to linear interpolation
  * between its endpoints, where _t_ = 0 represents its starting vertex and _t_ = 1 its
  * ending vertex.
+ *
+ * @see {@link segmentAlloc}
+ * @see {@link segmentReset}
  */
 export interface ISegment {
   /**
@@ -58,10 +62,14 @@ export interface ISegment {
  *
  * The data representation of a ray and the similar {@link ILine} type is actually the same, but Vectormath chooses
  * to export both names for clarity of usage. Functions that may interpret Rays and Lines differently will be
- * named differently to prevent ambiguity, such as {@link polygonIntersectLine} vs {@link polygonIntersectRay}.
+ * named differently to prevent ambiguity,
+ * such as {@link polygonIntersectLineIterator} vs {@link polygonIntersectRayIterator}.
  *
  * Where relevant, a ray is parameterized according to _t_ ≥ 0 with movement of distance _t_ along its direction vector.
  * In this mapping, _t_ = 0 represents the initial point (x0, y0).
+ *
+ * @see {@link rayAlloc}
+ * @see {@link rayReset}
  */
 export interface IRay {
   /**
@@ -93,11 +101,15 @@ export interface IRay {
  *
  * The data representation of a line and the similar {@link IRay} type is actually the same, but Vectormath chooses
  * to export these two names for ease of clarity. Functions that may interpret Rays and Lines differently will be
- * named differently to prevent ambiguity, such as {@link polygonIntersectLine} vs {@link polygonIntersectRay}.
+ * named differently to prevent ambiguity, such as
+ * {@link polygonIntersectLineIterator} vs {@link polygonIntersectRayIterator}.
  *
  * Where relevant, a line is parameterized according to _t_ with movement of distance _t_ along its direction vector.
  * In this mapping, _t_ = 0 represents the initial point (x0, y0), _t_ > 0 moves in the direction of its vector,
  * and _t_ < 0 in the opposite direction.
+ *
+ * @see {@link lineAlloc}
+ * @see {@link lineReset}
  */
 export interface ILine {
   /**
@@ -142,6 +154,9 @@ export interface ILine {
  * ⎢b d f⎥ ⎜y⎟ = ⎜bx + dy + f⎟
  * ⎣0 0 1⎦ ⎝1⎠   ⎝     1     ⎠
  * ```
+ *
+ * @see {@link mat2x3Alloc}
+ * @see {@link mat2x3Reset}
  */
 export interface IMat2x3 {
   /**
@@ -196,6 +211,9 @@ export interface IMat2x3 {
  *
  * Vectormath chooses to lay out this data in a
  * flat object structure, as opposed to an array or nested arrays, for ease of use and performance.
+ *
+ * @see {@link boxAlloc}
+ * @see {@link boxReset}
  */
 export interface IBox {
   /**
@@ -259,6 +277,25 @@ export type IPolyline = number[];
 
 /**
  * Data type to hold the result of a point intersection between two pieces of geometry.
+ *
+ * @see {@link lineIntersectLine}
+ * @see {@link lineIntersectPolylineIterator}
+ * @see {@link lineIntersectRay}
+ * @see {@link lineIntersectSegment}
+ * @see {@link polygonIntersectLineIterator}
+ * @see {@link polygonIntersectRayIterator}
+ * @see {@link polygonIntersectSegmentIterator}
+ * @see {@link polylineIntersectLineIterator}
+ * @see {@link polylineIntersectRayIterator}
+ * @see {@link polylineIntersectSegmentIterator}
+ * @see {@link rayIntersectLine}
+ * @see {@link rayIntersectPolylineIterator}
+ * @see {@link rayIntersectRay}
+ * @see {@link rayIntersectSegment}
+ * @see {@link segmentIntersectLine}
+ * @see {@link segmentIntersectPolylineIterator}
+ * @see {@link segmentIntersectRay}
+ * @see {@link segmentIntersectSegment}
  */
 export interface IIntersection {
   /**
