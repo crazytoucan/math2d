@@ -24,10 +24,6 @@ export function _polygonAlloc(): IPolygon {
   return [];
 }
 
-export function _polylineAlloc(): IPolyline {
-  return [];
-}
-
 export function _vecAlloc(): IVec {
   return new Vec();
 }
