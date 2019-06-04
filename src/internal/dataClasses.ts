@@ -8,10 +8,6 @@ class Intersection implements IIntersection {
   constructor(public exists = false, public x = NaN, public y = NaN, public t0 = NaN, public t1 = NaN) {}
 }
 
-class Line implements ILine {
-  constructor(public x0 = NaN, public y0 = NaN, public dirX = NaN, public dirY = NaN) {}
-}
-
 class Ray implements IRay {
   constructor(public x0 = NaN, public y0 = NaN, public dirX = NaN, public dirY = NaN) {}
 }
@@ -30,10 +26,6 @@ export function _boxAlloc(): IBox {
 
 export function _intersectionAlloc(): IIntersection {
   return new Intersection();
-}
-
-export function _lineAlloc(): ILine {
-  return new Line();
 }
 
 export function _polygonAlloc(): IPolygon {
