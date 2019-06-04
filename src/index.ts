@@ -23,9 +23,9 @@ export { lineIntersectRay } from "./lineFunctions/lineIntersectRay";
 export { lineIntersectSegment } from "./lineFunctions/lineIntersectSegment";
 export { lineProjectPoint } from "./lineFunctions/lineProjectPoint";
 export { lineReset } from "./lineFunctions/lineReset";
-export { lineSide } from "./lineFunctions/lineSide";
 export { lineThroughPoints } from "./lineFunctions/lineThroughPoints";
 export { lineTransformByAff } from "./lineFunctions/lineTransformByAff";
+export { lineWhichSide } from "./lineFunctions/lineWhichSide";
 export { mat2x3AffDeterminant } from "./mat2x3Functions/mat2x3AffDeterminant";
 export { mat2x3AffFromRotation } from "./mat2x3Functions/mat2x3AffFromRotation";
 export { mat2x3AffFromTranslation } from "./mat2x3Functions/mat2x3AffFromTranslation";
@@ -121,4 +121,3 @@ export { vecReset } from "./vecFunctions/vecReset";
 export { vecScale } from "./vecFunctions/vecScale";
 export { vecSubtract } from "./vecFunctions/vecSubtract";
 export { vecTransformByAff } from "./vecFunctions/vecTransformByAff";
-

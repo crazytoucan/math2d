@@ -244,7 +244,7 @@ export interface IBox {
  * as an interleaved sequence of vertex coordinates.
  *
  * The `IPolygon` type is just an alias for an array of number values. For example,
- * a polygon with vertices v0, v1, v2,... vn is represented in Vectormath as the array:
+ * a polygon with vertices v0, v1, v2, ..., vn is represented in Vectormath as the array:
  *
  * ```
  * [v0x, v0y, v1x, v1y, v2x, v2y, ..., vnx, vny]
@@ -262,7 +262,7 @@ export type IPolygon = number[];
  * as an interleaved array of vertex coordinates.
  *
  * The `IPolyline` type is just an alias for an array of number values. For example,
- * a polyline connecting the points p0, p1, p2,... pn in space is represented in Vectormath as the array:
+ * a polyline connecting the points p0, p1, p2, ..., pn in space is represented in Vectormath as the array:
  *
  * ```
  * [p0x, p0y, p1x, p1y, p2x, p2y, ..., pnx, pny]
