@@ -1,4 +1,4 @@
-import { EPSILON_SQ } from "../internal/parameters";
+import { EPSILON_SQ } from "../internal/const";
 import { IPolyline } from "../types";
 
 export function polylineIsClosed(poly: IPolyline) {

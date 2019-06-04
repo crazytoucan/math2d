@@ -1,5 +1,5 @@
-import { _clamp } from "../internal/internalFunctions";
-import { EPSILON_SQ } from "../internal/parameters";
+import { _clamp } from "../internal/_clamp";
+import { EPSILON_SQ } from "../internal/const";
 import { ISegment, IVec } from "../types";
 
 export function segmentNearestT(segment: ISegment, point: IVec) {

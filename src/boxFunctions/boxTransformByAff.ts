@@ -1,4 +1,4 @@
-import { arrayReset } from "../internal/collectionsUtils";
+import { _arrayReset } from "../internal/_arrayReset";
 import { polylineAlloc } from "../polylineFunctions/polylineAlloc";
 import { polylineGetBounds } from "../polylineFunctions/polylineGetBounds";
 import { polylineTransformByAff } from "../polylineFunctions/polylineTransformByAff";
@@ -22,7 +22,7 @@ const TMP0 = polylineAlloc();
  */
 export function boxTransformByAff(box: IBox, mat: IMat2x3, out = boxAlloc()) {
   const poly = TMP0;
-  arrayReset(poly, box.minX, box.minY, box.minX, box.maxY, box.maxX, box.maxY, box.maxX, box.minY);
+  _arrayReset(poly, box.minX, box.minY, box.minX, box.maxY, box.maxX, box.maxY, box.maxX, box.minY);
   polylineTransformByAff(poly, mat, poly);
   return polylineGetBounds(poly, out);
 }

@@ -1,5 +1,5 @@
-import { _toPolyline } from "../internal/internalFunctions";
-import { EPSILON } from "../internal/parameters";
+import { _asPolyline } from "../internal/_asPolyline";
+import { EPSILON } from "../internal/const";
 import { polylineNearestT } from "../polylineFunctions/polylineNearestT";
 import { IPolygon, IVec } from "../types";
 import { polygonGetPerimeter } from "./polygonGetPerimeter";
@@ -14,5 +14,5 @@ export function polygonNearestT(poly: IPolygon, point: IVec) {
     return 0;
   }
 
-  return polylineNearestT(_toPolyline(poly), point);
+  return polylineNearestT(_asPolyline(poly), point);
 }

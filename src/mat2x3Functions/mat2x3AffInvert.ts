@@ -1,4 +1,4 @@
-import { EPSILON } from "../internal/parameters";
+import { EPSILON } from "../internal/const";
 import { IMat2x3 } from "../types";
 import { mat2x3Alloc } from "./mat2x3Alloc";
 import { mat2x3Reset } from "./mat2x3Reset";

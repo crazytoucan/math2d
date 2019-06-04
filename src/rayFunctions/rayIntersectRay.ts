@@ -1,5 +1,5 @@
-import { _intersectionDNE } from "../internal/internalFunctions";
-import { EPSILON } from "../internal/parameters";
+import { _intersectionDNE } from "../internal/_intersectionDNE";
+import { EPSILON } from "../internal/const";
 import { intersectionAlloc } from "../intersectionFunctions/intersectionAlloc";
 import { lineIntersectLine } from "../lineFunctions/lineIntersectLine";
 import { IRay } from "../types";

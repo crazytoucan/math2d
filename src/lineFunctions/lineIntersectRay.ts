@@ -1,4 +1,4 @@
-import { _intersectionDNE } from "../internal/internalFunctions";
+import { _intersectionDNE } from "../internal/_intersectionDNE";
 import { intersectionAlloc } from "../intersectionFunctions/intersectionAlloc";
 import { ILine, IRay } from "../types";
 import { lineIntersectLine } from "./lineIntersectLine";

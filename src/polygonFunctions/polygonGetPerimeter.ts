@@ -1,7 +1,7 @@
-import { _toPolyline } from "../internal/internalFunctions";
+import { _asPolyline } from "../internal/_asPolyline";
 import { polylineGetLength } from "../polylineFunctions/polylineGetLength";
 import { IPolygon } from "../types";
 
 export function polygonGetPerimeter(poly: IPolygon) {
-  return polylineGetLength(_toPolyline(poly));
+  return polylineGetLength(_asPolyline(poly));
 }

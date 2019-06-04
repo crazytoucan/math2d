@@ -1,5 +1,5 @@
-import { _toPolyline } from "../internal/internalFunctions";
-import { EPSILON } from "../internal/parameters";
+import { _asPolyline } from "../internal/_asPolyline";
+import { EPSILON } from "../internal/const";
 import { polylinePointAt } from "../polylineFunctions/polylinePointAt";
 import { IPolygon } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
@@ -17,5 +17,5 @@ export function polygonPointAt(poly: IPolygon, t: number, out = vecAlloc()) {
   }
 
   t = ((t % perimeter) + perimeter) % perimeter;
-  return polylinePointAt(_toPolyline(poly), t, out);
+  return polylinePointAt(_asPolyline(poly), t, out);
 }

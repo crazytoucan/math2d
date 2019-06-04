@@ -1,4 +1,4 @@
-import { EPSILON } from "../internal/parameters";
+import { EPSILON } from "../internal/const";
 import { IRay, IVec } from "../types";
 import { rayGetClosestDistanceToPoint } from "./rayGetClosestDistanceToPoint";
 

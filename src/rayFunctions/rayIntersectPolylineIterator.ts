@@ -1,10 +1,8 @@
-import {
-  _invertValuesIterator as _reorderValuesIterator,
-  _polylineIntersectAllHelper,
-} from "../internal/internalFunctions";
+import { _polylineIntersectIteratorHelper } from "../internal/_polylineIntersectIteratorHelper";
+import { _swapAndReorderIntersections } from "../internal/_swapAndReorderIntersections";
+import { segmentIntersectRay } from "../segmentFunctions/segmentIntersectRay";
 import { IIntersection, IPolyline, IRay } from "../types";
-import { segmentIntersectRay } from "./segmentFunctions";
 
 export function rayIntersectPolylineIterator(ray: IRay, poly: IPolyline): IterableIterator<IIntersection> {
-  return _reorderValuesIterator(_polylineIntersectAllHelper(poly, ray, segmentIntersectRay));
+  return _swapAndReorderIntersections(_polylineIntersectIteratorHelper(poly, ray, segmentIntersectRay));
 }

@@ -1,4 +1,4 @@
-import { _dot } from "../internal/internalFunctions";
+import { _dot } from "../internal/_dot";
 import { IRay, IVec } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
 import { rayPointAt } from "./rayPointAt";

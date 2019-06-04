@@ -1,4 +1,3 @@
-import { _vecAlloc } from "../internal/dataClasses";
 import { IVec } from "../types";
 
 class Vec implements IVec {

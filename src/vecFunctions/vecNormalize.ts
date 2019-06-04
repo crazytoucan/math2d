@@ -1,4 +1,4 @@
-import { EPSILON_SQ } from "../internal/parameters";
+import { EPSILON_SQ } from "../internal/const";
 import { IVec } from "../types";
 import { vecAlloc } from "./vecAlloc";
 import { vecReset } from "./vecReset";

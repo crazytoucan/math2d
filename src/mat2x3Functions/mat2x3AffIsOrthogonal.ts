@@ -1,4 +1,4 @@
-import { EPSILON, EPSILON_SQ } from "../internal/parameters";
+import { EPSILON, EPSILON_SQ } from "../internal/const";
 import { IMat2x3 } from "../types";
 
 export function mat2x3AffIsOrthogonal(mat: IMat2x3) {

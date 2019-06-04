@@ -1,4 +1,4 @@
-import { EPSILON } from "../internal/parameters";
+import { EPSILON } from "../internal/const";
 import { ILine, IVec } from "../types";
 import { lineClosestSignedDistanceToPoint } from "./lineClosestSignedDistanceToPoint";
 
