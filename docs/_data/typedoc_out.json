@@ -1074,7 +1074,7 @@
 			"defaultValue": "4"
 		},
 		{
-			"id": 457,
+			"id": 43,
 			"name": "boxAlloc",
 			"kind": 64,
 			"kindString": "Function",
@@ -1083,7 +1083,7 @@
 			},
 			"signatures": [
 				{
-					"id": 458,
+					"id": 44,
 					"name": "boxAlloc",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -1107,14 +1107,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/boxFunctions.ts",
-					"line": 27,
+					"fileName": "boxFunctions/boxAlloc.ts",
+					"line": 26,
 					"character": 24
 				}
 			]
 		},
 		{
-			"id": 459,
+			"id": 52,
 			"name": "boxClone",
 			"kind": 64,
 			"kindString": "Function",
@@ -1123,7 +1123,7 @@
 			},
 			"signatures": [
 				{
-					"id": 460,
+					"id": 53,
 					"name": "boxClone",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -1139,7 +1139,7 @@
 					},
 					"parameters": [
 						{
-							"id": 461,
+							"id": 54,
 							"name": "box",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1154,7 +1154,7 @@
 							}
 						},
 						{
-							"id": 462,
+							"id": 55,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1179,14 +1179,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/boxFunctions.ts",
-					"line": 46,
+					"fileName": "boxFunctions/boxClone.ts",
+					"line": 20,
 					"character": 24
 				}
 			]
 		},
 		{
-			"id": 463,
+			"id": 56,
 			"name": "boxComputeOutCode",
 			"kind": 64,
 			"kindString": "Function",
@@ -1195,7 +1195,7 @@
 			},
 			"signatures": [
 				{
-					"id": 464,
+					"id": 57,
 					"name": "boxComputeOutCode",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -1228,7 +1228,7 @@
 					},
 					"parameters": [
 						{
-							"id": 465,
+							"id": 58,
 							"name": "box",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1241,7 +1241,7 @@
 							}
 						},
 						{
-							"id": 466,
+							"id": 59,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1262,14 +1262,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/boxFunctions.ts",
-					"line": 69,
+					"fileName": "boxFunctions/boxComputeOutCode.ts",
+					"line": 24,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 467,
+			"id": 60,
 			"name": "boxContainsBox",
 			"kind": 64,
 			"kindString": "Function",
@@ -1278,7 +1278,7 @@
 			},
 			"signatures": [
 				{
-					"id": 468,
+					"id": 61,
 					"name": "boxContainsBox",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -1289,7 +1289,7 @@
 					},
 					"parameters": [
 						{
-							"id": 469,
+							"id": 62,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1302,7 +1302,7 @@
 							}
 						},
 						{
-							"id": 470,
+							"id": 63,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1325,14 +1325,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/boxFunctions.ts",
-					"line": 97,
+					"fileName": "boxFunctions/boxContainsBox.ts",
+					"line": 13,
 					"character": 30
 				}
 			]
 		},
 		{
-			"id": 471,
+			"id": 64,
 			"name": "boxContainsPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -1341,7 +1341,7 @@
 			},
 			"signatures": [
 				{
-					"id": 472,
+					"id": 65,
 					"name": "boxContainsPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -1352,7 +1352,7 @@
 					},
 					"parameters": [
 						{
-							"id": 473,
+							"id": 66,
 							"name": "box",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1365,7 +1365,7 @@
 							}
 						},
 						{
-							"id": 474,
+							"id": 67,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1388,14 +1388,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/boxFunctions.ts",
-					"line": 111,
+					"fileName": "boxFunctions/boxContainsPoint.ts",
+					"line": 13,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 475,
+			"id": 68,
 			"name": "boxEncapsulate",
 			"kind": 64,
 			"kindString": "Function",
@@ -1404,7 +1404,7 @@
 			},
 			"signatures": [
 				{
-					"id": 476,
+					"id": 69,
 					"name": "boxEncapsulate",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -1415,7 +1415,7 @@
 					},
 					"parameters": [
 						{
-							"id": 477,
+							"id": 70,
 							"name": "box",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1430,7 +1430,7 @@
 							}
 						},
 						{
-							"id": 478,
+							"id": 71,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1445,7 +1445,7 @@
 							}
 						},
 						{
-							"id": 479,
+							"id": 72,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1470,14 +1470,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/boxFunctions.ts",
-					"line": 125,
+					"fileName": "boxFunctions/boxEncapsulate.ts",
+					"line": 15,
 					"character": 30
 				}
 			]
 		},
 		{
-			"id": 480,
+			"id": 73,
 			"name": "boxIntersection",
 			"kind": 64,
 			"kindString": "Function",
@@ -1486,7 +1486,7 @@
 			},
 			"signatures": [
 				{
-					"id": 481,
+					"id": 74,
 					"name": "boxIntersection",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -1503,7 +1503,7 @@
 					},
 					"parameters": [
 						{
-							"id": 482,
+							"id": 75,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1518,7 +1518,7 @@
 							}
 						},
 						{
-							"id": 483,
+							"id": 76,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1533,7 +1533,7 @@
 							}
 						},
 						{
-							"id": 484,
+							"id": 77,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1556,14 +1556,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/boxFunctions.ts",
-					"line": 150,
+					"fileName": "boxFunctions/boxIntersection.ts",
+					"line": 20,
 					"character": 31
 				}
 			]
 		},
 		{
-			"id": 485,
+			"id": 78,
 			"name": "boxIntersectsBox",
 			"kind": 64,
 			"kindString": "Function",
@@ -1572,7 +1572,7 @@
 			},
 			"signatures": [
 				{
-					"id": 486,
+					"id": 79,
 					"name": "boxIntersectsBox",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -1583,7 +1583,7 @@
 					},
 					"parameters": [
 						{
-							"id": 487,
+							"id": 80,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1598,7 +1598,7 @@
 							}
 						},
 						{
-							"id": 488,
+							"id": 81,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1621,14 +1621,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/boxFunctions.ts",
-					"line": 171,
+					"fileName": "boxFunctions/boxIntersectsBox.ts",
+					"line": 14,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 489,
+			"id": 82,
 			"name": "boxIsEmpty",
 			"kind": 64,
 			"kindString": "Function",
@@ -1637,7 +1637,7 @@
 			},
 			"signatures": [
 				{
-					"id": 490,
+					"id": 83,
 					"name": "boxIsEmpty",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -1648,7 +1648,7 @@
 					},
 					"parameters": [
 						{
-							"id": 491,
+							"id": 84,
 							"name": "box",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1671,14 +1671,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/boxFunctions.ts",
-					"line": 187,
+					"fileName": "boxFunctions/boxIsEmpty.ts",
+					"line": 15,
 					"character": 26
 				}
 			]
 		},
 		{
-			"id": 492,
+			"id": 45,
 			"name": "boxReset",
 			"kind": 64,
 			"kindString": "Function",
@@ -1687,7 +1687,7 @@
 			},
 			"signatures": [
 				{
-					"id": 493,
+					"id": 46,
 					"name": "boxReset",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -1703,7 +1703,7 @@
 					},
 					"parameters": [
 						{
-							"id": 494,
+							"id": 47,
 							"name": "minX",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1717,7 +1717,7 @@
 							}
 						},
 						{
-							"id": 495,
+							"id": 48,
 							"name": "minY",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1731,7 +1731,7 @@
 							}
 						},
 						{
-							"id": 496,
+							"id": 49,
 							"name": "maxX",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1745,7 +1745,7 @@
 							}
 						},
 						{
-							"id": 497,
+							"id": 50,
 							"name": "maxY",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1759,7 +1759,7 @@
 							}
 						},
 						{
-							"id": 498,
+							"id": 51,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1782,14 +1782,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/boxFunctions.ts",
-					"line": 214,
+					"fileName": "boxFunctions/boxReset.ts",
+					"line": 25,
 					"character": 24
 				}
 			]
 		},
 		{
-			"id": 499,
+			"id": 108,
 			"name": "boxTransformByAff",
 			"kind": 64,
 			"kindString": "Function",
@@ -1798,7 +1798,7 @@
 			},
 			"signatures": [
 				{
-					"id": 500,
+					"id": 109,
 					"name": "boxTransformByAff",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -1809,7 +1809,7 @@
 					},
 					"parameters": [
 						{
-							"id": 501,
+							"id": 110,
 							"name": "box",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1824,7 +1824,7 @@
 							}
 						},
 						{
-							"id": 502,
+							"id": 111,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1839,7 +1839,7 @@
 							}
 						},
 						{
-							"id": 503,
+							"id": 112,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1864,14 +1864,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/boxFunctions.ts",
-					"line": 236,
+					"fileName": "boxFunctions/boxTransformByAff.ts",
+					"line": 23,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 504,
+			"id": 113,
 			"name": "boxUnion",
 			"kind": 64,
 			"kindString": "Function",
@@ -1880,7 +1880,7 @@
 			},
 			"signatures": [
 				{
-					"id": 505,
+					"id": 114,
 					"name": "boxUnion",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -1891,7 +1891,7 @@
 					},
 					"parameters": [
 						{
-							"id": 506,
+							"id": 115,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1904,7 +1904,7 @@
 							}
 						},
 						{
-							"id": 507,
+							"id": 116,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1917,7 +1917,7 @@
 							}
 						},
 						{
-							"id": 508,
+							"id": 117,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -1942,14 +1942,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/boxFunctions.ts",
-					"line": 253,
+					"fileName": "boxFunctions/boxUnion.ts",
+					"line": 15,
 					"character": 24
 				}
 			]
 		},
 		{
-			"id": 43,
+			"id": 143,
 			"name": "intersectionAlloc",
 			"kind": 64,
 			"kindString": "Function",
@@ -1958,7 +1958,7 @@
 			},
 			"signatures": [
 				{
-					"id": 44,
+					"id": 144,
 					"name": "intersectionAlloc",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -1975,14 +1975,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/intersectionFunctions.ts",
-					"line": 9,
+					"fileName": "intersectionFunctions/intersectionAlloc.ts",
+					"line": 12,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 45,
+			"id": 569,
 			"name": "intersectionClone",
 			"kind": 64,
 			"kindString": "Function",
@@ -1991,7 +1991,7 @@
 			},
 			"signatures": [
 				{
-					"id": 46,
+					"id": 570,
 					"name": "intersectionClone",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -2001,7 +2001,7 @@
 					},
 					"parameters": [
 						{
-							"id": 47,
+							"id": 571,
 							"name": "intersection",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2014,7 +2014,7 @@
 							}
 						},
 						{
-							"id": 48,
+							"id": 572,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2039,14 +2039,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/intersectionFunctions.ts",
-					"line": 18,
+					"fileName": "intersectionFunctions/intersectionClone.ts",
+					"line": 10,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 49,
+			"id": 145,
 			"name": "intersectionReset",
 			"kind": 64,
 			"kindString": "Function",
@@ -2055,7 +2055,7 @@
 			},
 			"signatures": [
 				{
-					"id": 50,
+					"id": 146,
 					"name": "intersectionReset",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -2065,7 +2065,7 @@
 					},
 					"parameters": [
 						{
-							"id": 51,
+							"id": 147,
 							"name": "exists",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2077,7 +2077,7 @@
 							}
 						},
 						{
-							"id": 52,
+							"id": 148,
 							"name": "x",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2089,7 +2089,7 @@
 							}
 						},
 						{
-							"id": 53,
+							"id": 149,
 							"name": "y",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2101,7 +2101,7 @@
 							}
 						},
 						{
-							"id": 54,
+							"id": 150,
 							"name": "t0",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2113,7 +2113,7 @@
 							}
 						},
 						{
-							"id": 55,
+							"id": 151,
 							"name": "t1",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2125,7 +2125,7 @@
 							}
 						},
 						{
-							"id": 56,
+							"id": 152,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2150,14 +2150,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/intersectionFunctions.ts",
-					"line": 31,
+					"fileName": "intersectionFunctions/intersectionReset.ts",
+					"line": 12,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 251,
+			"id": 118,
 			"name": "lineAlloc",
 			"kind": 64,
 			"kindString": "Function",
@@ -2166,7 +2166,7 @@
 			},
 			"signatures": [
 				{
-					"id": 252,
+					"id": 119,
 					"name": "lineAlloc",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -2180,14 +2180,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 19,
+					"fileName": "lineFunctions/lineAlloc.ts",
+					"line": 7,
 					"character": 25
 				}
 			]
 		},
 		{
-			"id": 258,
+			"id": 127,
 			"name": "lineClone",
 			"kind": 64,
 			"kindString": "Function",
@@ -2196,14 +2196,14 @@
 			},
 			"signatures": [
 				{
-					"id": 259,
+					"id": 128,
 					"name": "lineClone",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 260,
+							"id": 129,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2215,7 +2215,7 @@
 							}
 						},
 						{
-							"id": 261,
+							"id": 130,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2237,14 +2237,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 27,
+					"fileName": "lineFunctions/lineClone.ts",
+					"line": 5,
 					"character": 25
 				}
 			]
 		},
 		{
-			"id": 266,
+			"id": 135,
 			"name": "lineClosestDistanceToPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -2253,14 +2253,14 @@
 			},
 			"signatures": [
 				{
-					"id": 267,
+					"id": 136,
 					"name": "lineClosestDistanceToPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 268,
+							"id": 137,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2272,7 +2272,7 @@
 							}
 						},
 						{
-							"id": 269,
+							"id": 138,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2292,14 +2292,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 35,
+					"fileName": "lineFunctions/lineClosestDistanceToPoint.ts",
+					"line": 4,
 					"character": 42
 				}
 			]
 		},
 		{
-			"id": 270,
+			"id": 131,
 			"name": "lineClosestSignedDistanceToPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -2308,14 +2308,14 @@
 			},
 			"signatures": [
 				{
-					"id": 271,
+					"id": 132,
 					"name": "lineClosestSignedDistanceToPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 272,
+							"id": 133,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2327,7 +2327,7 @@
 							}
 						},
 						{
-							"id": 273,
+							"id": 134,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2347,14 +2347,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 39,
+					"fileName": "lineFunctions/lineClosestSignedDistanceToPoint.ts",
+					"line": 3,
 					"character": 48
 				}
 			]
 		},
 		{
-			"id": 262,
+			"id": 139,
 			"name": "lineContainsPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -2363,14 +2363,14 @@
 			},
 			"signatures": [
 				{
-					"id": 263,
+					"id": 140,
 					"name": "lineContainsPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 264,
+							"id": 141,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2382,7 +2382,7 @@
 							}
 						},
 						{
-							"id": 265,
+							"id": 142,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2402,14 +2402,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 31,
+					"fileName": "lineFunctions/lineContainsPoint.ts",
+					"line": 5,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 279,
+			"id": 169,
 			"name": "lineIntersectLine",
 			"kind": 64,
 			"kindString": "Function",
@@ -2418,14 +2418,14 @@
 			},
 			"signatures": [
 				{
-					"id": 280,
+					"id": 170,
 					"name": "lineIntersectLine",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 281,
+							"id": 171,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2437,7 +2437,7 @@
 							}
 						},
 						{
-							"id": 282,
+							"id": 172,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2449,7 +2449,7 @@
 							}
 						},
 						{
-							"id": 283,
+							"id": 173,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2471,14 +2471,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 51,
+					"fileName": "lineFunctions/lineIntersectLine.ts",
+					"line": 18,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 284,
+			"id": 204,
 			"name": "lineIntersectPolylineIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -2487,14 +2487,14 @@
 			},
 			"signatures": [
 				{
-					"id": 285,
+					"id": 205,
 					"name": "lineIntersectPolylineIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 286,
+							"id": 206,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2506,7 +2506,7 @@
 							}
 						},
 						{
-							"id": 287,
+							"id": 207,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2533,14 +2533,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 68,
+					"fileName": "lineFunctions/lineIntersectPolylineIterator.ts",
+					"line": 6,
 					"character": 45
 				}
 			]
 		},
 		{
-			"id": 293,
+			"id": 208,
 			"name": "lineIntersectRay",
 			"kind": 64,
 			"kindString": "Function",
@@ -2549,14 +2549,14 @@
 			},
 			"signatures": [
 				{
-					"id": 294,
+					"id": 209,
 					"name": "lineIntersectRay",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 295,
+							"id": 210,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2568,7 +2568,7 @@
 							}
 						},
 						{
-							"id": 296,
+							"id": 211,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2580,7 +2580,7 @@
 							}
 						},
 						{
-							"id": 297,
+							"id": 212,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2602,14 +2602,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 86,
+					"fileName": "lineFunctions/lineIntersectRay.ts",
+					"line": 6,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 288,
+			"id": 194,
 			"name": "lineIntersectSegment",
 			"kind": 64,
 			"kindString": "Function",
@@ -2618,14 +2618,14 @@
 			},
 			"signatures": [
 				{
-					"id": 289,
+					"id": 195,
 					"name": "lineIntersectSegment",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 290,
+							"id": 196,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2637,7 +2637,7 @@
 							}
 						},
 						{
-							"id": 291,
+							"id": 197,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2649,7 +2649,7 @@
 							}
 						},
 						{
-							"id": 292,
+							"id": 198,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2671,14 +2671,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 73,
+					"fileName": "lineFunctions/lineIntersectSegment.ts",
+					"line": 11,
 					"character": 36
 				}
 			]
 		},
 		{
-			"id": 298,
+			"id": 213,
 			"name": "lineLookAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -2687,14 +2687,14 @@
 			},
 			"signatures": [
 				{
-					"id": 299,
+					"id": 214,
 					"name": "lineLookAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 300,
+							"id": 215,
 							"name": "from",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2706,7 +2706,7 @@
 							}
 						},
 						{
-							"id": 301,
+							"id": 216,
 							"name": "to",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2718,7 +2718,7 @@
 							}
 						},
 						{
-							"id": 302,
+							"id": 217,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2740,14 +2740,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 92,
+					"fileName": "lineFunctions/lineLookAt.ts",
+					"line": 5,
 					"character": 26
 				}
 			]
 		},
 		{
-			"id": 253,
+			"id": 164,
 			"name": "linePointAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -2756,14 +2756,14 @@
 			},
 			"signatures": [
 				{
-					"id": 254,
+					"id": 165,
 					"name": "linePointAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 255,
+							"id": 166,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2775,7 +2775,7 @@
 							}
 						},
 						{
-							"id": 256,
+							"id": 167,
 							"name": "t",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2786,7 +2786,7 @@
 							}
 						},
 						{
-							"id": 257,
+							"id": 168,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2808,14 +2808,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 23,
+					"fileName": "lineFunctions/linePointAt.ts",
+					"line": 5,
 					"character": 27
 				}
 			]
 		},
 		{
-			"id": 274,
+			"id": 218,
 			"name": "lineProjectPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -2824,14 +2824,14 @@
 			},
 			"signatures": [
 				{
-					"id": 275,
+					"id": 219,
 					"name": "lineProjectPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 276,
+							"id": 220,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2843,7 +2843,7 @@
 							}
 						},
 						{
-							"id": 277,
+							"id": 221,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2855,7 +2855,7 @@
 							}
 						},
 						{
-							"id": 278,
+							"id": 222,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2877,14 +2877,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 43,
+					"fileName": "lineFunctions/lineProjectPoint.ts",
+					"line": 6,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 303,
+			"id": 120,
 			"name": "lineReset",
 			"kind": 64,
 			"kindString": "Function",
@@ -2893,14 +2893,14 @@
 			},
 			"signatures": [
 				{
-					"id": 304,
+					"id": 121,
 					"name": "lineReset",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 305,
+							"id": 122,
 							"name": "x0",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2911,7 +2911,7 @@
 							}
 						},
 						{
-							"id": 306,
+							"id": 123,
 							"name": "y0",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2922,7 +2922,7 @@
 							}
 						},
 						{
-							"id": 307,
+							"id": 124,
 							"name": "dirX",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2933,7 +2933,7 @@
 							}
 						},
 						{
-							"id": 308,
+							"id": 125,
 							"name": "dirY",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2944,7 +2944,7 @@
 							}
 						},
 						{
-							"id": 309,
+							"id": 126,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2966,14 +2966,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 98,
+					"fileName": "lineFunctions/lineReset.ts",
+					"line": 3,
 					"character": 25
 				}
 			]
 		},
 		{
-			"id": 310,
+			"id": 223,
 			"name": "lineSide",
 			"kind": 64,
 			"kindString": "Function",
@@ -2982,14 +2982,14 @@
 			},
 			"signatures": [
 				{
-					"id": 311,
+					"id": 224,
 					"name": "lineSide",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 312,
+							"id": 225,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3001,7 +3001,7 @@
 							}
 						},
 						{
-							"id": 313,
+							"id": 226,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3021,14 +3021,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 106,
+					"fileName": "lineFunctions/lineSide.ts",
+					"line": 5,
 					"character": 24
 				}
 			]
 		},
 		{
-			"id": 314,
+			"id": 227,
 			"name": "lineTransformByAff",
 			"kind": 64,
 			"kindString": "Function",
@@ -3037,14 +3037,14 @@
 			},
 			"signatures": [
 				{
-					"id": 315,
+					"id": 228,
 					"name": "lineTransformByAff",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 316,
+							"id": 229,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3056,7 +3056,7 @@
 							}
 						},
 						{
-							"id": 317,
+							"id": 230,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3068,7 +3068,7 @@
 							}
 						},
 						{
-							"id": 318,
+							"id": 231,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3083,21 +3083,21 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "IRay",
-						"id": 13
+						"name": "ILine",
+						"id": 18
 					}
 				}
 			],
 			"sources": [
 				{
-					"fileName": "functions/lineFunctions.ts",
-					"line": 111,
+					"fileName": "lineFunctions/lineTransformByAff.ts",
+					"line": 11,
 					"character": 34
 				}
 			]
 		},
 		{
-			"id": 57,
+			"id": 232,
 			"name": "mat2x3AffDeterminant",
 			"kind": 64,
 			"kindString": "Function",
@@ -3106,14 +3106,14 @@
 			},
 			"signatures": [
 				{
-					"id": 58,
+					"id": 233,
 					"name": "mat2x3AffDeterminant",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 59,
+							"id": 234,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3133,14 +3133,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 5,
+					"fileName": "mat2x3Functions/mat2x3AffDeterminant.ts",
+					"line": 3,
 					"character": 36
 				}
 			]
 		},
 		{
-			"id": 60,
+			"id": 235,
 			"name": "mat2x3AffFromRotation",
 			"kind": 64,
 			"kindString": "Function",
@@ -3149,14 +3149,14 @@
 			},
 			"signatures": [
 				{
-					"id": 61,
+					"id": 236,
 					"name": "mat2x3AffFromRotation",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 62,
+							"id": 237,
 							"name": "theta",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3167,7 +3167,7 @@
 							}
 						},
 						{
-							"id": 63,
+							"id": 238,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3189,14 +3189,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 9,
+					"fileName": "mat2x3Functions/mat2x3AffFromRotation.ts",
+					"line": 4,
 					"character": 37
 				}
 			]
 		},
 		{
-			"id": 64,
+			"id": 239,
 			"name": "mat2x3AffFromTranslation",
 			"kind": 64,
 			"kindString": "Function",
@@ -3205,14 +3205,14 @@
 			},
 			"signatures": [
 				{
-					"id": 65,
+					"id": 240,
 					"name": "mat2x3AffFromTranslation",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 66,
+							"id": 241,
 							"name": "tx",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3223,7 +3223,7 @@
 							}
 						},
 						{
-							"id": 67,
+							"id": 242,
 							"name": "ty",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3234,7 +3234,7 @@
 							}
 						},
 						{
-							"id": 68,
+							"id": 243,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3256,14 +3256,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 15,
+					"fileName": "mat2x3Functions/mat2x3AffFromTranslation.ts",
+					"line": 4,
 					"character": 40
 				}
 			]
 		},
 		{
-			"id": 69,
+			"id": 244,
 			"name": "mat2x3AffIdentity",
 			"kind": 64,
 			"kindString": "Function",
@@ -3272,14 +3272,14 @@
 			},
 			"signatures": [
 				{
-					"id": 70,
+					"id": 245,
 					"name": "mat2x3AffIdentity",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 71,
+							"id": 246,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3301,14 +3301,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 19,
+					"fileName": "mat2x3Functions/mat2x3AffIdentity.ts",
+					"line": 4,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 72,
+			"id": 247,
 			"name": "mat2x3AffInvert",
 			"kind": 64,
 			"kindString": "Function",
@@ -3317,14 +3317,14 @@
 			},
 			"signatures": [
 				{
-					"id": 73,
+					"id": 248,
 					"name": "mat2x3AffInvert",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 74,
+							"id": 249,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3336,7 +3336,7 @@
 							}
 						},
 						{
-							"id": 75,
+							"id": 250,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3358,14 +3358,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 23,
+					"fileName": "mat2x3Functions/mat2x3AffInvert.ts",
+					"line": 6,
 					"character": 31
 				}
 			]
 		},
 		{
-			"id": 76,
+			"id": 251,
 			"name": "mat2x3AffIsOrthogonal",
 			"kind": 64,
 			"kindString": "Function",
@@ -3374,14 +3374,14 @@
 			},
 			"signatures": [
 				{
-					"id": 77,
+					"id": 252,
 					"name": "mat2x3AffIsOrthogonal",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 78,
+							"id": 253,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3401,14 +3401,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 41,
+					"fileName": "mat2x3Functions/mat2x3AffIsOrthogonal.ts",
+					"line": 4,
 					"character": 37
 				}
 			]
 		},
 		{
-			"id": 79,
+			"id": 254,
 			"name": "mat2x3AffIsTranslationOnly",
 			"kind": 64,
 			"kindString": "Function",
@@ -3417,14 +3417,14 @@
 			},
 			"signatures": [
 				{
-					"id": 80,
+					"id": 255,
 					"name": "mat2x3AffIsTranslationOnly",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 81,
+							"id": 256,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3444,14 +3444,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 48,
+					"fileName": "mat2x3Functions/mat2x3AffIsTranslationOnly.ts",
+					"line": 3,
 					"character": 42
 				}
 			]
 		},
 		{
-			"id": 82,
+			"id": 257,
 			"name": "mat2x3AffMulMat2x3",
 			"kind": 64,
 			"kindString": "Function",
@@ -3460,14 +3460,14 @@
 			},
 			"signatures": [
 				{
-					"id": 83,
+					"id": 258,
 					"name": "mat2x3AffMulMat2x3",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 84,
+							"id": 259,
 							"name": "m1",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3479,7 +3479,7 @@
 							}
 						},
 						{
-							"id": 85,
+							"id": 260,
 							"name": "m2",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3491,7 +3491,7 @@
 							}
 						},
 						{
-							"id": 86,
+							"id": 261,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3513,14 +3513,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 52,
+					"fileName": "mat2x3Functions/mat2x3AffMulMat2x3.ts",
+					"line": 5,
 					"character": 34
 				}
 			]
 		},
 		{
-			"id": 87,
+			"id": 262,
 			"name": "mat2x3AffRotate",
 			"kind": 64,
 			"kindString": "Function",
@@ -3529,14 +3529,14 @@
 			},
 			"signatures": [
 				{
-					"id": 88,
+					"id": 263,
 					"name": "mat2x3AffRotate",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 89,
+							"id": 264,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3548,7 +3548,7 @@
 							}
 						},
 						{
-							"id": 90,
+							"id": 265,
 							"name": "theta",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3559,7 +3559,7 @@
 							}
 						},
 						{
-							"id": 91,
+							"id": 266,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3581,14 +3581,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 62,
+					"fileName": "mat2x3Functions/mat2x3AffRotate.ts",
+					"line": 5,
 					"character": 31
 				}
 			]
 		},
 		{
-			"id": 92,
+			"id": 267,
 			"name": "mat2x3AffScale",
 			"kind": 64,
 			"kindString": "Function",
@@ -3597,14 +3597,14 @@
 			},
 			"signatures": [
 				{
-					"id": 93,
+					"id": 268,
 					"name": "mat2x3AffScale",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 94,
+							"id": 269,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3616,7 +3616,7 @@
 							}
 						},
 						{
-							"id": 95,
+							"id": 270,
 							"name": "scalar",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3627,7 +3627,7 @@
 							}
 						},
 						{
-							"id": 96,
+							"id": 271,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3649,14 +3649,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 76,
+					"fileName": "mat2x3Functions/mat2x3AffScale.ts",
+					"line": 5,
 					"character": 30
 				}
 			]
 		},
 		{
-			"id": 97,
+			"id": 272,
 			"name": "mat2x3AffTranslate",
 			"kind": 64,
 			"kindString": "Function",
@@ -3665,14 +3665,14 @@
 			},
 			"signatures": [
 				{
-					"id": 98,
+					"id": 273,
 					"name": "mat2x3AffTranslate",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 99,
+							"id": 274,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3684,7 +3684,7 @@
 							}
 						},
 						{
-							"id": 100,
+							"id": 275,
 							"name": "tx",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3695,7 +3695,7 @@
 							}
 						},
 						{
-							"id": 101,
+							"id": 276,
 							"name": "ty",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3706,7 +3706,7 @@
 							}
 						},
 						{
-							"id": 102,
+							"id": 277,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3728,14 +3728,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 80,
+					"fileName": "mat2x3Functions/mat2x3AffTranslate.ts",
+					"line": 5,
 					"character": 34
 				}
 			]
 		},
 		{
-			"id": 103,
+			"id": 153,
 			"name": "mat2x3Alloc",
 			"kind": 64,
 			"kindString": "Function",
@@ -3744,7 +3744,7 @@
 			},
 			"signatures": [
 				{
-					"id": 104,
+					"id": 154,
 					"name": "mat2x3Alloc",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -3758,14 +3758,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 84,
+					"fileName": "mat2x3Functions/mat2x3Alloc.ts",
+					"line": 7,
 					"character": 27
 				}
 			]
 		},
 		{
-			"id": 105,
+			"id": 278,
 			"name": "mat2x3Clone",
 			"kind": 64,
 			"kindString": "Function",
@@ -3774,14 +3774,14 @@
 			},
 			"signatures": [
 				{
-					"id": 106,
+					"id": 279,
 					"name": "mat2x3Clone",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 107,
+							"id": 280,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3793,7 +3793,7 @@
 							}
 						},
 						{
-							"id": 108,
+							"id": 281,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3815,14 +3815,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 88,
+					"fileName": "mat2x3Functions/mat2x3Clone.ts",
+					"line": 5,
 					"character": 27
 				}
 			]
 		},
 		{
-			"id": 109,
+			"id": 155,
 			"name": "mat2x3Reset",
 			"kind": 64,
 			"kindString": "Function",
@@ -3831,14 +3831,14 @@
 			},
 			"signatures": [
 				{
-					"id": 110,
+					"id": 156,
 					"name": "mat2x3Reset",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 111,
+							"id": 157,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3849,7 +3849,7 @@
 							}
 						},
 						{
-							"id": 112,
+							"id": 158,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3860,7 +3860,7 @@
 							}
 						},
 						{
-							"id": 113,
+							"id": 159,
 							"name": "c",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3871,7 +3871,7 @@
 							}
 						},
 						{
-							"id": 114,
+							"id": 160,
 							"name": "d",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3882,7 +3882,7 @@
 							}
 						},
 						{
-							"id": 115,
+							"id": 161,
 							"name": "e",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3893,7 +3893,7 @@
 							}
 						},
 						{
-							"id": 116,
+							"id": 162,
 							"name": "f",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3904,7 +3904,7 @@
 							}
 						},
 						{
-							"id": 117,
+							"id": 163,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3926,14 +3926,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/mat2x3Functions.ts",
-					"line": 92,
+					"fileName": "mat2x3Functions/mat2x3Reset.ts",
+					"line": 3,
 					"character": 27
 				}
 			]
 		},
 		{
-			"id": 509,
+			"id": 282,
 			"name": "polygonAlloc",
 			"kind": 64,
 			"kindString": "Function",
@@ -3942,7 +3942,7 @@
 			},
 			"signatures": [
 				{
-					"id": 510,
+					"id": 283,
 					"name": "polygonAlloc",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -3956,14 +3956,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 25,
+					"fileName": "polygonFunctions/polygonAlloc.ts",
+					"line": 3,
 					"character": 28
 				}
 			]
 		},
 		{
-			"id": 515,
+			"id": 284,
 			"name": "polygonContainsPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -3972,14 +3972,14 @@
 			},
 			"signatures": [
 				{
-					"id": 516,
+					"id": 285,
 					"name": "polygonContainsPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 517,
+							"id": 286,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3991,7 +3991,7 @@
 							}
 						},
 						{
-							"id": 518,
+							"id": 287,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4011,14 +4011,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 33,
+					"fileName": "polygonFunctions/polygonContainsPoint.ts",
+					"line": 3,
 					"character": 36
 				}
 			]
 		},
 		{
-			"id": 511,
+			"id": 288,
 			"name": "polygonGetBounds",
 			"kind": 64,
 			"kindString": "Function",
@@ -4027,14 +4027,14 @@
 			},
 			"signatures": [
 				{
-					"id": 512,
+					"id": 289,
 					"name": "polygonGetBounds",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 513,
+							"id": 290,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4046,7 +4046,7 @@
 							}
 						},
 						{
-							"id": 514,
+							"id": 291,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4068,14 +4068,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 29,
+					"fileName": "polygonFunctions/polygonGetBounds.ts",
+					"line": 5,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 544,
+			"id": 292,
 			"name": "polygonGetNumSides",
 			"kind": 64,
 			"kindString": "Function",
@@ -4084,14 +4084,14 @@
 			},
 			"signatures": [
 				{
-					"id": 545,
+					"id": 293,
 					"name": "polygonGetNumSides",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 546,
+							"id": 294,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4111,14 +4111,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 87,
+					"fileName": "polygonFunctions/polygonGetNumSides.ts",
+					"line": 3,
 					"character": 34
 				}
 			]
 		},
 		{
-			"id": 547,
+			"id": 309,
 			"name": "polygonGetPerimeter",
 			"kind": 64,
 			"kindString": "Function",
@@ -4127,14 +4127,14 @@
 			},
 			"signatures": [
 				{
-					"id": 548,
+					"id": 310,
 					"name": "polygonGetPerimeter",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 549,
+							"id": 311,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4154,14 +4154,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 91,
+					"fileName": "polygonFunctions/polygonGetPerimeter.ts",
+					"line": 5,
 					"character": 35
 				}
 			]
 		},
 		{
-			"id": 564,
+			"id": 312,
 			"name": "polygonGetSideLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -4170,14 +4170,14 @@
 			},
 			"signatures": [
 				{
-					"id": 565,
+					"id": 313,
 					"name": "polygonGetSideLength",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 566,
+							"id": 314,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4189,7 +4189,7 @@
 							}
 						},
 						{
-							"id": 567,
+							"id": 315,
 							"name": "idx",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4208,14 +4208,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 130,
+					"fileName": "polygonFunctions/polygonGetSideLength.ts",
+					"line": 5,
 					"character": 36
 				}
 			]
 		},
 		{
-			"id": 555,
+			"id": 316,
 			"name": "polygonGetSideSegment",
 			"kind": 64,
 			"kindString": "Function",
@@ -4224,14 +4224,14 @@
 			},
 			"signatures": [
 				{
-					"id": 556,
+					"id": 317,
 					"name": "polygonGetSideSegment",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 557,
+							"id": 318,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4243,7 +4243,7 @@
 							}
 						},
 						{
-							"id": 558,
+							"id": 319,
 							"name": "index",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4254,7 +4254,7 @@
 							}
 						},
 						{
-							"id": 559,
+							"id": 320,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4276,14 +4276,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 109,
+					"fileName": "polygonFunctions/polygonGetSideSegment.ts",
+					"line": 5,
 					"character": 37
 				}
 			]
 		},
 		{
-			"id": 519,
+			"id": 321,
 			"name": "polygonIntersectLineIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -4292,14 +4292,14 @@
 			},
 			"signatures": [
 				{
-					"id": 520,
+					"id": 322,
 					"name": "polygonIntersectLineIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 521,
+							"id": 323,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4311,7 +4311,7 @@
 							}
 						},
 						{
-							"id": 522,
+							"id": 324,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4338,14 +4338,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 53,
+					"fileName": "polygonFunctions/polygonIntersectLineIterator.ts",
+					"line": 5,
 					"character": 44
 				}
 			]
 		},
 		{
-			"id": 523,
+			"id": 335,
 			"name": "polygonIntersectRayIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -4354,14 +4354,14 @@
 			},
 			"signatures": [
 				{
-					"id": 524,
+					"id": 336,
 					"name": "polygonIntersectRayIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 525,
+							"id": 337,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4373,7 +4373,7 @@
 							}
 						},
 						{
-							"id": 526,
+							"id": 338,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4400,14 +4400,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 57,
+					"fileName": "polygonFunctions/polygonIntersectRayIterator.ts",
+					"line": 5,
 					"character": 43
 				}
 			]
 		},
 		{
-			"id": 527,
+			"id": 344,
 			"name": "polygonIntersectSegmentIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -4416,14 +4416,14 @@
 			},
 			"signatures": [
 				{
-					"id": 528,
+					"id": 345,
 					"name": "polygonIntersectSegmentIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 529,
+							"id": 346,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4435,7 +4435,7 @@
 							}
 						},
 						{
-							"id": 530,
+							"id": 347,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4462,14 +4462,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 61,
+					"fileName": "polygonFunctions/polygonIntersectSegmentIterator.ts",
+					"line": 5,
 					"character": 47
 				}
 			]
 		},
 		{
-			"id": 531,
+			"id": 385,
 			"name": "polygonNearestPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -4478,14 +4478,14 @@
 			},
 			"signatures": [
 				{
-					"id": 532,
+					"id": 386,
 					"name": "polygonNearestPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 533,
+							"id": 387,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4497,7 +4497,7 @@
 							}
 						},
 						{
-							"id": 534,
+							"id": 388,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4509,7 +4509,7 @@
 							}
 						},
 						{
-							"id": 535,
+							"id": 389,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4531,14 +4531,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 65,
+					"fileName": "polygonFunctions/polygonNearestPoint.ts",
+					"line": 6,
 					"character": 35
 				}
 			]
 		},
 		{
-			"id": 536,
+			"id": 365,
 			"name": "polygonNearestT",
 			"kind": 64,
 			"kindString": "Function",
@@ -4547,14 +4547,14 @@
 			},
 			"signatures": [
 				{
-					"id": 537,
+					"id": 366,
 					"name": "polygonNearestT",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 538,
+							"id": 367,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4566,7 +4566,7 @@
 							}
 						},
 						{
-							"id": 539,
+							"id": 368,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4586,14 +4586,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 70,
+					"fileName": "polygonFunctions/polygonNearestT.ts",
+					"line": 7,
 					"character": 31
 				}
 			]
 		},
 		{
-			"id": 540,
+			"id": 394,
 			"name": "polygonNearestVertexIndex",
 			"kind": 64,
 			"kindString": "Function",
@@ -4602,14 +4602,14 @@
 			},
 			"signatures": [
 				{
-					"id": 541,
+					"id": 395,
 					"name": "polygonNearestVertexIndex",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 542,
+							"id": 396,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4621,7 +4621,7 @@
 							}
 						},
 						{
-							"id": 543,
+							"id": 397,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4641,14 +4641,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 83,
+					"fileName": "polygonFunctions/polygonNearestVertexIndex.ts",
+					"line": 4,
 					"character": 41
 				}
 			]
 		},
 		{
-			"id": 550,
+			"id": 380,
 			"name": "polygonPointAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -4657,14 +4657,14 @@
 			},
 			"signatures": [
 				{
-					"id": 551,
+					"id": 381,
 					"name": "polygonPointAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 552,
+							"id": 382,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4676,7 +4676,7 @@
 							}
 						},
 						{
-							"id": 553,
+							"id": 383,
 							"name": "t",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4687,7 +4687,7 @@
 							}
 						},
 						{
-							"id": 554,
+							"id": 384,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4709,14 +4709,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 95,
+					"fileName": "polygonFunctions/polygonPointAt.ts",
+					"line": 9,
 					"character": 30
 				}
 			]
 		},
 		{
-			"id": 560,
+			"id": 402,
 			"name": "polygonSideIndexAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -4725,14 +4725,14 @@
 			},
 			"signatures": [
 				{
-					"id": 561,
+					"id": 403,
 					"name": "polygonSideIndexAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 562,
+							"id": 404,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4744,7 +4744,7 @@
 							}
 						},
 						{
-							"id": 563,
+							"id": 405,
 							"name": "t",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4763,14 +4763,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 120,
+					"fileName": "polygonFunctions/polygonSideIndexAt.ts",
+					"line": 7,
 					"character": 34
 				}
 			]
 		},
 		{
-			"id": 568,
+			"id": 406,
 			"name": "polygonTransformByAff",
 			"kind": 64,
 			"kindString": "Function",
@@ -4779,14 +4779,14 @@
 			},
 			"signatures": [
 				{
-					"id": 569,
+					"id": 407,
 					"name": "polygonTransformByAff",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 570,
+							"id": 408,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4798,7 +4798,7 @@
 							}
 						},
 						{
-							"id": 571,
+							"id": 409,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4810,7 +4810,7 @@
 							}
 						},
 						{
-							"id": 572,
+							"id": 410,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4836,14 +4836,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polygonFunctions.ts",
-					"line": 134,
+					"fileName": "polygonFunctions/polygonTransformByAff.ts",
+					"line": 5,
 					"character": 37
 				}
 			]
 		},
 		{
-			"id": 379,
+			"id": 85,
 			"name": "polylineAlloc",
 			"kind": 64,
 			"kindString": "Function",
@@ -4852,7 +4852,7 @@
 			},
 			"signatures": [
 				{
-					"id": 380,
+					"id": 86,
 					"name": "polylineAlloc",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -4866,14 +4866,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 17,
+					"fileName": "polylineFunctions/polylineAlloc.ts",
+					"line": 3,
 					"character": 29
 				}
 			]
 		},
 		{
-			"id": 381,
+			"id": 295,
 			"name": "polylineClose",
 			"kind": 64,
 			"kindString": "Function",
@@ -4882,14 +4882,14 @@
 			},
 			"signatures": [
 				{
-					"id": 382,
+					"id": 296,
 					"name": "polylineClose",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 383,
+							"id": 297,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4901,7 +4901,7 @@
 							}
 						},
 						{
-							"id": 384,
+							"id": 298,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4936,14 +4936,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 21,
+					"fileName": "polylineFunctions/polylineClose.ts",
+					"line": 4,
 					"character": 29
 				}
 			]
 		},
 		{
-			"id": 385,
+			"id": 94,
 			"name": "polylineGetBounds",
 			"kind": 64,
 			"kindString": "Function",
@@ -4952,14 +4952,14 @@
 			},
 			"signatures": [
 				{
-					"id": 386,
+					"id": 95,
 					"name": "polylineGetBounds",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 387,
+							"id": 96,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4971,7 +4971,7 @@
 							}
 						},
 						{
-							"id": 388,
+							"id": 97,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4993,14 +4993,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 42,
+					"fileName": "polylineFunctions/polylineGetBounds.ts",
+					"line": 10,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 389,
+			"id": 306,
 			"name": "polylineGetLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -5009,14 +5009,14 @@
 			},
 			"signatures": [
 				{
-					"id": 390,
+					"id": 307,
 					"name": "polylineGetLength",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 391,
+							"id": 308,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5036,14 +5036,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 52,
+					"fileName": "polylineFunctions/polylineGetLength.ts",
+					"line": 5,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 392,
+			"id": 174,
 			"name": "polylineGetNumSegments",
 			"kind": 64,
 			"kindString": "Function",
@@ -5052,14 +5052,14 @@
 			},
 			"signatures": [
 				{
-					"id": 393,
+					"id": 175,
 					"name": "polylineGetNumSegments",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 394,
+							"id": 176,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5079,14 +5079,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 62,
+					"fileName": "polylineFunctions/polylineGetNumSegments.ts",
+					"line": 3,
 					"character": 38
 				}
 			]
 		},
 		{
-			"id": 395,
+			"id": 186,
 			"name": "polylineGetSegment",
 			"kind": 64,
 			"kindString": "Function",
@@ -5095,14 +5095,14 @@
 			},
 			"signatures": [
 				{
-					"id": 396,
+					"id": 187,
 					"name": "polylineGetSegment",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 397,
+							"id": 188,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5114,7 +5114,7 @@
 							}
 						},
 						{
-							"id": 398,
+							"id": 189,
 							"name": "index",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5125,7 +5125,7 @@
 							}
 						},
 						{
-							"id": 399,
+							"id": 190,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5147,14 +5147,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 66,
+					"fileName": "polylineFunctions/polylineGetSegment.ts",
+					"line": 5,
 					"character": 34
 				}
 			]
 		},
 		{
-			"id": 400,
+			"id": 302,
 			"name": "polylineGetSegmentLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -5163,14 +5163,14 @@
 			},
 			"signatures": [
 				{
-					"id": 401,
+					"id": 303,
 					"name": "polylineGetSegmentLength",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 402,
+							"id": 304,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5182,7 +5182,7 @@
 							}
 						},
 						{
-							"id": 403,
+							"id": 305,
 							"name": "idx",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5201,14 +5201,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 71,
+					"fileName": "polylineFunctions/polylineGetSegmentLength.ts",
+					"line": 3,
 					"character": 40
 				}
 			]
 		},
 		{
-			"id": 404,
+			"id": 411,
 			"name": "polylineGetVertex",
 			"kind": 64,
 			"kindString": "Function",
@@ -5217,14 +5217,14 @@
 			},
 			"signatures": [
 				{
-					"id": 405,
+					"id": 412,
 					"name": "polylineGetVertex",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 406,
+							"id": 413,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5236,7 +5236,7 @@
 							}
 						},
 						{
-							"id": 407,
+							"id": 414,
 							"name": "index",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5247,7 +5247,7 @@
 							}
 						},
 						{
-							"id": 408,
+							"id": 415,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5269,14 +5269,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 78,
+					"fileName": "polylineFunctions/polylineGetVertex.ts",
+					"line": 5,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 409,
+			"id": 416,
 			"name": "polylineIntersectLineIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -5285,14 +5285,14 @@
 			},
 			"signatures": [
 				{
-					"id": 410,
+					"id": 417,
 					"name": "polylineIntersectLineIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 411,
+							"id": 418,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5304,7 +5304,7 @@
 							}
 						},
 						{
-							"id": 412,
+							"id": 419,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5331,14 +5331,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 83,
+					"fileName": "polylineFunctions/polylineIntersectLineIterator.ts",
+					"line": 5,
 					"character": 45
 				}
 			]
 		},
 		{
-			"id": 413,
+			"id": 420,
 			"name": "polylineIntersectRayIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -5347,14 +5347,14 @@
 			},
 			"signatures": [
 				{
-					"id": 414,
+					"id": 421,
 					"name": "polylineIntersectRayIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 415,
+							"id": 422,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5366,7 +5366,7 @@
 							}
 						},
 						{
-							"id": 416,
+							"id": 423,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5393,14 +5393,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 87,
+					"fileName": "polylineFunctions/polylineIntersectRayIterator.ts",
+					"line": 5,
 					"character": 44
 				}
 			]
 		},
 		{
-			"id": 417,
+			"id": 424,
 			"name": "polylineIntersectSegmentIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -5409,14 +5409,14 @@
 			},
 			"signatures": [
 				{
-					"id": 418,
+					"id": 425,
 					"name": "polylineIntersectSegmentIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 419,
+							"id": 426,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5428,7 +5428,7 @@
 							}
 						},
 						{
-							"id": 420,
+							"id": 427,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5455,14 +5455,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 91,
+					"fileName": "polylineFunctions/polylineIntersectSegmentIterator.ts",
+					"line": 5,
 					"character": 48
 				}
 			]
 		},
 		{
-			"id": 421,
+			"id": 299,
 			"name": "polylineIsClosed",
 			"kind": 64,
 			"kindString": "Function",
@@ -5471,14 +5471,14 @@
 			},
 			"signatures": [
 				{
-					"id": 422,
+					"id": 300,
 					"name": "polylineIsClosed",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 423,
+							"id": 301,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5498,14 +5498,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 95,
+					"fileName": "polylineFunctions/polylineIsClosed.ts",
+					"line": 4,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 424,
+			"id": 428,
 			"name": "polylineNearestPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -5514,14 +5514,14 @@
 			},
 			"signatures": [
 				{
-					"id": 425,
+					"id": 429,
 					"name": "polylineNearestPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 426,
+							"id": 430,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5533,7 +5533,7 @@
 							}
 						},
 						{
-							"id": 427,
+							"id": 431,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5545,7 +5545,7 @@
 							}
 						},
 						{
-							"id": 428,
+							"id": 432,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5567,14 +5567,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 105,
+					"fileName": "polylineFunctions/polylineNearestPoint.ts",
+					"line": 6,
 					"character": 36
 				}
 			]
 		},
 		{
-			"id": 429,
+			"id": 361,
 			"name": "polylineNearestT",
 			"kind": 64,
 			"kindString": "Function",
@@ -5583,14 +5583,14 @@
 			},
 			"signatures": [
 				{
-					"id": 430,
+					"id": 362,
 					"name": "polylineNearestT",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 431,
+							"id": 363,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5602,7 +5602,7 @@
 							}
 						},
 						{
-							"id": 432,
+							"id": 364,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5622,14 +5622,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 112,
+					"fileName": "polylineFunctions/polylineNearestT.ts",
+					"line": 14,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 433,
+			"id": 390,
 			"name": "polylineNearestVertexIndex",
 			"kind": 64,
 			"kindString": "Function",
@@ -5638,14 +5638,14 @@
 			},
 			"signatures": [
 				{
-					"id": 434,
+					"id": 391,
 					"name": "polylineNearestVertexIndex",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 435,
+							"id": 392,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5657,7 +5657,7 @@
 							}
 						},
 						{
-							"id": 436,
+							"id": 393,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5677,14 +5677,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 137,
+					"fileName": "polylineFunctions/polylineNearestVertexIndex.ts",
+					"line": 9,
 					"character": 42
 				}
 			]
 		},
 		{
-			"id": 437,
+			"id": 375,
 			"name": "polylinePointAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -5693,14 +5693,14 @@
 			},
 			"signatures": [
 				{
-					"id": 438,
+					"id": 376,
 					"name": "polylinePointAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 439,
+							"id": 377,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5712,7 +5712,7 @@
 							}
 						},
 						{
-							"id": 440,
+							"id": 378,
 							"name": "d",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5723,7 +5723,7 @@
 							}
 						},
 						{
-							"id": 441,
+							"id": 379,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5745,14 +5745,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 155,
+					"fileName": "polylineFunctions/polylinePointAt.ts",
+					"line": 11,
 					"character": 31
 				}
 			]
 		},
 		{
-			"id": 442,
+			"id": 398,
 			"name": "polylineSegmentIndexAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -5761,14 +5761,14 @@
 			},
 			"signatures": [
 				{
-					"id": 443,
+					"id": 399,
 					"name": "polylineSegmentIndexAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 444,
+							"id": 400,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5780,7 +5780,7 @@
 							}
 						},
 						{
-							"id": 445,
+							"id": 401,
 							"name": "d",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5799,14 +5799,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 177,
+					"fileName": "polylineFunctions/polylineSegmentIndexAt.ts",
+					"line": 5,
 					"character": 38
 				}
 			]
 		},
 		{
-			"id": 446,
+			"id": 103,
 			"name": "polylineTransformByAff",
 			"kind": 64,
 			"kindString": "Function",
@@ -5815,14 +5815,14 @@
 			},
 			"signatures": [
 				{
-					"id": 447,
+					"id": 104,
 					"name": "polylineTransformByAff",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 448,
+							"id": 105,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5834,7 +5834,7 @@
 							}
 						},
 						{
-							"id": 449,
+							"id": 106,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5846,7 +5846,7 @@
 							}
 						},
 						{
-							"id": 450,
+							"id": 107,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5872,14 +5872,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 194,
+					"fileName": "polylineFunctions/polylineTransformByAff.ts",
+					"line": 9,
 					"character": 38
 				}
 			]
 		},
 		{
-			"id": 451,
+			"id": 433,
 			"name": "polylineTrim",
 			"kind": 64,
 			"kindString": "Function",
@@ -5888,14 +5888,14 @@
 			},
 			"signatures": [
 				{
-					"id": 452,
+					"id": 434,
 					"name": "polylineTrim",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 453,
+							"id": 435,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5907,7 +5907,7 @@
 							}
 						},
 						{
-							"id": 454,
+							"id": 436,
 							"name": "begin",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5918,7 +5918,7 @@
 							}
 						},
 						{
-							"id": 455,
+							"id": 437,
 							"name": "end",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5929,7 +5929,7 @@
 							}
 						},
 						{
-							"id": 456,
+							"id": 438,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5964,14 +5964,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/polylineFunctions.ts",
-					"line": 210,
+					"fileName": "polylineFunctions/polylineTrim.ts",
+					"line": 11,
 					"character": 28
 				}
 			]
 		},
 		{
-			"id": 319,
+			"id": 439,
 			"name": "rayAlloc",
 			"kind": 64,
 			"kindString": "Function",
@@ -5980,7 +5980,7 @@
 			},
 			"signatures": [
 				{
-					"id": 320,
+					"id": 440,
 					"name": "rayAlloc",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -5994,14 +5994,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/rayFunctions.ts",
-					"line": 17,
+					"fileName": "rayFunctions/rayAlloc.ts",
+					"line": 7,
 					"character": 24
 				}
 			]
 		},
 		{
-			"id": 326,
+			"id": 448,
 			"name": "rayClone",
 			"kind": 64,
 			"kindString": "Function",
@@ -6010,14 +6010,14 @@
 			},
 			"signatures": [
 				{
-					"id": 327,
+					"id": 449,
 					"name": "rayClone",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 328,
+							"id": 450,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6029,7 +6029,7 @@
 							}
 						},
 						{
-							"id": 329,
+							"id": 451,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6051,14 +6051,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/rayFunctions.ts",
-					"line": 25,
+					"fileName": "rayFunctions/rayClone.ts",
+					"line": 5,
 					"character": 24
 				}
 			]
 		},
 		{
-			"id": 330,
+			"id": 460,
 			"name": "rayContainsPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -6067,14 +6067,14 @@
 			},
 			"signatures": [
 				{
-					"id": 331,
+					"id": 461,
 					"name": "rayContainsPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 332,
+							"id": 462,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6086,7 +6086,7 @@
 							}
 						},
 						{
-							"id": 333,
+							"id": 463,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6106,14 +6106,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/rayFunctions.ts",
-					"line": 29,
+					"fileName": "rayFunctions/rayContainsPoint.ts",
+					"line": 5,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 334,
+			"id": 456,
 			"name": "rayGetClosestDistanceToPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -6122,14 +6122,14 @@
 			},
 			"signatures": [
 				{
-					"id": 335,
+					"id": 457,
 					"name": "rayGetClosestDistanceToPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 336,
+							"id": 458,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6141,7 +6141,7 @@
 							}
 						},
 						{
-							"id": 337,
+							"id": 459,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6161,14 +6161,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/rayFunctions.ts",
-					"line": 34,
+					"fileName": "rayFunctions/rayGetClosestDistanceToPoint.ts",
+					"line": 11,
 					"character": 44
 				}
 			]
 		},
 		{
-			"id": 338,
+			"id": 469,
 			"name": "rayGetClosestPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -6177,14 +6177,14 @@
 			},
 			"signatures": [
 				{
-					"id": 339,
+					"id": 470,
 					"name": "rayGetClosestPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 340,
+							"id": 471,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6196,7 +6196,7 @@
 							}
 						},
 						{
-							"id": 341,
+							"id": 472,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6208,7 +6208,7 @@
 							}
 						},
 						{
-							"id": 342,
+							"id": 473,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6230,14 +6230,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/rayFunctions.ts",
-					"line": 44,
+					"fileName": "rayFunctions/rayGetClosestPoint.ts",
+					"line": 6,
 					"character": 34
 				}
 			]
 		},
 		{
-			"id": 343,
+			"id": 474,
 			"name": "rayIntersectLine",
 			"kind": 64,
 			"kindString": "Function",
@@ -6246,14 +6246,14 @@
 			},
 			"signatures": [
 				{
-					"id": 344,
+					"id": 475,
 					"name": "rayIntersectLine",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 345,
+							"id": 476,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6265,7 +6265,7 @@
 							}
 						},
 						{
-							"id": 346,
+							"id": 477,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6277,7 +6277,7 @@
 							}
 						},
 						{
-							"id": 347,
+							"id": 478,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6299,14 +6299,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/rayFunctions.ts",
-					"line": 49,
+					"fileName": "rayFunctions/rayIntersectLine.ts",
+					"line": 6,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 348,
+			"id": 479,
 			"name": "rayIntersectPolylineIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -6315,14 +6315,14 @@
 			},
 			"signatures": [
 				{
-					"id": 349,
+					"id": 480,
 					"name": "rayIntersectPolylineIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 350,
+							"id": 481,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6334,7 +6334,7 @@
 							}
 						},
 						{
-							"id": 351,
+							"id": 482,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6361,14 +6361,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/rayFunctions.ts",
-					"line": 53,
+					"fileName": "rayFunctions/rayIntersectPolylineIterator.ts",
+					"line": 6,
 					"character": 44
 				}
 			]
 		},
 		{
-			"id": 352,
+			"id": 483,
 			"name": "rayIntersectRay",
 			"kind": 64,
 			"kindString": "Function",
@@ -6377,14 +6377,14 @@
 			},
 			"signatures": [
 				{
-					"id": 353,
+					"id": 484,
 					"name": "rayIntersectRay",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 354,
+							"id": 485,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6396,7 +6396,7 @@
 							}
 						},
 						{
-							"id": 355,
+							"id": 486,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6408,7 +6408,7 @@
 							}
 						},
 						{
-							"id": 356,
+							"id": 487,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6430,14 +6430,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/rayFunctions.ts",
-					"line": 57,
+					"fileName": "rayFunctions/rayIntersectRay.ts",
+					"line": 7,
 					"character": 31
 				}
 			]
 		},
 		{
-			"id": 357,
+			"id": 325,
 			"name": "rayIntersectSegment",
 			"kind": 64,
 			"kindString": "Function",
@@ -6446,14 +6446,14 @@
 			},
 			"signatures": [
 				{
-					"id": 358,
+					"id": 326,
 					"name": "rayIntersectSegment",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 359,
+							"id": 327,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6465,7 +6465,7 @@
 							}
 						},
 						{
-							"id": 360,
+							"id": 328,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6477,7 +6477,7 @@
 							}
 						},
 						{
-							"id": 361,
+							"id": 329,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6499,14 +6499,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/rayFunctions.ts",
-					"line": 63,
+					"fileName": "rayFunctions/rayIntersectSegment.ts",
+					"line": 12,
 					"character": 35
 				}
 			]
 		},
 		{
-			"id": 362,
+			"id": 488,
 			"name": "rayLookAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -6515,14 +6515,14 @@
 			},
 			"signatures": [
 				{
-					"id": 363,
+					"id": 489,
 					"name": "rayLookAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 364,
+							"id": 490,
 							"name": "from",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6534,7 +6534,7 @@
 							}
 						},
 						{
-							"id": 365,
+							"id": 491,
 							"name": "to",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6546,7 +6546,7 @@
 							}
 						},
 						{
-							"id": 366,
+							"id": 492,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6561,21 +6561,21 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "IRay",
-						"id": 13
+						"name": "ILine",
+						"id": 18
 					}
 				}
 			],
 			"sources": [
 				{
-					"fileName": "functions/rayFunctions.ts",
-					"line": 75,
+					"fileName": "rayFunctions/rayLookAt.ts",
+					"line": 5,
 					"character": 25
 				}
 			]
 		},
 		{
-			"id": 321,
+			"id": 464,
 			"name": "rayPointAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -6584,14 +6584,14 @@
 			},
 			"signatures": [
 				{
-					"id": 322,
+					"id": 465,
 					"name": "rayPointAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 323,
+							"id": 466,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6603,7 +6603,7 @@
 							}
 						},
 						{
-							"id": 324,
+							"id": 467,
 							"name": "t",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6614,7 +6614,7 @@
 							}
 						},
 						{
-							"id": 325,
+							"id": 468,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6636,14 +6636,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/rayFunctions.ts",
-					"line": 21,
+					"fileName": "rayFunctions/rayPointAt.ts",
+					"line": 5,
 					"character": 26
 				}
 			]
 		},
 		{
-			"id": 367,
+			"id": 441,
 			"name": "rayReset",
 			"kind": 64,
 			"kindString": "Function",
@@ -6652,14 +6652,14 @@
 			},
 			"signatures": [
 				{
-					"id": 368,
+					"id": 442,
 					"name": "rayReset",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 369,
+							"id": 443,
 							"name": "x0",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6670,7 +6670,7 @@
 							}
 						},
 						{
-							"id": 370,
+							"id": 444,
 							"name": "y0",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6681,7 +6681,7 @@
 							}
 						},
 						{
-							"id": 371,
+							"id": 445,
 							"name": "dirX",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6692,7 +6692,7 @@
 							}
 						},
 						{
-							"id": 372,
+							"id": 446,
 							"name": "dirY",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6703,7 +6703,7 @@
 							}
 						},
 						{
-							"id": 373,
+							"id": 447,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6725,14 +6725,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/rayFunctions.ts",
-					"line": 79,
+					"fileName": "rayFunctions/rayReset.ts",
+					"line": 3,
 					"character": 24
 				}
 			]
 		},
 		{
-			"id": 374,
+			"id": 493,
 			"name": "rayTransformByAff",
 			"kind": 64,
 			"kindString": "Function",
@@ -6741,14 +6741,14 @@
 			},
 			"signatures": [
 				{
-					"id": 375,
+					"id": 494,
 					"name": "rayTransformByAff",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 376,
+							"id": 495,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6760,7 +6760,7 @@
 							}
 						},
 						{
-							"id": 377,
+							"id": 496,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6772,7 +6772,7 @@
 							}
 						},
 						{
-							"id": 378,
+							"id": 497,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6787,21 +6787,21 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "IRay",
-						"id": 13
+						"name": "ILine",
+						"id": 18
 					}
 				}
 			],
 			"sources": [
 				{
-					"fileName": "functions/rayFunctions.ts",
-					"line": 89,
+					"fileName": "rayFunctions/rayTransformByAff.ts",
+					"line": 5,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 191,
+			"id": 177,
 			"name": "segmentAlloc",
 			"kind": 64,
 			"kindString": "Function",
@@ -6810,7 +6810,7 @@
 			},
 			"signatures": [
 				{
-					"id": 192,
+					"id": 178,
 					"name": "segmentAlloc",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -6824,14 +6824,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 17,
+					"fileName": "segmentFunctions/segmentAlloc.ts",
+					"line": 7,
 					"character": 28
 				}
 			]
 		},
 		{
-			"id": 193,
+			"id": 498,
 			"name": "segmentGetEndpoint0",
 			"kind": 64,
 			"kindString": "Function",
@@ -6840,14 +6840,14 @@
 			},
 			"signatures": [
 				{
-					"id": 194,
+					"id": 499,
 					"name": "segmentGetEndpoint0",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 195,
+							"id": 500,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6859,7 +6859,7 @@
 							}
 						},
 						{
-							"id": 196,
+							"id": 501,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6881,14 +6881,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 21,
+					"fileName": "segmentFunctions/segmentGetEndpoint0.ts",
+					"line": 5,
 					"character": 35
 				}
 			]
 		},
 		{
-			"id": 197,
+			"id": 502,
 			"name": "segmentGetEndpoint1",
 			"kind": 64,
 			"kindString": "Function",
@@ -6897,14 +6897,14 @@
 			},
 			"signatures": [
 				{
-					"id": 198,
+					"id": 503,
 					"name": "segmentGetEndpoint1",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 199,
+							"id": 504,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6916,7 +6916,7 @@
 							}
 						},
 						{
-							"id": 200,
+							"id": 505,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6938,14 +6938,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 25,
+					"fileName": "segmentFunctions/segmentGetEndpoint1.ts",
+					"line": 5,
 					"character": 35
 				}
 			]
 		},
 		{
-			"id": 201,
+			"id": 191,
 			"name": "segmentGetLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -6954,14 +6954,14 @@
 			},
 			"signatures": [
 				{
-					"id": 202,
+					"id": 192,
 					"name": "segmentGetLength",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 203,
+							"id": 193,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6981,14 +6981,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 29,
+					"fileName": "segmentFunctions/segmentGetLength.ts",
+					"line": 3,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 204,
+			"id": 506,
 			"name": "segmentGetLengthSq",
 			"kind": 64,
 			"kindString": "Function",
@@ -6997,14 +6997,14 @@
 			},
 			"signatures": [
 				{
-					"id": 205,
+					"id": 507,
 					"name": "segmentGetLengthSq",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 206,
+							"id": 508,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7024,14 +7024,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 33,
+					"fileName": "segmentFunctions/segmentGetLengthSq.ts",
+					"line": 3,
 					"character": 34
 				}
 			]
 		},
 		{
-			"id": 220,
+			"id": 199,
 			"name": "segmentIntersectLine",
 			"kind": 64,
 			"kindString": "Function",
@@ -7040,14 +7040,14 @@
 			},
 			"signatures": [
 				{
-					"id": 221,
+					"id": 200,
 					"name": "segmentIntersectLine",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 222,
+							"id": 201,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7059,7 +7059,7 @@
 							}
 						},
 						{
-							"id": 223,
+							"id": 202,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7071,7 +7071,7 @@
 							}
 						},
 						{
-							"id": 224,
+							"id": 203,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7093,14 +7093,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 60,
+					"fileName": "segmentFunctions/segmentIntersectLine.ts",
+					"line": 6,
 					"character": 36
 				}
 			]
 		},
 		{
-			"id": 207,
+			"id": 509,
 			"name": "segmentIntersectPolylineIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -7109,14 +7109,14 @@
 			},
 			"signatures": [
 				{
-					"id": 208,
+					"id": 510,
 					"name": "segmentIntersectPolylineIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 209,
+							"id": 511,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7128,7 +7128,7 @@
 							}
 						},
 						{
-							"id": 210,
+							"id": 512,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7155,14 +7155,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 39,
+					"fileName": "segmentFunctions/segmentIntersectPolylineIterator.ts",
+					"line": 6,
 					"character": 48
 				}
 			]
 		},
 		{
-			"id": 225,
+			"id": 330,
 			"name": "segmentIntersectRay",
 			"kind": 64,
 			"kindString": "Function",
@@ -7171,14 +7171,14 @@
 			},
 			"signatures": [
 				{
-					"id": 226,
+					"id": 331,
 					"name": "segmentIntersectRay",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 227,
+							"id": 332,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7190,7 +7190,7 @@
 							}
 						},
 						{
-							"id": 228,
+							"id": 333,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7202,7 +7202,7 @@
 							}
 						},
 						{
-							"id": 229,
+							"id": 334,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7224,14 +7224,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 64,
+					"fileName": "segmentFunctions/segmentIntersectRay.ts",
+					"line": 6,
 					"character": 35
 				}
 			]
 		},
 		{
-			"id": 230,
+			"id": 339,
 			"name": "segmentIntersectSegment",
 			"kind": 64,
 			"kindString": "Function",
@@ -7240,14 +7240,14 @@
 			},
 			"signatures": [
 				{
-					"id": 231,
+					"id": 340,
 					"name": "segmentIntersectSegment",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 232,
+							"id": 341,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7259,7 +7259,7 @@
 							}
 						},
 						{
-							"id": 233,
+							"id": 342,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7271,7 +7271,7 @@
 							}
 						},
 						{
-							"id": 234,
+							"id": 343,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7293,14 +7293,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 69,
+					"fileName": "segmentFunctions/segmentIntersectSegment.ts",
+					"line": 12,
 					"character": 39
 				}
 			]
 		},
 		{
-			"id": 211,
+			"id": 513,
 			"name": "segmentNearestPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -7309,14 +7309,14 @@
 			},
 			"signatures": [
 				{
-					"id": 212,
+					"id": 514,
 					"name": "segmentNearestPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 213,
+							"id": 515,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7328,7 +7328,7 @@
 							}
 						},
 						{
-							"id": 214,
+							"id": 516,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7340,7 +7340,7 @@
 							}
 						},
 						{
-							"id": 215,
+							"id": 517,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7362,14 +7362,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 43,
+					"fileName": "segmentFunctions/segmentNearestPoint.ts",
+					"line": 6,
 					"character": 35
 				}
 			]
 		},
 		{
-			"id": 216,
+			"id": 348,
 			"name": "segmentNearestT",
 			"kind": 64,
 			"kindString": "Function",
@@ -7378,14 +7378,14 @@
 			},
 			"signatures": [
 				{
-					"id": 217,
+					"id": 349,
 					"name": "segmentNearestT",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 218,
+							"id": 350,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7397,7 +7397,7 @@
 							}
 						},
 						{
-							"id": 219,
+							"id": 351,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7417,14 +7417,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 48,
+					"fileName": "segmentFunctions/segmentNearestT.ts",
+					"line": 5,
 					"character": 31
 				}
 			]
 		},
 		{
-			"id": 235,
+			"id": 352,
 			"name": "segmentPointAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -7433,14 +7433,14 @@
 			},
 			"signatures": [
 				{
-					"id": 236,
+					"id": 353,
 					"name": "segmentPointAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 237,
+							"id": 354,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7452,7 +7452,7 @@
 							}
 						},
 						{
-							"id": 238,
+							"id": 355,
 							"name": "t",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7463,7 +7463,7 @@
 							}
 						},
 						{
-							"id": 239,
+							"id": 356,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7485,14 +7485,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 81,
+					"fileName": "segmentFunctions/segmentPointAt.ts",
+					"line": 5,
 					"character": 30
 				}
 			]
 		},
 		{
-			"id": 240,
+			"id": 179,
 			"name": "segmentReset",
 			"kind": 64,
 			"kindString": "Function",
@@ -7501,14 +7501,14 @@
 			},
 			"signatures": [
 				{
-					"id": 241,
+					"id": 180,
 					"name": "segmentReset",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 242,
+							"id": 181,
 							"name": "x0",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7519,7 +7519,7 @@
 							}
 						},
 						{
-							"id": 243,
+							"id": 182,
 							"name": "y0",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7530,7 +7530,7 @@
 							}
 						},
 						{
-							"id": 244,
+							"id": 183,
 							"name": "x1",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7541,7 +7541,7 @@
 							}
 						},
 						{
-							"id": 245,
+							"id": 184,
 							"name": "y1",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7552,7 +7552,7 @@
 							}
 						},
 						{
-							"id": 246,
+							"id": 185,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7574,14 +7574,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 85,
+					"fileName": "segmentFunctions/segmentReset.ts",
+					"line": 3,
 					"character": 28
 				}
 			]
 		},
 		{
-			"id": 247,
+			"id": 518,
 			"name": "segmentReverse",
 			"kind": 64,
 			"kindString": "Function",
@@ -7590,14 +7590,14 @@
 			},
 			"signatures": [
 				{
-					"id": 248,
+					"id": 519,
 					"name": "segmentReverse",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 249,
+							"id": 520,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7609,7 +7609,7 @@
 							}
 						},
 						{
-							"id": 250,
+							"id": 521,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7631,14 +7631,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/segmentFunctions.ts",
-					"line": 93,
+					"fileName": "segmentFunctions/segmentReverse.ts",
+					"line": 5,
 					"character": 30
 				}
 			]
 		},
 		{
-			"id": 118,
+			"id": 522,
 			"name": "vecAdd",
 			"kind": 64,
 			"kindString": "Function",
@@ -7647,7 +7647,7 @@
 			},
 			"signatures": [
 				{
-					"id": 119,
+					"id": 523,
 					"name": "vecAdd",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -7657,7 +7657,7 @@
 					},
 					"parameters": [
 						{
-							"id": 120,
+							"id": 524,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7670,7 +7670,7 @@
 							}
 						},
 						{
-							"id": 121,
+							"id": 525,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7683,7 +7683,7 @@
 							}
 						},
 						{
-							"id": 122,
+							"id": 526,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7708,14 +7708,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
+					"fileName": "vecFunctions/vecAdd.ts",
 					"line": 12,
 					"character": 22
 				}
 			]
 		},
 		{
-			"id": 123,
+			"id": 87,
 			"name": "vecAlloc",
 			"kind": 64,
 			"kindString": "Function",
@@ -7724,7 +7724,7 @@
 			},
 			"signatures": [
 				{
-					"id": 124,
+					"id": 88,
 					"name": "vecAlloc",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -7741,14 +7741,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 21,
+					"fileName": "vecFunctions/vecAlloc.ts",
+					"line": 12,
 					"character": 24
 				}
 			]
 		},
 		{
-			"id": 125,
+			"id": 527,
 			"name": "vecClone",
 			"kind": 64,
 			"kindString": "Function",
@@ -7757,7 +7757,7 @@
 			},
 			"signatures": [
 				{
-					"id": 126,
+					"id": 528,
 					"name": "vecClone",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -7767,7 +7767,7 @@
 					},
 					"parameters": [
 						{
-							"id": 127,
+							"id": 529,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7780,7 +7780,7 @@
 							}
 						},
 						{
-							"id": 128,
+							"id": 530,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7805,14 +7805,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 31,
+					"fileName": "vecFunctions/vecClone.ts",
+					"line": 11,
 					"character": 24
 				}
 			]
 		},
 		{
-			"id": 129,
+			"id": 452,
 			"name": "vecDistance",
 			"kind": 64,
 			"kindString": "Function",
@@ -7821,7 +7821,7 @@
 			},
 			"signatures": [
 				{
-					"id": 130,
+					"id": 453,
 					"name": "vecDistance",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -7831,7 +7831,7 @@
 					},
 					"parameters": [
 						{
-							"id": 131,
+							"id": 454,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7844,7 +7844,7 @@
 							}
 						},
 						{
-							"id": 132,
+							"id": 455,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7867,14 +7867,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 41,
+					"fileName": "vecFunctions/vecDistance.ts",
+					"line": 9,
 					"character": 27
 				}
 			]
 		},
 		{
-			"id": 133,
+			"id": 357,
 			"name": "vecDistanceSq",
 			"kind": 64,
 			"kindString": "Function",
@@ -7883,7 +7883,7 @@
 			},
 			"signatures": [
 				{
-					"id": 134,
+					"id": 358,
 					"name": "vecDistanceSq",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -7893,7 +7893,7 @@
 					},
 					"parameters": [
 						{
-							"id": 135,
+							"id": 359,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7906,7 +7906,7 @@
 							}
 						},
 						{
-							"id": 136,
+							"id": 360,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7929,14 +7929,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 52,
+					"fileName": "vecFunctions/vecDistanceSq.ts",
+					"line": 8,
 					"character": 29
 				}
 			]
 		},
 		{
-			"id": 137,
+			"id": 531,
 			"name": "vecDot",
 			"kind": 64,
 			"kindString": "Function",
@@ -7945,7 +7945,7 @@
 			},
 			"signatures": [
 				{
-					"id": 138,
+					"id": 532,
 					"name": "vecDot",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -7955,7 +7955,7 @@
 					},
 					"parameters": [
 						{
-							"id": 139,
+							"id": 533,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7968,7 +7968,7 @@
 							}
 						},
 						{
-							"id": 140,
+							"id": 534,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7991,14 +7991,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 64,
+					"fileName": "vecFunctions/vecDot.ts",
+					"line": 9,
 					"character": 22
 				}
 			]
 		},
 		{
-			"id": 141,
+			"id": 535,
 			"name": "vecGetLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -8007,7 +8007,7 @@
 			},
 			"signatures": [
 				{
-					"id": 142,
+					"id": 536,
 					"name": "vecGetLength",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8017,7 +8017,7 @@
 					},
 					"parameters": [
 						{
-							"id": 143,
+							"id": 537,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8040,14 +8040,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 73,
+					"fileName": "vecFunctions/vecGetLength.ts",
+					"line": 8,
 					"character": 28
 				}
 			]
 		},
 		{
-			"id": 144,
+			"id": 538,
 			"name": "vecGetLengthSq",
 			"kind": 64,
 			"kindString": "Function",
@@ -8056,7 +8056,7 @@
 			},
 			"signatures": [
 				{
-					"id": 145,
+					"id": 539,
 					"name": "vecGetLengthSq",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8066,7 +8066,7 @@
 					},
 					"parameters": [
 						{
-							"id": 146,
+							"id": 540,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8089,14 +8089,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 82,
+					"fileName": "vecFunctions/vecGetLengthSq.ts",
+					"line": 8,
 					"character": 30
 				}
 			]
 		},
 		{
-			"id": 147,
+			"id": 541,
 			"name": "vecGetManhattanLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -8105,7 +8105,7 @@
 			},
 			"signatures": [
 				{
-					"id": 148,
+					"id": 542,
 					"name": "vecGetManhattanLength",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8115,7 +8115,7 @@
 					},
 					"parameters": [
 						{
-							"id": 149,
+							"id": 543,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8138,14 +8138,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 91,
+					"fileName": "vecFunctions/vecGetManhattanLength.ts",
+					"line": 8,
 					"character": 37
 				}
 			]
 		},
 		{
-			"id": 150,
+			"id": 369,
 			"name": "vecLerp",
 			"kind": 64,
 			"kindString": "Function",
@@ -8154,7 +8154,7 @@
 			},
 			"signatures": [
 				{
-					"id": 151,
+					"id": 370,
 					"name": "vecLerp",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8164,7 +8164,7 @@
 					},
 					"parameters": [
 						{
-							"id": 152,
+							"id": 371,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8177,7 +8177,7 @@
 							}
 						},
 						{
-							"id": 153,
+							"id": 372,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8190,7 +8190,7 @@
 							}
 						},
 						{
-							"id": 154,
+							"id": 373,
 							"name": "r",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8202,7 +8202,7 @@
 							}
 						},
 						{
-							"id": 155,
+							"id": 374,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8227,14 +8227,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 103,
+					"fileName": "vecFunctions/vecLerp.ts",
+					"line": 13,
 					"character": 23
 				}
 			]
 		},
 		{
-			"id": 156,
+			"id": 544,
 			"name": "vecManhattanDistance",
 			"kind": 64,
 			"kindString": "Function",
@@ -8243,7 +8243,7 @@
 			},
 			"signatures": [
 				{
-					"id": 157,
+					"id": 545,
 					"name": "vecManhattanDistance",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8253,7 +8253,7 @@
 					},
 					"parameters": [
 						{
-							"id": 158,
+							"id": 546,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8266,7 +8266,7 @@
 							}
 						},
 						{
-							"id": 159,
+							"id": 547,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8289,14 +8289,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 114,
+					"fileName": "vecFunctions/vecManhattanDistance.ts",
+					"line": 10,
 					"character": 36
 				}
 			]
 		},
 		{
-			"id": 160,
+			"id": 548,
 			"name": "vecNormalize",
 			"kind": 64,
 			"kindString": "Function",
@@ -8305,7 +8305,7 @@
 			},
 			"signatures": [
 				{
-					"id": 161,
+					"id": 549,
 					"name": "vecNormalize",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8315,7 +8315,7 @@
 					},
 					"parameters": [
 						{
-							"id": 162,
+							"id": 550,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8328,7 +8328,7 @@
 							}
 						},
 						{
-							"id": 163,
+							"id": 551,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8353,14 +8353,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 125,
+					"fileName": "vecFunctions/vecNormalize.ts",
+					"line": 13,
 					"character": 28
 				}
 			]
 		},
 		{
-			"id": 164,
+			"id": 552,
 			"name": "vecOrigin",
 			"kind": 64,
 			"kindString": "Function",
@@ -8369,7 +8369,7 @@
 			},
 			"signatures": [
 				{
-					"id": 165,
+					"id": 553,
 					"name": "vecOrigin",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8379,7 +8379,7 @@
 					},
 					"parameters": [
 						{
-							"id": 166,
+							"id": 554,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8404,14 +8404,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 140,
+					"fileName": "vecFunctions/vecOrigin.ts",
+					"line": 9,
 					"character": 25
 				}
 			]
 		},
 		{
-			"id": 167,
+			"id": 555,
 			"name": "vecPerp",
 			"kind": 64,
 			"kindString": "Function",
@@ -8420,7 +8420,7 @@
 			},
 			"signatures": [
 				{
-					"id": 168,
+					"id": 556,
 					"name": "vecPerp",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8430,7 +8430,7 @@
 					},
 					"parameters": [
 						{
-							"id": 169,
+							"id": 557,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8443,7 +8443,7 @@
 							}
 						},
 						{
-							"id": 170,
+							"id": 558,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8468,14 +8468,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 151,
+					"fileName": "vecFunctions/vecPerp.ts",
+					"line": 12,
 					"character": 23
 				}
 			]
 		},
 		{
-			"id": 171,
+			"id": 89,
 			"name": "vecReset",
 			"kind": 64,
 			"kindString": "Function",
@@ -8484,7 +8484,7 @@
 			},
 			"signatures": [
 				{
-					"id": 172,
+					"id": 90,
 					"name": "vecReset",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8494,7 +8494,7 @@
 					},
 					"parameters": [
 						{
-							"id": 173,
+							"id": 91,
 							"name": "x",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8506,7 +8506,7 @@
 							}
 						},
 						{
-							"id": 174,
+							"id": 92,
 							"name": "y",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8518,7 +8518,7 @@
 							}
 						},
 						{
-							"id": 175,
+							"id": 93,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8543,14 +8543,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 162,
+					"fileName": "vecFunctions/vecReset.ts",
+					"line": 10,
 					"character": 24
 				}
 			]
 		},
 		{
-			"id": 176,
+			"id": 559,
 			"name": "vecScale",
 			"kind": 64,
 			"kindString": "Function",
@@ -8559,7 +8559,7 @@
 			},
 			"signatures": [
 				{
-					"id": 177,
+					"id": 560,
 					"name": "vecScale",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8569,7 +8569,7 @@
 					},
 					"parameters": [
 						{
-							"id": 178,
+							"id": 561,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8582,7 +8582,7 @@
 							}
 						},
 						{
-							"id": 179,
+							"id": 562,
 							"name": "scalar",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8594,7 +8594,7 @@
 							}
 						},
 						{
-							"id": 180,
+							"id": 563,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8619,14 +8619,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 175,
+					"fileName": "vecFunctions/vecScale.ts",
+					"line": 12,
 					"character": 24
 				}
 			]
 		},
 		{
-			"id": 181,
+			"id": 564,
 			"name": "vecSubtract",
 			"kind": 64,
 			"kindString": "Function",
@@ -8635,7 +8635,7 @@
 			},
 			"signatures": [
 				{
-					"id": 182,
+					"id": 565,
 					"name": "vecSubtract",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8645,7 +8645,7 @@
 					},
 					"parameters": [
 						{
-							"id": 183,
+							"id": 566,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8658,7 +8658,7 @@
 							}
 						},
 						{
-							"id": 184,
+							"id": 567,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8671,7 +8671,7 @@
 							}
 						},
 						{
-							"id": 185,
+							"id": 568,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8696,14 +8696,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 186,
+					"fileName": "vecFunctions/vecSubtract.ts",
+					"line": 12,
 					"character": 27
 				}
 			]
 		},
 		{
-			"id": 186,
+			"id": 98,
 			"name": "vecTransformByAff",
 			"kind": 64,
 			"kindString": "Function",
@@ -8712,7 +8712,7 @@
 			},
 			"signatures": [
 				{
-					"id": 187,
+					"id": 99,
 					"name": "vecTransformByAff",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8723,7 +8723,7 @@
 					},
 					"parameters": [
 						{
-							"id": 188,
+							"id": 100,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8736,7 +8736,7 @@
 							}
 						},
 						{
-							"id": 189,
+							"id": 101,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8749,7 +8749,7 @@
 							}
 						},
 						{
-							"id": 190,
+							"id": 102,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8774,8 +8774,8 @@
 			],
 			"sources": [
 				{
-					"fileName": "functions/vecFunctions.ts",
-					"line": 206,
+					"fileName": "vecFunctions/vecTransformByAff.ts",
+					"line": 21,
 					"character": 33
 				}
 			]
@@ -8817,130 +8817,130 @@
 			"title": "Functions",
 			"kind": 64,
 			"children": [
-				457,
-				459,
-				463,
-				467,
-				471,
-				475,
-				480,
-				485,
-				489,
-				492,
-				499,
-				504,
 				43,
-				45,
-				49,
-				251,
-				258,
-				266,
-				270,
-				262,
-				279,
-				284,
-				293,
-				288,
-				298,
-				253,
-				274,
-				303,
-				310,
-				314,
-				57,
+				52,
+				56,
 				60,
 				64,
-				69,
-				72,
-				76,
-				79,
+				68,
+				73,
+				78,
 				82,
-				87,
-				92,
-				97,
-				103,
-				105,
-				109,
-				509,
-				515,
-				511,
-				544,
-				547,
-				564,
-				555,
-				519,
-				523,
-				527,
-				531,
-				536,
-				540,
-				550,
-				560,
-				568,
-				379,
-				381,
+				45,
+				108,
+				113,
+				143,
+				569,
+				145,
+				118,
+				127,
+				135,
+				131,
+				139,
+				169,
+				204,
+				208,
+				194,
+				213,
+				164,
+				218,
+				120,
+				223,
+				227,
+				232,
+				235,
+				239,
+				244,
+				247,
+				251,
+				254,
+				257,
+				262,
+				267,
+				272,
+				153,
+				278,
+				155,
+				282,
+				284,
+				288,
+				292,
+				309,
+				312,
+				316,
+				321,
+				335,
+				344,
 				385,
-				389,
-				392,
-				395,
-				400,
-				404,
-				409,
-				413,
-				417,
-				421,
+				365,
+				394,
+				380,
+				402,
+				406,
+				85,
+				295,
+				94,
+				306,
+				174,
+				186,
+				302,
+				411,
+				416,
+				420,
 				424,
-				429,
+				299,
+				428,
+				361,
+				390,
+				375,
+				398,
+				103,
 				433,
-				437,
-				442,
-				446,
-				451,
-				319,
-				326,
+				439,
+				448,
+				460,
+				456,
+				469,
+				474,
+				479,
+				483,
+				325,
+				488,
+				464,
+				441,
+				493,
+				177,
+				498,
+				502,
+				191,
+				506,
+				199,
+				509,
 				330,
-				334,
-				338,
-				343,
+				339,
+				513,
 				348,
 				352,
+				179,
+				518,
+				522,
+				87,
+				527,
+				452,
 				357,
-				362,
-				321,
-				367,
-				374,
-				191,
-				193,
-				197,
-				201,
-				204,
-				220,
-				207,
-				225,
-				230,
-				211,
-				216,
-				235,
-				240,
-				247,
-				118,
-				123,
-				125,
-				129,
-				133,
-				137,
-				141,
-				144,
-				147,
-				150,
-				156,
-				160,
-				164,
-				167,
-				171,
-				176,
-				181,
-				186
+				531,
+				535,
+				538,
+				541,
+				369,
+				544,
+				548,
+				552,
+				555,
+				89,
+				559,
+				564,
+				98
 			]
 		}
 	]
