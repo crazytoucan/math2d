@@ -8,10 +8,6 @@ class Intersection implements IIntersection {
   constructor(public exists = false, public x = NaN, public y = NaN, public t0 = NaN, public t1 = NaN) {}
 }
 
-class Ray implements IRay {
-  constructor(public x0 = NaN, public y0 = NaN, public dirX = NaN, public dirY = NaN) {}
-}
-
 class Segment implements ISegment {
   constructor(public x0 = NaN, public y0 = NaN, public x1 = NaN, public y1 = NaN) {}
 }
@@ -34,10 +30,6 @@ export function _polygonAlloc(): IPolygon {
 
 export function _polylineAlloc(): IPolyline {
   return [];
-}
-
-export function _rayAlloc(): IRay {
-  return new Ray();
 }
 
 export function _segmentAlloc(): ISegment {
