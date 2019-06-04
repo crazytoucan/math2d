@@ -163,7 +163,8 @@ export function vecScale(vec: IVec, scalar: number, out = vecAlloc()) {
 }
 
 /**
- * Subrtacts vector `b` from vector `a`.
+ * Subtracts vector `b` from vector `a`.
+ *
  * @param a
  * @param b
  * @param out
@@ -173,7 +174,17 @@ export function vecSubtract(a: IVec, b: IVec, out = vecAlloc()) {
 }
 
 /**
- * Multiplies the vector by the given affine matrix.
+ * Multiplies the vector by an affine matrix.
+ *
+ * Per usual linear algebra, multiplying the vector `vec = (x, y)` according to an affine matrix
+ * `[a b c d e f]` is defined by:
+ *
+ * ```
+ * ⎡a c e⎤ ⎛x⎞   ⎛ax + cy + e⎞
+ * ⎢b d f⎥ ⎜y⎟ = ⎜bx + dy + f⎟
+ * ⎣0 0 1⎦ ⎝1⎠   ⎝     1     ⎠
+ * ```
+ *
  * @param vec
  * @param mat
  * @param out

@@ -1,11 +1,10 @@
 /**
  * Data type to hold an (x, y) value.
  *
- * The vector type in the Vectormath package is used interchangeably to represent either points or linear vectors.
- * For example, a vertex of a polygon can be interepreted as a vector,
- * or the direction of a ray emanating from its initial point can be interpreted as a vector.
+ * The vector type in the Vectormath package is used interchangeably to represent both points in the plane
+ * and vectors as in linear algebra.
  *
- * Vectormath chooses to lay out this data in an object structure, as opposed to an array,
+ * Vectormath chooses to lay out the (x, y) values in an object structure rather than an array
  * for ease of use. This does not sacrifice performance.
  *
  * @see {@link vecAlloc}
@@ -22,9 +21,10 @@ export interface IVec {
 /**
  * Data type to represent a 2D line segment.
  *
- * A segment object represents the shortest path between two given points in the
- * plane. Unlike the similar {@link IRay} and {@link ILine} types, the segment type
- * does not extend infinitely in any direction.
+ * A segment object holds two (x, y) endpoints, representing the line segment connecting those points
+ * in the plane. Unlike the similar [[IRay]] and [[ILine]] types, a segment has finite length.
+ *
+ * For a series of connected line segments, see the [[IPolyline]] data type.
  *
  * Where relevant, a segment is parameterized according to linear interpolation
  * between its endpoints, where _t_ = 0 represents its starting vertex and _t_ = 1 its
@@ -56,12 +56,12 @@ export interface ISegment {
  * Data type to represent a ray in 2D space, i.e. an initial point in the plane plus a unit-length direction
  * vector coming from that point.
  *
- * The representation of a ray and the similar {@link ILine} type is actually the same, but Vectormath chooses
+ * The data representation of a ray and the similar {@link ILine} type is actually the same, but Vectormath chooses
  * to export both names for clarity of usage. Functions that may interpret Rays and Lines differently will be
- * named differently to prevent any ambiguity, such as {@link polygonIntersectLine} vs {@link polygonIntersectRay}.
+ * named differently to prevent ambiguity, such as {@link polygonIntersectLine} vs {@link polygonIntersectRay}.
  *
  * Where relevant, a ray is parameterized according to _t_ ≥ 0 with movement of distance _t_ along its direction vector.
- * In this mapping, _t_ = 0 represents its initial point (x0, y0).
+ * In this mapping, _t_ = 0 represents the initial point (x0, y0).
  */
 export interface IRay {
   /**
@@ -75,12 +75,14 @@ export interface IRay {
   y0: number;
 
   /**
-   * x-coordinate of the direction of the ray, relative to its initial point
+   * x-coordinate of the direction vector of the ray.
+   * A ray's (dirX, dirY) direction vector is a unit vector emanating from its initial point.
    */
   dirX: number;
 
   /**
-   * y-coordinate of the direction of the ray, relative to its initial point
+   * y-coordinate of the direction vector of the ray.
+   * A ray's (dirX, dirY) direction vector is a unit vector emanating from its initial point.
    */
   dirY: number;
 }
@@ -89,12 +91,12 @@ export interface IRay {
  * Data type to represent a line in 2D space, i.e. some initial point in the plane plus a unit-length direction
  * vector coming from that point.
  *
- * The representation of a line and the similar {@link IRay} type is actually the same, but Vectormath chooses
+ * The data representation of a line and the similar {@link IRay} type is actually the same, but Vectormath chooses
  * to export these two names for ease of clarity. Functions that may interpret Rays and Lines differently will be
- * named differently to prevent any ambiguity, such as {@link polygonIntersectLine} vs {@link polygonIntersectRay}.
+ * named differently to prevent ambiguity, such as {@link polygonIntersectLine} vs {@link polygonIntersectRay}.
  *
  * Where relevant, a line is parameterized according to _t_ with movement of distance _t_ along its direction vector.
- * In this mapping, _t_ = 0 represents its initial point (x0, y0), _t_ > 0 moves in the direction of its vector,
+ * In this mapping, _t_ = 0 represents the initial point (x0, y0), _t_ > 0 moves in the direction of its vector,
  * and _t_ < 0 in the opposite direction.
  */
 export interface ILine {
@@ -125,7 +127,7 @@ export interface ILine {
  * Two-dimensional vector graphics operations are usually represented using an affine transform matrix,
  * i.e. a linear 2x2 matrix plus a 2D translation. Vectormath chooses to lay out this data in a
  * flat object structure, as opposed to an array or nested arrays, for ease of use and performance.
- * The field names used here match the structure of other standards, like the native DOMMatrix
+ * The field names used here match other standards, like the native DOMMatrix
  * specification and the Canvas reference APIs.
  *
  * ```
@@ -193,7 +195,7 @@ export interface IMat2x3 {
  * ```
  *
  * Vectormath chooses to lay out this data in a
- * flat object structure, as opposed to an array or nested arrays, for ease of use, clarity, and performance.
+ * flat object structure, as opposed to an array or nested arrays, for ease of use and performance.
  */
 export interface IBox {
   /**
