@@ -7,7 +7,7 @@ class Box implements IBox {
 /**
  * Creates a new Box object in memory, with all values initialized to `NaN`.
  *
- * Data allocation functions like boxAlloc() are useful to hold results of
+ * Data allocation functions like `boxAlloc()` are useful to hold results of
  * Vectormath function calls in inner loops of performance critical workflows.
  *
  * As with any optimization, you don't need it until you've profiled your
@@ -17,11 +17,13 @@ class Box implements IBox {
  *
  * @example
  *  // initialize temp memory
- * const TMP_BOX = boxAlloc();
+ *  const TMP0 = boxAlloc();
  *
- * // Use this temp memory to hold results of function calls.
- * // This avoids a heap allocation.
- * const result = polygonGetBounds(myPolygon, TMP_BOX);
+ *  ... {
+ *    // Use this temp memory to hold result of `polygonGetBounds()`.
+ *    // This avoids a heap allocation.
+ *    const result = polygonGetBounds(existingObj.geometry, TMP0);
+ *  }
  */
 export function boxAlloc(): IBox {
   return new Box();

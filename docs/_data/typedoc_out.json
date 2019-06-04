@@ -14,7 +14,7 @@
 			},
 			"comment": {
 				"shortText": "Data type to represent an axis-aligned bounding box (AABB).",
-				"text": "Bounding boxes are often used for approximations of geometric shapes or for certain\ncategories of performance-optimized spatial calculations, such as spatial index queries\nand viewbox culling.\n\nA box in Vectormath is defined by its `minX`, `minY`, `maxX`, and `maxY` edges. Where\nrelevant, boxes are interpreted as _closed_ regions, i.e. they include those points\nthat lie along their edges.\n\n```\n┌╴x+\ny+     minY ─┌──────┐\n       maxY ─└──────┘\n             │      │\n           minX    maxX\n```\n\nVectormath chooses to lay out this data in a\nflat object structure, as opposed to an array or nested arrays, for ease of use and performance.\n",
+				"text": "Bounding boxes are often used for approximations of geometric shapes or for certain\ncategories of performance-optimized spatial calculations, such as spatial index queries\nand viewbox culling.\n\nA box in Vectormath is defined by its `minX`, `minY`, `maxX`, and `maxY` edges. Where\nrelevant and unless documented otherwise, boxes are interpreted as _closed_ regions,\ni.e. they include those points that lie along their edges.\n\n```\n┌╴x+\ny+     minY ─┌──────┐\n       maxY ─└──────┘\n             │      │\n           minX    maxX\n```\n\nVectormath chooses to lay out this data in a\nflat object structure, as opposed to an array or nested arrays, for ease of use and performance.\n",
 				"tags": [
 					{
 						"tag": "see",
@@ -1214,11 +1214,11 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Creates a new Box object in memory, with all values initialized to `NaN`.",
-						"text": "Data allocation functions like boxAlloc() are useful to hold results of\nVectormath function calls in inner loops of performance critical workflows.\n\nAs with any optimization, you don't need it until you've profiled your\napplication! Getting into temp variable management and shared state can\nseverely hurt code readability and maintainability, so it's best to avoid\nsuch optimization if you can.\n",
+						"text": "Data allocation functions like `boxAlloc()` are useful to hold results of\nVectormath function calls in inner loops of performance critical workflows.\n\nAs with any optimization, you don't need it until you've profiled your\napplication! Getting into temp variable management and shared state can\nseverely hurt code readability and maintainability, so it's best to avoid\nsuch optimization if you can.\n",
 						"tags": [
 							{
 								"tag": "example",
-								"text": "\n // initialize temp memory\nconst TMP_BOX = boxAlloc();\n\n// Use this temp memory to hold results of function calls.\n// This avoids a heap allocation.\nconst result = polygonGetBounds(myPolygon, TMP_BOX);\n"
+								"text": "\n // initialize temp memory\n const TMP0 = boxAlloc();\n\n ... {\n   // Use this temp memory to hold result of `polygonGetBounds()`.\n   // This avoids a heap allocation.\n   const result = polygonGetBounds(existingObj.geometry, TMP0);\n }\n"
 							}
 						]
 					},
@@ -1232,7 +1232,7 @@
 			"sources": [
 				{
 					"fileName": "boxFunctions/boxAlloc.ts",
-					"line": 26,
+					"line": 28,
 					"character": 24
 				}
 			]
@@ -2295,6 +2295,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Creates a new Line object in memory, with all values initialized to `NaN`.",
+						"text": "Data allocation functions like lineAlloc() are useful to hold results of\nVectormath function calls in inner loops of performance critical workflows.\n\nAs with any optimization, you don't need it until you've profiled your\napplication! Getting into temp variable management and shared state can\nseverely hurt code readability and maintainability, so it's best to avoid\nsuch optimization if you can.\n",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n  // initialize temp memory\n const TMP0 = lineAlloc();\n\n ... {\n   // Use this temp memory to hold the result of `lineThroughPoints()`.\n   // This avoids a heap allocation.\n   const result = lineThroughPoints(existingObj.from, existingObj.to, TMP0);\n }\n"
+							}
+						]
+					},
 					"type": {
 						"type": "reference",
 						"name": "ILine",
@@ -2305,7 +2315,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineAlloc.ts",
-					"line": 7,
+					"line": 28,
 					"character": 25
 				}
 			]
@@ -3873,6 +3883,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Creates a new Mat2x3 object in memory, with all values initialized to `NaN`.",
+						"text": "Data allocation functions like `mat2x3Alloc()` are useful to hold results of\nVectormath function calls in inner loops of performance critical workflows.\n\nAs with any optimization, you don't need it until you've profiled your\napplication! Getting into temp variable management and shared state can\nseverely hurt code readability and maintainability, so it's best to avoid\nsuch optimization if you can.\n",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n // initialize temp memory\n const TMP0 = mat2x3Alloc();\n\n ... {\n   // Use this temp memory to hold result of `mat2x3AffInvert()`.\n   // This avoids a heap allocation.\n   const result = mat2x3AffInvert(existingObj.transform, TMP0);\n }\n"
+							}
+						]
+					},
 					"type": {
 						"type": "reference",
 						"name": "IMat2x3",
@@ -3883,7 +3903,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3Alloc.ts",
-					"line": 7,
+					"line": 28,
 					"character": 27
 				}
 			]
@@ -4071,6 +4091,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Creates a new Array object in memory to hold Polygon data.\nIts initial length is 0.",
+						"text": "Data allocation functions like `polygonAlloc()` are useful to hold results of\nVectormath function calls in inner loops of performance critical workflows.\n\nAs with any optimization, you don't need it until you've profiled your\napplication! Getting into temp variable management and shared state can\nseverely hurt code readability and maintainability, so it's best to avoid\nsuch optimization if you can.\n",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n // initialize temp memory\n const TMP0 = polygonAlloc();\n\n ... {\n   // Use this temp memory to hold result of `polygonTransformByAff()`.\n   // This will avoid a heap allocation if the array doesn't have to be resized.\n   const result = polygonTransformByAff(existingObj.geometry, existingObj.transform, TMP0);\n }\n"
+							}
+						]
+					},
 					"type": {
 						"type": "reference",
 						"name": "IPolygon",
@@ -4081,7 +4111,7 @@
 			"sources": [
 				{
 					"fileName": "polygonFunctions/polygonAlloc.ts",
-					"line": 3,
+					"line": 25,
 					"character": 28
 				}
 			]
@@ -4981,6 +5011,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Creates a new Array object in memory to hold Polyline data.\nIts initial length is 0.",
+						"text": "Data allocation functions like `polylineAlloc()` are useful to hold results of\nVectormath function calls in inner loops of performance critical workflows.\n\nAs with any optimization, you don't need it until you've profiled your\napplication! Getting into temp variable management and shared state can\nseverely hurt code readability and maintainability, so it's best to avoid\nsuch optimization if you can.\n",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n // initialize temp memory\n const TMP0 = polylineAlloc();\n\n ... {\n   // Use this temp memory to hold result of `polylineTransformByAff()`.\n   // This will avoid a heap allocation if the array doesn't have to be resized.\n   const result = polylineTransformByAff(existingObj.path, existingObj.transform, TMP0);\n }\n"
+							}
+						]
+					},
 					"type": {
 						"type": "reference",
 						"name": "IPolyline",
@@ -4991,7 +5031,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineAlloc.ts",
-					"line": 3,
+					"line": 25,
 					"character": 29
 				}
 			]
@@ -6109,6 +6149,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Creates a new Ray object in memory, with all values initialized to `NaN`.",
+						"text": "Data allocation functions like `rayAlloc()` are useful to hold results of\nVectormath function calls in inner loops of performance critical workflows.\n\nAs with any optimization, you don't need it until you've profiled your\napplication! Getting into temp variable management and shared state can\nseverely hurt code readability and maintainability, so it's best to avoid\nsuch optimization if you can.\n",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n // initialize temp memory\n const TMP0 = rayAlloc();\n\n ... {\n   // Use this temp memory to hold result of `rayLookAt()`.\n   // This avoids a heap allocation.\n   const result = rayLookAt(existingObj.source, existingObj.target, TMP0);\n }\n"
+							}
+						]
+					},
 					"type": {
 						"type": "reference",
 						"name": "IRay",
@@ -6119,7 +6169,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayAlloc.ts",
-					"line": 7,
+					"line": 28,
 					"character": 24
 				}
 			]
@@ -6939,6 +6989,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Creates a new Segment object in memory, with all values initialized to `NaN`.",
+						"text": "Data allocation functions like `segmentAlloc()` are useful to hold results of\nVectormath function calls in inner loops of performance critical workflows.\n\nAs with any optimization, you don't need it until you've profiled your\napplication! Getting into temp variable management and shared state can\nseverely hurt code readability and maintainability, so it's best to avoid\nsuch optimization if you can.\n",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n // initialize temp memory\n const TMP0 = segmentAlloc();\n\n ... {\n   // Use this temp memory to hold result of `polygonGetSideSegment()`.\n   // This avoids a heap allocation.\n   const result = polygonGetSideSegment(existingObj.geometry, 0, TMP0);\n }\n"
+							}
+						]
+					},
 					"type": {
 						"type": "reference",
 						"name": "ISegment",
@@ -6949,7 +7009,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentAlloc.ts",
-					"line": 7,
+					"line": 28,
 					"character": 28
 				}
 			]
@@ -7854,7 +7914,14 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Creates a new Vec object in memory, with all values initialized to NaN.\nThis is useful to hold the result of vectormath function calls in performance\ncritical workflows."
+						"shortText": "Creates a new Vec object in memory, with all values initialized to `NaN`.",
+						"text": "Data allocation functions like `vecAlloc()` are useful to hold results of\nVectormath function calls in inner loops of performance critical workflows.\n\nAs with any optimization, you don't need it until you've profiled your\napplication! Getting into temp variable management and shared state can\nseverely hurt code readability and maintainability, so it's best to avoid\nsuch optimization if you can.\n",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n // initialize temp memory\n const TMP0 = vecAlloc();\n\n ... {\n   // Use this temp memory to hold result of `vecNormalize()`.\n   // This avoids a heap allocation.\n   const result = vecNormalize(existingObj.velocity, TMP0);\n }\n"
+							}
+						]
 					},
 					"type": {
 						"type": "reference",
@@ -7866,7 +7933,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecAlloc.ts",
-					"line": 12,
+					"line": 28,
 					"character": 24
 				}
 			]

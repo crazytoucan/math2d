@@ -198,8 +198,8 @@ export interface IMat2x3 {
  * and viewbox culling.
  *
  * A box in Vectormath is defined by its `minX`, `minY`, `maxX`, and `maxY` edges. Where
- * relevant, boxes are interpreted as _closed_ regions, i.e. they include those points
- * that lie along their edges.
+ * relevant and unless documented otherwise, boxes are interpreted as _closed_ regions,
+ * i.e. they include those points that lie along their edges.
  *
  * ```
  * ┌╴x+
