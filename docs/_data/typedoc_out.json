@@ -1053,7 +1053,7 @@
 			},
 			"comment": {
 				"shortText": "An alias for `number[]`. Data type to represent a polygon in the plane,\nas an interleaved sequence of vertex coordinates.",
-				"text": "The `IPolygon` type is just an alias for an array of number values. For example,\na polygon with vertices v0, v1, v2,... vn is represented in Vectormath as the array:\n\n```\n[v0x, v0y, v1x, v1y, v2x, v2y, ..., vnx, vny]\n```\n\nUnlike the similar {@link IPolyline} type, a polygon's perimeter is always interpreted as a closed shape.\n\nVectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
+				"text": "The `IPolygon` type is just an alias for an array of number values. For example,\na polygon with vertices v0, v1, v2, ..., vn is represented in Vectormath as the array:\n\n```\n[v0x, v0y, v1x, v1y, v2x, v2y, ..., vnx, vny]\n```\n\nUnlike the similar {@link IPolyline} type, a polygon's perimeter is always interpreted as a closed shape.\n\nVectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
 			},
 			"sources": [
 				{
@@ -1080,7 +1080,7 @@
 			},
 			"comment": {
 				"shortText": "An alias for `number[]`. Data type to represent a sequence of connected line segments in the plane,\nas an interleaved array of vertex coordinates.",
-				"text": "The `IPolyline` type is just an alias for an array of number values. For example,\na polyline connecting the points p0, p1, p2,... pn in space is represented in Vectormath as the array:\n\n```\n[p0x, p0y, p1x, p1y, p2x, p2y, ..., pnx, pny]\n```\n\nUnlike the similar {@link IPolygon} type, a polyline is not necessary closed.\n\nVectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
+				"text": "The `IPolyline` type is just an alias for an array of number values. For example,\na polyline connecting the points p0, p1, p2, ..., pn in space is represented in Vectormath as the array:\n\n```\n[p0x, p0y, p1x, p1y, p2x, p2y, ..., pnx, pny]\n```\n\nUnlike the similar {@link IPolygon} type, a polyline is not necessary closed.\n\nVectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
 			},
 			"sources": [
 				{
@@ -3029,61 +3029,6 @@
 		},
 		{
 			"id": 218,
-			"name": "lineSide",
-			"kind": 64,
-			"kindString": "Function",
-			"flags": {
-				"isExported": true
-			},
-			"signatures": [
-				{
-					"id": 219,
-					"name": "lineSide",
-					"kind": 4096,
-					"kindString": "Call signature",
-					"flags": {},
-					"parameters": [
-						{
-							"id": 220,
-							"name": "line",
-							"kind": 32768,
-							"kindString": "Parameter",
-							"flags": {},
-							"type": {
-								"type": "reference",
-								"name": "ILine",
-								"id": 18
-							}
-						},
-						{
-							"id": 221,
-							"name": "point",
-							"kind": 32768,
-							"kindString": "Parameter",
-							"flags": {},
-							"type": {
-								"type": "reference",
-								"name": "IVec",
-								"id": 5
-							}
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "number"
-					}
-				}
-			],
-			"sources": [
-				{
-					"fileName": "lineFunctions/lineSide.ts",
-					"line": 5,
-					"character": 24
-				}
-			]
-		},
-		{
-			"id": 222,
 			"name": "lineThroughPoints",
 			"kind": 64,
 			"kindString": "Function",
@@ -3092,14 +3037,14 @@
 			},
 			"signatures": [
 				{
-					"id": 223,
+					"id": 219,
 					"name": "lineThroughPoints",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 224,
+							"id": 220,
 							"name": "from",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3111,7 +3056,7 @@
 							}
 						},
 						{
-							"id": 225,
+							"id": 221,
 							"name": "to",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3123,7 +3068,7 @@
 							}
 						},
 						{
-							"id": 226,
+							"id": 222,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3152,7 +3097,7 @@
 			]
 		},
 		{
-			"id": 227,
+			"id": 223,
 			"name": "lineTransformByAff",
 			"kind": 64,
 			"kindString": "Function",
@@ -3161,14 +3106,14 @@
 			},
 			"signatures": [
 				{
-					"id": 228,
+					"id": 224,
 					"name": "lineTransformByAff",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 229,
+							"id": 225,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3180,7 +3125,7 @@
 							}
 						},
 						{
-							"id": 230,
+							"id": 226,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3192,7 +3137,7 @@
 							}
 						},
 						{
-							"id": 231,
+							"id": 227,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3217,6 +3162,61 @@
 					"fileName": "lineFunctions/lineTransformByAff.ts",
 					"line": 11,
 					"character": 34
+				}
+			]
+		},
+		{
+			"id": 228,
+			"name": "lineWhichSide",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 229,
+					"name": "lineWhichSide",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 230,
+							"name": "line",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ILine",
+								"id": 18
+							}
+						},
+						{
+							"id": 231,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "lineFunctions/lineWhichSide.ts",
+					"line": 5,
+					"character": 29
 				}
 			]
 		},
@@ -8969,8 +8969,8 @@
 				213,
 				120,
 				218,
-				222,
-				227,
+				223,
+				228,
 				232,
 				235,
 				239,
