@@ -5,8 +5,8 @@
  * For example, a vertex of a polygon can be interepreted as a vector,
  * or the direction of a ray emanating from its initial point can be interpreted as a vector.
  *
- * Vectormath chooses to lay out this data in a
- * flat object structure, as opposed to an array, for ease of use, clarity, and performance.
+ * Vectormath chooses to lay out this data in an object structure, as opposed to an array,
+ * for ease of use. This does not sacrifice performance.
  *
  * @see {@link vecAlloc}
  * @see {@link vecReset}
@@ -124,7 +124,9 @@ export interface ILine {
  *
  * Two-dimensional vector graphics operations are usually represented using an affine transform matrix,
  * i.e. a linear 2x2 matrix plus a 2D translation. Vectormath chooses to lay out this data in a
- * flat object structure, as opposed to an array or nested arrays, for ease of use, clarity, and performance.
+ * flat object structure, as opposed to an array or nested arrays, for ease of use and performance.
+ * The field names used here match the structure of other standards, like the native DOMMatrix
+ * specification and the Canvas reference APIs.
  *
  * ```
  * ⎡a c e⎤
@@ -237,32 +239,34 @@ export type IPolygon = number[];
 export type IPolyline = number[];
 
 /**
- * Data type to hold the value of a point intersection between two pieces of geometry.
+ * Data type to hold the result of a point intersection between two pieces of geometry.
  */
 export interface IIntersection {
   /**
-   * Whether an intersection was found. If the return value of a function returns `false` for the `exists` field,
-   * the other values will be set to `NaN` and should not be interpreted.
+   * Whether an intersection was found. If the return value of a function is `false` for the `exists` field,
+   * the other Intersection values will be set to `NaN` and should not be interpreted.
    */
   exists: boolean;
 
   /**
-   * The x-coordinate of the point of intersection.
+   * The x-coordinate of the intersection, if an intersection point was found.
    */
   x: number;
 
   /**
-   * The y-coordinate of the point of intersection.
+   * The y-coordinate of the intersection, if an intersection point was found.
    */
   y: number;
 
   /**
-   * The parameterization of this point of intersection along the first shape's geometry.
+   * The parameterization of the intersection along the first shape's geometry,
+   * if an intersection point was found.
    */
   t0: number;
 
   /**
-   * The parameterization of this point of intersection along the second shape's geometry.
+   * The parameterization of the intersection along the second shape's geometry,
+   * if an intersection point was found.
    */
   t1: number;
 }
