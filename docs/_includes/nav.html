@@ -1,6 +1,6 @@
 <nav aria-label="Main navigation" role="navigation">
   <ul class="navigation-list">
-    {% assign pages_list = site.html_pages | sort:"nav_order" %}
+    {% assign pages_list = site.html_pages | sort:"order" %}
     {% for node in pages_list %}
       {% if node.vectormath_is_api_reference %}
         <li class="navigation-list-item{% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %} active{% endif %}">

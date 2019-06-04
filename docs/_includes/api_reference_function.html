@@ -52,7 +52,7 @@
 </dl>
 {% if sig.comment.text %}
   <h4>Description</h4>
-  {{ sig.comment.text }}
+  <div markdown="1">{{ sig.comment.text }}</div>
 {% endif %}
 
 {% for sig_example in sig.comment.tags %}

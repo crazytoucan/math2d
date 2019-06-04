@@ -4,7 +4,7 @@
 @import "custom/custom";
 
 .navigation-list {
-  line-height: 1.4rem;
+  line-height: 1.6rem;
 }
 
 .navigation-list-link {
@@ -59,8 +59,8 @@ h4 {
 .vectormath-api-list-child-list {
   position: relative;
   margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
 
   border-left: 1px dashed #aaa;
   margin-left: -12px;
@@ -113,7 +113,7 @@ h4 {
   background-size: cover;
   position: absolute;
   left: -16px;
-  top: 4px;
+  top: calc(50% - 5px);
   width: 10px;
   height: 10px;
 }
