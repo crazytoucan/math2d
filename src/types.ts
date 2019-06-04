@@ -203,7 +203,7 @@ export interface IBox {
 
   /**
    * Min-Y boundary of this box. Note that this could be either the "top" or the "bottom" of the
-   * box, depending on how your rendering and coordinate system are laid out.
+   * box, depending on how your rendering and coordinate systems are laid out.
    */
   minY: number;
 

@@ -31,7 +31,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 211,
+							"line": 213,
 							"character": 6
 						}
 					],
@@ -54,7 +54,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 217,
+							"line": 219,
 							"character": 6
 						}
 					],
@@ -77,7 +77,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 200,
+							"line": 202,
 							"character": 6
 						}
 					],
@@ -95,12 +95,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "Min-Y boundary of this box. Note that this could be either the \"top\" or the \"bottom\" of the\nbox, depending on how your rendering and coordinate system are laid out."
+						"shortText": "Min-Y boundary of this box. Note that this could be either the \"top\" or the \"bottom\" of the\nbox, depending on how your rendering and coordinate systems are laid out."
 					},
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 206,
+							"line": 208,
 							"character": 6
 						}
 					],
@@ -125,7 +125,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 196,
+					"line": 198,
 					"character": 21
 				}
 			]
@@ -139,7 +139,7 @@
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "Data type to hold the value of a point intersection between two pieces of geometry."
+				"shortText": "Data type to hold the result of a point intersection between two pieces of geometry."
 			},
 			"children": [
 				{
@@ -151,12 +151,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "Whether an intersection was found. If the return value of a function returns `false` for the `exists` field,\nthe other values will be set to `NaN` and should not be interpreted."
+						"shortText": "Whether an intersection was found. If the return value of a function is `false` for the `exists` field,\nthe other Intersection values will be set to `NaN` and should not be interpreted."
 					},
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 247,
+							"line": 249,
 							"character": 8
 						}
 					],
@@ -174,12 +174,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The parameterization of this point of intersection along the first shape's geometry."
+						"shortText": "The parameterization of the intersection along the first shape's geometry,\nif an intersection point was found."
 					},
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 262,
+							"line": 265,
 							"character": 4
 						}
 					],
@@ -197,12 +197,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The parameterization of this point of intersection along the second shape's geometry."
+						"shortText": "The parameterization of the intersection along the second shape's geometry,\nif an intersection point was found."
 					},
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 267,
+							"line": 271,
 							"character": 4
 						}
 					],
@@ -220,12 +220,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The x-coordinate of the point of intersection."
+						"shortText": "The x-coordinate of the intersection, if an intersection point was found."
 					},
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 252,
+							"line": 254,
 							"character": 3
 						}
 					],
@@ -243,12 +243,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "The y-coordinate of the point of intersection."
+						"shortText": "The y-coordinate of the intersection, if an intersection point was found."
 					},
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 257,
+							"line": 259,
 							"character": 3
 						}
 					],
@@ -274,7 +274,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 242,
+					"line": 244,
 					"character": 30
 				}
 			]
@@ -415,7 +415,7 @@
 			},
 			"comment": {
 				"shortText": "Data type to hold a 2D affine transformation matrix.",
-				"text": "Two-dimensional vector graphics operations are usually represented using an affine transform matrix,\ni.e. a linear 2x2 matrix plus a 2D translation. Vectormath chooses to lay out this data in a\nflat object structure, as opposed to an array or nested arrays, for ease of use, clarity, and performance.\n\n```\n⎡a c e⎤\n⎣b d f⎦\n```\n\nPer usual linear algebra, multiplying a vector `v = (x, y)` according to this affine matrix is defined by:\n\n```\n⎡a c e⎤ ⎛x⎞   ⎛ax + cy + e⎞\n⎢b d f⎥ ⎜y⎟ = ⎜bx + dy + f⎟\n⎣0 0 1⎦ ⎝1⎠   ⎝     1     ⎠\n```\n"
+				"text": "Two-dimensional vector graphics operations are usually represented using an affine transform matrix,\ni.e. a linear 2x2 matrix plus a 2D translation. Vectormath chooses to lay out this data in a\nflat object structure, as opposed to an array or nested arrays, for ease of use and performance.\nThe field names used here match the structure of other standards, like the native DOMMatrix\nspecification and the Canvas reference APIs.\n\n```\n⎡a c e⎤\n⎣b d f⎦\n```\n\nPer usual linear algebra, multiplying a vector `v = (x, y)` according to this affine matrix is defined by:\n\n```\n⎡a c e⎤ ⎛x⎞   ⎛ax + cy + e⎞\n⎢b d f⎥ ⎜y⎟ = ⎜bx + dy + f⎟\n⎣0 0 1⎦ ⎝1⎠   ⎝     1     ⎠\n```\n"
 			},
 			"children": [
 				{
@@ -432,7 +432,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 146,
+							"line": 148,
 							"character": 3
 						}
 					],
@@ -455,7 +455,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 151,
+							"line": 153,
 							"character": 3
 						}
 					],
@@ -478,7 +478,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 156,
+							"line": 158,
 							"character": 3
 						}
 					],
@@ -501,7 +501,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 161,
+							"line": 163,
 							"character": 3
 						}
 					],
@@ -524,7 +524,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 166,
+							"line": 168,
 							"character": 3
 						}
 					],
@@ -547,7 +547,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 171,
+							"line": 173,
 							"character": 3
 						}
 					],
@@ -574,7 +574,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 142,
+					"line": 144,
 					"character": 24
 				}
 			]
@@ -841,7 +841,7 @@
 			},
 			"comment": {
 				"shortText": "Data type to hold an (x, y) value.",
-				"text": "The vector type in the Vectormath package is used interchangeably to represent either points or linear vectors.\nFor example, a vertex of a polygon can be interepreted as a vector,\nor the direction of a ray emanating from its initial point can be interpreted as a vector.\n\nVectormath chooses to lay out this data in a\nflat object structure, as opposed to an array, for ease of use, clarity, and performance.\n",
+				"text": "The vector type in the Vectormath package is used interchangeably to represent either points or linear vectors.\nFor example, a vertex of a polygon can be interepreted as a vector,\nor the direction of a ray emanating from its initial point can be interpreted as a vector.\n\nVectormath chooses to lay out this data in an object structure, as opposed to an array,\nfor ease of use. This does not sacrifice performance.\n",
 				"tags": [
 					{
 						"tag": "see",
@@ -934,7 +934,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 227,
+					"line": 229,
 					"character": 20
 				}
 			],
@@ -961,7 +961,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 237,
+					"line": 239,
 					"character": 21
 				}
 			],
@@ -982,10 +982,13 @@
 				"isExported": true,
 				"isConst": true
 			},
+			"comment": {
+				"shortText": "Sentinel value for the result of {@link boxComputeOutCode} to represent that\nthe point was outside the max-X edge of the box."
+			},
 			"sources": [
 				{
 					"fileName": "const.ts",
-					"line": 3,
+					"line": 12,
 					"character": 22
 				}
 			],
@@ -1004,10 +1007,13 @@
 				"isExported": true,
 				"isConst": true
 			},
+			"comment": {
+				"shortText": "Sentinel value for the result of {@link boxComputeOutCode} to represent that\nthe point was outside the max-Y edge of the box."
+			},
 			"sources": [
 				{
 					"fileName": "const.ts",
-					"line": 5,
+					"line": 24,
 					"character": 22
 				}
 			],
@@ -1026,10 +1032,13 @@
 				"isExported": true,
 				"isConst": true
 			},
+			"comment": {
+				"shortText": "Sentinel value for the result of {@link boxComputeOutCode} to represent that\nthe point was outside the min-X edge of the box."
+			},
 			"sources": [
 				{
 					"fileName": "const.ts",
-					"line": 2,
+					"line": 6,
 					"character": 22
 				}
 			],
@@ -1048,10 +1057,13 @@
 				"isExported": true,
 				"isConst": true
 			},
+			"comment": {
+				"shortText": "Sentinel value for the result of {@link boxComputeOutCode} to represent that\nthe point was outside the min-Y edge of the box."
+			},
 			"sources": [
 				{
 					"fileName": "const.ts",
-					"line": 4,
+					"line": 18,
 					"character": 22
 				}
 			],
@@ -1077,7 +1089,14 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Creates a new Box object in memory, with all values initialized to NaN.\nThis is useful to hold the result of vectormath function calls in performance\ncritical workflows."
+						"shortText": "Creates a new Box object in memory, with all values initialized to `NaN`.",
+						"text": "Data allocation functions like boxAlloc() are useful to hold results of\nVectormath function calls in inner loops of performance critical workflows.\n\nAs with any optimization, you don't need it until you've profiled your\napplication! Getting into temp variable management and shared state can\nseverely hurt code readability and maintainability, so it's best to avoid\nsuch optimization if you can.\n",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n // initialize temp memory\nconst TMP_BOX = boxAlloc();\n\n// Use this temp memory to hold results of function calls.\n// This avoids a heap allocation.\nconst result = polygonGetBounds(myPolygon, TMP_BOX);\n"
+							}
+						]
 					},
 					"type": {
 						"type": "reference",
@@ -1089,7 +1108,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 12,
+					"line": 27,
 					"character": 24
 				}
 			]
@@ -1110,8 +1129,13 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Copies values from an existing IBox into a new box or memory location.",
-						"text": "Rukt\n"
+						"shortText": "Copies values from an existing IBox into a new box.",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n // make a copy of a given box\n const myBox = boxReset(-1, -1, 1, 1);\n const myBoxCopy = boxClone(myBox);\n\n // copy a given box into preallocated memory\n const TMP_BOX = boxAlloc();\n boxClone(myBox, TMP_BOX);\n"
+							}
+						]
 					},
 					"parameters": [
 						{
@@ -1121,7 +1145,7 @@
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "source to copy values from rofl"
+								"text": "source to copy values from"
 							},
 							"type": {
 								"type": "reference",
@@ -1156,7 +1180,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 24,
+					"line": 46,
 					"character": 24
 				}
 			]
@@ -1177,7 +1201,30 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Determines wehre the specified point lies in respect to the given box. The returned\nvalue is an OR of the possible values OUT_MIN_X, OUT_MAX_X, OUT_MIN_Y, and OUT_MAX_Y\nindicating, for each side, whether the point lies beyond that edge."
+						"shortText": "Determines where the specified point lies in relation to the given box.",
+						"text": "The returned value is a binary OR of the possible values\n{@link OUT_MIN_X}, {@link OUT_MAX_X}, {@link OUT_MIN_Y}, and {@link OUT_MAX_Y}\nindicating, for each side, whether the point lies beyond that edge. If the point\nis inside the box, this function returns the value 0.\n",
+						"tags": [
+							{
+								"tag": "example",
+								"text": "\n const myBox = boxReset(-2, -2, 2, 2);\n const outCode1 = boxComputeOutCode(myBox, vecReset(-4, 4)); // returns OUT_MIN_X | OUT_MAX_Y\n const outCode2 = boxComputeOutCode(myBox, vec2Origin()); // returns 0"
+							},
+							{
+								"tag": "see",
+								"text": "OUT_MIN_X"
+							},
+							{
+								"tag": "see",
+								"text": "OUT_MAX_X"
+							},
+							{
+								"tag": "see",
+								"text": "OUT_MIN_Y"
+							},
+							{
+								"tag": "see",
+								"text": "OUT_MAX_Y\n"
+							}
+						]
 					},
 					"parameters": [
 						{
@@ -1199,9 +1246,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {
-								"text": "\n"
-							},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -1218,7 +1263,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 37,
+					"line": 69,
 					"character": 33
 				}
 			]
@@ -1239,7 +1284,8 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Determines whether the second box is completely enclosed in the first. Each box is treated\nas a closed area, so e.g. the two boxes may share an edge and this method would still return `true`."
+						"shortText": "Determines whether the second box is completely enclosed in the first.",
+						"text": "Returns true if the second box is contained in the first.\nEach box is treated as a closed area, so e.g. the two boxes may share\nan edge and the containment check would still pass.\n"
 					},
 					"parameters": [
 						{
@@ -1280,7 +1326,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 61,
+					"line": 97,
 					"character": 30
 				}
 			]
@@ -1301,7 +1347,8 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Determines whether the box contains a given point. The box is treated as a closed area,\nso points on the boundary of the box will still return `true`."
+						"shortText": "Determines whether the box contains a given point.",
+						"text": "Checks whether the point is inside the box's enclosed region.\nThe box is treated as a closed area,\nso points on the boundary of the box will return true.\n"
 					},
 					"parameters": [
 						{
@@ -1342,7 +1389,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 71,
+					"line": 111,
 					"character": 32
 				}
 			]
@@ -1363,7 +1410,8 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Grows the box to include a given point. If the point is already inside the box, this function\ndoes nothing."
+						"shortText": "Grows the box to include a given point.",
+						"text": "Extends the box's bounding edges, if needed, to encapsulate the given point.\nIf the point is already inside the box, this function does nothing.\n"
 					},
 					"parameters": [
 						{
@@ -1372,7 +1420,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the box to potentially grow"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IBox",
@@ -1385,7 +1435,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the point that the box should grow to include"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -1419,7 +1471,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 82,
+					"line": 125,
 					"character": 30
 				}
 			]
@@ -1440,7 +1492,14 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Computes the area intersection of the two box regions, as a box. If the two boxes do not intersect,\nthe returned value will be an empty box, i.e. with `maxX < minX` or `maxY < minY`."
+						"shortText": "Computes the area intersection of the two box regions.",
+						"text": "Given two boxes, this function computes the region where they overlap.\nIf the two boxes do not overlap,\nthe returned value will be an empty box, i.e. with `maxX < minX` or `maxY < minY`.\n\nThe similar function {@link boxIntersectsBox} will check whether two\nboxes intersect, without actually computing that intersection region.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link boxUnion}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
@@ -1449,7 +1508,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "first box to compute intersection for"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IBox",
@@ -1462,7 +1523,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "second box to compute intersection for"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IBox",
@@ -1475,9 +1538,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {
-								"text": "\n"
-							},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IBox",
@@ -1496,7 +1557,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 99,
+					"line": 150,
 					"character": 31
 				}
 			]
@@ -1517,7 +1578,8 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Determines whether the two boxes intersect, as areas. Both boxes are treated as closed\nregions, so e.g. this function will return `true` if the boxes share only a single edge."
+						"shortText": "Determines whether two boxes overlap.",
+						"text": "This function checks whether the two boxes intersect, as areas. Both boxes are treated as closed\nregions, so e.g. this function will return true if the boxes share only a single edge.\n\nThe similar function {@link boxIntersection} can compute the overlap region.\n"
 					},
 					"parameters": [
 						{
@@ -1526,7 +1588,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "first box to check for overlap"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IBox",
@@ -1540,7 +1604,7 @@
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "\n"
+								"text": "second box to check for overlap\n"
 							},
 							"type": {
 								"type": "reference",
@@ -1558,7 +1622,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 115,
+					"line": 171,
 					"character": 32
 				}
 			]
@@ -1579,7 +1643,8 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Determines whether this box represents an empty area. A box is considered empty if\nits `maxX < minX` or its `maxY < minY`."
+						"shortText": "Determines whether this box represents an empty area.",
+						"text": "A box is considered empty if its `maxX` is less than its `minX` or its `maxY` is less than its `minY`.\n\nThis function handles `Infinity`, `-Infinity`, and `NaN` values:\n- Any box that contains a NaN edge is considered empty\n- Edges with non-finite values are compared according to normal mathematical rules, so e.g. the\n   [-∞, +∞]×[-∞, +∞] box is NOT empty, but the [+∞, -∞]×[-1, 1] box IS empty.\n"
 					},
 					"parameters": [
 						{
@@ -1607,7 +1672,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 124,
+					"line": 187,
 					"character": 26
 				}
 			]
@@ -1628,11 +1693,11 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Constuct a new box given `minX`, `minY`, `maxX`, and `maxY` bounding values.",
+						"shortText": "Construct a new box given `minX`, `minY`, `maxX`, and `maxY` bounding values.",
 						"tags": [
 							{
 								"tag": "example",
-								"text": "\n // initialize a new box that's [-1, 1] × [-1, 1]\n const myBox = boxReset(-1, -1, 1, 1);\n\n // reset an existing box's values to [4, 8] × [0, 8]\n const myBox2 = boxAlloc();\n boxReset(4, 0, 8, 8, myBox2);\n"
+								"text": "\n // initialize a new box that's [-1, 1]×[-1, 1]\n const myBox = boxReset(-1, -1, 1, 1);\n\n // reset an existing box's values to [4, 8]×[0, 8]\n const myBox2 = boxAlloc();\n boxReset(4, 0, 8, 8, myBox2);\n"
 							}
 						]
 					},
@@ -1643,7 +1708,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "\n min-X boundary of the box, which is typically the _left_ edge"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -1655,7 +1722,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "\n min-Y boundary of the box, which could be the _top_ OR the _bottom_ edge of the box depending on how your\n rendering and coordinate systems are laid out."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -1667,7 +1736,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "\n max-X boundary of the box, which is typically the _right_ edge"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -1679,7 +1750,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "\n min-Y boundary of the box, which could be the _top_ OR the _bottom_ edge of the box depending on how your\n rendering and coordinate systems are laid out."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -1710,7 +1783,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 144,
+					"line": 214,
 					"character": 24
 				}
 			]
@@ -1730,6 +1803,10 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Compute the bounds of the image of this box after applying a 2D affine transformation.",
+						"text": "This function calculates the minimum bounds that will contain the image after applying a transformation\nto the given bounding box. Note that the actual geometric result of transforming a given\nbox may not be an axis-aligned box! For example, spinning the [-1, 1]×[-1, 1] box 45° clockwise yields a diamond\nconnecting the four points (√2, 0), (0, √2), (-√2, 0), (0, -√2). The bounding box of _that diamond_\nis [-√2, √2]x[-√2, √2].\n"
+					},
 					"parameters": [
 						{
 							"id": 501,
@@ -1737,6 +1814,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the box to transform"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IBox",
@@ -1749,6 +1829,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the affine transformation to apply to the box"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -1761,6 +1844,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IBox",
@@ -1779,7 +1865,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 158,
+					"line": 236,
 					"character": 33
 				}
 			]
@@ -1857,7 +1943,7 @@
 			"sources": [
 				{
 					"fileName": "functions/boxFunctions.ts",
-					"line": 175,
+					"line": 253,
 					"character": 24
 				}
 			]
