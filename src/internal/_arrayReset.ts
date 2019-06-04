@@ -1,6 +1,6 @@
 // tslint:disable:use-named-parameter
-export function arrayReset<T>(out: T[], ...vals: T[]): void;
-export function arrayReset() {
+export function _arrayReset<T>(out: T[], ...vals: T[]): void;
+export function _arrayReset() {
   const out = arguments[0] as any[];
   const len = arguments.length - 1;
   if (out.length !== len) {
