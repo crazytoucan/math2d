@@ -1,0 +1,14 @@
+{% assign examples = include.value.comment.tags | where: "tag", "example" %}
+{% assign len = examples | size %}
+
+{% if len > 0 %}
+  <h4>Example</h4>
+{% endif %}
+
+{% for example in examples %}
+  <div class="vectormath-example">
+    {% highlight ts %}
+    {{- example.text -}}
+    {% endhighlight %}
+  </div>
+{% endfor %}

@@ -1,0 +1,7 @@
+{% assign value = include.value %}
+{% assign value_type = value.type %}
+
+<h4>Declaration</h4>
+<pre class="vectormath-interface-declaration">
+  type {{ value.name }} = {% include api_helper_type.html type=value_type %};
+</pre>

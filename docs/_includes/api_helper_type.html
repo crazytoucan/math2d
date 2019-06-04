@@ -1,9 +1,9 @@
 {%- if include.type.name == "IterableIterator" -%}
   {%- assign nested_type = include.type.typeArguments[0] -%}
-  <span class="vectormath-type -primitive">IterableIterator&lt;{% include render_type.html type=nested_type %}&gt;</span>
+  <span class="vectormath-type -primitive">IterableIterator&lt;{% include api_helper_type.html type=nested_type %}&gt;</span>
 {%- elsif include.type.type == "array" -%}
   {%- assign element_type = include.type.elementType -%}
-  <span class="vectormath-type">{% include render_type.html type=element_type %}[]</span>
+  <span class="vectormath-type">{% include api_helper_type.html type=element_type %}[]</span>
 {%- elsif include.type.type == "intrinsic" -%}
   <span class="vectormath-type -primitive">{{- include.type.name -}}</span>
 {%- else -%}

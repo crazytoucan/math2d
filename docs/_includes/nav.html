@@ -6,7 +6,7 @@
         <li class="navigation-list-item{% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %} active{% endif %}">
           <a href="{{ node.url | absolute_url }}" class="navigation-list-link{% if page.url == node.url %} active{% endif %}">{{ node.title }}</a>
           {% for category in site.data.api_categories %}
-            <details open class="api-reference-details">
+            <details class="api-reference-details" open>
               <summary>{{ category.name }}</summary>
               <ul class="navigation-list-child-list vectormath-api-list-child-list">
                 {% for child in site.data.api_list %}

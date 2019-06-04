@@ -1,9 +1,10 @@
-{% assign tags = include.value.comment.tags %}
-{% assign count = tags | where: "tag", "see" | size %}
+{% assign tags = include.value.comment.tags | where: "tag", "see" %}
+{% assign count = tags | size %}
+
 {% if count > 0 %}
   <h4>See Also</h4>
 
-  {% for tag in tags | where: "tag", "see" %}
+  {% for tag in tags %}
     <span markdown="1">{{ tag.text | tsdoc }}{% unless forloop.last %},{% endunless %}</span>
   {% endfor %}
 {% endif %}

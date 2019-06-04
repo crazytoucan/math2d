@@ -6,13 +6,32 @@
   <div class="vectormath-reference-content">
     {% case child.kindString %}
       {% when "Interface" %}
-        {% include api_reference_interface.html value=child %}
+        {% include api_section_oneline.html value=child %}
+        {% include api_section_interface_declaration.html value=child %}
+        {% include api_section_interface_fields.html value=child %}
+        {% include api_section_description.html value=child %}
+        {% include api_section_examples.html value=sig %}
+        {% include api_section_see_also.html value=child %}
       {% when "Function" %}
-        {% include api_reference_function.html value=child %}
+        {% assign sig = child.signatures[0] %}
+        {% include api_section_oneline.html value=sig %}
+        {% include api_section_function_signature.html value=child %}
+        {% include api_section_function_parameters.html value=child %}
+        {% include api_section_description.html value=sig %}
+        {% include api_section_examples.html value=sig %}
+        {% include api_section_see_also.html value=sig %}
       {% when "Type alias" %}
-        {% include api_reference_type_alias.html value=child %}
+        {% include api_section_oneline.html value=child %}
+        {% include api_section_type_alias_declaration.html value=child %}
+        {% include api_section_description.html value=child %}
+        {% include api_section_examples.html value=sig %}
+        {% include api_section_see_also.html value=sig %}
       {% when "Variable" %}
-        {% include api_reference_constant.html value=child %}
+        {% include api_section_oneline.html value=value %}
+        {% include api_section_constant_value.html value=value %}
+        {% include api_section_description.html value=value %}
+        {% include api_section_examples.html value=value %}
+        {% include api_section_see_also.html value=value %}
     {% endcase %}
   </div>
 {% endfor %}

@@ -1,0 +1,11 @@
+{% assign value = include.value %}
+
+<h4>Declaration</h4>
+<pre class="vectormath-interface-declaration">
+interface {{ value.name }} {<br>
+  {%- for property in value.children -%}
+    {%- assign property_type = property.type -%}
+    {{ "  " }}{{ property.name }}: {% include api_helper_type.html type=property_type %};<br>
+  {%- endfor -%}
+}
+</pre>

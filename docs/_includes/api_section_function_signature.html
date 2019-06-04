@@ -1,0 +1,35 @@
+{% assign sig = include.value.signatures[0] %}
+
+<h4>Signature</h4>
+<table class="vectormath-signature">
+  <tbody>
+    {%- for param in sig.parameters -%}
+      <tr>
+        {% if forloop.first %}
+          <td>
+            <span class="keyword">function</span>
+            <span class="function-name">{{ sig.name }}</span>
+            {{- "(" -}}
+          </td>
+        {% else %}
+          <td>&nbsp;</td>
+        {% endif %}
+        <td>
+          <span class="param-name">{{- param.name -}}</span>
+          {%- if param.defaultValue -%}
+            ?:
+          {%- else -%}
+            :
+          {% endif %}
+          {% include api_helper_type.html type=param.type %}
+          {%- if forloop.last -%}
+            {{- "):" }}
+            {% include api_helper_type.html type=sig.type %};
+          {% else %}
+            {{- "," -}}
+          {% endif %}
+        </td>
+      </tr>
+    {%- endfor -%}
+  </tbody>
+</table>
