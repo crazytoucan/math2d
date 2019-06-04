@@ -12,10 +12,6 @@ export function _intersectionAlloc(): IIntersection {
   return new Intersection();
 }
 
-export function _polygonAlloc(): IPolygon {
-  return [];
-}
-
 export function _vecAlloc(): IVec {
   return new Vec();
 }
