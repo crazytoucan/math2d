@@ -4,6 +4,7 @@ import { IMat2x3, IVec } from "../types";
 
 /**
  * Computes the result of adding the two given vectors.
+ *
  * @param a
  * @param b
  * @param out
@@ -23,6 +24,7 @@ export function vecAlloc(): IVec {
 
 /**
  * Copies the values from the given vector into a new vector.
+ *
  * @param vec
  * @param out
  */
@@ -32,6 +34,7 @@ export function vecClone(vec: IVec, out = vecAlloc()) {
 
 /**
  * Computes the straight-line (Euclidean) distance between the two vectors, interpreted as points in the plane.
+ *
  * @param a
  * @param b
  */
@@ -54,6 +57,7 @@ export function vecDistanceSq(a: IVec, b: IVec) {
 
 /**
  * Computes the dot product of the two vectors, i.e. `a.x * b.x + a.y * b.y`.
+ *
  * @param a
  * @param b
  */
@@ -63,6 +67,7 @@ export function vecDot(a: IVec, b: IVec) {
 
 /**
  * Computes the straight-line length (i.e. Euclidean norm) of the given vector.
+ *
  * @param vec
  */
 export function vecGetLength(vec: IVec) {
@@ -71,6 +76,7 @@ export function vecGetLength(vec: IVec) {
 
 /**
  * Computes the squared straight-line length (i.e. square of the Euclidean norm) of the given vector.
+ *
  * @param vec
  */
 export function vecGetLengthSq(vec: IVec) {
@@ -79,6 +85,7 @@ export function vecGetLengthSq(vec: IVec) {
 
 /**
  * Computes the Manhattan length of the given vector, i.e. `|x| + |y|`.
+ *
  * @param vec
  */
 export function vecGetManhattanLength(vec: IVec) {
@@ -87,6 +94,7 @@ export function vecGetManhattanLength(vec: IVec) {
 
 /**
  * Performs a linear interpolation between the two vectors. The `r` parameter is allowed to be outside `[0, 1]`.
+ *
  * @param a
  * @param b
  * @param r
@@ -99,6 +107,7 @@ export function vecLerp(a: IVec, b: IVec, r: number, out = vecAlloc()) {
 /**
  * Computes the Manhattan distance between the two vectors, interpreted as points in the plane.
  * Equivalent to `|b.x - a.x| + |b.y - a.y|`.
+ *
  * @param a
  * @param b
  */
@@ -109,6 +118,7 @@ export function vecManhattanDistance(a: IVec, b: IVec) {
 /**
  * Normalizes the vector to be length 1. If the given vector is the zero-vector, this method
  * returns `(NaN, NaN)`.
+ *
  * @param vec
  * @param out
  */
@@ -124,6 +134,7 @@ export function vecNormalize(vec: IVec, out = vecAlloc()) {
 
 /**
  * Returns the 2d origin vector, `(0, 0)`.
+ *
  * @param out
  */
 export function vecOrigin(out = vecAlloc()) {
@@ -133,6 +144,7 @@ export function vecOrigin(out = vecAlloc()) {
 /**
  * Computes the perp of the given vector, as defined by `vecPerp(a, b) = (-b, a)`.
  * This is equivalent to a counter-clockwise rotation in the standard plane.
+ *
  * @param vec
  * @param out
  */
@@ -141,7 +153,8 @@ export function vecPerp(vec: IVec, out = vecAlloc()) {
 }
 
 /**
- * Constuct a new vector given an `x` and `y` value.
+ * Construct a new vector given an `x` and `y` value.
+ *
  * @param x
  * @param y
  * @param out
@@ -154,6 +167,7 @@ export function vecReset(x: number, y: number, out = vecAlloc()) {
 
 /**
  * Scales both coordinates of this vector by the given scalar.
+ *
  * @param vec
  * @param scalar
  * @param out

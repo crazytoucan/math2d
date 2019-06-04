@@ -20,7 +20,7 @@ export function intersectionClone(intersection: IIntersection, out = intersectio
 }
 
 /**
- * Constuct a new intersection given `exists`, `x`, `y`, `t0`, and `t1` values.
+ * Construct a new intersection given `exists`, `x`, `y`, `t0`, and `t1` values.
  * @param exists
  * @param x
  * @param y

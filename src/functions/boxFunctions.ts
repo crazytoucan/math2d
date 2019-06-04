@@ -227,7 +227,7 @@ const TMP_boxTransformByAff_0 = _polylineAlloc();
  * to the given bounding box. Note that the actual geometric result of transforming a given
  * box may not be an axis-aligned box! For example, spinning the [-1, 1]×[-1, 1] box 45° clockwise yields a diamond
  * connecting the four points (√2, 0), (0, √2), (-√2, 0), (0, -√2). The bounding box of _that diamond_
- * is [-√2, √2]x[-√2, √2].
+ * is [-√2, √2]×[-√2, √2].
  *
  * @param box the box to transform
  * @param mat the affine transformation to apply to the box
