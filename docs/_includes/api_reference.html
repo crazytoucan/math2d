@@ -27,11 +27,11 @@
         {% include api_section_examples.html value=sig %}
         {% include api_section_see_also.html value=sig %}
       {% when "Variable" %}
-        {% include api_section_oneline.html value=value %}
-        {% include api_section_constant_value.html value=value %}
-        {% include api_section_description.html value=value %}
-        {% include api_section_examples.html value=value %}
-        {% include api_section_see_also.html value=value %}
+        {% include api_section_oneline.html value=child %}
+        {% include api_section_constant_value.html value=child %}
+        {% include api_section_description.html value=child %}
+        {% include api_section_examples.html value=child %}
+        {% include api_section_see_also.html value=child %}
     {% endcase %}
   </div>
 {% endfor %}
