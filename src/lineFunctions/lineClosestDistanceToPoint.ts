@@ -1,6 +1,6 @@
+import { _dotPerp } from "../internal/_dotPerp";
 import { ILine, IVec } from "../types";
-import { lineClosestSignedDistanceToPoint } from "./lineClosestSignedDistanceToPoint";
 
 export function lineClosestDistanceToPoint(line: ILine, point: IVec) {
-  return Math.abs(lineClosestSignedDistanceToPoint(line, point));
+  return Math.abs(_dotPerp(line, point));
 }

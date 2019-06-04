@@ -1,7 +1,7 @@
+import { _dotPerp } from "../internal/_dotPerp";
 import { EPSILON } from "../internal/const";
 import { ILine, IVec } from "../types";
-import { lineClosestDistanceToPoint } from "./lineClosestDistanceToPoint";
 
 export function lineContainsPoint(line: ILine, point: IVec) {
-  return lineClosestDistanceToPoint(line, point) < EPSILON;
+  return Math.abs(_dotPerp(line, point)) < EPSILON;
 }
