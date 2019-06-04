@@ -31,7 +31,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 184,
+							"line": 211,
 							"character": 6
 						}
 					],
@@ -54,7 +54,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 190,
+							"line": 217,
 							"character": 6
 						}
 					],
@@ -77,7 +77,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 173,
+							"line": 200,
 							"character": 6
 						}
 					],
@@ -100,7 +100,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 179,
+							"line": 206,
 							"character": 6
 						}
 					],
@@ -125,7 +125,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 169,
+					"line": 196,
 					"character": 21
 				}
 			]
@@ -156,7 +156,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 220,
+							"line": 247,
 							"character": 8
 						}
 					],
@@ -179,7 +179,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 235,
+							"line": 262,
 							"character": 4
 						}
 					],
@@ -202,7 +202,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 240,
+							"line": 267,
 							"character": 4
 						}
 					],
@@ -225,7 +225,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 225,
+							"line": 252,
 							"character": 3
 						}
 					],
@@ -248,7 +248,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 230,
+							"line": 257,
 							"character": 3
 						}
 					],
@@ -274,7 +274,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 215,
+					"line": 242,
 					"character": 30
 				}
 			]
@@ -300,10 +300,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "x-coordinate of the direction of the line, relative to its initial point"
+					},
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 91,
+							"line": 114,
 							"character": 6
 						}
 					],
@@ -320,10 +323,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "y-coordinate of the direction of the line, relative to its initial point"
+					},
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 92,
+							"line": 119,
 							"character": 6
 						}
 					],
@@ -340,10 +346,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "x-coordinate of the line's initial point"
+					},
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 89,
+							"line": 104,
 							"character": 4
 						}
 					],
@@ -360,10 +369,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "y-coordinate of the line's initial point"
+					},
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 90,
+							"line": 109,
 							"character": 4
 						}
 					],
@@ -388,7 +400,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 88,
+					"line": 100,
 					"character": 22
 				}
 			]
@@ -420,7 +432,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 119,
+							"line": 146,
 							"character": 3
 						}
 					],
@@ -443,7 +455,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 124,
+							"line": 151,
 							"character": 3
 						}
 					],
@@ -466,7 +478,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 129,
+							"line": 156,
 							"character": 3
 						}
 					],
@@ -489,7 +501,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 134,
+							"line": 161,
 							"character": 3
 						}
 					],
@@ -512,7 +524,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 139,
+							"line": 166,
 							"character": 3
 						}
 					],
@@ -535,7 +547,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 144,
+							"line": 171,
 							"character": 3
 						}
 					],
@@ -562,7 +574,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 115,
+					"line": 142,
 					"character": 24
 				}
 			]
@@ -577,7 +589,7 @@
 			},
 			"comment": {
 				"shortText": "Data type to represent a ray in 2D space, i.e. an initial point in the plane plus a unit-length direction\nvector coming from that point.",
-				"text": "The representation of a ray and the similar {@link ILine} type is actually the same, but Vectormath chooses\nto export these two names for ease of clarity. Functions that may interpret Rays and Lines differently will be\nnamed differently to prevent any ambiguity, such as {@link polygonIntersectLine} vs {@link polygonIntersectRay}.\n\nWhere relevant, a ray is parameterized according to _t_ ≥ 0 with movement of distance _t_ along its direction vector.\nIn this mapping, _t_ = 0 represents its initial point (x0, y0).\n"
+				"text": "The representation of a ray and the similar {@link ILine} type is actually the same, but Vectormath chooses\nto export both names for clarity of usage. Functions that may interpret Rays and Lines differently will be\nnamed differently to prevent any ambiguity, such as {@link polygonIntersectLine} vs {@link polygonIntersectRay}.\n\nWhere relevant, a ray is parameterized according to _t_ ≥ 0 with movement of distance _t_ along its direction vector.\nIn this mapping, _t_ = 0 represents its initial point (x0, y0).\n"
 			},
 			"children": [
 				{
@@ -588,10 +600,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "x-coordinate of the direction of the ray, relative to its initial point"
+					},
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 72,
+							"line": 80,
 							"character": 6
 						}
 					],
@@ -608,10 +623,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "y-coordinate of the direction of the ray, relative to its initial point"
+					},
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 73,
+							"line": 85,
 							"character": 6
 						}
 					],
@@ -628,7 +646,9 @@
 					"flags": {
 						"isExported": true
 					},
-					"comment": {},
+					"comment": {
+						"shortText": "x-coordinate of the ray's initial point"
+					},
 					"sources": [
 						{
 							"fileName": "types.ts",
@@ -649,10 +669,13 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "y-coordinate of the ray's initial point"
+					},
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 71,
+							"line": 75,
 							"character": 4
 						}
 					],
@@ -911,7 +934,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 200,
+					"line": 227,
 					"character": 20
 				}
 			],
@@ -938,7 +961,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 210,
+					"line": 237,
 					"character": 21
 				}
 			],

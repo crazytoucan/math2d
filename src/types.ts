@@ -65,11 +65,23 @@ export interface ISegment {
  */
 export interface IRay {
   /**
-   *
+   * x-coordinate of the ray's initial point
    */
   x0: number;
+
+  /**
+   * y-coordinate of the ray's initial point
+   */
   y0: number;
+
+  /**
+   * x-coordinate of the direction of the ray, relative to its initial point
+   */
   dirX: number;
+
+  /**
+   * y-coordinate of the direction of the ray, relative to its initial point
+   */
   dirY: number;
 }
 
@@ -86,9 +98,24 @@ export interface IRay {
  * and _t_ < 0 in the opposite direction.
  */
 export interface ILine {
+  /**
+   * x-coordinate of the line's initial point
+   */
   x0: number;
+
+  /**
+   * y-coordinate of the line's initial point
+   */
   y0: number;
+
+  /**
+   * x-coordinate of the direction of the line, relative to its initial point
+   */
   dirX: number;
+
+  /**
+   * y-coordinate of the direction of the line, relative to its initial point
+   */
   dirY: number;
 }
 
