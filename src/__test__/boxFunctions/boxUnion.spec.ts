@@ -1,4 +1,5 @@
-import { boxReset, boxUnion } from "../../functions/boxFunctions";
+import { boxReset } from "../../boxFunctions/boxReset";
+import { boxUnion } from "../../boxFunctions/boxUnion";
 import { expectBoxEqualsApprox } from "../helpers";
 
 describe("boxUnion", () => {

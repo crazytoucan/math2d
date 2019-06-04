@@ -1,4 +1,5 @@
-import { boxAlloc, boxReset } from "../../functions/boxFunctions";
+import { boxAlloc } from "../../boxFunctions/boxAlloc";
+import { boxReset } from "../../boxFunctions/boxReset";
 
 describe("boxReset", () => {
   it("should copy components", () => {

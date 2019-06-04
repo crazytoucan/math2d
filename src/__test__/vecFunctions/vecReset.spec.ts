@@ -1,4 +1,5 @@
-import { vecAlloc, vecReset } from "../../functions/vecFunctions";
+import { vecAlloc } from "../../vecFunctions/vecAlloc";
+import { vecReset } from "../../vecFunctions/vecReset";
 
 describe("vecReset", () => {
   it("should copy components", () => {

@@ -1,5 +1,8 @@
-import { boxReset, boxTransformByAff } from "../../functions/boxFunctions";
-import { mat2x3AffFromRotation, mat2x3AffIdentity, mat2x3Reset } from "../../functions/mat2x3Functions";
+import { boxReset } from "../../boxFunctions/boxReset";
+import { boxTransformByAff } from "../../boxFunctions/boxTransformByAff";
+import { mat2x3AffFromRotation } from "../../mat2x3Functions/mat2x3AffFromRotation";
+import { mat2x3AffIdentity } from "../../mat2x3Functions/mat2x3AffIdentity";
+import { mat2x3Reset } from "../../mat2x3Functions/mat2x3Reset";
 import { expectBoxEqualsApprox } from "../helpers";
 
 describe("boxTransformByAff", () => {

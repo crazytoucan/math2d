@@ -1,5 +1,6 @@
-import { boxEncapsulate, boxReset } from "../../functions/boxFunctions";
-import { vecReset } from "../../functions/vecFunctions";
+import { boxEncapsulate } from "../../boxFunctions/boxEncapsulate";
+import { boxReset } from "../../boxFunctions/boxReset";
+import { vecReset } from "../../vecFunctions/vecReset";
 import { expectBoxEqualsApprox } from "../helpers";
 
 describe("boxEncapsulate", () => {

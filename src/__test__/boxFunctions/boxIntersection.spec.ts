@@ -1,4 +1,5 @@
-import { boxIntersection, boxReset } from "../../functions/boxFunctions";
+import { boxIntersection } from "../../boxFunctions/boxIntersection";
+import { boxReset } from "../../boxFunctions/boxReset";
 import { expectBoxEqualsApprox } from "../helpers";
 
 describe("boxIntersection", () => {

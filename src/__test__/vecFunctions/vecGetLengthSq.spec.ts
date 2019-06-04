@@ -1,4 +1,5 @@
-import { vecGetLengthSq, vecReset } from "../../functions/vecFunctions";
+import { vecGetLengthSq } from "../../vecFunctions/vecGetLengthSq";
+import { vecReset } from "../../vecFunctions/vecReset";
 
 describe("vecGetLengthSq", () => {
   it("(0,0) => 0", () => {

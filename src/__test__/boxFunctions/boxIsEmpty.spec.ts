@@ -1,4 +1,5 @@
-import { boxIsEmpty, boxReset } from "../../functions/boxFunctions";
+import { boxIsEmpty } from "../../boxFunctions/boxIsEmpty";
+import { boxReset } from "../../boxFunctions/boxReset";
 
 describe("boxIsEmpty", () => {
   it("[-1 -1 +1 +1] => false", () => {

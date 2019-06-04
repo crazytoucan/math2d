@@ -1,4 +1,5 @@
-import { vecDot, vecReset } from "../../functions/vecFunctions";
+import { vecDot } from "../../vecFunctions/vecDot";
+import { vecReset } from "../../vecFunctions/vecReset";
 
 describe("vecDot", () => {
   it("(2,4) • (3,10) => 46", () => {

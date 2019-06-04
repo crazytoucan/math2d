@@ -1,4 +1,5 @@
-import { vecManhattanDistance, vecReset } from "../../functions/vecFunctions";
+import { vecManhattanDistance } from "../../vecFunctions/vecManhattanDistance";
+import { vecReset } from "../../vecFunctions/vecReset";
 
 describe("vecManhattanDistance", () => {
   it("(4,6), (4,6) => 0", () => {

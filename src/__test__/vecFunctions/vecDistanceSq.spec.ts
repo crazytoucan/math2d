@@ -1,4 +1,5 @@
-import { vecDistanceSq, vecReset } from "../../functions/vecFunctions";
+import { vecDistanceSq } from "../../vecFunctions/vecDistanceSq";
+import { vecReset } from "../../vecFunctions/vecReset";
 
 describe("vecDistanceSq", () => {
   it("(2,4), (2,4) => 0", () => {

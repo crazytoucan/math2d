@@ -1,4 +1,5 @@
-import { boxIntersectsBox, boxReset } from "../../functions/boxFunctions";
+import { boxIntersectsBox } from "../../boxFunctions/boxIntersectsBox";
+import { boxReset } from "../../boxFunctions/boxReset";
 
 describe("boxIntersectsBox", () => {
   it("[-1 -1 +1 +1] ⋂? [-1 -1 +1 +1] => true", () => {
