@@ -156,7 +156,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 251,
+							"line": 268,
 							"character": 8
 						}
 					],
@@ -179,7 +179,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 267,
+							"line": 284,
 							"character": 4
 						}
 					],
@@ -202,7 +202,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 273,
+							"line": 290,
 							"character": 4
 						}
 					],
@@ -225,7 +225,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 256,
+							"line": 273,
 							"character": 3
 						}
 					],
@@ -248,7 +248,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 261,
+							"line": 278,
 							"character": 3
 						}
 					],
@@ -274,7 +274,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 246,
+					"line": 263,
 					"character": 30
 				}
 			]
@@ -928,13 +928,13 @@
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "Data type to represent a polygon in the plane, as an interleaved sequence of vertex coordinates.\nUnlike the similar {@link IPolyline} type, a polygon's perimeter is always interpreted as a closed shape.",
-				"text": "Vectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
+				"shortText": "An alias for `number[]`. Data type to represent a polygon in the plane,\nas an interleaved sequence of vertex coordinates.",
+				"text": "The `IPolygon` type is just an alias for an array of number values. For example,\na polygon with vertices v0, v1, v2,... vn is represented in Vectormath as the array:\n\n```\n[v0x, v0y, v1x, v1y, v2x, v2y, ..., vnx, vny]\n```\n\nUnlike the similar {@link IPolyline} type, a polygon's perimeter is always interpreted as a closed shape.\n\nVectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
 			},
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 231,
+					"line": 240,
 					"character": 20
 				}
 			],
@@ -955,13 +955,13 @@
 				"isExported": true
 			},
 			"comment": {
-				"shortText": "Data type to represent a sequence of connected line segments in the plane,\nas an interleaved sequence of vertex coordinates.\nUnlike the similar {@link IPolygon} type, a polyline is not necessary closed.",
-				"text": "Vectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
+				"shortText": "An alias for `number[]`. Data type to represent a sequence of connected line segments in the plane,\nas an interleaved array of vertex coordinates.",
+				"text": "The `IPolyline` type is just an alias for an array of number values. For example,\na polyline connecting the points p0, p1, p2,... pn in space is represented in Vectormath as the array:\n\n```\n[p0x, p0y, p1x, p1y, p2x, p2y, ..., pnx, pny]\n```\n\nUnlike the similar {@link IPolygon} type, a polyline is not necessary closed.\n\nVectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
 			},
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 241,
+					"line": 258,
 					"character": 21
 				}
 			],
