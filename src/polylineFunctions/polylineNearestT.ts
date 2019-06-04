@@ -1,6 +1,6 @@
 import { segmentAlloc } from "../segmentFunctions/segmentAlloc";
+import { segmentGetPointAt } from "../segmentFunctions/segmentGetPointAt";
 import { segmentNearestT } from "../segmentFunctions/segmentNearestT";
-import { segmentPointAt } from "../segmentFunctions/segmentPointAt";
 import { IPolyline, IVec } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
 import { vecDistanceSq } from "../vecFunctions/vecDistanceSq";
@@ -22,7 +22,7 @@ export function polylineNearestT(poly: IPolyline, point: IVec) {
     const segmentT = segmentNearestT(segment, point);
     const segmentLength = polylineGetSegmentLength(poly, i);
 
-    const closestPointOnSegment = segmentPointAt(segment, segmentT, TMP1);
+    const closestPointOnSegment = segmentGetPointAt(segment, segmentT, TMP1);
     const distanceSq = vecDistanceSq(point, closestPointOnSegment);
     if (distanceSq < winningDistanceSq) {
       winningDistanceSq = distanceSq;

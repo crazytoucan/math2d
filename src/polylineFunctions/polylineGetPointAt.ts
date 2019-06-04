@@ -8,7 +8,7 @@ import { polylineGetSegmentLength } from "./polylineGetSegmentLength";
 const TMP0 = vecAlloc();
 const TMP1 = vecAlloc();
 
-export function polylinePointAt(poly: IPolyline, d: number, out = vecAlloc()) {
+export function polylineGetPointAt(poly: IPolyline, d: number, out = vecAlloc()) {
   if (d < 0) {
     return vecReset(NaN, NaN, out);
   }

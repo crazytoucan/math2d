@@ -9,7 +9,7 @@ import { mat2x3Reset } from "../mat2x3Functions/mat2x3Reset";
 import { ILine } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
 import { lineAlloc } from "./lineAlloc";
-import { linePointAt } from "./linePointAt";
+import { lineGetPointAt } from "./lineGetPointAt";
 
 const TMP0 = mat2x3Alloc();
 const TMP1 = lineAlloc();
@@ -26,7 +26,7 @@ export function lineIntersectLine(a: ILine, b: ILine, out = intersectionAlloc())
     return _intersectionDNE(out);
   } else {
     const t0 = localB.x0 - (localB.dirX / localB.dirY) * localB.y0;
-    const intersectionPoint = linePointAt(a, t0, TMP2);
+    const intersectionPoint = lineGetPointAt(a, t0, TMP2);
     const t1 = _dot(b, intersectionPoint);
     return intersectionReset(true, intersectionPoint.x, intersectionPoint.y, t0, t1, out);
   }
