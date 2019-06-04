@@ -55,11 +55,13 @@
   {{ sig.comment.text }}
 {% endif %}
 
-{% for sig_example in sig.comment.tags | where: "tag", "example" %}
-  <h4>Example</h4>
-  <div class="vectormath-example">
-    {% highlight ts %}
-      {{- sig_example.text -}}
-    {% endhighlight %}
-  </div>
+{% for sig_example in sig.comment.tags %}
+  {% if sig_example.tag == "example" %}
+    <h4>Example</h4>
+    <div class="vectormath-example">
+      {% highlight ts %}
+        {{- sig_example.text -}}
+      {% endhighlight %}
+    </div>
+  {% endif %}
 {% endfor %}
