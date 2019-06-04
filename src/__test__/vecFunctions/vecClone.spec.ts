@@ -1,4 +1,6 @@
-import { vecAlloc, vecClone, vecReset } from "../../functions/vecFunctions";
+import { vecAlloc } from "../../vecFunctions/vecAlloc";
+import { vecClone } from "../../vecFunctions/vecClone";
+import { vecReset } from "../../vecFunctions/vecReset";
 import { expectVecEqualsApprox } from "../helpers";
 
 describe("vecClone", () => {

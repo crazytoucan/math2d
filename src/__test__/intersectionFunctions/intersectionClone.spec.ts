@@ -1,4 +1,6 @@
-import { intersectionAlloc, intersectionClone, intersectionReset } from "../../functions/intersectionFunctions";
+import { intersectionAlloc } from "../../intersectionFunctions/intersectionAlloc";
+import { intersectionClone } from "../../intersectionFunctions/intersectionClone";
+import { intersectionReset } from "../../intersectionFunctions/intersectionReset";
 import { expectIntersectionEqualsApprox } from "../helpers";
 
 describe("intersectionClone", () => {

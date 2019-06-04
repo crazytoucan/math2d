@@ -1,5 +1,6 @@
-import { boxContainsPoint, boxReset } from "../../functions/boxFunctions";
-import { vecReset } from "../../functions/vecFunctions";
+import { boxContainsPoint } from "../../boxFunctions/boxContainsPoint";
+import { boxReset } from "../../boxFunctions/boxReset";
+import { vecReset } from "../../vecFunctions/vecReset";
 
 describe("boxContainsPoint", () => {
   it("[-1 -1 +1 +1] ∋ (0,0) => true", () => {

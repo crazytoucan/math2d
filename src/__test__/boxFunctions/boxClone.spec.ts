@@ -1,4 +1,6 @@
-import { boxAlloc, boxClone, boxReset } from "../../functions/boxFunctions";
+import { boxAlloc } from "../../boxFunctions/boxAlloc";
+import { boxClone } from "../../boxFunctions/boxClone";
+import { boxReset } from "../../boxFunctions/boxReset";
 import { expectBoxEqualsApprox } from "../helpers";
 
 describe("boxClone", () => {

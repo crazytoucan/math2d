@@ -1,4 +1,5 @@
-import { vecGetManhattanLength, vecReset } from "../../functions/vecFunctions";
+import { vecGetManhattanLength } from "../../vecFunctions/vecGetManhattanLength";
+import { vecReset } from "../../vecFunctions/vecReset";
 
 describe("vecGetManhattanLength", () => {
   it("(0,0) => 0", () => {

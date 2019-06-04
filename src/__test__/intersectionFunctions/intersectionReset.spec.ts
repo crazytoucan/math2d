@@ -1,4 +1,5 @@
-import { intersectionAlloc, intersectionReset } from "../../functions/intersectionFunctions";
+import { intersectionAlloc } from "../../intersectionFunctions/intersectionAlloc";
+import { intersectionReset } from "../../intersectionFunctions/intersectionReset";
 
 describe("intersectionReset", () => {
   it("should copy components", () => {

@@ -1,4 +1,5 @@
-import { boxContainsBox, boxReset } from "../../functions/boxFunctions";
+import { boxContainsBox } from "../../boxFunctions/boxContainsBox";
+import { boxReset } from "../../boxFunctions/boxReset";
 
 describe("boxContainsBox", () => {
   it("[-1 -1 +1 +1] ⊇ [-1 -1 +1 +1] => true", () => {

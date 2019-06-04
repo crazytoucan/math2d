@@ -1,4 +1,4 @@
-import { boxAlloc } from "../../functions/boxFunctions";
+import { boxAlloc } from "../../boxFunctions/boxAlloc";
 import { IBox } from "../../types";
 
 describe("boxAlloc", () => {

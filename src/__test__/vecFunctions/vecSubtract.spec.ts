@@ -1,4 +1,5 @@
-import { vecReset, vecSubtract } from "../../functions/vecFunctions";
+import { vecReset } from "../../vecFunctions/vecReset";
+import { vecSubtract } from "../../vecFunctions/vecSubtract";
 import { expectVecEqualsApprox } from "../helpers";
 
 describe("vecSubtract", () => {

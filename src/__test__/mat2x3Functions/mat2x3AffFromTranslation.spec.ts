@@ -1,4 +1,5 @@
-import { mat2x3AffFromTranslation, mat2x3Reset } from "../../functions/mat2x3Functions";
+import { mat2x3AffFromTranslation } from "../../mat2x3Functions/mat2x3AffFromTranslation";
+import { mat2x3Reset } from "../../mat2x3Functions/mat2x3Reset";
 import { expectMat2x3EqualsApprox } from "../helpers";
 
 describe("mat2x3AffFromTranslation", () => {

@@ -1,4 +1,4 @@
-import { intersectionAlloc } from "../../functions/intersectionFunctions";
+import { intersectionAlloc } from "../../intersectionFunctions/intersectionAlloc";
 import { expectIntersectionDNE } from "../helpers";
 
 describe("intersectionAlloc", () => {
