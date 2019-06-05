@@ -104,6 +104,7 @@ export { IBox, IIntersection, ILine, IMat2x3, IPolygon, IPolyline, IRay, ISegmen
 export { vecAdd } from "./vecFunctions/vecAdd";
 export { vecAlloc } from "./vecFunctions/vecAlloc";
 export { vecClone } from "./vecFunctions/vecClone";
+export { vecCross } from "./vecFunctions/vecCross";
 export { vecDistance } from "./vecFunctions/vecDistance";
 export { vecDistanceSq } from "./vecFunctions/vecDistanceSq";
 export { vecDot } from "./vecFunctions/vecDot";

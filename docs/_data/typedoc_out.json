@@ -2106,7 +2106,7 @@
 			]
 		},
 		{
-			"id": 561,
+			"id": 565,
 			"name": "intersectionClone",
 			"kind": 64,
 			"kindString": "Function",
@@ -2115,7 +2115,7 @@
 			},
 			"signatures": [
 				{
-					"id": 562,
+					"id": 566,
 					"name": "intersectionClone",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -2125,7 +2125,7 @@
 					},
 					"parameters": [
 						{
-							"id": 563,
+							"id": 567,
 							"name": "intersection",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2138,7 +2138,7 @@
 							}
 						},
 						{
-							"id": 564,
+							"id": 568,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7787,7 +7787,7 @@
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "ray to transform"
+								"text": "the ray to transform"
 							},
 							"type": {
 								"type": "reference",
@@ -7802,7 +7802,7 @@
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "affine transform to apply"
+								"text": "the affine transform to apply"
 							},
 							"type": {
 								"type": "reference",
@@ -9155,6 +9155,77 @@
 			]
 		},
 		{
+			"id": 517,
+			"name": "vecCross",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 518,
+					"name": "vecCross",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the two-dimensional cross product of the two vectors.",
+						"text": "The two-dimensional cross product is defined to be the scalar value:\n\n```\nu × v = u.x * v.y - u.y * v.x\n```\n\nNote that the cross product is antisymmetric, i.e. `u × v = -v × u`.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecDot}\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 519,
+							"name": "u",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "the first vector"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						},
+						{
+							"id": 520,
+							"name": "v",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "the vector to cross with the first"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "vecFunctions/vecCross.ts",
+					"line": 18,
+					"character": 24
+				}
+			]
+		},
+		{
 			"id": 442,
 			"name": "vecDistance",
 			"kind": 64,
@@ -9279,7 +9350,7 @@
 			]
 		},
 		{
-			"id": 517,
+			"id": 521,
 			"name": "vecDot",
 			"kind": 64,
 			"kindString": "Function",
@@ -9288,22 +9359,30 @@
 			},
 			"signatures": [
 				{
-					"id": 518,
+					"id": 522,
 					"name": "vecDot",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Computes the dot product of the two vectors, i.e. `a.x * b.x + a.y * b.y`."
+						"shortText": "Computes the dot product of the two vectors, i.e. `a.x * b.x + a.y * b.y`.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecCross}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
-							"id": 519,
-							"name": "a",
+							"id": 523,
+							"name": "u",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the first vector"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -9311,13 +9390,13 @@
 							}
 						},
 						{
-							"id": 520,
-							"name": "b",
+							"id": 524,
+							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "\n"
+								"text": "the vector to dot with the first"
 							},
 							"type": {
 								"type": "reference",
@@ -9335,13 +9414,13 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecDot.ts",
-					"line": 9,
+					"line": 10,
 					"character": 22
 				}
 			]
 		},
 		{
-			"id": 521,
+			"id": 525,
 			"name": "vecGetLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -9350,7 +9429,7 @@
 			},
 			"signatures": [
 				{
-					"id": 522,
+					"id": 526,
 					"name": "vecGetLength",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9360,7 +9439,7 @@
 					},
 					"parameters": [
 						{
-							"id": 523,
+							"id": 527,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9390,7 +9469,7 @@
 			]
 		},
 		{
-			"id": 524,
+			"id": 528,
 			"name": "vecGetLengthSq",
 			"kind": 64,
 			"kindString": "Function",
@@ -9399,7 +9478,7 @@
 			},
 			"signatures": [
 				{
-					"id": 525,
+					"id": 529,
 					"name": "vecGetLengthSq",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9409,7 +9488,7 @@
 					},
 					"parameters": [
 						{
-							"id": 526,
+							"id": 530,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9439,7 +9518,7 @@
 			]
 		},
 		{
-			"id": 527,
+			"id": 531,
 			"name": "vecGetManhattanLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -9448,7 +9527,7 @@
 			},
 			"signatures": [
 				{
-					"id": 528,
+					"id": 532,
 					"name": "vecGetManhattanLength",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9458,7 +9537,7 @@
 					},
 					"parameters": [
 						{
-							"id": 529,
+							"id": 533,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9488,7 +9567,7 @@
 			]
 		},
 		{
-			"id": 530,
+			"id": 534,
 			"name": "vecLerp",
 			"kind": 64,
 			"kindString": "Function",
@@ -9497,7 +9576,7 @@
 			},
 			"signatures": [
 				{
-					"id": 531,
+					"id": 535,
 					"name": "vecLerp",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9507,7 +9586,7 @@
 					},
 					"parameters": [
 						{
-							"id": 532,
+							"id": 536,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9520,7 +9599,7 @@
 							}
 						},
 						{
-							"id": 533,
+							"id": 537,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9533,7 +9612,7 @@
 							}
 						},
 						{
-							"id": 534,
+							"id": 538,
 							"name": "r",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9545,7 +9624,7 @@
 							}
 						},
 						{
-							"id": 535,
+							"id": 539,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9577,7 +9656,7 @@
 			]
 		},
 		{
-			"id": 536,
+			"id": 540,
 			"name": "vecManhattanDistance",
 			"kind": 64,
 			"kindString": "Function",
@@ -9586,7 +9665,7 @@
 			},
 			"signatures": [
 				{
-					"id": 537,
+					"id": 541,
 					"name": "vecManhattanDistance",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9596,7 +9675,7 @@
 					},
 					"parameters": [
 						{
-							"id": 538,
+							"id": 542,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9609,7 +9688,7 @@
 							}
 						},
 						{
-							"id": 539,
+							"id": 543,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9639,7 +9718,7 @@
 			]
 		},
 		{
-			"id": 540,
+			"id": 544,
 			"name": "vecNormalize",
 			"kind": 64,
 			"kindString": "Function",
@@ -9648,7 +9727,7 @@
 			},
 			"signatures": [
 				{
-					"id": 541,
+					"id": 545,
 					"name": "vecNormalize",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9658,7 +9737,7 @@
 					},
 					"parameters": [
 						{
-							"id": 542,
+							"id": 546,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9671,7 +9750,7 @@
 							}
 						},
 						{
-							"id": 543,
+							"id": 547,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9703,7 +9782,7 @@
 			]
 		},
 		{
-			"id": 544,
+			"id": 548,
 			"name": "vecOrigin",
 			"kind": 64,
 			"kindString": "Function",
@@ -9712,7 +9791,7 @@
 			},
 			"signatures": [
 				{
-					"id": 545,
+					"id": 549,
 					"name": "vecOrigin",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9722,7 +9801,7 @@
 					},
 					"parameters": [
 						{
-							"id": 546,
+							"id": 550,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9754,7 +9833,7 @@
 			]
 		},
 		{
-			"id": 547,
+			"id": 551,
 			"name": "vecPerp",
 			"kind": 64,
 			"kindString": "Function",
@@ -9763,7 +9842,7 @@
 			},
 			"signatures": [
 				{
-					"id": 548,
+					"id": 552,
 					"name": "vecPerp",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9773,7 +9852,7 @@
 					},
 					"parameters": [
 						{
-							"id": 549,
+							"id": 553,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9786,7 +9865,7 @@
 							}
 						},
 						{
-							"id": 550,
+							"id": 554,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9909,7 +9988,7 @@
 			]
 		},
 		{
-			"id": 551,
+			"id": 555,
 			"name": "vecScale",
 			"kind": 64,
 			"kindString": "Function",
@@ -9918,7 +9997,7 @@
 			},
 			"signatures": [
 				{
-					"id": 552,
+					"id": 556,
 					"name": "vecScale",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9928,7 +10007,7 @@
 					},
 					"parameters": [
 						{
-							"id": 553,
+							"id": 557,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9941,7 +10020,7 @@
 							}
 						},
 						{
-							"id": 554,
+							"id": 558,
 							"name": "scalar",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9953,7 +10032,7 @@
 							}
 						},
 						{
-							"id": 555,
+							"id": 559,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9985,7 +10064,7 @@
 			]
 		},
 		{
-			"id": 556,
+			"id": 560,
 			"name": "vecSubtract",
 			"kind": 64,
 			"kindString": "Function",
@@ -9994,7 +10073,7 @@
 			},
 			"signatures": [
 				{
-					"id": 557,
+					"id": 561,
 					"name": "vecSubtract",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -10004,7 +10083,7 @@
 					},
 					"parameters": [
 						{
-							"id": 558,
+							"id": 562,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10017,7 +10096,7 @@
 							}
 						},
 						{
-							"id": 559,
+							"id": 563,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10030,7 +10109,7 @@
 							}
 						},
 						{
-							"id": 560,
+							"id": 564,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10189,7 +10268,7 @@
 				108,
 				113,
 				148,
-				561,
+				565,
 				150,
 				118,
 				127,
@@ -10283,20 +10362,21 @@
 				508,
 				87,
 				513,
+				517,
 				442,
 				362,
-				517,
 				521,
-				524,
-				527,
-				530,
-				536,
+				525,
+				528,
+				531,
+				534,
 				540,
 				544,
-				547,
-				89,
+				548,
 				551,
-				556,
+				89,
+				555,
+				560,
 				98
 			]
 		}

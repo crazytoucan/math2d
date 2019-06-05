@@ -15,8 +15,8 @@ import { rayAlloc } from "./rayAlloc";
  *
  * Synonymous to {@link lineTransformByAff}.
  *
- * @param ray ray to transform
- * @param mat affine transform to apply
+ * @param ray the ray to transform
+ * @param mat the affine transform to apply
  * @param out
  * @see {@link vecTransformByAff}
  * @see {@link IMat2x3}

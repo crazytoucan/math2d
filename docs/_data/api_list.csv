@@ -118,6 +118,7 @@ segmentReverse,segment
 vecAdd,vec
 vecAlloc,vec
 vecClone,vec
+vecCross,vec
 vecDistance,vec
 vecDistanceSq,vec
 vecDot,vec
