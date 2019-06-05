@@ -3,6 +3,12 @@ import { IMat2x3 } from "../types";
 import { mat2x3Alloc } from "./mat2x3Alloc";
 import { mat2x3Reset } from "./mat2x3Reset";
 
+/**
+ * Computes the inverse of the given 2x3 affine matrix
+ *
+ * @param mat the matrix to invert
+ * @param out
+ */
 export function mat2x3AffInvert(mat: IMat2x3, out = mat2x3Alloc()) {
   const det = mat.a * mat.d - mat.b * mat.c;
   if (det > -EPSILON && det < EPSILON) {

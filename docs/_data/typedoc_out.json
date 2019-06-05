@@ -2557,6 +2557,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Gets a point along the line, parameterized according to distance along its\ndirection vector.",
+						"text": "Retrieves a point on the line's geometry according to moving distance _t_\nalong the direction vector from its initial point.\n\nSynonymous to {@link rayGetPointAt}.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link rayGetPointAt}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 145,
@@ -2576,6 +2586,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2587,6 +2598,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -2605,7 +2617,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineGetPointAt.ts",
-					"line": 5,
+					"line": 19,
 					"character": 30
 				}
 			]
@@ -3245,6 +3257,10 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the determinant of the affine matrix",
+						"text": "The determinant in 2D space is given by `a * d - b * c`.\n"
+					},
 					"parameters": [
 						{
 							"id": 234,
@@ -3252,6 +3268,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "matrix to take determinant of\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3268,7 +3287,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3AffDeterminant.ts",
-					"line": 3,
+					"line": 10,
 					"character": 36
 				}
 			]
@@ -3288,6 +3307,24 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the affine transform corresponding to a given rotation, in radians",
+						"text": "Calculates the matrix that would yield a rotation of `theta` radians around the origin.\nThe rotation is from the `x+` to `y+` direction, which is _counter-clockwise_ in the\nstandard Cartesian coordinate system or _clockwise_ in most standard graphics\ncoordinate systems, as in Canvas and the DOM.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link mat2x3AffFromTranslation}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link mat2x3AffRotate}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link mat2x3AffReset}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 237,
@@ -3295,6 +3332,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "angle in radians to create rotation for"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -3306,6 +3346,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3324,7 +3365,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3AffFromRotation.ts",
-					"line": 4,
+					"line": 18,
 					"character": 37
 				}
 			]
@@ -3344,6 +3385,23 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the affine transform corresponding to a given (tx, ty) translation",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link mat2x3AffFromRotation}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link mat2x3AffTranslate}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link mat2x3AffReset}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 241,
@@ -3351,6 +3409,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the x translation component"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -3362,6 +3423,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the y translation component"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -3373,6 +3437,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3391,7 +3456,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3AffFromTranslation.ts",
-					"line": 4,
+					"line": 13,
 					"character": 40
 				}
 			]
@@ -3411,6 +3476,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Returns the identity affine matrix, `[1 0 0 1 0 0]`"
+					},
 					"parameters": [
 						{
 							"id": 246,
@@ -3418,6 +3486,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3436,7 +3507,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3AffIdentity.ts",
-					"line": 4,
+					"line": 9,
 					"character": 33
 				}
 			]
@@ -3456,6 +3527,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the inverse of the given 2x3 affine matrix"
+					},
 					"parameters": [
 						{
 							"id": 249,
@@ -3463,6 +3537,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the matrix to invert"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3475,6 +3552,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3493,7 +3573,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3AffInvert.ts",
-					"line": 6,
+					"line": 12,
 					"character": 31
 				}
 			]
@@ -3513,6 +3593,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Returns whether the matrix is an orthogonal matrix.",
+						"text": "An orthogonal matrix is defined as one whose rows and columns are orthogonal unit vectors.\n(For a 2x3 affine matrix, this is constrained to its first 2x2 submatrix, i.e. excluding the translation.)\n\nThis is a useful property for a matrix because it means the transform preserves lengths and angles,\nso in particular it preserves normals.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link mat2x3AffIsTranslationOnly}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 253,
@@ -3520,6 +3610,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the matrix to check for orthogonality"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3536,7 +3629,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3AffIsOrthogonal.ts",
-					"line": 4,
+					"line": 16,
 					"character": 37
 				}
 			]
@@ -3556,6 +3649,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Returns whether the matrix corresponds to only a translation.",
+						"text": "Affine translation matrices have the form\n\n```\n⎡1 0 tx⎤\n⎣0 1 ty⎦\n```\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link mat2x3AffIsOrthogonal}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 256,
@@ -3563,6 +3666,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the matrix to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3579,7 +3685,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3AffIsTranslationOnly.ts",
-					"line": 3,
+					"line": 16,
 					"character": 42
 				}
 			]
@@ -3599,6 +3705,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the result of affine matrix multiplication _m1_ × _m2_.",
+						"text": "The resulting matrix is equivalent to a transform that first applies _m2_ and then applies\n_m1_; that is, `(m1×m2)v = m1(m2×v)`.\n\nAffine matrix multiplication is defined by\n\n```\n⎡m1.a m1.c m1.e⎤ ⎡m2.a m2.c m2.e⎤   ⎡r.a r.c r.e⎤\n⎢m1.b m1.d m1.f⎥ ⎢m2.b m2.d m2.f⎥ = ⎢r.b r.d r.f⎥\n⎣   0    0    1⎦ ⎣   0    0    1⎦   ⎣  0   0   1⎦\n```\n\nwhere:\n - `r.a = m1.a * m2.a + m1.c * m2.b`\n - `r.b = m1.b * m2.a + m1.d * m2.b`\n - `r.c = m1.a * m2.c + m1.c * m2.d`\n - `r.d = m1.b * m2.c + m1.d * m2.d`\n - `r.e = m1.a * m2.e + m1.c * m2.f + m1.e`\n - `r.f = m1.b * m2.e + m1.c * m2.f + m1.f`\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IMatrix}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecTransformByAff}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 259,
@@ -3606,6 +3726,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the first matrix to multiply"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3618,6 +3741,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the second matrix to multiply"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3630,6 +3756,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3648,7 +3775,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3AffMulMat2x3.ts",
-					"line": 5,
+					"line": 33,
 					"character": 34
 				}
 			]
@@ -3668,6 +3795,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Applies a rotation in radians to the given matrix, returning the result.",
+						"text": "This is equivalent to _left_-multiplying the matrix by a rotation transform; that is,\nthe result of this function is equivalent to a transform that first applies the matrix _mat_\nand then rotates according to the angle _theta_.\n\nThe rotation is from the `x+` to `y+` direction, which is _counter-clockwise_ in the\nstandard Cartesian coordinate system or _clockwise_ in most standard graphics\ncoordinate systems, as in Canvas and the DOM.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link mat2x3AffFromRotation}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link mat2x3AffMulMat2x3Aff}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 264,
@@ -3675,6 +3816,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the matrix to transform"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3687,6 +3831,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "rotation angle in radians to apply on top of the given matrix"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -3698,6 +3845,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3716,7 +3864,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3AffRotate.ts",
-					"line": 5,
+					"line": 22,
 					"character": 31
 				}
 			]
@@ -3736,6 +3884,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Applies a scaling transform on top of the given affine matrix, returning the result.",
+						"text": "Multiplies all components of the matrix by a given scalar value.\n\nThis is equivalent to _left_-multiplying the matrix by a scaling transform; that is,\nthe result of this function is equivalent to a transform that first applies the matrix _mat_\nand then scales in both the x- and y-directions according to _scale_.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link mat2x3AffMulMat2x3Aff}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 269,
@@ -3743,6 +3901,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the matrix to transform"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3751,7 +3912,7 @@
 						},
 						{
 							"id": 270,
-							"name": "scalar",
+							"name": "scale",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
@@ -3766,6 +3927,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3784,7 +3946,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3AffScale.ts",
-					"line": 5,
+					"line": 19,
 					"character": 30
 				}
 			]
@@ -3804,6 +3966,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Applies a translation on top of the given matrix, returning the result.",
+						"text": "This is equivalent to _left_-multiplying the matrix by a translation transform; that is,\nthe result of this function is equivalent to a transform that first applies the matrix _mat_\nand then translates according to (+tx, +ty).\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link mat2x3AffFromTranslation}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link mat2x3AffMulMat2x3Aff}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 274,
@@ -3811,6 +3987,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the matrix to transform"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3823,6 +4002,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "x-component of the translation to apply"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -3834,6 +4016,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "y-component of the translation to apply"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -3845,6 +4030,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3863,7 +4049,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3AffTranslate.ts",
-					"line": 5,
+					"line": 19,
 					"character": 34
 				}
 			]
@@ -3923,6 +4109,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Copies the values from the given matrix into a new matrix."
+					},
 					"parameters": [
 						{
 							"id": 280,
@@ -3930,6 +4119,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the matrix to copy"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3942,6 +4134,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3960,7 +4155,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3Clone.ts",
-					"line": 5,
+					"line": 11,
 					"character": 27
 				}
 			]
@@ -3980,6 +4175,24 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Construct a new matrix given component values.",
+						"text": "The resulting matrix will have the shape\n\n```\n⎡a c e⎤\n⎣b d f⎦\n```\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IMat2x3}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link mat2x3Alloc}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link mat2x3Clone}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 162,
@@ -3987,6 +4200,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "col 1, row 1 component, usually called `m11` in a 4x4 graphics matrix"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -3998,6 +4214,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "col 1, row 2 component, usually called `m12` in a 4x4 graphics matrix"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -4009,6 +4228,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "col 2, row 1 component, usually called `m21` in a 4x4 graphics matrix"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -4020,6 +4242,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "col 2, row 2 component, usually called `m22` in a 4x4 graphics matrix"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -4031,6 +4256,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "col 3, row 1 component, usually called `tx` or `m41` in a 4x4 graphics matrix"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -4042,6 +4270,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "col 3, row 2 component, usually called `ty` or `m42` in a 4x4 graphics matrix"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -4053,6 +4284,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -4071,7 +4303,7 @@
 			"sources": [
 				{
 					"fileName": "mat2x3Functions/mat2x3Reset.ts",
-					"line": 3,
+					"line": 24,
 					"character": 27
 				}
 			]
@@ -5532,7 +5764,7 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polyline crosses a given line.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one traveled from the polyline's start to its end\nalong its segment geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segment geometry.\n\nAlmost equivalent to {@link lineIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -5600,7 +5832,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineIntersectLineIterator.ts",
-					"line": 25,
+					"line": 28,
 					"character": 45
 				}
 			]
@@ -5622,7 +5854,7 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polyline crosses a given ray.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one traveled from the polyline's start to its end\nalong its segment geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segment geometry.\n\nAlmost equivalent to {@link rayIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -5690,7 +5922,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineIntersectRayIterator.ts",
-					"line": 25,
+					"line": 28,
 					"character": 44
 				}
 			]
@@ -5712,7 +5944,7 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polyline crosses a given line segment.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one traveled from the polyline's start to its end\nalong its segment geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segment geometry.\n\nAlmost equivalent to {@link segmentIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -5724,7 +5956,7 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link lineIntersectPolylineIterator}"
+								"text": "{@link segmentIntersectPolylineIterator}"
 							},
 							{
 								"tag": "see",
@@ -5780,7 +6012,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineIntersectSegmentIterator.ts",
-					"line": 25,
+					"line": 28,
 					"character": 48
 				}
 			]
@@ -5928,12 +6160,20 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Computes the closest location at which the polyline comes to a given reference point.",
-						"text": "The returned value _t_ is defined according to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of T\nsignify linear interpolation between the two adjacent vertices along the polyline's geometry.\n",
+						"shortText": "Computes the closest location the polyline comes to a given reference point.",
+						"text": "The returned value _t_ is defined according to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of T\nsignify linear interpolation between the two adjacent vertices along the polyline's geometry.\n\nIf you only care about the actual closest _point_ and not its parameterization, prefer\n{@link polylineNearestPoint}.\n",
 						"tags": [
 							{
 								"tag": "see",
-								"text": "{@link IPolyline}\n"
+								"text": "{@link IPolyline}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polylineNearestPoint}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentNearestT}\n"
 							}
 						]
 					},
@@ -5944,7 +6184,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the polyline to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5957,7 +6199,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the point to measure distance to"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -5974,7 +6218,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineNearestT.ts",
-					"line": 25,
+					"line": 30,
 					"character": 32
 				}
 			]
@@ -6077,7 +6321,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "polyline to transform"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -6090,7 +6336,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "affine transform to apply"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -6148,7 +6396,7 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Trims a polyline to a range of its _t_ parameter.",
-						"text": "This function trims geometry from either or both ends of the polyline, kind of like a \"substring\"\noperation. Note that fractional values are allowed on the bounding _t_ parameters, which may slice off\nonly parts of segments to form new vertices.\n\nA polyline's parameterization is defined according to _t_, where\nvalues of _t_ are between 0 and the polyline's vertex count, and smooth values of _t_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nBoth the `minT` and `maxT` parameters will be clamped to their allowed domains [0, _N_-1] for a\npolyline of _N_ vertices.\n"
+						"text": "This function trims geometry from either or both ends of the polyline, kind of like a \"substring\"\noperation. Note that fractional values are allowed on the bounding _t_ parameters, which may slice off\nonly parts of segments to form new vertices.\n\nA polyline's parameterization is defined according to _t_, where\nvalues of _t_ are between 0 and the polyline's vertex count, and smooth values of _t_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nBoth the `tStart` and `tEnd` parameters will be clamped to their allowed domains [0, _N_-1] for a\npolyline of _N_ vertices.\n"
 					},
 					"parameters": [
 						{
@@ -6291,6 +6539,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Copies the values from the given ray into a new ray."
+					},
 					"parameters": [
 						{
 							"id": 436,
@@ -6298,6 +6549,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "source ray from which values should be copied"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -6310,6 +6564,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -6328,7 +6585,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayClone.ts",
-					"line": 5,
+					"line": 11,
 					"character": 24
 				}
 			]
@@ -6348,6 +6605,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Determines if the point is on the ray",
+						"text": "This function tests whether the point lies along the ray's geometry,\nusing allowed error _ε_ = 1e-8. The point must lie on the positive side\n of the ray (_t_ > 0).\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link lineContainsPoint}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 440,
@@ -6355,6 +6622,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the ray to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -6367,6 +6637,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "point to check whether it's on the ray"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -6383,7 +6656,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayContainsPoint.ts",
-					"line": 6,
+					"line": 17,
 					"character": 32
 				}
 			]
@@ -6403,6 +6676,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Determines the closest distance the ray comes to a given point",
+						"text": "If the point lies on the positive side of the ray (_t_ ≥ 0), this function\nmeasures the perpendicular distance from the point to its projection onto\nthe ray's geometry. If the point lies on the negative side of the ray (_t_ < 0),\nthis function measures the distance from the given point to the ray's initial point.\n\nTo always measure the perpendicular distance for all values of _t_, use\n{@link lineGetClosestDistanceToPoint}.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link lineGetClosestDistanceToPoint}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link rayGetClosestPoint}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 448,
@@ -6410,6 +6697,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the ray to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -6422,6 +6712,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the reference point to check for closest distance"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -6438,7 +6731,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayGetClosestDistanceToPoint.ts",
-					"line": 11,
+					"line": 27,
 					"character": 44
 				}
 			]
@@ -6458,6 +6751,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Determines the closest point that the ray comes to a given reference point",
+						"text": "If the point lies on the positive side of the ray (_t_ ≥ 0), this function\nreturns the projection of the point onto the ray's geometry.\nIf the point lies on the negative side of the ray (_t_ < 0),\nthis function returns the ray's initial point.\n\nTo always return the projected point for all values of _t_, use\n{@link lineGetClosestPoint}.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link lineGetClosestPoint}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link rayGetClosestDistanceToPoint}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 457,
@@ -6465,6 +6772,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the ray to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -6477,6 +6787,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the reference point to project onto the ray"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -6507,7 +6820,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayGetClosestPoint.ts",
-					"line": 6,
+					"line": 22,
 					"character": 34
 				}
 			]
@@ -6527,6 +6840,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Gets a point along the ray, parameterized according to distance along its\ndirection vector.",
+						"text": "Retrieves a point on the ray's geometry according to moving distance _t_\nalong the direction vector from its initial point. This function does allow\nnegative values of _t_, returning points in the direction \"behind\" the ray.\n\nSynonymous to {@link lineGetPointAt}.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IRay}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineGetPointAt}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 452,
@@ -6534,6 +6861,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the ray to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -6546,6 +6876,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "distance along the ray at which to compute point"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -6557,6 +6890,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -6575,7 +6909,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayGetPointAt.ts",
-					"line": 5,
+					"line": 21,
 					"character": 29
 				}
 			]
@@ -6595,6 +6929,24 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the intersection point between the given ray and line, if it exists.",
+						"text": "Finds the location at which the ray and line meet. If the ray starts on one side of the line and points away from it,\nor they are parallel, this function returns no intersection.\nIf the ray and line are the same (i.e. they are parallel and coincide with one another),\nthis function returns the ray's initial point.\n\nThe returned value is an {@link IIntersection} object which will have have the\n`exists` flag set to `true` iff an intersection was found. It additionally\nhas the following fields, if the intersection exists:\n\n- `x` – the x-coordinate of the point of intersection\n- `y` – the y-coordinate of the point of intersection\n- `t0` – where along the ray's geometry the intersection was found,\n     according to the ray's parameterization\n- `t1` – where along the line's geometry the intersection was found,\n     according to the line's parameterization\n\nAlmost equivalent to {@link lineIntersectRay}, except the returned intersection reverses its _t0_ and _t1_.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link rayIntersectPolylineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link rayIntersectRay}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link rayIntersectSegment}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 462,
@@ -6602,6 +6954,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the ray to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -6614,6 +6969,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the line to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -6626,6 +6984,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IIntersection",
@@ -6644,7 +7003,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayIntersectLine.ts",
-					"line": 6,
+					"line": 34,
 					"character": 32
 				}
 			]
@@ -6664,6 +7023,32 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes all locations at which a ray crosses a given polyline.",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the ray's geometry\naccording to {@link IRay} parameterization:\n_t0_ ≥ 0, corresponds to travel of distance _t0_ along the ray's direction vector. (See {@link rayGetPointAt}.)\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would hit the intersections if one were to start from the ray's initial point and\nshoot along its direction vector.\n\nAlmost equivalent to {@link polylineIntersectRayIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the ray's geometry.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IIntersection}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link IPolyline}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectPolylineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polylineIntersectLineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polylineIntersectSegmentIterator}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 467,
@@ -6671,6 +7056,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -6683,6 +7069,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -6706,7 +7093,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayIntersectPolylineIterator.ts",
-					"line": 6,
+					"line": 28,
 					"character": 44
 				}
 			]
@@ -6726,6 +7113,10 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the intersection point between the two rays, if it exists.",
+						"text": "Finds the location at which the two rays meet. If the rays point away or \"miss\" each other,\nor they are parallel, this function returns no intersection.\n\nThe returned value is an {@link IIntersection} object which will have have the\n`exists` flag set to `true` iff an intersection was found. It additionally\nhas the following fields, if the intersection exists:\n\n- `x` – the x-coordinate of the point of intersection\n- `y` – the y-coordinate of the point of intersection\n- `t0` – where along the first ray's geometry the intersection was found,\n     according to the ray's parameterization\n- `t1` – where along the second ray's geometry the intersection was found,\n     according to the ray's parameterization\n"
+					},
 					"parameters": [
 						{
 							"id": 471,
@@ -6733,6 +7124,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the first ray to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -6745,6 +7139,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the second ray to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -6757,6 +7154,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IIntersection",
@@ -6775,7 +7175,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayIntersectRay.ts",
-					"line": 7,
+					"line": 28,
 					"character": 31
 				}
 			]
@@ -6795,6 +7195,10 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the intersection point between the ray and the segment, if it exists.",
+						"text": "Finds the location at which the ray and segment meet. If the ray \"misses\" the segment,\nthis function returns no intersection. For edge cases where the ray completely overlaps the segment,\nor starts within the segment, this function returns the _first_ point that the intersection occurs,\naccording to the ray's parameterization.\n\nThe returned value is an {@link IIntersection} object which will have have the\n`exists` flag set to `true` iff an intersection was found. It additionally\nhas the following fields, if the intersection exists:\n\n- `x` – the x-coordinate of the point of intersection\n- `y` – the y-coordinate of the point of intersection\n- `t0` – where along the ray's geometry the intersection was found,\n     according to the ray's parameterization\n- `t1` – where along the segment's geometry the intersection was found,\n     according to the segment's parameterization\n\nAlmost equivalent to {@link segmentIntersectRay}, except the _t0_ and _t1_ values are reversed.\n"
+					},
 					"parameters": [
 						{
 							"id": 332,
@@ -6802,6 +7206,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the ray to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -6814,6 +7221,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the segment to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -6826,6 +7236,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IIntersection",
@@ -6844,7 +7257,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayIntersectSegment.ts",
-					"line": 12,
+					"line": 37,
 					"character": 35
 				}
 			]
@@ -6864,6 +7277,10 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Constructs a ray from an initial point, pointing in the direction of a target point.",
+						"text": "This function initializes a ray with a given `from` initial point, and with a direction vector\nthat goes through the target `to` point. The direction vector will be normalized even if `from`\nand `to` are not one unit apart.\n\nIf `from` and `to` are the same point, the returned vector will still have the `from` initial\npoint but its direction vector will be (NaN, NaN).\n"
+					},
 					"parameters": [
 						{
 							"id": 476,
@@ -6871,6 +7288,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "initial point of the ray"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -6883,6 +7303,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "point that the ray should go through"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -6895,6 +7318,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -6913,7 +7339,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayLookAt.ts",
-					"line": 5,
+					"line": 19,
 					"character": 25
 				}
 			]
@@ -6933,6 +7359,24 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Construct a new ray given an (x0, y0) initial point and (dirX, dirY) direction vector.",
+						"text": "This function creates a new ray from given values. The (dirX, dirY) values given should\ndescribe a unit vector: no checks or operations are done internally to guarantee that is so.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IRay}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link rayAlloc}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link rayClone}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 429,
@@ -6940,6 +7384,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "x-coordinate of the ray's initial point"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -6951,6 +7398,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "y-coordinate of the ray's initial point"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -6962,6 +7412,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "x-coordinate of the ray's direction vector, which should form a unit vector\n along with the provided `dirY`"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -6973,6 +7426,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "y-coordinate of the ray's direction vector, which should form a unit vector\n along with the provided `dirX`"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -6984,6 +7440,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -7002,7 +7459,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayReset.ts",
-					"line": 3,
+					"line": 20,
 					"character": 24
 				}
 			]
@@ -7022,6 +7479,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Transforms a ray by an affine matrix.",
+						"text": "This function computes the result of applying a transform to the ray's geometry.\nThe resulting initial point will be the result of applying the given transform to the original\ninitial point, and its direction will be the result of applying any rotations or shears from\nthe matrix. The resulting direction vector will be correctly normalized when applicable.\n\nAffine transformations and their specifics within Vectormath are described in more detail\nin the {@link vecTransformByAff} docs.\n\nSynonymous to {@link lineTransformByAff}.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecTransformByAff}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link IMat2x3}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 481,
@@ -7029,6 +7500,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "ray to transform"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -7041,6 +7515,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "affine transform to apply"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -7053,6 +7530,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -7071,7 +7549,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayTransformByAff.ts",
-					"line": 5,
+					"line": 24,
 					"character": 33
 				}
 			]
@@ -7131,6 +7609,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Retrieves the starting endpoint (_t_ = 0) of the segment, as a vector."
+					},
 					"parameters": [
 						{
 							"id": 486,
@@ -7138,6 +7619,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "segment to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7150,6 +7634,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -7168,7 +7655,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentGetEndpoint0.ts",
-					"line": 5,
+					"line": 11,
 					"character": 35
 				}
 			]
@@ -7188,6 +7675,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Retrives the ending endpoint (_t_ = 1) of the segment, as a vector."
+					},
 					"parameters": [
 						{
 							"id": 490,
@@ -7195,6 +7685,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "segment to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7207,6 +7700,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -7225,7 +7721,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentGetEndpoint1.ts",
-					"line": 5,
+					"line": 11,
 					"character": 35
 				}
 			]
@@ -7245,6 +7741,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the length of the line segment",
+						"text": "This is simply `√((x1 - x0)² + (y1 - y0)²)`.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link segmentGetLengthSq}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecDistance}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 193,
@@ -7252,6 +7762,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "segment to measure"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7268,7 +7781,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentGetLength.ts",
-					"line": 3,
+					"line": 12,
 					"character": 32
 				}
 			]
@@ -7288,6 +7801,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the squared length of the line segment",
+						"text": "This is simply `(x1 - x0)² + (y1 - y0)²`.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link segmentGetLength}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecDistanceSq}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 494,
@@ -7295,6 +7822,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "segment to measure"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7311,7 +7841,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentGetLengthSq.ts",
-					"line": 3,
+					"line": 12,
 					"character": 34
 				}
 			]
@@ -7331,6 +7861,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Gets a point along the line segment, parameterized according to linear interpolation\nbetween its endpoints.",
+						"text": "A segment is parameterized according to linear interpolation between its endpoints,\nwhere _t_ = 0 represents its starting vertex and _t_ = 1 its ending vertex.\nSmooth values of _t_ within that range will move along the segment, so for example\n_t_ = 0.5 is its midpoint.\n\nThis function does allow for _t_ values outside the range `[0, 1]`, which will return\npoints in the same direction as the segment but outside in either direction.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link ISegment}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecLerp}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 355,
@@ -7338,6 +7882,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the segment to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7350,6 +7897,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "linear ratio along the segment to return"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -7361,6 +7911,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -7379,7 +7930,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentGetPointAt.ts",
-					"line": 5,
+					"line": 23,
 					"character": 33
 				}
 			]
@@ -7399,6 +7950,24 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the intersection point between the given segment and line, if it exists.",
+						"text": "Finds the location at which the line segment and line meet.\nIf the line \"misses\" the segment, this function returns no intersection.\nIf the line completely overlaps the segment, this function returns the segment's starting vertex.\n\nThe returned value is an {@link IIntersection} object which will have have the\n`exists` flag set to `true` iff an intersection was found. It additionally\nhas the following fields, if the intersection exists:\n\n- `x` – the x-coordinate of the point of intersection\n- `y` – the y-coordinate of the point of intersection\n- `t0` – where along the segment's geometry the intersection was found,\n     according to the segment's parameterization\n- `t1` – where along the line's geometry the intersection was found,\n     according to the line's parameterization\n\nAlmost equivalent to {@link lineIntersectSegment}, except the returned intersection reverses its _t0_ and _t1_.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link segmentIntersectPolylineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentIntersectRay}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentIntersectSegment}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 201,
@@ -7406,6 +7975,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the segment to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7418,6 +7990,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the line to find intersection with"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -7430,6 +8005,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IIntersection",
@@ -7448,7 +8024,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentIntersectLine.ts",
-					"line": 6,
+					"line": 33,
 					"character": 36
 				}
 			]
@@ -7468,6 +8044,36 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes all locations at which a line segment meets a given polyline.",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the segment's geometry\naccording to {@link ISegment} parameterization:\nlinear interpolation between its endpoints where _t0_ = 0 represents its starting vertex\nand _t0_ = 1 its ending vertex.\nSmooth values of _t_ within that range will move along the segment, so for example\n_t0_ = 0.5 is its midpoint.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the line segment's starting\nvertex to its ending vertex.\n\nAlmost equivalent to {@link polylineIntersectSegmentIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the segment's geometry.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IIntersection}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link ISegment}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polylineIntersectSegmentIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentIntersectLine}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentIntersectRay}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentIntersectSegment}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 497,
@@ -7475,6 +8081,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the segment to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7487,6 +8096,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polyline to find intersections with"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -7510,7 +8122,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentIntersectPolylineIterator.ts",
-					"line": 6,
+					"line": 32,
 					"character": 48
 				}
 			]
@@ -7530,6 +8142,32 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the intersection point between the ray and the segment, if it exists.",
+						"text": "Finds the location at which the ray and segment meet. If the ray \"misses\" the segment,\nthis function returns no intersection. For edge cases where the ray completely overlaps the segment,\nor starts within the segment, this function returns the _first_ point that the intersection occurs,\naccording to the segment's parameterization.\n\nThe returned value is an {@link IIntersection} object which will have have the\n`exists` flag set to `true` iff an intersection was found. It additionally\nhas the following fields, if the intersection exists:\n\n- `x` – the x-coordinate of the point of intersection\n- `y` – the y-coordinate of the point of intersection\n- `t0` – where along the segment's geometry the intersection was found,\n     according to the segment's parameterization\n- `t1` – where along the ray's geometry the intersection was found,\n     according to the ray's parameterization\n\nAlmost equivalent to {@link rayIntersectSegment}, except the _t0_ and _t1_ values are reversed.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IIntersection}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link ISegment}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentIntersectLine}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentIntersectPolylineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentIntersectSegment}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 337,
@@ -7537,6 +8175,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the segment to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7549,6 +8190,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the ray to find intersection with"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -7561,6 +8205,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IIntersection",
@@ -7579,7 +8224,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentIntersectRay.ts",
-					"line": 6,
+					"line": 36,
 					"character": 35
 				}
 			]
@@ -7599,6 +8244,32 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the intersection point between the two line segments, if it exists.",
+						"text": "Finds the location at which the two segments meet. If the two segments \"miss\" each other,\nthis function returns no intersection. If the two segments overlap along an entire interval\n(i.e. they are parallel and lie partly on top of each other), this function returns the first\npoint they have in common, according to the first segment's parameterization.\n\nThe returned value is an {@link IIntersection} object which will have have the\n`exists` flag set to `true` iff an intersection was found. It additionally\nhas the following fields, if the intersection exists:\n\n- `x` – the x-coordinate of the point of intersection\n- `y` – the y-coordinate of the point of intersection\n- `t0` – where along the first segment's geometry the intersection was found,\n     according to the first segment's parameterization\n- `t1` – where along the second segment's geometry the intersection was found,\n     according to the second segment's parameterization\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IIntersection}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link ISegment}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentIntersectLine}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentIntersectPolylineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentIntersectRay}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 346,
@@ -7606,6 +8277,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the first segment to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7618,6 +8292,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the second segment to find intersections with"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7630,6 +8307,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IIntersection",
@@ -7648,7 +8326,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentIntersectSegment.ts",
-					"line": 12,
+					"line": 40,
 					"character": 39
 				}
 			]
@@ -7668,6 +8346,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Finds the nearest point that a segment comes to a given reference point.",
+						"text": "Returns the closest point that a segment comes to the given point, which may be one of\nthe segment's endpoints.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link segmentNearestT}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polylineNearestPoint}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 501,
@@ -7675,6 +8367,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "segment to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7687,6 +8382,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "point to measure distance to"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -7699,6 +8397,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -7717,7 +8416,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentNearestPoint.ts",
-					"line": 6,
+					"line": 18,
 					"character": 35
 				}
 			]
@@ -7737,6 +8436,24 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the closest location _t_ that a segment comes to a given reference point.",
+						"text": "The returned value _t_ is defined according to the {@link ISegment}'s parameterization:\nlinear interpolation between its endpoints,\nwhere _t_ = 0 represents its starting vertex and _t_ = 1 its ending vertex.\nSmooth values of _t_ within that range will move along the segment, so for example\n_t_ = 0.5 is its midpoint.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link ISegment}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentNearestPoint}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polylineNearestT}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 360,
@@ -7744,6 +8461,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "segment to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7756,6 +8476,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "point to measure distance to"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -7772,7 +8495,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentNearestT.ts",
-					"line": 5,
+					"line": 21,
 					"character": 31
 				}
 			]
@@ -7792,6 +8515,23 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Construct a new line segment given an (x0, y0) starting vertex and (x1, y1) ending vertex.\nThe two points are allowed to be the same.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link ISegment}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentAlloc}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentClone}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 181,
@@ -7799,6 +8539,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "x-coordinate of the segment's starting vertex"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -7810,6 +8553,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "y-coordinate of the segment's starting vertex"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -7821,6 +8567,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "x-coordinate of the segment's ending vertex"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -7832,6 +8581,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "y-coordinate of the segment's ending vertex"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -7843,6 +8595,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7861,7 +8614,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentReset.ts",
-					"line": 3,
+					"line": 16,
 					"character": 28
 				}
 			]
@@ -7881,6 +8634,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the reverse of the segment, i.e. swapping its starting vertex and ending vertex."
+					},
 					"parameters": [
 						{
 							"id": 506,
@@ -7888,6 +8644,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the segment to reverse"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7900,6 +8659,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -7918,7 +8680,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentReverse.ts",
-					"line": 5,
+					"line": 11,
 					"character": 30
 				}
 			]
@@ -8065,7 +8827,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the vector to copy"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -8783,7 +9547,21 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Construct a new vector given an `x` and `y` value."
+						"shortText": "Construct a new vector given an `x` and `y` value.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IVec}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecAlloc}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecClone}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
@@ -8792,7 +9570,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "x-coordinate of the vector"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -8804,7 +9584,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "y-coordinate of the vector"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -8816,9 +9598,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {
-								"text": "\n"
-							},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -8837,7 +9617,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecReset.ts",
-					"line": 10,
+					"line": 13,
 					"character": 24
 				}
 			]

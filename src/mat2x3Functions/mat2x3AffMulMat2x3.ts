@@ -2,6 +2,34 @@ import { IMat2x3 } from "../types";
 import { mat2x3Alloc } from "./mat2x3Alloc";
 import { mat2x3Reset } from "./mat2x3Reset";
 
+/**
+ * Computes the result of affine matrix multiplication _m1_ × _m2_.
+ *
+ * The resulting matrix is equivalent to a transform that first applies _m2_ and then applies
+ * _m1_; that is, `(m1×m2)v = m1(m2×v)`.
+ *
+ * Affine matrix multiplication is defined by
+ *
+ * ```
+ * ⎡m1.a m1.c m1.e⎤ ⎡m2.a m2.c m2.e⎤   ⎡r.a r.c r.e⎤
+ * ⎢m1.b m1.d m1.f⎥ ⎢m2.b m2.d m2.f⎥ = ⎢r.b r.d r.f⎥
+ * ⎣   0    0    1⎦ ⎣   0    0    1⎦   ⎣  0   0   1⎦
+ * ```
+ *
+ * where:
+ *  - `r.a = m1.a * m2.a + m1.c * m2.b`
+ *  - `r.b = m1.b * m2.a + m1.d * m2.b`
+ *  - `r.c = m1.a * m2.c + m1.c * m2.d`
+ *  - `r.d = m1.b * m2.c + m1.d * m2.d`
+ *  - `r.e = m1.a * m2.e + m1.c * m2.f + m1.e`
+ *  - `r.f = m1.b * m2.e + m1.c * m2.f + m1.f`
+ *
+ * @param m1 the first matrix to multiply
+ * @param m2 the second matrix to multiply
+ * @param out
+ * @see {@link IMatrix}
+ * @see {@link vecTransformByAff}
+ */
 export function mat2x3AffMulMat2x3(m1: IMat2x3, m2: IMat2x3, out = mat2x3Alloc()) {
   const a = m1.a * m2.a + m1.c * m2.b;
   const b = m1.b * m2.a + m1.d * m2.b;
