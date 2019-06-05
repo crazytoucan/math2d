@@ -6148,7 +6148,7 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Trims a polyline to a range of its _t_ parameter.",
-						"text": "This function trims geomtery from either or both ends of the polyline, kind of like a \"substring\"\noperation. Note that fractional values are allowed on the bounding _t_ parameters, which may slice off\nonly parts of segments to form new vertices.\n\nA polyline's parameterization is defined according to _t_, where\nvalues of _t_ are between 0 and the polyline's vertex count, and smooth values of _t_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nBoth the `minT` and `maxT` parameters will be clamped to their allowed domains [0, _N_-1] for a\npolyline of _N_ vertices.\n"
+						"text": "This function trims geometry from either or both ends of the polyline, kind of like a \"substring\"\noperation. Note that fractional values are allowed on the bounding _t_ parameters, which may slice off\nonly parts of segments to form new vertices.\n\nA polyline's parameterization is defined according to _t_, where\nvalues of _t_ are between 0 and the polyline's vertex count, and smooth values of _t_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nBoth the `minT` and `maxT` parameters will be clamped to their allowed domains [0, _N_-1] for a\npolyline of _N_ vertices.\n"
 					},
 					"parameters": [
 						{

@@ -10,7 +10,7 @@ const TMP0 = vecAlloc();
 /**
  * Trims a polyline to a range of its _t_ parameter.
  *
- * This function trims geomtery from either or both ends of the polyline, kind of like a "substring"
+ * This function trims geometry from either or both ends of the polyline, kind of like a "substring"
  * operation. Note that fractional values are allowed on the bounding _t_ parameters, which may slice off
  * only parts of segments to form new vertices.
  *
