@@ -11,8 +11,11 @@ import { IIntersection, IPolyline, IRay } from "../types";
  * signify linear interpolation between adjacent vertices along the polyline's geometry.
  *
  * The returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the
- * order in which one would visit those locations if one traveled from the polyline's start to its end
+ * order in which one would visit those locations if one were to travel from the polyline's start to its end
  * along its segment geometry.
+ *
+ * Almost equivalent to {@link rayIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed
+ * and the returned intersections are sorted according to the polyline's geometry.
  *
  * @param poly
  * @param ray
