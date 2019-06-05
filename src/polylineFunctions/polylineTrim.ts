@@ -1,10 +1,8 @@
 import { IPolyline } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
 import { polylineAlloc } from "./polylineAlloc";
-import { polylineGetLength } from "./polylineGetLength";
+import { polylineGetNumSegments } from "./polylineGetNumSegments";
 import { polylineGetPointAt } from "./polylineGetPointAt";
-import { polylineGetVertex } from "./polylineGetVertex";
-import { polylineSegmentIndexAt } from "./polylineSegmentIndexAt";
 
 const TMP0 = vecAlloc();
 
@@ -23,24 +21,24 @@ export function polylineTrim(poly: IPolyline, begin: number, end: number, out = 
   }
 
   begin = Math.max(begin, 0);
-  end = Math.min(end, polylineGetLength(poly));
-  const beginSegmentIdx = polylineSegmentIndexAt(poly, begin);
-  const endSegmentIdx = polylineSegmentIndexAt(poly, end);
-  out.length = 2 * (2 + endSegmentIdx - beginSegmentIdx);
+  end = Math.min(end, polylineGetNumSegments(poly));
+
+  const beginFloor = Math.floor(begin);
+  const endCeil = Math.ceil(end);
+
+  out.length = 2 * (endCeil - beginFloor + 1);
   let cursor = 0;
+  const beginPoint = polylineGetPointAt(poly, begin, TMP0);
+  out[cursor++] = beginPoint.x;
+  out[cursor++] = beginPoint.y;
 
-  const vBegin = polylineGetPointAt(poly, begin, TMP0);
-  out[cursor++] = vBegin.x;
-  out[cursor++] = vBegin.y;
-
-  for (let idx = beginSegmentIdx; idx < endSegmentIdx; idx++) {
-    const vertex = polylineGetVertex(poly, idx + 1, TMP0);
-    out[cursor++] = vertex.x;
-    out[cursor++] = vertex.y;
+  for (let i = beginFloor + 1; i < end; i++) {
+    out[cursor++] = poly[2 * i];
+    out[cursor++] = poly[2 * i + 1];
   }
 
-  const vEnd = polylineGetPointAt(poly, end, TMP0);
-  out[cursor++] = vEnd.x;
-  out[cursor++] = vEnd.y;
+  const endPoint = polylineGetPointAt(poly, end, TMP0);
+  out[cursor++] = endPoint.x;
+  out[cursor++] = endPoint.y;
   return out;
 }

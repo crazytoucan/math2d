@@ -72,7 +72,6 @@ export { polylineIsClosed } from "./polylineFunctions/polylineIsClosed";
 export { polylineNearestPoint } from "./polylineFunctions/polylineNearestPoint";
 export { polylineNearestT } from "./polylineFunctions/polylineNearestT";
 export { polylineNearestVertexIndex } from "./polylineFunctions/polylineNearestVertexIndex";
-export { polylineSegmentIndexAt } from "./polylineFunctions/polylineSegmentIndexAt";
 export { polylineTransformByAff } from "./polylineFunctions/polylineTransformByAff";
 export { polylineTrim } from "./polylineFunctions/polylineTrim";
 export { rayAlloc } from "./rayFunctions/rayAlloc";

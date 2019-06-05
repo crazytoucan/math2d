@@ -1,16 +1,12 @@
+import { _lerp } from "../internal/_lerp";
 import { IPolyline } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
-import { vecLerp } from "../vecFunctions/vecLerp";
 import { vecReset } from "../vecFunctions/vecReset";
 import { polylineGetNumSegments } from "./polylineGetNumSegments";
-import { polylineGetSegmentLength } from "./polylineGetSegmentLength";
-
-const TMP0 = vecAlloc();
-const TMP1 = vecAlloc();
 
 /**
- * Gets a point along the polyline, parameterized according to absolute distance
- * _t_ along its geometry.
+ * Gets a point along the polyline, parameterized according to linear interpolation between
+ * adjacent vertices.
  *
  * @param poly
  * @param t
@@ -18,23 +14,19 @@ const TMP1 = vecAlloc();
  * @see {@link IPolyline}
  */
 export function polylineGetPointAt(poly: IPolyline, t: number, out = vecAlloc()) {
-  if (t < 0) {
+  const maxT = polylineGetNumSegments(poly);
+  if (t < 0 || t > maxT) {
     return vecReset(NaN, NaN, out);
   }
 
-  const len = polylineGetNumSegments(poly);
-  let idx = 0;
-  while (idx < len) {
-    const segmentLength = polylineGetSegmentLength(poly, idx);
-    if (t <= segmentLength) {
-      const v0 = vecReset(poly[2 * idx], poly[2 * idx + 1], TMP0);
-      const v1 = vecReset(poly[2 * idx + 2], poly[2 * idx + 3], TMP1);
-      return vecLerp(v0, v1, t / segmentLength, out);
-    } else {
-      t -= segmentLength;
-      ++idx;
-    }
+  if (t === maxT) {
+    return vecReset(poly[poly.length - 2], poly[poly.length - 1], out);
   }
 
-  return vecReset(NaN, NaN, out);
+  const floorT = Math.floor(t);
+  return vecReset(
+    _lerp(poly[2 * floorT], poly[2 * floorT + 2], t - floorT),
+    _lerp(poly[2 * floorT + 1], poly[2 * floorT + 3], t - floorT),
+    out,
+  );
 }
