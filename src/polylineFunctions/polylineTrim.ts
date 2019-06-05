@@ -18,7 +18,7 @@ const TMP0 = vecAlloc();
  * values of _t_ are between 0 and the polyline's vertex count, and smooth values of _t_ therein
  * signify linear interpolation between adjacent vertices along the polyline's geometry.
  *
- * Both the `minT` and `maxT` parameters will be clamped to their allowed domains [0, _N_-1] for a
+ * Both the `tStart` and `tEnd` parameters will be clamped to their allowed domains [0, _N_-1] for a
  * polyline of _N_ vertices.
  *
  * @param poly the polyline to trim
