@@ -15,6 +15,7 @@ import { vecReset } from "../vecFunctions/vecReset";
  * @param ray the ray to inspect
  * @param t distance along the ray at which to compute point
  * @param out
+ * @see {@link IRay}
  * @see {@link lineGetPointAt}
  */
 export function rayGetPointAt(ray: IRay, t: number, out = vecAlloc()) {

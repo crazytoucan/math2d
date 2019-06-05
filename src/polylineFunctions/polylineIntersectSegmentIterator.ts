@@ -21,7 +21,7 @@ import { IIntersection, IPolyline, ISegment } from "../types";
  * @param segment
  * @see {@link IIntersection}
  * @see {@link IPolyline}
- * @see {@link lineIntersectPolylineIterator}
+ * @see {@link segmentIntersectPolylineIterator}
  * @see {@link polylineIntersectLineIterator}
  * @see {@link polylineIntersectRayIterator}
  */

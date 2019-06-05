@@ -2,6 +2,22 @@ import { _clamp } from "../internal/_clamp";
 import { EPSILON_SQ } from "../internal/const";
 import { ISegment, IVec } from "../types";
 
+/**
+ * Computes the closest location _t_ that a segment comes to a given reference point.
+ *
+ * The returned value _t_ is defined according to the {@link ISegment}'s parameterization:
+ * linear interpolation between its endpoints,
+ * where _t_ = 0 represents its starting vertex and _t_ = 1 its ending vertex.
+ * Smooth values of _t_ within that range will move along the segment, so for example
+ * _t_ = 0.5 is its midpoint.
+ *
+ * @param segment segment to inspect
+ * @param point point to measure distance to
+ * @param out
+ * @see {@link ISegment}
+ * @see {@link segmentNearestPoint}
+ * @see {@link polylineNearestT}
+ */
 export function segmentNearestT(segment: ISegment, point: IVec) {
   const dSegX = segment.x1 - segment.x0;
   const dSegY = segment.y1 - segment.y0;

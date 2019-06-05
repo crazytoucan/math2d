@@ -13,8 +13,8 @@ const TMP0 = vecAlloc();
  * Affine transformations and their specifics within Vectormath are described in more detail
  * in the {@link vecTransformByAff} docs.
  *
- * @param poly
- * @param mat
+ * @param poly polyline to transform
+ * @param mat affine transform to apply
  * @param out
  * @see {@link vecTransformByAff}
  * @see {@link IMat2x3}

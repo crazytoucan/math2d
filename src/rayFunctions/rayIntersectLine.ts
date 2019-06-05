@@ -22,11 +22,14 @@ import { ILine, IRay } from "../types";
  * - `t1` – where along the line's geometry the intersection was found,
  *      according to the line's parameterization
  *
- * Almost equivalent to `lineIntersectRay`, except the returned intersection reverses its _t0_ and _t1_.
+ * Almost equivalent to {@link lineIntersectRay}, except the returned intersection reverses its _t0_ and _t1_.
  *
  * @param ray the ray to intersect
  * @param line the line to intersect
  * @param out
+ * @see {@link rayIntersectPolylineIterator}
+ * @see {@link rayIntersectRay}
+ * @see {@link rayIntersectSegment}
  */
 export function rayIntersectLine(ray: IRay, line: ILine, out = intersectionAlloc()) {
   return _intersectionSwapTs(lineIntersectRay(line, ray, out));

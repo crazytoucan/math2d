@@ -24,9 +24,9 @@ const TMP0 = lineAlloc();
  * - `x` – the x-coordinate of the point of intersection
  * - `y` – the y-coordinate of the point of intersection
  * - `t0` – where along the ray's geometry the intersection was found,
- *      according to the segment's parameterization
- * - `t1` – where along the segment's geometry the intersection was found,
  *      according to the ray's parameterization
+ * - `t1` – where along the segment's geometry the intersection was found,
+ *      according to the segment's parameterization
  *
  * Almost equivalent to {@link segmentIntersectRay}, except the _t0_ and _t1_ values are reversed.
  *
