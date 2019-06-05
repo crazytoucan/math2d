@@ -14,9 +14,8 @@ const TMP1 = vecAlloc();
  * Computes the closest location at which the polyline comes to a given reference point.
  *
  * The returned value _t_ is defined according to the {@link IPolyline} parameterization:
- * values of _t_ will fall between 0 and the polyline's total length, inclusive, and the
- * point corresponding to a given value _t_ is defined by traveling an absolute distance _t_
- * along the polyline's geometry.
+ * values of _t0_ are between 0 and the polyline's vertex count, and smooth values of T
+ * signify linear interpolation between the two adjacent vertices along the polyline's geometry.
  *
  * @param poly
  * @param point
