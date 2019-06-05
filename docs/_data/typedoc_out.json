@@ -240,7 +240,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 305,
+							"line": 318,
 							"character": 8
 						}
 					],
@@ -263,7 +263,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 321,
+							"line": 334,
 							"character": 4
 						}
 					],
@@ -286,7 +286,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 327,
+							"line": 340,
 							"character": 4
 						}
 					],
@@ -309,7 +309,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 310,
+							"line": 323,
 							"character": 3
 						}
 					],
@@ -332,7 +332,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 315,
+							"line": 328,
 							"character": 3
 						}
 					],
@@ -358,7 +358,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 300,
+					"line": 313,
 					"character": 30
 				}
 			]
@@ -1053,12 +1053,12 @@
 			},
 			"comment": {
 				"shortText": "An alias for `number[]`. Data type to represent a polygon in the plane,\nas an interleaved sequence of vertex coordinates.",
-				"text": "The `IPolygon` type is just an alias for an array of number values. For example,\na polygon with vertices v0, v1, v2, ..., vn is represented in Vectormath as the array:\n\n```\n[v0x, v0y, v1x, v1y, v2x, v2y, ..., vnx, vny]\n```\n\nUnlike the similar {@link IPolyline} type, a polygon's perimeter is always interpreted as a closed shape.\n\nVectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
+				"text": "The `IPolygon` type is just an alias for an array of number values. For example,\na polygon with vertices v0, v1, v2, ..., vn is represented in Vectormath as the array:\n\n```\n[v0x, v0y, v1x, v1y, v2x, v2y, ..., vnx, vny]\n```\n\nUnlike the similar {@link IPolyline} type, a polygon's perimeter is always interpreted as a closed shape.\n\nWhere relevant, a polygon with _N_ sides is parameterized according to _t_ with linear interpolation between adjacent\nvertices by index, with a final segment connecting its last to its first vertex.\nFor example, _t_ = 3.5 represents the midpoint between the index 3 and index 4 vertex\nof the polygon (or the midpoint between the last and first vertex if _N_ = 4),\nand _t_ = 0 is its first vertex. The parameter _t_ is allowed to cycle indefinitely around the polygon's\nperimeter (i.e. _t_ = 0 and _t_ = N both map to the first vertex of the polygon),\nbut all methods that return _t_ values prefer the unique range [0, N).\n\nVectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
 			},
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 258,
+					"line": 266,
 					"character": 20
 				}
 			],
@@ -1080,12 +1080,12 @@
 			},
 			"comment": {
 				"shortText": "An alias for `number[]`. Data type to represent a sequence of connected line segments in the plane,\nas an interleaved array of vertex coordinates.",
-				"text": "The `IPolyline` type is just an alias for an array of number values. For example,\na polyline connecting the points p0, p1, p2, ..., pn in space is represented in Vectormath as the array:\n\n```\n[p0x, p0y, p1x, p1y, p2x, p2y, ..., pnx, pny]\n```\n\nUnlike the similar {@link IPolygon} type, a polyline is not necessary closed.\n\nVectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
+				"text": "The `IPolyline` type is just an alias for an array of number values. For example,\na polyline connecting the points p0, p1, p2, ..., pn in space is represented in Vectormath as the array:\n\n```\n[p0x, p0y, p1x, p1y, p2x, p2y, ..., pnx, pny]\n```\n\nUnlike the similar {@link IPolygon} type, a polyline is not necessary closed.\n\nWhere relevant, a polyline with _N_ points is parameterized according to _t_ with linear interpolation between\nadjacent points by index. For example, _t_ = 3.5 represents the midpoint between the index 3 and index 4 point\nof the polyline, _t_ = 0 is its first point, and _t_ = _N_ is its final point. Any _t_ value falling\noutside of the range [0, _N_] is disallowed.\n\nVectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
 			},
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 276,
+					"line": 289,
 					"character": 21
 				}
 			],
@@ -2106,7 +2106,7 @@
 			]
 		},
 		{
-			"id": 569,
+			"id": 561,
 			"name": "intersectionClone",
 			"kind": 64,
 			"kindString": "Function",
@@ -2115,7 +2115,7 @@
 			},
 			"signatures": [
 				{
-					"id": 570,
+					"id": 562,
 					"name": "intersectionClone",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -2125,7 +2125,7 @@
 					},
 					"parameters": [
 						{
-							"id": 571,
+							"id": 563,
 							"name": "intersection",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2138,7 +2138,7 @@
 							}
 						},
 						{
-							"id": 572,
+							"id": 564,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4315,7 +4315,7 @@
 			]
 		},
 		{
-			"id": 323,
+			"id": 312,
 			"name": "polygonGetPointAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -4324,14 +4324,14 @@
 			},
 			"signatures": [
 				{
-					"id": 324,
+					"id": 313,
 					"name": "polygonGetPointAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 325,
+							"id": 314,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4343,7 +4343,7 @@
 							}
 						},
 						{
-							"id": 326,
+							"id": 315,
 							"name": "t",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4354,7 +4354,7 @@
 							}
 						},
 						{
-							"id": 327,
+							"id": 316,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4377,13 +4377,13 @@
 			"sources": [
 				{
 					"fileName": "polygonFunctions/polygonGetPointAt.ts",
-					"line": 9,
+					"line": 6,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 328,
+			"id": 317,
 			"name": "polygonGetSideLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -4392,14 +4392,14 @@
 			},
 			"signatures": [
 				{
-					"id": 329,
+					"id": 318,
 					"name": "polygonGetSideLength",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 330,
+							"id": 319,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4411,7 +4411,7 @@
 							}
 						},
 						{
-							"id": 331,
+							"id": 320,
 							"name": "idx",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4437,7 +4437,7 @@
 			]
 		},
 		{
-			"id": 332,
+			"id": 321,
 			"name": "polygonGetSideSegment",
 			"kind": 64,
 			"kindString": "Function",
@@ -4446,14 +4446,14 @@
 			},
 			"signatures": [
 				{
-					"id": 333,
+					"id": 322,
 					"name": "polygonGetSideSegment",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 334,
+							"id": 323,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4465,7 +4465,7 @@
 							}
 						},
 						{
-							"id": 335,
+							"id": 324,
 							"name": "index",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4476,7 +4476,7 @@
 							}
 						},
 						{
-							"id": 336,
+							"id": 325,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4505,7 +4505,7 @@
 			]
 		},
 		{
-			"id": 337,
+			"id": 326,
 			"name": "polygonIntersectLineIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -4514,14 +4514,14 @@
 			},
 			"signatures": [
 				{
-					"id": 338,
+					"id": 327,
 					"name": "polygonIntersectLineIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 339,
+							"id": 328,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4533,7 +4533,7 @@
 							}
 						},
 						{
-							"id": 340,
+							"id": 329,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4567,7 +4567,7 @@
 			]
 		},
 		{
-			"id": 351,
+			"id": 340,
 			"name": "polygonIntersectRayIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -4576,14 +4576,14 @@
 			},
 			"signatures": [
 				{
-					"id": 352,
+					"id": 341,
 					"name": "polygonIntersectRayIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 353,
+							"id": 342,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4595,7 +4595,7 @@
 							}
 						},
 						{
-							"id": 354,
+							"id": 343,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4629,7 +4629,7 @@
 			]
 		},
 		{
-			"id": 360,
+			"id": 349,
 			"name": "polygonIntersectSegmentIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -4638,14 +4638,14 @@
 			},
 			"signatures": [
 				{
-					"id": 361,
+					"id": 350,
 					"name": "polygonIntersectSegmentIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 362,
+							"id": 351,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4657,7 +4657,7 @@
 							}
 						},
 						{
-							"id": 363,
+							"id": 352,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4691,7 +4691,7 @@
 			]
 		},
 		{
-			"id": 385,
+			"id": 374,
 			"name": "polygonNearestPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -4700,14 +4700,14 @@
 			},
 			"signatures": [
 				{
-					"id": 386,
+					"id": 375,
 					"name": "polygonNearestPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 387,
+							"id": 376,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4719,7 +4719,7 @@
 							}
 						},
 						{
-							"id": 388,
+							"id": 377,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4731,7 +4731,7 @@
 							}
 						},
 						{
-							"id": 389,
+							"id": 378,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4760,7 +4760,7 @@
 			]
 		},
 		{
-			"id": 381,
+			"id": 370,
 			"name": "polygonNearestT",
 			"kind": 64,
 			"kindString": "Function",
@@ -4769,14 +4769,14 @@
 			},
 			"signatures": [
 				{
-					"id": 382,
+					"id": 371,
 					"name": "polygonNearestT",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 383,
+							"id": 372,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4788,7 +4788,7 @@
 							}
 						},
 						{
-							"id": 384,
+							"id": 373,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4815,7 +4815,7 @@
 			]
 		},
 		{
-			"id": 394,
+			"id": 383,
 			"name": "polygonNearestVertexIndex",
 			"kind": 64,
 			"kindString": "Function",
@@ -4824,14 +4824,14 @@
 			},
 			"signatures": [
 				{
-					"id": 395,
+					"id": 384,
 					"name": "polygonNearestVertexIndex",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 396,
+							"id": 385,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4843,7 +4843,7 @@
 							}
 						},
 						{
-							"id": 397,
+							"id": 386,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4870,61 +4870,7 @@
 			]
 		},
 		{
-			"id": 402,
-			"name": "polygonSideIndexAt",
-			"kind": 64,
-			"kindString": "Function",
-			"flags": {
-				"isExported": true
-			},
-			"signatures": [
-				{
-					"id": 403,
-					"name": "polygonSideIndexAt",
-					"kind": 4096,
-					"kindString": "Call signature",
-					"flags": {},
-					"parameters": [
-						{
-							"id": 404,
-							"name": "poly",
-							"kind": 32768,
-							"kindString": "Parameter",
-							"flags": {},
-							"type": {
-								"type": "reference",
-								"name": "IPolygon",
-								"id": 41
-							}
-						},
-						{
-							"id": 405,
-							"name": "t",
-							"kind": 32768,
-							"kindString": "Parameter",
-							"flags": {},
-							"type": {
-								"type": "intrinsic",
-								"name": "number"
-							}
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "number"
-					}
-				}
-			],
-			"sources": [
-				{
-					"fileName": "polygonFunctions/polygonSideIndexAt.ts",
-					"line": 7,
-					"character": 34
-				}
-			]
-		},
-		{
-			"id": 406,
+			"id": 387,
 			"name": "polygonTransformByAff",
 			"kind": 64,
 			"kindString": "Function",
@@ -4933,14 +4879,14 @@
 			},
 			"signatures": [
 				{
-					"id": 407,
+					"id": 388,
 					"name": "polygonTransformByAff",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 408,
+							"id": 389,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4952,7 +4898,7 @@
 							}
 						},
 						{
-							"id": 409,
+							"id": 390,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -4964,7 +4910,7 @@
 							}
 						},
 						{
-							"id": 410,
+							"id": 391,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5277,7 +5223,7 @@
 			]
 		},
 		{
-			"id": 318,
+			"id": 392,
 			"name": "polylineGetPointAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -5286,13 +5232,13 @@
 			},
 			"signatures": [
 				{
-					"id": 319,
+					"id": 393,
 					"name": "polylineGetPointAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Gets a point along the polyline, parameterized according to absolute distance\n_t_ along its geometry.",
+						"shortText": "Gets a point along the polyline, parameterized according to linear interpolation between\nadjacent vertices.",
 						"tags": [
 							{
 								"tag": "see",
@@ -5302,7 +5248,7 @@
 					},
 					"parameters": [
 						{
-							"id": 320,
+							"id": 394,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5315,7 +5261,7 @@
 							}
 						},
 						{
-							"id": 321,
+							"id": 395,
 							"name": "t",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5327,7 +5273,7 @@
 							}
 						},
 						{
-							"id": 322,
+							"id": 396,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5351,7 +5297,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineGetPointAt.ts",
-					"line": 20,
+					"line": 16,
 					"character": 34
 				}
 			]
@@ -5494,7 +5440,7 @@
 			]
 		},
 		{
-			"id": 411,
+			"id": 397,
 			"name": "polylineGetVertex",
 			"kind": 64,
 			"kindString": "Function",
@@ -5503,7 +5449,7 @@
 			},
 			"signatures": [
 				{
-					"id": 412,
+					"id": 398,
 					"name": "polylineGetVertex",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -5513,7 +5459,7 @@
 					},
 					"parameters": [
 						{
-							"id": 413,
+							"id": 399,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5526,7 +5472,7 @@
 							}
 						},
 						{
-							"id": 414,
+							"id": 400,
 							"name": "index",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5538,7 +5484,7 @@
 							}
 						},
 						{
-							"id": 415,
+							"id": 401,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5570,7 +5516,7 @@
 			]
 		},
 		{
-			"id": 416,
+			"id": 402,
 			"name": "polylineIntersectLineIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -5579,14 +5525,14 @@
 			},
 			"signatures": [
 				{
-					"id": 417,
+					"id": 403,
 					"name": "polylineIntersectLineIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polyline crosses a given line.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ will fall between 0 and the polyline's total length, inclusive, and the\npoint corresponding to a given value _t0_ is defined by traveling an absolute distance _t0_\nalong the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one traveled from the polyline's start to its end\nalong its segment geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one traveled from the polyline's start to its end\nalong its segment geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -5612,7 +5558,7 @@
 					},
 					"parameters": [
 						{
-							"id": 418,
+							"id": 404,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5625,7 +5571,7 @@
 							}
 						},
 						{
-							"id": 419,
+							"id": 405,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5654,13 +5600,13 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineIntersectLineIterator.ts",
-					"line": 26,
+					"line": 25,
 					"character": 45
 				}
 			]
 		},
 		{
-			"id": 420,
+			"id": 406,
 			"name": "polylineIntersectRayIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -5669,14 +5615,14 @@
 			},
 			"signatures": [
 				{
-					"id": 421,
+					"id": 407,
 					"name": "polylineIntersectRayIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polyline crosses a given ray.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ will fall between 0 and the polyline's total length, inclusive, and the\npoint corresponding to a given value _t0_ is defined by traveling an absolute distance _t0_\nalong the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one traveled from the polyline's start to its end\nalong its segment geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one traveled from the polyline's start to its end\nalong its segment geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -5702,7 +5648,7 @@
 					},
 					"parameters": [
 						{
-							"id": 422,
+							"id": 408,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5715,7 +5661,7 @@
 							}
 						},
 						{
-							"id": 423,
+							"id": 409,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5744,13 +5690,13 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineIntersectRayIterator.ts",
-					"line": 26,
+					"line": 25,
 					"character": 44
 				}
 			]
 		},
 		{
-			"id": 424,
+			"id": 410,
 			"name": "polylineIntersectSegmentIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -5759,14 +5705,14 @@
 			},
 			"signatures": [
 				{
-					"id": 425,
+					"id": 411,
 					"name": "polylineIntersectSegmentIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polyline crosses a given line segment.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ will fall between 0 and the polyline's total length, inclusive, and the\npoint corresponding to a given value _t0_ is defined by traveling an absolute distance _t0_\nalong the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one traveled from the polyline's start to its end\nalong its segment geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one traveled from the polyline's start to its end\nalong its segment geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -5792,7 +5738,7 @@
 					},
 					"parameters": [
 						{
-							"id": 426,
+							"id": 412,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5805,7 +5751,7 @@
 							}
 						},
 						{
-							"id": 427,
+							"id": 413,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5834,7 +5780,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineIntersectSegmentIterator.ts",
-					"line": 26,
+					"line": 25,
 					"character": 48
 				}
 			]
@@ -5890,7 +5836,7 @@
 			]
 		},
 		{
-			"id": 428,
+			"id": 414,
 			"name": "polylineNearestPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -5899,7 +5845,7 @@
 			},
 			"signatures": [
 				{
-					"id": 429,
+					"id": 415,
 					"name": "polylineNearestPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -5909,7 +5855,7 @@
 					},
 					"parameters": [
 						{
-							"id": 430,
+							"id": 416,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5922,7 +5868,7 @@
 							}
 						},
 						{
-							"id": 431,
+							"id": 417,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5935,7 +5881,7 @@
 							}
 						},
 						{
-							"id": 432,
+							"id": 418,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -5967,7 +5913,7 @@
 			]
 		},
 		{
-			"id": 377,
+			"id": 366,
 			"name": "polylineNearestT",
 			"kind": 64,
 			"kindString": "Function",
@@ -5976,14 +5922,14 @@
 			},
 			"signatures": [
 				{
-					"id": 378,
+					"id": 367,
 					"name": "polylineNearestT",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
 						"shortText": "Computes the closest location at which the polyline comes to a given reference point.",
-						"text": "The returned value _t_ is defined according to the {@link IPolyline} parameterization:\nvalues of _t_ will fall between 0 and the polyline's total length, inclusive, and the\npoint corresponding to a given value _t_ is defined by traveling an absolute distance _t_\nalong the polyline's geometry.\n",
+						"text": "The returned value _t_ is defined according to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of T\nsignify linear interpolation between the two adjacent vertices along the polyline's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -5993,7 +5939,7 @@
 					},
 					"parameters": [
 						{
-							"id": 379,
+							"id": 368,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6006,7 +5952,7 @@
 							}
 						},
 						{
-							"id": 380,
+							"id": 369,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6028,13 +5974,13 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineNearestT.ts",
-					"line": 27,
+					"line": 25,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 390,
+			"id": 379,
 			"name": "polylineNearestVertexIndex",
 			"kind": 64,
 			"kindString": "Function",
@@ -6043,7 +5989,7 @@
 			},
 			"signatures": [
 				{
-					"id": 391,
+					"id": 380,
 					"name": "polylineNearestVertexIndex",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -6053,7 +5999,7 @@
 					},
 					"parameters": [
 						{
-							"id": 392,
+							"id": 381,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6066,7 +6012,7 @@
 							}
 						},
 						{
-							"id": 393,
+							"id": 382,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6092,67 +6038,6 @@
 					"fileName": "polylineFunctions/polylineNearestVertexIndex.ts",
 					"line": 15,
 					"character": 42
-				}
-			]
-		},
-		{
-			"id": 398,
-			"name": "polylineSegmentIndexAt",
-			"kind": 64,
-			"kindString": "Function",
-			"flags": {
-				"isExported": true
-			},
-			"signatures": [
-				{
-					"id": 399,
-					"name": "polylineSegmentIndexAt",
-					"kind": 4096,
-					"kindString": "Call signature",
-					"flags": {},
-					"comment": {
-						"shortText": "Computes the segment index at which a given distance falls along the polyline,\nparameterized according to absolute distance _t_ along its geometry."
-					},
-					"parameters": [
-						{
-							"id": 400,
-							"name": "poly",
-							"kind": 32768,
-							"kindString": "Parameter",
-							"flags": {},
-							"comment": {},
-							"type": {
-								"type": "reference",
-								"name": "IPolyline",
-								"id": 42
-							}
-						},
-						{
-							"id": 401,
-							"name": "t",
-							"kind": 32768,
-							"kindString": "Parameter",
-							"flags": {},
-							"comment": {
-								"text": "\n"
-							},
-							"type": {
-								"type": "intrinsic",
-								"name": "number"
-							}
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "number"
-					}
-				}
-			],
-			"sources": [
-				{
-					"fileName": "polylineFunctions/polylineSegmentIndexAt.ts",
-					"line": 12,
-					"character": 38
 				}
 			]
 		},
@@ -6247,7 +6132,7 @@
 			]
 		},
 		{
-			"id": 433,
+			"id": 419,
 			"name": "polylineTrim",
 			"kind": 64,
 			"kindString": "Function",
@@ -6256,22 +6141,25 @@
 			},
 			"signatures": [
 				{
-					"id": 434,
+					"id": 420,
 					"name": "polylineTrim",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Trims a polyline by an absolute distance from its beginning and its end."
+						"shortText": "Trims a polyline to a range of its _t_ parameter.",
+						"text": "This function trims geomtery from either or both ends of the polyline, kind of like a \"substring\"\noperation. Note that fractional values are allowed on the bounding _t_ parameters, which may slice off\nonly parts of segments to form new vertices.\n\nA polyline's parameterization is defined according to _t_, where\nvalues of _t_ are between 0 and the polyline's vertex count, and smooth values of _t_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nBoth the `minT` and `maxT` parameters will be clamped to their allowed domains [0, _N_-1] for a\npolyline of _N_ vertices.\n"
 					},
 					"parameters": [
 						{
-							"id": 435,
+							"id": 421,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the polyline to trim"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -6279,31 +6167,32 @@
 							}
 						},
 						{
-							"id": 436,
-							"name": "begin",
+							"id": 422,
+							"name": "tStart",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"shortText": "minimum _t_ value to include. The resulting polyline will have its last vertex at\n the point described by this value on the original polyline. Internally, this value will be clamped\n to the allowed domain `[0, poly.length/2 - 1]`."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
 							}
 						},
 						{
-							"id": 437,
-							"name": "end",
+							"id": 423,
+							"name": "tEnd",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
 							}
 						},
 						{
-							"id": 438,
+							"id": 424,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6342,13 +6231,13 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineTrim.ts",
-					"line": 19,
+					"line": 33,
 					"character": 28
 				}
 			]
 		},
 		{
-			"id": 439,
+			"id": 425,
 			"name": "rayAlloc",
 			"kind": 64,
 			"kindString": "Function",
@@ -6357,7 +6246,7 @@
 			},
 			"signatures": [
 				{
-					"id": 440,
+					"id": 426,
 					"name": "rayAlloc",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -6388,7 +6277,7 @@
 			]
 		},
 		{
-			"id": 448,
+			"id": 434,
 			"name": "rayClone",
 			"kind": 64,
 			"kindString": "Function",
@@ -6397,14 +6286,14 @@
 			},
 			"signatures": [
 				{
-					"id": 449,
+					"id": 435,
 					"name": "rayClone",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 450,
+							"id": 436,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6416,7 +6305,7 @@
 							}
 						},
 						{
-							"id": 451,
+							"id": 437,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6445,7 +6334,7 @@
 			]
 		},
 		{
-			"id": 452,
+			"id": 438,
 			"name": "rayContainsPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -6454,14 +6343,14 @@
 			},
 			"signatures": [
 				{
-					"id": 453,
+					"id": 439,
 					"name": "rayContainsPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 454,
+							"id": 440,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6473,7 +6362,7 @@
 							}
 						},
 						{
-							"id": 455,
+							"id": 441,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6500,7 +6389,7 @@
 			]
 		},
 		{
-			"id": 460,
+			"id": 446,
 			"name": "rayGetClosestDistanceToPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -6509,14 +6398,14 @@
 			},
 			"signatures": [
 				{
-					"id": 461,
+					"id": 447,
 					"name": "rayGetClosestDistanceToPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 462,
+							"id": 448,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6528,7 +6417,7 @@
 							}
 						},
 						{
-							"id": 463,
+							"id": 449,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6555,7 +6444,7 @@
 			]
 		},
 		{
-			"id": 469,
+			"id": 455,
 			"name": "rayGetClosestPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -6564,14 +6453,14 @@
 			},
 			"signatures": [
 				{
-					"id": 470,
+					"id": 456,
 					"name": "rayGetClosestPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 471,
+							"id": 457,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6583,7 +6472,7 @@
 							}
 						},
 						{
-							"id": 472,
+							"id": 458,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6595,7 +6484,7 @@
 							}
 						},
 						{
-							"id": 473,
+							"id": 459,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6624,7 +6513,7 @@
 			]
 		},
 		{
-			"id": 464,
+			"id": 450,
 			"name": "rayGetPointAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -6633,14 +6522,14 @@
 			},
 			"signatures": [
 				{
-					"id": 465,
+					"id": 451,
 					"name": "rayGetPointAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 466,
+							"id": 452,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6652,7 +6541,7 @@
 							}
 						},
 						{
-							"id": 467,
+							"id": 453,
 							"name": "t",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6663,7 +6552,7 @@
 							}
 						},
 						{
-							"id": 468,
+							"id": 454,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6692,7 +6581,7 @@
 			]
 		},
 		{
-			"id": 474,
+			"id": 460,
 			"name": "rayIntersectLine",
 			"kind": 64,
 			"kindString": "Function",
@@ -6701,14 +6590,14 @@
 			},
 			"signatures": [
 				{
-					"id": 475,
+					"id": 461,
 					"name": "rayIntersectLine",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 476,
+							"id": 462,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6720,7 +6609,7 @@
 							}
 						},
 						{
-							"id": 477,
+							"id": 463,
 							"name": "line",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6732,7 +6621,7 @@
 							}
 						},
 						{
-							"id": 478,
+							"id": 464,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6761,7 +6650,7 @@
 			]
 		},
 		{
-			"id": 479,
+			"id": 465,
 			"name": "rayIntersectPolylineIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -6770,14 +6659,14 @@
 			},
 			"signatures": [
 				{
-					"id": 480,
+					"id": 466,
 					"name": "rayIntersectPolylineIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 481,
+							"id": 467,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6789,7 +6678,7 @@
 							}
 						},
 						{
-							"id": 482,
+							"id": 468,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6823,7 +6712,7 @@
 			]
 		},
 		{
-			"id": 483,
+			"id": 469,
 			"name": "rayIntersectRay",
 			"kind": 64,
 			"kindString": "Function",
@@ -6832,14 +6721,14 @@
 			},
 			"signatures": [
 				{
-					"id": 484,
+					"id": 470,
 					"name": "rayIntersectRay",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 485,
+							"id": 471,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6851,7 +6740,7 @@
 							}
 						},
 						{
-							"id": 486,
+							"id": 472,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6863,7 +6752,7 @@
 							}
 						},
 						{
-							"id": 487,
+							"id": 473,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6892,7 +6781,7 @@
 			]
 		},
 		{
-			"id": 341,
+			"id": 330,
 			"name": "rayIntersectSegment",
 			"kind": 64,
 			"kindString": "Function",
@@ -6901,14 +6790,14 @@
 			},
 			"signatures": [
 				{
-					"id": 342,
+					"id": 331,
 					"name": "rayIntersectSegment",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 343,
+							"id": 332,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6920,7 +6809,7 @@
 							}
 						},
 						{
-							"id": 344,
+							"id": 333,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6932,7 +6821,7 @@
 							}
 						},
 						{
-							"id": 345,
+							"id": 334,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6961,7 +6850,7 @@
 			]
 		},
 		{
-			"id": 488,
+			"id": 474,
 			"name": "rayLookAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -6970,14 +6859,14 @@
 			},
 			"signatures": [
 				{
-					"id": 489,
+					"id": 475,
 					"name": "rayLookAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 490,
+							"id": 476,
 							"name": "from",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -6989,7 +6878,7 @@
 							}
 						},
 						{
-							"id": 491,
+							"id": 477,
 							"name": "to",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7001,7 +6890,7 @@
 							}
 						},
 						{
-							"id": 492,
+							"id": 478,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7030,7 +6919,7 @@
 			]
 		},
 		{
-			"id": 441,
+			"id": 427,
 			"name": "rayReset",
 			"kind": 64,
 			"kindString": "Function",
@@ -7039,14 +6928,14 @@
 			},
 			"signatures": [
 				{
-					"id": 442,
+					"id": 428,
 					"name": "rayReset",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 443,
+							"id": 429,
 							"name": "x0",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7057,7 +6946,7 @@
 							}
 						},
 						{
-							"id": 444,
+							"id": 430,
 							"name": "y0",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7068,7 +6957,7 @@
 							}
 						},
 						{
-							"id": 445,
+							"id": 431,
 							"name": "dirX",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7079,7 +6968,7 @@
 							}
 						},
 						{
-							"id": 446,
+							"id": 432,
 							"name": "dirY",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7090,7 +6979,7 @@
 							}
 						},
 						{
-							"id": 447,
+							"id": 433,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7119,7 +7008,7 @@
 			]
 		},
 		{
-			"id": 493,
+			"id": 479,
 			"name": "rayTransformByAff",
 			"kind": 64,
 			"kindString": "Function",
@@ -7128,14 +7017,14 @@
 			},
 			"signatures": [
 				{
-					"id": 494,
+					"id": 480,
 					"name": "rayTransformByAff",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 495,
+							"id": 481,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7147,7 +7036,7 @@
 							}
 						},
 						{
-							"id": 496,
+							"id": 482,
 							"name": "mat",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7159,7 +7048,7 @@
 							}
 						},
 						{
-							"id": 497,
+							"id": 483,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7228,7 +7117,7 @@
 			]
 		},
 		{
-			"id": 498,
+			"id": 484,
 			"name": "segmentGetEndpoint0",
 			"kind": 64,
 			"kindString": "Function",
@@ -7237,14 +7126,14 @@
 			},
 			"signatures": [
 				{
-					"id": 499,
+					"id": 485,
 					"name": "segmentGetEndpoint0",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 500,
+							"id": 486,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7256,7 +7145,7 @@
 							}
 						},
 						{
-							"id": 501,
+							"id": 487,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7285,7 +7174,7 @@
 			]
 		},
 		{
-			"id": 502,
+			"id": 488,
 			"name": "segmentGetEndpoint1",
 			"kind": 64,
 			"kindString": "Function",
@@ -7294,14 +7183,14 @@
 			},
 			"signatures": [
 				{
-					"id": 503,
+					"id": 489,
 					"name": "segmentGetEndpoint1",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 504,
+							"id": 490,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7313,7 +7202,7 @@
 							}
 						},
 						{
-							"id": 505,
+							"id": 491,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7385,7 +7274,7 @@
 			]
 		},
 		{
-			"id": 506,
+			"id": 492,
 			"name": "segmentGetLengthSq",
 			"kind": 64,
 			"kindString": "Function",
@@ -7394,14 +7283,14 @@
 			},
 			"signatures": [
 				{
-					"id": 507,
+					"id": 493,
 					"name": "segmentGetLengthSq",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 508,
+							"id": 494,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7428,7 +7317,7 @@
 			]
 		},
 		{
-			"id": 364,
+			"id": 353,
 			"name": "segmentGetPointAt",
 			"kind": 64,
 			"kindString": "Function",
@@ -7437,14 +7326,14 @@
 			},
 			"signatures": [
 				{
-					"id": 365,
+					"id": 354,
 					"name": "segmentGetPointAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 366,
+							"id": 355,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7456,7 +7345,7 @@
 							}
 						},
 						{
-							"id": 367,
+							"id": 356,
 							"name": "t",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7467,7 +7356,7 @@
 							}
 						},
 						{
-							"id": 368,
+							"id": 357,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7565,7 +7454,7 @@
 			]
 		},
 		{
-			"id": 509,
+			"id": 495,
 			"name": "segmentIntersectPolylineIterator",
 			"kind": 64,
 			"kindString": "Function",
@@ -7574,14 +7463,14 @@
 			},
 			"signatures": [
 				{
-					"id": 510,
+					"id": 496,
 					"name": "segmentIntersectPolylineIterator",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 511,
+							"id": 497,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7593,7 +7482,7 @@
 							}
 						},
 						{
-							"id": 512,
+							"id": 498,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7627,7 +7516,7 @@
 			]
 		},
 		{
-			"id": 346,
+			"id": 335,
 			"name": "segmentIntersectRay",
 			"kind": 64,
 			"kindString": "Function",
@@ -7636,14 +7525,14 @@
 			},
 			"signatures": [
 				{
-					"id": 347,
+					"id": 336,
 					"name": "segmentIntersectRay",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 348,
+							"id": 337,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7655,7 +7544,7 @@
 							}
 						},
 						{
-							"id": 349,
+							"id": 338,
 							"name": "ray",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7667,7 +7556,7 @@
 							}
 						},
 						{
-							"id": 350,
+							"id": 339,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7696,7 +7585,7 @@
 			]
 		},
 		{
-			"id": 355,
+			"id": 344,
 			"name": "segmentIntersectSegment",
 			"kind": 64,
 			"kindString": "Function",
@@ -7705,14 +7594,14 @@
 			},
 			"signatures": [
 				{
-					"id": 356,
+					"id": 345,
 					"name": "segmentIntersectSegment",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 357,
+							"id": 346,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7724,7 +7613,7 @@
 							}
 						},
 						{
-							"id": 358,
+							"id": 347,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7736,7 +7625,7 @@
 							}
 						},
 						{
-							"id": 359,
+							"id": 348,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7765,7 +7654,7 @@
 			]
 		},
 		{
-			"id": 513,
+			"id": 499,
 			"name": "segmentNearestPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -7774,14 +7663,14 @@
 			},
 			"signatures": [
 				{
-					"id": 514,
+					"id": 500,
 					"name": "segmentNearestPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 515,
+							"id": 501,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7793,7 +7682,7 @@
 							}
 						},
 						{
-							"id": 516,
+							"id": 502,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7805,7 +7694,7 @@
 							}
 						},
 						{
-							"id": 517,
+							"id": 503,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7834,7 +7723,7 @@
 			]
 		},
 		{
-			"id": 369,
+			"id": 358,
 			"name": "segmentNearestT",
 			"kind": 64,
 			"kindString": "Function",
@@ -7843,14 +7732,14 @@
 			},
 			"signatures": [
 				{
-					"id": 370,
+					"id": 359,
 					"name": "segmentNearestT",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 371,
+							"id": 360,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7862,7 +7751,7 @@
 							}
 						},
 						{
-							"id": 372,
+							"id": 361,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -7978,7 +7867,7 @@
 			]
 		},
 		{
-			"id": 518,
+			"id": 504,
 			"name": "segmentReverse",
 			"kind": 64,
 			"kindString": "Function",
@@ -7987,14 +7876,14 @@
 			},
 			"signatures": [
 				{
-					"id": 519,
+					"id": 505,
 					"name": "segmentReverse",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 520,
+							"id": 506,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8006,7 +7895,7 @@
 							}
 						},
 						{
-							"id": 521,
+							"id": 507,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8035,7 +7924,7 @@
 			]
 		},
 		{
-			"id": 522,
+			"id": 508,
 			"name": "vecAdd",
 			"kind": 64,
 			"kindString": "Function",
@@ -8044,7 +7933,7 @@
 			},
 			"signatures": [
 				{
-					"id": 523,
+					"id": 509,
 					"name": "vecAdd",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8054,7 +7943,7 @@
 					},
 					"parameters": [
 						{
-							"id": 524,
+							"id": 510,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8067,7 +7956,7 @@
 							}
 						},
 						{
-							"id": 525,
+							"id": 511,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8080,7 +7969,7 @@
 							}
 						},
 						{
-							"id": 526,
+							"id": 512,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8152,7 +8041,7 @@
 			]
 		},
 		{
-			"id": 527,
+			"id": 513,
 			"name": "vecClone",
 			"kind": 64,
 			"kindString": "Function",
@@ -8161,7 +8050,7 @@
 			},
 			"signatures": [
 				{
-					"id": 528,
+					"id": 514,
 					"name": "vecClone",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8171,7 +8060,7 @@
 					},
 					"parameters": [
 						{
-							"id": 529,
+							"id": 515,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8184,7 +8073,7 @@
 							}
 						},
 						{
-							"id": 530,
+							"id": 516,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8216,7 +8105,7 @@
 			]
 		},
 		{
-			"id": 456,
+			"id": 442,
 			"name": "vecDistance",
 			"kind": 64,
 			"kindString": "Function",
@@ -8225,7 +8114,7 @@
 			},
 			"signatures": [
 				{
-					"id": 457,
+					"id": 443,
 					"name": "vecDistance",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8235,7 +8124,7 @@
 					},
 					"parameters": [
 						{
-							"id": 458,
+							"id": 444,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8248,7 +8137,7 @@
 							}
 						},
 						{
-							"id": 459,
+							"id": 445,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8278,7 +8167,7 @@
 			]
 		},
 		{
-			"id": 373,
+			"id": 362,
 			"name": "vecDistanceSq",
 			"kind": 64,
 			"kindString": "Function",
@@ -8287,7 +8176,7 @@
 			},
 			"signatures": [
 				{
-					"id": 374,
+					"id": 363,
 					"name": "vecDistanceSq",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8297,7 +8186,7 @@
 					},
 					"parameters": [
 						{
-							"id": 375,
+							"id": 364,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8310,7 +8199,7 @@
 							}
 						},
 						{
-							"id": 376,
+							"id": 365,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8340,7 +8229,7 @@
 			]
 		},
 		{
-			"id": 531,
+			"id": 517,
 			"name": "vecDot",
 			"kind": 64,
 			"kindString": "Function",
@@ -8349,7 +8238,7 @@
 			},
 			"signatures": [
 				{
-					"id": 532,
+					"id": 518,
 					"name": "vecDot",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8359,7 +8248,7 @@
 					},
 					"parameters": [
 						{
-							"id": 533,
+							"id": 519,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8372,7 +8261,7 @@
 							}
 						},
 						{
-							"id": 534,
+							"id": 520,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8402,7 +8291,7 @@
 			]
 		},
 		{
-			"id": 535,
+			"id": 521,
 			"name": "vecGetLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -8411,7 +8300,7 @@
 			},
 			"signatures": [
 				{
-					"id": 536,
+					"id": 522,
 					"name": "vecGetLength",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8421,7 +8310,7 @@
 					},
 					"parameters": [
 						{
-							"id": 537,
+							"id": 523,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8451,7 +8340,7 @@
 			]
 		},
 		{
-			"id": 538,
+			"id": 524,
 			"name": "vecGetLengthSq",
 			"kind": 64,
 			"kindString": "Function",
@@ -8460,7 +8349,7 @@
 			},
 			"signatures": [
 				{
-					"id": 539,
+					"id": 525,
 					"name": "vecGetLengthSq",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8470,7 +8359,7 @@
 					},
 					"parameters": [
 						{
-							"id": 540,
+							"id": 526,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8500,7 +8389,7 @@
 			]
 		},
 		{
-			"id": 541,
+			"id": 527,
 			"name": "vecGetManhattanLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -8509,7 +8398,7 @@
 			},
 			"signatures": [
 				{
-					"id": 542,
+					"id": 528,
 					"name": "vecGetManhattanLength",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8519,7 +8408,7 @@
 					},
 					"parameters": [
 						{
-							"id": 543,
+							"id": 529,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8549,7 +8438,7 @@
 			]
 		},
 		{
-			"id": 312,
+			"id": 530,
 			"name": "vecLerp",
 			"kind": 64,
 			"kindString": "Function",
@@ -8558,7 +8447,7 @@
 			},
 			"signatures": [
 				{
-					"id": 313,
+					"id": 531,
 					"name": "vecLerp",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8568,7 +8457,7 @@
 					},
 					"parameters": [
 						{
-							"id": 314,
+							"id": 532,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8581,7 +8470,7 @@
 							}
 						},
 						{
-							"id": 315,
+							"id": 533,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8594,7 +8483,7 @@
 							}
 						},
 						{
-							"id": 316,
+							"id": 534,
 							"name": "r",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8606,7 +8495,7 @@
 							}
 						},
 						{
-							"id": 317,
+							"id": 535,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8632,13 +8521,13 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecLerp.ts",
-					"line": 13,
+					"line": 14,
 					"character": 23
 				}
 			]
 		},
 		{
-			"id": 544,
+			"id": 536,
 			"name": "vecManhattanDistance",
 			"kind": 64,
 			"kindString": "Function",
@@ -8647,7 +8536,7 @@
 			},
 			"signatures": [
 				{
-					"id": 545,
+					"id": 537,
 					"name": "vecManhattanDistance",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8657,7 +8546,7 @@
 					},
 					"parameters": [
 						{
-							"id": 546,
+							"id": 538,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8670,7 +8559,7 @@
 							}
 						},
 						{
-							"id": 547,
+							"id": 539,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8700,7 +8589,7 @@
 			]
 		},
 		{
-			"id": 548,
+			"id": 540,
 			"name": "vecNormalize",
 			"kind": 64,
 			"kindString": "Function",
@@ -8709,7 +8598,7 @@
 			},
 			"signatures": [
 				{
-					"id": 549,
+					"id": 541,
 					"name": "vecNormalize",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8719,7 +8608,7 @@
 					},
 					"parameters": [
 						{
-							"id": 550,
+							"id": 542,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8732,7 +8621,7 @@
 							}
 						},
 						{
-							"id": 551,
+							"id": 543,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8764,7 +8653,7 @@
 			]
 		},
 		{
-			"id": 552,
+			"id": 544,
 			"name": "vecOrigin",
 			"kind": 64,
 			"kindString": "Function",
@@ -8773,7 +8662,7 @@
 			},
 			"signatures": [
 				{
-					"id": 553,
+					"id": 545,
 					"name": "vecOrigin",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8783,7 +8672,7 @@
 					},
 					"parameters": [
 						{
-							"id": 554,
+							"id": 546,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8815,7 +8704,7 @@
 			]
 		},
 		{
-			"id": 555,
+			"id": 547,
 			"name": "vecPerp",
 			"kind": 64,
 			"kindString": "Function",
@@ -8824,7 +8713,7 @@
 			},
 			"signatures": [
 				{
-					"id": 556,
+					"id": 548,
 					"name": "vecPerp",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8834,7 +8723,7 @@
 					},
 					"parameters": [
 						{
-							"id": 557,
+							"id": 549,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8847,7 +8736,7 @@
 							}
 						},
 						{
-							"id": 558,
+							"id": 550,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8954,7 +8843,7 @@
 			]
 		},
 		{
-			"id": 559,
+			"id": 551,
 			"name": "vecScale",
 			"kind": 64,
 			"kindString": "Function",
@@ -8963,7 +8852,7 @@
 			},
 			"signatures": [
 				{
-					"id": 560,
+					"id": 552,
 					"name": "vecScale",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8973,7 +8862,7 @@
 					},
 					"parameters": [
 						{
-							"id": 561,
+							"id": 553,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8986,7 +8875,7 @@
 							}
 						},
 						{
-							"id": 562,
+							"id": 554,
 							"name": "scalar",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8998,7 +8887,7 @@
 							}
 						},
 						{
-							"id": 563,
+							"id": 555,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9030,7 +8919,7 @@
 			]
 		},
 		{
-			"id": 564,
+			"id": 556,
 			"name": "vecSubtract",
 			"kind": 64,
 			"kindString": "Function",
@@ -9039,7 +8928,7 @@
 			},
 			"signatures": [
 				{
-					"id": 565,
+					"id": 557,
 					"name": "vecSubtract",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9049,7 +8938,7 @@
 					},
 					"parameters": [
 						{
-							"id": 566,
+							"id": 558,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9062,7 +8951,7 @@
 							}
 						},
 						{
-							"id": 567,
+							"id": 559,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9075,7 +8964,7 @@
 							}
 						},
 						{
-							"id": 568,
+							"id": 560,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9234,7 +9123,7 @@
 				108,
 				113,
 				148,
-				569,
+				561,
 				150,
 				118,
 				127,
@@ -9270,80 +9159,78 @@
 				288,
 				292,
 				309,
-				323,
-				328,
-				332,
-				337,
-				351,
-				360,
-				385,
-				381,
-				394,
-				402,
-				406,
+				312,
+				317,
+				321,
+				326,
+				340,
+				349,
+				374,
+				370,
+				383,
+				387,
 				85,
 				295,
 				94,
 				306,
 				174,
-				318,
+				392,
 				186,
 				302,
-				411,
-				416,
-				420,
-				424,
+				397,
+				402,
+				406,
+				410,
 				299,
-				428,
-				377,
-				390,
-				398,
+				414,
+				366,
+				379,
 				103,
-				433,
-				439,
-				448,
-				452,
+				419,
+				425,
+				434,
+				438,
+				446,
+				455,
+				450,
 				460,
+				465,
 				469,
-				464,
+				330,
 				474,
+				427,
 				479,
-				483,
-				341,
-				488,
-				441,
-				493,
 				177,
-				498,
-				502,
+				484,
+				488,
 				191,
-				506,
-				364,
+				492,
+				353,
 				199,
-				509,
-				346,
-				355,
-				513,
-				369,
+				495,
+				335,
+				344,
+				499,
+				358,
 				179,
-				518,
-				522,
+				504,
+				508,
 				87,
+				513,
+				442,
+				362,
+				517,
+				521,
+				524,
 				527,
-				456,
-				373,
-				531,
-				535,
-				538,
-				541,
-				312,
+				530,
+				536,
+				540,
 				544,
-				548,
-				552,
-				555,
+				547,
 				89,
-				559,
-				564,
+				551,
+				556,
 				98
 			]
 		}
