@@ -1,21 +1,16 @@
-import { _asPolyline } from "../internal/_asPolyline";
-import { EPSILON } from "../internal/const";
-import { polylineGetPointAt } from "../polylineFunctions/polylineGetPointAt";
+import { _lerp } from "../internal/_lerp";
 import { IPolygon } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
 import { vecReset } from "../vecFunctions/vecReset";
-import { polygonGetPerimeter } from "./polygonGetPerimeter";
 
 export function polygonGetPointAt(poly: IPolygon, t: number, out = vecAlloc()) {
-  if (poly.length === 0) {
+  const len = poly.length / 2;
+  if (len === 0) {
     return vecReset(NaN, NaN, out);
   }
 
-  const perimeter = polygonGetPerimeter(poly);
-  if (perimeter < EPSILON) {
-    return vecReset(poly[0], poly[1], out);
-  }
-
-  t = ((t % perimeter) + perimeter) % perimeter;
-  return polylineGetPointAt(_asPolyline(poly), t, out);
+  t = ((t % len) + len) % len;
+  const p0 = Math.floor(t);
+  const p1 = (p0 + 1) % len;
+  return vecReset(_lerp(poly[2 * p0], poly[2 * p1], t - p0), _lerp(poly[2 * p0 + 1], poly[2 * p1 + 1], t - p0), out);
 }

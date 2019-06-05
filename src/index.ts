@@ -54,7 +54,6 @@ export { polygonIntersectSegmentIterator } from "./polygonFunctions/polygonInter
 export { polygonNearestPoint } from "./polygonFunctions/polygonNearestPoint";
 export { polygonNearestT } from "./polygonFunctions/polygonNearestT";
 export { polygonNearestVertexIndex } from "./polygonFunctions/polygonNearestVertexIndex";
-export { polygonSideIndexAt } from "./polygonFunctions/polygonSideIndexAt";
 export { polygonTransformByAff } from "./polygonFunctions/polygonTransformByAff";
 export { polylineAlloc } from "./polylineFunctions/polylineAlloc";
 export { polylineClose } from "./polylineFunctions/polylineClose";
