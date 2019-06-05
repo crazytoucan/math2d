@@ -2335,6 +2335,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Copies the values from the given line into a new line."
+					},
 					"parameters": [
 						{
 							"id": 129,
@@ -2342,6 +2345,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the source line from which values should be copied"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -2354,6 +2360,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -2372,7 +2381,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineClone.ts",
-					"line": 5,
+					"line": 11,
 					"character": 25
 				}
 			]
@@ -2392,6 +2401,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Determines the closest distance the line comes to a given point",
+						"text": "This measures the perpendicular distance of the point to the line's\ndirection vector. If the point lies on the line, this function returns 0.\n\nTo get the signed distance of the point to the line, which additionally\nencodes which half-plane the point lies within, see\n{@link lineClosestSignedDistanceToPoint}.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link lineGetClosestSignedDistanceToPoint}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 133,
@@ -2399,6 +2418,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the line to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -2411,6 +2433,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the reference point to check for closest distance"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -2427,7 +2452,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineClosestDistanceToPoint.ts",
-					"line": 4,
+					"line": 18,
 					"character": 42
 				}
 			]
@@ -2447,6 +2472,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Determines the closest _signed_ distance the line comes to a given point",
+						"text": "This measures the perpendicular distance of the point to the line's\ndirection vector. A _positive_ return value means that the point lies on the side of the line\nrotated from its direction vector in the x+ to y+ direction (\"left\" or counter-clockwise in the\nstandard Cartesian coordinate system), while a _negative_ return value means it lies in the other half-plane\n(\"right\" or clockwise in the standard Cartesian coordinate system).\n\nIf the point lies on the line, this function returns 0.\n\nTo get the (unsigned) distance of the point to the line, see\n{@link lineClosestDistanceToPoint}.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link lineGetClosestDistanceToPoint}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineWhichSide}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 137,
@@ -2454,6 +2493,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the line to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -2466,6 +2508,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the reference point to check for closest distance"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -2482,7 +2527,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineClosestSignedDistanceToPoint.ts",
-					"line": 4,
+					"line": 23,
 					"character": 48
 				}
 			]
@@ -2502,6 +2547,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Determines if the point is on the line",
+						"text": "This function tests whether the point lies along the line's geometry,\nusing allowed error _ε_ = 1e-8.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link rayContainsPoint}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineWhichSide}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 141,
@@ -2509,6 +2568,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the line to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -2521,6 +2583,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the point to check whether it's on the line"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -2537,7 +2602,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineContainsPoint.ts",
-					"line": 5,
+					"line": 16,
 					"character": 33
 				}
 			]
@@ -2563,7 +2628,11 @@
 						"tags": [
 							{
 								"tag": "see",
-								"text": "{@link rayGetPointAt}\n"
+								"text": "{@link ILine}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineGetPointAt}\n"
 							}
 						]
 					},
@@ -2574,6 +2643,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the line to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -2586,7 +2658,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "distance along the line at which to compute point"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2617,7 +2691,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineGetPointAt.ts",
-					"line": 19,
+					"line": 20,
 					"character": 30
 				}
 			]
@@ -2637,6 +2711,24 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the intersection point between the two given lines, if it exists.",
+						"text": "Finds the location at which the first and second line meet. If the lines are parallel and not overlapping,\nthis function returns no intersection. If the lines are completely overlapping,\nthis function returns the first line's initial point.\n\nThe returned value is an {@link IIntersection} object which will have have the\n`exists` flag set to `true` iff an intersection was found. It additionally\nhas the following fields, if the intersection exists:\n\n- `x` – the x-coordinate of the point of intersection\n- `y` – the y-coordinate of the point of intersection\n- `t0` – where along the first line's geometry the intersection was found,\n     according to the first line's parameterization\n- `t1` – where along the second line's geometry the intersection was found,\n     according to the second line's parameterization\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectPolylineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectRay}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectSegment}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 171,
@@ -2644,6 +2736,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the first line to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -2656,6 +2751,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the second line to find intersection with"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -2668,6 +2766,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IIntersection",
@@ -2686,7 +2785,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineIntersectLine.ts",
-					"line": 18,
+					"line": 43,
 					"character": 33
 				}
 			]
@@ -2706,6 +2805,36 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes all locations at which a line crosses a given polyline.",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the line's geometry\naccording to {@link ILine} parameterization. (See {@link lineGetPointAt}.)\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would hit the intersections if one were to start from -∞ and travel toward +∞ along the line's\ndirection vector.\n\nAlmost equivalent to {@link polylineIntersectLineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the line's geometry.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IIntersection}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link ILine}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polylineIntersectLineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectLine}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectRay}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectSegment}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 206,
@@ -2725,6 +2854,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -2748,7 +2878,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineIntersectPolylineIterator.ts",
-					"line": 6,
+					"line": 28,
 					"character": 45
 				}
 			]
@@ -2768,6 +2898,24 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the intersection point between the given line and ray, if it exists.",
+						"text": "Finds the location at which the line and ray meet. If the ray starts on one side of the line and points away from it,\nor they are parallel, this function returns no intersection.\nIf the ray and line are the same (i.e. they are parallel and coincide with one another),\nthis function returns the line's initial point.\n\nThe returned value is an {@link IIntersection} object which will have have the\n`exists` flag set to `true` iff an intersection was found. It additionally\nhas the following fields, if the intersection exists:\n\n- `x` – the x-coordinate of the point of intersection\n- `y` – the y-coordinate of the point of intersection\n- `t0` – where along the line's geometry the intersection was found,\n     according to the line's parameterization\n- `t1` – where along the ray's geometry the intersection was found,\n     according to the ray's parameterization\n\nAlmost equivalent to {@link rayIntersectLine}, except the returned intersection reverses its _t0_ and _t1_.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectLine}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectPolylineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectSegment}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 210,
@@ -2775,6 +2923,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the line to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -2787,6 +2938,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the ray to find intersection with"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -2799,6 +2953,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IIntersection",
@@ -2817,7 +2972,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineIntersectRay.ts",
-					"line": 6,
+					"line": 34,
 					"character": 32
 				}
 			]
@@ -2837,6 +2992,24 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the intersection point between the given line and segment, if it exists.",
+						"text": "Finds the location at which the line and line segment meet.\nIf the line \"misses\" the segment, this function returns no intersection.\nIf the line completely overlaps the segment, this function returns the line's initial point.\n\nThe returned value is an {@link IIntersection} object which will have have the\n`exists` flag set to `true` iff an intersection was found. It additionally\nhas the following fields, if the intersection exists:\n\n- `x` – the x-coordinate of the point of intersection\n- `y` – the y-coordinate of the point of intersection\n- `t0` – where along the line's geometry the intersection was found,\n     according to the line's parameterization\n- `t1` – where along the segment's geometry the intersection was found,\n     according to the segment's parameterization\n\nAlmost equivalent to {@link segmentIntersectLine}, except the returned intersection reverses its _t0_ and _t1_.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectLine}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectPolylineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectRay}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 196,
@@ -2844,6 +3017,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the line to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -2856,6 +3032,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the segment to find intersection with"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -2868,6 +3047,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IIntersection",
@@ -2886,7 +3066,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineIntersectSegment.ts",
-					"line": 11,
+					"line": 38,
 					"character": 36
 				}
 			]
@@ -2906,6 +3086,10 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Projects a point onto the given line, returning the distance _t_ along the line where it falls.",
+						"text": "This function basically computes the dot product of the relative vector from the line's initial\npoint to the given point.\n\nTo find the closest point at which the line comes to the given point, which is the image\nof the point projected onto the line, see {@link lineGetClosestPoint}.\n"
+					},
 					"parameters": [
 						{
 							"id": 215,
@@ -2913,6 +3097,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "line to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -2925,6 +3112,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "point to project onto the line"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -2937,6 +3127,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -2955,7 +3148,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineProjectPoint.ts",
-					"line": 6,
+					"line": 19,
 					"character": 32
 				}
 			]
@@ -2975,6 +3168,24 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Construct a new line given an (x0, y0) initial point and (dirX, dirY) direction vector.",
+						"text": "This function creates a new line from given values. The (dirX, dirY) values given should\ndescribe a unit vector: no checks or operations are done internally to guarantee that is so.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link ILine}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineAlloc}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineClone}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 122,
@@ -2982,6 +3193,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "x-coordinate of the line's initial point"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2993,6 +3207,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "y-coordinate of the line's initial point"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -3004,6 +3221,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "x-coordinate of the line's direction vector, which should form a unit vector\n along with the provided `dirY`"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -3015,6 +3235,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "y-coordinate of the line's direction vector, which should form a unit vector\n along with the provided `dirX`"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -3026,6 +3249,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -3044,7 +3268,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineReset.ts",
-					"line": 3,
+					"line": 20,
 					"character": 25
 				}
 			]
@@ -3064,6 +3288,10 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Construct a line that passes through two given points.",
+						"text": "The constructed line will have its initial point set to the given `from` point,\nand its direction initialized to pass through the `to` point (on the positive side\nof the line, i.e. _t_ > 0). The direction vector will be properly normalized even if\nthe `from` and `to` points are not one unit apart.\n\nIf the two points are the same, the returned line will have the same initial point as\nthe `from` argument and a (NaN, NaN) direction vector.\n"
+					},
 					"parameters": [
 						{
 							"id": 220,
@@ -3071,6 +3299,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the first point to pass through"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -3083,6 +3314,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the second point to pass through"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -3095,6 +3329,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -3113,7 +3350,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineThroughPoints.ts",
-					"line": 5,
+					"line": 20,
 					"character": 33
 				}
 			]
@@ -3133,6 +3370,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Transforms a line by an affine matrix.",
+						"text": "This function computes the result of applying a transform to the line's geometry.\nThe resulting initial point will be the result of applying the given transform to the original\ninitial point, and its direction will be the result of applying any rotations or shears from\nthe matrix. The resulting direction vector will be correctly normalized when applicable.\n\nAffine transformations and their specifics within Vectormath are described in more detail\nin the {@link vecTransformByAff} docs.\n\nSynonymous to {@link rayTransformByAff}.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecTransformByAff}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link IMat2x3}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 225,
@@ -3140,6 +3391,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the line to transform"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -3152,6 +3406,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the affine transform to apply"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -3164,6 +3421,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -3182,7 +3440,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineTransformByAff.ts",
-					"line": 11,
+					"line": 30,
 					"character": 34
 				}
 			]
@@ -3202,6 +3460,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes on which side of the line a given point lies.",
+						"text": "This method returns one of four possible values:\n\n- `0`, if the point lies exactly along the line\n- `1`, if the point lies in the halfplane defined by its direction vector sweeping in the x+ to y+ direction\n  (\"left\" side, or counter-clockwise in the standard Cartesian coordinate system)\n- `-1`, if the point lies in the halfplane defined by its direction vector sweeping in the x+ to y- direction\n  (\"right\" side, or clockwise in the standard Cartesian coordinate system)\n- `NaN`, if either of the point's coordinates or any of the line's components are NaN.\n\nThis measures the perpendicular distance of the point to the line's\ndirection vector. A _positive_ return value means that the point lies on the side of the line\nrotated from its direction vector in the x+ to y+ direction (\"left\" or counter-clockwise in the\nstandard Cartesian coordinate system), while a _negative_ return value means it lies in the other half-plane\n(\"right\" or clockwise in the standard Cartesian coordinate system).\n\nIf the point lies on the line, this function returns 0.\n\nTo get the (unsigned) distance of the point to the line, see\n{@link lineClosestDistanceToPoint}.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link lineGetClosestDistanceToPoint}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineWhichSide}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 230,
@@ -3209,6 +3481,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the line to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -3221,6 +3496,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the reference point to check for closest distance"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -3237,7 +3515,7 @@
 			"sources": [
 				{
 					"fileName": "lineFunctions/lineWhichSide.ts",
-					"line": 5,
+					"line": 33,
 					"character": 29
 				}
 			]
@@ -6611,7 +6889,11 @@
 						"tags": [
 							{
 								"tag": "see",
-								"text": "{@link lineContainsPoint}\n"
+								"text": "{@link lineContainsPoint}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineWhichSide}\n"
 							}
 						]
 					},
@@ -6656,7 +6938,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayContainsPoint.ts",
-					"line": 17,
+					"line": 18,
 					"character": 32
 				}
 			]
@@ -6757,6 +7039,10 @@
 						"tags": [
 							{
 								"tag": "see",
+								"text": "{@link lineProjectPoint}"
+							},
+							{
+								"tag": "see",
 								"text": "{@link lineGetClosestPoint}"
 							},
 							{
@@ -6820,7 +7106,7 @@
 			"sources": [
 				{
 					"fileName": "rayFunctions/rayGetClosestPoint.ts",
-					"line": 22,
+					"line": 23,
 					"character": 34
 				}
 			]

@@ -16,6 +16,7 @@ import { rayGetPointAt } from "./rayGetPointAt";
  *
  * @param ray the ray to inspect
  * @param point the reference point to project onto the ray
+ * @see {@link lineProjectPoint}
  * @see {@link lineGetClosestPoint}
  * @see {@link rayGetClosestDistanceToPoint}
  */

@@ -11,10 +11,11 @@ import { vecReset } from "../vecFunctions/vecReset";
  *
  * Synonymous to {@link rayGetPointAt}.
  *
- * @param ray
- * @param t
+ * @param line the line to inspect
+ * @param t distance along the line at which to compute point
  * @param out
- * @see {@link rayGetPointAt}
+ * @see {@link ILine}
+ * @see {@link lineGetPointAt}
  */
 export function lineGetPointAt(line: ILine, t: number, out = vecAlloc()) {
   return vecReset(line.x0 + t * line.dirX, line.y0 + t * line.dirY, out);

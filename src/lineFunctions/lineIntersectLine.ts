@@ -15,6 +15,31 @@ const TMP0 = mat2x3Alloc();
 const TMP1 = lineAlloc();
 const TMP2 = vecAlloc();
 
+/**
+ * Computes the intersection point between the two given lines, if it exists.
+ *
+ * Finds the location at which the first and second line meet. If the lines are parallel and not overlapping,
+ * this function returns no intersection. If the lines are completely overlapping,
+ * this function returns the first line's initial point.
+ *
+ * The returned value is an {@link IIntersection} object which will have have the
+ * `exists` flag set to `true` iff an intersection was found. It additionally
+ * has the following fields, if the intersection exists:
+ *
+ * - `x` – the x-coordinate of the point of intersection
+ * - `y` – the y-coordinate of the point of intersection
+ * - `t0` – where along the first line's geometry the intersection was found,
+ *      according to the first line's parameterization
+ * - `t1` – where along the second line's geometry the intersection was found,
+ *      according to the second line's parameterization
+ *
+ * @param a the first line to intersect
+ * @param b the second line to find intersection with
+ * @param out
+ * @see {@link lineIntersectPolylineIterator}
+ * @see {@link lineIntersectRay}
+ * @see {@link lineIntersectSegment}
+ */
 export function lineIntersectLine(a: ILine, b: ILine, out = intersectionAlloc()) {
   const transform = mat2x3Reset(a.dirX, -a.dirY, a.dirY, a.dirX, -a.x0, -a.y0, TMP0);
   const localB = _lineTransformByOrtho(b, transform, TMP1);
