@@ -6,6 +6,12 @@ import { polylineGetNumSegments } from "./polylineGetNumSegments";
 
 const TMP0 = vecAlloc();
 
+/**
+ * Computes the index of the nearest vertex of the polyline to a given reference point
+ *
+ * @param poly
+ * @param point
+ */
 export function polylineNearestVertexIndex(poly: IPolyline, point: IVec) {
   let winningDistanceSq = Infinity;
   let winningIndex = NaN;

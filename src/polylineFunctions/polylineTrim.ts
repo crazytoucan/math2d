@@ -8,6 +8,14 @@ import { polylineSegmentIndexAt } from "./polylineSegmentIndexAt";
 
 const TMP0 = vecAlloc();
 
+/**
+ * Trims a polyline by an absolute distance from its beginning and its end.
+ *
+ * @param poly
+ * @param begin
+ * @param end
+ * @param out
+ */
 export function polylineTrim(poly: IPolyline, begin: number, end: number, out = polylineAlloc()) {
   if (begin > end || poly.length === 0) {
     out.length = 0;

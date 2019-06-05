@@ -1,6 +1,12 @@
 import { IPolyline } from "../types";
 import { polylineAlloc } from "./polylineAlloc";
 
+/**
+ * Repeats the polyline's first vertex to form a closed path.
+ *
+ * @param poly
+ * @param out
+ */
 export function polylineClose(poly: IPolyline, out = polylineAlloc()) {
   const len = poly.length;
   if (len === 0) {

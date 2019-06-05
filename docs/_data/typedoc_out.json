@@ -5051,6 +5051,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Repeats the polyline's first vertex to form a closed path."
+					},
 					"parameters": [
 						{
 							"id": 297,
@@ -5058,6 +5061,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5070,6 +5074,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "array",
 								"elementType": {
@@ -5101,7 +5108,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineClose.ts",
-					"line": 4,
+					"line": 10,
 					"character": 29
 				}
 			]
@@ -5121,6 +5128,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes bounding box of polyline's geometry"
+					},
 					"parameters": [
 						{
 							"id": 96,
@@ -5128,6 +5138,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5140,6 +5151,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IBox",
@@ -5158,7 +5172,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineGetBounds.ts",
-					"line": 10,
+					"line": 16,
 					"character": 33
 				}
 			]
@@ -5178,6 +5192,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes total length of polyline"
+					},
 					"parameters": [
 						{
 							"id": 308,
@@ -5185,6 +5202,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5201,7 +5221,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineGetLength.ts",
-					"line": 5,
+					"line": 10,
 					"character": 33
 				}
 			]
@@ -5221,6 +5241,10 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Returns the number of individual line segments in this polyline",
+						"text": "This function computes the number of line segments represented by this polyline,\nwhich is always `Math.max(0, poly.length / 2 - 1)`. This function makes no effort to identify and filter\n\"trivial\" or \"empty\" segments that may exist along its path.\n"
+					},
 					"parameters": [
 						{
 							"id": 176,
@@ -5228,6 +5252,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5244,7 +5271,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineGetNumSegments.ts",
-					"line": 3,
+					"line": 12,
 					"character": 38
 				}
 			]
@@ -5264,6 +5291,15 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Gets a point along the polyline, parameterized according to absolute distance\n_t_ along its geometry.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IPolyline}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 320,
@@ -5271,6 +5307,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5279,10 +5316,11 @@
 						},
 						{
 							"id": 321,
-							"name": "d",
+							"name": "t",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -5294,6 +5332,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -5312,7 +5351,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineGetPointAt.ts",
-					"line": 11,
+					"line": 20,
 					"character": 34
 				}
 			]
@@ -5332,6 +5371,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Returns a polyline's segment by given index, starting at 0."
+					},
 					"parameters": [
 						{
 							"id": 188,
@@ -5339,6 +5381,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5351,6 +5394,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -5362,6 +5406,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -5380,7 +5427,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineGetSegment.ts",
-					"line": 5,
+					"line": 12,
 					"character": 34
 				}
 			]
@@ -5400,6 +5447,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the length of one of a polyline's segments by index, starting at 0."
+					},
 					"parameters": [
 						{
 							"id": 304,
@@ -5407,6 +5457,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5419,6 +5470,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -5434,7 +5488,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineGetSegmentLength.ts",
-					"line": 3,
+					"line": 9,
 					"character": 40
 				}
 			]
@@ -5454,6 +5508,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Retrieves a vertex from this polyline's geometry, starting at index 0"
+					},
 					"parameters": [
 						{
 							"id": 413,
@@ -5461,6 +5518,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5473,6 +5531,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -5484,6 +5543,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -5502,7 +5564,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineGetVertex.ts",
-					"line": 5,
+					"line": 12,
 					"character": 33
 				}
 			]
@@ -5522,6 +5584,32 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes all locations at which a polyline crosses a given line.",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ will fall between 0 and the polyline's total length, inclusive, and the\npoint corresponding to a given value _t0_ is defined by traveling an absolute distance _t0_\nalong the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one traveled from the polyline's start to its end\nalong its segment geometry.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IIntersection}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link IPolyline}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectPolylineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polylineIntersectRayIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polylineIntersectSegmentIterator}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 418,
@@ -5529,6 +5617,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5541,6 +5630,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -5564,7 +5654,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineIntersectLineIterator.ts",
-					"line": 5,
+					"line": 26,
 					"character": 45
 				}
 			]
@@ -5584,6 +5674,32 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes all locations at which a polyline crosses a given ray.",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ will fall between 0 and the polyline's total length, inclusive, and the\npoint corresponding to a given value _t0_ is defined by traveling an absolute distance _t0_\nalong the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one traveled from the polyline's start to its end\nalong its segment geometry.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IIntersection}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link IPolyline}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectPolylineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polylineIntersectLineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polylineIntersectSegmentIterator}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 422,
@@ -5591,6 +5707,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5603,6 +5720,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -5626,7 +5744,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineIntersectRayIterator.ts",
-					"line": 5,
+					"line": 26,
 					"character": 44
 				}
 			]
@@ -5646,6 +5764,32 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes all locations at which a polyline crosses a given line segment.",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ will fall between 0 and the polyline's total length, inclusive, and the\npoint corresponding to a given value _t0_ is defined by traveling an absolute distance _t0_\nalong the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one traveled from the polyline's start to its end\nalong its segment geometry.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IIntersection}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link IPolyline}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectPolylineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polylineIntersectLineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polylineIntersectRayIterator}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 426,
@@ -5653,6 +5797,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5665,6 +5810,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -5688,7 +5834,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineIntersectSegmentIterator.ts",
-					"line": 5,
+					"line": 26,
 					"character": 48
 				}
 			]
@@ -5708,6 +5854,10 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Returns whether the polyline's last vertex equals its first",
+						"text": "Computes whether the polyline forms a closed shape, i.e. its last vertex\nis the same as its first. As a special case, the empty polyline `[]` is\nconsidered closed.\n"
+					},
 					"parameters": [
 						{
 							"id": 301,
@@ -5715,6 +5865,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5731,7 +5884,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineIsClosed.ts",
-					"line": 4,
+					"line": 13,
 					"character": 32
 				}
 			]
@@ -5751,6 +5904,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the closest point that the polyline comes to a given reference point"
+					},
 					"parameters": [
 						{
 							"id": 430,
@@ -5758,6 +5914,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5770,6 +5927,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -5782,6 +5940,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -5800,7 +5961,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineNearestPoint.ts",
-					"line": 6,
+					"line": 13,
 					"character": 36
 				}
 			]
@@ -5820,6 +5981,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the closest location at which the polyline comes to a given reference point.",
+						"text": "The returned value _t_ is defined according to the {@link IPolyline} parameterization:\nvalues of _t_ will fall between 0 and the polyline's total length, inclusive, and the\npoint corresponding to a given value _t_ is defined by traveling an absolute distance _t_\nalong the polyline's geometry.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IPolyline}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 379,
@@ -5827,6 +5998,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5839,6 +6011,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -5855,7 +6028,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineNearestT.ts",
-					"line": 14,
+					"line": 27,
 					"character": 32
 				}
 			]
@@ -5875,6 +6048,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the index of the nearest vertex of the polyline to a given reference point"
+					},
 					"parameters": [
 						{
 							"id": 392,
@@ -5882,6 +6058,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5894,6 +6071,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -5910,7 +6090,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineNearestVertexIndex.ts",
-					"line": 9,
+					"line": 15,
 					"character": 42
 				}
 			]
@@ -5930,6 +6110,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the segment index at which a given distance falls along the polyline,\nparameterized according to absolute distance _t_ along its geometry."
+					},
 					"parameters": [
 						{
 							"id": 400,
@@ -5937,6 +6120,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5945,10 +6129,13 @@
 						},
 						{
 							"id": 401,
-							"name": "d",
+							"name": "t",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -5964,7 +6151,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineSegmentIndexAt.ts",
-					"line": 5,
+					"line": 12,
 					"character": 38
 				}
 			]
@@ -5984,6 +6171,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Transforms a polyline by an affine matrix.",
+						"text": "Simply transforms each of the polyline's vertices by the given matrix.\nAffine transformations and their specifics within Vectormath are described in more detail\nin the {@link vecTransformByAff} docs.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecTransformByAff}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link IMat2x3}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 105,
@@ -5991,6 +6192,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -6003,6 +6205,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -6015,6 +6218,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "array",
 								"elementType": {
@@ -6037,7 +6241,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineTransformByAff.ts",
-					"line": 9,
+					"line": 22,
 					"character": 38
 				}
 			]
@@ -6057,6 +6261,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Trims a polyline by an absolute distance from its beginning and its end."
+					},
 					"parameters": [
 						{
 							"id": 435,
@@ -6064,6 +6271,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -6076,6 +6284,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -6087,6 +6296,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -6098,6 +6308,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "array",
 								"elementType": {
@@ -6129,7 +6342,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineTrim.ts",
-					"line": 11,
+					"line": 19,
 					"character": 28
 				}
 			]

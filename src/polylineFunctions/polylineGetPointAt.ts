@@ -8,8 +8,17 @@ import { polylineGetSegmentLength } from "./polylineGetSegmentLength";
 const TMP0 = vecAlloc();
 const TMP1 = vecAlloc();
 
-export function polylineGetPointAt(poly: IPolyline, d: number, out = vecAlloc()) {
-  if (d < 0) {
+/**
+ * Gets a point along the polyline, parameterized according to absolute distance
+ * _t_ along its geometry.
+ *
+ * @param poly
+ * @param t
+ * @param out
+ * @see {@link IPolyline}
+ */
+export function polylineGetPointAt(poly: IPolyline, t: number, out = vecAlloc()) {
+  if (t < 0) {
     return vecReset(NaN, NaN, out);
   }
 
@@ -17,12 +26,12 @@ export function polylineGetPointAt(poly: IPolyline, d: number, out = vecAlloc())
   let idx = 0;
   while (idx < len) {
     const segmentLength = polylineGetSegmentLength(poly, idx);
-    if (d <= segmentLength) {
+    if (t <= segmentLength) {
       const v0 = vecReset(poly[2 * idx], poly[2 * idx + 1], TMP0);
       const v1 = vecReset(poly[2 * idx + 2], poly[2 * idx + 3], TMP1);
-      return vecLerp(v0, v1, d / segmentLength, out);
+      return vecLerp(v0, v1, t / segmentLength, out);
     } else {
-      d -= segmentLength;
+      t -= segmentLength;
       ++idx;
     }
   }

@@ -7,6 +7,12 @@ import { vecReset } from "../vecFunctions/vecReset";
 
 const TMP0 = vecAlloc();
 
+/**
+ * Computes bounding box of polyline's geometry
+ *
+ * @param poly
+ * @param out
+ */
 export function polylineGetBounds(poly: IPolyline, out = boxAlloc()) {
   boxReset(Infinity, Infinity, -Infinity, -Infinity, out);
   for (let i = 0; i < poly.length; i += 2) {
