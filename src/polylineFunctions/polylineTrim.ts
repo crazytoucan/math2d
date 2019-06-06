@@ -15,7 +15,7 @@ const TMP0 = vecAlloc();
  * only parts of segments to form new vertices.
  *
  * A polyline's parameterization is defined according to _t_, where
- * values of _t_ are between 0 and the polyline's vertex count, and smooth values of _t_ therein
+ * values of _t_ are between 0 and the polyline's vertex count minus 1, and smooth values of _t_ therein
  * signify linear interpolation between adjacent vertices along the polyline's geometry.
  *
  * Both the `tStart` and `tEnd` parameters will be clamped to their allowed domains [0, _N_-1] for a

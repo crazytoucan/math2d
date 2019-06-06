@@ -1,6 +1,12 @@
 import { IPolygon, IVec } from "../types";
 
-export function polygonContainsPoint(poly: IPolygon, point: IVec) {
+/**
+ * Determines whether the point is inside the given polygon, using the even-odd fill rule.
+ *
+ * @param poly the polygon to inspect
+ * @param point the point to check for containment
+ */
+export function polygonContainsPointInside(poly: IPolygon, point: IVec) {
   const x = point.x;
   const y = point.y;
 

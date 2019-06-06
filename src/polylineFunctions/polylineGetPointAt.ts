@@ -5,11 +5,11 @@ import { vecReset } from "../vecFunctions/vecReset";
 import { polylineGetNumSegments } from "./polylineGetNumSegments";
 
 /**
- * Gets a point along the polyline, parameterized according to linear interpolation between
+ * Computes a point along the polyline, parameterized according to linear interpolation between
  * adjacent vertices.
  *
- * @param poly
- * @param t
+ * @param poly the polyline to compute a point on
+ * @param t the parameter variable at which a point should be calculated
  * @param out
  * @see {@link IPolyline}
  */

@@ -11,12 +11,16 @@ import { ISegment, IVec } from "../types";
  * Smooth values of _t_ within that range will move along the segment, so for example
  * _t_ = 0.5 is its midpoint.
  *
+ * If you only care about the actual closest _point_ and not its parameterization, prefer
+ * {@link segmentNearestPoint}.
+ *
  * @param segment segment to inspect
  * @param point point to measure distance to
  * @param out
  * @see {@link ISegment}
  * @see {@link segmentNearestPoint}
  * @see {@link polylineNearestT}
+ * @see {@link polygonNearestPerimeterT}
  */
 export function segmentNearestT(segment: ISegment, point: IVec) {
   const dSegX = segment.x1 - segment.x0;

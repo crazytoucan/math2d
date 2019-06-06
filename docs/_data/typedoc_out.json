@@ -240,7 +240,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 318,
+							"line": 315,
 							"character": 8
 						}
 					],
@@ -263,7 +263,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 334,
+							"line": 331,
 							"character": 4
 						}
 					],
@@ -286,7 +286,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 340,
+							"line": 337,
 							"character": 4
 						}
 					],
@@ -309,7 +309,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 323,
+							"line": 320,
 							"character": 3
 						}
 					],
@@ -332,7 +332,7 @@
 					"sources": [
 						{
 							"fileName": "types.ts",
-							"line": 328,
+							"line": 325,
 							"character": 3
 						}
 					],
@@ -358,7 +358,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 313,
+					"line": 310,
 					"character": 30
 				}
 			]
@@ -1053,12 +1053,12 @@
 			},
 			"comment": {
 				"shortText": "An alias for `number[]`. Data type to represent a polygon in the plane,\nas an interleaved sequence of vertex coordinates.",
-				"text": "The `IPolygon` type is just an alias for an array of number values. For example,\na polygon with vertices v0, v1, v2, ..., vn is represented in Vectormath as the array:\n\n```\n[v0x, v0y, v1x, v1y, v2x, v2y, ..., vnx, vny]\n```\n\nUnlike the similar {@link IPolyline} type, a polygon's perimeter is always interpreted as a closed shape.\n\nWhere relevant, a polygon with _N_ sides is parameterized according to _t_ with linear interpolation between adjacent\nvertices by index, with a final segment connecting its last to its first vertex.\nFor example, _t_ = 3.5 represents the midpoint between the index 3 and index 4 vertex\nof the polygon (or the midpoint between the last and first vertex if _N_ = 4),\nand _t_ = 0 is its first vertex. The parameter _t_ is allowed to cycle indefinitely around the polygon's\nperimeter (i.e. _t_ = 0 and _t_ = N both map to the first vertex of the polygon),\nbut all methods that return _t_ values prefer the unique range [0, N).\n\nVectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
+				"text": "The `IPolygon` type is just an alias for an array of number values. For example,\na polygon with vertices v0, v1, v2, ..., vn is represented in Vectormath as the array:\n\n```\n[v0x, v0y, v1x, v1y, v2x, v2y, ..., vnx, vny]\n```\n\nUnlike the similar {@link IPolyline} type, a polygon's perimeter is always interpreted as a closed shape.\n\nWhere relevant, a polygon with _N_ sides is parameterized according to _t_,\nwhere integer values of _t_ correspond to the polygon's\nvertices in order, and smooth values of _t_ therein interpolate linearly between adjacent vertices, with an\nadditional segment connecting the last vertex to the first.\n\nVectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of\nIVecs, for performance and more compact storage.\n"
 			},
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 266,
+					"line": 263,
 					"character": 20
 				}
 			],
@@ -1085,7 +1085,7 @@
 			"sources": [
 				{
 					"fileName": "types.ts",
-					"line": 289,
+					"line": 286,
 					"character": 21
 				}
 			],
@@ -4628,7 +4628,7 @@
 		},
 		{
 			"id": 284,
-			"name": "polygonContainsPoint",
+			"name": "polygonContainsPointInside",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -4637,10 +4637,13 @@
 			"signatures": [
 				{
 					"id": 285,
-					"name": "polygonContainsPoint",
+					"name": "polygonContainsPointInside",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Determines whether the point is inside the given polygon, using the even-odd fill rule."
+					},
 					"parameters": [
 						{
 							"id": 286,
@@ -4648,6 +4651,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polygon to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -4660,6 +4666,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the point to check for containment\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -4675,9 +4684,9 @@
 			],
 			"sources": [
 				{
-					"fileName": "polygonFunctions/polygonContainsPoint.ts",
-					"line": 3,
-					"character": 36
+					"fileName": "polygonFunctions/polygonContainsPointInside.ts",
+					"line": 9,
+					"character": 42
 				}
 			]
 		},
@@ -4696,6 +4705,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Calculate the smallest bounding box that contains this polygon's geometry"
+					},
 					"parameters": [
 						{
 							"id": 290,
@@ -4703,6 +4715,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polygon to compute the bounds of"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -4715,6 +4730,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IBox",
@@ -4733,7 +4751,7 @@
 			"sources": [
 				{
 					"fileName": "polygonFunctions/polygonGetBounds.ts",
-					"line": 5,
+					"line": 11,
 					"character": 32
 				}
 			]
@@ -4753,6 +4771,16 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Return the number of sides of this polygon, which is `poly.length / 2`.",
+						"text": "This function makes no attempt to identify trivial or \"empty\" sides.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link polylineGetNumSegments}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 294,
@@ -4760,6 +4788,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polygon to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -4776,14 +4807,14 @@
 			"sources": [
 				{
 					"fileName": "polygonFunctions/polygonGetNumSides.ts",
-					"line": 3,
+					"line": 11,
 					"character": 34
 				}
 			]
 		},
 		{
 			"id": 309,
-			"name": "polygonGetPerimeter",
+			"name": "polygonGetPerimeterLength",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -4792,10 +4823,19 @@
 			"signatures": [
 				{
 					"id": 310,
-					"name": "polygonGetPerimeter",
+					"name": "polygonGetPerimeterLength",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the total perimeter length of this polygon.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link polylineGetLength}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 311,
@@ -4803,6 +4843,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polygon whose perimeter should be measured"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -4818,15 +4861,15 @@
 			],
 			"sources": [
 				{
-					"fileName": "polygonFunctions/polygonGetPerimeter.ts",
-					"line": 5,
-					"character": 35
+					"fileName": "polygonFunctions/polygonGetPerimeterLength.ts",
+					"line": 11,
+					"character": 41
 				}
 			]
 		},
 		{
 			"id": 312,
-			"name": "polygonGetPointAt",
+			"name": "polygonGetPerimeterPointAt",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -4835,10 +4878,14 @@
 			"signatures": [
 				{
 					"id": 313,
-					"name": "polygonGetPointAt",
+					"name": "polygonGetPerimeterPointAt",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes a point along the polygon's perimeter, parameterized according to linear interpolation between\nadjacent vertices, cycling back to the start after its last vertex.",
+						"text": "A polygon with _N_ sides is parameterized according to _t_, where integer values of _t0_ correspond to the polygon's\nvertices in order, and smooth values of _t0_ therein interpolate linearly between adjacent vertices, with an\nadditional segment connecting the last vertex to the first.\n"
+					},
 					"parameters": [
 						{
 							"id": 314,
@@ -4846,6 +4893,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polygon to compute a point on"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -4858,6 +4908,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the parameter variable at which a point should be calculated"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -4869,6 +4922,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -4886,14 +4942,14 @@
 			],
 			"sources": [
 				{
-					"fileName": "polygonFunctions/polygonGetPointAt.ts",
-					"line": 6,
-					"character": 33
+					"fileName": "polygonFunctions/polygonGetPerimeterPointAt.ts",
+					"line": 18,
+					"character": 42
 				}
 			]
 		},
 		{
-			"id": 317,
+			"id": 322,
 			"name": "polygonGetSideLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -4902,18 +4958,25 @@
 			},
 			"signatures": [
 				{
-					"id": 318,
+					"id": 323,
 					"name": "polygonGetSideLength",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Returns the length of a polygon's side by index, starting at 0.",
+						"text": "The given side index must be in the range [0, N) for a polygon with _N_ vertices:\nthis function does not accommodate \"cycling\" of polygon side indices.\n"
+					},
 					"parameters": [
 						{
-							"id": 319,
+							"id": 324,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polygon whose side should be measured"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -4921,11 +4984,14 @@
 							}
 						},
 						{
-							"id": 320,
+							"id": 325,
 							"name": "idx",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the side index to measure, starting at 0\n"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -4941,13 +5007,13 @@
 			"sources": [
 				{
 					"fileName": "polygonFunctions/polygonGetSideLength.ts",
-					"line": 5,
+					"line": 17,
 					"character": 36
 				}
 			]
 		},
 		{
-			"id": 321,
+			"id": 317,
 			"name": "polygonGetSideSegment",
 			"kind": 64,
 			"kindString": "Function",
@@ -4956,18 +5022,25 @@
 			},
 			"signatures": [
 				{
-					"id": 322,
+					"id": 318,
 					"name": "polygonGetSideSegment",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Returns a polygon's side by given index as a segment, starting at 0.",
+						"text": "The given side index must be in the range [0, N) for a polygon with _N_ vertices:\nthis function does not accommodate \"cycling\" of polygon side indices. If an out of range\nindex is given, this function returns a segment with all `NaN` values.\n"
+					},
 					"parameters": [
 						{
-							"id": 323,
+							"id": 319,
 							"name": "poly",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polygon to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -4975,22 +5048,28 @@
 							}
 						},
 						{
-							"id": 324,
+							"id": 320,
 							"name": "index",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "which side to return, starting with 0"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
 							}
 						},
 						{
-							"id": 325,
+							"id": 321,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -5009,7 +5088,7 @@
 			"sources": [
 				{
 					"fileName": "polygonFunctions/polygonGetSideSegment.ts",
-					"line": 5,
+					"line": 16,
 					"character": 37
 				}
 			]
@@ -5029,6 +5108,32 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes all locations at which a polygon crosses a given line.",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polygon's geometry\naccording to the {@link IPolygon} parameterization: integer values of _t0_ correspond to the polygon's\nvertices in order, and smooth values of _t0_ therein interpolate linearly between adjacent vertices, with an\nadditional segment connecting the last vertex to the first.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel around the polygon's perimeter in the\norder of its vertices.\n\nAlmost equivalent to {@link lineIntersectPolygonIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polygon's geometry.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IIntersection}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link IPolygon}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link lineIntersectPolygonIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polygonIntersectRayIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polygonIntersectSegmentIterator}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 328,
@@ -5036,6 +5141,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polygon to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -5048,6 +5156,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the line to find intersections with"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ILine",
@@ -5071,7 +5182,7 @@
 			"sources": [
 				{
 					"fileName": "polygonFunctions/polygonIntersectLineIterator.ts",
-					"line": 5,
+					"line": 28,
 					"character": 44
 				}
 			]
@@ -5091,6 +5202,32 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes all locations at which a polygon crosses a given ray.",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polygon's geometry\naccording to the {@link IPolygon} parameterization: integer values of _t0_ correspond to the polygon's\nvertices in order, and smooth values of _t0_ therein interpolate linearly between adjacent vertices, with an\nadditional segment connecting the last vertex to the first.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel around the polygon's perimeter in the\norder of its vertices.\n\nAlmost equivalent to {@link rayIntersectPolygonIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polygon's geometry.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IIntersection}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link IPolygon}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link rayIntersectPolygonIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polygonIntersectLineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polygonIntersectSegmentIterator}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 342,
@@ -5098,6 +5235,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polygon to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -5110,6 +5250,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the ray to find intersections with"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IRay",
@@ -5133,7 +5276,7 @@
 			"sources": [
 				{
 					"fileName": "polygonFunctions/polygonIntersectRayIterator.ts",
-					"line": 5,
+					"line": 28,
 					"character": 43
 				}
 			]
@@ -5153,6 +5296,32 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes all locations at which a polygon crosses a given line segment.",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polygon's geometry\naccording to the {@link IPolygon} parameterization: integer values of _t0_ correspond to the polygon's\nvertices in order, and smooth values of _t0_ therein interpolate linearly between adjacent vertices, with an\nadditional segment connecting the last vertex to the first.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel around the polygon's perimeter in the\norder of its vertices.\n\nAlmost equivalent to {@link segmentIntersectPolygonIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polygon's geometry.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IIntersection}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link IPolygon}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentIntersectPolygonIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polygonIntersectLineIterator}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polygonIntersectRayIterator}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 351,
@@ -5160,6 +5329,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polygon to intersect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -5172,6 +5344,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the line segment to find intersections with"
+							},
 							"type": {
 								"type": "reference",
 								"name": "ISegment",
@@ -5195,14 +5370,14 @@
 			"sources": [
 				{
 					"fileName": "polygonFunctions/polygonIntersectSegmentIterator.ts",
-					"line": 5,
+					"line": 28,
 					"character": 47
 				}
 			]
 		},
 		{
 			"id": 374,
-			"name": "polygonNearestPoint",
+			"name": "polygonNearestPerimeterPoint",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -5211,10 +5386,19 @@
 			"signatures": [
 				{
 					"id": 375,
-					"name": "polygonNearestPoint",
+					"name": "polygonNearestPerimeterPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the closest point that the polygon's perimeter comes to a given reference point",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link polygonNearestPerimeterT}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 376,
@@ -5222,6 +5406,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polygon to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -5234,6 +5421,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the reference point to measure distance to"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -5246,6 +5436,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -5263,15 +5454,15 @@
 			],
 			"sources": [
 				{
-					"fileName": "polygonFunctions/polygonNearestPoint.ts",
-					"line": 6,
-					"character": 35
+					"fileName": "polygonFunctions/polygonNearestPerimeterPoint.ts",
+					"line": 14,
+					"character": 44
 				}
 			]
 		},
 		{
 			"id": 370,
-			"name": "polygonNearestT",
+			"name": "polygonNearestPerimeterT",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -5280,10 +5471,28 @@
 			"signatures": [
 				{
 					"id": 371,
-					"name": "polygonNearestT",
+					"name": "polygonNearestPerimeterT",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Computes the closest location that the polygon's perimeter comes to a given reference point.",
+						"text": "The returned value _t_ is defined according to the {@link IPolygon} parameterization:\ninteger values of _t_ correspond to the polygon's\nvertices in order, and smooth values of _t_ therein interpolate linearly between adjacent vertices, with an\nadditional segment connecting the last vertex to the first.\n\nIf you only care about the actual closest _point_ and not its parameterization, prefer\n{@link polygonNearestPerimeterPoint}.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IPolygon}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polygonNearestPoint}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentNearestT}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 372,
@@ -5291,6 +5500,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polygon to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -5303,6 +5515,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the point to measure distance to"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -5318,9 +5533,9 @@
 			],
 			"sources": [
 				{
-					"fileName": "polygonFunctions/polygonNearestT.ts",
-					"line": 7,
-					"character": 31
+					"fileName": "polygonFunctions/polygonNearestPerimeterT.ts",
+					"line": 23,
+					"character": 40
 				}
 			]
 		},
@@ -5339,6 +5554,9 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Returns the index of the nearest vertex to the given point, starting at 0."
+					},
 					"parameters": [
 						{
 							"id": 385,
@@ -5346,6 +5564,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the polygon to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -5358,6 +5579,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "the reference point to measure distance to\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -5374,7 +5598,7 @@
 			"sources": [
 				{
 					"fileName": "polygonFunctions/polygonNearestVertexIndex.ts",
-					"line": 4,
+					"line": 10,
 					"character": 41
 				}
 			]
@@ -5394,6 +5618,20 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
+					"comment": {
+						"shortText": "Transforms a polygon by an affine matrix.",
+						"text": "Simply transforms each of the polygon's vertices by the given matrix.\nAffine transformations and their specifics within Vectormath are described in more detail\nin the {@link vecTransformByAff} docs.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecTransformByAff}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link IMat2x3}\n"
+							}
+						]
+					},
 					"parameters": [
 						{
 							"id": 389,
@@ -5401,6 +5639,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "polygon to transform"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolygon",
@@ -5413,6 +5654,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "affine transform to apply"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -5425,6 +5669,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {},
 							"type": {
 								"type": "array",
 								"elementType": {
@@ -5447,7 +5692,7 @@
 			"sources": [
 				{
 					"fileName": "polygonFunctions/polygonTransformByAff.ts",
-					"line": 5,
+					"line": 18,
 					"character": 37
 				}
 			]
@@ -5748,7 +5993,7 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Gets a point along the polyline, parameterized according to linear interpolation between\nadjacent vertices.",
+						"shortText": "Computes a point along the polyline, parameterized according to linear interpolation between\nadjacent vertices.",
 						"tags": [
 							{
 								"tag": "see",
@@ -5763,7 +6008,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the polyline to compute a point on"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -5776,7 +6023,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the parameter variable at which a point should be calculated"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -6042,7 +6291,7 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polyline crosses a given line.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segment geometry.\n\nAlmost equivalent to {@link lineIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count minus 1, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segments.\n\nAlmost equivalent to {@link lineIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -6132,7 +6381,7 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polyline crosses a given ray.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segment geometry.\n\nAlmost equivalent to {@link rayIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count minus 1, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segments.\n\nAlmost equivalent to {@link rayIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -6222,7 +6471,7 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polyline crosses a given line segment.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segment geometry.\n\nAlmost equivalent to {@link segmentIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count minus 1, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segments.\n\nAlmost equivalent to {@link segmentIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -6361,7 +6610,13 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Computes the closest point that the polyline comes to a given reference point"
+						"shortText": "Computes the closest point that the polyline comes to a given reference point",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link polylineNearestT}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
@@ -6370,7 +6625,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the polyline to inspect"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IPolyline",
@@ -6383,7 +6640,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the reference point to measure distance to"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -6396,9 +6655,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {
-								"text": "\n"
-							},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -6417,7 +6674,7 @@
 			"sources": [
 				{
 					"fileName": "polylineFunctions/polylineNearestPoint.ts",
-					"line": 13,
+					"line": 14,
 					"character": 36
 				}
 			]
@@ -6439,7 +6696,7 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Computes the closest location the polyline comes to a given reference point.",
-						"text": "The returned value _t_ is defined according to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count, and smooth values of T\nsignify linear interpolation between the two adjacent vertices along the polyline's geometry.\n\nIf you only care about the actual closest _point_ and not its parameterization, prefer\n{@link polylineNearestPoint}.\n",
+						"text": "The returned value _t_ is defined according to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count minus 1, and smooth values of T\nsignify linear interpolation between the two adjacent vertices along the polyline's geometry.\n\nIf you only care about the actual closest _point_ and not its parameterization, prefer\n{@link polylineNearestPoint}.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -6674,7 +6931,7 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Trims a polyline to a range of its _t_ parameter.",
-						"text": "This function trims geometry from either or both ends of the polyline, kind of like a \"substring\"\noperation. Note that fractional values are allowed on the bounding _t_ parameters, which may slice off\nonly parts of segments to form new vertices.\n\nA polyline's parameterization is defined according to _t_, where\nvalues of _t_ are between 0 and the polyline's vertex count, and smooth values of _t_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nBoth the `tStart` and `tEnd` parameters will be clamped to their allowed domains [0, _N_-1] for a\npolyline of _N_ vertices.\n"
+						"text": "This function trims geometry from either or both ends of the polyline, kind of like a \"substring\"\noperation. Note that fractional values are allowed on the bounding _t_ parameters, which may slice off\nonly parts of segments to form new vertices.\n\nA polyline's parameterization is defined according to _t_, where\nvalues of _t_ are between 0 and the polyline's vertex count minus 1, and smooth values of _t_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nBoth the `tStart` and `tEnd` parameters will be clamped to their allowed domains [0, _N_-1] for a\npolyline of _N_ vertices.\n"
 					},
 					"parameters": [
 						{
@@ -8724,7 +8981,7 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Computes the closest location _t_ that a segment comes to a given reference point.",
-						"text": "The returned value _t_ is defined according to the {@link ISegment}'s parameterization:\nlinear interpolation between its endpoints,\nwhere _t_ = 0 represents its starting vertex and _t_ = 1 its ending vertex.\nSmooth values of _t_ within that range will move along the segment, so for example\n_t_ = 0.5 is its midpoint.\n",
+						"text": "The returned value _t_ is defined according to the {@link ISegment}'s parameterization:\nlinear interpolation between its endpoints,\nwhere _t_ = 0 represents its starting vertex and _t_ = 1 its ending vertex.\nSmooth values of _t_ within that range will move along the segment, so for example\n_t_ = 0.5 is its midpoint.\n\nIf you only care about the actual closest _point_ and not its parameterization, prefer\n{@link segmentNearestPoint}.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -8736,7 +8993,11 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link polylineNearestT}\n"
+								"text": "{@link polylineNearestT}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link polygonNearestPerimeterT}\n"
 							}
 						]
 					},
@@ -8781,7 +9042,7 @@
 			"sources": [
 				{
 					"fileName": "segmentFunctions/segmentNearestT.ts",
-					"line": 21,
+					"line": 25,
 					"character": 31
 				}
 			]
@@ -10305,8 +10566,8 @@
 				292,
 				309,
 				312,
+				322,
 				317,
-				321,
 				326,
 				340,
 				349,

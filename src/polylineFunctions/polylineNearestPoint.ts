@@ -6,9 +6,10 @@ import { polylineNearestT } from "./polylineNearestT";
 /**
  * Computes the closest point that the polyline comes to a given reference point
  *
- * @param poly
- * @param point
+ * @param poly the polyline to inspect
+ * @param point the reference point to measure distance to
  * @param out
+ * @see {@link polylineNearestT}
  */
 export function polylineNearestPoint(poly: IPolyline, point: IVec, out = vecAlloc()) {
   const d = polylineNearestT(poly, point);

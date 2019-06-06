@@ -252,13 +252,10 @@ export interface IBox {
  *
  * Unlike the similar {@link IPolyline} type, a polygon's perimeter is always interpreted as a closed shape.
  *
- * Where relevant, a polygon with _N_ sides is parameterized according to _t_ with linear interpolation between adjacent
- * vertices by index, with a final segment connecting its last to its first vertex.
- * For example, _t_ = 3.5 represents the midpoint between the index 3 and index 4 vertex
- * of the polygon (or the midpoint between the last and first vertex if _N_ = 4),
- * and _t_ = 0 is its first vertex. The parameter _t_ is allowed to cycle indefinitely around the polygon's
- * perimeter (i.e. _t_ = 0 and _t_ = N both map to the first vertex of the polygon),
- * but all methods that return _t_ values prefer the unique range [0, N).
+ * Where relevant, a polygon with _N_ sides is parameterized according to _t_,
+ * where integer values of _t_ correspond to the polygon's
+ * vertices in order, and smooth values of _t_ therein interpolate linearly between adjacent vertices, with an
+ * additional segment connecting the last vertex to the first.
  *
  * Vectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of
  * IVecs, for performance and more compact storage.
