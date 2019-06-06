@@ -3,12 +3,15 @@ import { vecAlloc } from "./vecAlloc";
 import { vecReset } from "./vecReset";
 
 /**
- * Subtracts vector `b` from vector `a`.
+ * Computes `u - v`, i.e. subtracting the second vector from the first.
  *
- * @param a
- * @param b
+ * @param u the first vector
+ * @param v the second vector
  * @param out
+ * @see {@link vecAdd}
+ * @see {@link vecScale}
+ * @see {@link vecTransformByAff}
  */
-export function vecSubtract(a: IVec, b: IVec, out = vecAlloc()) {
-  return vecReset(a.x - b.x, a.y - b.y, out);
+export function vecSubtract(u: IVec, v: IVec, out = vecAlloc()) {
+  return vecReset(u.x - v.x, u.y - v.y, out);
 }

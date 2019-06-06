@@ -2,11 +2,14 @@ import { intersectionAlloc } from "./intersectionAlloc";
 
 /**
  * Construct a new intersection given `exists`, `x`, `y`, `t0`, and `t1` values.
- * @param exists
- * @param x
- * @param y
- * @param t0
- * @param t1
+ *
+ * @param exists whether an intersection was found. If `false`, the other passed values should be `NaN`
+ * @param x the x-coordinate of the intersection, if an intersection point was found.
+ * @param y the y-coordinate of the intersection, if an intersection point was found.
+ * @param t0 the parameterization of the intersection along the first shape's geometry,
+ *  if an intersection point was found.
+ * @param t1 the parameterization of the intersection along the second shape's geometry,
+ *  if an intersection point was found.
  * @param out
  */
 export function intersectionReset(

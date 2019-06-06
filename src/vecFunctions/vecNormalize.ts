@@ -7,8 +7,10 @@ import { vecReset } from "./vecReset";
  * Normalizes the vector to be length 1. If the given vector is the zero-vector, this method
  * returns `(NaN, NaN)`.
  *
- * @param vec
+ * @param vec the vector to normalize
  * @param out
+ * @see {@link vecGetLength}
+ * @see {@link vecGetLengthSq}
  */
 export function vecNormalize(vec: IVec, out = vecAlloc()) {
   const lenSq = vec.x * vec.x + vec.y * vec.y;

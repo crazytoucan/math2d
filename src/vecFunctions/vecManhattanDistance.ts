@@ -1,12 +1,14 @@
 import { IVec } from "../types";
 
 /**
- * Computes the Manhattan distance between the two vectors, interpreted as points in the plane.
- * Equivalent to `|b.x - a.x| + |b.y - a.y|`.
+ * Computes the Manhattan distance between the two points.
  *
- * @param a
- * @param b
+ * Equivalent to `|v.x - u.x| + |v.y - u.y|`.
+ *
+ * @param u the first point
+ * @param v the point to measure manhattan distance to from the first point
+ * @see {@link vecGetManhattanLength}
  */
-export function vecManhattanDistance(a: IVec, b: IVec) {
-  return Math.abs(b.x - a.x) + Math.abs(b.y - a.y);
+export function vecManhattanDistance(u: IVec, v: IVec) {
+  return Math.abs(v.x - u.x) + Math.abs(v.y - u.y);
 }

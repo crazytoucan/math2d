@@ -2194,7 +2194,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "whether an intersection was found. If `false`, the other passed values should be `NaN`"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "boolean"
@@ -2206,7 +2208,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the x-coordinate of the intersection, if an intersection point was found."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2218,7 +2222,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the y-coordinate of the intersection, if an intersection point was found."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2230,7 +2236,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the parameterization of the intersection along the first shape's geometry,\n if an intersection point was found."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2242,7 +2250,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the parameterization of the intersection along the second shape's geometry,\n if an intersection point was found."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2275,7 +2285,7 @@
 			"sources": [
 				{
 					"fileName": "intersectionFunctions/intersectionReset.ts",
-					"line": 12,
+					"line": 15,
 					"character": 33
 				}
 			]
@@ -9248,7 +9258,17 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Computes the result of adding the two given vectors."
+						"shortText": "Computes the result of adding the two given vectors.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecSubtract}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecScale}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
@@ -9283,9 +9303,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {
-								"text": "\n"
-							},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -9304,7 +9322,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecAdd.ts",
-					"line": 12,
+					"line": 14,
 					"character": 22
 				}
 			]
@@ -9502,16 +9520,28 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Computes the straight-line (Euclidean) distance between the two vectors, interpreted as points in the plane."
+						"shortText": "Computes the straight-line (Euclidean) distance between the two points",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecDistanceSq}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecGetLength}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
 							"id": 444,
-							"name": "a",
+							"name": "u",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the first point"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -9520,12 +9550,12 @@
 						},
 						{
 							"id": 445,
-							"name": "b",
+							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "\n"
+								"text": "the second point, to which distance should be measured from the first"
 							},
 							"type": {
 								"type": "reference",
@@ -9543,7 +9573,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecDistance.ts",
-					"line": 9,
+					"line": 11,
 					"character": 27
 				}
 			]
@@ -9564,16 +9594,28 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Computes the squared straight-line (i.e. Euclidean) distance between the two vectors, interpreted as points in the plane."
+						"shortText": "Computes the squared straight-line (i.e. Euclidean) distance between the two points",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecDistance}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecGetLengthSq}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
 							"id": 364,
-							"name": "a",
+							"name": "u",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the first point"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -9582,12 +9624,12 @@
 						},
 						{
 							"id": 365,
-							"name": "b",
+							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "\n"
+								"text": "the second point to which squared distance should be measured"
 							},
 							"type": {
 								"type": "reference",
@@ -9605,7 +9647,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecDistanceSq.ts",
-					"line": 8,
+					"line": 11,
 					"character": 29
 				}
 			]
@@ -9626,7 +9668,7 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Computes the dot product of the two vectors, i.e. `a.x * b.x + a.y * b.y`.",
+						"shortText": "Computes the dot product of the two vectors, i.e. `u.x * v.x + u.y * v.y`.",
 						"tags": [
 							{
 								"tag": "see",
@@ -9696,17 +9738,18 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Computes the straight-line length (i.e. Euclidean norm) of the given vector."
+						"shortText": "Computes the straight-line length (i.e. Euclidean norm) of the given vector.",
+						"text": "Equivalent to `√(v.x² + v.y²)`.\n"
 					},
 					"parameters": [
 						{
 							"id": 527,
-							"name": "vec",
+							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "\n"
+								"text": "the vector whose length should be measured\n"
 							},
 							"type": {
 								"type": "reference",
@@ -9724,7 +9767,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecGetLength.ts",
-					"line": 8,
+					"line": 10,
 					"character": 28
 				}
 			]
@@ -9745,17 +9788,18 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Computes the squared straight-line length (i.e. square of the Euclidean norm) of the given vector."
+						"shortText": "Computes the squared straight-line length (i.e. square of the Euclidean norm) of the given vector.",
+						"text": "Equivalent to `v.x² + v.y²`.\n"
 					},
 					"parameters": [
 						{
 							"id": 530,
-							"name": "vec",
+							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "\n"
+								"text": "the vector whose squared length should be measured\n"
 							},
 							"type": {
 								"type": "reference",
@@ -9773,7 +9817,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecGetLengthSq.ts",
-					"line": 8,
+					"line": 10,
 					"character": 30
 				}
 			]
@@ -9794,17 +9838,23 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Computes the Manhattan length of the given vector, i.e. `|x| + |y|`."
+						"shortText": "Computes the Manhattan length of the given vector, i.e. `|v.x| + |v.y|`.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecManhattanDistance}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
 							"id": 533,
-							"name": "vec",
+							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "\n"
+								"text": "the vector whose Manhattan length should be measured"
 							},
 							"type": {
 								"type": "reference",
@@ -9822,7 +9872,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecGetManhattanLength.ts",
-					"line": 8,
+					"line": 9,
 					"character": 37
 				}
 			]
@@ -9848,11 +9898,13 @@
 					"parameters": [
 						{
 							"id": 536,
-							"name": "a",
+							"name": "u",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the vector to start interpolation from"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -9861,11 +9913,13 @@
 						},
 						{
 							"id": 537,
-							"name": "b",
+							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the vector to end interpolation with"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -9878,7 +9932,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the ratio to interpolate the two vectors, with _r_ = 0 returning the first vector `u` and _r_ = 1 returning\n the second vector `v`"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -9911,7 +9967,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecLerp.ts",
-					"line": 14,
+					"line": 15,
 					"character": 23
 				}
 			]
@@ -9932,16 +9988,25 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Computes the Manhattan distance between the two vectors, interpreted as points in the plane.\nEquivalent to `|b.x - a.x| + |b.y - a.y|`."
+						"shortText": "Computes the Manhattan distance between the two points.",
+						"text": "Equivalent to `|v.x - u.x| + |v.y - u.y|`.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecGetManhattanLength}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
 							"id": 542,
-							"name": "a",
+							"name": "u",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the first point"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -9950,12 +10015,12 @@
 						},
 						{
 							"id": 543,
-							"name": "b",
+							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"text": "\n"
+								"text": "the point to measure manhattan distance to from the first point"
 							},
 							"type": {
 								"type": "reference",
@@ -9973,7 +10038,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecManhattanDistance.ts",
-					"line": 10,
+					"line": 12,
 					"character": 36
 				}
 			]
@@ -9994,7 +10059,17 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Normalizes the vector to be length 1. If the given vector is the zero-vector, this method\nreturns `(NaN, NaN)`."
+						"shortText": "Normalizes the vector to be length 1. If the given vector is the zero-vector, this method\nreturns `(NaN, NaN)`.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecGetLength}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecGetLengthSq}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
@@ -10003,7 +10078,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the vector to normalize"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -10016,9 +10093,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {
-								"text": "\n"
-							},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -10037,7 +10112,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecNormalize.ts",
-					"line": 13,
+					"line": 15,
 					"character": 28
 				}
 			]
@@ -10058,7 +10133,13 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Returns the 2d origin vector, `(0, 0)`."
+						"shortText": "Returns the 2d origin vector, `(0, 0)`.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecReset}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
@@ -10067,9 +10148,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {
-								"text": "\n"
-							},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -10088,7 +10167,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecOrigin.ts",
-					"line": 9,
+					"line": 10,
 					"character": 25
 				}
 			]
@@ -10118,7 +10197,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the vector whose perp should be calculated"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -10264,16 +10345,28 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Scales both coordinates of this vector by the given scalar."
+						"shortText": "Scales both coordinates of this vector by a given scalar.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecAdd}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecTransformByAff}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
 							"id": 557,
-							"name": "vec",
+							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the vector to scale"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -10286,7 +10379,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the value by which the vector's components should be scaled"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -10298,9 +10393,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {
-								"text": "\n"
-							},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -10319,7 +10412,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecScale.ts",
-					"line": 12,
+					"line": 14,
 					"character": 24
 				}
 			]
@@ -10340,16 +10433,32 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Subtracts vector `b` from vector `a`."
+						"shortText": "Computes `u - v`, i.e. subtracting the second vector from the first.",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link vecAdd}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecScale}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecTransformByAff}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
 							"id": 562,
-							"name": "a",
+							"name": "u",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the first vector"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -10358,11 +10467,13 @@
 						},
 						{
 							"id": 563,
-							"name": "b",
+							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the second vector"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -10375,9 +10486,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {
-								"text": "\n"
-							},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -10396,7 +10505,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecSubtract.ts",
-					"line": 12,
+					"line": 15,
 					"character": 27
 				}
 			]
@@ -10418,16 +10527,28 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Multiplies the vector by an affine matrix.",
-						"text": "Per usual linear algebra, multiplying the vector `vec = (x, y)` according to an affine matrix\n`[a b c d e f]` is defined by:\n\n```\n⎡a c e⎤ ⎛x⎞   ⎛ax + cy + e⎞\n⎢b d f⎥ ⎜y⎟ = ⎜bx + dy + f⎟\n⎣0 0 1⎦ ⎝1⎠   ⎝     1     ⎠\n```\n"
+						"text": "This computes a left multiplication of the vector by a matrix, i.e. _M_ × _v_.\n\nPer usual linear algebra rules, multiplying the vector `(x, y)` according to an affine matrix\n`[a b c d e f]` is defined by:\n\n```\n⎡a c e⎤ ⎛x⎞   ⎛ax + cy + e⎞\n⎢b d f⎥ ⎜y⎟ = ⎜bx + dy + f⎟\n⎣0 0 1⎦ ⎝1⎠   ⎝     1     ⎠\n```\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link IMat2x3}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link vecAdd}\n"
+							}
+						]
 					},
 					"parameters": [
 						{
 							"id": 100,
-							"name": "vec",
+							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the vector to transform"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -10440,7 +10561,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {},
+							"comment": {
+								"text": "the matrix to multiply this vector by"
+							},
 							"type": {
 								"type": "reference",
 								"name": "IMat2x3",
@@ -10453,9 +10576,7 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
-							"comment": {
-								"text": "\n"
-							},
+							"comment": {},
 							"type": {
 								"type": "reference",
 								"name": "IVec",
@@ -10474,7 +10595,7 @@
 			"sources": [
 				{
 					"fileName": "vecFunctions/vecTransformByAff.ts",
-					"line": 21,
+					"line": 25,
 					"character": 33
 				}
 			]

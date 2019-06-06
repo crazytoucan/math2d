@@ -1,13 +1,15 @@
 import { IVec } from "../types";
 
 /**
- * Computes the straight-line (Euclidean) distance between the two vectors, interpreted as points in the plane.
+ * Computes the straight-line (Euclidean) distance between the two points
  *
- * @param a
- * @param b
+ * @param u the first point
+ * @param v the second point, to which distance should be measured from the first
+ * @see {@link vecDistanceSq}
+ * @see {@link vecGetLength}
  */
-export function vecDistance(a: IVec, b: IVec) {
-  const dx = a.x - b.x;
-  const dy = a.y - b.y;
+export function vecDistance(u: IVec, v: IVec) {
+  const dx = v.x - u.x;
+  const dy = v.y - u.y;
   return Math.sqrt(dx * dx + dy * dy);
 }
