@@ -4,6 +4,7 @@ export { boxComputeOutCode } from "./boxFunctions/boxComputeOutCode";
 export { boxContainsBox } from "./boxFunctions/boxContainsBox";
 export { boxContainsPoint } from "./boxFunctions/boxContainsPoint";
 export { boxEncapsulate } from "./boxFunctions/boxEncapsulate";
+export { boxGrow } from "./boxFunctions/boxGrow";
 export { boxIntersection } from "./boxFunctions/boxIntersection";
 export { boxIntersectsBox } from "./boxFunctions/boxIntersectsBox";
 export { boxIsEmpty } from "./boxFunctions/boxIsEmpty";
