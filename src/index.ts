@@ -68,6 +68,8 @@ export { polylineIntersectLineIterator } from "./polylineFunctions/polylineInter
 export { polylineIntersectRayIterator } from "./polylineFunctions/polylineIntersectRayIterator";
 export { polylineIntersectSegmentIterator } from "./polylineFunctions/polylineIntersectSegmentIterator";
 export { polylineIsClosed } from "./polylineFunctions/polylineIsClosed";
+export { polylineNearestDistance } from "./polylineFunctions/polylineNearestDistance";
+export { polylineNearestDistanceSq } from "./polylineFunctions/polylineNearestDistanceSq";
 export { polylineNearestPoint } from "./polylineFunctions/polylineNearestPoint";
 export { polylineNearestT } from "./polylineFunctions/polylineNearestT";
 export { polylineNearestVertexIndex } from "./polylineFunctions/polylineNearestVertexIndex";
@@ -122,3 +124,4 @@ export { vecReset } from "./vecFunctions/vecReset";
 export { vecScale } from "./vecFunctions/vecScale";
 export { vecSubtract } from "./vecFunctions/vecSubtract";
 export { vecTransformByAff } from "./vecFunctions/vecTransformByAff";
+
