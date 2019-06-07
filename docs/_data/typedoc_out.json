@@ -2106,7 +2106,7 @@
 			]
 		},
 		{
-			"id": 565,
+			"id": 573,
 			"name": "intersectionClone",
 			"kind": 64,
 			"kindString": "Function",
@@ -2115,7 +2115,7 @@
 			},
 			"signatures": [
 				{
-					"id": 566,
+					"id": 574,
 					"name": "intersectionClone",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -2125,7 +2125,7 @@
 					},
 					"parameters": [
 						{
-							"id": 567,
+							"id": 575,
 							"name": "intersection",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2138,7 +2138,7 @@
 							}
 						},
 						{
-							"id": 568,
+							"id": 576,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8885,7 +8885,157 @@
 			]
 		},
 		{
-			"id": 499,
+			"id": 514,
+			"name": "segmentNearestDistance",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 515,
+					"name": "segmentNearestDistance",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the closest distance that a segment comes to a given reference point.",
+						"text": " If you care about the actual closest point or its parameterization, prefer\n{@link segmentNearestPoint} or {@link segmentNearestT}.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link ISegment}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentNearestDistanceSq}\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 516,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "segment to inspect"
+							},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 517,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "point to measure squared distance to"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "segmentFunctions/segmentNearestDistance.ts",
+					"line": 16,
+					"character": 38
+				}
+			]
+		},
+		{
+			"id": 510,
+			"name": "segmentNearestDistanceSq",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 511,
+					"name": "segmentNearestDistanceSq",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the closest distance squared that a segment comes to a given reference point.",
+						"text": " If you care about the actual closest point or its parameterization, prefer\n{@link segmentNearestPoint} or {@link segmentNearestT}.\n",
+						"tags": [
+							{
+								"tag": "see",
+								"text": "{@link ISegment}"
+							},
+							{
+								"tag": "see",
+								"text": "{@link segmentNearestDistance}\n"
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 512,
+							"name": "segment",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "segment to inspect"
+							},
+							"type": {
+								"type": "reference",
+								"name": "ISegment",
+								"id": 8
+							}
+						},
+						{
+							"id": 513,
+							"name": "point",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "point to measure squared distance to"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IVec",
+								"id": 5
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "segmentFunctions/segmentNearestDistanceSq.ts",
+					"line": 24,
+					"character": 40
+				}
+			]
+		},
+		{
+			"id": 518,
 			"name": "segmentNearestPoint",
 			"kind": 64,
 			"kindString": "Function",
@@ -8894,7 +9044,7 @@
 			},
 			"signatures": [
 				{
-					"id": 500,
+					"id": 519,
 					"name": "segmentNearestPoint",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -8915,7 +9065,7 @@
 					},
 					"parameters": [
 						{
-							"id": 501,
+							"id": 520,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8930,7 +9080,7 @@
 							}
 						},
 						{
-							"id": 502,
+							"id": 521,
 							"name": "point",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -8945,7 +9095,7 @@
 							}
 						},
 						{
-							"id": 503,
+							"id": 522,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9177,7 +9327,7 @@
 			]
 		},
 		{
-			"id": 504,
+			"id": 523,
 			"name": "segmentReverse",
 			"kind": 64,
 			"kindString": "Function",
@@ -9186,7 +9336,7 @@
 			},
 			"signatures": [
 				{
-					"id": 505,
+					"id": 524,
 					"name": "segmentReverse",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9196,7 +9346,7 @@
 					},
 					"parameters": [
 						{
-							"id": 506,
+							"id": 525,
 							"name": "segment",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9211,7 +9361,7 @@
 							}
 						},
 						{
-							"id": 507,
+							"id": 526,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9243,7 +9393,7 @@
 			]
 		},
 		{
-			"id": 508,
+			"id": 527,
 			"name": "vecAdd",
 			"kind": 64,
 			"kindString": "Function",
@@ -9252,7 +9402,7 @@
 			},
 			"signatures": [
 				{
-					"id": 509,
+					"id": 528,
 					"name": "vecAdd",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9272,7 +9422,7 @@
 					},
 					"parameters": [
 						{
-							"id": 510,
+							"id": 529,
 							"name": "a",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9285,7 +9435,7 @@
 							}
 						},
 						{
-							"id": 511,
+							"id": 530,
 							"name": "b",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9298,7 +9448,7 @@
 							}
 						},
 						{
-							"id": 512,
+							"id": 531,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9368,7 +9518,7 @@
 			]
 		},
 		{
-			"id": 513,
+			"id": 532,
 			"name": "vecClone",
 			"kind": 64,
 			"kindString": "Function",
@@ -9377,7 +9527,7 @@
 			},
 			"signatures": [
 				{
-					"id": 514,
+					"id": 533,
 					"name": "vecClone",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9387,7 +9537,7 @@
 					},
 					"parameters": [
 						{
-							"id": 515,
+							"id": 534,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9402,7 +9552,7 @@
 							}
 						},
 						{
-							"id": 516,
+							"id": 535,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9434,7 +9584,7 @@
 			]
 		},
 		{
-			"id": 517,
+			"id": 499,
 			"name": "vecCross",
 			"kind": 64,
 			"kindString": "Function",
@@ -9443,7 +9593,7 @@
 			},
 			"signatures": [
 				{
-					"id": 518,
+					"id": 500,
 					"name": "vecCross",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9460,7 +9610,7 @@
 					},
 					"parameters": [
 						{
-							"id": 519,
+							"id": 501,
 							"name": "u",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9475,7 +9625,7 @@
 							}
 						},
 						{
-							"id": 520,
+							"id": 502,
 							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9653,7 +9803,7 @@
 			]
 		},
 		{
-			"id": 521,
+			"id": 503,
 			"name": "vecDot",
 			"kind": 64,
 			"kindString": "Function",
@@ -9662,7 +9812,7 @@
 			},
 			"signatures": [
 				{
-					"id": 522,
+					"id": 504,
 					"name": "vecDot",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9678,7 +9828,7 @@
 					},
 					"parameters": [
 						{
-							"id": 523,
+							"id": 505,
 							"name": "u",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9693,7 +9843,7 @@
 							}
 						},
 						{
-							"id": 524,
+							"id": 506,
 							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9723,7 +9873,7 @@
 			]
 		},
 		{
-			"id": 525,
+			"id": 536,
 			"name": "vecGetLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -9732,7 +9882,7 @@
 			},
 			"signatures": [
 				{
-					"id": 526,
+					"id": 537,
 					"name": "vecGetLength",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9743,7 +9893,7 @@
 					},
 					"parameters": [
 						{
-							"id": 527,
+							"id": 538,
 							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9773,7 +9923,7 @@
 			]
 		},
 		{
-			"id": 528,
+			"id": 507,
 			"name": "vecGetLengthSq",
 			"kind": 64,
 			"kindString": "Function",
@@ -9782,7 +9932,7 @@
 			},
 			"signatures": [
 				{
-					"id": 529,
+					"id": 508,
 					"name": "vecGetLengthSq",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9793,7 +9943,7 @@
 					},
 					"parameters": [
 						{
-							"id": 530,
+							"id": 509,
 							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9823,7 +9973,7 @@
 			]
 		},
 		{
-			"id": 531,
+			"id": 539,
 			"name": "vecGetManhattanLength",
 			"kind": 64,
 			"kindString": "Function",
@@ -9832,7 +9982,7 @@
 			},
 			"signatures": [
 				{
-					"id": 532,
+					"id": 540,
 					"name": "vecGetManhattanLength",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9848,7 +9998,7 @@
 					},
 					"parameters": [
 						{
-							"id": 533,
+							"id": 541,
 							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9878,7 +10028,7 @@
 			]
 		},
 		{
-			"id": 534,
+			"id": 542,
 			"name": "vecLerp",
 			"kind": 64,
 			"kindString": "Function",
@@ -9887,7 +10037,7 @@
 			},
 			"signatures": [
 				{
-					"id": 535,
+					"id": 543,
 					"name": "vecLerp",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9897,7 +10047,7 @@
 					},
 					"parameters": [
 						{
-							"id": 536,
+							"id": 544,
 							"name": "u",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9912,7 +10062,7 @@
 							}
 						},
 						{
-							"id": 537,
+							"id": 545,
 							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9927,7 +10077,7 @@
 							}
 						},
 						{
-							"id": 538,
+							"id": 546,
 							"name": "r",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9941,7 +10091,7 @@
 							}
 						},
 						{
-							"id": 539,
+							"id": 547,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -9973,7 +10123,7 @@
 			]
 		},
 		{
-			"id": 540,
+			"id": 548,
 			"name": "vecManhattanDistance",
 			"kind": 64,
 			"kindString": "Function",
@@ -9982,7 +10132,7 @@
 			},
 			"signatures": [
 				{
-					"id": 541,
+					"id": 549,
 					"name": "vecManhattanDistance",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -9999,7 +10149,7 @@
 					},
 					"parameters": [
 						{
-							"id": 542,
+							"id": 550,
 							"name": "u",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10014,7 +10164,7 @@
 							}
 						},
 						{
-							"id": 543,
+							"id": 551,
 							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10044,7 +10194,7 @@
 			]
 		},
 		{
-			"id": 544,
+			"id": 552,
 			"name": "vecNormalize",
 			"kind": 64,
 			"kindString": "Function",
@@ -10053,7 +10203,7 @@
 			},
 			"signatures": [
 				{
-					"id": 545,
+					"id": 553,
 					"name": "vecNormalize",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -10073,7 +10223,7 @@
 					},
 					"parameters": [
 						{
-							"id": 546,
+							"id": 554,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10088,7 +10238,7 @@
 							}
 						},
 						{
-							"id": 547,
+							"id": 555,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10118,7 +10268,7 @@
 			]
 		},
 		{
-			"id": 548,
+			"id": 556,
 			"name": "vecOrigin",
 			"kind": 64,
 			"kindString": "Function",
@@ -10127,7 +10277,7 @@
 			},
 			"signatures": [
 				{
-					"id": 549,
+					"id": 557,
 					"name": "vecOrigin",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -10143,7 +10293,7 @@
 					},
 					"parameters": [
 						{
-							"id": 550,
+							"id": 558,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10173,7 +10323,7 @@
 			]
 		},
 		{
-			"id": 551,
+			"id": 559,
 			"name": "vecPerp",
 			"kind": 64,
 			"kindString": "Function",
@@ -10182,7 +10332,7 @@
 			},
 			"signatures": [
 				{
-					"id": 552,
+					"id": 560,
 					"name": "vecPerp",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -10192,7 +10342,7 @@
 					},
 					"parameters": [
 						{
-							"id": 553,
+							"id": 561,
 							"name": "vec",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10207,7 +10357,7 @@
 							}
 						},
 						{
-							"id": 554,
+							"id": 562,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10330,7 +10480,7 @@
 			]
 		},
 		{
-			"id": 555,
+			"id": 563,
 			"name": "vecScale",
 			"kind": 64,
 			"kindString": "Function",
@@ -10339,7 +10489,7 @@
 			},
 			"signatures": [
 				{
-					"id": 556,
+					"id": 564,
 					"name": "vecScale",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -10359,7 +10509,7 @@
 					},
 					"parameters": [
 						{
-							"id": 557,
+							"id": 565,
 							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10374,7 +10524,7 @@
 							}
 						},
 						{
-							"id": 558,
+							"id": 566,
 							"name": "scalar",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10388,7 +10538,7 @@
 							}
 						},
 						{
-							"id": 559,
+							"id": 567,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10418,7 +10568,7 @@
 			]
 		},
 		{
-			"id": 560,
+			"id": 568,
 			"name": "vecSubtract",
 			"kind": 64,
 			"kindString": "Function",
@@ -10427,7 +10577,7 @@
 			},
 			"signatures": [
 				{
-					"id": 561,
+					"id": 569,
 					"name": "vecSubtract",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -10451,7 +10601,7 @@
 					},
 					"parameters": [
 						{
-							"id": 562,
+							"id": 570,
 							"name": "u",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10466,7 +10616,7 @@
 							}
 						},
 						{
-							"id": 563,
+							"id": 571,
 							"name": "v",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10481,7 +10631,7 @@
 							}
 						},
 						{
-							"id": 564,
+							"id": 572,
 							"name": "out",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -10650,7 +10800,7 @@
 				108,
 				113,
 				148,
-				565,
+				573,
 				150,
 				118,
 				127,
@@ -10737,28 +10887,30 @@
 				495,
 				335,
 				344,
-				499,
+				514,
+				510,
+				518,
 				358,
 				179,
-				504,
-				508,
+				523,
+				527,
 				87,
-				513,
-				517,
+				532,
+				499,
 				442,
 				362,
-				521,
-				525,
-				528,
-				531,
-				534,
-				540,
-				544,
+				503,
+				536,
+				507,
+				539,
+				542,
 				548,
-				551,
+				552,
+				556,
+				559,
 				89,
-				555,
-				560,
+				563,
+				568,
 				98
 			]
 		}

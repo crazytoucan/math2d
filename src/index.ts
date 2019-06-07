@@ -96,6 +96,8 @@ export { segmentIntersectLine } from "./segmentFunctions/segmentIntersectLine";
 export { segmentIntersectPolylineIterator } from "./segmentFunctions/segmentIntersectPolylineIterator";
 export { segmentIntersectRay } from "./segmentFunctions/segmentIntersectRay";
 export { segmentIntersectSegment } from "./segmentFunctions/segmentIntersectSegment";
+export { segmentNearestDistance } from "./segmentFunctions/segmentNearestDistance";
+export { segmentNearestDistanceSq } from "./segmentFunctions/segmentNearestDistanceSq";
 export { segmentNearestPoint } from "./segmentFunctions/segmentNearestPoint";
 export { segmentNearestT } from "./segmentFunctions/segmentNearestT";
 export { segmentReset } from "./segmentFunctions/segmentReset";
