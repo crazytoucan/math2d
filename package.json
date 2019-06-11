@@ -26,6 +26,18 @@
     "type": "git",
     "url": "https://github.com/crazytoucan/math2d.git"
   },
+  "keywords": [
+    "2d",
+    "bounding",
+    "box",
+    "geometry",
+    "linear algebra",
+    "math",
+    "matrix",
+    "polygon",
+    "polyline",
+    "vector"
+  ],
   "homepage": "https://crazytoucan.github.io/math2d/",
   "bugs": "https://github.com/crazytoucan/math2d/issues",
   "license": "MIT"
