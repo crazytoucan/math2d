@@ -4,7 +4,6 @@ module.exports = {
   transform: {
     "\\.(js|jsx|ts|tsx)$": "ts-jest",
   },
-  transformIgnorePatterns: ["/node_modules/(?!(lodash-es|@foundry|@workshop|@palantir|@acme|@gotham|@tron)/)"],
   globals: {
     "ts-jest": {
       tsConfigFile: "tsconfig.jest.json",
