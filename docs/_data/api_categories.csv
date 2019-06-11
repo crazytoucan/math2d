@@ -1,11 +1,13 @@
 name,category_tag
-Data Types,data_types
-Box Functions,box
-Line Functions,line
-Mat2x3 Functions,mat2x3
-Polygon Functions,polygon
-Polyline Functions,polyline
-Ray Functions,ray
-Segment Functions,segment
-Vec Functions,vec
-Constants,constants
+Data Types,types
+Box Functions,boxFunctions
+Line Functions,lineFunctions
+Matd Functions,mat2dFunctions
+NearestPointResult Functions,nearestPointResultFunctions
+PointIntersectionResult Functions,pointIntersectionResultFunctions
+Polygon Functions,polygonFunctions
+Polyline Functions,polylineFunctions
+Ray Functions,rayFunctions
+Segment Functions,segmentFunctions
+Vec Functions,vecFunctions
+Constants,const

@@ -1,4 +1,3 @@
-// tslint:disable:no-bitwise
 /**
  * Sentinel value for the result of {@link boxGetOutCode} to represent that
  * the point was outside the min-X edge of the box.
@@ -22,4 +21,3 @@ export const OUT_MIN_Y = 4;
  * the point was outside the max-Y edge of the box.
  */
 export const OUT_MAX_Y = 8;
-// tslint:enable:no-bitwise
