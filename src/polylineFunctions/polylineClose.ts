@@ -24,5 +24,5 @@ export function polylineClose(poly: IPolyline, out = polylineAlloc()) {
 
   out[len] = poly[0];
   out[len + 1] = poly[1];
-  return length;
+  return out;
 }
