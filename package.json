@@ -22,8 +22,5 @@
     "typescript": "~3.4.5",
     "typescript-tslint-plugin": "0.2.1"
   },
-  "files": [
-    "lib"
-  ],
   "license": "MIT"
 }
