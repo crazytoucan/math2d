@@ -9,6 +9,7 @@ export { boxIntersection } from "./boxFunctions/boxIntersection";
 export { boxIntersectsBox } from "./boxFunctions/boxIntersectsBox";
 export { boxIsEmpty } from "./boxFunctions/boxIsEmpty";
 export { boxReset } from "./boxFunctions/boxReset";
+export { boxScale } from "./boxFunctions/boxScale";
 export { boxTransformByAff } from "./boxFunctions/boxTransformByAff";
 export { boxTranslate } from "./boxFunctions/boxTranslate";
 export { boxUnion } from "./boxFunctions/boxUnion";
