@@ -2,7 +2,7 @@ name,category_tag
 IBox,types
 IIntersection,types
 ILine,types
-IMat2x3,types
+IMat2d,types
 IPolygon,types
 IPolyline,types
 IRay,types
