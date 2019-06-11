@@ -10,6 +10,7 @@ export { boxIntersectsBox } from "./boxFunctions/boxIntersectsBox";
 export { boxIsEmpty } from "./boxFunctions/boxIsEmpty";
 export { boxReset } from "./boxFunctions/boxReset";
 export { boxTransformByAff } from "./boxFunctions/boxTransformByAff";
+export { boxTranslate } from "./boxFunctions/boxTranslate";
 export { boxUnion } from "./boxFunctions/boxUnion";
 export { OUT_MAX_X, OUT_MAX_Y, OUT_MIN_X, OUT_MIN_Y } from "./const";
 export { lineAlloc } from "./lineFunctions/lineAlloc";
