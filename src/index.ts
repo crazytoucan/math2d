@@ -1,18 +1,18 @@
 export { boxAlloc } from "./boxFunctions/boxAlloc";
 export { boxClone } from "./boxFunctions/boxClone";
-export { boxComputeOutCode } from "./boxFunctions/boxComputeOutCode";
+export { boxComputeIntersection } from "./boxFunctions/boxComputeIntersection";
+export { boxComputeUnion } from "./boxFunctions/boxComputeUnion";
 export { boxContainsBox } from "./boxFunctions/boxContainsBox";
 export { boxContainsPoint } from "./boxFunctions/boxContainsPoint";
 export { boxEncapsulate } from "./boxFunctions/boxEncapsulate";
+export { boxGetOutCode } from "./boxFunctions/boxGetOutCode";
 export { boxGrow } from "./boxFunctions/boxGrow";
-export { boxIntersection } from "./boxFunctions/boxIntersection";
 export { boxIntersectsBox } from "./boxFunctions/boxIntersectsBox";
 export { boxIsEmpty } from "./boxFunctions/boxIsEmpty";
 export { boxReset } from "./boxFunctions/boxReset";
 export { boxScale } from "./boxFunctions/boxScale";
 export { boxTransformByAff } from "./boxFunctions/boxTransformByAff";
 export { boxTranslate } from "./boxFunctions/boxTranslate";
-export { boxUnion } from "./boxFunctions/boxUnion";
 export { OUT_MAX_X, OUT_MAX_Y, OUT_MIN_X, OUT_MIN_Y } from "./const";
 export { lineAlloc } from "./lineFunctions/lineAlloc";
 export { lineClone } from "./lineFunctions/lineClone";
@@ -127,4 +127,3 @@ export { vecReset } from "./vecFunctions/vecReset";
 export { vecScale } from "./vecFunctions/vecScale";
 export { vecSubtract } from "./vecFunctions/vecSubtract";
 export { vecTransformByAff } from "./vecFunctions/vecTransformByAff";
-

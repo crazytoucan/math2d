@@ -14,14 +14,14 @@ import { IBox, IVec } from "../types";
  * @param point
  * @example
  *  const myBox = boxReset(-2, -2, 2, 2);
- *  const outCode1 = boxComputeOutCode(myBox, vecReset(-4, 4)); // returns OUT_MIN_X | OUT_MAX_Y
- *  const outCode2 = boxComputeOutCode(myBox, vec2Origin()); // returns 0
+ *  const outCode1 = boxGetOutCode(myBox, vecReset(-4, 4)); // returns OUT_MIN_X | OUT_MAX_Y
+ *  const outCode2 = boxGetOutCode(myBox, vec2Origin()); // returns 0
  * @see OUT_MIN_X
  * @see OUT_MAX_X
  * @see OUT_MIN_Y
  * @see OUT_MAX_Y
  */
-export function boxComputeOutCode(box: IBox, point: IVec) {
+export function boxGetOutCode(box: IBox, point: IVec) {
   let out = 0;
   if (point.x < box.minX) {
     out |= OUT_MIN_X;
