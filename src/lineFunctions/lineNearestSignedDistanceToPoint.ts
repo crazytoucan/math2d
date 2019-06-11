@@ -1,4 +1,7 @@
+import { _dot } from "../internal/_dot";
 import { _dotPerp } from "../internal/_dotPerp";
+import { nearestPointResultAlloc } from "../nearestPointResultFunctions/nearestPointResultAlloc";
+import { nearestPointResultReset } from "../nearestPointResultFunctions/nearestPointResultReset";
 import { ILine, IVec } from "../types";
 
 /**
@@ -13,13 +16,16 @@ import { ILine, IVec } from "../types";
  * If the point lies on the line, this function returns 0.
  *
  * To get the (unsigned) distance of the point to the line, see
- * {@link lineClosestDistanceToPoint}.
+ * {@link lineNearestSignedDistanceToPoint}.
  *
  * @param line the line to inspect
  * @param point the reference point to check for closest distance
  * @see {@link lineGetClosestDistanceToPoint}
  * @see {@link lineWhichSide}
+ * @see {@link INearestPointResult}
  */
-export function lineClosestSignedDistanceToPoint(line: ILine, point: IVec) {
-  return _dotPerp(line, point);
+export function lineNearestSignedDistanceToPoint(line: ILine, point: IVec, out = nearestPointResultAlloc()) {
+  const t = _dot(line, point);
+  const signedDistance = _dotPerp(line, point);
+  return nearestPointResultReset(line.x0 + t * line.dirX, line.y0 + t * line.dirY, t, signedDistance, out);
 }

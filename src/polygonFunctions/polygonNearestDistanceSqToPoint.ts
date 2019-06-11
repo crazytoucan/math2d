@@ -17,6 +17,7 @@ import { IPolygon, IVec } from "../types";
  * @param point the point to measure distance to
  * @param out
  * @see {@link IPolygon}
+ * @see {@link INearestPointResult}
  */
 export function polygonNearestDistanceSqToPoint(poly: IPolygon, point: IVec, out = nearestPointResultAlloc()) {
   return polylineNearestDistanceSqToPoint(_asPolyline(poly), point, out);

@@ -22,8 +22,7 @@ const TMP2 = nearestPointResultAlloc();
  * @param point the point to measure distance to
  * @param out
  * @see {@link IPolyline}
- * @see {@link polylineNearestPoint}
- * @see {@link segmentNearestT}
+ * @see {@link INearestPointResult}
  */
 export function polylineNearestDistanceSqToPoint(poly: IPolyline, point: IVec, out = nearestPointResultAlloc()) {
   const winner = nearestPointResultReset(NaN, NaN, NaN, Infinity, out);

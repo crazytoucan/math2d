@@ -21,6 +21,7 @@ const TMP1 = vecAlloc();
  * @param point point to measure squared distance to
  * @param out
  * @see {@link ISegment}
+ * @see {@link INearestPointResult}
  */
 export function segmentNearestDistanceSqToPoint(segment: ISegment, point: IVec, out = nearestPointResultAlloc()) {
   const segVector = vecReset(segment.x1 - segment.x0, segment.y1 - segment.y0, TMP0);
