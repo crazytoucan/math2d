@@ -1,4 +1,4 @@
-import { mat2dMulMat2d } from '../../mat2dFunctions/mat2dMulMat2d';
+import { mat2dMulMat2d } from "../../mat2dFunctions/mat2dMulMat2d";
 import { mat2dReset } from "../../mat2dFunctions/mat2dReset";
 import { expectmat2dEqualsApprox } from "../helpers";
 

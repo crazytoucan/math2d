@@ -336,3 +336,33 @@ export interface IPointIntersectionResult {
    */
   t1: number;
 }
+
+/**
+ * Data type to hold the result of find the nearest point on a piece of geometry.
+ */
+export interface INearestPointResult {
+  /**
+   * The x-coordinate of the nearest point.
+   */
+  x: number;
+
+  /**
+   * The y-coordinate of the nearest point.
+   */
+  y: number;
+
+  /**
+   * The parameterization of the nearest point along the geometry.
+   */
+  t: number;
+
+  /**
+   * The value of the distance from the computed nearest point to the original point.
+   * This may be the actual (Euclidean) distance, the signed euclidean distance, or the distance squared,
+   * depending on the actual nearest function called.
+   *
+   * Consult the docs for the particular nearest function being called for specifics on what value
+   * is returned in this field.
+   */
+  distanceValue: number;
+}
