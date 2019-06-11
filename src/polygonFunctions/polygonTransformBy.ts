@@ -6,7 +6,7 @@ import { polygonAlloc } from "./polygonAlloc";
  * Transforms a polygon by an affine matrix.
  *
  * Simply transforms each of the polygon's vertices by the given matrix.
- * Affine transformations and their specifics within Vectormath are described in more detail
+ * Affine transformations and their specifics within Math2d are described in more detail
  * in the {@link vecTransformBy} docs.
  *
  * @param poly polygon to transform

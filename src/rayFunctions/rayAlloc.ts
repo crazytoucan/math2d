@@ -8,7 +8,7 @@ class Ray implements IRay {
  * Creates a new Ray object in memory, with all values initialized to `NaN`.
  *
  * Data allocation functions like `rayAlloc()` are useful to hold results of
- * Vectormath function calls in inner loops of performance critical workflows.
+ * Math2d function calls in inner loops of performance critical workflows.
  *
  * As with any optimization, you don't need it until you've profiled your
  * application! Getting into temp variable management and shared state can

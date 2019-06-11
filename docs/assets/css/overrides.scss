@@ -26,19 +26,19 @@ html {
 }
 
 @media (min-width: 31.25rem) {
-  .vectormath-api-list-item {
+  .math2d-api-list-item {
     font-size: 14px !important;
   }
 }
 
 @media (min-width: 46.25rem) {
-  .vectormath-api-list-item {
+  .math2d-api-list-item {
     font-size: 10px !important;
   }
 }
 
 @media (min-width: 46.25rem) and (min-width: 31.25rem) {
-  .vectormath-api-list-item {
+  .math2d-api-list-item {
     font-size: 12px !important;
   }
 }
@@ -56,7 +56,7 @@ h4 {
   }
 }
 
-.vectormath-api-list-child-list {
+.math2d-api-list-child-list {
   position: relative;
   margin-bottom: 0.5rem;
   padding-bottom: 0.25rem;
@@ -81,7 +81,7 @@ h4 {
   color: $grey-dk-000;
 }
 
-.vectormath-api-list-item::before {
+.math2d-api-list-item::before {
   display: none;
 }
 
@@ -122,7 +122,7 @@ h4 {
   background-image: url({{ "/assets/svg/minus.svg" | absolute_url }});
 }
 
-.vectormath-reference-header {
+.math2d-reference-header {
   margin: 0 -1rem;
   padding: 0.5rem 1rem;
   border-radius: 4px;
@@ -150,12 +150,12 @@ h4 {
   font-weight: 400;
 }
 
-.vectormath-signature {
+.math2d-signature {
   font-family: monospace;
   font-size: 12px !important;
 }
 
-dl.vectormath-parameter-list {
+dl.math2d-parameter-list {
   font-size: 12px !important;
   display: block;
   .optional {
@@ -177,13 +177,13 @@ dl.vectormath-parameter-list {
   }
 }
 
-.vectormath-type {
+.math2d-type {
   &.-primitive {
     color: #aaa;
   }
 }
 
-table.vectormath-signature {
+table.math2d-signature {
   display: table !important;
   width: initial;
   max-width: initial;
@@ -201,7 +201,7 @@ table.vectormath-signature {
   }
 }
 
-.vectormath-reference-content {
+.math2d-reference-content {
   margin: 1rem 0 3rem 0;
 }
 
@@ -211,7 +211,7 @@ code {
   background: $grey-lt-000;
 }
 
-.vectormath-example figure,
+.math2d-example figure,
 pre.highlight {
   border: 1px solid #eee;
   border-radius: 4px
@@ -222,7 +222,7 @@ figure.highlight code {
   border: 0;
 }
 
-.vectormath-example figure {
+.math2d-example figure {
   padding: 10px;
 
   pre {
@@ -250,13 +250,13 @@ figure.highlight code {
   }
 }
 
-.vectormath-constant-value{
+.math2d-constant-value{
   code,
   figure {
     background: none;
   }
 }
 
-.vectormath-interface-declaration {
+.math2d-interface-declaration {
   font-size: 12px !important;
 }

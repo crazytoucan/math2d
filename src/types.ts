@@ -1,10 +1,10 @@
 /**
  * Data type to hold an (x, y) value.
  *
- * The vector type in the Vectormath package is used interchangeably to represent both points in the plane
+ * The vector type in the Math2d package is used interchangeably to represent both points in the plane
  * and vectors as in linear algebra.
  *
- * Vectormath chooses to lay out the (x, y) values in a JavaScript object rather than an array
+ * Math2d chooses to lay out the (x, y) values in a JavaScript object rather than an array
  * for ease of use. After carefully benchmarking that difference, it's been confirmed that this
  * does not sacrifice performance or memory compactness.
  *
@@ -60,7 +60,7 @@ export interface ISegment {
  * Data type to represent a ray in 2D space, i.e. an initial point in the plane plus a unit-length direction
  * vector coming from that point.
  *
- * The data representation of a ray and the similar {@link ILine} type is actually the same, but Vectormath chooses
+ * The data representation of a ray and the similar {@link ILine} type is actually the same, but Math2d chooses
  * to export both names for clarity of usage. Functions that may interpret Rays and Lines differently will be
  * named differently to prevent ambiguity,
  * such as {@link polygonIntersectLineIterator} vs {@link polygonIntersectRayIterator}.
@@ -99,7 +99,7 @@ export interface IRay {
  * Data type to represent a line in 2D space, i.e. some initial point in the plane plus a unit-length direction
  * vector coming from that point.
  *
- * The data representation of a line and the similar {@link IRay} type is actually the same, but Vectormath chooses
+ * The data representation of a line and the similar {@link IRay} type is actually the same, but Math2d chooses
  * to export these two names for ease of clarity. Functions that may interpret Rays and Lines differently will be
  * named differently to prevent ambiguity, such as
  * {@link polygonIntersectLineIterator} vs {@link polygonIntersectRayIterator}.
@@ -137,7 +137,7 @@ export interface ILine {
  * Data type to hold a 2D affine transformation matrix.
  *
  * Two-dimensional vector graphics operations are usually represented using an affine transform matrix,
- * i.e. a linear 2x2 matrix plus a 2D translation. Vectormath chooses to lay out this data in a
+ * i.e. a linear 2x2 matrix plus a 2D translation. Math2d chooses to lay out this data in a
  * flat object structure, as opposed to an array or nested arrays, for ease of use and performance.
  * The field names used here match other standards, like the native DOMMatrix
  * specification and the Canvas reference APIs.
@@ -197,7 +197,7 @@ export interface IMat2d {
  * categories of performance-optimized spatial calculations, such as spatial index queries
  * and viewbox culling.
  *
- * A box in Vectormath is defined by its `minX`, `minY`, `maxX`, and `maxY` edges. Where
+ * A box in Math2d is defined by its `minX`, `minY`, `maxX`, and `maxY` edges. Where
  * relevant and unless documented otherwise, boxes are interpreted as _closed_ regions,
  * i.e. they include those points that lie along their edges.
  *
@@ -209,7 +209,7 @@ export interface IMat2d {
  *            minX    maxX
  * ```
  *
- * Vectormath chooses to lay out this data in a
+ * Math2d chooses to lay out this data in a
  * flat object structure, as opposed to an array or nested arrays, for ease of use and performance.
  *
  * @see {@link boxAlloc}
@@ -244,7 +244,7 @@ export interface IBox {
  * as an interleaved sequence of vertex coordinates.
  *
  * The `IPolygon` type is just an alias for an array of number values. For example,
- * a polygon with vertices v0, v1, v2, ..., vn is represented in Vectormath as the array:
+ * a polygon with vertices v0, v1, v2, ..., vn is represented in Math2d as the array:
  *
  * ```
  * [v0x, v0y, v1x, v1y, v2x, v2y, ..., vnx, vny]
@@ -257,7 +257,7 @@ export interface IBox {
  * vertices in order, and smooth values of _t_ therein interpolate linearly between adjacent vertices, with an
  * additional segment connecting the last vertex to the first.
  *
- * Vectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of
+ * Math2d chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of
  * IVecs, for performance and more compact storage.
  */
 export type IPolygon = number[];
@@ -267,7 +267,7 @@ export type IPolygon = number[];
  * as an interleaved array of vertex coordinates.
  *
  * The `IPolyline` type is just an alias for an array of number values. For example,
- * a polyline connecting the points p0, p1, p2, ..., pn in space is represented in Vectormath as the array:
+ * a polyline connecting the points p0, p1, p2, ..., pn in space is represented in Math2d as the array:
  *
  * ```
  * [p0x, p0y, p1x, p1y, p2x, p2y, ..., pnx, pny]
@@ -280,7 +280,7 @@ export type IPolygon = number[];
  * of the polyline, _t_ = 0 is its first point, and _t_ = _N_ is its final point. Any _t_ value falling
  * outside of the range [0, _N_] is disallowed.
  *
- * Vectormath chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of
+ * Math2d chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of
  * IVecs, for performance and more compact storage.
  */
 export type IPolyline = number[];

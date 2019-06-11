@@ -6,7 +6,7 @@ class PointIntersectionResult implements IPointIntersectionResult {
 
 /**
  * Creates a new PointIntersectionResult object in memory, with all values initialized to `false` and `NaN`.
- * This is useful to hold the result of vectormath function calls in performance
+ * This is useful to hold the result of math2d function calls in performance
  * critical workflows.
  */
 export function pointIntersectionResultAlloc(): IPointIntersectionResult {

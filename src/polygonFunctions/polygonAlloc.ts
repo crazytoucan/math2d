@@ -5,7 +5,7 @@ import { IPolygon } from "../types";
  * Its initial length is 0.
  *
  * Data allocation functions like `polygonAlloc()` are useful to hold results of
- * Vectormath function calls in inner loops of performance critical workflows.
+ * Math2d function calls in inner loops of performance critical workflows.
  *
  * As with any optimization, you don't need it until you've profiled your
  * application! Getting into temp variable management and shared state can

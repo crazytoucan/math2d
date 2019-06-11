@@ -16,7 +16,7 @@ const TMP1 = vecAlloc();
  * initial point, and its direction will be the result of applying any rotations or shears from
  * the matrix. The resulting direction vector will be correctly normalized when applicable.
  *
- * Affine transformations and their specifics within Vectormath are described in more detail
+ * Affine transformations and their specifics within Math2d are described in more detail
  * in the {@link vecTransformBy} docs.
  *
  * Synonymous to {@link rayTransformBy}.

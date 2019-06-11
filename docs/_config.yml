@@ -1,5 +1,5 @@
 remote_theme: pmarsceill/just-the-docs
-title: vectormath
+title: math2d
 plugins:
   - jekyll-remote-theme
 kramdown:

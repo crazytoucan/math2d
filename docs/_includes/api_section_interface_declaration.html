@@ -1,7 +1,7 @@
 {% assign value = include.value %}
 
 <h4>Declaration</h4>
-<pre class="vectormath-interface-declaration">
+<pre class="math2d-interface-declaration">
 interface {{ value.name }} {<br>
   {%- for property in value.children -%}
     {%- assign property_type = property.type -%}

@@ -1,7 +1,7 @@
 {% assign value = include.value %}
 
 <h4>Fields</h4>
-<dl class="vectormath-parameter-list">
+<dl class="math2d-parameter-list">
   {% for property in value.children %}
     {%- assign property_type = property.type -%}
     <dt>{{ property.name }}: {% include api_helper_type.html type=property_type %}</dt>
