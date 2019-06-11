@@ -17,7 +17,7 @@ import { mat2dReset } from "./mat2dReset";
  * @param theta rotation angle in radians to apply on top of the given matrix
  * @param out
  * @see {@link mat2dFromRotation}
- * @see {@link mat2dMulmat2d}
+ * @see {@link mat2dMulMat2d}
  */
 export function mat2dRotate(mat: IMat2d, theta: number, out = mat2dAlloc()) {
   const cos = Math.cos(theta);

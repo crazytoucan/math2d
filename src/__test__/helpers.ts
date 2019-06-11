@@ -1,4 +1,4 @@
-import { IBox, IIntersection, IMat2d, IVec } from "../types";
+import { IBox, IMat2d, IPointIntersectionResult, IVec } from "../types";
 
 export const TEST_PRECISION_DIGITS = 10;
 
@@ -24,7 +24,7 @@ export function expectVecEqualsApprox(actual: IVec, expected: IVec) {
   expectEqualsApprox(actual.y, expected.y);
 }
 
-export function expectIntersectionEqualsApprox(actual: IIntersection, expected: IIntersection) {
+export function expectIntersectionEqualsApprox(actual: IPointIntersectionResult, expected: IPointIntersectionResult) {
   expect(actual.exists).toBe(expected.exists);
   expectEqualsApprox(actual.x, expected.x);
   expectEqualsApprox(actual.y, expected.y);
@@ -32,7 +32,7 @@ export function expectIntersectionEqualsApprox(actual: IIntersection, expected: 
   expectEqualsApprox(actual.t1, expected.t1);
 }
 
-export function expectIntersectionDNE(intersection: IIntersection) {
+export function expectIntersectionDNE(intersection: IPointIntersectionResult) {
   expect(intersection.exists).toBe(false);
   expect(intersection.x).toBeNaN();
   expect(intersection.y).toBeNaN();

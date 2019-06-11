@@ -1,6 +1,6 @@
 import { _intersectionSwapTs } from "../internal/_intersectionSwapTs";
-import { intersectionAlloc } from "../intersectionFunctions/intersectionAlloc";
 import { lineIntersectRay } from "../lineFunctions/lineIntersectRay";
+import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
 import { ILine, IRay } from "../types";
 
 /**
@@ -11,7 +11,7 @@ import { ILine, IRay } from "../types";
  * If the ray and line are the same (i.e. they are parallel and coincide with one another),
  * this function returns the ray's initial point.
  *
- * The returned value is an {@link IIntersection} object which will have have the
+ * The returned value is an {@link IPointIntersectionResult} object which will have have the
  * `exists` flag set to `true` iff an intersection was found. It additionally
  * has the following fields, if the intersection exists:
  *
@@ -31,6 +31,6 @@ import { ILine, IRay } from "../types";
  * @see {@link rayIntersectRay}
  * @see {@link rayIntersectSegment}
  */
-export function rayIntersectLine(ray: IRay, line: ILine, out = intersectionAlloc()) {
+export function rayIntersectLine(ray: IRay, line: ILine, out = pointIntersectionResultAlloc()) {
   return _intersectionSwapTs(lineIntersectRay(line, ray, out));
 }

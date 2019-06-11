@@ -1,6 +1,6 @@
 import { _polylineIntersectIteratorHelper } from "../internal/_polylineIntersectIteratorHelper";
 import { _swapAndReorderIntersections } from "../internal/_swapAndReorderIntersections";
-import { IIntersection, IPolyline, ISegment } from "../types";
+import { IPointIntersectionResult, IPolyline, ISegment } from "../types";
 import { segmentIntersectSegment } from "./segmentIntersectSegment";
 
 /**
@@ -22,13 +22,13 @@ import { segmentIntersectSegment } from "./segmentIntersectSegment";
  *
  * @param segment the segment to intersect
  * @param poly the polyline to find intersections with
- * @see {@link IIntersection}
+ * @see {@link IPointIntersectionResult}
  * @see {@link ISegment}
  * @see {@link polylineIntersectSegmentIterator}
  * @see {@link segmentIntersectLine}
  * @see {@link segmentIntersectRay}
  * @see {@link segmentIntersectSegment}
  */
-export function segmentIntersectPolylineIterator(segment: ISegment, poly: IPolyline): IterableIterator<IIntersection> {
+export function segmentIntersectPolylineIterator(segment: ISegment, poly: IPolyline): IterableIterator<IPointIntersectionResult> {
   return _swapAndReorderIntersections(_polylineIntersectIteratorHelper(poly, segment, segmentIntersectSegment));
 }

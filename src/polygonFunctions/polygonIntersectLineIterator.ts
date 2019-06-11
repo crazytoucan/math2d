@@ -1,6 +1,6 @@
 import { _polygonIntersectIteratorHelper } from "../internal/_polygonIntersectIteratorHelper";
 import { segmentIntersectLine } from "../segmentFunctions/segmentIntersectLine";
-import { IIntersection, ILine, IPolygon } from "../types";
+import { ILine, IPointIntersectionResult, IPolygon } from "../types";
 
 /**
  * Computes all locations at which a polygon crosses a given line.
@@ -19,12 +19,12 @@ import { IIntersection, ILine, IPolygon } from "../types";
  *
  * @param poly the polygon to intersect
  * @param line the line to find intersections with
- * @see {@link IIntersection}
+ * @see {@link IPointIntersectionResult}
  * @see {@link IPolygon}
  * @see {@link lineIntersectPolygonIterator}
  * @see {@link polygonIntersectRayIterator}
  * @see {@link polygonIntersectSegmentIterator}
  */
-export function polygonIntersectLineIterator(poly: IPolygon, line: ILine): IterableIterator<IIntersection> {
+export function polygonIntersectLineIterator(poly: IPolygon, line: ILine): IterableIterator<IPointIntersectionResult> {
   return _polygonIntersectIteratorHelper(poly, line, segmentIntersectLine).values();
 }

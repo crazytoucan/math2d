@@ -1,7 +1,7 @@
 import { _polylineIntersectIteratorHelper } from "../internal/_polylineIntersectIteratorHelper";
 import { _swapAndReorderIntersections } from "../internal/_swapAndReorderIntersections";
 import { segmentIntersectLine } from "../segmentFunctions/segmentIntersectLine";
-import { IIntersection, ILine, IPolyline } from "../types";
+import { ILine, IPointIntersectionResult, IPolyline } from "../types";
 
 /**
  * Computes all locations at which a line crosses a given polyline.
@@ -18,13 +18,13 @@ import { IIntersection, ILine, IPolyline } from "../types";
  *
  * @param poly
  * @param ray
- * @see {@link IIntersection}
+ * @see {@link IPointIntersectionResult}
  * @see {@link ILine}
  * @see {@link polylineIntersectLineIterator}
  * @see {@link lineIntersectLine}
  * @see {@link lineIntersectRay}
  * @see {@link lineIntersectSegment}
  */
-export function lineIntersectPolylineIterator(line: ILine, poly: IPolyline): IterableIterator<IIntersection> {
+export function lineIntersectPolylineIterator(line: ILine, poly: IPolyline): IterableIterator<IPointIntersectionResult> {
   return _swapAndReorderIntersections(_polylineIntersectIteratorHelper(poly, line, segmentIntersectLine));
 }

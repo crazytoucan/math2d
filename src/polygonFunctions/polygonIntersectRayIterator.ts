@@ -1,6 +1,6 @@
 import { _polygonIntersectIteratorHelper } from "../internal/_polygonIntersectIteratorHelper";
 import { segmentIntersectRay } from "../segmentFunctions/segmentIntersectRay";
-import { IIntersection, IPolygon, IRay } from "../types";
+import { IPointIntersectionResult, IPolygon, IRay } from "../types";
 
 /**
  * Computes all locations at which a polygon crosses a given ray.
@@ -19,12 +19,12 @@ import { IIntersection, IPolygon, IRay } from "../types";
  *
  * @param poly the polygon to intersect
  * @param ray the ray to find intersections with
- * @see {@link IIntersection}
+ * @see {@link IPointIntersectionResult}
  * @see {@link IPolygon}
  * @see {@link rayIntersectPolygonIterator}
  * @see {@link polygonIntersectLineIterator}
  * @see {@link polygonIntersectSegmentIterator}
  */
-export function polygonIntersectRayIterator(poly: IPolygon, ray: IRay): IterableIterator<IIntersection> {
+export function polygonIntersectRayIterator(poly: IPolygon, ray: IRay): IterableIterator<IPointIntersectionResult> {
   return _polygonIntersectIteratorHelper(poly, ray, segmentIntersectRay).values();
 }

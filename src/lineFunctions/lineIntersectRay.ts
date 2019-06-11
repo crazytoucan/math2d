@@ -1,5 +1,5 @@
 import { _intersectionDNE } from "../internal/_intersectionDNE";
-import { intersectionAlloc } from "../intersectionFunctions/intersectionAlloc";
+import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
 import { ILine, IRay } from "../types";
 import { lineIntersectLine } from "./lineIntersectLine";
 
@@ -11,7 +11,7 @@ import { lineIntersectLine } from "./lineIntersectLine";
  * If the ray and line are the same (i.e. they are parallel and coincide with one another),
  * this function returns the line's initial point.
  *
- * The returned value is an {@link IIntersection} object which will have have the
+ * The returned value is an {@link IPointIntersectionResult} object which will have have the
  * `exists` flag set to `true` iff an intersection was found. It additionally
  * has the following fields, if the intersection exists:
  *
@@ -31,7 +31,7 @@ import { lineIntersectLine } from "./lineIntersectLine";
  * @see {@link lineIntersectPolylineIterator}
  * @see {@link lineIntersectSegment}
  */
-export function lineIntersectRay(line: ILine, ray: IRay, out = intersectionAlloc()) {
+export function lineIntersectRay(line: ILine, ray: IRay, out = pointIntersectionResultAlloc()) {
   lineIntersectLine(line, ray);
   return !out.exists || out.t1 < 0 ? _intersectionDNE(out) : out;
 }

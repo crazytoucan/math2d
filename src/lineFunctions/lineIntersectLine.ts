@@ -2,10 +2,10 @@ import { _dot } from "../internal/_dot";
 import { _intersectionDNE } from "../internal/_intersectionDNE";
 import { _lineTransformByOrtho } from "../internal/_lineTransformByOrtho";
 import { EPSILON } from "../internal/const";
-import { intersectionAlloc } from "../intersectionFunctions/intersectionAlloc";
-import { intersectionReset } from "../intersectionFunctions/intersectionReset";
 import { mat2dAlloc } from "../mat2dFunctions/mat2dAlloc";
 import { mat2dReset } from "../mat2dFunctions/mat2dReset";
+import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
+import { pointIntersectionResultReset } from "../pointIntersectionResultFunctions/pointIntersectionResultReset";
 import { ILine } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
 import { lineAlloc } from "./lineAlloc";
@@ -22,7 +22,7 @@ const TMP2 = vecAlloc();
  * this function returns no intersection. If the lines are completely overlapping,
  * this function returns the first line's initial point.
  *
- * The returned value is an {@link IIntersection} object which will have have the
+ * The returned value is an {@link IPointIntersectionResult} object which will have have the
  * `exists` flag set to `true` iff an intersection was found. It additionally
  * has the following fields, if the intersection exists:
  *
@@ -40,19 +40,19 @@ const TMP2 = vecAlloc();
  * @see {@link lineIntersectRay}
  * @see {@link lineIntersectSegment}
  */
-export function lineIntersectLine(a: ILine, b: ILine, out = intersectionAlloc()) {
+export function lineIntersectLine(a: ILine, b: ILine, out = pointIntersectionResultAlloc()) {
   const transform = mat2dReset(a.dirX, -a.dirY, a.dirY, a.dirX, -a.x0, -a.y0, TMP0);
   const localB = _lineTransformByOrtho(b, transform, TMP1);
   const isParallel = Math.abs(localB.dirY) < EPSILON;
 
   if (isParallel && Math.abs(localB.y0) < EPSILON) {
-    return intersectionReset(true, a.x0, a.y0, 0, -localB.x0 * localB.dirX, out);
+    return pointIntersectionResultReset(true, a.x0, a.y0, 0, -localB.x0 * localB.dirX, out);
   } else if (isParallel) {
     return _intersectionDNE(out);
   } else {
     const t0 = localB.x0 - (localB.dirX / localB.dirY) * localB.y0;
     const intersectionPoint = lineGetPointAt(a, t0, TMP2);
     const t1 = _dot(b, intersectionPoint);
-    return intersectionReset(true, intersectionPoint.x, intersectionPoint.y, t0, t1, out);
+    return pointIntersectionResultReset(true, intersectionPoint.x, intersectionPoint.y, t0, t1, out);
   }
 }

@@ -14,7 +14,7 @@ import { mat2dReset } from "./mat2dReset";
  * @param mat the matrix to transform
  * @param theta rotation angle in radians to apply on top of the given matrix
  * @param out
- * @see {@link mat2dMulmat2d}
+ * @see {@link mat2dMulMat2d}
  */
 export function mat2dScale(mat: IMat2d, scale: number, out = mat2dAlloc()) {
   return mat2dReset(scale * mat.a, scale * mat.b, scale * mat.c, scale * mat.d, scale * mat.e, scale * mat.f, out);

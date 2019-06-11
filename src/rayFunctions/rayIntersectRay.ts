@@ -1,7 +1,7 @@
 import { _intersectionDNE } from "../internal/_intersectionDNE";
 import { EPSILON } from "../internal/const";
-import { intersectionAlloc } from "../intersectionFunctions/intersectionAlloc";
 import { lineIntersectLine } from "../lineFunctions/lineIntersectLine";
+import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
 import { IRay } from "../types";
 
 /**
@@ -10,7 +10,7 @@ import { IRay } from "../types";
  * Finds the location at which the two rays meet. If the rays point away or "miss" each other,
  * or they are parallel, this function returns no intersection.
  *
- * The returned value is an {@link IIntersection} object which will have have the
+ * The returned value is an {@link IPointIntersectionResult} object which will have have the
  * `exists` flag set to `true` iff an intersection was found. It additionally
  * has the following fields, if the intersection exists:
  *
@@ -25,7 +25,7 @@ import { IRay } from "../types";
  * @param b the second ray to intersect
  * @param out
  */
-export function rayIntersectRay(a: IRay, b: IRay, out = intersectionAlloc()) {
+export function rayIntersectRay(a: IRay, b: IRay, out = pointIntersectionResultAlloc()) {
   lineIntersectLine(a, b, out);
   return out.exists && out.t0 > -EPSILON && out.t1 > -EPSILON ? out : _intersectionDNE(out);
 }

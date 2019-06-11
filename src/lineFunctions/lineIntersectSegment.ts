@@ -1,6 +1,6 @@
 import { _intersectionDNE } from "../internal/_intersectionDNE";
 import { _lookAt } from "../internal/_lookAt";
-import { intersectionAlloc } from "../intersectionFunctions/intersectionAlloc";
+import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
 import { segmentGetLength } from "../segmentFunctions/segmentGetLength";
 import { ILine, ISegment } from "../types";
 import { lineAlloc } from "./lineAlloc";
@@ -15,7 +15,7 @@ const TMP0 = lineAlloc();
  * If the line "misses" the segment, this function returns no intersection.
  * If the line completely overlaps the segment, this function returns the line's initial point.
  *
- * The returned value is an {@link IIntersection} object which will have have the
+ * The returned value is an {@link IPointIntersectionResult} object which will have have the
  * `exists` flag set to `true` iff an intersection was found. It additionally
  * has the following fields, if the intersection exists:
  *
@@ -35,7 +35,7 @@ const TMP0 = lineAlloc();
  * @see {@link lineIntersectPolylineIterator}
  * @see {@link lineIntersectRay}
  */
-export function lineIntersectSegment(line: ILine, segment: ISegment, out = intersectionAlloc()) {
+export function lineIntersectSegment(line: ILine, segment: ISegment, out = pointIntersectionResultAlloc()) {
   // TODO: https://github.com/crazytoucan/geometry/issues/1
   const segmentLine = _lookAt(segment.x0, segment.y0, segment.x1, segment.y1, TMP0);
   const segmentLength = segmentGetLength(segment);

@@ -1,7 +1,7 @@
 import { _polylineIntersectIteratorHelper } from "../internal/_polylineIntersectIteratorHelper";
 import { _swapAndReorderIntersections } from "../internal/_swapAndReorderIntersections";
 import { segmentIntersectRay } from "../segmentFunctions/segmentIntersectRay";
-import { IIntersection, IPolyline, IRay } from "../types";
+import { IPointIntersectionResult, IPolyline, IRay } from "../types";
 
 /**
  * Computes all locations at which a ray crosses a given polyline.
@@ -19,12 +19,12 @@ import { IIntersection, IPolyline, IRay } from "../types";
  *
  * @param poly
  * @param ray
- * @see {@link IIntersection}
+ * @see {@link IPointIntersectionResult}
  * @see {@link IPolyline}
  * @see {@link lineIntersectPolylineIterator}
  * @see {@link polylineIntersectLineIterator}
  * @see {@link polylineIntersectSegmentIterator}
  */
-export function rayIntersectPolylineIterator(ray: IRay, poly: IPolyline): IterableIterator<IIntersection> {
+export function rayIntersectPolylineIterator(ray: IRay, poly: IPolyline): IterableIterator<IPointIntersectionResult> {
   return _swapAndReorderIntersections(_polylineIntersectIteratorHelper(poly, ray, segmentIntersectRay));
 }

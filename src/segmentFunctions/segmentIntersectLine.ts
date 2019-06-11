@@ -1,6 +1,6 @@
 import { _intersectionSwapTs } from "../internal/_intersectionSwapTs";
-import { intersectionAlloc } from "../intersectionFunctions/intersectionAlloc";
 import { lineIntersectSegment } from "../lineFunctions/lineIntersectSegment";
+import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
 import { ILine, ISegment } from "../types";
 
 /**
@@ -10,7 +10,7 @@ import { ILine, ISegment } from "../types";
  * If the line "misses" the segment, this function returns no intersection.
  * If the line completely overlaps the segment, this function returns the segment's starting vertex.
  *
- * The returned value is an {@link IIntersection} object which will have have the
+ * The returned value is an {@link IPointIntersectionResult} object which will have have the
  * `exists` flag set to `true` iff an intersection was found. It additionally
  * has the following fields, if the intersection exists:
  *
@@ -30,6 +30,6 @@ import { ILine, ISegment } from "../types";
  * @see {@link segmentIntersectRay}
  * @see {@link segmentIntersectSegment}
  */
-export function segmentIntersectLine(segment: ISegment, line: ILine, out = intersectionAlloc()) {
+export function segmentIntersectLine(segment: ISegment, line: ILine, out = pointIntersectionResultAlloc()) {
   return _intersectionSwapTs(lineIntersectSegment(line, segment, out));
 }

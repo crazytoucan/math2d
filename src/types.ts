@@ -307,7 +307,7 @@ export type IPolyline = number[];
  * @see {@link segmentIntersectRay}
  * @see {@link segmentIntersectSegment}
  */
-export interface IIntersection {
+export interface IPointIntersectionResult {
   /**
    * Whether an intersection was found. If the return value of a function is `false` for the `exists` field,
    * the other Intersection values will be set to `NaN` and should not be interpreted.
