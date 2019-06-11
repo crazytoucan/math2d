@@ -2,7 +2,7 @@ name,category_tag
 Data Types,types
 Box Functions,boxFunctions
 Line Functions,lineFunctions
-Matd Functions,mat2dFunctions
+Mat2d Functions,mat2dFunctions
 NearestPointResult Functions,nearestPointResultFunctions
 PointIntersectionResult Functions,pointIntersectionResultFunctions
 Polygon Functions,polygonFunctions
