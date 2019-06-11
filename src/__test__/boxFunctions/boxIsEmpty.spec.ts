@@ -10,8 +10,8 @@ describe("boxIsEmpty", () => {
     expect(boxIsEmpty(boxReset(3, -1, 5, 1))).toBe(false);
   });
 
-  it("[0 0 0 0] => false", () => {
-    expect(boxIsEmpty(boxReset(0, 0, 0, 0))).toBe(false);
+  it("[0 0 0 0] => true", () => {
+    expect(boxIsEmpty(boxReset(0, 0, 0, 0))).toBe(true);
   });
 
   it("[-∞ -∞ +∞ +∞] => false", () => {

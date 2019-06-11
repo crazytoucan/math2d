@@ -3,7 +3,8 @@ import { IBox } from "../types";
 /**
  * Determines whether this box represents an empty area.
  *
- * A box is considered empty if its `maxX` is less than its `minX` or its `maxY` is less than its `minY`.
+ * A box is considered empty if its `maxX` is less than or equal to its `minX` or
+ * its `maxY` is less than or equal to its `minY`.
  *
  * This function handles `Infinity`, `-Infinity`, and `NaN` values:
  * - Any box that contains a NaN edge is considered empty
@@ -14,5 +15,5 @@ import { IBox } from "../types";
  */
 export function boxIsEmpty(box: IBox) {
   // Remark: prefer this comparison over distributing the ! to handle NaNs.
-  return !(box.maxX >= box.minX && box.maxY >= box.minY);
+  return !(box.maxX > box.minX && box.maxY > box.minY);
 }
