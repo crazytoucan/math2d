@@ -155,10 +155,10 @@ export interface ILine {
  * ⎣0 0 1⎦ ⎝1⎠   ⎝     1     ⎠
  * ```
  *
- * @see {@link mat2x3Alloc}
- * @see {@link mat2x3Reset}
+ * @see {@link mat2dAlloc}
+ * @see {@link mat2dReset}
  */
-export interface IMat2x3 {
+export interface IMat2d {
   /**
    * Col 1, row 1 component, usually called `m11` in a 4x4 graphics matrix.
    */

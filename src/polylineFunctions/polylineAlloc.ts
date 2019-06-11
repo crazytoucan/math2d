@@ -17,9 +17,9 @@ import { IPolyline } from "../types";
  *  const TMP0 = polylineAlloc();
  *
  *  ... {
- *    // Use this temp memory to hold result of `polylineTransformByAff()`.
+ *    // Use this temp memory to hold result of `polylineTransformBy()`.
  *    // This will avoid a heap allocation if the array doesn't have to be resized.
- *    const result = polylineTransformByAff(existingObj.path, existingObj.transform, TMP0);
+ *    const result = polylineTransformBy(existingObj.path, existingObj.transform, TMP0);
  *  }
  */
 export function polylineAlloc(): IPolyline {

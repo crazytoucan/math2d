@@ -4,14 +4,14 @@ import { _lineTransformByOrtho } from "../internal/_lineTransformByOrtho";
 import { EPSILON } from "../internal/const";
 import { intersectionAlloc } from "../intersectionFunctions/intersectionAlloc";
 import { intersectionReset } from "../intersectionFunctions/intersectionReset";
-import { mat2x3Alloc } from "../mat2x3Functions/mat2x3Alloc";
-import { mat2x3Reset } from "../mat2x3Functions/mat2x3Reset";
+import { mat2dAlloc } from "../mat2dFunctions/mat2dAlloc";
+import { mat2dReset } from "../mat2dFunctions/mat2dReset";
 import { ILine } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
 import { lineAlloc } from "./lineAlloc";
 import { lineGetPointAt } from "./lineGetPointAt";
 
-const TMP0 = mat2x3Alloc();
+const TMP0 = mat2dAlloc();
 const TMP1 = lineAlloc();
 const TMP2 = vecAlloc();
 
@@ -41,7 +41,7 @@ const TMP2 = vecAlloc();
  * @see {@link lineIntersectSegment}
  */
 export function lineIntersectLine(a: ILine, b: ILine, out = intersectionAlloc()) {
-  const transform = mat2x3Reset(a.dirX, -a.dirY, a.dirY, a.dirX, -a.x0, -a.y0, TMP0);
+  const transform = mat2dReset(a.dirX, -a.dirY, a.dirY, a.dirX, -a.x0, -a.y0, TMP0);
   const localB = _lineTransformByOrtho(b, transform, TMP1);
   const isParallel = Math.abs(localB.dirY) < EPSILON;
 

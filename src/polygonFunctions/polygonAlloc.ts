@@ -17,9 +17,9 @@ import { IPolygon } from "../types";
  *  const TMP0 = polygonAlloc();
  *
  *  ... {
- *    // Use this temp memory to hold result of `polygonTransformByAff()`.
+ *    // Use this temp memory to hold result of `polygonTransformBy()`.
  *    // This will avoid a heap allocation if the array doesn't have to be resized.
- *    const result = polygonTransformByAff(existingObj.geometry, existingObj.transform, TMP0);
+ *    const result = polygonTransformBy(existingObj.geometry, existingObj.transform, TMP0);
  *  }
  */
 export function polygonAlloc(): IPolygon {

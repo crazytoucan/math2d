@@ -10,7 +10,7 @@ import { vecReset } from "./vecReset";
  * @param out
  * @see {@link vecAdd}
  * @see {@link vecScale}
- * @see {@link vecTransformByAff}
+ * @see {@link vecTransformBy}
  */
 export function vecSubtract(u: IVec, v: IVec, out = vecAlloc()) {
   return vecReset(u.x - v.x, u.y - v.y, out);
