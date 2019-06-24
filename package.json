@@ -5,6 +5,7 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "benchmarks": "tsc -p benchmarks && node benchmarks/lib/benchmarks/run.js",
     "lint": "tslint --project tsconfig.json",
     "docs": "scripts/generate-typedoc-data.sh",
     "test": "jest"
@@ -12,6 +13,7 @@
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@types/jest": "^23.3.0",
+    "benchmark": "^2.1.4",
     "jest": "^23.6.0",
     "ts-jest": "^23.0.1",
     "tslint": "^5.11.0",

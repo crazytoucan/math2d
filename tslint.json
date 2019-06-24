@@ -25,7 +25,7 @@
     "no-for-in": false,
     "no-function-expression": false,
     "no-http-string": false,
-    "no-implicit-dependencies": true,
+    "no-implicit-dependencies": [true, "dev"],
     "no-increment-decrement": false,
     "no-multiline-string": false,
     "no-non-null-assertion": false,
