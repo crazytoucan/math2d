@@ -6452,6 +6452,56 @@
 			]
 		},
 		{
+			"id": 581,
+			"name": "polylineGetNumVertices",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 582,
+					"name": "polylineGetNumVertices",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Returns the number of vertices in this polyline",
+						"text": "Always equal to `poly.length / 2`. This function makes no attempt to remove repeated\nor NaN vertices, for instance.\n"
+					},
+					"parameters": [
+						{
+							"id": 583,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 47
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "polylineFunctions/polylineGetNumVertices.ts",
+					"line": 11,
+					"character": 38
+				}
+			]
+		},
+		{
 			"id": 424,
 			"name": "polylineGetPointAt",
 			"kind": 64,
@@ -6669,6 +6719,70 @@
 					"fileName": "polylineFunctions/polylineGetSegmentLength.ts",
 					"line": 9,
 					"character": 40
+				}
+			]
+		},
+		{
+			"id": 584,
+			"name": "polylineGetTAtDistance",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 585,
+					"name": "polylineGetTAtDistance",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Computes the parametric value _t_ along the polyline corresponding to a distance _d_.",
+						"text": "This function can be used along with {@link polylineGetPointAt} to find the actual\n(x, y) point corresponding to a distance traveled _d_ along the polyline.\n"
+					},
+					"parameters": [
+						{
+							"id": 586,
+							"name": "poly",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "the polyline to inspect"
+							},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 47
+							}
+						},
+						{
+							"id": 587,
+							"name": "d",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"text": "distance along the polyline to travel\n"
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "polylineFunctions/polylineGetTAtDistance.ts",
+					"line": 15,
+					"character": 38
 				}
 			]
 		},
@@ -7155,6 +7269,390 @@
 					"fileName": "polylineFunctions/polylineNearestDistanceSqToPoint.ts",
 					"line": 27,
 					"character": 48
+				}
+			]
+		},
+		{
+			"id": 588,
+			"name": "polylineReset",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {
+				"isExported": true
+			},
+			"signatures": [
+				{
+					"id": 589,
+					"name": "polylineReset",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 590,
+							"name": "x0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 591,
+							"name": "y0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 592,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 47
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IPolyline",
+						"id": 47
+					}
+				},
+				{
+					"id": 593,
+					"name": "polylineReset",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 594,
+							"name": "x0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 595,
+							"name": "y0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 596,
+							"name": "x1",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 597,
+							"name": "y1",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 598,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 47
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IPolyline",
+						"id": 47
+					}
+				},
+				{
+					"id": 599,
+					"name": "polylineReset",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 600,
+							"name": "x0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 601,
+							"name": "y0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 602,
+							"name": "x1",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 603,
+							"name": "y1",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 604,
+							"name": "x2",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 605,
+							"name": "y2",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 606,
+							"name": "out",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isOptional": true
+							},
+							"type": {
+								"type": "reference",
+								"name": "IPolyline",
+								"id": 47
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IPolyline",
+						"id": 47
+					}
+				},
+				{
+					"id": 607,
+					"name": "polylineReset",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 608,
+							"name": "x0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 609,
+							"name": "y0",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 610,
+							"name": "x1",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 611,
+							"name": "y1",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 612,
+							"name": "x2",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 613,
+							"name": "y2",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 614,
+							"name": "x3",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 615,
+							"name": "y3",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 616,
+							"name": "rest",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {
+								"isRest": true
+							},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "union",
+									"types": [
+										{
+											"type": "intrinsic",
+											"name": "number"
+										},
+										{
+											"type": "array",
+											"elementType": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IPolyline",
+						"id": 47
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "polylineFunctions/polylineReset.ts",
+					"line": 3,
+					"character": 29
+				},
+				{
+					"fileName": "polylineFunctions/polylineReset.ts",
+					"line": 4,
+					"character": 29
+				},
+				{
+					"fileName": "polylineFunctions/polylineReset.ts",
+					"line": 5,
+					"character": 29
+				},
+				{
+					"fileName": "polylineFunctions/polylineReset.ts",
+					"line": 14,
+					"character": 29
+				},
+				{
+					"fileName": "polylineFunctions/polylineReset.ts",
+					"line": 25,
+					"character": 29
 				}
 			]
 		},
@@ -10873,15 +11371,18 @@
 				114,
 				346,
 				187,
+				581,
 				424,
 				199,
 				342,
+				584,
 				429,
 				434,
 				438,
 				442,
 				339,
 				409,
+				588,
 				123,
 				446,
 				452,

@@ -80,7 +80,9 @@ polylineClose,polylineFunctions
 polylineGetBounds,polylineFunctions
 polylineGetLength,polylineFunctions
 polylineGetNumSegments,polylineFunctions
+polylineGetNumVertices,polylineFunctions
 polylineGetPointAt,polylineFunctions
+polylineGetTAtDistance,polylineFunctions
 polylineGetSegment,polylineFunctions
 polylineGetSegmentLength,polylineFunctions
 polylineGetVertex,polylineFunctions

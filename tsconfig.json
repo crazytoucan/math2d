@@ -33,6 +33,7 @@
     "target": "es5"
   },
   "exclude": [
+    "benchmarks",
     "lib",
     "node_modules"
   ]
