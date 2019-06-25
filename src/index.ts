@@ -71,6 +71,7 @@ export { polylineGetNumSegments } from "./polylineFunctions/polylineGetNumSegmen
 export { polylineGetPointAt } from "./polylineFunctions/polylineGetPointAt";
 export { polylineGetSegment } from "./polylineFunctions/polylineGetSegment";
 export { polylineGetSegmentLength } from "./polylineFunctions/polylineGetSegmentLength";
+export { polylineGetTAtDistance } from "./polylineFunctions/polylineGetTAtDistance";
 export { polylineGetVertex } from "./polylineFunctions/polylineGetVertex";
 export { polylineIntersectLineIterator } from "./polylineFunctions/polylineIntersectLineIterator";
 export { polylineIntersectRayIterator } from "./polylineFunctions/polylineIntersectRayIterator";
