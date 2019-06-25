@@ -34,16 +34,22 @@ export function segmentNearestDistanceSqToPoint(segment: ISegment, point: IVec, 
 
   const dot = vecDot(pointVector, segVector);
   if (dot < 0) {
-    return nearestPointResultReset(segment.x0, segment.y0, 0, vecGetLengthSq(pointVector));
+    return nearestPointResultReset(segment.x0, segment.y0, 0, vecGetLengthSq(pointVector), out);
   } else if (dot > segLengthSq) {
     const dx = point.x - segment.x1;
     const dy = point.y - segment.y1;
-    return nearestPointResultReset(segment.x1, segment.y1, 1, dx * dx + dy * dy);
+    return nearestPointResultReset(segment.x1, segment.y1, 1, dx * dx + dy * dy, out);
   } else {
     const perp = vecCross(segVector, pointVector);
     const distanceSq = (perp * perp) / segLengthSq;
     const t = dot / segLengthSq;
 
-    return nearestPointResultReset(_lerp(segment.x0, segment.x1, t), _lerp(segment.y0, segment.y1, t), t, distanceSq);
+    return nearestPointResultReset(
+      _lerp(segment.x0, segment.x1, t),
+      _lerp(segment.y0, segment.y1, t),
+      t,
+      distanceSq,
+      out,
+    );
   }
 }
