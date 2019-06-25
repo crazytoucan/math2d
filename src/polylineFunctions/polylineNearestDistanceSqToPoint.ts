@@ -32,7 +32,13 @@ export function polylineNearestDistanceSqToPoint(poly: IPolyline, point: IVec, o
     const segment = polylineGetSegment(poly, i, TMP0);
     const segmentNearest = segmentNearestDistanceSqToPoint(segment, point, TMP2);
     if (segmentNearest.distanceValue < winner.distanceValue) {
-      nearestPointResultReset(segmentNearest.x, segmentNearest.y, i + segmentNearest.t, segmentNearest.distanceValue);
+      nearestPointResultReset(
+        segmentNearest.x,
+        segmentNearest.y,
+        i + segmentNearest.t,
+        segmentNearest.distanceValue,
+        winner,
+      );
     }
   }
 

@@ -38,7 +38,7 @@ export function segmentNearestDistanceSqToPoint(segment: ISegment, point: IVec, 
   } else if (dot > segLengthSq) {
     const dx = point.x - segment.x1;
     const dy = point.y - segment.y1;
-    return nearestPointResultReset(segment.x1, segment.y1, 1, dx * dy + dy * dy);
+    return nearestPointResultReset(segment.x1, segment.y1, 1, dx * dx + dy * dy);
   } else {
     const perp = vecCross(segVector, pointVector);
     const distanceSq = (perp * perp) / segLengthSq;
