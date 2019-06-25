@@ -65,6 +65,7 @@ export { polygonTransformBy } from "./polygonFunctions/polygonTransformBy";
 export { polylineAlloc } from "./polylineFunctions/polylineAlloc";
 export { polylineClose } from "./polylineFunctions/polylineClose";
 export { polylineGetBounds } from "./polylineFunctions/polylineGetBounds";
+export { polylineGetDistanceAtT } from "./polylineFunctions/polylineGetDistanceAtT";
 export { polylineGetLength } from "./polylineFunctions/polylineGetLength";
 export { polylineGetNumSegments } from "./polylineFunctions/polylineGetNumSegments";
 export { polylineGetPointAt } from "./polylineFunctions/polylineGetPointAt";
