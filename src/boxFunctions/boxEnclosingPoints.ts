@@ -1,4 +1,5 @@
-import { IVec, boxReset, IBox } from "..";
+import { IVec, boxReset } from "..";
+import { boxAlloc } from './boxAlloc';
 
 /**
  * Computes the smallest bounding box that contains all of the provided points.
@@ -9,7 +10,7 @@ import { IVec, boxReset, IBox } from "..";
  * @param points the points to contain
  * @param out
  */
-export function boxEnclosingPoints(points: IVec[], out?: IBox) {
+export function boxEnclosingPoints(points: IVec[], out = boxAlloc()) {
   let minX: number = Infinity;
   let minY: number = Infinity;
   let maxX: number = -Infinity;
