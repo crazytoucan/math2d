@@ -5,11 +5,11 @@ import { vecReset } from "../../vecFunctions/vecReset";
 import { expectBoxEqualsApprox } from "../helpers";
 
 describe("boxEnclosingPoints", () => {
-  it("no points => [NaN NaN NaN NaN]", () => {
+  it("no points => [Infinity, Infinity, -Infinity, -Infinity]", () => {
     expectBoxEqualsApprox(boxEnclosingPoints([]), Infinity, Infinity, -Infinity, -Infinity);
   });
 
-  it("(NaN, NaN) => [NaN, NaN, NaN, NaN]", () => {
+  it("(NaN, NaN) => [Infinity, Infinity, -Infinity, -Infinity]", () => {
     expectBoxEqualsApprox(boxEnclosingPoints([vecReset(NaN, NaN)]), Infinity, Infinity, -Infinity, -Infinity);
   });
 
