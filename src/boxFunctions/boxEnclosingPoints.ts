@@ -1,33 +1,34 @@
-import { IVec, boxReset } from "..";
+import { IVec, boxReset, IBox } from "..";
 
 /**
  * Computes the smallest bounding box that contains all of the provided points.
  *
- * If the provided array is empty, this method returns a box with all values set
- * to `NaN`.
+ * If the provided array is empty, this method returns a box with `minX` and
+ * `minY` set to `Infinity` and `maxX` and `maxY` set to `-Infinity`.
  *
  * @param points the points to contain
+ * @param out
  */
-export function boxEnclosingPoints(...points: IVec[]) {
-  let minX: number = NaN;
-  let maxX: number = NaN;
-  let minY: number = NaN;
-  let maxY: number = NaN;
+export function boxEnclosingPoints(points: IVec[], out?: IBox) {
+  let minX: number = Infinity;
+  let minY: number = Infinity;
+  let maxX: number = -Infinity;
+  let maxY: number = -Infinity;
 
   for (const point of points) {
-    if (isNaN(minX) || point.x < minX) {
+    if (point.x < minX) {
       minX = point.x;
     }
-    if (isNaN(minY) || point.y < minY) {
+    if (point.y < minY) {
       minY = point.y;
     }
-    if (isNaN(maxX) || point.x > maxX) {
+    if (point.x > maxX) {
       maxX = point.x;
     }
-    if (isNaN(maxY) || point.y > maxY) {
+    if (point.y > maxY) {
       maxY = point.y;
     }
   }
 
-  return boxReset(minX, minY, maxX, maxY);
+  return boxReset(minX, minY, maxX, maxY, out);
 }
