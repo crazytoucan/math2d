@@ -1,6 +1,5 @@
-import { boxEnclosingPoints } from "../../boxFunctions/boxEnclosingPoints";
-// import { boxReset } from "../../boxFunctions/boxReset";
 import { boxAlloc } from "../../boxFunctions/boxAlloc";
+import { boxEnclosingPoints } from "../../boxFunctions/boxEnclosingPoints";
 import { vecReset } from "../../vecFunctions/vecReset";
 import { expectBoxEqualsApprox } from "../helpers";
 
