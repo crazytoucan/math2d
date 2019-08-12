@@ -19,6 +19,7 @@ boxComputeUnion,boxFunctions
 boxContainsBox,boxFunctions
 boxContainsPoint,boxFunctions
 boxEncapsulate,boxFunctions
+boxEnclosingPoints,boxFunctions
 boxGetOutCode,boxFunctions
 boxGrow,boxFunctions
 boxIntersectsBox,boxFunctions
