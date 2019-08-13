@@ -5,6 +5,7 @@ export { boxComputeUnion } from "./boxFunctions/boxComputeUnion";
 export { boxContainsBox } from "./boxFunctions/boxContainsBox";
 export { boxContainsPoint } from "./boxFunctions/boxContainsPoint";
 export { boxEncapsulate } from "./boxFunctions/boxEncapsulate";
+export { boxEnclosingPoints } from "./boxFunctions/boxEnclosingPoints";
 export { boxGetOutCode } from "./boxFunctions/boxGetOutCode";
 export { boxGrow } from "./boxFunctions/boxGrow";
 export { boxIntersectsBox } from "./boxFunctions/boxIntersectsBox";
