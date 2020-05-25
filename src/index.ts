@@ -65,6 +65,7 @@ export { polygonNearestDistanceSqToPoint } from "./polygonFunctions/polygonNeare
 export { polygonTransformBy } from "./polygonFunctions/polygonTransformBy";
 export { polylineAlloc } from "./polylineFunctions/polylineAlloc";
 export { polylineClose } from "./polylineFunctions/polylineClose";
+export { polylineContainsPoint } from "./polylineFunctions/polylineContainsPoint";
 export { polylineGetBounds } from "./polylineFunctions/polylineGetBounds";
 export { polylineGetDistanceAtT } from "./polylineFunctions/polylineGetDistanceAtT";
 export { polylineGetLength } from "./polylineFunctions/polylineGetLength";
