@@ -62,6 +62,7 @@ jobs:
           root: '.'
           paths:
             - lib
+            - esm
 
 workflows:
   version: 2
