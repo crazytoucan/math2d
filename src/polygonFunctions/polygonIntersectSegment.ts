@@ -1,6 +1,6 @@
-import { _polygonIntersectIteratorHelper } from "../internal/_polygonIntersectIteratorHelper";
+import { _polygonIntersectHelper } from "../internal/_polygonIntersectHelper";
 import { segmentIntersectSegment } from "../segmentFunctions/segmentIntersectSegment";
-import { IPointIntersectionResult, IPolygon, ISegment } from "../types";
+import { IPolygon, ISegment } from "../types";
 
 /**
  * Computes all locations at which a polygon crosses a given line segment.
@@ -14,17 +14,17 @@ import { IPointIntersectionResult, IPolygon, ISegment } from "../types";
  * order in which one would visit those locations if one were to travel around the polygon's perimeter in the
  * order of its vertices.
  *
- * Almost equivalent to {@link segmentIntersectPolygonIterator}, except the _t0_ and _t1_ values are reversed
+ * Almost equivalent to {@link segmentIntersectPolygon}, except the _t0_ and _t1_ values are reversed
  * and the returned intersections are sorted according to the polygon's geometry.
  *
  * @param poly the polygon to intersect
  * @param segment the line segment to find intersections with
  * @see {@link IPointIntersectionResult}
  * @see {@link IPolygon}
- * @see {@link segmentIntersectPolygonIterator}
- * @see {@link polygonIntersectLineIterator}
- * @see {@link polygonIntersectRayIterator}
+ * @see {@link segmentIntersectPolygon}
+ * @see {@link polygonIntersectLine}
+ * @see {@link polygonIntersectRay}
  */
-export function polygonIntersectSegmentIterator(poly: IPolygon, segment: ISegment): IterableIterator<IPointIntersectionResult> {
-  return _polygonIntersectIteratorHelper(poly, segment, segmentIntersectSegment).values();
+export function polygonIntersectSegment(poly: IPolygon, segment: ISegment) {
+  return _polygonIntersectHelper(poly, segment, segmentIntersectSegment);
 }

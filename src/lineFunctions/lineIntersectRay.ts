@@ -28,7 +28,7 @@ import { lineIntersectLine } from "./lineIntersectLine";
  * @param ray the ray to find intersection with
  * @param out
  * @see {@link lineIntersectLine}
- * @see {@link lineIntersectPolylineIterator}
+ * @see {@link lineIntersectPolyline}
  * @see {@link lineIntersectSegment}
  */
 export function lineIntersectRay(line: ILine, ray: IRay, out = pointIntersectionResultAlloc()) {

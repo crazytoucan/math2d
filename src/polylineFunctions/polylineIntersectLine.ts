@@ -1,9 +1,9 @@
-import { _polylineIntersectIteratorHelper } from "../internal/_polylineIntersectIteratorHelper";
-import { segmentIntersectRay } from "../segmentFunctions/segmentIntersectRay";
-import { IPointIntersectionResult, IPolyline, IRay } from "../types";
+import { _polylineIntersectHelper } from "../internal/_polylineIntersectHelper";
+import { segmentIntersectLine } from "../segmentFunctions/segmentIntersectLine";
+import { ILine, IPolyline } from "../types";
 
 /**
- * Computes all locations at which a polyline crosses a given ray.
+ * Computes all locations at which a polyline crosses a given line.
  *
  * For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry
  * according to the {@link IPolyline} parameterization:
@@ -14,17 +14,17 @@ import { IPointIntersectionResult, IPolyline, IRay } from "../types";
  * order in which one would visit those locations if one were to travel from the polyline's start to its end
  * along its segments.
  *
- * Almost equivalent to {@link rayIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed
+ * Almost equivalent to {@link lineIntersectPolyline}, except the _t0_ and _t1_ values are reversed
  * and the returned intersections are sorted according to the polyline's geometry.
  *
  * @param poly
- * @param ray
+ * @param line
  * @see {@link IPointIntersectionResult}
  * @see {@link IPolyline}
- * @see {@link lineIntersectPolylineIterator}
- * @see {@link polylineIntersectLineIterator}
- * @see {@link polylineIntersectSegmentIterator}
+ * @see {@link lineIntersectPolyline}
+ * @see {@link polylineIntersectRay}
+ * @see {@link polylineIntersectSegment}
  */
-export function polylineIntersectRayIterator(poly: IPolyline, ray: IRay): IterableIterator<IPointIntersectionResult> {
-  return _polylineIntersectIteratorHelper(poly, ray, segmentIntersectRay).values();
+export function polylineIntersectLine(poly: IPolyline, line: ILine) {
+  return _polylineIntersectHelper(poly, line, segmentIntersectLine);
 }

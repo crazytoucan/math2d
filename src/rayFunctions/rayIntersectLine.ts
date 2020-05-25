@@ -27,7 +27,7 @@ import { ILine, IRay } from "../types";
  * @param ray the ray to intersect
  * @param line the line to intersect
  * @param out
- * @see {@link rayIntersectPolylineIterator}
+ * @see {@link rayIntersectPolyline}
  * @see {@link rayIntersectRay}
  * @see {@link rayIntersectSegment}
  */

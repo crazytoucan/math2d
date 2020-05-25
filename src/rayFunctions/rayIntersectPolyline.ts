@@ -1,7 +1,7 @@
-import { _polylineIntersectIteratorHelper } from "../internal/_polylineIntersectIteratorHelper";
+import { _polylineIntersectHelper } from "../internal/_polylineIntersectHelper";
 import { _swapAndReorderIntersections } from "../internal/_swapAndReorderIntersections";
 import { segmentIntersectRay } from "../segmentFunctions/segmentIntersectRay";
-import { IPointIntersectionResult, IPolyline, IRay } from "../types";
+import { IPolyline, IRay } from "../types";
 
 /**
  * Computes all locations at which a ray crosses a given polyline.
@@ -14,17 +14,17 @@ import { IPointIntersectionResult, IPolyline, IRay } from "../types";
  * order in which one would hit the intersections if one were to start from the ray's initial point and
  * shoot along its direction vector.
  *
- * Almost equivalent to {@link polylineIntersectRayIterator}, except the _t0_ and _t1_ values are reversed
+ * Almost equivalent to {@link polylineIntersectRay}, except the _t0_ and _t1_ values are reversed
  * and the returned intersections are sorted according to the ray's geometry.
  *
  * @param poly
  * @param ray
  * @see {@link IPointIntersectionResult}
  * @see {@link IPolyline}
- * @see {@link lineIntersectPolylineIterator}
- * @see {@link polylineIntersectLineIterator}
- * @see {@link polylineIntersectSegmentIterator}
+ * @see {@link lineIntersectPolyline}
+ * @see {@link polylineIntersectLine}
+ * @see {@link polylineIntersectSegment}
  */
-export function rayIntersectPolylineIterator(ray: IRay, poly: IPolyline): IterableIterator<IPointIntersectionResult> {
-  return _swapAndReorderIntersections(_polylineIntersectIteratorHelper(poly, ray, segmentIntersectRay));
+export function rayIntersectPolyline(ray: IRay, poly: IPolyline) {
+  return _swapAndReorderIntersections(_polylineIntersectHelper(poly, ray, segmentIntersectRay));
 }

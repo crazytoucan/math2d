@@ -1,9 +1,9 @@
-import { _polylineIntersectIteratorHelper } from "../internal/_polylineIntersectIteratorHelper";
-import { segmentIntersectLine } from "../segmentFunctions/segmentIntersectLine";
-import { ILine, IPointIntersectionResult, IPolyline } from "../types";
+import { _polylineIntersectHelper } from "../internal/_polylineIntersectHelper";
+import { segmentIntersectRay } from "../segmentFunctions/segmentIntersectRay";
+import { IPolyline, IRay } from "../types";
 
 /**
- * Computes all locations at which a polyline crosses a given line.
+ * Computes all locations at which a polyline crosses a given ray.
  *
  * For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry
  * according to the {@link IPolyline} parameterization:
@@ -14,17 +14,17 @@ import { ILine, IPointIntersectionResult, IPolyline } from "../types";
  * order in which one would visit those locations if one were to travel from the polyline's start to its end
  * along its segments.
  *
- * Almost equivalent to {@link lineIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed
+ * Almost equivalent to {@link rayIntersectPolyline}, except the _t0_ and _t1_ values are reversed
  * and the returned intersections are sorted according to the polyline's geometry.
  *
  * @param poly
- * @param line
+ * @param ray
  * @see {@link IPointIntersectionResult}
  * @see {@link IPolyline}
- * @see {@link lineIntersectPolylineIterator}
- * @see {@link polylineIntersectRayIterator}
- * @see {@link polylineIntersectSegmentIterator}
+ * @see {@link lineIntersectPolyline}
+ * @see {@link polylineIntersectLine}
+ * @see {@link polylineIntersectSegment}
  */
-export function polylineIntersectLineIterator(poly: IPolyline, line: ILine): IterableIterator<IPointIntersectionResult> {
-  return _polylineIntersectIteratorHelper(poly, line, segmentIntersectLine).values();
+export function polylineIntersectRay(poly: IPolyline, ray: IRay) {
+  return _polylineIntersectHelper(poly, ray, segmentIntersectRay);
 }

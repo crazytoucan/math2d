@@ -55,7 +55,7 @@ Documentation for Math2d's API is available at https://crazytoucan.github.io/mat
 * [lineGetPointAt](https://crazytoucan.github.io/math2d/api/#lineGetPointAt): Gets a point along the line, parameterized according to distance along its
 direction vector.
 * [lineIntersectLine](https://crazytoucan.github.io/math2d/api/#lineIntersectLine): Computes the intersection point between the two given lines, if it exists.
-* [lineIntersectPolylineIterator](https://crazytoucan.github.io/math2d/api/#lineIntersectPolylineIterator): Computes all locations at which a line crosses a given polyline.
+* [lineIntersectPolyline](https://crazytoucan.github.io/math2d/api/#lineIntersectPolyline): Computes all locations at which a line crosses a given polyline.
 * [lineIntersectRay](https://crazytoucan.github.io/math2d/api/#lineIntersectRay): Computes the intersection point between the given line and ray, if it exists.
 * [lineIntersectSegment](https://crazytoucan.github.io/math2d/api/#lineIntersectSegment): Computes the intersection point between the given line and segment, if it exists.
 * [lineNearestDistanceToPoint](https://crazytoucan.github.io/math2d/api/#lineNearestDistanceToPoint): Determines the closest the line comes to a given point
@@ -95,9 +95,9 @@ Its initial length is 0.
 adjacent vertices, cycling back to the start after its last vertex.
 * [polygonGetSideLength](https://crazytoucan.github.io/math2d/api/#polygonGetSideLength): Returns the length of a polygon's side by index, starting at 0.
 * [polygonGetSideSegment](https://crazytoucan.github.io/math2d/api/#polygonGetSideSegment): Returns a polygon's side by given index as a segment, starting at 0.
-* [polygonIntersectLineIterator](https://crazytoucan.github.io/math2d/api/#polygonIntersectLineIterator): Computes all locations at which a polygon crosses a given line.
-* [polygonIntersectRayIterator](https://crazytoucan.github.io/math2d/api/#polygonIntersectRayIterator): Computes all locations at which a polygon crosses a given ray.
-* [polygonIntersectSegmentIterator](https://crazytoucan.github.io/math2d/api/#polygonIntersectSegmentIterator): Computes all locations at which a polygon crosses a given line segment.
+* [polygonIntersectLine](https://crazytoucan.github.io/math2d/api/#polygonIntersectLine): Computes all locations at which a polygon crosses a given line.
+* [polygonIntersectRay](https://crazytoucan.github.io/math2d/api/#polygonIntersectRay): Computes all locations at which a polygon crosses a given ray.
+* [polygonIntersectSegment](https://crazytoucan.github.io/math2d/api/#polygonIntersectSegment): Computes all locations at which a polygon crosses a given line segment.
 * [polygonNearestDistanceSqToPoint](https://crazytoucan.github.io/math2d/api/#polygonNearestDistanceSqToPoint): Computes the closest the polygon's perimeter comes to a given reference point.
 * [polygonTransformBy](https://crazytoucan.github.io/math2d/api/#polygonTransformBy): Transforms a polygon by an affine matrix.
 
@@ -114,9 +114,9 @@ adjacent vertices.
 * [polylineGetSegment](https://crazytoucan.github.io/math2d/api/#polylineGetSegment): Returns a polyline's segment by given index, starting at 0.
 * [polylineGetSegmentLength](https://crazytoucan.github.io/math2d/api/#polylineGetSegmentLength): Computes the length of one of a polyline's segments by index, starting at 0.
 * [polylineGetVertex](https://crazytoucan.github.io/math2d/api/#polylineGetVertex): Retrieves a vertex from this polyline's geometry, starting at index 0
-* [polylineIntersectLineIterator](https://crazytoucan.github.io/math2d/api/#polylineIntersectLineIterator): Computes all locations at which a polyline crosses a given line.
-* [polylineIntersectRayIterator](https://crazytoucan.github.io/math2d/api/#polylineIntersectRayIterator): Computes all locations at which a polyline crosses a given ray.
-* [polylineIntersectSegmentIterator](https://crazytoucan.github.io/math2d/api/#polylineIntersectSegmentIterator): Computes all locations at which a polyline crosses a given line segment.
+* [polylineIntersectLine](https://crazytoucan.github.io/math2d/api/#polylineIntersectLine): Computes all locations at which a polyline crosses a given line.
+* [polylineIntersectRay](https://crazytoucan.github.io/math2d/api/#polylineIntersectRay): Computes all locations at which a polyline crosses a given ray.
+* [polylineIntersectSegment](https://crazytoucan.github.io/math2d/api/#polylineIntersectSegment): Computes all locations at which a polyline crosses a given line segment.
 * [polylineIsClosed](https://crazytoucan.github.io/math2d/api/#polylineIsClosed): Returns whether the polyline's last vertex equals its first
 * [polylineNearestDistanceSqToPoint](https://crazytoucan.github.io/math2d/api/#polylineNearestDistanceSqToPoint): Finds the closest the polyline comes to a given reference point.
 * [polylineTransformBy](https://crazytoucan.github.io/math2d/api/#polylineTransformBy): Transforms a polyline by an affine matrix.
@@ -130,7 +130,7 @@ adjacent vertices.
 * [rayGetPointAt](https://crazytoucan.github.io/math2d/api/#rayGetPointAt): Gets a point along the ray, parameterized according to distance along its
 direction vector.
 * [rayIntersectLine](https://crazytoucan.github.io/math2d/api/#rayIntersectLine): Computes the intersection point between the given ray and line, if it exists.
-* [rayIntersectPolylineIterator](https://crazytoucan.github.io/math2d/api/#rayIntersectPolylineIterator): Computes all locations at which a ray crosses a given polyline.
+* [rayIntersectPolyline](https://crazytoucan.github.io/math2d/api/#rayIntersectPolyline): Computes all locations at which a ray crosses a given polyline.
 * [rayIntersectRay](https://crazytoucan.github.io/math2d/api/#rayIntersectRay): Computes the intersection point between the two rays, if it exists.
 * [rayIntersectSegment](https://crazytoucan.github.io/math2d/api/#rayIntersectSegment): Computes the intersection point between the ray and the segment, if it exists.
 * [rayLookAt](https://crazytoucan.github.io/math2d/api/#rayLookAt): Constructs a ray from an initial point, pointing in the direction of a target point.
@@ -148,7 +148,7 @@ direction vector.
 * [segmentGetPointAt](https://crazytoucan.github.io/math2d/api/#segmentGetPointAt): Gets a point along the line segment, parameterized according to linear interpolation
 between its endpoints.
 * [segmentIntersectLine](https://crazytoucan.github.io/math2d/api/#segmentIntersectLine): Computes the intersection point between the given segment and line, if it exists.
-* [segmentIntersectPolylineIterator](https://crazytoucan.github.io/math2d/api/#segmentIntersectPolylineIterator): Computes all locations at which a line segment meets a given polyline.
+* [segmentIntersectPolyline](https://crazytoucan.github.io/math2d/api/#segmentIntersectPolyline): Computes all locations at which a line segment meets a given polyline.
 * [segmentIntersectRay](https://crazytoucan.github.io/math2d/api/#segmentIntersectRay): Computes the intersection point between the ray and the segment, if it exists.
 * [segmentIntersectSegment](https://crazytoucan.github.io/math2d/api/#segmentIntersectSegment): Computes the intersection point between the two line segments, if it exists.
 * [segmentNearestDistanceSqToPoint](https://crazytoucan.github.io/math2d/api/#segmentNearestDistanceSqToPoint): Finds the closest the segment comes to a given reference point.

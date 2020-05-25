@@ -63,7 +63,7 @@ export interface ISegment {
  * The data representation of a ray and the similar {@link ILine} type is actually the same, but Math2d chooses
  * to export both names for clarity of usage. Functions that may interpret Rays and Lines differently will be
  * named differently to prevent ambiguity,
- * such as {@link polygonIntersectLineIterator} vs {@link polygonIntersectRayIterator}.
+ * such as {@link polygonIntersectLine} vs {@link polygonIntersectRay}.
  *
  * Where relevant, a ray is parameterized according to _t_ ≥ 0 with movement of distance _t_ along its direction vector.
  * In this mapping, _t_ = 0 represents the initial point (x0, y0).
@@ -102,7 +102,7 @@ export interface IRay {
  * The data representation of a line and the similar {@link IRay} type is actually the same, but Math2d chooses
  * to export these two names for ease of clarity. Functions that may interpret Rays and Lines differently will be
  * named differently to prevent ambiguity, such as
- * {@link polygonIntersectLineIterator} vs {@link polygonIntersectRayIterator}.
+ * {@link polygonIntersectLine} vs {@link polygonIntersectRay}.
  *
  * Where relevant, a line is parameterized according to _t_ with movement of distance _t_ along its direction vector.
  * In this mapping, _t_ = 0 represents the initial point (x0, y0), _t_ > 0 moves in the direction of its vector,
@@ -289,21 +289,21 @@ export type IPolyline = number[];
  * Data type to hold the result of a point intersection between two pieces of geometry.
  *
  * @see {@link lineIntersectLine}
- * @see {@link lineIntersectPolylineIterator}
+ * @see {@link lineIntersectPolyline}
  * @see {@link lineIntersectRay}
  * @see {@link lineIntersectSegment}
- * @see {@link polygonIntersectLineIterator}
- * @see {@link polygonIntersectRayIterator}
- * @see {@link polygonIntersectSegmentIterator}
- * @see {@link polylineIntersectLineIterator}
- * @see {@link polylineIntersectRayIterator}
- * @see {@link polylineIntersectSegmentIterator}
+ * @see {@link polygonIntersectLine}
+ * @see {@link polygonIntersectRay}
+ * @see {@link polygonIntersectSegment}
+ * @see {@link polylineIntersectLine}
+ * @see {@link polylineIntersectRay}
+ * @see {@link polylineIntersectSegment}
  * @see {@link rayIntersectLine}
- * @see {@link rayIntersectPolylineIterator}
+ * @see {@link rayIntersectPolyline}
  * @see {@link rayIntersectRay}
  * @see {@link rayIntersectSegment}
  * @see {@link segmentIntersectLine}
- * @see {@link segmentIntersectPolylineIterator}
+ * @see {@link segmentIntersectPolyline}
  * @see {@link segmentIntersectRay}
  * @see {@link segmentIntersectSegment}
  */

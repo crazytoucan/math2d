@@ -8,5 +8,5 @@ function sortByT0Increasing(a: IPointIntersectionResult, b: IPointIntersectionRe
 export function _swapAndReorderIntersections(intersections: IPointIntersectionResult[]) {
   intersections.forEach(_intersectionSwapTs);
   intersections.sort(sortByT0Increasing);
-  return intersections.values();
+  return intersections;
 }
