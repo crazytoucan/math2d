@@ -1,5 +1,6 @@
-import { IVec, boxReset } from "..";
-import { boxAlloc } from './boxAlloc';
+import { IVec } from "../types";
+import { boxAlloc } from "./boxAlloc";
+import { boxReset } from "./boxReset";
 
 /**
  * Computes the smallest bounding box that contains all of the provided points.
