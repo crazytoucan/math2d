@@ -1,10 +1,13 @@
 {
   "name": "math2d",
   "version": "2.0.14",
+  "module": "./esm/index.js",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn build:commonjs && yarn build:esm",
+    "build:commonjs": "tsc",
+    "build:esm": "tsc -p tsconfig-esm.json",
     "benchmarks": "tsc -p benchmarks && node benchmarks/lib/benchmarks/run.js",
     "lint": "tslint --project tsconfig.json",
     "docs": "scripts/generate-typedoc-data.sh",

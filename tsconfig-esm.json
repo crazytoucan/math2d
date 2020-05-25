@@ -7,12 +7,12 @@
       "dom",
       "es2015"
     ],
-    "module": "CommonJS",
+    "module": "ES2015",
     "moduleResolution": "node",
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "lib",
+    "outDir": "esm",
     "plugins": [{ "name": "typescript-tslint-plugin" }],
     "pretty": true,
     "removeComments": false,
@@ -21,7 +21,7 @@
     "strict": true,
     "stripInternal": true,
     "noFallthroughCasesInSwitch": true,
-    "target": "ES5"
+    "target": "ES2017"
   },
   "exclude": [
     "benchmarks",

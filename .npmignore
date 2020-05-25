@@ -1,2 +1,4 @@
+!esm
 !lib
+esm/__test__
 lib/__test__
