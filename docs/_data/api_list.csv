@@ -8,10 +8,6 @@ IPolyline,types
 IRay,types
 ISegment,types
 IVec,types
-OUT_MAX_X,const
-OUT_MAX_Y,const
-OUT_MIN_X,const
-OUT_MIN_Y,const
 boxAlloc,boxFunctions
 boxClone,boxFunctions
 boxIntersection,boxFunctions
@@ -78,6 +74,7 @@ polygonNearestDistanceSqToPoint,polygonFunctions
 polygonTransformBy,polygonFunctions
 polylineAlloc,polylineFunctions
 polylineClose,polylineFunctions
+polylineContainsPoint,polylineFunctions
 polylineGetBounds,polylineFunctions
 polylineGetDistanceAtT,polylineFunctions
 polylineGetLength,polylineFunctions
