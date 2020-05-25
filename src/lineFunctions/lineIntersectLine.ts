@@ -1,7 +1,7 @@
-import { EPSILON } from "../internal/const";
 import { _dot } from "../internal/_dot";
 import { _intersectionDNE } from "../internal/_intersectionDNE";
 import { _lineTransformByOrtho } from "../internal/_lineTransformByOrtho";
+import { EPSILON } from "../internal/const";
 import { mat2dReset } from "../mat2dFunctions/mat2dReset";
 import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
 import { pointIntersectionResultReset } from "../pointIntersectionResultFunctions/pointIntersectionResultReset";

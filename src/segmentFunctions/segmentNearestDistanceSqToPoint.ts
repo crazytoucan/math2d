@@ -1,5 +1,5 @@
-import { EPSILON_SQ } from "../internal/const";
 import { _lerp } from "../internal/_lerp";
+import { EPSILON_SQ } from "../internal/const";
 import { nearestPointResultAlloc } from "../nearestPointResultFunctions/nearestPointResultAlloc";
 import { nearestPointResultReset } from "../nearestPointResultFunctions/nearestPointResultReset";
 import { ISegment, IVec } from "../types";

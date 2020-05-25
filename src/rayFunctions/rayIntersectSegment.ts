@@ -1,6 +1,6 @@
-import { EPSILON } from "../internal/const";
 import { _intersectionDNE } from "../internal/_intersectionDNE";
 import { _lookAt } from "../internal/_lookAt";
+import { EPSILON } from "../internal/const";
 import { lineIntersectLine } from "../lineFunctions/lineIntersectLine";
 import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
 import { segmentGetLength } from "../segmentFunctions/segmentGetLength";
