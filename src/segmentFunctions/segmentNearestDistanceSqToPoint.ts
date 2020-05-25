@@ -3,14 +3,10 @@ import { EPSILON_SQ } from "../internal/const";
 import { nearestPointResultAlloc } from "../nearestPointResultFunctions/nearestPointResultAlloc";
 import { nearestPointResultReset } from "../nearestPointResultFunctions/nearestPointResultReset";
 import { ISegment, IVec } from "../types";
-import { vecAlloc } from "../vecFunctions/vecAlloc";
 import { vecCross } from "../vecFunctions/vecCross";
 import { vecDot } from "../vecFunctions/vecDot";
 import { vecGetLengthSq } from "../vecFunctions/vecGetLengthSq";
 import { vecReset } from "../vecFunctions/vecReset";
-
-const TMP0 = vecAlloc();
-const TMP1 = vecAlloc();
 
 /**
  * Finds the closest the segment comes to a given reference point.
@@ -24,8 +20,8 @@ const TMP1 = vecAlloc();
  * @see {@link INearestPointResult}
  */
 export function segmentNearestDistanceSqToPoint(segment: ISegment, point: IVec, out = nearestPointResultAlloc()) {
-  const segVector = vecReset(segment.x1 - segment.x0, segment.y1 - segment.y0, TMP0);
-  const pointVector = vecReset(point.x - segment.x0, point.y - segment.y0, TMP1);
+  const segVector = vecReset(segment.x1 - segment.x0, segment.y1 - segment.y0);
+  const pointVector = vecReset(point.x - segment.x0, point.y - segment.y0);
 
   const segLengthSq = vecGetLengthSq(segVector);
   if (segLengthSq < EPSILON_SQ) {

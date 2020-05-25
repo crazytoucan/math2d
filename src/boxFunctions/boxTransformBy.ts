@@ -1,11 +1,8 @@
 import { _arrayReset } from "../internal/_arrayReset";
-import { polylineAlloc } from "../polylineFunctions/polylineAlloc";
 import { polylineGetBounds } from "../polylineFunctions/polylineGetBounds";
 import { polylineTransformBy } from "../polylineFunctions/polylineTransformBy";
-import { IBox, IMat2d } from "../types";
+import { IBox, IMat2d, IPolyline } from "../types";
 import { boxAlloc } from "./boxAlloc";
-
-const TMP0 = polylineAlloc();
 
 /**
  * Compute the bounds of the image of this box after applying a 2D affine transformation.
@@ -21,8 +18,8 @@ const TMP0 = polylineAlloc();
  * @param out
  */
 export function boxTransformBy(box: IBox, mat: IMat2d, out = boxAlloc()) {
-  const poly = TMP0;
-  _arrayReset(poly, box.minX, box.minY, box.minX, box.maxY, box.maxX, box.maxY, box.maxX, box.minY);
-  polylineTransformBy(poly, mat, poly);
-  return polylineGetBounds(poly, out);
+  const tmp = [] as IPolyline;
+  _arrayReset(tmp, box.minX, box.minY, box.minX, box.maxY, box.maxX, box.maxY, box.maxX, box.minY);
+  polylineTransformBy(tmp, mat, tmp);
+  return polylineGetBounds(tmp, out);
 }

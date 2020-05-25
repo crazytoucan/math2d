@@ -1,13 +1,10 @@
 import { _intersectionDNE } from "../internal/_intersectionDNE";
 import { _lookAt } from "../internal/_lookAt";
 import { EPSILON } from "../internal/const";
-import { lineAlloc } from "../lineFunctions/lineAlloc";
 import { lineIntersectSegment } from "../lineFunctions/lineIntersectSegment";
 import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
 import { ISegment } from "../types";
 import { segmentGetLength } from "./segmentGetLength";
-
-const TMP0 = lineAlloc();
 
 /**
  * Computes the intersection point between the two line segments, if it exists.
@@ -38,7 +35,7 @@ const TMP0 = lineAlloc();
  * @see {@link segmentIntersectRay}
  */
 export function segmentIntersectSegment(a: ISegment, b: ISegment, out = pointIntersectionResultAlloc()) {
-  const aLine = _lookAt(a.x0, a.y0, a.x1, a.y1, TMP0);
+  const aLine = _lookAt(a.x0, a.y0, a.x1, a.y1);
   lineIntersectSegment(aLine, b, out);
   const segmentLength = segmentGetLength(a);
   if (out.exists && out.t0 > -EPSILON && out.t0 < segmentLength + EPSILON) {

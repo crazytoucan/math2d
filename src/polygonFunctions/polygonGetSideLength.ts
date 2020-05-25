@@ -1,9 +1,6 @@
-import { segmentAlloc } from "../segmentFunctions/segmentAlloc";
 import { segmentGetLength } from "../segmentFunctions/segmentGetLength";
 import { IPolygon } from "../types";
 import { polygonGetSideSegment } from "./polygonGetSideSegment";
-
-const TMP0 = segmentAlloc();
 
 /**
  * Returns the length of a polygon's side by index, starting at 0.
@@ -15,5 +12,5 @@ const TMP0 = segmentAlloc();
  * @param idx the side index to measure, starting at 0
  */
 export function polygonGetSideLength(poly: IPolygon, idx: number) {
-  return segmentGetLength(polygonGetSideSegment(poly, idx, TMP0));
+  return segmentGetLength(polygonGetSideSegment(poly, idx));
 }
