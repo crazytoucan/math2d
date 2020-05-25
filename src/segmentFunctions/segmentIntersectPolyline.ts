@@ -1,6 +1,6 @@
-import { _polylineIntersectIteratorHelper } from "../internal/_polylineIntersectIteratorHelper";
+import { _polylineIntersectHelper } from "../internal/_polylineIntersectHelper";
 import { _swapAndReorderIntersections } from "../internal/_swapAndReorderIntersections";
-import { IPointIntersectionResult, IPolyline, ISegment } from "../types";
+import { IPolyline, ISegment } from "../types";
 import { segmentIntersectSegment } from "./segmentIntersectSegment";
 
 /**
@@ -17,18 +17,18 @@ import { segmentIntersectSegment } from "./segmentIntersectSegment";
  * order in which one would visit those locations if one were to travel from the line segment's starting
  * vertex to its ending vertex.
  *
- * Almost equivalent to {@link polylineIntersectSegmentIterator}, except the _t0_ and _t1_ values are reversed
+ * Almost equivalent to {@link polylineIntersectSegment}, except the _t0_ and _t1_ values are reversed
  * and the returned intersections are sorted according to the segment's geometry.
  *
  * @param segment the segment to intersect
  * @param poly the polyline to find intersections with
  * @see {@link IPointIntersectionResult}
  * @see {@link ISegment}
- * @see {@link polylineIntersectSegmentIterator}
+ * @see {@link polylineIntersectSegment}
  * @see {@link segmentIntersectLine}
  * @see {@link segmentIntersectRay}
  * @see {@link segmentIntersectSegment}
  */
-export function segmentIntersectPolylineIterator(segment: ISegment, poly: IPolyline): IterableIterator<IPointIntersectionResult> {
-  return _swapAndReorderIntersections(_polylineIntersectIteratorHelper(poly, segment, segmentIntersectSegment));
+export function segmentIntersectPolyline(segment: ISegment, poly: IPolyline) {
+  return _swapAndReorderIntersections(_polylineIntersectHelper(poly, segment, segmentIntersectSegment));
 }

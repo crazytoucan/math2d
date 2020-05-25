@@ -26,7 +26,7 @@ import { ILine, ISegment } from "../types";
  * @param segment the segment to intersect
  * @param line the line to find intersection with
  * @param out
- * @see {@link segmentIntersectPolylineIterator}
+ * @see {@link segmentIntersectPolyline}
  * @see {@link segmentIntersectRay}
  * @see {@link segmentIntersectSegment}
  */

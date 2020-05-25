@@ -1,9 +1,9 @@
-import { _polygonIntersectIteratorHelper } from "../internal/_polygonIntersectIteratorHelper";
-import { segmentIntersectLine } from "../segmentFunctions/segmentIntersectLine";
-import { ILine, IPointIntersectionResult, IPolygon } from "../types";
+import { _polygonIntersectHelper } from "../internal/_polygonIntersectHelper";
+import { segmentIntersectRay } from "../segmentFunctions/segmentIntersectRay";
+import { IPolygon, IRay } from "../types";
 
 /**
- * Computes all locations at which a polygon crosses a given line.
+ * Computes all locations at which a polygon crosses a given ray.
  *
  * For each returned intersection, the intersection's _t0_ describes where the point fell on the polygon's geometry
  * according to the {@link IPolygon} parameterization: integer values of _t0_ correspond to the polygon's
@@ -14,17 +14,17 @@ import { ILine, IPointIntersectionResult, IPolygon } from "../types";
  * order in which one would visit those locations if one were to travel around the polygon's perimeter in the
  * order of its vertices.
  *
- * Almost equivalent to {@link lineIntersectPolygonIterator}, except the _t0_ and _t1_ values are reversed
+ * Almost equivalent to {@link rayIntersectPolygon}, except the _t0_ and _t1_ values are reversed
  * and the returned intersections are sorted according to the polygon's geometry.
  *
  * @param poly the polygon to intersect
- * @param line the line to find intersections with
+ * @param ray the ray to find intersections with
  * @see {@link IPointIntersectionResult}
  * @see {@link IPolygon}
- * @see {@link lineIntersectPolygonIterator}
- * @see {@link polygonIntersectRayIterator}
- * @see {@link polygonIntersectSegmentIterator}
+ * @see {@link rayIntersectPolygon}
+ * @see {@link polygonIntersectLine}
+ * @see {@link polygonIntersectSegment}
  */
-export function polygonIntersectLineIterator(poly: IPolygon, line: ILine): IterableIterator<IPointIntersectionResult> {
-  return _polygonIntersectIteratorHelper(poly, line, segmentIntersectLine).values();
+export function polygonIntersectRay(poly: IPolygon, ray: IRay) {
+  return _polygonIntersectHelper(poly, ray, segmentIntersectRay);
 }

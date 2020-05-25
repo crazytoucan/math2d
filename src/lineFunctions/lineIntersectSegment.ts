@@ -29,7 +29,7 @@ import { lineIntersectLine } from "./lineIntersectLine";
  * @param segment the segment to find intersection with
  * @param out
  * @see {@link lineIntersectLine}
- * @see {@link lineIntersectPolylineIterator}
+ * @see {@link lineIntersectPolyline}
  * @see {@link lineIntersectRay}
  */
 export function lineIntersectSegment(line: ILine, segment: ISegment, out = pointIntersectionResultAlloc()) {

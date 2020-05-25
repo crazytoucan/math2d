@@ -30,7 +30,7 @@ import { IRay, ISegment } from "../types";
  * @see {@link IPointIntersectionResult}
  * @see {@link ISegment}
  * @see {@link segmentIntersectLine}
- * @see {@link segmentIntersectPolylineIterator}
+ * @see {@link segmentIntersectPolyline}
  * @see {@link segmentIntersectSegment}
  */
 export function segmentIntersectRay(segment: ISegment, ray: IRay, out = pointIntersectionResultAlloc()) {

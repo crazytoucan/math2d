@@ -1,9 +1,9 @@
-import { _polygonIntersectIteratorHelper } from "../internal/_polygonIntersectIteratorHelper";
-import { segmentIntersectRay } from "../segmentFunctions/segmentIntersectRay";
-import { IPointIntersectionResult, IPolygon, IRay } from "../types";
+import { _polygonIntersectHelper } from "../internal/_polygonIntersectHelper";
+import { segmentIntersectLine } from "../segmentFunctions/segmentIntersectLine";
+import { ILine, IPointIntersectionResult, IPolygon } from "../types";
 
 /**
- * Computes all locations at which a polygon crosses a given ray.
+ * Computes all locations at which a polygon crosses a given line.
  *
  * For each returned intersection, the intersection's _t0_ describes where the point fell on the polygon's geometry
  * according to the {@link IPolygon} parameterization: integer values of _t0_ correspond to the polygon's
@@ -14,17 +14,17 @@ import { IPointIntersectionResult, IPolygon, IRay } from "../types";
  * order in which one would visit those locations if one were to travel around the polygon's perimeter in the
  * order of its vertices.
  *
- * Almost equivalent to {@link rayIntersectPolygonIterator}, except the _t0_ and _t1_ values are reversed
+ * Almost equivalent to {@link lineIntersectPolygon}, except the _t0_ and _t1_ values are reversed
  * and the returned intersections are sorted according to the polygon's geometry.
  *
  * @param poly the polygon to intersect
- * @param ray the ray to find intersections with
+ * @param line the line to find intersections with
  * @see {@link IPointIntersectionResult}
  * @see {@link IPolygon}
- * @see {@link rayIntersectPolygonIterator}
- * @see {@link polygonIntersectLineIterator}
- * @see {@link polygonIntersectSegmentIterator}
+ * @see {@link lineIntersectPolygon}
+ * @see {@link polygonIntersectRay}
+ * @see {@link polygonIntersectSegment}
  */
-export function polygonIntersectRayIterator(poly: IPolygon, ray: IRay): IterableIterator<IPointIntersectionResult> {
-  return _polygonIntersectIteratorHelper(poly, ray, segmentIntersectRay).values();
+export function polygonIntersectLine(poly: IPolygon, line: ILine): IPointIntersectionResult[] {
+  return _polygonIntersectHelper(poly, line, segmentIntersectLine);
 }

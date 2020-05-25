@@ -150,7 +150,7 @@
 			},
 			"comment": {
 				"shortText": "Data type to represent a line in 2D space, i.e. some initial point in the plane plus a unit-length direction\nvector coming from that point.",
-				"text": "The data representation of a line and the similar {@link IRay} type is actually the same, but Math2d chooses\nto export these two names for ease of clarity. Functions that may interpret Rays and Lines differently will be\nnamed differently to prevent ambiguity, such as\n{@link polygonIntersectLineIterator} vs {@link polygonIntersectRayIterator}.\n\nWhere relevant, a line is parameterized according to _t_ with movement of distance _t_ along its direction vector.\nIn this mapping, _t_ = 0 represents the initial point (x0, y0), _t_ > 0 moves in the direction of its vector,\nand _t_ < 0 in the opposite direction.\n",
+				"text": "The data representation of a line and the similar {@link IRay} type is actually the same, but Math2d chooses\nto export these two names for ease of clarity. Functions that may interpret Rays and Lines differently will be\nnamed differently to prevent ambiguity, such as\n{@link polygonIntersectLine} vs {@link polygonIntersectRay}.\n\nWhere relevant, a line is parameterized according to _t_ with movement of distance _t_ along its direction vector.\nIn this mapping, _t_ = 0 represents the initial point (x0, y0), _t_ > 0 moves in the direction of its vector,\nand _t_ < 0 in the opposite direction.\n",
 				"tags": [
 					{
 						"tag": "see",
@@ -603,7 +603,7 @@
 					},
 					{
 						"tag": "see",
-						"text": "{@link lineIntersectPolylineIterator}"
+						"text": "{@link lineIntersectPolyline}"
 					},
 					{
 						"tag": "see",
@@ -615,27 +615,27 @@
 					},
 					{
 						"tag": "see",
-						"text": "{@link polygonIntersectLineIterator}"
+						"text": "{@link polygonIntersectLine}"
 					},
 					{
 						"tag": "see",
-						"text": "{@link polygonIntersectRayIterator}"
+						"text": "{@link polygonIntersectRay}"
 					},
 					{
 						"tag": "see",
-						"text": "{@link polygonIntersectSegmentIterator}"
+						"text": "{@link polygonIntersectSegment}"
 					},
 					{
 						"tag": "see",
-						"text": "{@link polylineIntersectLineIterator}"
+						"text": "{@link polylineIntersectLine}"
 					},
 					{
 						"tag": "see",
-						"text": "{@link polylineIntersectRayIterator}"
+						"text": "{@link polylineIntersectRay}"
 					},
 					{
 						"tag": "see",
-						"text": "{@link polylineIntersectSegmentIterator}"
+						"text": "{@link polylineIntersectSegment}"
 					},
 					{
 						"tag": "see",
@@ -643,7 +643,7 @@
 					},
 					{
 						"tag": "see",
-						"text": "{@link rayIntersectPolylineIterator}"
+						"text": "{@link rayIntersectPolyline}"
 					},
 					{
 						"tag": "see",
@@ -659,7 +659,7 @@
 					},
 					{
 						"tag": "see",
-						"text": "{@link segmentIntersectPolylineIterator}"
+						"text": "{@link segmentIntersectPolyline}"
 					},
 					{
 						"tag": "see",
@@ -819,7 +819,7 @@
 			},
 			"comment": {
 				"shortText": "Data type to represent a ray in 2D space, i.e. an initial point in the plane plus a unit-length direction\nvector coming from that point.",
-				"text": "The data representation of a ray and the similar {@link ILine} type is actually the same, but Math2d chooses\nto export both names for clarity of usage. Functions that may interpret Rays and Lines differently will be\nnamed differently to prevent ambiguity,\nsuch as {@link polygonIntersectLineIterator} vs {@link polygonIntersectRayIterator}.\n\nWhere relevant, a ray is parameterized according to _t_ ≥ 0 with movement of distance _t_ along its direction vector.\nIn this mapping, _t_ = 0 represents the initial point (x0, y0).\n",
+				"text": "The data representation of a ray and the similar {@link ILine} type is actually the same, but Math2d chooses\nto export both names for clarity of usage. Functions that may interpret Rays and Lines differently will be\nnamed differently to prevent ambiguity,\nsuch as {@link polygonIntersectLine} vs {@link polygonIntersectRay}.\n\nWhere relevant, a ray is parameterized according to _t_ ≥ 0 with movement of distance _t_ along its direction vector.\nIn this mapping, _t_ = 0 represents the initial point (x0, y0).\n",
 				"tags": [
 					{
 						"tag": "see",
@@ -2814,7 +2814,7 @@
 						"tags": [
 							{
 								"tag": "see",
-								"text": "{@link lineIntersectPolylineIterator}"
+								"text": "{@link lineIntersectPolyline}"
 							},
 							{
 								"tag": "see",
@@ -2889,7 +2889,7 @@
 		},
 		{
 			"id": 217,
-			"name": "lineIntersectPolylineIterator",
+			"name": "lineIntersectPolyline",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -2898,13 +2898,13 @@
 			"signatures": [
 				{
 					"id": 218,
-					"name": "lineIntersectPolylineIterator",
+					"name": "lineIntersectPolyline",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a line crosses a given polyline.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the line's geometry\naccording to {@link ILine} parameterization. (See {@link lineGetPointAt}.)\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would hit the intersections if one were to start from -∞ and travel toward +∞ along the line's\ndirection vector.\n\nAlmost equivalent to {@link polylineIntersectLineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the line's geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the line's geometry\naccording to {@link ILine} parameterization. (See {@link lineGetPointAt}.)\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would hit the intersections if one were to start from -∞ and travel toward +∞ along the line's\ndirection vector.\n\nAlmost equivalent to {@link polylineIntersectLine}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the line's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -2916,7 +2916,7 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link polylineIntersectLineIterator}"
+								"text": "{@link polylineIntersectLine}"
 							},
 							{
 								"tag": "see",
@@ -2961,7 +2961,7 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "IterableIterator",
+						"name": "Iterable",
 						"typeArguments": [
 							{
 								"type": "reference",
@@ -2974,7 +2974,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "lineFunctions/lineIntersectPolylineIterator.ts",
+					"fileName": "lineFunctions/lineIntersectPolyline.ts",
 					"line": 28,
 					"character": 45
 				}
@@ -3005,7 +3005,7 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link lineIntersectPolylineIterator}"
+								"text": "{@link lineIntersectPolyline}"
 							},
 							{
 								"tag": "see",
@@ -3099,7 +3099,7 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link lineIntersectPolylineIterator}"
+								"text": "{@link lineIntersectPolyline}"
 							},
 							{
 								"tag": "see",
@@ -5786,7 +5786,7 @@
 		},
 		{
 			"id": 366,
-			"name": "polygonIntersectLineIterator",
+			"name": "polygonIntersectLine",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -5795,13 +5795,13 @@
 			"signatures": [
 				{
 					"id": 367,
-					"name": "polygonIntersectLineIterator",
+					"name": "polygonIntersectLine",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polygon crosses a given line.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polygon's geometry\naccording to the {@link IPolygon} parameterization: integer values of _t0_ correspond to the polygon's\nvertices in order, and smooth values of _t0_ therein interpolate linearly between adjacent vertices, with an\nadditional segment connecting the last vertex to the first.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel around the polygon's perimeter in the\norder of its vertices.\n\nAlmost equivalent to {@link lineIntersectPolygonIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polygon's geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polygon's geometry\naccording to the {@link IPolygon} parameterization: integer values of _t0_ correspond to the polygon's\nvertices in order, and smooth values of _t0_ therein interpolate linearly between adjacent vertices, with an\nadditional segment connecting the last vertex to the first.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel around the polygon's perimeter in the\norder of its vertices.\n\nAlmost equivalent to {@link lineIntersectPolygon}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polygon's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -5813,15 +5813,15 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link lineIntersectPolygonIterator}"
+								"text": "{@link lineIntersectPolygon}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polygonIntersectRayIterator}"
+								"text": "{@link polygonIntersectRay}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polygonIntersectSegmentIterator}\n"
+								"text": "{@link polygonIntersectSegment}\n"
 							}
 						]
 					},
@@ -5859,7 +5859,7 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "IterableIterator",
+						"name": "Iterable",
 						"typeArguments": [
 							{
 								"type": "reference",
@@ -5872,7 +5872,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "polygonFunctions/polygonIntersectLineIterator.ts",
+					"fileName": "polygonFunctions/polygonIntersectLine.ts",
 					"line": 28,
 					"character": 44
 				}
@@ -5880,7 +5880,7 @@
 		},
 		{
 			"id": 380,
-			"name": "polygonIntersectRayIterator",
+			"name": "polygonIntersectRay",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -5889,13 +5889,13 @@
 			"signatures": [
 				{
 					"id": 381,
-					"name": "polygonIntersectRayIterator",
+					"name": "polygonIntersectRay",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polygon crosses a given ray.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polygon's geometry\naccording to the {@link IPolygon} parameterization: integer values of _t0_ correspond to the polygon's\nvertices in order, and smooth values of _t0_ therein interpolate linearly between adjacent vertices, with an\nadditional segment connecting the last vertex to the first.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel around the polygon's perimeter in the\norder of its vertices.\n\nAlmost equivalent to {@link rayIntersectPolygonIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polygon's geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polygon's geometry\naccording to the {@link IPolygon} parameterization: integer values of _t0_ correspond to the polygon's\nvertices in order, and smooth values of _t0_ therein interpolate linearly between adjacent vertices, with an\nadditional segment connecting the last vertex to the first.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel around the polygon's perimeter in the\norder of its vertices.\n\nAlmost equivalent to {@link rayIntersectPolygon}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polygon's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -5907,15 +5907,15 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link rayIntersectPolygonIterator}"
+								"text": "{@link rayIntersectPolygon}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polygonIntersectLineIterator}"
+								"text": "{@link polygonIntersectLine}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polygonIntersectSegmentIterator}\n"
+								"text": "{@link polygonIntersectSegment}\n"
 							}
 						]
 					},
@@ -5953,7 +5953,7 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "IterableIterator",
+						"name": "Iterable",
 						"typeArguments": [
 							{
 								"type": "reference",
@@ -5966,7 +5966,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "polygonFunctions/polygonIntersectRayIterator.ts",
+					"fileName": "polygonFunctions/polygonIntersectRay.ts",
 					"line": 28,
 					"character": 43
 				}
@@ -5974,7 +5974,7 @@
 		},
 		{
 			"id": 389,
-			"name": "polygonIntersectSegmentIterator",
+			"name": "polygonIntersectSegment",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -5983,13 +5983,13 @@
 			"signatures": [
 				{
 					"id": 390,
-					"name": "polygonIntersectSegmentIterator",
+					"name": "polygonIntersectSegment",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polygon crosses a given line segment.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polygon's geometry\naccording to the {@link IPolygon} parameterization: integer values of _t0_ correspond to the polygon's\nvertices in order, and smooth values of _t0_ therein interpolate linearly between adjacent vertices, with an\nadditional segment connecting the last vertex to the first.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel around the polygon's perimeter in the\norder of its vertices.\n\nAlmost equivalent to {@link segmentIntersectPolygonIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polygon's geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polygon's geometry\naccording to the {@link IPolygon} parameterization: integer values of _t0_ correspond to the polygon's\nvertices in order, and smooth values of _t0_ therein interpolate linearly between adjacent vertices, with an\nadditional segment connecting the last vertex to the first.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel around the polygon's perimeter in the\norder of its vertices.\n\nAlmost equivalent to {@link segmentIntersectPolygon}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polygon's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -6001,15 +6001,15 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link segmentIntersectPolygonIterator}"
+								"text": "{@link segmentIntersectPolygon}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polygonIntersectLineIterator}"
+								"text": "{@link polygonIntersectLine}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polygonIntersectRayIterator}\n"
+								"text": "{@link polygonIntersectRay}\n"
 							}
 						]
 					},
@@ -6047,7 +6047,7 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "IterableIterator",
+						"name": "Iterable",
 						"typeArguments": [
 							{
 								"type": "reference",
@@ -6060,7 +6060,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "polygonFunctions/polygonIntersectSegmentIterator.ts",
+					"fileName": "polygonFunctions/polygonIntersectSegment.ts",
 					"line": 28,
 					"character": 47
 				}
@@ -7015,7 +7015,7 @@
 		},
 		{
 			"id": 438,
-			"name": "polylineIntersectLineIterator",
+			"name": "polylineIntersectLine",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -7024,13 +7024,13 @@
 			"signatures": [
 				{
 					"id": 439,
-					"name": "polylineIntersectLineIterator",
+					"name": "polylineIntersectLine",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polyline crosses a given line.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count minus 1, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segments.\n\nAlmost equivalent to {@link lineIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count minus 1, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segments.\n\nAlmost equivalent to {@link lineIntersectPolyline}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -7042,15 +7042,15 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link lineIntersectPolylineIterator}"
+								"text": "{@link lineIntersectPolyline}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polylineIntersectRayIterator}"
+								"text": "{@link polylineIntersectRay}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polylineIntersectSegmentIterator}\n"
+								"text": "{@link polylineIntersectSegment}\n"
 							}
 						]
 					},
@@ -7084,7 +7084,7 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "IterableIterator",
+						"name": "Iterable",
 						"typeArguments": [
 							{
 								"type": "reference",
@@ -7097,7 +7097,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "polylineFunctions/polylineIntersectLineIterator.ts",
+					"fileName": "polylineFunctions/polylineIntersectLine.ts",
 					"line": 28,
 					"character": 45
 				}
@@ -7105,7 +7105,7 @@
 		},
 		{
 			"id": 442,
-			"name": "polylineIntersectRayIterator",
+			"name": "polylineIntersectRay",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -7114,13 +7114,13 @@
 			"signatures": [
 				{
 					"id": 443,
-					"name": "polylineIntersectRayIterator",
+					"name": "polylineIntersectRay",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polyline crosses a given ray.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count minus 1, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segments.\n\nAlmost equivalent to {@link rayIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count minus 1, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segments.\n\nAlmost equivalent to {@link rayIntersectPolyline}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -7132,15 +7132,15 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link lineIntersectPolylineIterator}"
+								"text": "{@link lineIntersectPolyline}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polylineIntersectLineIterator}"
+								"text": "{@link polylineIntersectLine}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polylineIntersectSegmentIterator}\n"
+								"text": "{@link polylineIntersectSegment}\n"
 							}
 						]
 					},
@@ -7174,7 +7174,7 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "IterableIterator",
+						"name": "Iterable",
 						"typeArguments": [
 							{
 								"type": "reference",
@@ -7187,7 +7187,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "polylineFunctions/polylineIntersectRayIterator.ts",
+					"fileName": "polylineFunctions/polylineIntersectRay.ts",
 					"line": 28,
 					"character": 44
 				}
@@ -7195,7 +7195,7 @@
 		},
 		{
 			"id": 446,
-			"name": "polylineIntersectSegmentIterator",
+			"name": "polylineIntersectSegment",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -7204,13 +7204,13 @@
 			"signatures": [
 				{
 					"id": 447,
-					"name": "polylineIntersectSegmentIterator",
+					"name": "polylineIntersectSegment",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a polyline crosses a given line segment.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count minus 1, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segments.\n\nAlmost equivalent to {@link segmentIntersectPolylineIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the polyline's geometry\naccording to the {@link IPolyline} parameterization:\nvalues of _t0_ are between 0 and the polyline's vertex count minus 1, and smooth values of _t0_ therein\nsignify linear interpolation between adjacent vertices along the polyline's geometry.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the polyline's start to its end\nalong its segments.\n\nAlmost equivalent to {@link segmentIntersectPolyline}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the polyline's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -7222,15 +7222,15 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link segmentIntersectPolylineIterator}"
+								"text": "{@link segmentIntersectPolyline}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polylineIntersectLineIterator}"
+								"text": "{@link polylineIntersectLine}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polylineIntersectRayIterator}\n"
+								"text": "{@link polylineIntersectRay}\n"
 							}
 						]
 					},
@@ -7264,7 +7264,7 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "IterableIterator",
+						"name": "Iterable",
 						"typeArguments": [
 							{
 								"type": "reference",
@@ -7277,7 +7277,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "polylineFunctions/polylineIntersectSegmentIterator.ts",
+					"fileName": "polylineFunctions/polylineIntersectSegment.ts",
 					"line": 28,
 					"character": 48
 				}
@@ -7913,7 +7913,7 @@
 						"tags": [
 							{
 								"tag": "see",
-								"text": "{@link rayIntersectPolylineIterator}"
+								"text": "{@link rayIntersectPolyline}"
 							},
 							{
 								"tag": "see",
@@ -7988,7 +7988,7 @@
 		},
 		{
 			"id": 483,
-			"name": "rayIntersectPolylineIterator",
+			"name": "rayIntersectPolyline",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -7997,13 +7997,13 @@
 			"signatures": [
 				{
 					"id": 484,
-					"name": "rayIntersectPolylineIterator",
+					"name": "rayIntersectPolyline",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a ray crosses a given polyline.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the ray's geometry\naccording to {@link IRay} parameterization:\n_t0_ ≥ 0, corresponds to travel of distance _t0_ along the ray's direction vector. (See {@link rayGetPointAt}.)\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would hit the intersections if one were to start from the ray's initial point and\nshoot along its direction vector.\n\nAlmost equivalent to {@link polylineIntersectRayIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the ray's geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the ray's geometry\naccording to {@link IRay} parameterization:\n_t0_ ≥ 0, corresponds to travel of distance _t0_ along the ray's direction vector. (See {@link rayGetPointAt}.)\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would hit the intersections if one were to start from the ray's initial point and\nshoot along its direction vector.\n\nAlmost equivalent to {@link polylineIntersectRay}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the ray's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -8015,15 +8015,15 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link lineIntersectPolylineIterator}"
+								"text": "{@link lineIntersectPolyline}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polylineIntersectLineIterator}"
+								"text": "{@link polylineIntersectLine}"
 							},
 							{
 								"tag": "see",
-								"text": "{@link polylineIntersectSegmentIterator}\n"
+								"text": "{@link polylineIntersectSegment}\n"
 							}
 						]
 					},
@@ -8057,7 +8057,7 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "IterableIterator",
+						"name": "Iterable",
 						"typeArguments": [
 							{
 								"type": "reference",
@@ -8070,7 +8070,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "rayFunctions/rayIntersectPolylineIterator.ts",
+					"fileName": "rayFunctions/rayIntersectPolyline.ts",
 					"line": 28,
 					"character": 44
 				}
@@ -9024,7 +9024,7 @@
 						"tags": [
 							{
 								"tag": "see",
-								"text": "{@link segmentIntersectPolylineIterator}"
+								"text": "{@link segmentIntersectPolyline}"
 							},
 							{
 								"tag": "see",
@@ -9099,7 +9099,7 @@
 		},
 		{
 			"id": 527,
-			"name": "segmentIntersectPolylineIterator",
+			"name": "segmentIntersectPolyline",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -9108,13 +9108,13 @@
 			"signatures": [
 				{
 					"id": 528,
-					"name": "segmentIntersectPolylineIterator",
+					"name": "segmentIntersectPolyline",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
 						"shortText": "Computes all locations at which a line segment meets a given polyline.",
-						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the segment's geometry\naccording to {@link ISegment} parameterization:\nlinear interpolation between its endpoints where _t0_ = 0 represents its starting vertex\nand _t0_ = 1 its ending vertex.\nSmooth values of _t_ within that range will move along the segment, so for example\n_t0_ = 0.5 is its midpoint.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the line segment's starting\nvertex to its ending vertex.\n\nAlmost equivalent to {@link polylineIntersectSegmentIterator}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the segment's geometry.\n",
+						"text": "For each returned intersection, the intersection's _t0_ describes where the point fell on the segment's geometry\naccording to {@link ISegment} parameterization:\nlinear interpolation between its endpoints where _t0_ = 0 represents its starting vertex\nand _t0_ = 1 its ending vertex.\nSmooth values of _t_ within that range will move along the segment, so for example\n_t0_ = 0.5 is its midpoint.\n\nThe returned points will be sorted by _t0_ increasing, i.e. they will be sorted according to the\norder in which one would visit those locations if one were to travel from the line segment's starting\nvertex to its ending vertex.\n\nAlmost equivalent to {@link polylineIntersectSegment}, except the _t0_ and _t1_ values are reversed\nand the returned intersections are sorted according to the segment's geometry.\n",
 						"tags": [
 							{
 								"tag": "see",
@@ -9126,7 +9126,7 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link polylineIntersectSegmentIterator}"
+								"text": "{@link polylineIntersectSegment}"
 							},
 							{
 								"tag": "see",
@@ -9176,7 +9176,7 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "IterableIterator",
+						"name": "Iterable",
 						"typeArguments": [
 							{
 								"type": "reference",
@@ -9189,7 +9189,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "segmentFunctions/segmentIntersectPolylineIterator.ts",
+					"fileName": "segmentFunctions/segmentIntersectPolyline.ts",
 					"line": 32,
 					"character": 48
 				}
@@ -9228,7 +9228,7 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link segmentIntersectPolylineIterator}"
+								"text": "{@link segmentIntersectPolyline}"
 							},
 							{
 								"tag": "see",
@@ -9330,7 +9330,7 @@
 							},
 							{
 								"tag": "see",
-								"text": "{@link segmentIntersectPolylineIterator}"
+								"text": "{@link segmentIntersectPolyline}"
 							},
 							{
 								"tag": "see",

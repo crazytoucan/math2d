@@ -29,7 +29,7 @@ import { lineGetPointAt } from "./lineGetPointAt";
  * @param a the first line to intersect
  * @param b the second line to find intersection with
  * @param out
- * @see {@link lineIntersectPolylineIterator}
+ * @see {@link lineIntersectPolyline}
  * @see {@link lineIntersectRay}
  * @see {@link lineIntersectSegment}
  */

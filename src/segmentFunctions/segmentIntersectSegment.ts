@@ -31,7 +31,7 @@ import { segmentGetLength } from "./segmentGetLength";
  * @see {@link IPointIntersectionResult}
  * @see {@link ISegment}
  * @see {@link segmentIntersectLine}
- * @see {@link segmentIntersectPolylineIterator}
+ * @see {@link segmentIntersectPolyline}
  * @see {@link segmentIntersectRay}
  */
 export function segmentIntersectSegment(a: ISegment, b: ISegment, out = pointIntersectionResultAlloc()) {

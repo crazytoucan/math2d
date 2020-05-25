@@ -6,7 +6,7 @@ import { segmentAlloc } from "../segmentFunctions/segmentAlloc";
 import { IPointIntersectionResult, IPolyline, ISegment } from "../types";
 
 
-export function _polylineIntersectIteratorHelper<T>(
+export function _polylineIntersectHelper<T>(
   poly: IPolyline,
   value: T,
   doIntersectSegment: (segment: ISegment, value: T, out: IPointIntersectionResult) => IPointIntersectionResult,
