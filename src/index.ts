@@ -14,7 +14,7 @@ export { boxReset } from "./boxFunctions/boxReset";
 export { boxScale } from "./boxFunctions/boxScale";
 export { boxTransformBy } from "./boxFunctions/boxTransformBy";
 export { boxTranslate } from "./boxFunctions/boxTranslate";
-export { OUT_MAX_X, OUT_MAX_Y, OUT_MIN_X, OUT_MIN_Y } from "./const";
+export { Out, IntervalMode } from "./const";
 export { lineAlloc } from "./lineFunctions/lineAlloc";
 export { lineClone } from "./lineFunctions/lineClone";
 export { lineContainsPoint } from "./lineFunctions/lineContainsPoint";

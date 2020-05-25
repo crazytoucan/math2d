@@ -1,3 +1,4 @@
+import { IntervalMode } from "../const";
 import { IBox } from "../types";
 
 /**
@@ -10,7 +11,15 @@ import { IBox } from "../types";
  *
  * @param a first box to check for overlap
  * @param b second box to check for overlap
+ * @param mode whether to include the boundaries of the boxes
  */
-export function boxIntersectsBox(a: IBox, b: IBox) {
-  return a.minX <= b.maxX && a.minY <= b.maxY && a.maxX >= b.minX && a.maxY >= b.minY;
+export function boxIntersectsBox(a: IBox, b: IBox, mode: IntervalMode) {
+  switch (mode) {
+    case IntervalMode.OPEN:
+    case IntervalMode.OPEN_ABOVE:
+      return a.minX < b.maxX && a.minY < b.maxY && a.maxX > b.minX && a.maxY > b.minY;
+
+    case IntervalMode.CLOSED:
+      return a.minX <= b.maxX && a.minY <= b.maxY && a.maxX >= b.minX && a.maxY >= b.minY;
+  }
 }
