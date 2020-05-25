@@ -25,6 +25,7 @@
   },
   "exclude": [
     "benchmarks",
+    "esm",
     "lib",
     "node_modules"
   ]
