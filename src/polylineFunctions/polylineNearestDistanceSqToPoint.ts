@@ -6,8 +6,6 @@ import { IPolyline, IVec } from "../types";
 import { polylineGetNumSegments } from "./polylineGetNumSegments";
 import { polylineGetSegment } from "./polylineGetSegment";
 
-const TMP0 = segmentAlloc();
-const TMP2 = nearestPointResultAlloc();
 
 /**
  * Finds the closest the polyline comes to a given reference point.
@@ -25,12 +23,14 @@ const TMP2 = nearestPointResultAlloc();
  * @see {@link INearestPointResult}
  */
 export function polylineNearestDistanceSqToPoint(poly: IPolyline, point: IVec, out = nearestPointResultAlloc()) {
-  const winner = nearestPointResultReset(NaN, NaN, NaN, Infinity, out);
+  const tmp0 = segmentAlloc();
+  const tmp1 = nearestPointResultAlloc();
 
+  const winner = nearestPointResultReset(NaN, NaN, NaN, Infinity, out);
   const len = polylineGetNumSegments(poly);
   for (let i = 0; i < len; i++) {
-    const segment = polylineGetSegment(poly, i, TMP0);
-    const segmentNearest = segmentNearestDistanceSqToPoint(segment, point, TMP2);
+    const segment = polylineGetSegment(poly, i, tmp0);
+    const segmentNearest = segmentNearestDistanceSqToPoint(segment, point, tmp1);
     if (segmentNearest.distanceValue < winner.distanceValue) {
       nearestPointResultReset(
         segmentNearest.x,

@@ -3,10 +3,7 @@ import { _lookAt } from "../internal/_lookAt";
 import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
 import { segmentGetLength } from "../segmentFunctions/segmentGetLength";
 import { ILine, ISegment } from "../types";
-import { lineAlloc } from "./lineAlloc";
 import { lineIntersectLine } from "./lineIntersectLine";
-
-const TMP0 = lineAlloc();
 
 /**
  * Computes the intersection point between the given line and segment, if it exists.
@@ -37,7 +34,7 @@ const TMP0 = lineAlloc();
  */
 export function lineIntersectSegment(line: ILine, segment: ISegment, out = pointIntersectionResultAlloc()) {
   // TODO: https://github.com/crazytoucan/geometry/issues/1
-  const segmentLine = _lookAt(segment.x0, segment.y0, segment.x1, segment.y1, TMP0);
+  const segmentLine = _lookAt(segment.x0, segment.y0, segment.x1, segment.y1);
   const segmentLength = segmentGetLength(segment);
   lineIntersectLine(line, segmentLine, out);
   if (!out.exists || out.t1 < 0 || out.t1 > segmentLength) {
