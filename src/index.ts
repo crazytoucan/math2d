@@ -1,7 +1,7 @@
 export { boxAlloc } from "./boxFunctions/boxAlloc";
 export { boxClone } from "./boxFunctions/boxClone";
-export { boxComputeIntersection } from "./boxFunctions/boxComputeIntersection";
-export { boxComputeUnion } from "./boxFunctions/boxComputeUnion";
+export { boxIntersection } from "./boxFunctions/boxIntersection";
+export { boxUnion } from "./boxFunctions/boxUnion";
 export { boxContainsBox } from "./boxFunctions/boxContainsBox";
 export { boxContainsPoint } from "./boxFunctions/boxContainsPoint";
 export { boxEncapsulate } from "./boxFunctions/boxEncapsulate";
@@ -14,7 +14,7 @@ export { boxReset } from "./boxFunctions/boxReset";
 export { boxScale } from "./boxFunctions/boxScale";
 export { boxTransformBy } from "./boxFunctions/boxTransformBy";
 export { boxTranslate } from "./boxFunctions/boxTranslate";
-export { OUT_MAX_X, OUT_MAX_Y, OUT_MIN_X, OUT_MIN_Y } from "./const";
+export { Out, IntervalMode } from "./const";
 export { lineAlloc } from "./lineFunctions/lineAlloc";
 export { lineClone } from "./lineFunctions/lineClone";
 export { lineContainsPoint } from "./lineFunctions/lineContainsPoint";
@@ -65,6 +65,7 @@ export { polygonNearestDistanceSqToPoint } from "./polygonFunctions/polygonNeare
 export { polygonTransformBy } from "./polygonFunctions/polygonTransformBy";
 export { polylineAlloc } from "./polylineFunctions/polylineAlloc";
 export { polylineClose } from "./polylineFunctions/polylineClose";
+export { polylineContainsPoint } from "./polylineFunctions/polylineContainsPoint";
 export { polylineGetBounds } from "./polylineFunctions/polylineGetBounds";
 export { polylineGetDistanceAtT } from "./polylineFunctions/polylineGetDistanceAtT";
 export { polylineGetLength } from "./polylineFunctions/polylineGetLength";

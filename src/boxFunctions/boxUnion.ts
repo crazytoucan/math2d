@@ -12,7 +12,7 @@ import { boxReset } from "./boxReset";
  * @param b
  * @param out
  */
-export function boxComputeUnion(a: IBox, b: IBox, out = boxAlloc()) {
+export function boxUnion(a: IBox, b: IBox, out = boxAlloc()) {
   return boxReset(
     Math.min(a.minX, b.minX),
     Math.min(a.minY, b.minY),

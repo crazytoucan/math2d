@@ -1,7 +1,10 @@
 import { IBox } from "../types";
 
 class Box implements IBox {
-  constructor(public minX = NaN, public minY = NaN, public maxX = NaN, public maxY = NaN) {}
+  public minX = NaN;
+  public minY = NaN;
+  public maxX = NaN;
+  public maxY = NaN;
 }
 
 /**

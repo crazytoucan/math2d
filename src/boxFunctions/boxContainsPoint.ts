@@ -1,3 +1,4 @@
+import { IntervalMode } from "../const";
 import { IBox, IVec } from "../types";
 
 /**
@@ -10,6 +11,13 @@ import { IBox, IVec } from "../types";
  * @param box
  * @param point
  */
-export function boxContainsPoint(box: IBox, point: IVec) {
-  return point.x >= box.minX && point.y >= box.minY && point.x <= box.maxX && point.y <= box.maxY;
+export function boxContainsPoint(box: IBox, point: IVec, mode: IntervalMode) {
+  switch (mode) {
+    case IntervalMode.OPEN:
+      return point.x > box.minX && point.y > box.minY && point.x < box.maxX && point.y < box.maxY;
+    case IntervalMode.CLOSED:
+      return point.x >= box.minX && point.y >= box.minY && point.x <= box.maxX && point.y <= box.maxY;
+    case IntervalMode.OPEN_ABOVE:
+      return point.x >= box.minX && point.y >= box.minY && point.x < box.maxX && point.y < box.maxY;
+  }
 }

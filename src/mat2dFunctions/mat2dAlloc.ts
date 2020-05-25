@@ -1,7 +1,12 @@
 import { IMat2d } from "../types";
 
 class Mat2d implements IMat2d {
-  constructor(public a = NaN, public b = NaN, public c = NaN, public d = NaN, public e = NaN, public f = NaN) {}
+  public a = NaN;
+  public b = NaN;
+  public c = NaN;
+  public d = NaN;
+  public e = NaN;
+  public f = NaN;
 }
 
 /**

@@ -33,8 +33,8 @@ Documentation for Math2d's API is available at https://crazytoucan.github.io/mat
 ### Box Functions
 * [boxAlloc](https://crazytoucan.github.io/math2d/api/#boxAlloc): Creates a new Box object in memory, with all values initialized to `NaN`.
 * [boxClone](https://crazytoucan.github.io/math2d/api/#boxClone): Copies values from an existing IBox into a new box.
-* [boxComputeIntersection](https://crazytoucan.github.io/math2d/api/#boxComputeIntersection): Computes the area intersection of the two box regions.
-* [boxComputeUnion](https://crazytoucan.github.io/math2d/api/#boxComputeUnion): Compute the smallest bounding box that contains both given boxes.
+* [boxIntersection](https://crazytoucan.github.io/math2d/api/#boxIntersection): Computes the area intersection of the two box regions.
+* [boxUnion](https://crazytoucan.github.io/math2d/api/#boxUnion): Compute the smallest bounding box that contains both given boxes.
 * [boxContainsBox](https://crazytoucan.github.io/math2d/api/#boxContainsBox): Determines whether the second box is completely enclosed in the first.
 * [boxContainsPoint](https://crazytoucan.github.io/math2d/api/#boxContainsPoint): Determines whether the box contains a given point.
 * [boxEncapsulate](https://crazytoucan.github.io/math2d/api/#boxEncapsulate): Grows the box to include a given point.
