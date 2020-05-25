@@ -1,7 +1,10 @@
 import { INearestPointResult } from "../types";
 
 class NearestPointResult implements INearestPointResult {
-  constructor(public x = NaN, public y = NaN, public t = NaN, public distanceValue = NaN) {}
+  public x = NaN;
+  public y = NaN;
+  public t = NaN;
+  public distanceValue = NaN;
 }
 
 /**

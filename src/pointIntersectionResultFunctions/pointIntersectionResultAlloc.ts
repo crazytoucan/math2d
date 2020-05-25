@@ -1,7 +1,11 @@
 import { IPointIntersectionResult } from "../types";
 
 class PointIntersectionResult implements IPointIntersectionResult {
-  constructor(public exists = false, public x = NaN, public y = NaN, public t0 = NaN, public t1 = NaN) {}
+  public exists = false;
+  public x = NaN;
+  public y = NaN;
+  public t0 = NaN;
+  public t1 = NaN;
 }
 
 /**

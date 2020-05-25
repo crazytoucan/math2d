@@ -1,7 +1,8 @@
 import { IVec } from "../types";
 
 class Vec implements IVec {
-  constructor(public x = NaN, public y = NaN) {}
+  public x = NaN;
+  public y = NaN;
 }
 
 /**
