@@ -1437,7 +1437,7 @@
 		},
 		{
 			"id": 61,
-			"name": "boxComputeIntersection",
+			"name": "boxIntersection",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -1446,7 +1446,7 @@
 			"signatures": [
 				{
 					"id": 62,
-					"name": "boxComputeIntersection",
+					"name": "boxIntersection",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
@@ -1456,7 +1456,7 @@
 						"tags": [
 							{
 								"tag": "see",
-								"text": "{@link boxComputeUnion}\n"
+								"text": "{@link boxUnion}\n"
 							}
 						]
 					},
@@ -1515,7 +1515,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "boxFunctions/boxComputeIntersection.ts",
+					"fileName": "boxFunctions/boxIntersection.ts",
 					"line": 20,
 					"character": 38
 				}
@@ -1523,7 +1523,7 @@
 		},
 		{
 			"id": 66,
-			"name": "boxComputeUnion",
+			"name": "boxUnion",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {
@@ -1532,7 +1532,7 @@
 			"signatures": [
 				{
 					"id": 67,
-					"name": "boxComputeUnion",
+					"name": "boxUnion",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
@@ -1593,7 +1593,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "boxFunctions/boxComputeUnion.ts",
+					"fileName": "boxFunctions/boxUnion.ts",
 					"line": 15,
 					"character": 31
 				}
@@ -2058,7 +2058,7 @@
 					"flags": {},
 					"comment": {
 						"shortText": "Determines whether two boxes overlap.",
-						"text": "This function checks whether the two boxes intersect, as areas. Both boxes are treated as closed\nregions, so e.g. this function will return true if the boxes share only a single edge.\n\nThe similar function {@link boxComputeIntersection} can compute the overlap region.\n"
+						"text": "This function checks whether the two boxes intersect, as areas. Both boxes are treated as closed\nregions, so e.g. this function will return true if the boxes share only a single edge.\n\nThe similar function {@link boxIntersection} can compute the overlap region.\n"
 					},
 					"parameters": [
 						{

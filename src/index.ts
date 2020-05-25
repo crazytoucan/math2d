@@ -1,7 +1,7 @@
 export { boxAlloc } from "./boxFunctions/boxAlloc";
 export { boxClone } from "./boxFunctions/boxClone";
-export { boxComputeIntersection } from "./boxFunctions/boxComputeIntersection";
-export { boxComputeUnion } from "./boxFunctions/boxComputeUnion";
+export { boxIntersection } from "./boxFunctions/boxIntersection";
+export { boxUnion } from "./boxFunctions/boxUnion";
 export { boxContainsBox } from "./boxFunctions/boxContainsBox";
 export { boxContainsPoint } from "./boxFunctions/boxContainsPoint";
 export { boxEncapsulate } from "./boxFunctions/boxEncapsulate";

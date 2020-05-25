@@ -15,9 +15,9 @@ import { boxReset } from "./boxReset";
  * @param a first box to compute intersection for
  * @param b second box to compute intersection for
  * @param out
- * @see {@link boxComputeUnion}
+ * @see {@link boxUnion}
  */
-export function boxComputeIntersection(a: IBox, b: IBox, out = boxAlloc()) {
+export function boxIntersection(a: IBox, b: IBox, out = boxAlloc()) {
   return boxReset(
     Math.max(a.minX, b.minX),
     Math.max(a.minY, b.minY),

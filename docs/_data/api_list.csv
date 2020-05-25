@@ -14,8 +14,8 @@ OUT_MIN_X,const
 OUT_MIN_Y,const
 boxAlloc,boxFunctions
 boxClone,boxFunctions
-boxComputeIntersection,boxFunctions
-boxComputeUnion,boxFunctions
+boxIntersection,boxFunctions
+boxUnion,boxFunctions
 boxContainsBox,boxFunctions
 boxContainsPoint,boxFunctions
 boxEncapsulate,boxFunctions
