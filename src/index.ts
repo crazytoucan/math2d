@@ -38,7 +38,7 @@ export { pointIntersectionResultReset } from "./pointIntersectionResultFunctions
 export { rayAlloc } from "./rayFunctions/rayAlloc";
 export { rayClone } from "./rayFunctions/rayClone";
 export { rayContainsPoint } from "./rayFunctions/rayContainsPoint";
-export { rayGetPointAt } from "./rayFunctions/rayGetPointAt";
+export { rayGetPointAtT } from "./rayFunctions/rayGetPointAtT";
 export { rayIntersectPolyline } from "./rayFunctions/rayIntersectPolyline";
 export { rayIntersectRay } from "./rayFunctions/rayIntersectRay";
 export { rayIntersectSegment } from "./rayFunctions/rayIntersectSegment";
@@ -51,7 +51,7 @@ export { segmentGetEndpoint0 } from "./segmentFunctions/segmentGetEndpoint0";
 export { segmentGetEndpoint1 } from "./segmentFunctions/segmentGetEndpoint1";
 export { segmentGetLength } from "./segmentFunctions/segmentGetLength";
 export { segmentGetLengthSq } from "./segmentFunctions/segmentGetLengthSq";
-export { segmentGetPointAt } from "./segmentFunctions/segmentGetPointAt";
+export { segmentGetPointAtT } from "./segmentFunctions/segmentGetPointAtT";
 export { segmentIntersectPolyline } from "./segmentFunctions/segmentIntersectPolyline";
 export { segmentIntersectRay } from "./segmentFunctions/segmentIntersectRay";
 export { segmentIntersectSegment } from "./segmentFunctions/segmentIntersectSegment";

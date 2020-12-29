@@ -2,7 +2,7 @@ import { _clamp } from "../internal/_clamp";
 import { IPolyline } from "../types";
 import { polylineAlloc } from "./polylineAlloc";
 import { polylineGetNumSegments } from "./polylineGetNumSegments";
-import { polylineGetPointAt } from "./polylineGetPointAt";
+import { polylineGetPointAtT } from "./polylineGetPointAtT";
 
 /**
  * Trims a polyline to a range of its _t_ parameter.
@@ -42,7 +42,7 @@ export function polylineTrim(poly: IPolyline, tStart: number, tEnd: number, out 
 
   out.length = 2 * (endCeil - startFloor + 1);
   let cursor = 0;
-  const beginPoint = polylineGetPointAt(poly, tStart);
+  const beginPoint = polylineGetPointAtT(poly, tStart);
   out[cursor++] = beginPoint.x;
   out[cursor++] = beginPoint.y;
 
@@ -51,7 +51,7 @@ export function polylineTrim(poly: IPolyline, tStart: number, tEnd: number, out 
     out[cursor++] = poly[2 * i + 1];
   }
 
-  const endPoint = polylineGetPointAt(poly, tEnd);
+  const endPoint = polylineGetPointAtT(poly, tEnd);
   out[cursor++] = endPoint.x;
   out[cursor++] = endPoint.y;
   return out;

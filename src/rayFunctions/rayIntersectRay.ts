@@ -6,7 +6,7 @@ import { mat2dReset } from "../mat2dFunctions/mat2dReset";
 import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
 import { pointIntersectionResultReset } from "../pointIntersectionResultFunctions/pointIntersectionResultReset";
 import { IRay } from "../types";
-import { rayGetPointAt } from "./rayGetPointAt";
+import { rayGetPointAtT } from "./rayGetPointAtT";
 
 /**
  * Computes the intersection point between the two rays, if it exists.
@@ -53,7 +53,7 @@ export function rayIntersectRay(a: IRay, b: IRay, out = pointIntersectionResultA
     pointIntersectionResultReset(true, a.x0, a.y0, 0, -localB.x0 * localB.dirX, out);
   } else {
     const t0 = localB.x0 - (localB.dirX / localB.dirY) * localB.y0;
-    const intersectionPoint = rayGetPointAt(a, t0);
+    const intersectionPoint = rayGetPointAtT(a, t0);
     const t1 = _dot(b, intersectionPoint);
     pointIntersectionResultReset(true, intersectionPoint.x, intersectionPoint.y, t0, t1, out);
   }
