@@ -4,22 +4,20 @@ import { pointIntersectionResultReset } from "../../pointIntersectionResultFunct
 import { expectIntersectionEqualsApprox } from "../helpers";
 
 describe("pointIntersectionResultClone", () => {
-  it("should copy components", () => {
+  it("copies components", () => {
     expectIntersectionEqualsApprox(
       pointIntersectionResultClone(pointIntersectionResultReset(true, 4, 5, 6, 7)),
       pointIntersectionResultReset(true, 4, 5, 6, 7),
     );
   });
 
-  it("should return a new intersection if no `out`", () => {
+  it("returns a new intersection if no `out`", () => {
     const intersection = pointIntersectionResultReset(true, 4, 5, 6, 7);
-    const res = pointIntersectionResultClone(intersection);
-    expect(res).not.toBe(intersection);
+    expect(pointIntersectionResultClone(intersection)).not.toBe(intersection);
   });
 
-  it("should return `out` if given", () => {
+  it("returns `out` if given", () => {
     const out = pointIntersectionResultAlloc();
-    const res = pointIntersectionResultClone(pointIntersectionResultReset(true, 4, 5, 6, 7), out);
-    expect(res).toBe(out);
+    expect(pointIntersectionResultClone(pointIntersectionResultReset(true, 4, 5, 6, 7), out)).toBe(out);
   });
 });
