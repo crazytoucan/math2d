@@ -1,5 +1,5 @@
 import { vecDistanceSq } from "../../vecFunctions/vecDistanceSq";
-import { _vec } from "../helpers";
+import { _vecValues } from "../helpers";
 
 describe("vecDistanceSq", () => {
   it.each`
@@ -8,6 +8,6 @@ describe("vecDistanceSq", () => {
     ${[0, 4]}   | ${[0, -5]}  | ${81}
     ${[10, 10]} | ${[16, 18]} | ${100}
   `("$v0 $v1 => $result", ({ v0, v1, result }) => {
-    expect(vecDistanceSq(_vec(v0), _vec(v1))).toBe(result);
+    expect(vecDistanceSq(_vecValues(v0), _vecValues(v1))).toBe(result);
   });
 });

@@ -1,5 +1,5 @@
 import { rayIntersectSegment } from "../../rayFunctions/rayIntersectSegment";
-import { expectEqualsApprox, _ray, _segment } from "../helpers";
+import { expectEqualsApprox, _rayValues, _segmentValues } from "../helpers";
 
 const SQRT1_2 = Math.SQRT1_2;
 const SQRT2 = Math.SQRT2;
@@ -23,7 +23,7 @@ describe("rayIntersectSegment", () => {
     ${[0, 0, -1, 0]} | ${[5, 1, 1, 5]} | ${false}
     ${[0, 0, 0, -1]} | ${[5, 1, 1, 5]} | ${false}
   `("$ray $segment => $t0", ({ ray, segment, t0 }) => {
-    const actual = rayIntersectSegment(_ray(ray), _segment(segment));
+    const actual = rayIntersectSegment(_rayValues(ray), _segmentValues(segment));
     if (t0 === false) {
       expect(actual.exists).toBe(false);
       expect(actual.t0).toBe(NaN);
@@ -31,7 +31,7 @@ describe("rayIntersectSegment", () => {
       expect(actual.x).toBe(NaN);
       expect(actual.y).toBe(NaN);
     } else {
-      const _r = _ray(ray);
+      const _r = _rayValues(ray);
       expectEqualsApprox(actual.t0, t0);
       // TODO: test `t1`
       expectEqualsApprox(actual.x, _r.x0 + t0 * _r.dirX);
