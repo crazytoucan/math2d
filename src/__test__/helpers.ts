@@ -56,6 +56,13 @@ export function expectMat2dEqualsApprox(actual: IMat2d, expected: IMat2d) {
   expectEqualsApprox(actual.f, expected.f);
 }
 
+export function expectArrayEqualsApprox(actual: number[], expected: number[]) {
+  expect(actual.length).toBe(expected.length);
+  for (let i = 0; i < expected.length; i++) {
+    expectEqualsApprox(actual[i], expected[i]);
+  }
+}
+
 export function _mat2d(values: number[]) {
   expect(values).toHaveLength(6);
   const [a, b, c, d, e, f] = values;

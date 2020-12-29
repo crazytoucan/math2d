@@ -16,10 +16,14 @@ export function _polylineIntersectHelper<T>(
 
   const allIntersections: IPointIntersectionResult[] = [];
   const numSegments = polylineGetNumSegments(poly);
+  // prevent repeated intersections at the same vertex in successive segments
+  let lastIntersection = NaN;
+
   for (let i = 0; i < numSegments; i++) {
     const segment = polylineGetSegment(poly, i, tmp0);
     const out = doIntersectSegment(segment, value, tmp1);
-    if (out.exists) {
+    if (out.exists && lastIntersection !== out.t1) {
+      lastIntersection = out.t1;
       allIntersections.push(pointIntersectionResultReset(true, out.x, out.y, i + out.t0, out.t1));
     }
   }
