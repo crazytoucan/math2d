@@ -1,5 +1,5 @@
-import { ILine, IVec } from "../types";
+import { IRay, IVec } from "../types";
 
-export function _dot(line: ILine, point: IVec) {
-  return line.dirX * (point.x - line.x0) + line.dirY * (point.y - line.y0);
+export function _dot(ray: IRay, vec: IVec) {
+  return ray.dirX * (vec.x - ray.x0) + ray.dirY * (vec.y - ray.y0);
 }

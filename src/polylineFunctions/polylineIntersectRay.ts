@@ -22,7 +22,6 @@ import { IPolyline, IRay } from "../types";
  * @see {@link IPointIntersectionResult}
  * @see {@link IPolyline}
  * @see {@link lineIntersectPolyline}
- * @see {@link polylineIntersectLine}
  * @see {@link polylineIntersectSegment}
  */
 export function polylineIntersectRay(poly: IPolyline, ray: IRay) {

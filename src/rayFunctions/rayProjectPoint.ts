@@ -1,5 +1,5 @@
 import { _dot } from "../internal/_dot";
-import { ILine, IVec } from "../types";
+import { IRay, IVec } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
 import { vecReset } from "../vecFunctions/vecReset";
 
@@ -9,14 +9,11 @@ import { vecReset } from "../vecFunctions/vecReset";
  * This function basically computes the dot product of the relative vector from the line's initial
  * point to the given point.
  *
- * To find the closest point at which the line comes to the given point, which is the image
- * of the point projected onto the line, see {@link lineGetClosestPoint}.
- *
- * @param line line to inspect
+ * @param ray line to inspect
  * @param point point to project onto the line
  * @param out
  */
-export function lineProjectPoint(line: ILine, point: IVec, out = vecAlloc()) {
-  const t = _dot(line, point);
-  return vecReset(line.x0 + t * line.dirX, line.y0 + t * line.dirY, out);
+export function rayProjectPoint(ray: IRay, point: IVec, out = vecAlloc()) {
+  const t = _dot(ray, point);
+  return vecReset(ray.x0 + t * ray.dirX, ray.y0 + t * ray.dirY, out);
 }

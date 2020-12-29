@@ -22,7 +22,6 @@ import { IPolygon, ISegment } from "../types";
  * @see {@link IPointIntersectionResult}
  * @see {@link IPolygon}
  * @see {@link segmentIntersectPolygon}
- * @see {@link polygonIntersectLine}
  * @see {@link polygonIntersectRay}
  */
 export function polygonIntersectSegment(poly: IPolygon, segment: ISegment) {

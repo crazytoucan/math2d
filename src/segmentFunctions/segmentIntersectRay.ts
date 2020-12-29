@@ -29,7 +29,6 @@ import { IRay, ISegment } from "../types";
  * @param out
  * @see {@link IPointIntersectionResult}
  * @see {@link ISegment}
- * @see {@link segmentIntersectLine}
  * @see {@link segmentIntersectPolyline}
  * @see {@link segmentIntersectSegment}
  */

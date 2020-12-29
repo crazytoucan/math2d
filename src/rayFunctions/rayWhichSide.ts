@@ -1,9 +1,9 @@
-import { _dotPerp } from "../internal/_dotPerp";
 import { EPSILON } from "../internal/const";
-import { ILine, IVec } from "../types";
+import { _dotPerp } from "../internal/_dotPerp";
+import { IRay, IVec } from "../types";
 
 /**
- * Computes on which side of the line a given point lies.
+ * Computes on which side of the ray (as a _line_) a given point lies.
  *
  * This method returns one of four possible values:
  *
@@ -22,15 +22,12 @@ import { ILine, IVec } from "../types";
  *
  * If the point lies on the line, this function returns 0.
  *
- * To get the (unsigned) distance of the point to the line, see
- * {@link lineClosestDistanceToPoint}.
- *
- * @param line the line to inspect
+ * @param ray the line to inspect
  * @param point the reference point to check for closest distance
  * @see {@link lineGetClosestDistanceToPoint}
  * @see {@link lineWhichSide}
  */
-export function lineWhichSide(line: ILine, point: IVec) {
-  const d = _dotPerp(line, point);
+export function rayWhichSide(ray: IRay, point: IVec) {
+  const d = _dotPerp(ray, point);
   return Math.abs(d) < EPSILON ? 0 : Math.sign(d);
 }

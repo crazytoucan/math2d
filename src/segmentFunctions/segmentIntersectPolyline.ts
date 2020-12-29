@@ -25,7 +25,6 @@ import { segmentIntersectSegment } from "./segmentIntersectSegment";
  * @see {@link IPointIntersectionResult}
  * @see {@link ISegment}
  * @see {@link polylineIntersectSegment}
- * @see {@link segmentIntersectLine}
  * @see {@link segmentIntersectRay}
  * @see {@link segmentIntersectSegment}
  */

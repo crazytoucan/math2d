@@ -1,3 +1,4 @@
+import { RayMode } from "../const";
 import { IRay } from "../types";
 
 class Ray implements IRay {
@@ -5,6 +6,7 @@ class Ray implements IRay {
   public y0 = NaN;
   public dirX = NaN;
   public dirY = NaN;
+  public mode = RayMode.RAY;
 }
 
 /**

@@ -35,3 +35,8 @@ export const enum IntervalMode {
   CLOSED = 1,
   OPEN_ABOVE = 2,
 }
+
+export const enum RayMode {
+  RAY = 0,
+  LINE = 1,
+}
