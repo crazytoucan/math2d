@@ -1,3 +1,4 @@
+import { mat2dReset } from "../mat2dFunctions/mat2dReset";
 import { IBox, IMat2d, IPointIntersectionResult, IVec } from "../types";
 
 export const TEST_PRECISION_DIGITS = 10;
@@ -47,4 +48,9 @@ export function expectmat2dEqualsApprox(actual: IMat2d, expected: IMat2d) {
   expectEqualsApprox(actual.d, expected.d);
   expectEqualsApprox(actual.e, expected.e);
   expectEqualsApprox(actual.f, expected.f);
+}
+
+export function _mat2d(values: number[]) {
+  expect(values).toHaveLength(6);
+  return mat2dReset(...(values as [number, number, number, number, number, number]));
 }
