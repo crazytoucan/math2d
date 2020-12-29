@@ -1,21 +1,14 @@
 import { vecPerp } from "../../vecFunctions/vecPerp";
-import { vecReset } from "../../vecFunctions/vecReset";
-import { expectVecEqualsApprox } from "../helpers";
+import { expectVecEqualsApprox, _vec } from "../helpers";
 
 describe("vecPerp", () => {
-  it("⟂(4,5) => (-5,4)", () => {
-    expectVecEqualsApprox(vecPerp(vecReset(4, 5)), vecReset(-5, 4));
-  });
-
-  it("⟂(-2,-3) => (3,-2)", () => {
-    expectVecEqualsApprox(vecPerp(vecReset(-2, -3)), vecReset(3, -2));
-  });
-
-  it("⟂(0,0) => (0,0)", () => {
-    expectVecEqualsApprox(vecPerp(vecReset(0, 0)), vecReset(0, 0));
-  });
-
-  it("⟂(NaN,NaN) => (NaN,NaN)", () => {
-    expectVecEqualsApprox(vecPerp(vecReset(NaN, NaN)), vecReset(NaN, NaN));
+  it.each`
+    vec           | result
+    ${[4, 5]}     | ${[-5, 4]}
+    ${[-2, -3]}   | ${[3, -2]}
+    ${[0, 0]}     | ${[0, 0]}
+    ${[NaN, NaN]} | ${[NaN, NaN]}
+  `("$vec => $result", ({ vec, result }) => {
+    expectVecEqualsApprox(vecPerp(_vec(vec)), _vec(result));
   });
 });

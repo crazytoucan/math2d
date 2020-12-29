@@ -1,8 +1,11 @@
 import { vecDot } from "../../vecFunctions/vecDot";
-import { vecReset } from "../../vecFunctions/vecReset";
+import { _vec } from "../helpers";
 
 describe("vecDot", () => {
-  it("(2,4) • (3,10) => 46", () => {
-    expect(vecDot(vecReset(2, 4), vecReset(3, 10))).toBe(46);
+  it.each`
+    v0        | v1         | result
+    ${[2, 4]} | ${[3, 10]} | ${46}
+  `("$v0 $v1 => $result", ({ v0, v1, result }) => {
+    expect(vecDot(_vec(v0), _vec(v1))).toBe(result);
   });
 });

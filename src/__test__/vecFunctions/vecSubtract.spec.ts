@@ -1,9 +1,11 @@
-import { vecReset } from "../../vecFunctions/vecReset";
 import { vecSubtract } from "../../vecFunctions/vecSubtract";
-import { expectVecEqualsApprox } from "../helpers";
+import { expectVecEqualsApprox, _vec } from "../helpers";
 
 describe("vecSubtract", () => {
-  it("(4,5) - (20,30) => (-16,-25)", () => {
-    expectVecEqualsApprox(vecSubtract(vecReset(4, 5), vecReset(20, 30)), vecReset(-16, -25));
+  it.each`
+    v0        | v1          | result
+    ${[4, 5]} | ${[20, 30]} | ${[-16, -25]}
+  `("$v0 $v1 => $result", ({ v0, v1, result }) => {
+    expectVecEqualsApprox(vecSubtract(_vec(v0), _vec(v1)), _vec(result));
   });
 });
