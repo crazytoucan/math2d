@@ -1,5 +1,5 @@
 import { boxUnion } from "../../boxFunctions/boxUnion";
-import { expectBoxEqualsApprox2, _box } from "../helpers";
+import { expectBoxEqualsApprox, _box } from "../helpers";
 
 describe("boxUnion", () => {
   it.each`
@@ -12,6 +12,6 @@ describe("boxUnion", () => {
     ${[-Infinity, -Infinity, Infinity, Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${[-Infinity, -Infinity, Infinity, Infinity]}
     ${[Infinity, Infinity, -Infinity, -Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${[-0.5, -0.5, 0.5, 0.5]}
   `("$a $b => $result", ({ a, b, result }) => {
-    expectBoxEqualsApprox2(boxUnion(_box(a), _box(b)), _box(result));
+    expectBoxEqualsApprox(boxUnion(_box(a), _box(b)), _box(result));
   });
 });

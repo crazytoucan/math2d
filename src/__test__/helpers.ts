@@ -15,14 +15,7 @@ function expectEqualsApprox(actual: number, expected: number) {
   }
 }
 
-export function expectBoxEqualsApprox(box: IBox, minX: number, minY: number, maxX: number, maxY: number) {
-  expectEqualsApprox(box.minX, minX);
-  expectEqualsApprox(box.minY, minY);
-  expectEqualsApprox(box.maxX, maxX);
-  expectEqualsApprox(box.maxY, maxY);
-}
-
-export function expectBoxEqualsApprox2(box: IBox, expected: IBox) {
+export function expectBoxEqualsApprox(box: IBox, expected: IBox) {
   expectEqualsApprox(box.minX, expected.minX);
   expectEqualsApprox(box.minY, expected.minY);
   expectEqualsApprox(box.maxX, expected.maxX);
