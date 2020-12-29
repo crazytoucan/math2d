@@ -1,39 +1,21 @@
 import { boxAlloc } from "../../boxFunctions/boxAlloc";
 import { boxEnclosingPoints } from "../../boxFunctions/boxEnclosingPoints";
 import { vecReset } from "../../vecFunctions/vecReset";
-import { expectBoxEqualsApprox } from "../helpers";
+import { expectBoxEqualsApprox, expectBoxEqualsApprox2, _box, _vec } from "../helpers";
 
 describe("boxEnclosingPoints", () => {
-  it("no points => [Infinity, Infinity, -Infinity, -Infinity]", () => {
-    expectBoxEqualsApprox(boxEnclosingPoints([]), Infinity, Infinity, -Infinity, -Infinity);
-  });
-
-  it("(NaN, NaN) => [Infinity, Infinity, -Infinity, -Infinity]", () => {
-    expectBoxEqualsApprox(boxEnclosingPoints([vecReset(NaN, NaN)]), Infinity, Infinity, -Infinity, -Infinity);
-  });
-
-  it("(1, 2) => [1 2 1 2]", () => {
-    expectBoxEqualsApprox(boxEnclosingPoints([vecReset(1, 2)]), 1, 2, 1, 2);
-  });
-
-  it("(1, 2), (-1, -2) => [-1 -2 1 2]", () => {
-    expectBoxEqualsApprox(boxEnclosingPoints([vecReset(1, 2), vecReset(-1, -2)]), -1, -2, 1, 2);
-  });
-
-  it("(1, 2), (-1, -2), (2, -1) => [-1 -2 2 2]", () => {
-    expectBoxEqualsApprox(boxEnclosingPoints([vecReset(1, 2), vecReset(-1, -2), vecReset(2, -1)]), -1, -2, 2, 2);
-  });
-
-  it("(1, 2), (-1, -2), (2, -1), (-2, 1) => [-2 -2 2 2]", () => {
-    expectBoxEqualsApprox(boxEnclosingPoints([vecReset(1, 2), vecReset(-1, -2), vecReset(2, -1), vecReset(-2, 1)]), -2, -2, 2, 2);
-  });
-
-  it("(NaN, NaN), (-1, -2), (2, -1), (-2, 1) => [-2 -2 2 2]", () => {
-    expectBoxEqualsApprox(boxEnclosingPoints([vecReset(NaN, NaN), vecReset(-1, -2), vecReset(2, -1), vecReset(-2, 1)]), -2, -2, 2, 1);
-  });
-
-  it("(-3, NaN), (-1, -2), (2, -1), (-2, 1) => [-2 -2 2 2]", () => {
-    expectBoxEqualsApprox(boxEnclosingPoints([vecReset(-3, NaN), vecReset(-1, -2), vecReset(2, -1), vecReset(-2, 1)]), -3, -2, 2, 1);
+  it.each`
+    points                                      | result
+    ${[]}                                       | ${[Infinity, Infinity, -Infinity, -Infinity]}
+    ${[[NaN, NaN]]}                             | ${[Infinity, Infinity, -Infinity, -Infinity]}
+    ${[[1, 2]]}                                 | ${[1, 2, 1, 2]}
+    ${[[1, 2], [-1, -2]]}                       | ${[-1, -2, 1, 2]}
+    ${[[1, 2], [-1, -2], [2, -1]]}              | ${[-1, -2, 2, 2]}
+    ${[[1, 2], [-1, -2], [2, -1], [-2, 1]]}     | ${[-2, -2, 2, 2]}
+    ${[[NaN, NaN], [-1, -2], [2, -1], [-2, 1]]} | ${[-2, -2, 2, 1]}
+    ${[[-3, NaN], [-1, -2], [2, -1], [-2, 1]]}  | ${[-3, -2, 2, 1]}
+  `("$points => $result", ({ points, result }) => {
+    expectBoxEqualsApprox2(boxEnclosingPoints(points.map(_vec)), _box(result));
   });
 
   it("updates an `out` box if provided", () => {
