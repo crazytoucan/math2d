@@ -1,6 +1,7 @@
 import { boxReset } from "../boxFunctions/boxReset";
 import { mat2dReset } from "../mat2dFunctions/mat2dReset";
 import { IBox, IMat2d, IPointIntersectionResult, IVec } from "../types";
+import { vecReset } from "../vecFunctions/vecReset";
 
 export const TEST_PRECISION_DIGITS = 10;
 
@@ -61,4 +62,10 @@ export function _box(values: number[]) {
   expect(values).toHaveLength(4);
   const [minX, minY, maxX, maxY] = values;
   return boxReset(minX, minY, maxX, maxY);
+}
+
+export function _vec(values: number[]) {
+  expect(values).toHaveLength(2);
+  const [x, y] = values;
+  return vecReset(x, y);
 }
