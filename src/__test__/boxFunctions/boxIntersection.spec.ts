@@ -1,51 +1,17 @@
 import { boxIntersection } from "../../boxFunctions/boxIntersection";
-import { boxReset } from "../../boxFunctions/boxReset";
-import { expectBoxEqualsApprox } from "../helpers";
+import { expectBoxEqualsApprox, _box } from "../helpers";
 
 describe("boxIntersection", () => {
-  it("[-1 -1 +1 +1] ⋂ [-1 -1 +1 +1] => [-1 -1 +1 +1]", () => {
-    expectBoxEqualsApprox(boxIntersection(boxReset(-1, -1, 1, 1), boxReset(-1, -1, 1, 1)), -1, -1, 1, 1);
-  });
-
-  it("[-1 -1 +1 +1] ⋂ [-1 -1 +1 +2] => [-1 -1 +1 +1]", () => {
-    expectBoxEqualsApprox(boxIntersection(boxReset(-1, -1, 1, 1), boxReset(-1, -1, 1, 2)), -1, -1, 1, 1);
-  });
-
-  it("[-1 -1 +1 +1] ⋂ [0 0 0 0] => [0 0 0 0]", () => {
-    expectBoxEqualsApprox(boxIntersection(boxReset(-1, -1, 1, 1), boxReset(0, 0, 0, 0)), 0, 0, 0, 0);
-  });
-
-  it("[-1 -1 +1 +1] ⋂ [-0.5 -0.5 +0.5 +0.5] => true", () => {
-    expectBoxEqualsApprox(
-      boxIntersection(boxReset(-1, -1, 1, 1), boxReset(-0.5, -0.5, 0.5, 0.5)),
-      -0.5,
-      -0.5,
-      0.5,
-      0.5,
-    );
-  });
-
-  it("[-1 -1 +1 +1] ⋂ [+3 -1 +5 +1] => [+3 -1 +1 +1]", () => {
-    expectBoxEqualsApprox(boxIntersection(boxReset(-1, -1, 1, 1), boxReset(3, -1, 5, 1)), 3, -1, 1, 1);
-  });
-
-  it("[-∞ -∞ +∞ +∞] ⋂ [-0.5 -0.5 +0.5 +0.5] => [-0.5 -0.5 +0.5 +0.5]", () => {
-    expectBoxEqualsApprox(
-      boxIntersection(boxReset(-Infinity, -Infinity, Infinity, Infinity), boxReset(-0.5, -0.5, 0.5, 0.5)),
-      -0.5,
-      -0.5,
-      0.5,
-      0.5,
-    );
-  });
-
-  it("[+∞ +∞ -∞ -∞] ⋂ [-0.5 -0.5 +0.5 +0.5] => [+∞ +∞ -∞ -∞]", () => {
-    expectBoxEqualsApprox(
-      boxIntersection(boxReset(Infinity, Infinity, -Infinity, -Infinity), boxReset(-0.5, -0.5, 0.5, 0.5)),
-      Infinity,
-      Infinity,
-      -Infinity,
-      -Infinity,
-    );
+  it.each`
+    a                                             | b                         | result
+    ${[-1, -1, 1, 1]}                             | ${[-1, -1, 1, 1]}         | ${[-1, -1, 1, 1]}
+    ${[-1, -1, 1, 1]}                             | ${[-1, -1, 1, 2]}         | ${[-1, -1, 1, 1]}
+    ${[-1, -1, 1, 1]}                             | ${[0, 0, 0, 0]}           | ${[0, 0, 0, 0]}
+    ${[-1, -1, 1, 1]}                             | ${[-0.5, -0.5, 0.5, 0.5]} | ${[-0.5, -0.5, 0.5, 0.5]}
+    ${[-1, -1, 1, 1]}                             | ${[3, -1, 5, 1]}          | ${[3, -1, 1, 1]}
+    ${[-Infinity, -Infinity, Infinity, Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${[-0.5, -0.5, 0.5, 0.5]}
+    ${[Infinity, Infinity, -Infinity, -Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${[Infinity, Infinity, -Infinity, -Infinity]}
+  `("$a $b => $result", ({ a, b, result }) => {
+    expectBoxEqualsApprox(boxIntersection(_box(a), _box(b)), _box(result));
   });
 });

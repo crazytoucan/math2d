@@ -7,7 +7,7 @@ module.exports = {
   transformIgnorePatterns: ["/node_modules/(?!(lodash-es|@foundry|@workshop|@palantir|@acme|@gotham|@tron)/)"],
   globals: {
     "ts-jest": {
-      tsConfigFile: "tsconfig.jest.json",
+      tsconfig: "tsconfig.jest.json",
     },
   },
   verbose: true,

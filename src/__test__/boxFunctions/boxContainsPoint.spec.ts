@@ -1,38 +1,18 @@
 import { boxContainsPoint } from "../../boxFunctions/boxContainsPoint";
-import { boxReset } from "../../boxFunctions/boxReset";
 import { IntervalMode } from "../../const";
-import { vecReset } from "../../vecFunctions/vecReset";
+import { _box, _vec } from "../helpers";
 
 describe("boxContainsPoint", () => {
-  it("[-1 -1 +1 +1] ∋ (0, 0) => true", () => {
-    expect(boxContainsPoint(boxReset(-1, -1, 1, 1), vecReset(0, 0), IntervalMode.CLOSED)).toBe(true);
-  });
-
-  it("[-1 -1 +1 +1] ∋ (1, 0) => true", () => {
-    expect(boxContainsPoint(boxReset(-1, -1, 1, 1), vecReset(1, 0), IntervalMode.CLOSED)).toBe(true);
-  });
-
-  it("[-1 -1 +1 +1] ∋ (0, -2) => false", () => {
-    expect(boxContainsPoint(boxReset(-1, -1, 1, 1), vecReset(0, -2), IntervalMode.CLOSED)).toBe(false);
-  });
-
-  it("[-1 -1 +1 +1] ∋ (-2, -3) => false", () => {
-    expect(boxContainsPoint(boxReset(-1, -1, 1, 1), vecReset(-2, -3), IntervalMode.CLOSED)).toBe(false);
-  });
-
-  it("[-1 -1 +1 +1] ∋ (NaN, NaN) => false", () => {
-    expect(boxContainsPoint(boxReset(-1, -1, 1, 1), vecReset(NaN, NaN), IntervalMode.CLOSED)).toBe(false);
-  });
-
-  it("[-∞ -∞ +∞ +∞] ∋ (1, 1) => true", () => {
-    expect(
-      boxContainsPoint(boxReset(-Infinity, -Infinity, Infinity, Infinity), vecReset(1, 1), IntervalMode.CLOSED),
-    ).toBe(true);
-  });
-
-  it("[+∞ +∞ -∞ -∞] ∋ (1, 1) => true", () => {
-    expect(
-      boxContainsPoint(boxReset(Infinity, Infinity, -Infinity, -Infinity), vecReset(1, 1), IntervalMode.CLOSED),
-    ).toBe(false);
+  it.each`
+    box                                           | point         | imode                  | result
+    ${[-1, -1, 1, 1]}                             | ${[0, 0]}     | ${IntervalMode.CLOSED} | ${true}
+    ${[-1, -1, 1, 1]}                             | ${[1, 0]}     | ${IntervalMode.CLOSED} | ${true}
+    ${[-1, -1, 1, 1]}                             | ${[0, -2]}    | ${IntervalMode.CLOSED} | ${false}
+    ${[-1, -1, 1, 1]}                             | ${[-2, -3]}   | ${IntervalMode.CLOSED} | ${false}
+    ${[-1, -1, 1, 1]}                             | ${[NaN, NaN]} | ${IntervalMode.CLOSED} | ${false}
+    ${[-Infinity, -Infinity, Infinity, Infinity]} | ${[1, 1]}     | ${IntervalMode.CLOSED} | ${true}
+    ${[Infinity, Infinity, -Infinity, -Infinity]} | ${[1, 1]}     | ${IntervalMode.CLOSED} | ${false}
+  `("$box $point $imode => $result", ({ box, point, imode, result }) => {
+    expect(boxContainsPoint(_box(box), _vec(point), imode)).toBe(result);
   });
 });

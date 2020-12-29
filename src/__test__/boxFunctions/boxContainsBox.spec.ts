@@ -1,32 +1,16 @@
 import { boxContainsBox } from "../../boxFunctions/boxContainsBox";
-import { boxReset } from "../../boxFunctions/boxReset";
+import { _box } from "../helpers";
 
 describe("boxContainsBox", () => {
-  it("[-1 -1 +1 +1] ⊇ [-1 -1 +1 +1] => true", () => {
-    expect(boxContainsBox(boxReset(-1, -1, 1, 1), boxReset(-1, -1, 1, 1))).toBe(true);
-  });
-
-  it("[-1 -1 +1 +1] ⊇ [-1 -1 +1 +2] => false", () => {
-    expect(boxContainsBox(boxReset(-1, -1, 1, 1), boxReset(-1, -1, 1, 2))).toBe(false);
-  });
-
-  it("[-1 -1 +1 +1] ⊇ [0 0 0 0] => true", () => {
-    expect(boxContainsBox(boxReset(-1, -1, 1, 1), boxReset(0, 0, 0, 0))).toBe(true);
-  });
-
-  it("[-1 -1 +1 +1] ⊇ [-0.5 -0.5 +0.5 +0.5] => true", () => {
-    expect(boxContainsBox(boxReset(-1, -1, 1, 1), boxReset(-0.5, -0.5, 0.5, 0.5))).toBe(true);
-  });
-
-  it("[-∞ -∞ +∞ +∞] ⊇ [-0.5 -0.5 +0.5 +0.5] => true", () => {
-    expect(boxContainsBox(boxReset(-Infinity, -Infinity, Infinity, Infinity), boxReset(-0.5, -0.5, 0.5, 0.5))).toBe(
-      true,
-    );
-  });
-
-  it("[∞ ∞ -∞ -∞] ⊇ [-0.5 -0.5 +0.5 +0.5] => false", () => {
-    expect(boxContainsBox(boxReset(Infinity, Infinity, -Infinity, -Infinity), boxReset(-0.5, -0.5, 0.5, 0.5))).toBe(
-      false,
-    );
+  it.each`
+    a                                             | b                         | result
+    ${[-1, -1, 1, 1]}                             | ${[-1, -1, 1, 1]}         | ${true}
+    ${[-1, -1, 1, 1]}                             | ${[-1, -1, 1, 2]}         | ${false}
+    ${[-1, -1, 1, 1]}                             | ${[0, 0, 0, 0]}           | ${true}
+    ${[-1, -1, 1, 1]}                             | ${[-0.5, -0.5, 0.5, 0.5]} | ${true}
+    ${[-Infinity, -Infinity, Infinity, Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${true}
+    ${[Infinity, Infinity, -Infinity, -Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${false}
+  `("$a $b => $result", ({ a, b, result }) => {
+    expect(boxContainsBox(_box(a), _box(b))).toBe(result);
   });
 });
