@@ -1,4 +1,4 @@
-import { pointIntersectionResultAlloc } from "./pointIntersectionResultAlloc";
+import { intersectionResultAlloc } from "./intersectionResultAlloc";
 
 /**
  * Construct a new intersection given `exists`, `x`, `y`, `t0`, and `t1` values.
@@ -12,13 +12,13 @@ import { pointIntersectionResultAlloc } from "./pointIntersectionResultAlloc";
  *  if an intersection point was found.
  * @param out
  */
-export function pointIntersectionResultReset(
+export function intersectionResultReset(
   exists: boolean,
   x: number,
   y: number,
   t0: number,
   t1: number,
-  out = pointIntersectionResultAlloc(),
+  out = intersectionResultAlloc(),
 ) {
   out.exists = exists;
   out.x = x;

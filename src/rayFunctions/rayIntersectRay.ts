@@ -3,8 +3,8 @@ import { _dot } from "../internal/_dot";
 import { _intersectionDNE } from "../internal/_intersectionDNE";
 import { _rayTransformByOrtho } from "../internal/_rayTransformByOrtho";
 import { mat2dReset } from "../mat2dFunctions/mat2dReset";
-import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
-import { pointIntersectionResultReset } from "../pointIntersectionResultFunctions/pointIntersectionResultReset";
+import { intersectionResultAlloc } from "../intersectionResultFunctions/intersectionResultAlloc";
+import { intersectionResultReset } from "../intersectionResultFunctions/intersectionResultReset";
 import { IRay } from "../types";
 import { rayGetPointAtT } from "./rayGetPointAtT";
 
@@ -14,7 +14,7 @@ import { rayGetPointAtT } from "./rayGetPointAtT";
  * Finds the location at which the two rays meet. If the rays point away or "miss" each other,
  * or they are parallel, this function returns no intersection.
  *
- * The returned value is an {@link IPointIntersectionResult} object which will have have the
+ * The returned value is an {@link IIntersectionResult} object which will have have the
  * `exists` flag set to `true` iff an intersection was found. It additionally
  * has the following fields, if the intersection exists:
  *
@@ -29,7 +29,7 @@ import { rayGetPointAtT } from "./rayGetPointAtT";
  * @param b the second ray to intersect
  * @param out
  */
-export function rayIntersectRay(a: IRay, b: IRay, out = pointIntersectionResultAlloc()) {
+export function rayIntersectRay(a: IRay, b: IRay, out = intersectionResultAlloc()) {
   // Transform ray `b` by the same matrix that maps `a` to the x- basis.
   // We then compute the intersection (with the x-axis) in the transformed space.
   // This transform is equivalent to "translate by (-a.x0, -a.y0) then rotate by -a.angle".
@@ -50,12 +50,12 @@ export function rayIntersectRay(a: IRay, b: IRay, out = pointIntersectionResultA
   }
 
   if (isParallel) {
-    pointIntersectionResultReset(true, a.x0, a.y0, 0, -localB.x0 * localB.dirX, out);
+    intersectionResultReset(true, a.x0, a.y0, 0, -localB.x0 * localB.dirX, out);
   } else {
     const t0 = localB.x0 - (localB.dirX / localB.dirY) * localB.y0;
     const intersectionPoint = rayGetPointAtT(a, t0);
     const t1 = _dot(b, intersectionPoint);
-    pointIntersectionResultReset(true, intersectionPoint.x, intersectionPoint.y, t0, t1, out);
+    intersectionResultReset(true, intersectionPoint.x, intersectionPoint.y, t0, t1, out);
   }
 
   return out.t0 >= 0 && out.t1 >= 0 ? out : _intersectionDNE(out);
