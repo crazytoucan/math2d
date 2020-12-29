@@ -22,6 +22,13 @@ export function expectBoxEqualsApprox(box: IBox, minX: number, minY: number, max
   expectEqualsApprox(box.maxY, maxY);
 }
 
+export function expectBoxEqualsApprox2(box: IBox, expected: IBox) {
+  expectEqualsApprox(box.minX, expected.minX);
+  expectEqualsApprox(box.minY, expected.minY);
+  expectEqualsApprox(box.maxX, expected.maxX);
+  expectEqualsApprox(box.maxY, expected.maxY);
+}
+
 export function expectVecEqualsApprox(actual: IVec, expected: IVec) {
   expectEqualsApprox(actual.x, expected.x);
   expectEqualsApprox(actual.y, expected.y);
