@@ -4,19 +4,17 @@ import { vecReset } from "../../vecFunctions/vecReset";
 import { expectVecEqualsApprox } from "../helpers";
 
 describe("vecClone", () => {
-  it("should copy components", () => {
+  it("copies components", () => {
     expectVecEqualsApprox(vecClone(vecReset(4, 5)), vecReset(4, 5));
   });
 
-  it("should return a new vector if no `out`", () => {
+  it("returns a new vector if no `out`", () => {
     const vec = vecReset(4, 5);
-    const res = vecClone(vec);
-    expect(res).not.toBe(vec);
+    expect(vecClone(vec)).not.toBe(vec);
   });
 
-  it("should return `out` if given", () => {
+  it("returns `out` if given", () => {
     const out = vecAlloc();
-    const res = vecClone(vecReset(4, 5), out);
-    expect(res).toBe(out);
+    expect(vecClone(vecReset(4, 5), out)).toBe(out);
   });
 });
