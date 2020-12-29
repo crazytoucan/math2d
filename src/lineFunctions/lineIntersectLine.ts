@@ -1,7 +1,7 @@
+import { EPSILON } from "../internal/const";
 import { _dot } from "../internal/_dot";
 import { _intersectionDNE } from "../internal/_intersectionDNE";
 import { _lineTransformByOrtho } from "../internal/_lineTransformByOrtho";
-import { EPSILON } from "../internal/const";
 import { mat2dReset } from "../mat2dFunctions/mat2dReset";
 import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
 import { pointIntersectionResultReset } from "../pointIntersectionResultFunctions/pointIntersectionResultReset";
@@ -34,7 +34,16 @@ import { lineGetPointAt } from "./lineGetPointAt";
  * @see {@link lineIntersectSegment}
  */
 export function lineIntersectLine(a: ILine, b: ILine, out = pointIntersectionResultAlloc()) {
-  const transform = mat2dReset(a.dirX, -a.dirY, a.dirY, a.dirX, -a.x0, -a.y0);
+  // [dirX -dirY dirY dirX 0 0 ] [1 0 0 1 -x0 -y0]  = [ -x0 * dirX - y0 * dirY  / [x0 * dirY - y0 * dirX]
+  const transform = mat2dReset(
+    a.dirX,
+    -a.dirY,
+    a.dirY,
+    a.dirX,
+    -a.x0 * a.dirX - a.y0 * a.dirY,
+    a.x0 * a.dirY - a.y0 * a.dirX,
+  );
+
   const localB = _lineTransformByOrtho(b, transform);
   const isParallel = Math.abs(localB.dirY) < EPSILON;
 

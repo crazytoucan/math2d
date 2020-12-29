@@ -1,11 +1,13 @@
 import { boxReset } from "../boxFunctions/boxReset";
 import { mat2dReset } from "../mat2dFunctions/mat2dReset";
+import { rayReset } from "../rayFunctions/rayReset";
+import { segmentReset } from "../segmentFunctions/segmentReset";
 import { IBox, IMat2d, IPointIntersectionResult, IVec } from "../types";
 import { vecReset } from "../vecFunctions/vecReset";
 
 export const TEST_PRECISION_DIGITS = 10;
 
-function expectEqualsApprox(actual: number, expected: number) {
+export function expectEqualsApprox(actual: number, expected: number) {
   if (isNaN(expected)) {
     expect(actual).toBeNaN();
   } else if (isFinite(expected)) {
@@ -70,4 +72,17 @@ export function _vec(values: number[]) {
   expect(values).toHaveLength(2);
   const [x, y] = values;
   return vecReset(x, y);
+}
+
+export function _ray(values: number[]) {
+  expect(values).toHaveLength(4);
+  const [x0, y0, dirX, dirY] = values;
+  expectEqualsApprox(dirX * dirX + dirY * dirY, 1);
+  return rayReset(x0, y0, dirX, dirY);
+}
+
+export function _segment(values: number[]) {
+  expect(values).toHaveLength(4);
+  const [x0, y0, x1, y1] = values;
+  return segmentReset(x0, y0, x1, y1);
 }
