@@ -1,16 +1,13 @@
 import { vecGetLengthSq } from "../../vecFunctions/vecGetLengthSq";
-import { vecReset } from "../../vecFunctions/vecReset";
+import { _vec } from "../helpers";
 
 describe("vecGetLengthSq", () => {
-  it("(0,0) => 0", () => {
-    expect(vecGetLengthSq(vecReset(0, 0))).toBe(0);
-  });
-
-  it("(0,-4) => 16", () => {
-    expect(vecGetLengthSq(vecReset(0, -4))).toBe(16);
-  });
-
-  it("(12,16) => 400", () => {
-    expect(vecGetLengthSq(vecReset(12, 16))).toBe(400);
+  it.each`
+    vec         | result
+    ${[0, 0]}   | ${0}
+    ${[0, -4]}  | ${16}
+    ${[12, 16]} | ${400}
+  `("$vec => $result", ({ vec, result }) => {
+    expect(vecGetLengthSq(_vec(vec))).toBe(result);
   });
 });

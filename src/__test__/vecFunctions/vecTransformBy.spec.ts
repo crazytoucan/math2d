@@ -1,19 +1,13 @@
-import { mat2dIdentity } from "../../mat2dFunctions/mat2dIdentity";
-import { mat2dReset } from "../../mat2dFunctions/mat2dReset";
-import { vecReset } from "../../vecFunctions/vecReset";
 import { vecTransformBy } from "../../vecFunctions/vecTransformBy";
-import { expectVecEqualsApprox } from "../helpers";
+import { expectVecEqualsApprox, _mat2d, _vec } from "../helpers";
 
 describe("vecTransformBy", () => {
-  it("[1 0 0 1 0 0](3, 4) => (3, 4)", () => {
-    expectVecEqualsApprox(vecTransformBy(vecReset(3, 4), mat2dIdentity()), vecReset(3, 4));
-  });
-
-  it("[2 0 0 2 10 20](3, 4) => (16,28)", () => {
-    expectVecEqualsApprox(vecTransformBy(vecReset(3, 4), mat2dReset(2, 0, 0, 2, 10, 20)), vecReset(16, 28));
-  });
-
-  it("[0 -1 1 0 10 20](3, 4) => (14,17)", () => {
-    expectVecEqualsApprox(vecTransformBy(vecReset(3, 4), mat2dReset(0, -1, 1, 0, 10, 20)), vecReset(14, 17));
+  it.each`
+    vec       | mat                      | result
+    ${[3, 4]} | ${[1, 0, 0, 1, 0, 0]}    | ${[3, 4]}
+    ${[3, 4]} | ${[2, 0, 0, 2, 10, 20]}  | ${[16, 28]}
+    ${[3, 4]} | ${[0, -1, 1, 0, 10, 20]} | ${[14, 17]}
+  `("$vec $mat => $result", ({ vec, mat, result }) => {
+    expectVecEqualsApprox(vecTransformBy(_vec(vec), _mat2d(mat)), _vec(result));
   });
 });

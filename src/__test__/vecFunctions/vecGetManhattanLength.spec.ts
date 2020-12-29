@@ -1,16 +1,13 @@
 import { vecGetManhattanLength } from "../../vecFunctions/vecGetManhattanLength";
-import { vecReset } from "../../vecFunctions/vecReset";
+import { _vec } from "../helpers";
 
 describe("vecGetManhattanLength", () => {
-  it("(0,0) => 0", () => {
-    expect(vecGetManhattanLength(vecReset(0, 0))).toBe(0);
-  });
-
-  it("(0,-4) => 4", () => {
-    expect(vecGetManhattanLength(vecReset(0, -4))).toBe(4);
-  });
-
-  it("(-12,16) => 28", () => {
-    expect(vecGetManhattanLength(vecReset(-12, 16))).toBe(28);
+  it.each`
+    vec         | result
+    ${[0, 0]}   | ${0}
+    ${[0, -4]}  | ${4}
+    ${[12, 16]} | ${28}
+  `("$vec => $result", ({ vec, result }) => {
+    expect(vecGetManhattanLength(_vec(vec))).toBe(result);
   });
 });

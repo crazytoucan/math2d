@@ -1,16 +1,13 @@
 import { vecManhattanDistance } from "../../vecFunctions/vecManhattanDistance";
-import { vecReset } from "../../vecFunctions/vecReset";
+import { _vec } from "../helpers";
 
 describe("vecManhattanDistance", () => {
-  it("(4,6), (4,6) => 0", () => {
-    expect(vecManhattanDistance(vecReset(4, 6), vecReset(4, 6))).toBe(0);
-  });
-
-  it("(0,-4), (0,6) => 10", () => {
-    expect(vecManhattanDistance(vecReset(0, -4), vecReset(0, 6))).toBe(10);
-  });
-
-  it("(-4,6), (6,20) => 24", () => {
-    expect(vecManhattanDistance(vecReset(-4, 6), vecReset(6, 20))).toBe(24);
+  it.each`
+    v0         | v1         | result
+    ${[4, 6]}  | ${[4, 6]}  | ${0}
+    ${[0, -4]} | ${[0, 6]}  | ${10}
+    ${[-4, 6]} | ${[6, 20]} | ${24}
+  `("$v0 $v1 => $result", ({ v0, v1, result }) => {
+    expect(vecManhattanDistance(_vec(v0), _vec(v1))).toBe(result);
   });
 });
