@@ -34,7 +34,9 @@ import { lineGetPointAt } from "./lineGetPointAt";
  * @see {@link lineIntersectSegment}
  */
 export function lineIntersectLine(a: ILine, b: ILine, out = pointIntersectionResultAlloc()) {
-  // [dirX -dirY dirY dirX 0 0 ] [1 0 0 1 -x0 -y0]  = [ -x0 * dirX - y0 * dirY  / [x0 * dirY - y0 * dirX]
+  // Transform ray `b` by the same matrix that maps `a` to the x- basis. This allows us
+  // to compute where the resulting ray `b'` crosses the x-axis as an intersection with the ray `a'`.
+  // This transform is equivalent to "translate by (-a.x0, -a.y0) then rotate by -a.angle".
   const transform = mat2dReset(
     a.dirX,
     -a.dirY,
