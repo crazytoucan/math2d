@@ -1,3 +1,4 @@
+import { boxReset } from "../boxFunctions/boxReset";
 import { mat2dReset } from "../mat2dFunctions/mat2dReset";
 import { IBox, IMat2d, IPointIntersectionResult, IVec } from "../types";
 
@@ -52,5 +53,12 @@ export function expectMat2dEqualsApprox(actual: IMat2d, expected: IMat2d) {
 
 export function _mat2d(values: number[]) {
   expect(values).toHaveLength(6);
-  return mat2dReset(...(values as [number, number, number, number, number, number]));
+  const [a, b, c, d, e, f] = values;
+  return mat2dReset(a, b, c, d, e, f);
+}
+
+export function _box(values: number[]) {
+  expect(values).toHaveLength(4);
+  const [minX, minY, maxX, maxY] = values;
+  return boxReset(minX, minY, maxX, maxY);
 }
