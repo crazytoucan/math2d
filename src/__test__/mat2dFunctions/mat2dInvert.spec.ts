@@ -1,5 +1,5 @@
 import { mat2dInvert } from "../../mat2dFunctions/mat2dInvert";
-import { expectmat2dEqualsApprox, _mat2d } from "../helpers";
+import { expectMat2dEqualsApprox, _mat2d } from "../helpers";
 
 describe("mat2dInvert", () => {
   it.each`
@@ -12,6 +12,6 @@ describe("mat2dInvert", () => {
     ${[1, 0, 1, 0, 6, 8]}       | ${[NaN, NaN, NaN, NaN, NaN, NaN]}
     ${[3, 12, -4, -16, 0, 0]}   | ${[NaN, NaN, NaN, NaN, NaN, NaN]}
   `("$input => $output", ({ input, output }) => {
-    expectmat2dEqualsApprox(mat2dInvert(_mat2d(input)), _mat2d(output));
+    expectMat2dEqualsApprox(mat2dInvert(_mat2d(input)), _mat2d(output));
   });
 });

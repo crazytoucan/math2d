@@ -41,7 +41,7 @@ export function expectIntersectionDNE(intersection: IPointIntersectionResult) {
   expect(intersection.t1).toBeNaN();
 }
 
-export function expectmat2dEqualsApprox(actual: IMat2d, expected: IMat2d) {
+export function expectMat2dEqualsApprox(actual: IMat2d, expected: IMat2d) {
   expectEqualsApprox(actual.a, expected.a);
   expectEqualsApprox(actual.b, expected.b);
   expectEqualsApprox(actual.c, expected.c);
