@@ -197,40 +197,16 @@ export interface IBox {
 }
 
 /**
- * An alias for `number[]`. Data type to represent a polygon in the plane,
- * as an interleaved sequence of vertex coordinates.
- *
- * The `IPolygon` type is just an alias for an array of number values. For example,
- * a polygon with vertices v0, v1, v2, ..., vn is represented in Math2d as the array:
- *
- * ```
- * [v0x, v0y, v1x, v1y, v2x, v2y, ..., vnx, vny]
- * ```
- *
- * Unlike the similar {@link IPolyline} type, a polygon's perimeter is always interpreted as a closed shape.
- *
- * Where relevant, a polygon with _N_ sides is parameterized according to _t_,
- * where integer values of _t_ correspond to the polygon's
- * vertices in order, and smooth values of _t_ therein interpolate linearly between adjacent vertices, with an
- * additional segment connecting the last vertex to the first.
- *
- * Math2d chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of
- * IVecs, for performance and more compact storage.
- */
-export type IPolygon = number[];
-
-/**
  * An alias for `number[]`. Data type to represent a sequence of connected line segments in the plane,
  * as an interleaved array of vertex coordinates.
  *
  * The `IPolyline` type is just an alias for an array of number values. For example,
  * a polyline connecting the points p0, p1, p2, ..., pn in space is represented in Math2d as the array:
+ * A polyline is not necessary closed.
  *
  * ```
  * [p0x, p0y, p1x, p1y, p2x, p2y, ..., pnx, pny]
  * ```
- *
- * Unlike the similar {@link IPolygon} type, a polyline is not necessary closed.
  *
  * Where relevant, a polyline with _N_ points is parameterized according to _t_ with linear interpolation between
  * adjacent points by index. For example, _t_ = 3.5 represents the midpoint between the index 3 and index 4 point
