@@ -36,11 +36,13 @@ export function expectIntersectionEqualsApprox(actual: IPointIntersectionResult,
 }
 
 export function expectIntersectionDNE(intersection: IPointIntersectionResult) {
-  expect(intersection.exists).toBe(false);
-  expect(intersection.x).toBeNaN();
-  expect(intersection.y).toBeNaN();
-  expect(intersection.t0).toBeNaN();
-  expect(intersection.t1).toBeNaN();
+  expect(intersection).toEqual({
+    exists: false,
+    x: NaN,
+    y: NaN,
+    t0: NaN,
+    t1: NaN,
+  });
 }
 
 export function expectMat2dEqualsApprox(actual: IMat2d, expected: IMat2d) {

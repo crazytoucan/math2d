@@ -2,7 +2,7 @@ import { pointIntersectionResultAlloc } from "../../pointIntersectionResultFunct
 import { pointIntersectionResultReset } from "../../pointIntersectionResultFunctions/pointIntersectionResultReset";
 
 describe("pointIntersectionResultReset", () => {
-  it("should copy components", () => {
+  it("copies components", () => {
     const res = pointIntersectionResultReset(true, 4, 5, 6, 7);
     expect(res.exists).toBe(true);
     expect(res.x).toBe(4);
@@ -11,9 +11,8 @@ describe("pointIntersectionResultReset", () => {
     expect(res.t1).toBe(7);
   });
 
-  it("should return `out` if given", () => {
+  it("returns `out` if given", () => {
     const out = pointIntersectionResultAlloc();
-    const res = pointIntersectionResultReset(true, 4, 5, 6, 7, out);
-    expect(res).toBe(out);
+    expect(pointIntersectionResultReset(true, 4, 5, 6, 7, out)).toBe(out);
   });
 });
