@@ -1,45 +1,17 @@
-import { boxReset } from "../../boxFunctions/boxReset";
 import { boxUnion } from "../../boxFunctions/boxUnion";
-import { expectBoxEqualsApprox } from "../helpers";
+import { expectBoxEqualsApprox2, _box } from "../helpers";
 
 describe("boxUnion", () => {
-  it("[-1 -1 +1 +1] ∪ [-1 -1 +1 +1] => [-1 -1 +1 +1]", () => {
-    expectBoxEqualsApprox(boxUnion(boxReset(-1, -1, 1, 1), boxReset(-1, -1, 1, 1)), -1, -1, 1, 1);
-  });
-
-  it("[-1 -1 +1 +1] ∪ [-1 -1 +1 +2] => [-1 -1 +1 +2]", () => {
-    expectBoxEqualsApprox(boxUnion(boxReset(-1, -1, 1, 1), boxReset(-1, -1, 1, 2)), -1, -1, 1, 2);
-  });
-
-  it("[-1 -1 +1 +1] ∪ [0 0 0 0] => [-1 -1 +1 +1]", () => {
-    expectBoxEqualsApprox(boxUnion(boxReset(-1, -1, 1, 1), boxReset(0, 0, 0, 0)), -1, -1, 1, 1);
-  });
-
-  it("[-1 -1 +1 +1] ∪ [-0.5 -0.5 +0.5 +0.5] => [-1 -1 +1 +1]", () => {
-    expectBoxEqualsApprox(boxUnion(boxReset(-1, -1, 1, 1), boxReset(-0.5, -0.5, 0.5, 0.5)), -1, -1, 1, 1);
-  });
-
-  it("[-1 -1 +1 +1] ∪ [+3 -1 +5 +1] => [-1 -1 +5 +1]", () => {
-    expectBoxEqualsApprox(boxUnion(boxReset(-1, -1, 1, 1), boxReset(3, -1, 5, 1)), -1, -1, 5, 1);
-  });
-
-  it("[-∞ -∞ +∞ +∞] ∪ [-0.5 -0.5 +0.5 +0.5] => [-∞ -∞ +∞ +∞]", () => {
-    expectBoxEqualsApprox(
-      boxUnion(boxReset(-Infinity, -Infinity, Infinity, Infinity), boxReset(-0.5, -0.5, 0.5, 0.5)),
-      -Infinity,
-      -Infinity,
-      Infinity,
-      Infinity,
-    );
-  });
-
-  it("[+∞ +∞ -∞ -∞] ∪ [-0.5 -0.5 +0.5 +0.5] => [-0.5 -0.5 +0.5 +0.5]", () => {
-    expectBoxEqualsApprox(
-      boxUnion(boxReset(Infinity, Infinity, -Infinity, -Infinity), boxReset(-0.5, -0.5, 0.5, 0.5)),
-      -0.5,
-      -0.5,
-      0.5,
-      0.5,
-    );
+  it.each`
+    a                                             | b                         | result
+    ${[-1, -1, 1, 1]}                             | ${[-1, -1, 1, 1]}         | ${[-1, -1, 1, 1]}
+    ${[-1, -1, 1, 1]}                             | ${[-1, -1, 1, 2]}         | ${[-1, -1, 1, 2]}
+    ${[-1, -1, 1, 1]}                             | ${[0, 0, 0, 0]}           | ${[-1, -1, 1, 1]}
+    ${[-1, -1, 1, 1]}                             | ${[-0.5, -0.5, 0.5, 0.5]} | ${[-1, -1, 1, 1]}
+    ${[-1, -1, 1, 1]}                             | ${[3, -1, 5, 1]}          | ${[-1, -1, 5, 1]}
+    ${[-Infinity, -Infinity, Infinity, Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${[-Infinity, -Infinity, Infinity, Infinity]}
+    ${[Infinity, Infinity, -Infinity, -Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${[-0.5, -0.5, 0.5, 0.5]}
+  `("$a $b => $result", ({ a, b, result }) => {
+    expectBoxEqualsApprox2(boxUnion(_box(a), _box(b)), _box(result));
   });
 });
