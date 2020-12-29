@@ -1,16 +1,12 @@
-import { mat2dReset } from "../../mat2dFunctions/mat2dReset";
 import { mat2dTranslate } from "../../mat2dFunctions/mat2dTranslate";
-import { expectMat2dEqualsApprox } from "../helpers";
+import { expectMat2dEqualsApprox, _mat2d } from "../helpers";
 
 describe("mat2dTranslate", () => {
-  it("[1 2 3 4 5 6], 7, 4 => [1 2 3 4 12 10]", () => {
-    expectMat2dEqualsApprox(mat2dTranslate(mat2dReset(1, 2, 3, 4, 5, 6), 7, 4), mat2dReset(1, 2, 3, 4, 12, 10));
-  });
-
-  it("[1 2 3 4 5 6] NaN, NaN => [1 2 3 4 NaN NaN]", () => {
-    expectMat2dEqualsApprox(
-      mat2dTranslate(mat2dReset(1, 2, 3, 4, 5, 6), NaN, NaN),
-      mat2dReset(1, 2, 3, 4, NaN, NaN),
-    );
+  it.each`
+    mat                   | x      | y      | result
+    ${[1, 2, 3, 4, 5, 6]} | ${7}   | ${4}   | ${[1, 2, 3, 4, 12, 10]}
+    ${[1, 2, 3, 4, 5, 6]} | ${NaN} | ${NaN} | ${[1, 2, 3, 4, NaN, NaN]}
+  `("$mat $x $y => $result", ({ mat, x, y, result }) => {
+    expectMat2dEqualsApprox(mat2dTranslate(_mat2d(mat), x, y), _mat2d(result));
   });
 });

@@ -1,14 +1,12 @@
-import { mat2dIdentity } from "../../mat2dFunctions/mat2dIdentity";
-import { mat2dReset } from "../../mat2dFunctions/mat2dReset";
 import { mat2dScale } from "../../mat2dFunctions/mat2dScale";
-import { expectMat2dEqualsApprox } from "../helpers";
+import { expectMat2dEqualsApprox, _mat2d } from "../helpers";
 
 describe("mat2dScale", () => {
-  it("[1 2 3 4 5 6] scale 7 => [7 14 21 28 35 42]", () => {
-    expectMat2dEqualsApprox(mat2dScale(mat2dReset(1, 2, 3, 4, 5, 6), 7), mat2dReset(7, 14, 21, 28, 35, 42));
-  });
-
-  it("[1 0 0 1 0 0] scale NaN => [NaN NaN NaN NaN NaN NaN]", () => {
-    expectMat2dEqualsApprox(mat2dScale(mat2dIdentity(), NaN), mat2dReset(NaN, NaN, NaN, NaN, NaN, NaN));
+  it.each`
+    mat                   | s      | result
+    ${[1, 2, 3, 4, 5, 6]} | ${7}   | ${[7, 14, 21, 28, 35, 42]}
+    ${[1, 0, 0, 1, 0, 0]} | ${NaN} | ${[NaN, NaN, NaN, NaN, NaN, NaN]}
+  `("$mat $s => $result", ({ mat, s, result }) => {
+    expectMat2dEqualsApprox(mat2dScale(_mat2d(mat), s), _mat2d(result));
   });
 });
