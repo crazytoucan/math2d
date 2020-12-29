@@ -9,8 +9,10 @@
     "build:commonjs": "tsc",
     "build:esm": "tsc -p tsconfig-esm.json",
     "benchmarks": "tsc -p benchmarks && node benchmarks/lib/benchmarks/run.js",
-    "lint": "tslint --project tsconfig.json",
+    "clean": "rm -rf esm lib",
     "docs": "scripts/generate-typedoc-data.sh",
+    "lint": "tslint --project tsconfig.json",
+    "prepack": "yarn clean && yarn build",
     "test": "jest"
   },
   "devDependencies": {
