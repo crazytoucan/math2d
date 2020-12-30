@@ -1,6 +1,6 @@
-import { IBox } from "../types";
+import { Box } from "../types";
 
-class Box implements IBox {
+class _Box implements Box {
   public minX = NaN;
   public minY = NaN;
   public maxX = NaN;
@@ -28,6 +28,6 @@ class Box implements IBox {
  *    const result = polygonGetBounds(existingObj.geometry, TMP0);
  *  }
  */
-export function boxAlloc(): IBox {
-  return new Box();
+export function boxAlloc(): Box {
+  return new _Box();
 }

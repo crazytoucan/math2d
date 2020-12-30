@@ -2,7 +2,7 @@ import { boxReset } from "../boxFunctions/boxReset";
 import { mat2dReset } from "../mat2dFunctions/mat2dReset";
 import { rayReset } from "../rayFunctions/rayReset";
 import { segmentReset } from "../segmentFunctions/segmentReset";
-import { IBox, IMat2d, IIntersectionResult, IVec } from "../types";
+import { Box, Mat2d, IntersectionResult, Vec } from "../types";
 import { vecReset } from "../vecFunctions/vecReset";
 
 export const TEST_PRECISION_DIGITS = 10;
@@ -17,19 +17,19 @@ export function expectEqualsApprox(actual: number, expected: number) {
   }
 }
 
-export function expectBoxEqualsApprox(box: IBox, expected: IBox) {
+export function expectBoxEqualsApprox(box: Box, expected: Box) {
   expectEqualsApprox(box.minX, expected.minX);
   expectEqualsApprox(box.minY, expected.minY);
   expectEqualsApprox(box.maxX, expected.maxX);
   expectEqualsApprox(box.maxY, expected.maxY);
 }
 
-export function expectVecEqualsApprox(actual: IVec, expected: IVec) {
+export function expectVecEqualsApprox(actual: Vec, expected: Vec) {
   expectEqualsApprox(actual.x, expected.x);
   expectEqualsApprox(actual.y, expected.y);
 }
 
-export function expectIntersectionEqualsApprox(actual: IIntersectionResult, expected: IIntersectionResult) {
+export function expectIntersectionEqualsApprox(actual: IntersectionResult, expected: IntersectionResult) {
   expect(actual.exists).toBe(expected.exists);
   expectEqualsApprox(actual.x, expected.x);
   expectEqualsApprox(actual.y, expected.y);
@@ -37,7 +37,7 @@ export function expectIntersectionEqualsApprox(actual: IIntersectionResult, expe
   expectEqualsApprox(actual.t1, expected.t1);
 }
 
-export function expectIntersectionDNE(intersection: IIntersectionResult) {
+export function expectIntersectionDNE(intersection: IntersectionResult) {
   expect(intersection).toEqual({
     exists: false,
     x: NaN,
@@ -47,7 +47,7 @@ export function expectIntersectionDNE(intersection: IIntersectionResult) {
   });
 }
 
-export function expectMat2dEqualsApprox(actual: IMat2d, expected: IMat2d) {
+export function expectMat2dEqualsApprox(actual: Mat2d, expected: Mat2d) {
   expectEqualsApprox(actual.a, expected.a);
   expectEqualsApprox(actual.b, expected.b);
   expectEqualsApprox(actual.c, expected.c);

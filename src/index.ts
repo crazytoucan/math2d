@@ -62,7 +62,7 @@ export { segmentNearestDistanceSqToPoint } from "./segmentFunctions/segmentNeare
 export { segmentReset } from "./segmentFunctions/segmentReset";
 export { segmentReverse } from "./segmentFunctions/segmentReverse";
 export { _segment } from "./segmentFunctions/_segment";
-export { IBox, IIntersectionResult, IMat2d, IPolyline, IRay, ISegment, IVec } from "./types";
+export { Box, IntersectionResult, Mat2d, Polyline, Ray, Segment, Vec } from "./types";
 export { vecAdd } from "./vecFunctions/vecAdd";
 export { vecAlloc } from "./vecFunctions/vecAlloc";
 export { vecClone } from "./vecFunctions/vecClone";

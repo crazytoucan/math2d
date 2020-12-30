@@ -1,4 +1,4 @@
-import { ISegment } from "../types";
+import { Segment } from "../types";
 
 /**
  * Computes the length of the line segment
@@ -9,7 +9,7 @@ import { ISegment } from "../types";
  * __see {@link segmentGetLengthSq}
  * __see {@link vecDistance}
  */
-export function segmentGetLength(segment: ISegment) {
+export function segmentGetLength(segment: Segment) {
   const dx = segment.x1 - segment.x0;
   const dy = segment.y1 - segment.y0;
   return Math.sqrt(dx * dx + dy * dy);

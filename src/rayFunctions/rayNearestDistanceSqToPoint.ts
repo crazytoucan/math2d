@@ -1,7 +1,7 @@
 import { _dot } from "../internal/_dot";
 import { nearestPointResultAlloc } from "../nearestPointResultFunctions/nearestPointResultAlloc";
 import { nearestPointResultReset } from "../nearestPointResultFunctions/nearestPointResultReset";
-import { IRay, IVec } from "../types";
+import { Ray, Vec } from "../types";
 import { vecDistanceSq } from "../vecFunctions/vecDistanceSq";
 import { rayGetPointAtT } from "./rayGetPointAtT";
 
@@ -26,7 +26,7 @@ import { rayGetPointAtT } from "./rayGetPointAtT";
  * __see {@link lineProjectPoint}
  * __see {@link lineNearestDistanceToPoint}
  */
-export function rayNearestDistanceSqToPoint(ray: IRay, point: IVec, out = nearestPointResultAlloc()) {
+export function rayNearestDistanceSqToPoint(ray: Ray, point: Vec, out = nearestPointResultAlloc()) {
   const t = Math.max(0, _dot(ray, point));
   const closest = rayGetPointAtT(ray, t);
   const distanceSq = vecDistanceSq(closest, point);

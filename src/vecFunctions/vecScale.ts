@@ -1,4 +1,4 @@
-import { IVec } from "../types";
+import { Vec } from "../types";
 import { vecAlloc } from "./vecAlloc";
 import { vecReset } from "./vecReset";
 
@@ -11,6 +11,6 @@ import { vecReset } from "./vecReset";
  * __see {@link vecAdd}
  * __see {@link vecTransformBy}
  */
-export function vecScale(v: IVec, scalar: number, out = vecAlloc()) {
+export function vecScale(v: Vec, scalar: number, out = vecAlloc()) {
   return vecReset(v.x * scalar, v.y * scalar, out);
 }

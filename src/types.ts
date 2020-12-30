@@ -11,7 +11,7 @@
  * __see {@link vecAlloc}
  * __see {@link vecReset}
  */
-export interface IVec {
+export interface Vec {
   /** x-coordinate of the vector */
   x: number;
 
@@ -34,7 +34,7 @@ export interface IVec {
  * __see {@link segmentAlloc}
  * __see {@link segmentReset}
  */
-export interface ISegment {
+export interface Segment {
   /**
    * x-coordinate of the starting vertex of the segment.
    */
@@ -66,7 +66,7 @@ export interface ISegment {
  * __see {@link rayAlloc}
  * __see {@link rayReset}
  */
-export interface IRay {
+export interface Ray {
   /**
    * x-coordinate of the ray's initial point
    */
@@ -115,7 +115,7 @@ export interface IRay {
  * __see {@link mat2dAlloc}
  * __see {@link mat2dReset}
  */
-export interface IMat2d {
+export interface Mat2d {
   /**
    * Col 1, row 1 component, usually called `m11` in a 4x4 graphics matrix.
    */
@@ -172,7 +172,7 @@ export interface IMat2d {
  * __see {@link boxAlloc}
  * __see {@link boxReset}
  */
-export interface IBox {
+export interface Box {
   /**
    * Min-X boundary of this box, typically the "left" edge.
    */
@@ -216,7 +216,7 @@ export interface IBox {
  * Math2d chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of
  * IVecs, for performance and more compact storage.
  */
-export type IPolyline = number[];
+export type Polyline = number[];
 
 /**
  * Data type to hold the result of a point intersection between two pieces of geometry.
@@ -232,7 +232,7 @@ export type IPolyline = number[];
  * __see {@link segmentIntersectRay}
  * __see {@link segmentIntersectSegment}
  */
-export interface IIntersectionResult {
+export interface IntersectionResult {
   /**
    * Whether an intersection was found. If the return value of a function is `false` for the `exists` field,
    * the other Intersection values will be set to `NaN` and should not be interpreted.
@@ -265,7 +265,7 @@ export interface IIntersectionResult {
 /**
  * Data type to hold the result of find the nearest point on a piece of geometry.
  */
-export interface INearestPointResult {
+export interface NearestPointResult {
   /**
    * The x-coordinate of the nearest point.
    */

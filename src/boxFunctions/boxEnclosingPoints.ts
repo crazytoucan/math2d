@@ -1,4 +1,4 @@
-import { IVec } from "../types";
+import { Vec } from "../types";
 import { boxAlloc } from "./boxAlloc";
 import { boxReset } from "./boxReset";
 
@@ -11,7 +11,7 @@ import { boxReset } from "./boxReset";
  * @param points the points to contain
  * @param out
  */
-export function boxEnclosingPoints(points: IVec[], out = boxAlloc()) {
+export function boxEnclosingPoints(points: Vec[], out = boxAlloc()) {
   let minX: number = Infinity;
   let minY: number = Infinity;
   let maxX: number = -Infinity;

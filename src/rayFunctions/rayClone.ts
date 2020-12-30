@@ -1,4 +1,4 @@
-import { IRay } from "../types";
+import { Ray } from "../types";
 import { rayAlloc } from "./rayAlloc";
 import { rayReset } from "./rayReset";
 
@@ -8,6 +8,6 @@ import { rayReset } from "./rayReset";
  * @param ray source ray from which values should be copied
  * @param out
  */
-export function rayClone(ray: IRay, out = rayAlloc()) {
+export function rayClone(ray: Ray, out = rayAlloc()) {
   return rayReset(ray.x0, ray.y0, ray.dirX, ray.dirY, out);
 }

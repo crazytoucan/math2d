@@ -1,6 +1,6 @@
-import { IRay } from "../types";
+import { Ray } from "../types";
 
-class Ray implements IRay {
+class _Ray implements Ray {
   public x0 = NaN;
   public y0 = NaN;
   public dirX = NaN;
@@ -28,6 +28,6 @@ class Ray implements IRay {
  *    const result = rayLookAt(existingObj.source, existingObj.target, TMP0);
  *  }
  */
-export function rayAlloc(): IRay {
-  return new Ray();
+export function rayAlloc(): Ray {
+  return new _Ray();
 }

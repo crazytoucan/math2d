@@ -1,5 +1,5 @@
 import { _clamp } from "../internal/_clamp";
-import { IPolyline } from "../types";
+import { Polyline } from "../types";
 import { polylineAlloc } from "./polylineAlloc";
 import { polylineGetNumSegments } from "./polylineGetNumSegments";
 import { polylineGetPointAtT } from "./polylineGetPointAtT";
@@ -27,7 +27,7 @@ import { polylineGetPointAtT } from "./polylineGetPointAtT";
  *  to the allowed domain `[0, poly.length/2 - 1]`.
  * @param out
  */
-export function polylineTrim(poly: IPolyline, tStart: number, tEnd: number, out = polylineAlloc()) {
+export function polylineTrim(poly: Polyline, tStart: number, tEnd: number, out = polylineAlloc()) {
   if (poly.length === 0) {
     out.length = 0;
     return;

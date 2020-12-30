@@ -1,4 +1,4 @@
-import { IMat2d } from "../types";
+import { Mat2d } from "../types";
 import { mat2dAlloc } from "./mat2dAlloc";
 import { mat2dReset } from "./mat2dReset";
 
@@ -30,7 +30,7 @@ import { mat2dReset } from "./mat2dReset";
  * __see {@link IMatrix}
  * __see {@link vecTransformBy}
  */
-export function mat2dMulMat2d(m1: IMat2d, m2: IMat2d, out = mat2dAlloc()) {
+export function mat2dMulMat2d(m1: Mat2d, m2: Mat2d, out = mat2dAlloc()) {
   const a = m1.a * m2.a + m1.c * m2.b;
   const b = m1.b * m2.a + m1.d * m2.b;
   const c = m1.a * m2.c + m1.c * m2.d;

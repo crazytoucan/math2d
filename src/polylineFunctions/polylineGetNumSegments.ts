@@ -1,4 +1,4 @@
-import { IPolyline } from "../types";
+import { Polyline } from "../types";
 
 /**
  * Returns the number of individual line segments in this polyline
@@ -9,6 +9,6 @@ import { IPolyline } from "../types";
  *
  * @param poly
  */
-export function polylineGetNumSegments(poly: IPolyline) {
+export function polylineGetNumSegments(poly: Polyline) {
   return Math.max(0, poly.length / 2 - 1);
 }

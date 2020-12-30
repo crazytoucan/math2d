@@ -1,4 +1,4 @@
-import { IVec } from "../types";
+import { Vec } from "../types";
 
 /**
  * Computes the two-dimensional cross product of the two vectors.
@@ -15,6 +15,6 @@ import { IVec } from "../types";
  * @param v the vector to cross with the first
  * __see {@link vecDot}
  */
-export function vecCross(u: IVec, v: IVec) {
+export function vecCross(u: Vec, v: Vec) {
   return u.x * v.y - u.y * v.x;
 }

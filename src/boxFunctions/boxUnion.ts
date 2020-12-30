@@ -1,4 +1,4 @@
-import { IBox } from "../types";
+import { Box } from "../types";
 import { boxAlloc } from "./boxAlloc";
 import { boxReset } from "./boxReset";
 
@@ -12,7 +12,7 @@ import { boxReset } from "./boxReset";
  * @param b
  * @param out
  */
-export function boxUnion(a: IBox, b: IBox, out = boxAlloc()) {
+export function boxUnion(a: Box, b: Box, out = boxAlloc()) {
   return boxReset(
     Math.min(a.minX, b.minX),
     Math.min(a.minY, b.minY),

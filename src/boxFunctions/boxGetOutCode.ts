@@ -1,6 +1,6 @@
 // tslint:disable:no-bitwise
 import { Out } from "../const";
-import { IBox, IVec } from "../types";
+import { Box, Vec } from "../types";
 
 /**
  * Determines where the specified point lies in relation to the given box.
@@ -21,7 +21,7 @@ import { IBox, IVec } from "../types";
  * __see Out.MIN_Y
  * __see Out.MAX_Y
  */
-export function boxGetOutCode(box: IBox, point: IVec) {
+export function boxGetOutCode(box: Box, point: Vec) {
   let out = 0;
   if (point.x < box.minX) {
     out |= Out.MIN_X;

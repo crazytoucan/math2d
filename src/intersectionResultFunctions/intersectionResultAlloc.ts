@@ -1,6 +1,6 @@
-import { IIntersectionResult } from "../types";
+import { IntersectionResult } from "../types";
 
-class IntersectionResult implements IIntersectionResult {
+class IntersectionResult implements IntersectionResult {
   public exists = false;
   public x = NaN;
   public y = NaN;
@@ -13,6 +13,6 @@ class IntersectionResult implements IIntersectionResult {
  * This is useful to hold the result of math2d function calls in performance
  * critical workflows.
  */
-export function intersectionResultAlloc(): IIntersectionResult {
+export function intersectionResultAlloc(): IntersectionResult {
   return new IntersectionResult();
 }

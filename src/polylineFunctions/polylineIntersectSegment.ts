@@ -1,6 +1,6 @@
 import { _polylineIntersectHelper } from "../internal/_polylineIntersectHelper";
 import { segmentIntersectSegment } from "../segmentFunctions/segmentIntersectSegment";
-import { IPolyline, ISegment } from "../types";
+import { Polyline, Segment } from "../types";
 
 /**
  * Computes all locations at which a polyline crosses a given line segment.
@@ -24,6 +24,6 @@ import { IPolyline, ISegment } from "../types";
  * __see {@link segmentIntersectPolyline}
  * __see {@link polylineIntersectRay}
  */
-export function polylineIntersectSegment(poly: IPolyline, segment: ISegment) {
+export function polylineIntersectSegment(poly: Polyline, segment: Segment) {
   return _polylineIntersectHelper(poly, segment, segmentIntersectSegment);
 }

@@ -1,4 +1,4 @@
-import { IMat2d, IPolyline } from "../types";
+import { Mat2d, Polyline } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
 import { vecReset } from "../vecFunctions/vecReset";
 import { vecTransformBy } from "../vecFunctions/vecTransformBy";
@@ -18,7 +18,7 @@ import { polylineAlloc } from "./polylineAlloc";
  * __see {@link vecTransformBy}
  * __see {@link Imat2d}
  */
-export function polylineTransformBy(poly: IPolyline, mat: IMat2d, out = polylineAlloc()) {
+export function polylineTransformBy(poly: Polyline, mat: Mat2d, out = polylineAlloc()) {
   const tmp0 = vecAlloc();
   if (out.length !== poly.length) {
     out.length = poly.length;

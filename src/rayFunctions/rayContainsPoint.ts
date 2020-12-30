@@ -1,7 +1,7 @@
 import { EPSILON } from "../internal/const";
 import { _dot } from "../internal/_dot";
 import { _dotPerp } from "../internal/_dotPerp";
-import { IRay, IVec } from "../types";
+import { Ray, Vec } from "../types";
 
 /**
  * Determines if the point is on the ray
@@ -15,7 +15,7 @@ import { IRay, IVec } from "../types";
  * __see {@link lineContainsPoint}
  * __see {@link lineWhichSide}
  */
-export function rayContainsPoint(ray: IRay, vec: IVec) {
+export function rayContainsPoint(ray: Ray, vec: Vec) {
   const t = _dot(ray, vec);
   if (t < -EPSILON) {
     return false;

@@ -2,7 +2,7 @@ import { _lerp } from "../internal/_lerp";
 import { EPSILON_SQ } from "../internal/const";
 import { nearestPointResultAlloc } from "../nearestPointResultFunctions/nearestPointResultAlloc";
 import { nearestPointResultReset } from "../nearestPointResultFunctions/nearestPointResultReset";
-import { ISegment, IVec } from "../types";
+import { Segment, Vec } from "../types";
 import { vecCross } from "../vecFunctions/vecCross";
 import { vecDot } from "../vecFunctions/vecDot";
 import { vecGetLengthSq } from "../vecFunctions/vecGetLengthSq";
@@ -19,7 +19,7 @@ import { vecReset } from "../vecFunctions/vecReset";
  * __see {@link ISegment}
  * __see {@link INearestPointResult}
  */
-export function segmentNearestDistanceSqToPoint(segment: ISegment, point: IVec, out = nearestPointResultAlloc()) {
+export function segmentNearestDistanceSqToPoint(segment: Segment, point: Vec, out = nearestPointResultAlloc()) {
   const segVector = vecReset(segment.x1 - segment.x0, segment.y1 - segment.y0);
   const pointVector = vecReset(point.x - segment.x0, point.y - segment.y0);
 

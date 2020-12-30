@@ -1,5 +1,5 @@
 import { _lerp } from "../internal/_lerp";
-import { IVec } from "../types";
+import { Vec } from "../types";
 import { vecAlloc } from "./vecAlloc";
 import { vecReset } from "./vecReset";
 
@@ -12,6 +12,6 @@ import { vecReset } from "./vecReset";
  *  the second vector `v`
  * @param out
  */
-export function vecLerp(u: IVec, v: IVec, r: number, out = vecAlloc()) {
+export function vecLerp(u: Vec, v: Vec, r: number, out = vecAlloc()) {
   return vecReset(_lerp(u.x, v.x, r), _lerp(u.y, v.y, r), out);
 }

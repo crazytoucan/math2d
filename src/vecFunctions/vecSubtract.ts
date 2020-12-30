@@ -1,4 +1,4 @@
-import { IVec } from "../types";
+import { Vec } from "../types";
 import { vecAlloc } from "./vecAlloc";
 import { vecReset } from "./vecReset";
 
@@ -12,6 +12,6 @@ import { vecReset } from "./vecReset";
  * __see {@link vecScale}
  * __see {@link vecTransformBy}
  */
-export function vecSubtract(u: IVec, v: IVec, out = vecAlloc()) {
+export function vecSubtract(u: Vec, v: Vec, out = vecAlloc()) {
   return vecReset(u.x - v.x, u.y - v.y, out);
 }

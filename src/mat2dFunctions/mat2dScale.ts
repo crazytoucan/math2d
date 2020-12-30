@@ -1,4 +1,4 @@
-import { IMat2d } from "../types";
+import { Mat2d } from "../types";
 import { mat2dAlloc } from "./mat2dAlloc";
 import { mat2dReset } from "./mat2dReset";
 
@@ -16,6 +16,6 @@ import { mat2dReset } from "./mat2dReset";
  * @param out
  * __see {@link mat2dMulMat2d}
  */
-export function mat2dScale(mat: IMat2d, scale: number, out = mat2dAlloc()) {
+export function mat2dScale(mat: Mat2d, scale: number, out = mat2dAlloc()) {
   return mat2dReset(scale * mat.a, scale * mat.b, scale * mat.c, scale * mat.d, scale * mat.e, scale * mat.f, out);
 }

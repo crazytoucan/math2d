@@ -1,4 +1,4 @@
-import { IMat2d } from "../types";
+import { Mat2d } from "../types";
 import { mat2dAlloc } from "./mat2dAlloc";
 import { mat2dReset } from "./mat2dReset";
 
@@ -19,7 +19,7 @@ import { mat2dReset } from "./mat2dReset";
  * __see {@link mat2dFromRotation}
  * __see {@link mat2dMulMat2d}
  */
-export function mat2dRotate(mat: IMat2d, theta: number, out = mat2dAlloc()) {
+export function mat2dRotate(mat: Mat2d, theta: number, out = mat2dAlloc()) {
   const cos = Math.cos(theta);
   const sin = Math.sin(theta);
   return mat2dReset(

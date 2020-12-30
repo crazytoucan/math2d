@@ -1,4 +1,4 @@
-import { IPolyline } from "../types";
+import { Polyline } from "../types";
 import { polylineGetNumSegments } from "./polylineGetNumSegments";
 import { polylineGetSegmentLength } from "./polylineGetSegmentLength";
 
@@ -17,7 +17,7 @@ import { polylineGetSegmentLength } from "./polylineGetSegmentLength";
  * __see {@link IPolyline}
  * __see {@link polylineGetTAtDistance}
  */
-export function polylineGetDistanceAtT(polyline: IPolyline, t: number) {
+export function polylineGetDistanceAtT(polyline: Polyline, t: number) {
   const numSegments = polylineGetNumSegments(polyline);
   let traveled = 0;
   for (let i = 0; i < numSegments; i++) {

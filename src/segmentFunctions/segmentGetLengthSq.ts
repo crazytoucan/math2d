@@ -1,4 +1,4 @@
-import { ISegment } from "../types";
+import { Segment } from "../types";
 
 /**
  * Computes the squared length of the line segment
@@ -9,7 +9,7 @@ import { ISegment } from "../types";
  * __see {@link segmentGetLength}
  * __see {@link vecDistanceSq}
  */
-export function segmentGetLengthSq(segment: ISegment) {
+export function segmentGetLengthSq(segment: Segment) {
   const dx = segment.x1 - segment.x0;
   const dy = segment.y1 - segment.y0;
   return dx * dx + dy * dy;

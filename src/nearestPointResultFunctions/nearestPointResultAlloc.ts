@@ -1,6 +1,6 @@
-import { INearestPointResult } from "../types";
+import { NearestPointResult } from "../types";
 
-class NearestPointResult implements INearestPointResult {
+class _NearestPointResult implements NearestPointResult {
   public x = NaN;
   public y = NaN;
   public t = NaN;
@@ -12,6 +12,6 @@ class NearestPointResult implements INearestPointResult {
  * This is useful to hold the result of math2d function calls in performance
  * critical workflows.
  */
-export function nearestPointResultAlloc(): INearestPointResult {
-  return new NearestPointResult();
+export function nearestPointResultAlloc(): NearestPointResult {
+  return new _NearestPointResult();
 }

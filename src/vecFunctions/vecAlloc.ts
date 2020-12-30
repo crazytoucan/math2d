@@ -1,6 +1,6 @@
-import { IVec } from "../types";
+import { Vec } from "../types";
 
-class Vec implements IVec {
+class Vec implements Vec {
   public x = NaN;
   public y = NaN;
 }
@@ -26,6 +26,6 @@ class Vec implements IVec {
  *    const result = vecNormalize(existingObj.velocity, TMP0);
  *  }
  */
-export function vecAlloc(): IVec {
+export function vecAlloc(): Vec {
   return new Vec();
 }

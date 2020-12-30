@@ -3,18 +3,18 @@ import { intersectionResultReset } from "../intersectionResultFunctions/intersec
 import { polylineGetNumSegments } from "../polylineFunctions/polylineGetNumSegments";
 import { polylineGetSegment } from "../polylineFunctions/polylineGetSegment";
 import { segmentAlloc } from "../segmentFunctions/segmentAlloc";
-import { IIntersectionResult, IPolyline, ISegment } from "../types";
+import { IntersectionResult, Polyline, Segment } from "../types";
 
 
 export function _polylineIntersectHelper<T>(
-  poly: IPolyline,
+  poly: Polyline,
   value: T,
-  doIntersectSegment: (segment: ISegment, value: T, out: IIntersectionResult) => IIntersectionResult,
+  doIntersectSegment: (segment: Segment, value: T, out: IntersectionResult) => IntersectionResult,
 ) {
   const tmp0 = segmentAlloc();
   const tmp1 = intersectionResultAlloc();
 
-  const allIntersections: IIntersectionResult[] = [];
+  const allIntersections: IntersectionResult[] = [];
   const numSegments = polylineGetNumSegments(poly);
   // prevent repeated intersections at the same vertex in successive segments
   let lastIntersection = NaN;

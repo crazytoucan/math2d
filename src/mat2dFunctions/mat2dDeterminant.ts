@@ -1,4 +1,4 @@
-import { IMat2d } from "../types";
+import { Mat2d } from "../types";
 
 /**
  * Computes the determinant of the affine matrix
@@ -7,6 +7,6 @@ import { IMat2d } from "../types";
  *
  * @param mat matrix to take determinant of
  */
-export function mat2dDeterminant(mat: IMat2d) {
+export function mat2dDeterminant(mat: Mat2d) {
   return mat.a * mat.d - mat.b * mat.c;
 }

@@ -1,6 +1,6 @@
 import { _polylineIntersectHelper } from "../internal/_polylineIntersectHelper";
 import { _swapAndReorderIntersections } from "../internal/_swapAndReorderIntersections";
-import { IPolyline, ISegment } from "../types";
+import { Polyline, Segment } from "../types";
 import { segmentIntersectSegment } from "./segmentIntersectSegment";
 
 /**
@@ -28,6 +28,6 @@ import { segmentIntersectSegment } from "./segmentIntersectSegment";
  * __see {@link segmentIntersectRay}
  * __see {@link segmentIntersectSegment}
  */
-export function segmentIntersectPolyline(segment: ISegment, poly: IPolyline) {
+export function segmentIntersectPolyline(segment: Segment, poly: Polyline) {
   return _swapAndReorderIntersections(_polylineIntersectHelper(poly, segment, segmentIntersectSegment));
 }

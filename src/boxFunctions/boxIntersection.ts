@@ -1,4 +1,4 @@
-import { IBox } from "../types";
+import { Box } from "../types";
 import { boxAlloc } from "./boxAlloc";
 import { boxReset } from "./boxReset";
 
@@ -17,7 +17,7 @@ import { boxReset } from "./boxReset";
  * @param out
  * __see {@link boxUnion}
  */
-export function boxIntersection(a: IBox, b: IBox, out = boxAlloc()) {
+export function boxIntersection(a: Box, b: Box, out = boxAlloc()) {
   return boxReset(
     Math.max(a.minX, b.minX),
     Math.max(a.minY, b.minY),

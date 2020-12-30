@@ -1,4 +1,4 @@
-import { IBox } from "../types";
+import { Box } from "../types";
 import { boxAlloc } from "./boxAlloc";
 import { boxReset } from "./boxReset";
 
@@ -13,6 +13,6 @@ import { boxReset } from "./boxReset";
  * @param amount amount to expand from each edge. Is allowed to be negative.
  * @param out
  */
-export function boxGrow(box: IBox, amount: number, out = boxAlloc()) {
+export function boxGrow(box: Box, amount: number, out = boxAlloc()) {
   return boxReset(box.minX - amount, box.minY - amount, box.maxX + amount, box.maxY + amount, out);
 }
