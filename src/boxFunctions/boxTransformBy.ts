@@ -1,7 +1,7 @@
 import { _arrayReset } from "../internal/_arrayReset";
 import { polylineGetBounds } from "../polylineFunctions/polylineGetBounds";
 import { polylineTransformBy } from "../polylineFunctions/polylineTransformBy";
-import { IBox, IMat2d, IPolyline } from "../types";
+import { Box, Mat2d, Polyline } from "../types";
 import { boxAlloc } from "./boxAlloc";
 
 /**
@@ -17,8 +17,8 @@ import { boxAlloc } from "./boxAlloc";
  * @param mat the affine transformation to apply to the box
  * @param out
  */
-export function boxTransformBy(box: IBox, mat: IMat2d, out = boxAlloc()) {
-  const tmp = [] as IPolyline;
+export function boxTransformBy(box: Box, mat: Mat2d, out = boxAlloc()) {
+  const tmp = [] as Polyline;
   _arrayReset(tmp, box.minX, box.minY, box.minX, box.maxY, box.maxX, box.maxY, box.maxX, box.minY);
   polylineTransformBy(tmp, mat, tmp);
   return polylineGetBounds(tmp, out);

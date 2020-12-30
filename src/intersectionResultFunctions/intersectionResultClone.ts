@@ -1,4 +1,4 @@
-import { IIntersectionResult } from "../types";
+import { IntersectionResult } from "../types";
 import { intersectionResultAlloc } from "./intersectionResultAlloc";
 import { intersectionResultReset } from "./intersectionResultReset";
 
@@ -8,7 +8,7 @@ import { intersectionResultReset } from "./intersectionResultReset";
  * @param out
  */
 export function intersectionResultClone(
-  intersection: IIntersectionResult,
+  intersection: IntersectionResult,
   out = intersectionResultAlloc(),
 ) {
   return intersectionResultReset(

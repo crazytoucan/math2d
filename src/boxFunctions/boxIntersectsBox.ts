@@ -1,5 +1,5 @@
 import { IntervalMode } from "../const";
-import { IBox } from "../types";
+import { Box } from "../types";
 
 /**
  * Determines whether two boxes overlap.
@@ -13,7 +13,7 @@ import { IBox } from "../types";
  * @param b second box to check for overlap
  * @param mode whether to include the boundaries of the boxes
  */
-export function boxIntersectsBox(a: IBox, b: IBox, mode: IntervalMode) {
+export function boxIntersectsBox(a: Box, b: Box, mode: IntervalMode) {
   switch (mode) {
     case IntervalMode.OPEN:
     case IntervalMode.OPEN_ABOVE:

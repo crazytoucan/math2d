@@ -2,7 +2,7 @@ import { nearestPointResultAlloc } from "../nearestPointResultFunctions/nearestP
 import { nearestPointResultReset } from "../nearestPointResultFunctions/nearestPointResultReset";
 import { segmentAlloc } from "../segmentFunctions/segmentAlloc";
 import { segmentNearestDistanceSqToPoint } from "../segmentFunctions/segmentNearestDistanceSqToPoint";
-import { IPolyline, IVec } from "../types";
+import { Polyline, Vec } from "../types";
 import { polylineGetNumSegments } from "./polylineGetNumSegments";
 import { polylineGetSegment } from "./polylineGetSegment";
 
@@ -22,7 +22,7 @@ import { polylineGetSegment } from "./polylineGetSegment";
  * __see {@link IPolyline}
  * __see {@link INearestPointResult}
  */
-export function polylineNearestDistanceSqToPoint(poly: IPolyline, point: IVec, out = nearestPointResultAlloc()) {
+export function polylineNearestDistanceSqToPoint(poly: Polyline, point: Vec, out = nearestPointResultAlloc()) {
   const tmp0 = segmentAlloc();
   const tmp1 = nearestPointResultAlloc();
 

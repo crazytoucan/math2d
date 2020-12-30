@@ -1,4 +1,4 @@
-import { IBox } from "../types";
+import { Box } from "../types";
 import { boxAlloc } from "./boxAlloc";
 import { boxReset } from "./boxReset";
 
@@ -10,6 +10,6 @@ import { boxReset } from "./boxReset";
  * @param ty the amount to translate in the y direction
  * @param out
  */
-export function boxTranslate(box: IBox, tx: number, ty: number, out = boxAlloc()) {
+export function boxTranslate(box: Box, tx: number, ty: number, out = boxAlloc()) {
   return boxReset(box.minX + tx, box.minY + ty, box.maxX + tx, box.maxY + ty, out);
 }

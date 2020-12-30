@@ -1,4 +1,4 @@
-import { IPolyline } from "../types";
+import { Polyline } from "../types";
 import { polylineGetNumSegments } from "./polylineGetNumSegments";
 import { polylineGetSegmentLength } from "./polylineGetSegmentLength";
 
@@ -7,7 +7,7 @@ import { polylineGetSegmentLength } from "./polylineGetSegmentLength";
  *
  * @param poly
  */
-export function polylineGetLength(poly: IPolyline) {
+export function polylineGetLength(poly: Polyline) {
   const numSegments = polylineGetNumSegments(poly);
   let length = 0;
   for (let i = 0; i < numSegments; i++) {

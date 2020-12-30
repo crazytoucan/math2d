@@ -1,4 +1,4 @@
-import { IMat2d, IVec } from "../types";
+import { Mat2d, Vec } from "../types";
 import { vecAlloc } from "./vecAlloc";
 import { vecReset } from "./vecReset";
 
@@ -22,6 +22,6 @@ import { vecReset } from "./vecReset";
  * __see {@link Imat2d}
  * __see {@link vecAdd}
  */
-export function vecTransformBy(v: IVec, mat: IMat2d, out = vecAlloc()) {
+export function vecTransformBy(v: Vec, mat: Mat2d, out = vecAlloc()) {
   return vecReset(mat.a * v.x + mat.c * v.y + mat.e, mat.b * v.x + mat.d * v.y + mat.f, out);
 }

@@ -1,4 +1,4 @@
-import { IBox } from "../types";
+import { Box } from "../types";
 import { boxAlloc } from "./boxAlloc";
 import { boxReset } from "./boxReset";
 
@@ -9,6 +9,6 @@ import { boxReset } from "./boxReset";
  * @param scalar the value by which to multiply all of the box's components
  * @param out
  */
-export function boxScale(box: IBox, scalar: number, out = boxAlloc()) {
+export function boxScale(box: Box, scalar: number, out = boxAlloc()) {
   return boxReset(box.minX * scalar, box.minY * scalar, box.maxX * scalar, box.maxY * scalar, out);
 }

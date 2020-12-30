@@ -1,4 +1,4 @@
-import { IVec } from "../types";
+import { Vec } from "../types";
 
 /**
  * Computes the squared straight-line length (i.e. square of the Euclidean norm) of the given vector.
@@ -7,6 +7,6 @@ import { IVec } from "../types";
  *
  * @param v the vector whose squared length should be measured
  */
-export function vecGetLengthSq(v: IVec) {
+export function vecGetLengthSq(v: Vec) {
   return v.x * v.x + v.y * v.y;
 }

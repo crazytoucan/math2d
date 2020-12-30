@@ -1,4 +1,4 @@
-import { IMat2d } from "../types";
+import { Mat2d } from "../types";
 import { mat2dAlloc } from "./mat2dAlloc";
 import { mat2dReset } from "./mat2dReset";
 
@@ -16,6 +16,6 @@ import { mat2dReset } from "./mat2dReset";
  * __see {@link mat2dFromTranslation}
  * __see {@link mat2dMulMat2d}
  */
-export function mat2dTranslate(mat: IMat2d, tx: number, ty: number, out = mat2dAlloc()) {
+export function mat2dTranslate(mat: Mat2d, tx: number, ty: number, out = mat2dAlloc()) {
   return mat2dReset(mat.a, mat.b, mat.c, mat.d, mat.e + tx, mat.f + ty, out);
 }

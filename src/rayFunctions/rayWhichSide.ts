@@ -1,6 +1,6 @@
 import { EPSILON } from "../internal/const";
 import { _dotPerp } from "../internal/_dotPerp";
-import { IRay, IVec } from "../types";
+import { Ray, Vec } from "../types";
 
 /**
  * Computes on which side of the ray (as a _line_) a given point lies.
@@ -27,7 +27,7 @@ import { IRay, IVec } from "../types";
  * __see {@link lineGetClosestDistanceToPoint}
  * __see {@link lineWhichSide}
  */
-export function rayWhichSide(ray: IRay, point: IVec) {
+export function rayWhichSide(ray: Ray, point: Vec) {
   const d = _dotPerp(ray, point);
   return Math.abs(d) < EPSILON ? 0 : Math.sign(d);
 }

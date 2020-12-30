@@ -1,4 +1,4 @@
-import { IBox } from "../types";
+import { Box } from "../types";
 import { boxAlloc } from "./boxAlloc";
 import { boxReset } from "./boxReset";
 
@@ -17,6 +17,6 @@ import { boxReset } from "./boxReset";
  *  const TMP_BOX = boxAlloc();
  *  boxClone(myBox, TMP_BOX);
  */
-export function boxClone(box: IBox, out = boxAlloc()) {
+export function boxClone(box: Box, out = boxAlloc()) {
   return boxReset(box.minX, box.minY, box.maxX, box.maxY, out);
 }

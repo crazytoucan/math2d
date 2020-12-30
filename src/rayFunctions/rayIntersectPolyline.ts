@@ -1,7 +1,7 @@
 import { _polylineIntersectHelper } from "../internal/_polylineIntersectHelper";
 import { _swapAndReorderIntersections } from "../internal/_swapAndReorderIntersections";
 import { segmentIntersectRay } from "../segmentFunctions/segmentIntersectRay";
-import { IPolyline, IRay } from "../types";
+import { Polyline, Ray } from "../types";
 
 /**
  * Computes all locations at which a ray crosses a given polyline.
@@ -24,6 +24,6 @@ import { IPolyline, IRay } from "../types";
  * __see {@link lineIntersectPolyline}
  * __see {@link polylineIntersectSegment}
  */
-export function rayIntersectPolyline(ray: IRay, poly: IPolyline) {
+export function rayIntersectPolyline(ray: Ray, poly: Polyline) {
   return _swapAndReorderIntersections(_polylineIntersectHelper(poly, ray, segmentIntersectRay));
 }

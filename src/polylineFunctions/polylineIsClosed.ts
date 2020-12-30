@@ -1,5 +1,5 @@
 import { EPSILON_SQ } from "../internal/const";
-import { IPolyline } from "../types";
+import { Polyline } from "../types";
 
 /**
  * Returns whether the polyline's last vertex equals its first
@@ -10,7 +10,7 @@ import { IPolyline } from "../types";
  *
  * @param poly
  */
-export function polylineIsClosed(poly: IPolyline) {
+export function polylineIsClosed(poly: Polyline) {
   if (poly.length === 0) {
     return true;
   } else {

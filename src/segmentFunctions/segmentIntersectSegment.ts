@@ -3,7 +3,7 @@ import { _intersectionDNE } from "../internal/_intersectionDNE";
 import { _lookAt } from "../internal/_lookAt";
 import { intersectionResultAlloc } from "../intersectionResultFunctions/intersectionResultAlloc";
 import { rayIntersectSegment } from "../rayFunctions/rayIntersectSegment";
-import { ISegment } from "../types";
+import { Segment } from "../types";
 import { segmentGetLength } from "./segmentGetLength";
 
 /**
@@ -33,7 +33,7 @@ import { segmentGetLength } from "./segmentGetLength";
  * __see {@link segmentIntersectPolyline}
  * __see {@link segmentIntersectRay}
  */
-export function segmentIntersectSegment(a: ISegment, b: ISegment, out = intersectionResultAlloc()) {
+export function segmentIntersectSegment(a: Segment, b: Segment, out = intersectionResultAlloc()) {
   const aRay = _lookAt(a.x0, a.y0, a.x1, a.y1);
   rayIntersectSegment(aRay, b, out);
   const segmentLength = segmentGetLength(a);

@@ -1,4 +1,4 @@
-import { IVec } from "../types";
+import { Vec } from "../types";
 import { vecAlloc } from "./vecAlloc";
 import { vecReset } from "./vecReset";
 
@@ -9,6 +9,6 @@ import { vecReset } from "./vecReset";
  * @param vec the vector whose perp should be calculated
  * @param out
  */
-export function vecPerp(vec: IVec, out = vecAlloc()) {
+export function vecPerp(vec: Vec, out = vecAlloc()) {
   return vecReset(-vec.y, vec.x, out);
 }

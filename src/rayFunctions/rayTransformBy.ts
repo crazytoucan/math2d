@@ -1,5 +1,5 @@
 import { _lookAt } from "../internal/_lookAt";
-import { IMat2d, IRay } from "../types";
+import { Mat2d, Ray } from "../types";
 import { vecReset } from "../vecFunctions/vecReset";
 import { vecTransformBy } from "../vecFunctions/vecTransformBy";
 import { rayAlloc } from "./rayAlloc";
@@ -23,7 +23,7 @@ import { rayAlloc } from "./rayAlloc";
  * __see {@link vecTransformBy}
  * __see {@link Imat2d}
  */
-export function rayTransformBy(ray: IRay, mat: IMat2d, out = rayAlloc()) {
+export function rayTransformBy(ray: Ray, mat: Mat2d, out = rayAlloc()) {
   const p0 = vecReset(ray.x0, ray.y0);
   vecTransformBy(p0, mat, p0);
   const p1 = vecReset(ray.x0 + ray.dirX, ray.y0 + ray.dirY);

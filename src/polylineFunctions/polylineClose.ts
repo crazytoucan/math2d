@@ -1,4 +1,4 @@
-import { IPolyline } from "../types";
+import { Polyline } from "../types";
 import { polylineAlloc } from "./polylineAlloc";
 
 /**
@@ -7,7 +7,7 @@ import { polylineAlloc } from "./polylineAlloc";
  * @param poly
  * @param out
  */
-export function polylineClose(poly: IPolyline, out = polylineAlloc()) {
+export function polylineClose(poly: Polyline, out = polylineAlloc()) {
   const len = poly.length;
   if (len === 0) {
     out.length = 0;

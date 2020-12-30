@@ -1,4 +1,4 @@
-import { INearestPointResult } from "../types";
+import { NearestPointResult } from "../types";
 import { nearestPointResultAlloc } from "./nearestPointResultAlloc";
 import { nearestPointResultReset } from "./nearestPointResultReset";
 
@@ -8,7 +8,7 @@ import { nearestPointResultReset } from "./nearestPointResultReset";
  * @param nearestPointResult
  * @param out
  */
-export function nearestPointResultClone(nearestPointResult: INearestPointResult, out = nearestPointResultAlloc()) {
+export function nearestPointResultClone(nearestPointResult: NearestPointResult, out = nearestPointResultAlloc()) {
   return nearestPointResultReset(
     nearestPointResult.x,
     nearestPointResult.y,

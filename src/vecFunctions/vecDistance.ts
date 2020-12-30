@@ -1,4 +1,4 @@
-import { IVec } from "../types";
+import { Vec } from "../types";
 
 /**
  * Computes the straight-line (Euclidean) distance between the two points
@@ -8,7 +8,7 @@ import { IVec } from "../types";
  * __see {@link vecDistanceSq}
  * __see {@link vecGetLength}
  */
-export function vecDistance(u: IVec, v: IVec) {
+export function vecDistance(u: Vec, v: Vec) {
   const dx = v.x - u.x;
   const dy = v.y - u.y;
   return Math.sqrt(dx * dx + dy * dy);

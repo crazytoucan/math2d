@@ -1,4 +1,4 @@
-import { IPolyline } from "../types";
+import { Polyline } from "../types";
 import { polylineGetNumSegments } from "./polylineGetNumSegments";
 import { polylineGetNumVertices } from "./polylineGetNumVertices";
 import { polylineGetSegmentLength } from "./polylineGetSegmentLength";
@@ -14,7 +14,7 @@ import { polylineGetSegmentLength } from "./polylineGetSegmentLength";
  * __see {@link IPolyline}
  * __see {@link polylineGetDistanceAtT}
  */
-export function polylineGetTAtDistance(poly: IPolyline, d: number) {
+export function polylineGetTAtDistance(poly: Polyline, d: number) {
   if (d < 0) {
     return 0;
   }

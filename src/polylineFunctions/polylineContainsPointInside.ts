@@ -1,4 +1,4 @@
-import { IPolyline, IVec } from "../types";
+import { Polyline, Vec } from "../types";
 
 /**
  * Determines whether the point is inside the given polygon, using the even-odd fill rule.
@@ -6,7 +6,7 @@ import { IPolyline, IVec } from "../types";
  * @param poly the polygon to inspect
  * @param point the point to check for containment
  */
-export function polylineContainsPointInside(poly: IPolyline, point: IVec) {
+export function polylineContainsPointInside(poly: Polyline, point: Vec) {
   const x = point.x;
   const y = point.y;
 

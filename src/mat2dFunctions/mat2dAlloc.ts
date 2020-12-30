@@ -1,6 +1,6 @@
-import { IMat2d } from "../types";
+import { Mat2d } from "../types";
 
-class Mat2d implements IMat2d {
+class _Mat2d implements Mat2d {
   public a = NaN;
   public b = NaN;
   public c = NaN;
@@ -30,6 +30,6 @@ class Mat2d implements IMat2d {
  *    const result = mat2dInvert(existingObj.transform, TMP0);
  *  }
  */
-export function mat2dAlloc(): IMat2d {
-  return new Mat2d();
+export function mat2dAlloc(): Mat2d {
+  return new _Mat2d();
 }

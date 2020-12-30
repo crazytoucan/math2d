@@ -1,4 +1,4 @@
-import { IBox } from "../types";
+import { Box } from "../types";
 
 /**
  * Determines whether this box represents an empty area.
@@ -13,7 +13,7 @@ import { IBox } from "../types";
  *
  * @param box
  */
-export function boxIsEmpty(box: IBox) {
+export function boxIsEmpty(box: Box) {
   // Remark: prefer this comparison over distributing the ! to handle NaNs.
   return !(box.maxX > box.minX && box.maxY > box.minY);
 }

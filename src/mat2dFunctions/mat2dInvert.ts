@@ -1,5 +1,5 @@
 import { EPSILON } from "../internal/const";
-import { IMat2d } from "../types";
+import { Mat2d } from "../types";
 import { mat2dAlloc } from "./mat2dAlloc";
 import { mat2dReset } from "./mat2dReset";
 
@@ -9,7 +9,7 @@ import { mat2dReset } from "./mat2dReset";
  * @param mat the matrix to invert
  * @param out
  */
-export function mat2dInvert(mat: IMat2d, out = mat2dAlloc()) {
+export function mat2dInvert(mat: Mat2d, out = mat2dAlloc()) {
   const det = mat.a * mat.d - mat.b * mat.c;
   if (det > -EPSILON && det < EPSILON) {
     return mat2dReset(NaN, NaN, NaN, NaN, NaN, NaN, out);

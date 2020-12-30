@@ -1,4 +1,4 @@
-import { IRay } from "../types";
+import { Ray } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
 import { vecReset } from "../vecFunctions/vecReset";
 
@@ -17,6 +17,6 @@ import { vecReset } from "../vecFunctions/vecReset";
  * @param out
  * __see {@link IRay}
  */
-export function rayGetPointAtT(ray: IRay, t: number, out = vecAlloc()) {
+export function rayGetPointAtT(ray: Ray, t: number, out = vecAlloc()) {
   return vecReset(ray.x0 + ray.dirX * t, ray.y0 + ray.dirY * t, out);
 }

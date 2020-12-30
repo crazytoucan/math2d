@@ -1,9 +1,9 @@
 import { rayAlloc } from "../rayFunctions/rayAlloc";
 import { rayReset } from "../rayFunctions/rayReset";
-import { IRay } from "../types";
+import { Ray } from "../types";
 import { EPSILON_SQ } from "./const";
 
-export function _lookAt(x0: number, y0: number, x1: number, y1: number, out: IRay = rayAlloc()) {
+export function _lookAt(x0: number, y0: number, x1: number, y1: number, out: Ray = rayAlloc()) {
   const dx = x1 - x0;
   const dy = y1 - y0;
   const lenSq = dx * dx + dy * dy;

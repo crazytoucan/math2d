@@ -1,4 +1,4 @@
-import { IVec } from "../types";
+import { Vec } from "../types";
 import { vecAlloc } from "./vecAlloc";
 import { vecReset } from "./vecReset";
 
@@ -8,6 +8,6 @@ import { vecReset } from "./vecReset";
  * @param vec the vector to copy
  * @param out
  */
-export function vecClone(vec: IVec, out = vecAlloc()) {
+export function vecClone(vec: Vec, out = vecAlloc()) {
   return vecReset(vec.x, vec.y, out);
 }

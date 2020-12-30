@@ -1,5 +1,5 @@
 import { _lerp } from "../internal/_lerp";
-import { IPolyline } from "../types";
+import { Polyline } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
 import { vecReset } from "../vecFunctions/vecReset";
 import { polylineGetNumSegments } from "./polylineGetNumSegments";
@@ -13,7 +13,7 @@ import { polylineGetNumSegments } from "./polylineGetNumSegments";
  * @param out
  * __see {@link IPolyline}
  */
-export function polylineGetPointAtT(poly: IPolyline, t: number, out = vecAlloc()) {
+export function polylineGetPointAtT(poly: Polyline, t: number, out = vecAlloc()) {
   const maxT = polylineGetNumSegments(poly);
   if (t < 0 || t > maxT) {
     return vecReset(NaN, NaN, out);

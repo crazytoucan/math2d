@@ -1,4 +1,4 @@
-import { ISegment } from "../types";
+import { Segment } from "../types";
 import { vecAlloc } from "../vecFunctions/vecAlloc";
 import { vecReset } from "../vecFunctions/vecReset";
 
@@ -8,6 +8,6 @@ import { vecReset } from "../vecFunctions/vecReset";
  * @param segment segment to inspect
  * @param out
  */
-export function segmentGetEndpoint1(segment: ISegment, out = vecAlloc()) {
+export function segmentGetEndpoint1(segment: Segment, out = vecAlloc()) {
   return vecReset(segment.x1, segment.y1, out);
 }

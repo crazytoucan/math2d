@@ -1,5 +1,5 @@
 import { EPSILON_SQ } from "../internal/const";
-import { IVec } from "../types";
+import { Vec } from "../types";
 import { vecAlloc } from "./vecAlloc";
 import { vecReset } from "./vecReset";
 
@@ -12,7 +12,7 @@ import { vecReset } from "./vecReset";
  * __see {@link vecGetLength}
  * __see {@link vecGetLengthSq}
  */
-export function vecNormalize(vec: IVec, out = vecAlloc()) {
+export function vecNormalize(vec: Vec, out = vecAlloc()) {
   const lenSq = vec.x * vec.x + vec.y * vec.y;
   if (lenSq < EPSILON_SQ) {
     return vecReset(NaN, NaN, out);

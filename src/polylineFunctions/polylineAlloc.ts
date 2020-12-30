@@ -1,4 +1,4 @@
-import { IPolyline } from "../types";
+import { Polyline } from "../types";
 
 /**
  * Creates a new Array object in memory to hold Polyline data.
@@ -22,6 +22,6 @@ import { IPolyline } from "../types";
  *    const result = polylineTransformBy(existingObj.path, existingObj.transform, TMP0);
  *  }
  */
-export function polylineAlloc(): IPolyline {
+export function polylineAlloc(): Polyline {
   return [];
 }

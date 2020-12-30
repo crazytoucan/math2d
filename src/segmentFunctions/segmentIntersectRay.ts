@@ -1,7 +1,7 @@
 import { _intersectionSwapTs } from "../internal/_intersectionSwapTs";
 import { intersectionResultAlloc } from "../intersectionResultFunctions/intersectionResultAlloc";
 import { rayIntersectSegment } from "../rayFunctions/rayIntersectSegment";
-import { IRay, ISegment } from "../types";
+import { Ray, Segment } from "../types";
 
 /**
  * Computes the intersection point between the ray and the segment, if it exists.
@@ -32,6 +32,6 @@ import { IRay, ISegment } from "../types";
  * __see {@link segmentIntersectPolyline}
  * __see {@link segmentIntersectSegment}
  */
-export function segmentIntersectRay(segment: ISegment, ray: IRay, out = intersectionResultAlloc()) {
+export function segmentIntersectRay(segment: Segment, ray: Ray, out = intersectionResultAlloc()) {
   return _intersectionSwapTs(rayIntersectSegment(ray, segment, out));
 }

@@ -1,5 +1,5 @@
 import { _lookAt } from "../internal/_lookAt";
-import { IVec } from "../types";
+import { Vec } from "../types";
 import { rayAlloc } from "./rayAlloc";
 
 /**
@@ -16,6 +16,6 @@ import { rayAlloc } from "./rayAlloc";
  * @param to point that the ray should go through
  * @param out
  */
-export function rayLookAt(from: IVec, to: IVec, out = rayAlloc()) {
+export function rayLookAt(from: Vec, to: Vec, out = rayAlloc()) {
   return _lookAt(from.x, from.y, to.x, to.y, out);
 }

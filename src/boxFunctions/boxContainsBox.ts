@@ -1,4 +1,4 @@
-import { IBox } from "../types";
+import { Box } from "../types";
 
 /**
  * Determines whether the second box is completely enclosed in the first.
@@ -10,6 +10,6 @@ import { IBox } from "../types";
  * @param a
  * @param b
  */
-export function boxContainsBox(a: IBox, b: IBox) {
+export function boxContainsBox(a: Box, b: Box) {
   return b.minX >= a.minX && b.minY >= a.minY && b.maxX <= a.maxX && b.maxY <= a.maxY;
 }

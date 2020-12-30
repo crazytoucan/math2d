@@ -1,4 +1,4 @@
-import { ISegment } from "../types";
+import { Segment } from "../types";
 import { segmentAlloc } from "./segmentAlloc";
 import { segmentReset } from "./segmentReset";
 
@@ -8,6 +8,6 @@ import { segmentReset } from "./segmentReset";
  * @param segment the segment to reverse
  * @param out
  */
-export function segmentReverse(segment: ISegment, out = segmentAlloc()) {
+export function segmentReverse(segment: Segment, out = segmentAlloc()) {
   return segmentReset(segment.x1, segment.y1, segment.x0, segment.y0, out);
 }

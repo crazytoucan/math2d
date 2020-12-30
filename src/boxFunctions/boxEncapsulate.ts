@@ -1,4 +1,4 @@
-import { IBox, IVec } from "../types";
+import { Box, Vec } from "../types";
 import { boxAlloc } from "./boxAlloc";
 import { boxReset } from "./boxReset";
 
@@ -12,7 +12,7 @@ import { boxReset } from "./boxReset";
  * @param point the point that the box should grow to include
  * @param out
  */
-export function boxEncapsulate(box: IBox, point: IVec, out = boxAlloc()) {
+export function boxEncapsulate(box: Box, point: Vec, out = boxAlloc()) {
   return boxReset(
     Math.min(box.minX, point.x),
     Math.min(box.minY, point.y),

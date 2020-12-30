@@ -1,4 +1,4 @@
-import { IPolyline } from "../types";
+import { Polyline } from "../types";
 
 /**
  * Returns the number of vertices in this polyline
@@ -8,6 +8,6 @@ import { IPolyline } from "../types";
  *
  * @param poly
  */
-export function polylineGetNumVertices(poly: IPolyline) {
+export function polylineGetNumVertices(poly: Polyline) {
   return poly.length / 2;
 }

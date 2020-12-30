@@ -1,6 +1,6 @@
-import { ISegment } from "../types";
+import { Segment } from "../types";
 
-class Segment implements ISegment {
+class _Segment implements Segment {
   public x0 = NaN;
   public y0 = NaN;
   public x1 = NaN;
@@ -28,6 +28,6 @@ class Segment implements ISegment {
  *    const result = polygonGetSideSegment(existingObj.geometry, 0, TMP0);
  *  }
  */
-export function segmentAlloc(): ISegment {
-  return new Segment();
+export function segmentAlloc(): Segment {
+  return new _Segment();
 }

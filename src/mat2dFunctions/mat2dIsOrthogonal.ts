@@ -1,5 +1,5 @@
 import { EPSILON, EPSILON_SQ } from "../internal/const";
-import { IMat2d } from "../types";
+import { Mat2d } from "../types";
 
 /**
  * Returns whether the matrix is an orthogonal matrix.
@@ -13,7 +13,7 @@ import { IMat2d } from "../types";
  * @param mat the matrix to check for orthogonality
  * __see {@link mat2dIsTranslationOnly}
  */
-export function mat2dIsOrthogonal(mat: IMat2d) {
+export function mat2dIsOrthogonal(mat: Mat2d) {
   const d1Sq = mat.a * mat.a + mat.b * mat.b;
   const d2Sq = mat.c * mat.c + mat.d * mat.d;
   const dot = mat.a * mat.c + mat.b * mat.d;
