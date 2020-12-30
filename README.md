@@ -6,10 +6,10 @@
 
 # math2d
 
-Two dimensional vector math library for JavaScript
-Built for performance in computation-heavy real-time engines without sacrificing usability
-Supports tree shaking and dead code removal to avoid bloating client-side bundles
-Zero dependencies
+Two dimensional vector math library for JavaScript.
+Built for performance in computation-heavy real-time engines without sacrificing usability.
+Supports tree shaking and dead code removal to avoid bloating client-side bundles.
+Zero dependencies.
 
 ## Getting Started
 
