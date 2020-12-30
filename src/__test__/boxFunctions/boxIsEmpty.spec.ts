@@ -1,5 +1,5 @@
 import { boxIsEmpty } from "../../boxFunctions/boxIsEmpty";
-import { _box } from "../helpers";
+import { _boxValues } from "../helpers";
 
 describe("boxIsEmpty", () => {
   it.each`
@@ -13,6 +13,6 @@ describe("boxIsEmpty", () => {
     ${[Infinity, Infinity, 0, 0]}                 | ${true}
     ${[NaN, NaN, NaN, NaN]}                       | ${true}
   `("$box => $result", ({ box, result }) => {
-    expect(boxIsEmpty(_box(box))).toBe(result);
+    expect(boxIsEmpty(_boxValues(box))).toBe(result);
   });
 });

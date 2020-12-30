@@ -1,5 +1,5 @@
 import { vecLerp } from "../../vecFunctions/vecLerp";
-import { expectVecEqualsApprox, _vec } from "../helpers";
+import { expectVecEqualsApprox, _vecValues } from "../helpers";
 
 describe("vecLerp", () => {
   it.each`
@@ -13,6 +13,6 @@ describe("vecLerp", () => {
     ${[0, 0]}   | ${[1, 1]}   | ${NaN}  | ${[NaN, NaN]}
     ${[0, 0]}   | ${[0, 0]}   | ${NaN}  | ${[NaN, NaN]}
   `("$v0 $v1 $scalar => $result", ({ v0, v1, scalar, result }) => {
-    expectVecEqualsApprox(vecLerp(_vec(v0), _vec(v1), scalar), _vec(result));
+    expectVecEqualsApprox(vecLerp(_vecValues(v0), _vecValues(v1), scalar), _vecValues(result));
   });
 });

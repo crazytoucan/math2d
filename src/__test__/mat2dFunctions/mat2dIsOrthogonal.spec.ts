@@ -1,5 +1,5 @@
 import { mat2dIsOrthogonal } from "../../mat2dFunctions/mat2dIsOrthogonal";
-import { _mat2d } from "../helpers";
+import { _mat2dValues } from "../helpers";
 
 describe("mat2dIsOrthogonal", () => {
   it.each`
@@ -13,6 +13,6 @@ describe("mat2dIsOrthogonal", () => {
     ${[1, 0, 1, 0, 0, 0]}          | ${false}
     ${[NaN, NaN, NaN, NaN, 0, 0]}  | ${false}
   `("$mat => $result", ({ mat, result }) => {
-    expect(mat2dIsOrthogonal(_mat2d(mat))).toBe(result);
+    expect(mat2dIsOrthogonal(_mat2dValues(mat))).toBe(result);
   });
 });

@@ -1,5 +1,5 @@
 import { boxIntersection } from "../../boxFunctions/boxIntersection";
-import { expectBoxEqualsApprox, _box } from "../helpers";
+import { expectBoxEqualsApprox, _boxValues } from "../helpers";
 
 describe("boxIntersection", () => {
   it.each`
@@ -12,6 +12,6 @@ describe("boxIntersection", () => {
     ${[-Infinity, -Infinity, Infinity, Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${[-0.5, -0.5, 0.5, 0.5]}
     ${[Infinity, Infinity, -Infinity, -Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${[Infinity, Infinity, -Infinity, -Infinity]}
   `("$a $b => $result", ({ a, b, result }) => {
-    expectBoxEqualsApprox(boxIntersection(_box(a), _box(b)), _box(result));
+    expectBoxEqualsApprox(boxIntersection(_boxValues(a), _boxValues(b)), _boxValues(result));
   });
 });

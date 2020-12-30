@@ -1,5 +1,5 @@
 import { vecGetLength } from "../../vecFunctions/vecGetLength";
-import { _vec } from "../helpers";
+import { _vecValues } from "../helpers";
 
 describe("vecGetLength", () => {
   it.each`
@@ -8,6 +8,6 @@ describe("vecGetLength", () => {
     ${[0, -4]}  | ${4}
     ${[12, 16]} | ${20}
   `("$vec => $result", ({ vec, result }) => {
-    expect(vecGetLength(_vec(vec))).toBe(result);
+    expect(vecGetLength(_vecValues(vec))).toBe(result);
   });
 });

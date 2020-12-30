@@ -1,6 +1,6 @@
 import { boxContainsPoint } from "../../boxFunctions/boxContainsPoint";
 import { IntervalMode } from "../../const";
-import { _box, _vec } from "../helpers";
+import { _boxValues, _vecValues } from "../helpers";
 
 describe("boxContainsPoint", () => {
   it.each`
@@ -13,6 +13,6 @@ describe("boxContainsPoint", () => {
     ${[-Infinity, -Infinity, Infinity, Infinity]} | ${[1, 1]}     | ${IntervalMode.CLOSED} | ${true}
     ${[Infinity, Infinity, -Infinity, -Infinity]} | ${[1, 1]}     | ${IntervalMode.CLOSED} | ${false}
   `("$box $point $imode => $result", ({ box, point, imode, result }) => {
-    expect(boxContainsPoint(_box(box), _vec(point), imode)).toBe(result);
+    expect(boxContainsPoint(_boxValues(box), _vecValues(point), imode)).toBe(result);
   });
 });
