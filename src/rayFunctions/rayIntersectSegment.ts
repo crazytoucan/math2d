@@ -1,10 +1,10 @@
+import { EPSILON } from "../internal/const";
 import { _intersectionDNE } from "../internal/_intersectionDNE";
 import { _lookAt } from "../internal/_lookAt";
-import { EPSILON } from "../internal/const";
-import { lineIntersectLine } from "../lineFunctions/lineIntersectLine";
 import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
 import { segmentGetLength } from "../segmentFunctions/segmentGetLength";
 import { IRay, ISegment } from "../types";
+import { rayIntersectRay } from "./rayIntersectRay";
 
 /**
  * Computes the intersection point between the ray and the segment, if it exists.
@@ -33,12 +33,16 @@ import { IRay, ISegment } from "../types";
  */
 export function rayIntersectSegment(ray: IRay, segment: ISegment, out = pointIntersectionResultAlloc()) {
   const segmentRay = _lookAt(segment.x0, segment.y0, segment.x1, segment.y1);
-  lineIntersectLine(ray, segmentRay, out);
+  rayIntersectRay(ray, segmentRay, out);
+  if (!out.exists) {
+    return out;
+  }
+
   const segmentLength = segmentGetLength(segment);
-  if (out.exists && out.t0 > -EPSILON && out.t1 > -EPSILON && out.t1 < segmentLength + EPSILON) {
+  if (out.t1 < segmentLength + EPSILON) {
     out.t1 /= segmentLength;
     return out;
-  } else {
-    return _intersectionDNE(out);
   }
+
+  return _intersectionDNE(out);
 }

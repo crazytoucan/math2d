@@ -1,5 +1,5 @@
-import { ILine, IVec } from "../types";
+import { IRay, IVec } from "../types";
 
-export function _dotPerp(line: ILine, point: IVec) {
-  return line.dirX * (point.y - line.y0) - line.dirY * (point.x - line.x0);
+export function _dotPerp(ray: IRay, point: IVec) {
+  return ray.dirX * (point.y - ray.y0) - ray.dirY * (point.x - ray.x0);
 }
