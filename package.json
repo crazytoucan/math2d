@@ -1,6 +1,6 @@
 {
   "name": "math2d",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "module": "./esm/index.js",
   "main": "./commonjs/index.js",
   "types": "./esm/index.d.ts",
