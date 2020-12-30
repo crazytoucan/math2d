@@ -8,8 +8,6 @@ import { vecReset } from "./vecReset";
  * @param a
  * @param b
  * @param out
- * __see {@link vecSubtract}
- * __see {@link vecScale}
  */
 export function vecAdd(a: Vec, b: Vec, out = vecAlloc()) {
   return vecReset(a.x + b.x, a.y + b.y, out);

@@ -16,8 +16,6 @@ import { vecReset } from "../vecFunctions/vecReset";
  * @param segment segment to inspect
  * @param point point to measure squared distance to
  * @param out
- * __see {@link ISegment}
- * __see {@link INearestPointResult}
  */
 export function segmentNearestDistanceSqToPoint(segment: Segment, point: Vec, out = nearestPointResultAlloc()) {
   const segVector = vecReset(segment.x1 - segment.x0, segment.y1 - segment.y0);

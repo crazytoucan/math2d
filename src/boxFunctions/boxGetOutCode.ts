@@ -16,10 +16,6 @@ import { Box, Vec } from "../types";
  *  const myBox = boxReset(-2, -2, 2, 2);
  *  const outCode1 = boxGetOutCode(myBox, vecReset(-4, 4)); // returns Out.MIN_X | Out.MAX_Y
  *  const outCode2 = boxGetOutCode(myBox, vec2Origin()); // returns 0
- * __see Out.MIN_X
- * __see Out.MAX_X
- * __see Out.MIN_Y
- * __see Out.MAX_Y
  */
 export function boxGetOutCode(box: Box, point: Vec) {
   let out = 0;

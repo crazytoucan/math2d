@@ -13,9 +13,6 @@ import { rayAlloc } from "./rayAlloc";
  * @param dirY y-coordinate of the ray's direction vector, which should form a unit vector
  *  along with the provided `dirX`
  * @param out
- * __see {@link IRay}
- * __see {@link rayAlloc}
- * __see {@link rayClone}
  */
 export function rayReset(x0: number, y0: number, dirX: number, dirY: number, out = rayAlloc()) {
   out.x0 = x0;

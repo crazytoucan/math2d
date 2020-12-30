@@ -12,8 +12,6 @@ import { Ray, Vec } from "../types";
  *
  * @param ray the ray to inspect
  * @param vec point to be checked
- * __see {@link lineContainsPoint}
- * __see {@link lineWhichSide}
  */
 export function rayContainsPoint(ray: Ray, vec: Vec) {
   const t = _dot(ray, vec);

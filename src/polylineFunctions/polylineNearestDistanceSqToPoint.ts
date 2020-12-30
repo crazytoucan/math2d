@@ -19,8 +19,6 @@ import { polylineGetSegment } from "./polylineGetSegment";
  * @param poly the polyline to inspect
  * @param point the point to measure distance to
  * @param out
- * __see {@link IPolyline}
- * __see {@link INearestPointResult}
  */
 export function polylineNearestDistanceSqToPoint(poly: Polyline, point: Vec, out = nearestPointResultAlloc()) {
   const tmp0 = segmentAlloc();

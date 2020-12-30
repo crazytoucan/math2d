@@ -27,10 +27,6 @@ import { Ray, Segment } from "../types";
  * @param segment the segment to intersect
  * @param ray the ray to find intersection with
  * @param out
- * __see {@link IIntersectionResult}
- * __see {@link ISegment}
- * __see {@link segmentIntersectPolyline}
- * __see {@link segmentIntersectSegment}
  */
 export function segmentIntersectRay(segment: Segment, ray: Ray, out = intersectionResultAlloc()) {
   return _intersectionSwapTs(rayIntersectSegment(ray, segment, out));

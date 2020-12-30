@@ -17,9 +17,6 @@ import { mat2dAlloc } from "./mat2dAlloc";
  * @param tx col 3, row 1 component, usually called `m41` in a 4x4 graphics matrix
  * @param ty col 3, row 2 component, usually called `m42` in a 4x4 graphics matrix
  * @param out
- * __see {@link Imat2d}
- * __see {@link mat2dAlloc}
- * __see {@link mat2dClone}
  */
 export function mat2dReset(a: number, b: number, c: number, d: number, tx: number, ty: number, out = mat2dAlloc()) {
   out.a = a;

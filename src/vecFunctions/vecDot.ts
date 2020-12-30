@@ -5,7 +5,6 @@ import { Vec } from "../types";
  *
  * @param u the first vector
  * @param v the vector to dot with the first
- * __see {@link vecCross}
  */
 export function vecDot(u: Vec, v: Vec) {
   return u.x * v.x + u.y * v.y;
