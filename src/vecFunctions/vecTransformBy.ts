@@ -11,9 +11,9 @@ import { vecReset } from "./vecReset";
  * `[a b c d e f]` is defined by:
  *
  * ```
- * ⎡a c e⎤ ⎛x⎞   ⎛ax + cy + e⎞
- * ⎢b d f⎥ ⎜y⎟ = ⎜bx + dy + f⎟
- * ⎣0 0 1⎦ ⎝1⎠   ⎝     1     ⎠
+ * ⎡a c tx⎤ ⎛x⎞   ⎛ax + cy + tx⎞
+ * ⎢b d ty⎥ ⎜y⎟ = ⎜bx + dy + ty⎟
+ * ⎣0 0  1⎦ ⎝1⎠   ⎝      1     ⎠
  * ```
  *
  * @param v the vector to transform
@@ -23,5 +23,5 @@ import { vecReset } from "./vecReset";
  * __see {@link vecAdd}
  */
 export function vecTransformBy(v: Vec, mat: Mat2d, out = vecAlloc()) {
-  return vecReset(mat.a * v.x + mat.c * v.y + mat.e, mat.b * v.x + mat.d * v.y + mat.f, out);
+  return vecReset(mat.a * v.x + mat.c * v.y + mat.tx, mat.b * v.x + mat.d * v.y + mat.ty, out);
 }

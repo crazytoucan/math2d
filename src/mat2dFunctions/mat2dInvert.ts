@@ -20,8 +20,8 @@ export function mat2dInvert(mat: Mat2d, out = mat2dAlloc()) {
       -detInverse * mat.b,
       -detInverse * mat.c,
       detInverse * mat.a,
-      detInverse * (mat.c * mat.f - mat.d * mat.e),
-      detInverse * (mat.b * mat.e - mat.a * mat.f),
+      detInverse * (mat.c * mat.ty - mat.d * mat.tx),
+      detInverse * (mat.b * mat.tx - mat.a * mat.ty),
       out,
     );
   }

@@ -17,5 +17,5 @@ import { mat2dReset } from "./mat2dReset";
  * __see {@link mat2dMulMat2d}
  */
 export function mat2dScale(mat: Mat2d, scale: number, out = mat2dAlloc()) {
-  return mat2dReset(scale * mat.a, scale * mat.b, scale * mat.c, scale * mat.d, scale * mat.e, scale * mat.f, out);
+  return mat2dReset(scale * mat.a, scale * mat.b, scale * mat.c, scale * mat.d, scale * mat.tx, scale * mat.ty, out);
 }

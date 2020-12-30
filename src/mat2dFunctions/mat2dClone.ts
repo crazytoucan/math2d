@@ -9,5 +9,5 @@ import { mat2dReset } from "./mat2dReset";
  * @param out
  */
 export function mat2dClone(mat: Mat2d, out = mat2dAlloc()) {
-  return mat2dReset(mat.a, mat.b, mat.c, mat.d, mat.e, mat.f, out);
+  return mat2dReset(mat.a, mat.b, mat.c, mat.d, mat.tx, mat.ty, out);
 }

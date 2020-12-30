@@ -26,7 +26,7 @@ export function mat2dReset(a: number, b: number, c: number, d: number, e: number
   out.b = b;
   out.c = c;
   out.d = d;
-  out.e = e;
-  out.f = f;
+  out.tx = e;
+  out.ty = f;
   return out;
 }
