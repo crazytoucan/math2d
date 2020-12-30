@@ -1,7 +1,7 @@
 *.log
 .DS_Store
 .vscode
+commonjs
 esm
-lib
 node_modules
 Thumbs.db

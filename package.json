@@ -6,10 +6,10 @@
   "types": "./esm/index.d.ts",
   "scripts": {
     "build": "yarn build:commonjs && yarn build:esm",
-    "build:commonjs": "tsc",
-    "build:esm": "tsc -p tsconfig-esm.json",
+    "build:commonjs": "rollup -c rollup.commonjs.js",
+    "build:esm": "rollup -c rollup.esm.js",
     "check": "tsc --noEmit",
-    "clean": "rm -rf esm commonjs",
+    "clean": "rm -rf commonjs esm",
     "docs": "scripts/generate-typedoc-data.sh",
     "lint": "tslint --project tsconfig.json",
     "prepack": "yarn clean && yarn build",
