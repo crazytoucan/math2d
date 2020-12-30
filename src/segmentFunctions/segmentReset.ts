@@ -9,9 +9,6 @@ import { segmentAlloc } from "./segmentAlloc";
  * @param x1 x-coordinate of the segment's ending vertex
  * @param y1 y-coordinate of the segment's ending vertex
  * @param out
- * __see {@link ISegment}
- * __see {@link segmentAlloc}
- * __see {@link segmentClone}
  */
 export function segmentReset(x0: number, y0: number, x1: number, y1: number, out = segmentAlloc()) {
   out.x0 = x0;

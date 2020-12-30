@@ -13,8 +13,6 @@ import { mat2dReset } from "./mat2dReset";
  * @param tx x-component of the translation to apply
  * @param ty y-component of the translation to apply
  * @param out
- * __see {@link mat2dFromTranslation}
- * __see {@link mat2dMulMat2d}
  */
 export function mat2dTranslate(mat: Mat2d, tx: number, ty: number, out = mat2dAlloc()) {
   return mat2dReset(mat.a, mat.b, mat.c, mat.d, mat.tx + tx, mat.ty + ty, out);

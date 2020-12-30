@@ -6,9 +6,6 @@ import { vecAlloc } from "./vecAlloc";
  * @param x x-coordinate of the vector
  * @param y y-coordinate of the vector
  * @param out
- * __see {@link IVec}
- * __see {@link vecAlloc}
- * __see {@link vecClone}
  */
 export function vecReset(x: number, y: number, out = vecAlloc()) {
   out.x = x;

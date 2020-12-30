@@ -5,8 +5,6 @@ import { Vec } from "../types";
  *
  * @param u the first point
  * @param v the second point to which squared distance should be measured
- * __see {@link vecDistance}
- * __see {@link vecGetLengthSq}
  */
 export function vecDistanceSq(u: Vec, v: Vec) {
   const dx = v.x - u.x;

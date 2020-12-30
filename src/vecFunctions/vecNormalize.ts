@@ -9,8 +9,6 @@ import { vecReset } from "./vecReset";
  *
  * @param vec the vector to normalize
  * @param out
- * __see {@link vecGetLength}
- * __see {@link vecGetLengthSq}
  */
 export function vecNormalize(vec: Vec, out = vecAlloc()) {
   const lenSq = vec.x * vec.x + vec.y * vec.y;

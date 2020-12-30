@@ -19,8 +19,6 @@ import { vecReset } from "./vecReset";
  * @param v the vector to transform
  * @param mat the matrix to multiply this vector by
  * @param out
- * __see {@link Imat2d}
- * __see {@link vecAdd}
  */
 export function vecTransformBy(v: Vec, mat: Mat2d, out = vecAlloc()) {
   return vecReset(mat.a * v.x + mat.c * v.y + mat.tx, mat.b * v.x + mat.d * v.y + mat.ty, out);

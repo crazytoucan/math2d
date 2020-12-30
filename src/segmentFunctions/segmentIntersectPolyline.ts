@@ -22,11 +22,6 @@ import { segmentIntersectSegment } from "./segmentIntersectSegment";
  *
  * @param segment the segment to intersect
  * @param poly the polyline to find intersections with
- * __see {@link IIntersectionResult}
- * __see {@link ISegment}
- * __see {@link polylineIntersectSegment}
- * __see {@link segmentIntersectRay}
- * __see {@link segmentIntersectSegment}
  */
 export function segmentIntersectPolyline(segment: Segment, poly: Polyline) {
   return _swapAndReorderIntersections(_polylineIntersectHelper(poly, segment, segmentIntersectSegment));

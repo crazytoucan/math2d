@@ -8,8 +8,6 @@
  * for ease of use. After carefully benchmarking that difference, it's been confirmed that this
  * does not sacrifice performance or memory compactness.
  *
- * __see {@link vecAlloc}
- * __see {@link vecReset}
  */
 export interface Vec {
   /** x-coordinate of the vector */
@@ -31,8 +29,6 @@ export interface Vec {
  * between its endpoints, where _t_ = 0 represents its starting vertex and _t_ = 1 its
  * ending vertex.
  *
- * __see {@link segmentAlloc}
- * __see {@link segmentReset}
  */
 export interface Segment {
   /**
@@ -63,8 +59,6 @@ export interface Segment {
  * Where relevant, a ray is parameterized according to _t_ ≥ 0 with movement of distance _t_ along its direction vector.
  * In this mapping, _t_ = 0 represents the initial point (x0, y0).
  *
- * __see {@link rayAlloc}
- * __see {@link rayReset}
  */
 export interface Ray {
   /**
@@ -112,8 +106,6 @@ export interface Ray {
  * ⎣0 0 1⎦ ⎝1⎠   ⎝      1     ⎠
  * ```
  *
- * __see {@link mat2dAlloc}
- * __see {@link mat2dReset}
  */
 export interface Mat2d {
   /**
@@ -169,8 +161,6 @@ export interface Mat2d {
  * Math2d chooses to lay out this data in a
  * flat object structure, as opposed to an array or nested arrays, for ease of use and performance.
  *
- * __see {@link boxAlloc}
- * __see {@link boxReset}
  */
 export interface Box {
   /**
@@ -221,16 +211,6 @@ export type Polyline = number[];
 /**
  * Data type to hold the result of a point intersection between two pieces of geometry.
  *
- * __see {@link polygonIntersectRay}
- * __see {@link polygonIntersectSegment}
- * __see {@link polylineIntersectRay}
- * __see {@link polylineIntersectSegment}
- * __see {@link rayIntersectPolyline}
- * __see {@link rayIntersectRay}
- * __see {@link rayIntersectSegment}
- * __see {@link segmentIntersectPolyline}
- * __see {@link segmentIntersectRay}
- * __see {@link segmentIntersectSegment}
  */
 export interface IntersectionResult {
   /**

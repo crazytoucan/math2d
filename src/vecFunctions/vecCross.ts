@@ -13,7 +13,6 @@ import { Vec } from "../types";
  *
  * @param u the first vector
  * @param v the vector to cross with the first
- * __see {@link vecDot}
  */
 export function vecCross(u: Vec, v: Vec) {
   return u.x * v.y - u.y * v.x;

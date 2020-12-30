@@ -20,8 +20,6 @@ import { rayAlloc } from "./rayAlloc";
  * @param ray the ray to transform
  * @param mat the affine transform to apply
  * @param out
- * __see {@link vecTransformBy}
- * __see {@link Imat2d}
  */
 export function rayTransformBy(ray: Ray, mat: Mat2d, out = rayAlloc()) {
   const p0 = vecReset(ray.x0, ray.y0);

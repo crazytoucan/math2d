@@ -15,8 +15,6 @@ import { polylineAlloc } from "./polylineAlloc";
  * @param poly polyline to transform
  * @param mat affine transform to apply
  * @param out
- * __see {@link vecTransformBy}
- * __see {@link Imat2d}
  */
 export function polylineTransformBy(poly: Polyline, mat: Mat2d, out = polylineAlloc()) {
   const tmp0 = vecAlloc();

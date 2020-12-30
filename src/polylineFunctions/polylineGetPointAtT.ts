@@ -11,7 +11,6 @@ import { polylineGetNumSegments } from "./polylineGetNumSegments";
  * @param poly the polyline to compute a point on
  * @param t the parameter variable at which a point should be calculated
  * @param out
- * __see {@link IPolyline}
  */
 export function polylineGetPointAtT(poly: Polyline, t: number, out = vecAlloc()) {
   const maxT = polylineGetNumSegments(poly);

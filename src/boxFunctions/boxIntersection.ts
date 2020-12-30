@@ -15,7 +15,6 @@ import { boxReset } from "./boxReset";
  * @param a first box to compute intersection for
  * @param b second box to compute intersection for
  * @param out
- * __see {@link boxUnion}
  */
 export function boxIntersection(a: Box, b: Box, out = boxAlloc()) {
   return boxReset(
