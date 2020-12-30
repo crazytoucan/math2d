@@ -84,7 +84,6 @@ export { vecGetManhattanLength } from "./vecFunctions/vecGetManhattanLength";
 export { vecLerp } from "./vecFunctions/vecLerp";
 export { vecManhattanDistance } from "./vecFunctions/vecManhattanDistance";
 export { vecNormalize } from "./vecFunctions/vecNormalize";
-export { vecOrigin } from "./vecFunctions/vecOrigin";
 export { vecPerp } from "./vecFunctions/vecPerp";
 export { vecReset } from "./vecFunctions/vecReset";
 export { vecScale } from "./vecFunctions/vecScale";
