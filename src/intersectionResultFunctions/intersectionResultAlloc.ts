@@ -1,6 +1,6 @@
 import { IntersectionResult } from "../types";
 
-class IntersectionResult implements IntersectionResult {
+class _IntersectionResult implements IntersectionResult {
   public exists = false;
   public x = NaN;
   public y = NaN;
@@ -14,5 +14,5 @@ class IntersectionResult implements IntersectionResult {
  * critical workflows.
  */
 export function intersectionResultAlloc(): IntersectionResult {
-  return new IntersectionResult();
+  return new _IntersectionResult();
 }
