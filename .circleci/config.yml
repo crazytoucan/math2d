@@ -57,12 +57,7 @@ jobs:
       - checkout
       - *restore_yarn_cache
       - *run_yarn
-      - run: yarn build
-      - persist_to_workspace:
-          root: '.'
-          paths:
-            - lib
-            - esm
+      - run: yarn run check
 
 workflows:
   version: 2

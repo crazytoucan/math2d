@@ -13,7 +13,7 @@ import { IVec } from "../types";
  *
  * @param u the first vector
  * @param v the vector to cross with the first
- * @see {@link vecDot}
+ * __see {@link vecDot}
  */
 export function vecCross(u: IVec, v: IVec) {
   return u.x * v.y - u.y * v.x;

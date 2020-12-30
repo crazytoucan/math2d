@@ -17,8 +17,8 @@ import { vecReset } from "../vecFunctions/vecReset";
  * @param segment the segment to inspect
  * @param t linear ratio along the segment to return
  * @param out
- * @see {@link ISegment}
- * @see {@link vecLerp}
+ * __see {@link ISegment}
+ * __see {@link vecLerp}
  */
 export function segmentGetPointAtT(segment: ISegment, t: number, out = vecAlloc()) {
   return vecReset(segment.x0 * (1 - t) + segment.x1 * t, segment.y0 * (1 - t) + segment.y1 * t, out);

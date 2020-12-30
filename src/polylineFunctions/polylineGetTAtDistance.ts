@@ -11,8 +11,8 @@ import { polylineGetSegmentLength } from "./polylineGetSegmentLength";
  *
  * @param poly the polyline to inspect
  * @param d distance along the polyline to travel
- * @see {@link IPolyline}
- * @see {@link polylineGetDistanceAtT}
+ * __see {@link IPolyline}
+ * __see {@link polylineGetDistanceAtT}
  */
 export function polylineGetTAtDistance(poly: IPolyline, d: number) {
   if (d < 0) {

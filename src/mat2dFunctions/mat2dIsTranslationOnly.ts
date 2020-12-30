@@ -11,7 +11,7 @@ import { IMat2d } from "../types";
  * ```
  *
  * @param mat the matrix to inspect
- * @see {@link mat2dIsOrthogonal}
+ * __see {@link mat2dIsOrthogonal}
  */
 export function mat2dIsTranslationOnly(mat: IMat2d) {
   return mat.a === 1 && mat.b === 0 && mat.c === 0 && mat.d === 1;

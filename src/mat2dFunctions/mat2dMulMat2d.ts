@@ -27,8 +27,8 @@ import { mat2dReset } from "./mat2dReset";
  * @param m1 the first matrix to multiply
  * @param m2 the second matrix to multiply
  * @param out
- * @see {@link IMatrix}
- * @see {@link vecTransformBy}
+ * __see {@link IMatrix}
+ * __see {@link vecTransformBy}
  */
 export function mat2dMulMat2d(m1: IMat2d, m2: IMat2d, out = mat2dAlloc()) {
   const a = m1.a * m2.a + m1.c * m2.b;

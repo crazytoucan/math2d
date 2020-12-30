@@ -14,8 +14,8 @@ import { polylineGetSegmentLength } from "./polylineGetSegmentLength";
  *
  * @param poly the polyline to inspect
  * @param t the parametric value along the polyline's geometry to measure distance to
- * @see {@link IPolyline}
- * @see {@link polylineGetTAtDistance}
+ * __see {@link IPolyline}
+ * __see {@link polylineGetTAtDistance}
  */
 export function polylineGetDistanceAtT(polyline: IPolyline, t: number) {
   const numSegments = polylineGetNumSegments(polyline);

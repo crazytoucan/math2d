@@ -12,8 +12,8 @@ import { IRay, IVec } from "../types";
  *
  * @param ray the ray to inspect
  * @param vec point to be checked
- * @see {@link lineContainsPoint}
- * @see {@link lineWhichSide}
+ * __see {@link lineContainsPoint}
+ * __see {@link lineWhichSide}
  */
 export function rayContainsPoint(ray: IRay, vec: IVec) {
   const t = _dot(ray, vec);

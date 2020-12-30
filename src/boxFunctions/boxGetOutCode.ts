@@ -16,10 +16,10 @@ import { IBox, IVec } from "../types";
  *  const myBox = boxReset(-2, -2, 2, 2);
  *  const outCode1 = boxGetOutCode(myBox, vecReset(-4, 4)); // returns Out.MIN_X | Out.MAX_Y
  *  const outCode2 = boxGetOutCode(myBox, vec2Origin()); // returns 0
- * @see Out.MIN_X
- * @see Out.MAX_X
- * @see Out.MIN_Y
- * @see Out.MAX_Y
+ * __see Out.MIN_X
+ * __see Out.MAX_X
+ * __see Out.MIN_Y
+ * __see Out.MAX_Y
  */
 export function boxGetOutCode(box: IBox, point: IVec) {
   let out = 0;

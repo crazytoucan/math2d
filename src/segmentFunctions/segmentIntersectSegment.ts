@@ -28,10 +28,10 @@ import { segmentGetLength } from "./segmentGetLength";
  * @param a the first segment to intersect
  * @param b the second segment to find intersections with
  * @param out
- * @see {@link IIntersectionResult}
- * @see {@link ISegment}
- * @see {@link segmentIntersectPolyline}
- * @see {@link segmentIntersectRay}
+ * __see {@link IIntersectionResult}
+ * __see {@link ISegment}
+ * __see {@link segmentIntersectPolyline}
+ * __see {@link segmentIntersectRay}
  */
 export function segmentIntersectSegment(a: ISegment, b: ISegment, out = intersectionResultAlloc()) {
   const aRay = _lookAt(a.x0, a.y0, a.x1, a.y1);

@@ -8,8 +8,8 @@
  * for ease of use. After carefully benchmarking that difference, it's been confirmed that this
  * does not sacrifice performance or memory compactness.
  *
- * @see {@link vecAlloc}
- * @see {@link vecReset}
+ * __see {@link vecAlloc}
+ * __see {@link vecReset}
  */
 export interface IVec {
   /** x-coordinate of the vector */
@@ -31,8 +31,8 @@ export interface IVec {
  * between its endpoints, where _t_ = 0 represents its starting vertex and _t_ = 1 its
  * ending vertex.
  *
- * @see {@link segmentAlloc}
- * @see {@link segmentReset}
+ * __see {@link segmentAlloc}
+ * __see {@link segmentReset}
  */
 export interface ISegment {
   /**
@@ -63,8 +63,8 @@ export interface ISegment {
  * Where relevant, a ray is parameterized according to _t_ ≥ 0 with movement of distance _t_ along its direction vector.
  * In this mapping, _t_ = 0 represents the initial point (x0, y0).
  *
- * @see {@link rayAlloc}
- * @see {@link rayReset}
+ * __see {@link rayAlloc}
+ * __see {@link rayReset}
  */
 export interface IRay {
   /**
@@ -112,8 +112,8 @@ export interface IRay {
  * ⎣0 0 1⎦ ⎝1⎠   ⎝     1     ⎠
  * ```
  *
- * @see {@link mat2dAlloc}
- * @see {@link mat2dReset}
+ * __see {@link mat2dAlloc}
+ * __see {@link mat2dReset}
  */
 export interface IMat2d {
   /**
@@ -169,8 +169,8 @@ export interface IMat2d {
  * Math2d chooses to lay out this data in a
  * flat object structure, as opposed to an array or nested arrays, for ease of use and performance.
  *
- * @see {@link boxAlloc}
- * @see {@link boxReset}
+ * __see {@link boxAlloc}
+ * __see {@link boxReset}
  */
 export interface IBox {
   /**
@@ -221,16 +221,16 @@ export type IPolyline = number[];
 /**
  * Data type to hold the result of a point intersection between two pieces of geometry.
  *
- * @see {@link polygonIntersectRay}
- * @see {@link polygonIntersectSegment}
- * @see {@link polylineIntersectRay}
- * @see {@link polylineIntersectSegment}
- * @see {@link rayIntersectPolyline}
- * @see {@link rayIntersectRay}
- * @see {@link rayIntersectSegment}
- * @see {@link segmentIntersectPolyline}
- * @see {@link segmentIntersectRay}
- * @see {@link segmentIntersectSegment}
+ * __see {@link polygonIntersectRay}
+ * __see {@link polygonIntersectSegment}
+ * __see {@link polylineIntersectRay}
+ * __see {@link polylineIntersectSegment}
+ * __see {@link rayIntersectPolyline}
+ * __see {@link rayIntersectRay}
+ * __see {@link rayIntersectSegment}
+ * __see {@link segmentIntersectPolyline}
+ * __see {@link segmentIntersectRay}
+ * __see {@link segmentIntersectSegment}
  */
 export interface IIntersectionResult {
   /**
