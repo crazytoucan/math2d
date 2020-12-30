@@ -19,7 +19,7 @@ import { IPolyline, ISegment } from "../types";
  *
  * @param poly
  * @param segment
- * @see {@link IPointIntersectionResult}
+ * @see {@link IIntersectionResult}
  * @see {@link IPolyline}
  * @see {@link segmentIntersectPolyline}
  * @see {@link polylineIntersectRay}

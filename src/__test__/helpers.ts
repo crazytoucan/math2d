@@ -2,7 +2,7 @@ import { boxReset } from "../boxFunctions/boxReset";
 import { mat2dReset } from "../mat2dFunctions/mat2dReset";
 import { rayReset } from "../rayFunctions/rayReset";
 import { segmentReset } from "../segmentFunctions/segmentReset";
-import { IBox, IMat2d, IPointIntersectionResult, IVec } from "../types";
+import { IBox, IMat2d, IIntersectionResult, IVec } from "../types";
 import { vecReset } from "../vecFunctions/vecReset";
 
 export const TEST_PRECISION_DIGITS = 10;
@@ -29,7 +29,7 @@ export function expectVecEqualsApprox(actual: IVec, expected: IVec) {
   expectEqualsApprox(actual.y, expected.y);
 }
 
-export function expectIntersectionEqualsApprox(actual: IPointIntersectionResult, expected: IPointIntersectionResult) {
+export function expectIntersectionEqualsApprox(actual: IIntersectionResult, expected: IIntersectionResult) {
   expect(actual.exists).toBe(expected.exists);
   expectEqualsApprox(actual.x, expected.x);
   expectEqualsApprox(actual.y, expected.y);
@@ -37,7 +37,7 @@ export function expectIntersectionEqualsApprox(actual: IPointIntersectionResult,
   expectEqualsApprox(actual.t1, expected.t1);
 }
 
-export function expectIntersectionDNE(intersection: IPointIntersectionResult) {
+export function expectIntersectionDNE(intersection: IIntersectionResult) {
   expect(intersection).toEqual({
     exists: false,
     x: NaN,
