@@ -6,9 +6,9 @@ import { mat2dReset } from "./mat2dReset";
  * @param tx the x translation component
  * @param ty the y translation component
  * @param out
- * @see {@link mat2dFromRotation}
- * @see {@link mat2dTranslate}
- * @see {@link mat2dReset}
+ * __see {@link mat2dFromRotation}
+ * __see {@link mat2dTranslate}
+ * __see {@link mat2dReset}
  */
 export function mat2dFromTranslation(tx: number, ty: number, out = mat2dAlloc()) {
   return mat2dReset(1, 0, 0, 1, tx, ty, out);

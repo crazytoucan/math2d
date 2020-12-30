@@ -11,9 +11,9 @@ import { mat2dReset } from "./mat2dReset";
  *
  * @param theta angle in radians to create rotation for
  * @param out
- * @see {@link mat2dFromTranslation}
- * @see {@link mat2dRotate}
- * @see {@link mat2dReset}
+ * __see {@link mat2dFromTranslation}
+ * __see {@link mat2dRotate}
+ * __see {@link mat2dReset}
  */
 export function mat2dFromRotation(theta: number, out = mat2dAlloc()) {
   const sin = Math.sin(theta);

@@ -4,15 +4,14 @@
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "lib": [
-      "dom",
       "es2015"
     ],
     "module": "CommonJS",
     "moduleResolution": "node",
+    "noEmit": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "lib",
     "plugins": [{ "name": "typescript-tslint-plugin" }],
     "pretty": true,
     "removeComments": false,

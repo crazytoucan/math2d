@@ -23,8 +23,8 @@ import { rayGetPointAtT } from "./rayGetPointAtT";
  * @param ray the ray to inspect
  * @param point the reference point to project onto the ray
  * @param out
- * @see {@link lineProjectPoint}
- * @see {@link lineNearestDistanceToPoint}
+ * __see {@link lineProjectPoint}
+ * __see {@link lineNearestDistanceToPoint}
  */
 export function rayNearestDistanceSqToPoint(ray: IRay, point: IVec, out = nearestPointResultAlloc()) {
   const t = Math.max(0, _dot(ray, point));

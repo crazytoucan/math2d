@@ -11,7 +11,7 @@ import { IMat2d } from "../types";
  * so in particular it preserves normals.
  *
  * @param mat the matrix to check for orthogonality
- * @see {@link mat2dIsTranslationOnly}
+ * __see {@link mat2dIsTranslationOnly}
  */
 export function mat2dIsOrthogonal(mat: IMat2d) {
   const d1Sq = mat.a * mat.a + mat.b * mat.b;

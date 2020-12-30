@@ -19,10 +19,10 @@ import { IPolyline, ISegment } from "../types";
  *
  * @param poly
  * @param segment
- * @see {@link IIntersectionResult}
- * @see {@link IPolyline}
- * @see {@link segmentIntersectPolyline}
- * @see {@link polylineIntersectRay}
+ * __see {@link IIntersectionResult}
+ * __see {@link IPolyline}
+ * __see {@link segmentIntersectPolyline}
+ * __see {@link polylineIntersectRay}
  */
 export function polylineIntersectSegment(poly: IPolyline, segment: ISegment) {
   return _polylineIntersectHelper(poly, segment, segmentIntersectSegment);

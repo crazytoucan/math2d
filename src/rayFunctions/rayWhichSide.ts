@@ -24,8 +24,8 @@ import { IRay, IVec } from "../types";
  *
  * @param ray the line to inspect
  * @param point the reference point to check for closest distance
- * @see {@link lineGetClosestDistanceToPoint}
- * @see {@link lineWhichSide}
+ * __see {@link lineGetClosestDistanceToPoint}
+ * __see {@link lineWhichSide}
  */
 export function rayWhichSide(ray: IRay, point: IVec) {
   const d = _dotPerp(ray, point);

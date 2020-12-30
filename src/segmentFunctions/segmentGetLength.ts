@@ -6,8 +6,8 @@ import { ISegment } from "../types";
  * This is simply `√((x1 - x0)² + (y1 - y0)²)`.
  *
  * @param segment segment to measure
- * @see {@link segmentGetLengthSq}
- * @see {@link vecDistance}
+ * __see {@link segmentGetLengthSq}
+ * __see {@link vecDistance}
  */
 export function segmentGetLength(segment: ISegment) {
   const dx = segment.x1 - segment.x0;

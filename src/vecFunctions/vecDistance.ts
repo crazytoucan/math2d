@@ -5,8 +5,8 @@ import { IVec } from "../types";
  *
  * @param u the first point
  * @param v the second point, to which distance should be measured from the first
- * @see {@link vecDistanceSq}
- * @see {@link vecGetLength}
+ * __see {@link vecDistanceSq}
+ * __see {@link vecGetLength}
  */
 export function vecDistance(u: IVec, v: IVec) {
   const dx = v.x - u.x;
