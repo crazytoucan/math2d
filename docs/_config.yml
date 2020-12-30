@@ -1,6 +1,0 @@
-remote_theme: pmarsceill/just-the-docs
-title: math2d
-plugins:
-  - jekyll-remote-theme
-kramdown:
-  math_engine: mathjax
