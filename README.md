@@ -84,8 +84,7 @@ console.log(vecTransformBy(threeFour, spin));
 * **polylineContainsPoint**: undefined
 * **polylineContainsPointInside**: Determines whether the point is inside the given polygon, using the even-odd fill rule
 * **polylineGetBounds**: Computes bounding box of polyline's geometry
-* **polylineGetDistanceAtT**: Computes the Euclidean distance traveled along the polyline's geometry to get to
-the parametric point at _t_
+* **polylineGetDistanceAtT**: Computes the Euclidean distance traveled along the polyline's geometry to get to the parametric point at _t_
 * **polylineGetLength**: Computes total length of polyline
 * **polylineGetNumSegments**: Returns the number of individual line segments in this polyline
 * **polylineGetNumVertices**: Returns the number of vertices in this polyline
