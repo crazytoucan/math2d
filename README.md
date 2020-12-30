@@ -112,8 +112,10 @@ console.log(vecTransformBy(threeFour, spin));
 * **rayIntersectSegment**: Computes the intersection point between the ray and the segment, if it exists
 * **rayLookAt**: Constructs a ray from an initial point, pointing in the direction of a target point
 * **rayNearestDistanceSqToPoint**: Determines the closest the ray comes to a given reference point
+* **rayProjectPoint**: Projects a point onto the given line, returning the distance _t_ along the line where it falls
 * **rayReset**: Construct a new ray given an (x0, y0) initial point and (dirX, dirY) direction vector
 * **rayTransformBy**: Transforms a ray by an affine matrix
+* **rayWhichSide**: Computes on which side of the ray (as a _line_) a given point lies
 
 ### Segment Functions
 
