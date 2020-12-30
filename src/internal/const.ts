@@ -1,2 +1,2 @@
-export const EPSILON = 1e-8;
-export const EPSILON_SQ = 1e-16;
+export const EPSILON = 2 ** -16;
+export const EPSILON_SQ = 2 ** -32;
