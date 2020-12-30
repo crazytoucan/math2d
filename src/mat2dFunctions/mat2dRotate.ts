@@ -27,8 +27,8 @@ export function mat2dRotate(mat: Mat2d, theta: number, out = mat2dAlloc()) {
     cos * mat.b - sin * mat.d,
     sin * mat.a + cos * mat.c,
     sin * mat.b + cos * mat.d,
-    mat.e,
-    mat.f,
+    mat.tx,
+    mat.ty,
     out,
   );
 }

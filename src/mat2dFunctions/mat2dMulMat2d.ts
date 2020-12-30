@@ -11,9 +11,9 @@ import { mat2dReset } from "./mat2dReset";
  * Affine matrix multiplication is defined by
  *
  * ```
- * ⎡m1.a m1.c m1.e⎤ ⎡m2.a m2.c m2.e⎤   ⎡r.a r.c r.e⎤
- * ⎢m1.b m1.d m1.f⎥ ⎢m2.b m2.d m2.f⎥ = ⎢r.b r.d r.f⎥
- * ⎣   0    0    1⎦ ⎣   0    0    1⎦   ⎣  0   0   1⎦
+ * ⎡m1.a m1.c m1.tx⎤ ⎡m2.a m2.c m2.tx⎤   ⎡r.a r.c r.tx⎤
+ * ⎢m1.b m1.d m1.ty⎥ ⎢m2.b m2.d m2.ty⎥ = ⎢r.b r.d r.ty⎥
+ * ⎣   0    0     1⎦ ⎣   0    0     1⎦   ⎣  0   0    1⎦
  * ```
  *
  * where:
@@ -21,8 +21,8 @@ import { mat2dReset } from "./mat2dReset";
  *  - `r.b = m1.b * m2.a + m1.d * m2.b`
  *  - `r.c = m1.a * m2.c + m1.c * m2.d`
  *  - `r.d = m1.b * m2.c + m1.d * m2.d`
- *  - `r.e = m1.a * m2.e + m1.c * m2.f + m1.e`
- *  - `r.f = m1.b * m2.e + m1.c * m2.f + m1.f`
+ *  - `r.tx = m1.a * m2.tx + m1.c * m2.ty + m1.tx`
+ *  - `r.ty = m1.b * m2.e + m1.c * m2.ty + m1.ty`
  *
  * @param m1 the first matrix to multiply
  * @param m2 the second matrix to multiply
@@ -35,7 +35,7 @@ export function mat2dMulMat2d(m1: Mat2d, m2: Mat2d, out = mat2dAlloc()) {
   const b = m1.b * m2.a + m1.d * m2.b;
   const c = m1.a * m2.c + m1.c * m2.d;
   const d = m1.b * m2.c + m1.d * m2.d;
-  const e = m1.a * m2.e + m1.c * m2.f + m1.e;
-  const f = m1.b * m2.e + m1.c * m2.f + m1.f;
-  return mat2dReset(a, b, c, d, e, f, out);
+  const tx = m1.a * m2.tx + m1.c * m2.ty + m1.tx;
+  const ty = m1.b * m2.tx + m1.c * m2.ty + m1.ty;
+  return mat2dReset(a, b, c, d, tx, ty, out);
 }

@@ -97,19 +97,19 @@ export interface Ray {
  * i.e. a linear 2x2 matrix plus a 2D translation. Math2d chooses to lay out this data in a
  * flat object structure, as opposed to an array or nested arrays, for ease of use and performance.
  * The field names used here match other standards, like the native DOMMatrix
- * specification and the Canvas reference APIs.
+ * specification, the Canvas reference APIs, and the open-source glMatrix library.
  *
  * ```
- * ⎡a c e⎤
- * ⎣b d f⎦
+ * ⎡a c tx⎤
+ * ⎣b d ty⎦
  * ```
  *
  * Per usual linear algebra, multiplying a vector `v = (x, y)` according to this affine matrix is defined by:
  *
  * ```
- * ⎡a c e⎤ ⎛x⎞   ⎛ax + cy + e⎞
- * ⎢b d f⎥ ⎜y⎟ = ⎜bx + dy + f⎟
- * ⎣0 0 1⎦ ⎝1⎠   ⎝     1     ⎠
+ * ⎡a c e⎤ ⎛x⎞   ⎛ax + cy + tx⎞
+ * ⎢b d f⎥ ⎜y⎟ = ⎜bx + dy + ty⎟
+ * ⎣0 0 1⎦ ⎝1⎠   ⎝      1     ⎠
  * ```
  *
  * __see {@link mat2dAlloc}
@@ -137,14 +137,14 @@ export interface Mat2d {
   d: number;
 
   /**
-   * Col 3, row 1 component, usually called `tx` or `m41` in a 4x4 graphics matrix.
+   * Col 3, row 1 component, usually called `m41` in a 4x4 graphics matrix.
    */
-  e: number;
+  tx: number;
 
   /**
-   * Col 3, row 2 component, usually called `ty` or `m42` in a 4x4 graphics matrix.
+   * Col 3, row 2 component, usually called `m42` in a 4x4 graphics matrix.
    */
-  f: number;
+  ty: number;
 }
 
 /**

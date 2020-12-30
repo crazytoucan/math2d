@@ -52,8 +52,8 @@ export function expectMat2dEqualsApprox(actual: Mat2d, expected: Mat2d) {
   expectEqualsApprox(actual.b, expected.b);
   expectEqualsApprox(actual.c, expected.c);
   expectEqualsApprox(actual.d, expected.d);
-  expectEqualsApprox(actual.e, expected.e);
-  expectEqualsApprox(actual.f, expected.f);
+  expectEqualsApprox(actual.tx, expected.tx);
+  expectEqualsApprox(actual.ty, expected.ty);
 }
 
 export function expectArrayEqualsApprox(actual: number[], expected: number[]) {
@@ -65,8 +65,8 @@ export function expectArrayEqualsApprox(actual: number[], expected: number[]) {
 
 export function _mat2dValues(values: number[]) {
   expect(values).toHaveLength(6);
-  const [a, b, c, d, e, f] = values;
-  return mat2dReset(a, b, c, d, e, f);
+  const [a, b, c, d, tx, ty] = values;
+  return mat2dReset(a, b, c, d, tx, ty);
 }
 
 export function _boxValues(values: number[]) {

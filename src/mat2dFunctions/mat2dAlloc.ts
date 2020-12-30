@@ -5,8 +5,8 @@ class _Mat2d implements Mat2d {
   public b = NaN;
   public c = NaN;
   public d = NaN;
-  public e = NaN;
-  public f = NaN;
+  public tx = NaN;
+  public ty = NaN;
 }
 
 /**
