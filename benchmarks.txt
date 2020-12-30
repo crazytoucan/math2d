@@ -1,6 +1,0 @@
-alt_vec_array_alloc.js	1.13ns
-alt_vec_object_alloc.js	1.12ns
-polyline_get_t_at_distance5.js	22.56ns
-polyline_get_t_at_distance50.js	191.68ns
-vec_alloc.js	1.13ns
-vec_reset.js	1.12ns
