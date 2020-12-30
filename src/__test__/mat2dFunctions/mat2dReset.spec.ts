@@ -8,8 +8,8 @@ describe("mat2dReset", () => {
       b: 4,
       c: 5,
       d: 6,
-      e: 7,
-      f: 8,
+      tx: 7,
+      ty: 8,
     });
   });
 
