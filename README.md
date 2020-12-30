@@ -18,169 +18,112 @@ $ yarn add math2d
 ```
 
 ```ts
-import { mat2dFromRotation, vecReset, vecTransformBy } from "math2d";
+import { _vec, mat2dFromRotation, vecTransformBy } from "math2d";
 
-const threeFour = vecReset(3, 4);
-const rotation = mat2dFromRotation(Math.PI / 4);
-console.log(vecTransformBy(threeFour, rotation));
-
-// or, re-use existing memory to avoid potentially expensive heap allocations.
-const tmp = vecReset(3, 4);
-vecTransformBy(tmp, rotation, tmp);
+const threeFour = _vec(3, 4);
+const spin = mat2dFromRotation(Math.PI / 4);
+console.log(vecTransformBy(threeFour, spin));
 ```
 
 ## API
 
-Documentation for Math2d's API is available at https://crazytoucan.github.io/math2d/api/.
-
-
-
 ### Box Functions
-* [boxAlloc](https://crazytoucan.github.io/math2d/api/#boxAlloc): Creates a new Box object in memory, with all values initialized to `NaN`.
-* [boxClone](https://crazytoucan.github.io/math2d/api/#boxClone): Copies values from an existing IBox into a new box.
-* [boxIntersection](https://crazytoucan.github.io/math2d/api/#boxIntersection): Computes the area intersection of the two box regions.
-* [boxUnion](https://crazytoucan.github.io/math2d/api/#boxUnion): Compute the smallest bounding box that contains both given boxes.
-* [boxContainsBox](https://crazytoucan.github.io/math2d/api/#boxContainsBox): Determines whether the second box is completely enclosed in the first.
-* [boxContainsPoint](https://crazytoucan.github.io/math2d/api/#boxContainsPoint): Determines whether the box contains a given point.
-* [boxEncapsulate](https://crazytoucan.github.io/math2d/api/#boxEncapsulate): Grows the box to include a given point.
-* [boxGetOutCode](https://crazytoucan.github.io/math2d/api/#boxGetOutCode): Determines where the specified point lies in relation to the given box.
-* [boxGrow](https://crazytoucan.github.io/math2d/api/#boxGrow): Expands a box by a given amount in all directions.
-* [boxIntersectsBox](https://crazytoucan.github.io/math2d/api/#boxIntersectsBox): Determines whether two boxes overlap.
-* [boxIsEmpty](https://crazytoucan.github.io/math2d/api/#boxIsEmpty): Determines whether this box represents an empty area.
-* [boxReset](https://crazytoucan.github.io/math2d/api/#boxReset): Construct a new box given `minX`, `minY`, `maxX`, and `maxY` bounding values.
-* [boxScale](https://crazytoucan.github.io/math2d/api/#boxScale): Scales a box by a fixed scalar in both directions.
-* [boxTransformBy](https://crazytoucan.github.io/math2d/api/#boxTransformBy): Compute the bounds of the image of this box after applying a 2D affine transformation.
-* [boxTranslate](https://crazytoucan.github.io/math2d/api/#boxTranslate): Translate a box by an offset in the x- and y- directions.
 
+* **_box**: shorthand for defining a Box from minX, minY, maxX, maxY
+* **boxAlloc**: Creates a new Box object in memory, with all values initialized to `NaN`
+* **boxClone**: Copies values from an existing IBox into a new box
+* **boxContainsBox**: Determines whether the second box is completely enclosed in the first
+* **boxContainsPoint**: Determines whether the box contains a given point
+* **boxEncapsulate**: Grows the box to include a given point
+* **boxEnclosingPoints**: Computes the smallest bounding box that contains all of the provided points
+* **boxGetOutCode**: Determines where the specified point lies in relation to the given box
+* **boxGrow**: Expands a box by a given amount in all directions
+* **boxIntersection**: Computes the area intersection of the two box regions
+* **boxIntersectsBox**: Determines whether two boxes overlap
+* **boxIsEmpty**: Determines whether this box represents an empty area
+* **boxReset**: Construct a new box given `minX`, `minY`, `maxX`, and `maxY` bounding values
+* **boxScale**: Scales a box by a fixed scalar in both directions
+* **boxTransformBy**: Compute the bounds of the image of this box after applying a 2D affine transformation
+* **boxTranslate**: Translate a box by an offset in the x- and y- directions
+* **boxUnion**: Compute the smallest bounding box that contains both given boxes
 
-### Line Functions
-* [lineAlloc](https://crazytoucan.github.io/math2d/api/#lineAlloc): Creates a new Line object in memory, with all values initialized to `NaN`.
-* [lineClone](https://crazytoucan.github.io/math2d/api/#lineClone): Copies the values from the given line into a new line.
-* [lineContainsPoint](https://crazytoucan.github.io/math2d/api/#lineContainsPoint): Determines if the point is on the line
-* [lineGetPointAt](https://crazytoucan.github.io/math2d/api/#lineGetPointAt): Gets a point along the line, parameterized according to distance along its
-direction vector.
-* [lineIntersectLine](https://crazytoucan.github.io/math2d/api/#lineIntersectLine): Computes the intersection point between the two given lines, if it exists.
-* [lineIntersectPolyline](https://crazytoucan.github.io/math2d/api/#lineIntersectPolyline): Computes all locations at which a line crosses a given polyline.
-* [lineIntersectRay](https://crazytoucan.github.io/math2d/api/#lineIntersectRay): Computes the intersection point between the given line and ray, if it exists.
-* [lineIntersectSegment](https://crazytoucan.github.io/math2d/api/#lineIntersectSegment): Computes the intersection point between the given line and segment, if it exists.
-* [lineNearestDistanceToPoint](https://crazytoucan.github.io/math2d/api/#lineNearestDistanceToPoint): Determines the closest the line comes to a given point
-* [lineNearestSignedDistanceToPoint](https://crazytoucan.github.io/math2d/api/#lineNearestSignedDistanceToPoint): Determines the closest _signed_ distance the line comes to a given point
-* [lineProjectPoint](https://crazytoucan.github.io/math2d/api/#lineProjectPoint): Projects a point onto the given line, returning the distance _t_ along the line where it falls.
-* [lineReset](https://crazytoucan.github.io/math2d/api/#lineReset): Construct a new line given an (x0, y0) initial point and (dirX, dirY) direction vector.
-* [lineThroughPoints](https://crazytoucan.github.io/math2d/api/#lineThroughPoints): Construct a line that passes through two given points.
-* [lineTransformBy](https://crazytoucan.github.io/math2d/api/#lineTransformBy): Transforms a line by an affine matrix.
-* [lineWhichSide](https://crazytoucan.github.io/math2d/api/#lineWhichSide): Computes on which side of the line a given point lies.
+### Intersection Result Functions
 
+* **intersectionResultAlloc**: Creates a new IntersectionResult object in memory, with all values initialized to `false` and `NaN`
+* **intersectionResultClone**: Copies the values from the given intersection into a new intersection object
+* **intersectionResultReset**: Construct a new intersection given `exists`, `x`, `y`, `t0`, and `t1` values
 
 ### Mat2d Functions
-* [mat2dAlloc](https://crazytoucan.github.io/math2d/api/#mat2dAlloc): Creates a new mat2d object in memory, with all values initialized to `NaN`.
-* [mat2dClone](https://crazytoucan.github.io/math2d/api/#mat2dClone): Copies the values from the given matrix into a new matrix.
-* [mat2dDeterminant](https://crazytoucan.github.io/math2d/api/#mat2dDeterminant): Computes the determinant of the affine matrix
-* [mat2dFromRotation](https://crazytoucan.github.io/math2d/api/#mat2dFromRotation): Computes the affine transform corresponding to a given rotation, in radians
-* [mat2dFromTranslation](https://crazytoucan.github.io/math2d/api/#mat2dFromTranslation): Computes the affine transform corresponding to a given (tx, ty) translation
-* [mat2dIdentity](https://crazytoucan.github.io/math2d/api/#mat2dIdentity): Returns the identity affine matrix, `[1 0 0 1 0 0]`
-* [mat2dInvert](https://crazytoucan.github.io/math2d/api/#mat2dInvert): Computes the inverse of the given 2d affine matrix
-* [mat2dIsOrthogonal](https://crazytoucan.github.io/math2d/api/#mat2dIsOrthogonal): Returns whether the matrix is an orthogonal matrix.
-* [mat2dIsTranslationOnly](https://crazytoucan.github.io/math2d/api/#mat2dIsTranslationOnly): Returns whether the matrix corresponds to only a translation.
-* [mat2dMulMat2d](https://crazytoucan.github.io/math2d/api/#mat2dMulMat2d): Computes the result of affine matrix multiplication _m1_ × _m2_.
-* [mat2dReset](https://crazytoucan.github.io/math2d/api/#mat2dReset): Construct a new matrix given component values.
-* [mat2dRotate](https://crazytoucan.github.io/math2d/api/#mat2dRotate): Applies a rotation in radians to the given matrix, returning the result.
-* [mat2dScale](https://crazytoucan.github.io/math2d/api/#mat2dScale): Applies a scaling transform on top of the given affine matrix, returning the result.
-* [mat2dTranslate](https://crazytoucan.github.io/math2d/api/#mat2dTranslate): Applies a translation on top of the given matrix, returning the result.
 
+* **_mat2d**: shorthand for defining a Mat2d from a, b, c, d, tx, ty
+* **mat2dAlloc**: Creates a new mat2d object in memory, with all values initialized to `NaN`
+* **mat2dClone**: Copies the values from the given matrix into a new matrix
+* **mat2dDeterminant**: Computes the determinant of the affine matrix
+* **mat2dFromRotation**: Computes the affine transform corresponding to a given rotation, in radians
+* **mat2dFromTranslation**: Computes the affine transform corresponding to a given (tx, ty) translation
+* **mat2dIdentity**: Returns the identity affine matrix, `[1 0 0 1 0 0]`
+* **mat2dInvert**: Computes the inverse of the given 2d affine matrix
+* **mat2dIsOrthogonal**: Returns whether the matrix is an orthogonal matrix
+* **mat2dIsTranslationOnly**: Returns whether the matrix corresponds to only a translation
+* **mat2dMulMat2d**: Computes the result of affine matrix multiplication _m1_ × _m2_
+* **mat2dReset**: Construct a new matrix given component values
+* **mat2dRotate**: Applies a rotation in radians to the given matrix, returning the result
+* **mat2dScale**: Applies a scaling transform on top of the given affine matrix, returning the result
+* **mat2dTranslate**: Applies a translation on top of the given matrix, returning the result
 
-### Polygon Functions
-* [polygonAlloc](https://crazytoucan.github.io/math2d/api/#polygonAlloc): Creates a new Array object in memory to hold Polygon data.
-Its initial length is 0.
-* [polygonContainsPointInside](https://crazytoucan.github.io/math2d/api/#polygonContainsPointInside): Determines whether the point is inside the given polygon, using the even-odd fill rule.
-* [polygonGetBounds](https://crazytoucan.github.io/math2d/api/#polygonGetBounds): Calculate the smallest bounding box that contains this polygon's geometry
-* [polygonGetNumSides](https://crazytoucan.github.io/math2d/api/#polygonGetNumSides): Return the number of sides of this polygon, which is `poly.length / 2`.
-* [polygonGetPerimeterLength](https://crazytoucan.github.io/math2d/api/#polygonGetPerimeterLength): Computes the total perimeter length of this polygon.
-* [polygonGetPerimeterPointAt](https://crazytoucan.github.io/math2d/api/#polygonGetPerimeterPointAt): Computes a point along the polygon's perimeter, parameterized according to linear interpolation between
-adjacent vertices, cycling back to the start after its last vertex.
-* [polygonGetSideLength](https://crazytoucan.github.io/math2d/api/#polygonGetSideLength): Returns the length of a polygon's side by index, starting at 0.
-* [polygonGetSideSegment](https://crazytoucan.github.io/math2d/api/#polygonGetSideSegment): Returns a polygon's side by given index as a segment, starting at 0.
-* [polygonIntersectLine](https://crazytoucan.github.io/math2d/api/#polygonIntersectLine): Computes all locations at which a polygon crosses a given line.
-* [polygonIntersectRay](https://crazytoucan.github.io/math2d/api/#polygonIntersectRay): Computes all locations at which a polygon crosses a given ray.
-* [polygonIntersectSegment](https://crazytoucan.github.io/math2d/api/#polygonIntersectSegment): Computes all locations at which a polygon crosses a given line segment.
-* [polygonNearestDistanceSqToPoint](https://crazytoucan.github.io/math2d/api/#polygonNearestDistanceSqToPoint): Computes the closest the polygon's perimeter comes to a given reference point.
-* [polygonTransformBy](https://crazytoucan.github.io/math2d/api/#polygonTransformBy): Transforms a polygon by an affine matrix.
+### Nearest Point Result Functions
 
-
-### Polyline Functions
-* [polylineAlloc](https://crazytoucan.github.io/math2d/api/#polylineAlloc): Creates a new Array object in memory to hold Polyline data.
-Its initial length is 0.
-* [polylineClose](https://crazytoucan.github.io/math2d/api/#polylineClose): Repeats the polyline's first vertex to form a closed path.
-* [polylineGetBounds](https://crazytoucan.github.io/math2d/api/#polylineGetBounds): Computes bounding box of polyline's geometry
-* [polylineGetLength](https://crazytoucan.github.io/math2d/api/#polylineGetLength): Computes total length of polyline
-* [polylineGetNumSegments](https://crazytoucan.github.io/math2d/api/#polylineGetNumSegments): Returns the number of individual line segments in this polyline
-* [polylineGetPointAt](https://crazytoucan.github.io/math2d/api/#polylineGetPointAt): Computes a point along the polyline, parameterized according to linear interpolation between
-adjacent vertices.
-* [polylineGetSegment](https://crazytoucan.github.io/math2d/api/#polylineGetSegment): Returns a polyline's segment by given index, starting at 0.
-* [polylineGetSegmentLength](https://crazytoucan.github.io/math2d/api/#polylineGetSegmentLength): Computes the length of one of a polyline's segments by index, starting at 0.
-* [polylineGetVertex](https://crazytoucan.github.io/math2d/api/#polylineGetVertex): Retrieves a vertex from this polyline's geometry, starting at index 0
-* [polylineIntersectLine](https://crazytoucan.github.io/math2d/api/#polylineIntersectLine): Computes all locations at which a polyline crosses a given line.
-* [polylineIntersectRay](https://crazytoucan.github.io/math2d/api/#polylineIntersectRay): Computes all locations at which a polyline crosses a given ray.
-* [polylineIntersectSegment](https://crazytoucan.github.io/math2d/api/#polylineIntersectSegment): Computes all locations at which a polyline crosses a given line segment.
-* [polylineIsClosed](https://crazytoucan.github.io/math2d/api/#polylineIsClosed): Returns whether the polyline's last vertex equals its first
-* [polylineNearestDistanceSqToPoint](https://crazytoucan.github.io/math2d/api/#polylineNearestDistanceSqToPoint): Finds the closest the polyline comes to a given reference point.
-* [polylineTransformBy](https://crazytoucan.github.io/math2d/api/#polylineTransformBy): Transforms a polyline by an affine matrix.
-* [polylineTrim](https://crazytoucan.github.io/math2d/api/#polylineTrim): Trims a polyline to a range of its _t_ parameter.
-
+* **nearestPointResultAlloc**: Creates a new NearestPointResult object in memory, with all values initialized to `NaN`
+* **nearestPointResultClone**: Copies the values from the given NearestPointResult into a new NearestPointResult object
+* **nearestPointResultReset**: Construct a new intersection given `exists`, `x`, `y`, `t0`, and `t1` values
 
 ### Ray Functions
-* [rayAlloc](https://crazytoucan.github.io/math2d/api/#rayAlloc): Creates a new Ray object in memory, with all values initialized to `NaN`.
-* [rayClone](https://crazytoucan.github.io/math2d/api/#rayClone): Copies the values from the given ray into a new ray.
-* [rayContainsPoint](https://crazytoucan.github.io/math2d/api/#rayContainsPoint): Determines if the point is on the ray
-* [rayGetPointAt](https://crazytoucan.github.io/math2d/api/#rayGetPointAt): Gets a point along the ray, parameterized according to distance along its
-direction vector.
-* [rayIntersectLine](https://crazytoucan.github.io/math2d/api/#rayIntersectLine): Computes the intersection point between the given ray and line, if it exists.
-* [rayIntersectPolyline](https://crazytoucan.github.io/math2d/api/#rayIntersectPolyline): Computes all locations at which a ray crosses a given polyline.
-* [rayIntersectRay](https://crazytoucan.github.io/math2d/api/#rayIntersectRay): Computes the intersection point between the two rays, if it exists.
-* [rayIntersectSegment](https://crazytoucan.github.io/math2d/api/#rayIntersectSegment): Computes the intersection point between the ray and the segment, if it exists.
-* [rayLookAt](https://crazytoucan.github.io/math2d/api/#rayLookAt): Constructs a ray from an initial point, pointing in the direction of a target point.
-* [rayNearestDistanceSqToPoint](https://crazytoucan.github.io/math2d/api/#rayNearestDistanceSqToPoint): Determines the closest the ray comes to a given reference point
-* [rayReset](https://crazytoucan.github.io/math2d/api/#rayReset): Construct a new ray given an (x0, y0) initial point and (dirX, dirY) direction vector.
-* [rayTransformBy](https://crazytoucan.github.io/math2d/api/#rayTransformBy): Transforms a ray by an affine matrix.
 
+* **_ray**: shorthand for defining a Ray from x0, y0, dirX, dirY
+* **rayAlloc**: Creates a new Ray object in memory, with all values initialized to `NaN`
+* **rayClone**: Copies the values from the given ray into a new ray
+* **rayContainsPoint**: Determines if the point is on the ray
+* **rayGetPointAtT**: Gets a point along the ray, parameterized according to distance along its direction vector
+* **rayIntersectPolyline**: Computes all locations at which a ray crosses a given polyline
+* **rayIntersectRay**: Computes the intersection point between the two rays, if it exists
+* **rayIntersectSegment**: Computes the intersection point between the ray and the segment, if it exists
+* **rayLookAt**: Constructs a ray from an initial point, pointing in the direction of a target point
+* **rayNearestDistanceSqToPoint**: Determines the closest the ray comes to a given reference point
+* **rayReset**: Construct a new ray given an (x0, y0) initial point and (dirX, dirY) direction vector
+* **rayTransformBy**: Transforms a ray by an affine matrix
 
 ### Segment Functions
-* [segmentAlloc](https://crazytoucan.github.io/math2d/api/#segmentAlloc): Creates a new Segment object in memory, with all values initialized to `NaN`.
-* [segmentGetEndpoint0](https://crazytoucan.github.io/math2d/api/#segmentGetEndpoint0): Retrieves the starting endpoint (_t_ = 0) of the segment, as a vector.
-* [segmentGetEndpoint1](https://crazytoucan.github.io/math2d/api/#segmentGetEndpoint1): Retrives the ending endpoint (_t_ = 1) of the segment, as a vector.
-* [segmentGetLength](https://crazytoucan.github.io/math2d/api/#segmentGetLength): Computes the length of the line segment
-* [segmentGetLengthSq](https://crazytoucan.github.io/math2d/api/#segmentGetLengthSq): Computes the squared length of the line segment
-* [segmentGetPointAt](https://crazytoucan.github.io/math2d/api/#segmentGetPointAt): Gets a point along the line segment, parameterized according to linear interpolation
-between its endpoints.
-* [segmentIntersectLine](https://crazytoucan.github.io/math2d/api/#segmentIntersectLine): Computes the intersection point between the given segment and line, if it exists.
-* [segmentIntersectPolyline](https://crazytoucan.github.io/math2d/api/#segmentIntersectPolyline): Computes all locations at which a line segment meets a given polyline.
-* [segmentIntersectRay](https://crazytoucan.github.io/math2d/api/#segmentIntersectRay): Computes the intersection point between the ray and the segment, if it exists.
-* [segmentIntersectSegment](https://crazytoucan.github.io/math2d/api/#segmentIntersectSegment): Computes the intersection point between the two line segments, if it exists.
-* [segmentNearestDistanceSqToPoint](https://crazytoucan.github.io/math2d/api/#segmentNearestDistanceSqToPoint): Finds the closest the segment comes to a given reference point.
-* [segmentReset](https://crazytoucan.github.io/math2d/api/#segmentReset): Construct a new line segment given an (x0, y0) starting vertex and (x1, y1) ending vertex.
-The two points are allowed to be the same.
-* [segmentReverse](https://crazytoucan.github.io/math2d/api/#segmentReverse): Computes the reverse of the segment, i.e. swapping its starting vertex and ending vertex.
 
+* **_segment**: shorthand for defining a Segment from x0, y0, x1, y1
+* **segmentAlloc**: Creates a new Segment object in memory, with all values initialized to `NaN`
+* **segmentGetEndpoint0**: Retrieves the starting endpoint (_t_ = 0) of the segment, as a vector
+* **segmentGetEndpoint1**: Retrives the ending endpoint (_t_ = 1) of the segment, as a vector
+* **segmentGetLength**: Computes the length of the line segment
+* **segmentGetLengthSq**: Computes the squared length of the line segment
+* **segmentGetPointAtT**: Gets a point along the line segment, parameterized according to linear interpolation between its endpoints
+* **segmentIntersectPolyline**: Computes all locations at which a line segment meets a given polyline
+* **segmentIntersectRay**: Computes the intersection point between the ray and the segment, if it exists
+* **segmentIntersectSegment**: Computes the intersection point between the two line segments, if it exists
+* **segmentNearestDistanceSqToPoint**: Finds the closest the segment comes to a given reference point
+* **segmentReset**: Construct a new line segment given an (x0, y0) starting vertex and (x1, y1) ending vertex. The two points are allowed to be the same
+* **segmentReverse**: Computes the reverse of the segment, i.e. swapping its starting vertex and ending vertex
 
 ### Vec Functions
-* [vecAdd](https://crazytoucan.github.io/math2d/api/#vecAdd): Computes the result of adding the two given vectors.
-* [vecAlloc](https://crazytoucan.github.io/math2d/api/#vecAlloc): Creates a new Vec object in memory, with all values initialized to `NaN`.
-* [vecClone](https://crazytoucan.github.io/math2d/api/#vecClone): Copies the values from the given vector into a new vector.
-* [vecCross](https://crazytoucan.github.io/math2d/api/#vecCross): Computes the two-dimensional cross product of the two vectors.
-* [vecDistance](https://crazytoucan.github.io/math2d/api/#vecDistance): Computes the straight-line (Euclidean) distance between the two points
-* [vecDistanceSq](https://crazytoucan.github.io/math2d/api/#vecDistanceSq): Computes the squared straight-line (i.e. Euclidean) distance between the two points
-* [vecDot](https://crazytoucan.github.io/math2d/api/#vecDot): Computes the dot product of the two vectors, i.e. `u.x * v.x + u.y * v.y`.
-* [vecGetLength](https://crazytoucan.github.io/math2d/api/#vecGetLength): Computes the straight-line length (i.e. Euclidean norm) of the given vector.
-* [vecGetLengthSq](https://crazytoucan.github.io/math2d/api/#vecGetLengthSq): Computes the squared straight-line length (i.e. square of the Euclidean norm) of the given vector.
-* [vecGetManhattanLength](https://crazytoucan.github.io/math2d/api/#vecGetManhattanLength): Computes the Manhattan length of the given vector, i.e. `|v.x| + |v.y|`.
-* [vecLerp](https://crazytoucan.github.io/math2d/api/#vecLerp): Performs a linear interpolation between the two vectors. The `r` parameter is allowed to be outside `[0, 1]`.
-* [vecManhattanDistance](https://crazytoucan.github.io/math2d/api/#vecManhattanDistance): Computes the Manhattan distance between the two points.
-* [vecNormalize](https://crazytoucan.github.io/math2d/api/#vecNormalize): Normalizes the vector to be length 1. If the given vector is the zero-vector, this method
-returns `(NaN, NaN)`.
-* [vecOrigin](https://crazytoucan.github.io/math2d/api/#vecOrigin): Returns the 2d origin vector, `(0, 0)`.
-* [vecPerp](https://crazytoucan.github.io/math2d/api/#vecPerp): Computes the perp of the given vector, as defined by `vecPerp(a, b) = (-b, a)`.
-This is equivalent to a counter-clockwise rotation in the standard plane.
-* [vecReset](https://crazytoucan.github.io/math2d/api/#vecReset): Construct a new vector given an `x` and `y` value.
-* [vecScale](https://crazytoucan.github.io/math2d/api/#vecScale): Scales both coordinates of this vector by a given scalar.
-* [vecSubtract](https://crazytoucan.github.io/math2d/api/#vecSubtract): Computes `u - v`, i.e. subtracting the second vector from the first.
-* [vecTransformBy](https://crazytoucan.github.io/math2d/api/#vecTransformBy): Multiplies the vector by an affine matrix.
+
+* **_vec**: shorthand for defining a Vec from x, y
+* **vecAdd**: Computes the result of adding the two given vectors
+* **vecAlloc**: Creates a new Vec object in memory, with all values initialized to `NaN`
+* **vecClone**: Copies the values from the given vector into a new vector
+* **vecCross**: Computes the two-dimensional cross product of the two vectors
+* **vecDistance**: Computes the straight-line (Euclidean) distance between the two points
+* **vecDistanceSq**: Computes the squared straight-line (i.e. Euclidean) distance between the two points
+* **vecDot**: Computes the dot product of the two vectors, i.e. `u.x * v.x + u.y * v.y`
+* **vecGetLength**: Computes the straight-line length (i.e. Euclidean norm) of the given vector
+* **vecGetLengthSq**: Computes the squared straight-line length (i.e. square of the Euclidean norm) of the given vector
+* **vecLerp**: Performs a linear interpolation between the two vectors. The `r` parameter is allowed to be outside `[0, 1]`
+* **vecNormalize**: Normalizes the vector to be length 1. If the given vector is the zero-vector, this method returns `(NaN, NaN)`
+* **vecPerp**: Computes the perp of the given vector, as defined by `vecPerp(a, b) = (-b, a)`. This is equivalent to a counter-clockwise rotation in the standard plane
+* **vecReset**: Construct a new vector given an `x` and `y` value
+* **vecScale**: Scales both coordinates of this vector by a given scalar
+* **vecSubtract**: Computes `u - v`, i.e. subtracting the second vector from the first
+* **vecTransformBy**: Multiplies the vector by an affine matrix
