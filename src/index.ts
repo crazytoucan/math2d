@@ -35,18 +35,6 @@ export { nearestPointResultReset } from "./nearestPointResultFunctions/nearestPo
 export { pointIntersectionResultAlloc } from "./pointIntersectionResultFunctions/pointIntersectionResultAlloc";
 export { pointIntersectionResultClone } from "./pointIntersectionResultFunctions/pointIntersectionResultClone";
 export { pointIntersectionResultReset } from "./pointIntersectionResultFunctions/pointIntersectionResultReset";
-export { polygonAlloc } from "./polygonFunctions/polygonAlloc";
-export { polygonContainsPointInside } from "./polygonFunctions/polygonContainsPointInside";
-export { polygonGetBounds } from "./polygonFunctions/polygonGetBounds";
-export { polygonGetNumSides } from "./polygonFunctions/polygonGetNumSides";
-export { polygonGetPerimeterLength } from "./polygonFunctions/polygonGetPerimeterLength";
-export { polygonGetPerimeterPointAt } from "./polygonFunctions/polygonGetPerimeterPointAt";
-export { polygonGetSideLength } from "./polygonFunctions/polygonGetSideLength";
-export { polygonGetSideSegment } from "./polygonFunctions/polygonGetSideSegment";
-export { polygonIntersectRay } from "./polygonFunctions/polygonIntersectRay";
-export { polygonIntersectSegment } from "./polygonFunctions/polygonIntersectSegment";
-export { polygonNearestDistanceSqToPoint } from "./polygonFunctions/polygonNearestDistanceSqToPoint";
-export { polygonTransformBy } from "./polygonFunctions/polygonTransformBy";
 export { rayAlloc } from "./rayFunctions/rayAlloc";
 export { rayClone } from "./rayFunctions/rayClone";
 export { rayContainsPoint } from "./rayFunctions/rayContainsPoint";
@@ -70,7 +58,7 @@ export { segmentIntersectSegment } from "./segmentFunctions/segmentIntersectSegm
 export { segmentNearestDistanceSqToPoint } from "./segmentFunctions/segmentNearestDistanceSqToPoint";
 export { segmentReset } from "./segmentFunctions/segmentReset";
 export { segmentReverse } from "./segmentFunctions/segmentReverse";
-export { IBox, IMat2d, IPointIntersectionResult, IPolygon, IPolyline, IRay, ISegment, IVec } from "./types";
+export { IBox, IMat2d, IPointIntersectionResult, IPolyline, IRay, ISegment, IVec } from "./types";
 export { vecAdd } from "./vecFunctions/vecAdd";
 export { vecAlloc } from "./vecFunctions/vecAlloc";
 export { vecClone } from "./vecFunctions/vecClone";
