@@ -6,10 +6,10 @@
 
 # math2d
 
-Two dimensional vector math library for JavaScript.
-Built for performance in computation-heavy real-time engines without sacrificing usability.
-Supports tree shaking and dead code removal to avoid bloating client-side bundles.
-Zero dependencies.
+Two dimensional vector math library for JavaScript
+Built for performance in computation-heavy real-time engines without sacrificing usability
+Supports tree shaking and dead code removal to avoid bloating client-side bundles
+Zero dependencies
 
 ## Getting Started
 
@@ -76,6 +76,30 @@ console.log(vecTransformBy(threeFour, spin));
 * **nearestPointResultAlloc**: Creates a new NearestPointResult object in memory, with all values initialized to `NaN`
 * **nearestPointResultClone**: Copies the values from the given NearestPointResult into a new NearestPointResult object
 * **nearestPointResultReset**: Construct a new intersection given `exists`, `x`, `y`, `t0`, and `t1` values
+
+### Polyline Functions
+
+* **polylineAlloc**: Creates a new Array object in memory to hold Polyline data. Its initial length is 0
+* **polylineClose**: Repeats the polyline's first vertex to form a closed path
+* **polylineContainsPoint**: undefined
+* **polylineContainsPointInside**: Determines whether the point is inside the given polygon, using the even-odd fill rule
+* **polylineGetBounds**: Computes bounding box of polyline's geometry
+* **polylineGetDistanceAtT**: Computes the Euclidean distance traveled along the polyline's geometry to get to
+the parametric point at _t_
+* **polylineGetLength**: Computes total length of polyline
+* **polylineGetNumSegments**: Returns the number of individual line segments in this polyline
+* **polylineGetNumVertices**: Returns the number of vertices in this polyline
+* **polylineGetPointAtT**: Computes a point along the polyline, parameterized according to linear interpolation between adjacent vertices
+* **polylineGetSegment**: Returns a polyline's segment by given index, starting at 0
+* **polylineGetSegmentLength**: Computes the length of one of a polyline's segments by index, starting at 0
+* **polylineGetTAtDistance**: Computes the parametric value _t_ along the polyline corresponding to a distance _d_
+* **polylineGetVertex**: Retrieves a vertex from this polyline's geometry, starting at index 0
+* **polylineIntersectRay**: Computes all locations at which a polyline crosses a given ray
+* **polylineIntersectSegment**: Computes all locations at which a polyline crosses a given line segment
+* **polylineIsClosed**: Returns whether the polyline's last vertex equals its first
+* **polylineNearestDistanceSqToPoint**: Finds the closest the polyline comes to a given reference point
+* **polylineTransformBy**: Transforms a polyline by an affine matrix
+* **polylineTrim**: Trims a polyline to a range of its _t_ parameter
 
 ### Ray Functions
 
