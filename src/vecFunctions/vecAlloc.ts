@@ -1,6 +1,6 @@
 import { Vec } from "../types";
 
-class Vec implements Vec {
+class _Vec implements Vec {
   public x = NaN;
   public y = NaN;
 }
@@ -27,5 +27,5 @@ class Vec implements Vec {
  *  }
  */
 export function vecAlloc(): Vec {
-  return new Vec();
+  return new _Vec();
 }
