@@ -1,5 +1,5 @@
 import { vecPerp } from "../../vecFunctions/vecPerp";
-import { expectVecEqualsApprox, _vec } from "../helpers";
+import { expectVecEqualsApprox, _vecValues } from "../helpers";
 
 describe("vecPerp", () => {
   it.each`
@@ -9,6 +9,6 @@ describe("vecPerp", () => {
     ${[0, 0]}     | ${[0, 0]}
     ${[NaN, NaN]} | ${[NaN, NaN]}
   `("$vec => $result", ({ vec, result }) => {
-    expectVecEqualsApprox(vecPerp(_vec(vec)), _vec(result));
+    expectVecEqualsApprox(vecPerp(_vecValues(vec)), _vecValues(result));
   });
 });

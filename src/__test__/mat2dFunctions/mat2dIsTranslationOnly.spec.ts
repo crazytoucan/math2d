@@ -1,5 +1,5 @@
 import { mat2dIsTranslationOnly } from "../../mat2dFunctions/mat2dIsTranslationOnly";
-import { _mat2d } from "../helpers";
+import { _mat2dValues } from "../helpers";
 
 describe("mat2dIsTranslationOnly", () => {
   it.each`
@@ -14,6 +14,6 @@ describe("mat2dIsTranslationOnly", () => {
     ${[NaN, NaN, NaN, NaN, 0, 0]}  | ${false}
     ${[1, 0, 0, 1, NaN, NaN]}      | ${true}
   `("$mat => $result", ({ mat, result }) => {
-    expect(mat2dIsTranslationOnly(_mat2d(mat))).toBe(result);
+    expect(mat2dIsTranslationOnly(_mat2dValues(mat))).toBe(result);
   });
 });

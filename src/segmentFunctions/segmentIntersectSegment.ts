@@ -1,8 +1,8 @@
+import { EPSILON } from "../internal/const";
 import { _intersectionDNE } from "../internal/_intersectionDNE";
 import { _lookAt } from "../internal/_lookAt";
-import { EPSILON } from "../internal/const";
-import { lineIntersectSegment } from "../lineFunctions/lineIntersectSegment";
-import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
+import { intersectionResultAlloc } from "../intersectionResultFunctions/intersectionResultAlloc";
+import { rayIntersectSegment } from "../rayFunctions/rayIntersectSegment";
 import { ISegment } from "../types";
 import { segmentGetLength } from "./segmentGetLength";
 
@@ -14,7 +14,7 @@ import { segmentGetLength } from "./segmentGetLength";
  * (i.e. they are parallel and lie partly on top of each other), this function returns the first
  * point they have in common, according to the first segment's parameterization.
  *
- * The returned value is an {@link IPointIntersectionResult} object which will have have the
+ * The returned value is an {@link IIntersectionResult} object which will have have the
  * `exists` flag set to `true` iff an intersection was found. It additionally
  * has the following fields, if the intersection exists:
  *
@@ -28,15 +28,14 @@ import { segmentGetLength } from "./segmentGetLength";
  * @param a the first segment to intersect
  * @param b the second segment to find intersections with
  * @param out
- * @see {@link IPointIntersectionResult}
+ * @see {@link IIntersectionResult}
  * @see {@link ISegment}
- * @see {@link segmentIntersectLine}
  * @see {@link segmentIntersectPolyline}
  * @see {@link segmentIntersectRay}
  */
-export function segmentIntersectSegment(a: ISegment, b: ISegment, out = pointIntersectionResultAlloc()) {
-  const aLine = _lookAt(a.x0, a.y0, a.x1, a.y1);
-  lineIntersectSegment(aLine, b, out);
+export function segmentIntersectSegment(a: ISegment, b: ISegment, out = intersectionResultAlloc()) {
+  const aRay = _lookAt(a.x0, a.y0, a.x1, a.y1);
+  rayIntersectSegment(aRay, b, out);
   const segmentLength = segmentGetLength(a);
   if (out.exists && out.t0 > -EPSILON && out.t0 < segmentLength + EPSILON) {
     out.t0 /= segmentLength;

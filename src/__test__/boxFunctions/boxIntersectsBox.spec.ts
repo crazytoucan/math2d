@@ -1,6 +1,6 @@
 import { boxIntersectsBox } from "../../boxFunctions/boxIntersectsBox";
 import { IntervalMode } from "../../const";
-import { _box } from "../helpers";
+import { _boxValues } from "../helpers";
 
 describe("boxIntersectsBox", () => {
   it.each`
@@ -13,6 +13,6 @@ describe("boxIntersectsBox", () => {
     ${[-Infinity, -Infinity, Infinity, Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${IntervalMode.CLOSED} | ${true}
     ${[Infinity, Infinity, -Infinity, -Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${IntervalMode.CLOSED} | ${false}
   `("$a $b $imode => $result", ({ a, b, imode, result }) => {
-    expect(boxIntersectsBox(_box(a), _box(b), imode)).toBe(result);
+    expect(boxIntersectsBox(_boxValues(a), _boxValues(b), imode)).toBe(result);
   });
 });

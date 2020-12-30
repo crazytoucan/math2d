@@ -1,5 +1,5 @@
 import { mat2dDeterminant } from "../../mat2dFunctions/mat2dDeterminant";
-import { _mat2d } from "../helpers";
+import { _mat2dValues } from "../helpers";
 
 describe("mat2dDeterminant", () => {
   it.each`
@@ -8,6 +8,6 @@ describe("mat2dDeterminant", () => {
     ${[2, 0, 0, 2, 10, 10]}    | ${4}
     ${[4, -7, 8, 5, NaN, NaN]} | ${76}
   `("$mat => $result", ({ mat, result }) => {
-    expect(mat2dDeterminant(_mat2d(mat))).toBe(result);
+    expect(mat2dDeterminant(_mat2dValues(mat))).toBe(result);
   });
 });

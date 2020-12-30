@@ -20,6 +20,6 @@ import { vecReset } from "../vecFunctions/vecReset";
  * @see {@link ISegment}
  * @see {@link vecLerp}
  */
-export function segmentGetPointAt(segment: ISegment, t: number, out = vecAlloc()) {
+export function segmentGetPointAtT(segment: ISegment, t: number, out = vecAlloc()) {
   return vecReset(segment.x0 * (1 - t) + segment.x1 * t, segment.y0 * (1 - t) + segment.y1 * t, out);
 }

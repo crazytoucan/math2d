@@ -1,5 +1,5 @@
 import { vecNormalize } from "../../vecFunctions/vecNormalize";
-import { expectVecEqualsApprox, _vec } from "../helpers";
+import { expectVecEqualsApprox, _vecValues } from "../helpers";
 
 describe("vecNormalize", () => {
   it.each`
@@ -10,6 +10,6 @@ describe("vecNormalize", () => {
     ${[0, 0]}      | ${[NaN, NaN]}
     ${[NaN, NaN]}  | ${[NaN, NaN]}
   `("$vec => $result", ({ vec, result }) => {
-    expectVecEqualsApprox(vecNormalize(_vec(vec)), _vec(result));
+    expectVecEqualsApprox(vecNormalize(_vecValues(vec)), _vecValues(result));
   });
 });

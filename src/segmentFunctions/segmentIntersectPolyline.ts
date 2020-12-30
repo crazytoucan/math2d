@@ -22,10 +22,9 @@ import { segmentIntersectSegment } from "./segmentIntersectSegment";
  *
  * @param segment the segment to intersect
  * @param poly the polyline to find intersections with
- * @see {@link IPointIntersectionResult}
+ * @see {@link IIntersectionResult}
  * @see {@link ISegment}
  * @see {@link polylineIntersectSegment}
- * @see {@link segmentIntersectLine}
  * @see {@link segmentIntersectRay}
  * @see {@link segmentIntersectSegment}
  */

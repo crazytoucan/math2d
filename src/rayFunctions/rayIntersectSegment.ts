@@ -1,10 +1,10 @@
+import { EPSILON } from "../internal/const";
 import { _intersectionDNE } from "../internal/_intersectionDNE";
 import { _lookAt } from "../internal/_lookAt";
-import { EPSILON } from "../internal/const";
-import { lineIntersectLine } from "../lineFunctions/lineIntersectLine";
-import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
+import { intersectionResultAlloc } from "../intersectionResultFunctions/intersectionResultAlloc";
 import { segmentGetLength } from "../segmentFunctions/segmentGetLength";
 import { IRay, ISegment } from "../types";
+import { rayIntersectRay } from "./rayIntersectRay";
 
 /**
  * Computes the intersection point between the ray and the segment, if it exists.
@@ -14,7 +14,7 @@ import { IRay, ISegment } from "../types";
  * or starts within the segment, this function returns the _first_ point that the intersection occurs,
  * according to the ray's parameterization.
  *
- * The returned value is an {@link IPointIntersectionResult} object which will have have the
+ * The returned value is an {@link IIntersectionResult} object which will have have the
  * `exists` flag set to `true` iff an intersection was found. It additionally
  * has the following fields, if the intersection exists:
  *
@@ -31,14 +31,18 @@ import { IRay, ISegment } from "../types";
  * @param segment the segment to intersect
  * @param out
  */
-export function rayIntersectSegment(ray: IRay, segment: ISegment, out = pointIntersectionResultAlloc()) {
+export function rayIntersectSegment(ray: IRay, segment: ISegment, out = intersectionResultAlloc()) {
   const segmentRay = _lookAt(segment.x0, segment.y0, segment.x1, segment.y1);
-  lineIntersectLine(ray, segmentRay, out);
+  rayIntersectRay(ray, segmentRay, out);
+  if (!out.exists) {
+    return out;
+  }
+
   const segmentLength = segmentGetLength(segment);
-  if (out.exists && out.t0 > -EPSILON && out.t1 > -EPSILON && out.t1 < segmentLength + EPSILON) {
+  if (out.t1 < segmentLength + EPSILON) {
     out.t1 /= segmentLength;
     return out;
-  } else {
-    return _intersectionDNE(out);
   }
+
+  return _intersectionDNE(out);
 }

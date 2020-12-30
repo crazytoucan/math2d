@@ -1,5 +1,5 @@
 import { boxContainsBox } from "../../boxFunctions/boxContainsBox";
-import { _box } from "../helpers";
+import { _boxValues } from "../helpers";
 
 describe("boxContainsBox", () => {
   it.each`
@@ -11,6 +11,6 @@ describe("boxContainsBox", () => {
     ${[-Infinity, -Infinity, Infinity, Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${true}
     ${[Infinity, Infinity, -Infinity, -Infinity]} | ${[-0.5, -0.5, 0.5, 0.5]} | ${false}
   `("$a $b => $result", ({ a, b, result }) => {
-    expect(boxContainsBox(_box(a), _box(b))).toBe(result);
+    expect(boxContainsBox(_boxValues(a), _boxValues(b))).toBe(result);
   });
 });

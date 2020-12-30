@@ -19,10 +19,9 @@ import { IPolyline, IRay } from "../types";
  *
  * @param poly
  * @param ray
- * @see {@link IPointIntersectionResult}
+ * @see {@link IIntersectionResult}
  * @see {@link IPolyline}
  * @see {@link lineIntersectPolyline}
- * @see {@link polylineIntersectLine}
  * @see {@link polylineIntersectSegment}
  */
 export function rayIntersectPolyline(ray: IRay, poly: IPolyline) {

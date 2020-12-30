@@ -13,7 +13,7 @@ import { polylineGetNumSegments } from "./polylineGetNumSegments";
  * @param out
  * @see {@link IPolyline}
  */
-export function polylineGetPointAt(poly: IPolyline, t: number, out = vecAlloc()) {
+export function polylineGetPointAtT(poly: IPolyline, t: number, out = vecAlloc()) {
   const maxT = polylineGetNumSegments(poly);
   if (t < 0 || t > maxT) {
     return vecReset(NaN, NaN, out);

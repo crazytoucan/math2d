@@ -23,7 +23,7 @@ export interface IVec {
  * Data type to represent a 2D line segment.
  *
  * A segment object holds two (x, y) endpoints, representing the line segment connecting those points
- * in the plane. Unlike the similar {@link IRay} and {@link ILine} types, a segment has finite length.
+ * in the plane. Unlike the similar {@link IRay} type, a segment has finite length.
  *
  * For a series of connected line segments, see the {@link IPolyline} data type.
  *
@@ -60,11 +60,6 @@ export interface ISegment {
  * Data type to represent a ray in 2D space, i.e. an initial point in the plane plus a unit-length direction
  * vector coming from that point.
  *
- * The data representation of a ray and the similar {@link ILine} type is actually the same, but Math2d chooses
- * to export both names for clarity of usage. Functions that may interpret Rays and Lines differently will be
- * named differently to prevent ambiguity,
- * such as {@link polygonIntersectLine} vs {@link polygonIntersectRay}.
- *
  * Where relevant, a ray is parameterized according to _t_ ≥ 0 with movement of distance _t_ along its direction vector.
  * In this mapping, _t_ = 0 represents the initial point (x0, y0).
  *
@@ -91,44 +86,6 @@ export interface IRay {
   /**
    * y-coordinate of the direction vector of the ray.
    * A ray's (dirX, dirY) direction vector is a unit vector emanating from its initial point.
-   */
-  dirY: number;
-}
-
-/**
- * Data type to represent a line in 2D space, i.e. some initial point in the plane plus a unit-length direction
- * vector coming from that point.
- *
- * The data representation of a line and the similar {@link IRay} type is actually the same, but Math2d chooses
- * to export these two names for ease of clarity. Functions that may interpret Rays and Lines differently will be
- * named differently to prevent ambiguity, such as
- * {@link polygonIntersectLine} vs {@link polygonIntersectRay}.
- *
- * Where relevant, a line is parameterized according to _t_ with movement of distance _t_ along its direction vector.
- * In this mapping, _t_ = 0 represents the initial point (x0, y0), _t_ > 0 moves in the direction of its vector,
- * and _t_ < 0 in the opposite direction.
- *
- * @see {@link lineAlloc}
- * @see {@link lineReset}
- */
-export interface ILine {
-  /**
-   * x-coordinate of the line's initial point
-   */
-  x0: number;
-
-  /**
-   * y-coordinate of the line's initial point
-   */
-  y0: number;
-
-  /**
-   * x-coordinate of the direction of the line, relative to its initial point
-   */
-  dirX: number;
-
-  /**
-   * y-coordinate of the direction of the line, relative to its initial point
    */
   dirY: number;
 }
@@ -240,40 +197,16 @@ export interface IBox {
 }
 
 /**
- * An alias for `number[]`. Data type to represent a polygon in the plane,
- * as an interleaved sequence of vertex coordinates.
- *
- * The `IPolygon` type is just an alias for an array of number values. For example,
- * a polygon with vertices v0, v1, v2, ..., vn is represented in Math2d as the array:
- *
- * ```
- * [v0x, v0y, v1x, v1y, v2x, v2y, ..., vnx, vny]
- * ```
- *
- * Unlike the similar {@link IPolyline} type, a polygon's perimeter is always interpreted as a closed shape.
- *
- * Where relevant, a polygon with _N_ sides is parameterized according to _t_,
- * where integer values of _t_ correspond to the polygon's
- * vertices in order, and smooth values of _t_ therein interpolate linearly between adjacent vertices, with an
- * additional segment connecting the last vertex to the first.
- *
- * Math2d chooses to lay out this data in a flattened (interleaved) array, as opposed to e.g. an array of
- * IVecs, for performance and more compact storage.
- */
-export type IPolygon = number[];
-
-/**
  * An alias for `number[]`. Data type to represent a sequence of connected line segments in the plane,
  * as an interleaved array of vertex coordinates.
  *
  * The `IPolyline` type is just an alias for an array of number values. For example,
  * a polyline connecting the points p0, p1, p2, ..., pn in space is represented in Math2d as the array:
+ * A polyline is not necessary closed.
  *
  * ```
  * [p0x, p0y, p1x, p1y, p2x, p2y, ..., pnx, pny]
  * ```
- *
- * Unlike the similar {@link IPolygon} type, a polyline is not necessary closed.
  *
  * Where relevant, a polyline with _N_ points is parameterized according to _t_ with linear interpolation between
  * adjacent points by index. For example, _t_ = 3.5 represents the midpoint between the index 3 and index 4 point
@@ -288,26 +221,18 @@ export type IPolyline = number[];
 /**
  * Data type to hold the result of a point intersection between two pieces of geometry.
  *
- * @see {@link lineIntersectLine}
- * @see {@link lineIntersectPolyline}
- * @see {@link lineIntersectRay}
- * @see {@link lineIntersectSegment}
- * @see {@link polygonIntersectLine}
  * @see {@link polygonIntersectRay}
  * @see {@link polygonIntersectSegment}
- * @see {@link polylineIntersectLine}
  * @see {@link polylineIntersectRay}
  * @see {@link polylineIntersectSegment}
- * @see {@link rayIntersectLine}
  * @see {@link rayIntersectPolyline}
  * @see {@link rayIntersectRay}
  * @see {@link rayIntersectSegment}
- * @see {@link segmentIntersectLine}
  * @see {@link segmentIntersectPolyline}
  * @see {@link segmentIntersectRay}
  * @see {@link segmentIntersectSegment}
  */
-export interface IPointIntersectionResult {
+export interface IIntersectionResult {
   /**
    * Whether an intersection was found. If the return value of a function is `false` for the `exists` field,
    * the other Intersection values will be set to `NaN` and should not be interpreted.

@@ -1,5 +1,5 @@
 import { _intersectionSwapTs } from "../internal/_intersectionSwapTs";
-import { pointIntersectionResultAlloc } from "../pointIntersectionResultFunctions/pointIntersectionResultAlloc";
+import { intersectionResultAlloc } from "../intersectionResultFunctions/intersectionResultAlloc";
 import { rayIntersectSegment } from "../rayFunctions/rayIntersectSegment";
 import { IRay, ISegment } from "../types";
 
@@ -11,7 +11,7 @@ import { IRay, ISegment } from "../types";
  * or starts within the segment, this function returns the _first_ point that the intersection occurs,
  * according to the segment's parameterization.
  *
- * The returned value is an {@link IPointIntersectionResult} object which will have have the
+ * The returned value is an {@link IIntersectionResult} object which will have have the
  * `exists` flag set to `true` iff an intersection was found. It additionally
  * has the following fields, if the intersection exists:
  *
@@ -27,12 +27,11 @@ import { IRay, ISegment } from "../types";
  * @param segment the segment to intersect
  * @param ray the ray to find intersection with
  * @param out
- * @see {@link IPointIntersectionResult}
+ * @see {@link IIntersectionResult}
  * @see {@link ISegment}
- * @see {@link segmentIntersectLine}
  * @see {@link segmentIntersectPolyline}
  * @see {@link segmentIntersectSegment}
  */
-export function segmentIntersectRay(segment: ISegment, ray: IRay, out = pointIntersectionResultAlloc()) {
+export function segmentIntersectRay(segment: ISegment, ray: IRay, out = intersectionResultAlloc()) {
   return _intersectionSwapTs(rayIntersectSegment(ray, segment, out));
 }
